@@ -1,0 +1,282 @@
+title: "11 · Random Forest"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: variance of average
+        lesson: 01_bagging_and_variance_reduction.ipynb
+        type: mcq
+        question: "Trung bình B model có cùng variance σ² và tương quan ρ > 0. Khi B → ∞, variance của trung bình tiến tới:"
+        options: {a: "0", b: "ρσ²", c: "σ²/B", d: "σ²"}
+        answer: b
+        explanation: "ρσ² + (1 − ρ)σ²/B → ρσ²."
+      - id: t02
+        topic: bootstrap
+        lesson: 01_bagging_and_variance_reduction.ipynb
+        type: mcq
+        question: "Mỗi mẫu bootstrap (n lớn) chứa khoảng bao nhiêu phần trăm điểm khác nhau của tập gốc?"
+        options: {a: "50%", b: "63.2%", c: "90%", d: "100%"}
+        answer: b
+        explanation: "1 − 1/e ≈ 0.632."
+      - id: t03
+        topic: bagging giảm gì
+        lesson: 01_bagging_and_variance_reduction.ipynb
+        type: mcq
+        question: "Bagging chủ yếu giảm thành phần nào của lỗi?"
+        options: {a: "Bias", b: "Variance", c: "Nhiễu không giảm được", d: "Cả bias và variance như nhau"}
+        answer: b
+        explanation: "Bias gần như không đổi."
+      - id: t04
+        topic: base learner
+        lesson: 01_bagging_and_variance_reduction.ipynb
+        type: mcq
+        question: "Bagging hiệu quả nhất với base learner nào?"
+        options: {a: "Linear Regression", b: "Cây quyết định sâu (variance cao)", c: "KNN với k rất lớn", d: "Model hằng số"}
+        answer: b
+        explanation: "Model ổn định gần như không được lợi."
+      - id: t05
+        topic: n_estimators
+        lesson: 01_bagging_and_variance_reduction.ipynb
+        type: tf
+        question: "Tăng số cây trong Random Forest có thể gây overfit."
+        answer: false
+        explanation: "Chỉ làm trung bình chính xác hơn; lợi ích bão hoà."
+      - id: t06
+        topic: RF vs bagging
+        lesson: 02_random_forest_from_scratch.ipynb
+        type: mcq
+        question: "Random Forest khác bagging cây quyết định ở điểm nào?"
+        options:
+          a: "Không dùng bootstrap"
+          b: "Ở mỗi split chỉ xét một tập con ngẫu nhiên các feature"
+          c: "Dùng cây nông"
+          d: "Boosting các cây"
+        answer: b
+        explanation: "Giảm tương quan giữa cây."
+      - id: t07
+        topic: max_features
+        lesson: 02_random_forest_from_scratch.ipynb
+        type: multi
+        question: "Tăng max_features (giữ các thứ khác) thường làm:"
+        options:
+          a: "Từng cây mạnh hơn"
+          b: "Tương quan giữa các cây tăng"
+          c: "Rừng luôn tốt hơn"
+          d: "Train chậm hơn"
+        answer: abd
+        explanation: "Rừng tốt nhất thường ở giữa."
+      - id: t08
+        topic: per-split randomness
+        lesson: 02_random_forest_from_scratch.ipynb
+        type: tf
+        question: "Random Forest chọn tập feature ngẫu nhiên MỘT lần cho mỗi cây và dùng tập đó cho mọi split."
+        answer: false
+        explanation: "Chọn lại ở mỗi split (khác random subspace)."
+      - id: t09
+        topic: OOB
+        lesson: 03_oob_importance_and_tuning.ipynb
+        type: mcq
+        question: "OOB score được tính bằng cách:"
+        options:
+          a: "Dự đoán mỗi mẫu bằng các cây KHÔNG dùng mẫu đó khi train"
+          b: "Dùng tập test"
+          c: "5-fold CV"
+          d: "Dự đoán trên chính tập train bằng mọi cây"
+        answer: a
+        explanation: "Đánh giá 'miễn phí'."
+      - id: t10
+        topic: correlated features
+        lesson: 03_oob_importance_and_tuning.ipynb
+        type: mcq
+        question: "Hai feature gần như trùng nhau. Permutation importance của mỗi feature:"
+        options:
+          a: "Tăng gấp đôi"
+          b: "Giảm mạnh — permute một cột thì model vẫn dùng cột kia"
+          c: "Không đổi"
+          d: "Bằng MDI"
+        answer: b
+        explanation: "Đừng kết luận 'không quan trọng' vội."
+      - id: t11
+        topic: extrapolation
+        lesson: 03_oob_importance_and_tuning.ipynb
+        type: tf
+        question: "Random Forest regressor có thể dự đoán giá trị lớn hơn mọi giá trị y trong tập train."
+        answer: false
+        explanation: "Trung bình các lá — nằm trong khoảng y đã thấy."
+      - id: t12
+        topic: Extra Trees
+        lesson: 03_oob_importance_and_tuning.ipynb
+        type: mcq
+        question: "Extra Trees khác Random Forest ở điểm:"
+        options:
+          a: "Ngưỡng split được chọn ngẫu nhiên thay vì tối ưu"
+          b: "Không dùng nhiều cây"
+          c: "Dùng gradient"
+          d: "Chỉ cho hồi quy"
+        answer: a
+        explanation: "Đa dạng hơn, nhanh hơn (mặc định cũng không bootstrap)."
+      - id: t13
+        topic: failure
+        lesson: 03_oob_importance_and_tuning.ipynb
+        type: multi
+        question: "Trường hợp nào Random Forest thường KHÔNG phải lựa chọn tốt?"
+        options:
+          a: "Dự báo xu hướng tăng ra ngoài vùng train"
+          b: "Log-odds tuyến tính theo nhiều feature, dữ liệu vừa phải"
+          c: "Cần độ trễ dự đoán < 1 ms trên thiết bị nhỏ"
+          d: "Dữ liệu bảng hỗn hợp, phi tuyến, nhiều tương tác"
+        answer: abc
+        explanation: "d là điểm mạnh của RF."
+      - id: t14
+        topic: hyperparameter
+        lesson: 03_oob_importance_and_tuning.ipynb
+        type: mcq
+        question: "Hyperparameter thường quan trọng nhất cần tune của Random Forest:"
+        options: {a: "n_estimators", b: "max_features", c: "random_state", d: "n_jobs"}
+        answer: b
+        explanation: "n_estimators: càng nhiều càng ổn, không cần tune bằng CV."
+      - id: t15
+        topic: scaling
+        lesson: 03_oob_importance_and_tuning.ipynb
+        type: tf
+        question: "Random Forest cần StandardScaler để hoạt động tốt."
+        answer: false
+        explanation: "Cây chỉ phụ thuộc thứ tự giá trị."
+      - id: t16
+        topic: probability
+        lesson: 03_oob_importance_and_tuning.ipynb
+        type: mcq
+        question: "Xác suất của Random Forest thường:"
+        options:
+          a: "Calibrated hoàn hảo"
+          b: "Bị kéo vào giữa (ít khi gần 0/1) → nên calibrate nếu dùng như xác suất"
+          c: "Luôn là 0 hoặc 1"
+          d: "Không tính được"
+        answer: b
+        explanation: "Chương 37."
+  math:
+    questions:
+      - id: m01
+        topic: variance of average
+        lesson: 01_bagging_and_variance_reduction.ipynb
+        type: numeric
+        decimals: 3
+        question: "B = 10 model, σ² = 1, ρ = 0.5. Variance của trung bình?"
+        answer: 0.55
+        explanation: "0.5 + 0.5/10 = 0.55."
+      - id: m02
+        topic: OOB
+        lesson: 01_bagging_and_variance_reduction.ipynb
+        type: numeric
+        decimals: 3
+        question: "Xác suất một điểm KHÔNG xuất hiện trong mẫu bootstrap với n = 2: (1 − 1/2)² = ?"
+        answer: 0.25
+        explanation: "0.25."
+      - id: m03
+        topic: OOB count
+        lesson: 03_oob_importance_and_tuning.ipynb
+        type: numeric
+        decimals: 0
+        question: "Rừng 500 cây, n lớn. Mỗi mẫu là OOB của khoảng bao nhiêu cây (làm tròn)?"
+        answer: 184
+        explanation: "500 · e⁻¹ ≈ 183.9."
+      - id: m04
+        topic: max_features
+        lesson: 02_random_forest_from_scratch.ipynb
+        type: numeric
+        decimals: 0
+        question: "Bài toán phân loại có 100 feature. Với max_features='sqrt', mỗi split xét bao nhiêu feature?"
+        answer: 10
+        explanation: "√100 = 10."
+      - id: m05
+        topic: soft voting
+        lesson: 01_bagging_and_variance_reduction.ipynb
+        type: numeric
+        decimals: 3
+        question: "4 cây cho P(lớp 1) = 0.9, 0.2, 0.4, 0.6. Xác suất soft voting của rừng?"
+        answer: 0.525
+        explanation: "2.1/4."
+coding:
+  tasks:
+    - id: c01
+      title: Bootstrap và OOB
+      prompt: |
+        Viết `bootstrap_indices(n, rng)` trả về `(idx, oob_mask)`: `idx` là n chỉ số rút có hoàn lại (dùng `rng.integers`),
+        `oob_mask` là mảng bool độ dài n, True tại các chỉ số KHÔNG có trong `idx`.
+      code: |
+        def bootstrap_indices(n, rng):
+            ### START CODE HERE ### (≈ 3 dòng)
+            idx = rng.integers(0, n, n)
+            oob_mask = np.ones(n, dtype=bool)
+            oob_mask[idx] = False
+            ### END CODE HERE ###
+            return idx, oob_mask
+      tests: |
+        rng = np.random.default_rng(0)
+        idx, oob = bootstrap_indices(10000, rng)
+        check_equal(len(idx), 10000, "đủ n chỉ số")
+        check_close(oob.mean(), np.exp(-1), tol=0.01, message="tỉ lệ OOB ≈ 1/e")
+        check_true(not np.any(oob[idx]), "chỉ số trong mẫu không được đánh dấu OOB")
+    - id: c02
+      title: Tổng hợp dự đoán của rừng
+      prompt: |
+        Cho `probas` là mảng shape `(B, n, C)` — xác suất mỗi lớp của B cây cho n mẫu. Viết `forest_predict(probas, classes)`
+        trả về `(proba, pred)`: `proba` là trung bình theo cây (soft voting), `pred` là nhãn trong `classes` có xác suất lớn nhất.
+      code: |
+        def forest_predict(probas, classes):
+            ### START CODE HERE ### (≈ 2 dòng)
+            proba = probas.mean(axis=0)
+            pred = np.asarray(classes)[np.argmax(proba, axis=1)]
+            ### END CODE HERE ###
+            return proba, pred
+      tests: |
+        probas = np.array([[[0.9, 0.1], [0.2, 0.8]], [[0.4, 0.6], [0.3, 0.7]], [[0.5, 0.5], [0.9, 0.1]]])
+        proba, pred = forest_predict(probas, ["không", "có"])
+        check_close(proba, [[0.6, 0.4], [1.4 / 3, 1.6 / 3]], message="trung bình xác suất")
+        check_equal(list(pred), ["không", "có"], "nhãn dự đoán")
+analysis:
+  prompt: |
+    Một nhóm dùng Random Forest (1 000 cây, `max_features=None`, `min_samples_leaf=1`) dự báo **doanh số tháng tới** của chuỗi cửa hàng
+    đang tăng trưởng 5%/tháng, feature gồm `month_index` và các biến khác. Họ chọn `n_estimators` bằng GridSearch từ 100 đến 5 000,
+    báo cáo "feature quan trọng nhất là `store_code` (mã cửa hàng dạng số 1..500) theo feature_importances_", và lo lắng vì
+    model nặng 2 GB, mỗi dự đoán mất 300 ms. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra RF không ngoại suy được xu hướng tăng theo month_index → dự đoán bão hoà; đề xuất mô hình hoá mức tăng/khử xu hướng hoặc model tuyến tính/kết hợp"
+    - "Chỉ ra không cần tune n_estimators bằng GridSearch (nhiều cây không overfit, chỉ tốn chi phí) → chọn đủ lớn rồi dừng khi bão hoà"
+    - "Chỉ ra max_features=None là bagging (cây tương quan) → tune max_features"
+    - "Chỉ ra MDI thiên vị feature nhiều giá trị như store_code dạng số → dùng permutation importance trên held-out, encode store_code hợp lý"
+    - "Đề xuất giảm chi phí triển khai: ít cây hơn, min_samples_leaf lớn hơn/max_depth, hoặc model nhẹ hơn (GBM nông, tuyến tính)"
+  sample_answer: |
+    (1) Doanh số tăng theo thời gian: RF chỉ trả về trung bình các giá trị đã thấy → dự báo tương lai bị "phẳng". Nên dự đoán tỉ lệ tăng/sai phân, khử xu hướng, hoặc dùng model tuyến tính/kết hợp (chương 25).
+    (2) n_estimators không cần GridSearch: thêm cây không overfit; chọn vài trăm cây khi đường OOB/validation đã bão hoà.
+    (3) max_features=None = bagging, cây tương quan cao → tune max_features (sqrt, 0.3–0.5).
+    (4) store_code dạng số 1..500 có nhiều giá trị → MDI thiên lệch; dùng permutation importance trên held-out và encode store hợp lý (target encoding/đặc trưng cửa hàng).
+    (5) 2 GB/300 ms: min_samples_leaf=1 + 1 000 cây sâu quá nặng → giảm số cây, tăng min_samples_leaf, giới hạn độ sâu, hoặc chuyển sang gradient boosting nông/model tuyến tính.
+project:
+  prompt: |
+    **Mini project — Random Forest dự đoán giá nhà.** Đọc `house_prices.csv` (`repo_path("data", "sample", "house_prices.csv")`),
+    target `price_billion_vnd`, one-hot `district`. Chia train/test 75/25 (`random_state=0`). Chọn `max_features` và `min_samples_leaf`
+    (bằng OOB hoặc CV), train `RandomForestRegressor` (≥ 200 cây). Đạt **MAE test ≤ 0.52** (biến `test_mae`, tỉ VND).
+  code: |
+    import pandas as pd
+    from sklearn.ensemble import RandomForestRegressor
+    from sklearn.metrics import mean_absolute_error
+    from sklearn.model_selection import train_test_split
+    from ml_course.utils import repo_path
+
+    df = pd.read_csv(repo_path("data", "sample", "house_prices.csv"))
+    ### START CODE HERE ### (≈ 10 dòng)
+    X = pd.get_dummies(df.drop(columns=["price_billion_vnd"]), columns=["district"], dtype=float)
+    y = df["price_billion_vnd"]
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25, random_state=0)
+    best, best_score = None, -np.inf
+    for mf in [0.3, 0.5, 0.8]:
+        for leaf in [1, 3, 5]:
+            m = RandomForestRegressor(n_estimators=200, max_features=mf, min_samples_leaf=leaf, oob_score=True, random_state=0).fit(X_tr, y_tr)
+            if m.oob_score_ > best_score:
+                best, best_score = m, m.oob_score_
+    test_mae = mean_absolute_error(y_te, best.predict(X_te))
+    ### END CODE HERE ###
+    print("OOB R² tốt nhất:", round(best_score, 4), "| MAE test:", round(test_mae, 3))
+  tests: |
+    check_less(test_mae, 0.52, "MAE test ≤ 0.52 tỉ")

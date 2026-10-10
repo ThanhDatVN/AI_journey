@@ -1,0 +1,263 @@
+title: "02 · Mathematics for ML"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: nhân ma trận
+        lesson: 02_linear_algebra.ipynb
+        type: tf
+        question: "Với hai ma trận vuông A, B bất kỳ, luôn có AB = BA."
+        answer: false
+        explanation: "Phép nhân ma trận nói chung không giao hoán."
+      - id: t02
+        topic: cosine similarity
+        lesson: 02_linear_algebra.ipynb
+        type: mcq
+        question: "Cosine similarity giữa hai vector bằng 0 nghĩa là gì?"
+        options: {a: "Hai vector bằng nhau", b: "Hai vector vuông góc", c: "Hai vector ngược chiều", d: "Một vector bằng 0"}
+        answer: b
+        explanation: "cos = 0 ⇔ góc 90°: tích vô hướng bằng 0."
+      - id: t03
+        topic: rank / multicollinearity
+        lesson: 03_rank_inverse_eigen_svd.ipynb
+        type: mcq
+        question: "Ma trận dữ liệu X có 6 cột nhưng rank = 5. Hệ quả cho Linear Regression?"
+        options:
+          a: "Không ảnh hưởng gì"
+          b: "XᵀX không khả nghịch — hệ số không xác định duy nhất (multicollinearity)"
+          c: "Model chạy nhanh hơn"
+          d: "Model chắc chắn underfit"
+        answer: b
+        explanation: "Có một feature là tổ hợp tuyến tính của các feature khác."
+      - id: t04
+        topic: eigenvector & PCA
+        lesson: 03_rank_inverse_eigen_svd.ipynb
+        type: mcq
+        question: "Vector riêng ứng với trị riêng lớn nhất của ma trận hiệp phương sai biểu diễn điều gì?"
+        options:
+          a: "Hướng dữ liệu biến thiên nhiều nhất"
+          b: "Trung bình của dữ liệu"
+          c: "Feature quan trọng nhất cho dự đoán y"
+          d: "Hướng dữ liệu ít biến thiên nhất"
+        answer: a
+        explanation: "Trị riêng = phương sai theo hướng vector riêng; đây là thành phần chính đầu tiên của PCA."
+      - id: t05
+        topic: gradient
+        lesson: 04_calculus_and_gradients.ipynb
+        type: mcq
+        question: "Gradient ∇f(x) chỉ theo hướng nào?"
+        options: {a: "Hướng f giảm nhanh nhất", b: "Hướng f tăng nhanh nhất", c: "Song song với đường đồng mức", d: "Luôn về gốc toạ độ"}
+        answer: b
+        explanation: "Gradient chỉ hướng tăng nhanh nhất; GD đi theo −∇f."
+      - id: t06
+        topic: gradient check
+        lesson: 04_calculus_and_gradients.ipynb
+        type: mcq
+        question: "Relative error giữa gradient tự viết và gradient sai phân số là 0.2. Kết luận?"
+        options: {a: "Gradient đúng", b: "Gần như chắc chắn có bug trong gradient", c: "Cần tăng learning rate", d: "Dữ liệu bị thiếu"}
+        answer: b
+        explanation: "< 1e-7 là tốt; > 1e-3 gần như chắc chắn sai."
+      - id: t07
+        topic: learning rate
+        lesson: 05_gradient_descent.ipynb
+        type: mcq
+        question: "Loss tăng dần và nhảy loạn qua các vòng lặp gradient descent. Nguyên nhân khả dĩ nhất?"
+        options: {a: "Learning rate quá nhỏ", b: "Learning rate quá lớn", c: "Quá nhiều dữ liệu", d: "Hàm loss lồi"}
+        answer: b
+        explanation: "Bước quá dài vượt qua cực tiểu và phân kỳ."
+      - id: t08
+        topic: hàm lồi
+        lesson: 04_calculus_and_gradients.ipynb
+        type: tf
+        question: "Với hàm lồi, mọi cực tiểu địa phương đều là cực tiểu toàn cục."
+        answer: true
+        explanation: "Đây là lý do bài toán lồi (Linear/Logistic Regression, SVM) dễ tối ưu."
+      - id: t09
+        topic: base rate
+        lesson: 06_probability.ipynb
+        type: mcq
+        question: "Bệnh rất hiếm (0.1%), xét nghiệm 99% chính xác cả hai chiều. Một người dương tính. Xác suất người đó bị bệnh?"
+        options: {a: "Khoảng 99%", b: "Khoảng 50%", c: "Khoảng 9%", d: "Khoảng 0.1%"}
+        answer: c
+        explanation: "0.99·0.001 / (0.99·0.001 + 0.01·0.999) ≈ 0.09 — base rate fallacy."
+      - id: t10
+        topic: covariance & độc lập
+        lesson: 06_probability.ipynb
+        type: tf
+        question: "Nếu Cov(X, Y) = 0 thì X và Y độc lập."
+        answer: false
+        explanation: "Phản ví dụ: X ~ N(0,1), Y = X²."
+      - id: t11
+        topic: MLE ↔ loss
+        lesson: 07_likelihood_mle_map.ipynb
+        type: mcq
+        question: "Cực tiểu MSE tương đương MLE dưới giả định nào?"
+        options: {a: "Nhiễu Laplace", b: "Nhiễu Gauss độc lập, phương sai không đổi", c: "Nhãn nhị phân", d: "Không cần giả định"}
+        answer: b
+        explanation: "NLL của Gauss là tổng bình phương sai số (sai khác hằng số)."
+      - id: t12
+        topic: MAP ↔ regularization
+        lesson: 07_likelihood_mle_map.ipynb
+        type: mcq
+        question: "Ridge regression (phạt L2) tương ứng với MAP với prior nào trên trọng số?"
+        options: {a: "Uniform", b: "Laplace", c: "Gauss (Normal)", d: "Bernoulli"}
+        answer: c
+        explanation: "Prior Gauss → −log prior ∝ ‖w‖²; Laplace → ‖w‖₁ (Lasso)."
+      - id: t13
+        topic: mean vs median
+        lesson: 08_statistics.ipynb
+        type: mcq
+        question: "Thu nhập khách hàng lệch phải mạnh, có vài giá trị cực lớn. Nên dùng thước đo nào cho 'giá trị điển hình'?"
+        options: {a: "Mean", b: "Median", c: "Range", d: "Variance"}
+        answer: b
+        explanation: "Median không bị outlier kéo lệch."
+      - id: t14
+        topic: Pearson correlation
+        lesson: 08_statistics.ipynb
+        type: multi
+        question: "Phát biểu nào ĐÚNG về hệ số tương quan Pearson?"
+        options:
+          a: "Chỉ đo quan hệ tuyến tính"
+          b: "Rất nhạy với outlier"
+          c: "r ≈ 0 chứng tỏ hai biến độc lập"
+          d: "r cao chứng tỏ có quan hệ nhân quả"
+        answer: ab
+        explanation: "r ≈ 0 vẫn có thể có quan hệ phi tuyến; tương quan ≠ nhân quả."
+      - id: t15
+        topic: p-value
+        lesson: 08_statistics.ipynb
+        type: tf
+        question: "p-value = 0.03 nghĩa là xác suất giả thuyết H0 đúng là 3%."
+        answer: false
+        explanation: "p-value là xác suất thấy kết quả cực đoan ít nhất như vậy NẾU H0 đúng."
+  math:
+    questions:
+      - id: m01
+        topic: chuẩn vector
+        lesson: 02_linear_algebra.ipynb
+        type: numeric
+        decimals: 2
+        question: "Tính ‖[2, −3, 6]‖₂."
+        answer: 7
+        explanation: "√(4 + 9 + 36) = 7."
+      - id: m02
+        topic: nhân ma trận
+        lesson: 02_linear_algebra.ipynb
+        type: numeric
+        decimals: 0
+        question: "A = [[1, 2], [3, 4]], v = [5, 6]. Phần tử thứ hai của Av bằng?"
+        answer: 39
+        explanation: "3·5 + 4·6 = 39."
+      - id: m03
+        topic: đạo hàm / chain rule
+        lesson: 04_calculus_and_gradients.ipynb
+        type: numeric
+        decimals: 2
+        question: "f(w) = (3w − 2)². Tính f'(1)."
+        answer: 6
+        explanation: "f'(w) = 2(3w − 2)·3 = 18w − 12 → f'(1) = 6."
+      - id: m04
+        topic: gradient descent
+        lesson: 05_gradient_descent.ipynb
+        type: numeric
+        decimals: 2
+        question: "f(x) = x², x₀ = 4, learning rate η = 0.25. Sau 2 bước GD, x = ?"
+        answer: 1
+        explanation: "x ← x − 0.25·2x = 0.5x: 4 → 2 → 1."
+      - id: m05
+        topic: Bayes
+        lesson: 06_probability.ipynb
+        type: numeric
+        decimals: 3
+        question: "P(spam) = 0.2. Từ 'khuyến mãi' xuất hiện trong 60% email spam và 5% email thường. P(spam | có 'khuyến mãi') = ?"
+        answer: 0.75
+        explanation: "0.6·0.2 / (0.6·0.2 + 0.05·0.8) = 0.12 / 0.16 = 0.75."
+      - id: m06
+        topic: tổ hợp
+        lesson: 06_probability.ipynb
+        type: numeric
+        decimals: 0
+        question: "Có bao nhiêu cách chọn 3 feature từ 8 feature (không quan tâm thứ tự)?"
+        answer: 56
+        explanation: "C(8, 3) = 56."
+      - id: m07
+        topic: MLE Bernoulli
+        lesson: 07_likelihood_mle_map.ipynb
+        type: numeric
+        decimals: 2
+        question: "Trong 40 khách hàng có 14 người rời bỏ. Ước lượng MLE của xác suất churn?"
+        answer: 0.35
+        explanation: "θ_MLE = 14/40 = 0.35."
+      - id: m08
+        topic: phương sai mẫu
+        lesson: 08_statistics.ipynb
+        type: numeric
+        decimals: 2
+        question: "Phương sai MẪU (chia n − 1) của dữ liệu [2, 4, 6, 8]?"
+        answer: 6.6667
+        explanation: "mean = 5, tổng bình phương độ lệch = 20, chia 3 = 6.67."
+coding:
+  tasks:
+    - id: c01
+      title: Gradient của logistic loss
+      prompt: |
+        Với $p = \sigma(X\mathbf w)$, loss $L(\mathbf w) = -\frac1n\sum_i [y_i\log p_i + (1-y_i)\log(1-p_i)]$.
+        Viết `logistic_grad(w, X, y)` trả về $\nabla_{\mathbf w}L = \frac1n X^\top(p - y)$ (vectorized).
+      code: |
+        def logistic_grad(w, X, y):
+            ### START CODE HERE ### (≈ 2 dòng)
+            p = 1 / (1 + np.exp(-(X @ w)))
+            grad = X.T @ (p - y) / len(y)
+            ### END CODE HERE ###
+            return grad
+      tests: |
+        from ml_course.utils import numerical_gradient, relative_error
+        rng = np.random.default_rng(1)
+        X, y, w = rng.normal(size=(30, 4)), rng.integers(0, 2, 30), rng.normal(size=4)
+        def loss(w):
+            p = 1 / (1 + np.exp(-(X @ w)))
+            return -np.mean(y * np.log(p) + (1 - y) * np.log(1 - p))
+        check_shape(logistic_grad(w, X, y), (4,))
+        check_less(relative_error(logistic_grad(w, X, y), numerical_gradient(loss, w.copy())), 1e-7, "gradient check")
+    - id: c02
+      title: Khoảng tin cậy bootstrap
+      prompt: |
+        Viết `bootstrap_ci(x, stat, n_boot, seed)` trả về tuple `(low, high)` — khoảng tin cậy 95% percentile bootstrap của thống kê `stat` (một hàm, vd `np.median`).
+      code: |
+        def bootstrap_ci(x, stat=np.mean, n_boot=2000, seed=0):
+            rng = np.random.default_rng(seed)
+            x = np.asarray(x)
+            ### START CODE HERE ### (≈ 3 dòng)
+            idx = rng.integers(0, len(x), size=(n_boot, len(x)))
+            values = np.array([stat(x[i]) for i in idx])
+            ci = (np.quantile(values, 0.025), np.quantile(values, 0.975))
+            ### END CODE HERE ###
+            return ci
+      tests: |
+        data = np.random.default_rng(3).normal(10, 2, 400)
+        lo, hi = bootstrap_ci(data, np.median)
+        check_true(lo < np.median(data) < hi, "CI chứa median mẫu")
+        check_true(0.1 < hi - lo < 1.0, "độ rộng CI hợp lý")
+project:
+  prompt: |
+    **Mini project — Linear regression bằng gradient descent thuần NumPy.** Dữ liệu có 2 feature với thang đo rất khác nhau.
+    1. Chuẩn hoá feature (`z = (x − mean) / std` theo cột).
+    2. Cài đặt GD cho $\hat y = X\mathbf w + b$ với MSE (gradient tự viết).
+    3. Chạy 500 vòng với learning rate phù hợp; MSE cuối trên dữ liệu train phải **< 0.3** (nhiễu thật có phương sai 0.25).
+  code: |
+    rng = np.random.default_rng(7)
+    X_raw = np.column_stack([rng.uniform(20, 200, 500), rng.uniform(0, 5, 500)])
+    y = 0.03 * X_raw[:, 0] + 1.5 * X_raw[:, 1] + 4 + rng.normal(0, 0.5, 500)
+
+    ### START CODE HERE ### (≈ 10 dòng)
+    Z = (X_raw - X_raw.mean(axis=0)) / X_raw.std(axis=0)
+    w, b, lr = np.zeros(2), 0.0, 0.1
+    for _ in range(500):
+        err = Z @ w + b - y
+        w -= lr * 2 * Z.T @ err / len(y)
+        b -= lr * 2 * err.mean()
+    final_mse = np.mean((Z @ w + b - y) ** 2)
+    ### END CODE HERE ###
+    print("MSE cuối:", final_mse)
+  tests: |
+    check_less(final_mse, 0.3, "MSE train < 0.3")

@@ -1,0 +1,235 @@
+{
+ "id": "16_hyperparameter_optimization",
+ "kind": "Chapter",
+ "title": "16 · Hyperparameter Optimization",
+ "next": "17_feature_engineering",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "problem nature",
+     "answer_hashes": [
+      "b57b877033ccc8b30c1a"
+     ],
+     "lesson": "01_grid_vs_random_search.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "random vs grid",
+     "answer_hashes": [
+      "728b61887eec38203abd"
+     ],
+     "lesson": "01_grid_vs_random_search.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "log-uniform",
+     "answer_hashes": [
+      "f333b1383d782333df81"
+     ],
+     "lesson": "01_grid_vs_random_search.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "boundary",
+     "answer_hashes": [
+      "b2f2ac63a3bb440569a4"
+     ],
+     "lesson": "01_grid_vs_random_search.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "early stopping",
+     "answer_hashes": [
+      "e68db0f3bced8e169a8c"
+     ],
+     "lesson": "01_grid_vs_random_search.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "successive halving",
+     "answer_hashes": [
+      "855c8a3c93758a38fe83"
+     ],
+     "lesson": "02_successive_halving_hyperband.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "multi",
+     "topic": "resource",
+     "answer_hashes": [
+      "bf641bd50be73d4b25a1"
+     ],
+     "lesson": "02_successive_halving_hyperband.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "SH risk",
+     "answer_hashes": [
+      "7580f6c0cc84568e6a1e"
+     ],
+     "lesson": "02_successive_halving_hyperband.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "hyperband",
+     "answer_hashes": [
+      "64f595df255ea8199a45"
+     ],
+     "lesson": "02_successive_halving_hyperband.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "BO components",
+     "answer_hashes": [
+      "5f00575a1684d9bfe9ad"
+     ],
+     "lesson": "03_bayesian_optimization_optuna.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "exploration",
+     "answer_hashes": [
+      "230a31f84ef284948fee"
+     ],
+     "lesson": "03_bayesian_optimization_optuna.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "TPE",
+     "answer_hashes": [
+      "87ec30d0d34665bd165f"
+     ],
+     "lesson": "03_bayesian_optimization_optuna.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "conditional space",
+     "answer_hashes": [
+      "ad5f35be47e7a38f007e"
+     ],
+     "lesson": "03_bayesian_optimization_optuna.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "tf",
+     "topic": "pruning",
+     "answer_hashes": [
+      "49b33bc07ddb57451179"
+     ],
+     "lesson": "03_bayesian_optimization_optuna.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "overfit validation",
+     "answer_hashes": [
+      "293258d4fa040ac28778"
+     ],
+     "lesson": "03_bayesian_optimization_optuna.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "tf",
+     "topic": "baseline",
+     "answer_hashes": [
+      "eec5f647a90eafcd7500"
+     ],
+     "lesson": "03_bayesian_optimization_optuna.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "grid size",
+     "answer_hashes": [
+      "18a564d9350e9bd59e29"
+     ],
+     "decimals": 0,
+     "lesson": "01_grid_vs_random_search.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "distinct values",
+     "answer_hashes": [
+      "14a95e9d2199e3550f58"
+     ],
+     "decimals": 0,
+     "lesson": "01_grid_vs_random_search.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "SH rounds",
+     "answer_hashes": [
+      "554c6f97fc851c9f7e80"
+     ],
+     "decimals": 0,
+     "lesson": "02_successive_halving_hyperband.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "loguniform",
+     "answer_hashes": [
+      "e4093312cb842978e093"
+     ],
+     "decimals": 2,
+     "lesson": "01_grid_vs_random_search.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "EI",
+     "answer_hashes": [
+      "0d971009596bcded4acd"
+     ],
+     "decimals": 3,
+     "lesson": "03_bayesian_optimization_optuna.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

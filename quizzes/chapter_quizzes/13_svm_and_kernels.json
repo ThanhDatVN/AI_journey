@@ -1,0 +1,235 @@
+{
+ "id": "13_svm_and_kernels",
+ "kind": "Chapter",
+ "title": "13 · SVM & Kernels",
+ "next": "14_model_evaluation",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "maximum margin",
+     "answer_hashes": [
+      "39f9a6605825786bd56b"
+     ],
+     "lesson": "01_maximum_margin_intuition.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "margin formula",
+     "answer_hashes": [
+      "11e3578eb91f5f3ce75f"
+     ],
+     "lesson": "01_maximum_margin_intuition.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "tf",
+     "topic": "support vectors",
+     "answer_hashes": [
+      "69540f8b68452f3a28e6"
+     ],
+     "lesson": "01_maximum_margin_intuition.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "convexity",
+     "answer_hashes": [
+      "969a6f68ddf2446b6d76"
+     ],
+     "lesson": "01_maximum_margin_intuition.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "C",
+     "answer_hashes": [
+      "b351cf332d66a289085e"
+     ],
+     "lesson": "02_soft_margin_hinge_loss_from_scratch.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "hinge loss",
+     "answer_hashes": [
+      "e1364892394fe73b40ec"
+     ],
+     "lesson": "02_soft_margin_hinge_loss_from_scratch.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "slack",
+     "answer_hashes": [
+      "dc3c2967cef1f533c1ea"
+     ],
+     "lesson": "02_soft_margin_hinge_loss_from_scratch.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "multi",
+     "topic": "SVM vs LR",
+     "answer_hashes": [
+      "cb3d348c992a5b729a90"
+     ],
+     "lesson": "02_soft_margin_hinge_loss_from_scratch.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "dual",
+     "answer_hashes": [
+      "f981801487994bc6c2d1"
+     ],
+     "lesson": "03_kernel_trick.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "RBF gamma",
+     "answer_hashes": [
+      "ad296f96b3307ef015f2"
+     ],
+     "lesson": "03_kernel_trick.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "tf",
+     "topic": "kernel validity",
+     "answer_hashes": [
+      "c6df69fd2dcefbf5db2d"
+     ],
+     "lesson": "03_kernel_trick.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "RBF dimension",
+     "answer_hashes": [
+      "a23001824a0594b6a1c5"
+     ],
+     "lesson": "03_kernel_trick.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "topic": "scaling",
+     "answer_hashes": [
+      "7cdc6ae182064ed19607"
+     ],
+     "lesson": "04_svm_in_practice_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "probability",
+     "answer_hashes": [
+      "e69de276eaa4871bb804"
+     ],
+     "lesson": "04_svm_in_practice_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "multi",
+     "topic": "large data",
+     "answer_hashes": [
+      "07be49d70872234bf1d1"
+     ],
+     "lesson": "04_svm_in_practice_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "SVR",
+     "answer_hashes": [
+      "d6ff2d88687c588cec4f"
+     ],
+     "lesson": "04_svm_in_practice_and_failure_cases.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "margin",
+     "answer_hashes": [
+      "5cbb817c3753e55dabdd"
+     ],
+     "decimals": 3,
+     "lesson": "01_maximum_margin_intuition.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "distance",
+     "answer_hashes": [
+      "ef89251722f3f51cf995"
+     ],
+     "decimals": 3,
+     "lesson": "01_maximum_margin_intuition.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "hinge",
+     "answer_hashes": [
+      "6dd5d46e05327b232c71"
+     ],
+     "decimals": 2,
+     "lesson": "02_soft_margin_hinge_loss_from_scratch.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "RBF",
+     "answer_hashes": [
+      "6081f1b97bb7091ddf24"
+     ],
+     "decimals": 3,
+     "lesson": "03_kernel_trick.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "polynomial kernel",
+     "answer_hashes": [
+      "a5541a326f9d1c5e6a6d"
+     ],
+     "decimals": 1,
+     "lesson": "03_kernel_trick.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

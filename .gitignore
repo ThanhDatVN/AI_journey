@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Data: chỉ commit data/sample (nhỏ, sinh tự động). raw/processed do bạn tự tạo.
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Artefacts sinh ra khi chạy notebook / project
+mlruns/
+mlartifacts/
+artifacts/
+models/*.joblib
+projects/**/models/
+projects/**/artifacts/
+*.pt
+*.pth
+lightning_logs/
+catboost_info/
+outputs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Ghi chú: progress/progress.json KHÔNG bị ignore — hãy commit nó trong fork của bạn
+# để lưu lịch sử học tập.
+
+# Bản gốc AIVN-Machine-Learning (nguồn đã được tích hợp vào notebooks/, ~200MB gồm CIFAR-10)
+AIVN-Machine-Learning-master/

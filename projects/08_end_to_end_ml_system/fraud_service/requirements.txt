@@ -1,0 +1,9 @@
+# Phụ thuộc runtime của dịch vụ — ghim đúng phiên bản dùng khi huấn luyện (cập nhật bằng `make freeze`).
+numpy==2.4.6
+pandas==2.3.3
+scipy==1.17.1
+scikit-learn==1.7.2
+joblib==1.6.0
+fastapi==0.141.1
+uvicorn==0.52.4
+pydantic==2.13.5

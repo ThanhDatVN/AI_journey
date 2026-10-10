@@ -1,0 +1,235 @@
+{
+ "id": "26_recommender_systems",
+ "kind": "Chapter",
+ "title": "26 · Recommender Systems",
+ "next": "27_deep_learning_foundations",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "feedback types",
+     "answer_hashes": [
+      "79a638878352e3ce902a"
+     ],
+     "lesson": "01_popularity_and_content_based.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "damped mean",
+     "answer_hashes": [
+      "4792d93a995693ee6d22"
+     ],
+     "lesson": "01_popularity_and_content_based.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "content-based",
+     "answer_hashes": [
+      "cea72f4e4c34682f0436"
+     ],
+     "lesson": "01_popularity_and_content_based.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "popularity baseline",
+     "answer_hashes": [
+      "0ebdd9e8b5a2e5d3b523"
+     ],
+     "lesson": "01_popularity_and_content_based.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "bias model",
+     "answer_hashes": [
+      "c4550017f9a969cf1271"
+     ],
+     "lesson": "02_collaborative_filtering.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "multi",
+     "topic": "similarity",
+     "answer_hashes": [
+      "20b0f519ad67c6ec34fa"
+     ],
+     "lesson": "02_collaborative_filtering.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "item vs user",
+     "answer_hashes": [
+      "a3dc89176449254e3779"
+     ],
+     "lesson": "02_collaborative_filtering.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "MF objective",
+     "answer_hashes": [
+      "931091dd26c40a904d85"
+     ],
+     "lesson": "03_matrix_factorization.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "ALS",
+     "answer_hashes": [
+      "09cf0e55445dd143ba01"
+     ],
+     "lesson": "03_matrix_factorization.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "tf",
+     "topic": "overfitting",
+     "answer_hashes": [
+      "ad5dea8d8b4d560a693c"
+     ],
+     "lesson": "03_matrix_factorization.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "PureSVD",
+     "answer_hashes": [
+      "e954145084cd094383ed"
+     ],
+     "lesson": "03_matrix_factorization.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "NDCG",
+     "answer_hashes": [
+      "696b74b3686619d4b859"
+     ],
+     "lesson": "04_ranking_metrics.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "RMSE vs ranking",
+     "answer_hashes": [
+      "b217f5afc020a7277aed"
+     ],
+     "lesson": "04_ranking_metrics.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "beyond accuracy",
+     "answer_hashes": [
+      "44c61f6aa8d861e73d89"
+     ],
+     "lesson": "04_ranking_metrics.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "MMR",
+     "answer_hashes": [
+      "31ffb1b75f1de39ff032"
+     ],
+     "lesson": "04_ranking_metrics.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "tf",
+     "topic": "feedback loop",
+     "answer_hashes": [
+      "e3f873e40dd80dbc8602"
+     ],
+     "lesson": "04_ranking_metrics.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "damped mean",
+     "answer_hashes": [
+      "52bf157a5747472f84a0"
+     ],
+     "decimals": 3,
+     "lesson": "01_popularity_and_content_based.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "cosine",
+     "answer_hashes": [
+      "f9ba8d165918460f5bd7"
+     ],
+     "decimals": 3,
+     "lesson": "02_collaborative_filtering.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "precision recall",
+     "answer_hashes": [
+      "8c24ebb12f88bf3fc376"
+     ],
+     "decimals": 3,
+     "lesson": "04_ranking_metrics.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "MRR",
+     "answer_hashes": [
+      "67d74bb7dbb9a26772e7"
+     ],
+     "decimals": 3,
+     "lesson": "04_ranking_metrics.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "MF prediction",
+     "answer_hashes": [
+      "4dcfae228afd239322ba"
+     ],
+     "decimals": 2,
+     "lesson": "03_matrix_factorization.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

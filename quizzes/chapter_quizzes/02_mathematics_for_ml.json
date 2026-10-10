@@ -1,0 +1,251 @@
+{
+ "id": "02_mathematics_for_ml",
+ "kind": "Chapter",
+ "title": "02 · Mathematics for ML",
+ "next": "03_data_analysis_and_eda",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "tf",
+     "topic": "nhân ma trận",
+     "answer_hashes": [
+      "3bc6a51a8d61fa98364b"
+     ],
+     "lesson": "02_linear_algebra.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "cosine similarity",
+     "answer_hashes": [
+      "883c4950f9117e3c6266"
+     ],
+     "lesson": "02_linear_algebra.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "rank / multicollinearity",
+     "answer_hashes": [
+      "93dcb4bb1c9d9873fcc8"
+     ],
+     "lesson": "03_rank_inverse_eigen_svd.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "eigenvector & PCA",
+     "answer_hashes": [
+      "5c6273d21ac86e61048c"
+     ],
+     "lesson": "03_rank_inverse_eigen_svd.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "gradient",
+     "answer_hashes": [
+      "afc8fa750b377479d3dc"
+     ],
+     "lesson": "04_calculus_and_gradients.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "gradient check",
+     "answer_hashes": [
+      "578354a1747f9df0e2c8"
+     ],
+     "lesson": "04_calculus_and_gradients.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "learning rate",
+     "answer_hashes": [
+      "76daae4cdca12d8b0143"
+     ],
+     "lesson": "05_gradient_descent.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "hàm lồi",
+     "answer_hashes": [
+      "dfba23357f9c578c1eca"
+     ],
+     "lesson": "04_calculus_and_gradients.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "base rate",
+     "answer_hashes": [
+      "009dd54647ef4688591f"
+     ],
+     "lesson": "06_probability.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "tf",
+     "topic": "covariance & độc lập",
+     "answer_hashes": [
+      "56486784c0a3e5bcca29"
+     ],
+     "lesson": "06_probability.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "MLE ↔ loss",
+     "answer_hashes": [
+      "ae4c79340587275f00ea"
+     ],
+     "lesson": "07_likelihood_mle_map.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "MAP ↔ regularization",
+     "answer_hashes": [
+      "f72f6a54aa3b9744d919"
+     ],
+     "lesson": "07_likelihood_mle_map.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "mean vs median",
+     "answer_hashes": [
+      "9c17ea64f8b37e11201f"
+     ],
+     "lesson": "08_statistics.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "Pearson correlation",
+     "answer_hashes": [
+      "af212bbe38181db52fbc"
+     ],
+     "lesson": "08_statistics.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "p-value",
+     "answer_hashes": [
+      "ed30dea4f3bb472fedb5"
+     ],
+     "lesson": "08_statistics.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "chuẩn vector",
+     "answer_hashes": [
+      "480a3482ffa40fbd9fd0"
+     ],
+     "decimals": 2,
+     "lesson": "02_linear_algebra.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "nhân ma trận",
+     "answer_hashes": [
+      "d01e643d58f8ccce5710"
+     ],
+     "decimals": 0,
+     "lesson": "02_linear_algebra.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "đạo hàm / chain rule",
+     "answer_hashes": [
+      "0b8e7b931363cf257a9b"
+     ],
+     "decimals": 2,
+     "lesson": "04_calculus_and_gradients.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "gradient descent",
+     "answer_hashes": [
+      "d6b54779b10a30e9ff25"
+     ],
+     "decimals": 2,
+     "lesson": "05_gradient_descent.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "Bayes",
+     "answer_hashes": [
+      "5cc061e1ff6a88be221a"
+     ],
+     "decimals": 3,
+     "lesson": "06_probability.ipynb"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "tổ hợp",
+     "answer_hashes": [
+      "134c3f7f5865b727a2ef"
+     ],
+     "decimals": 0,
+     "lesson": "06_probability.ipynb"
+    },
+    {
+     "id": "m07",
+     "type": "numeric",
+     "topic": "MLE Bernoulli",
+     "answer_hashes": [
+      "14dacd8bba40e12c4d08"
+     ],
+     "decimals": 2,
+     "lesson": "07_likelihood_mle_map.ipynb"
+    },
+    {
+     "id": "m08",
+     "type": "numeric",
+     "topic": "phương sai mẫu",
+     "answer_hashes": [
+      "97b3b3ca633afcd00aba"
+     ],
+     "decimals": 2,
+     "lesson": "08_statistics.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {}
+}

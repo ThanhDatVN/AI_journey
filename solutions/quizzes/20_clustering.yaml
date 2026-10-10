@@ -1,0 +1,256 @@
+title: "20 · Clustering"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: objective
+        lesson: 01_kmeans_from_scratch.ipynb
+        type: mcq
+        question: "K-Means tối thiểu đại lượng nào?"
+        options: {a: "Số cụm", b: "Tổng bình phương khoảng cách từ mỗi điểm tới tâm cụm của nó", c: "Khoảng cách giữa các tâm", d: "Silhouette"}
+        answer: b
+        explanation: "Inertia / WCSS."
+      - id: t02
+        topic: Lloyd convergence
+        lesson: 01_kmeans_from_scratch.ipynb
+        type: multi
+        question: "Phát biểu đúng về thuật toán Lloyd:"
+        options: {a: "Mỗi bước không làm tăng inertia", b: "Luôn hội tụ", c: "Luôn tìm nghiệm tối ưu toàn cục", d: "Kết quả phụ thuộc khởi tạo"}
+        answer: abd
+        explanation: "Cực tiểu địa phương."
+      - id: t03
+        topic: k-means++
+        lesson: 01_kmeans_from_scratch.ipynb
+        type: mcq
+        question: "k-means++ chọn tâm tiếp theo với xác suất tỉ lệ với:"
+        options: {a: "Mật độ điểm", b: "Bình phương khoảng cách tới tâm gần nhất đã chọn", c: "Thứ tự trong dữ liệu", d: "Đều nhau"}
+        answer: b
+        explanation: "Tâm trải đều → nghiệm tốt hơn."
+      - id: t04
+        topic: scaling
+        lesson: 01_kmeans_from_scratch.ipynb
+        type: tf
+        question: "Kết quả K-Means (không chuẩn hoá) có thể thay đổi khi đổi đơn vị một feature."
+        answer: true
+        explanation: "Khoảng cách Euclid phụ thuộc đơn vị."
+      - id: t05
+        topic: elbow
+        lesson: 02_choosing_k_and_failure_cases.ipynb
+        type: mcq
+        question: "Vì sao không chọn K có inertia nhỏ nhất?"
+        options: {a: "Inertia luôn giảm khi K tăng (K = n → 0)", b: "Inertia luôn tăng", c: "Inertia không tính được", d: "Vì chậm"}
+        answer: a
+        explanation: "Tìm khuỷu tay hoặc dùng chỉ số khác."
+      - id: t06
+        topic: silhouette
+        lesson: 02_choosing_k_and_failure_cases.ipynb
+        type: mcq
+        question: "Silhouette s(i) âm cho biết:"
+        options: {a: "Điểm nằm sâu trong cụm", b: "Điểm có lẽ bị gán nhầm cụm", c: "Điểm là tâm cụm", d: "Điểm là nhiễu"}
+        answer: b
+        explanation: "a(i) > b(i)."
+      - id: t07
+        topic: ARI
+        lesson: 02_choosing_k_and_failure_cases.ipynb
+        type: tf
+        question: "ARI thay đổi khi đổi tên (nhãn số) của các cụm."
+        answer: false
+        explanation: "Bất biến với hoán vị nhãn."
+      - id: t08
+        topic: failure
+        lesson: 02_choosing_k_and_failure_cases.ipynb
+        type: multi
+        question: "K-Means thường thất bại khi cụm:"
+        options: {a: "Không lồi (mặt trăng, vòng)", b: "Dị hướng / phương sai khác nhau", c: "Kích thước rất khác nhau", d: "Tròn, tách biệt, cùng kích thước"}
+        answer: abc
+        explanation: "Giả định cụm lồi, đẳng hướng."
+      - id: t09
+        topic: linkage
+        lesson: 03_hierarchical_clustering.ipynb
+        type: mcq
+        question: "Single linkage đo khoảng cách hai cụm bằng:"
+        options: {a: "Khoảng cách xa nhất giữa hai điểm", b: "Khoảng cách gần nhất giữa hai điểm", c: "Khoảng cách giữa hai tâm", d: "Mức tăng phương sai"}
+        answer: b
+        explanation: "Dễ bị chaining."
+      - id: t10
+        topic: chaining
+        lesson: 03_hierarchical_clustering.ipynb
+        type: mcq
+        question: "Hiện tượng chaining của single linkage là:"
+        options:
+          a: "Hai cụm bị nối thành một qua một chuỗi điểm nhiễu mảnh"
+          b: "Cụm bị chia nhỏ"
+          c: "Thuật toán không hội tụ"
+          d: "Dendrogram bị đảo ngược"
+        answer: a
+        explanation: "Bài 03."
+      - id: t11
+        topic: dendrogram
+        lesson: 03_hierarchical_clustering.ipynb
+        type: tf
+        question: "Một lần chạy agglomerative clustering cho kết quả với mọi số cụm (cắt dendrogram ở độ cao khác nhau)."
+        answer: true
+        explanation: "Không cần chọn K trước."
+      - id: t12
+        topic: scalability
+        lesson: 03_hierarchical_clustering.ipynb
+        type: mcq
+        question: "Vì sao hierarchical clustering khó áp dụng cho hàng triệu điểm?"
+        options: {a: "Cần ma trận khoảng cách O(n²)", b: "Không xử lý số thực", c: "Cần K trước", d: "Chỉ chạy 2D"}
+        answer: a
+        explanation: "Bộ nhớ và thời gian."
+      - id: t13
+        topic: DBSCAN core
+        lesson: 04_dbscan.ipynb
+        type: mcq
+        question: "Trong DBSCAN, điểm không phải core nhưng nằm trong bán kính eps của một core point là:"
+        options: {a: "Noise", b: "Border point", c: "Centroid", d: "Outlier"}
+        answer: b
+        explanation: "Thuộc cụm của core point đó."
+      - id: t14
+        topic: eps
+        lesson: 04_dbscan.ipynb
+        type: mcq
+        question: "Chọn eps cho DBSCAN bằng:"
+        options: {a: "Elbow inertia", b: "k-distance plot (khoảng cách tới láng giềng thứ min_samples)", c: "Silhouette của K-Means", d: "Ngẫu nhiên"}
+        answer: b
+        explanation: "Chọn ở khuỷu nơi đường cong vọt lên."
+      - id: t15
+        topic: density variation
+        lesson: 04_dbscan.ipynb
+        type: mcq
+        question: "Các cụm có mật độ rất khác nhau. Thuật toán phù hợp hơn DBSCAN:"
+        options: {a: "K-Means", b: "HDBSCAN", c: "Single linkage", d: "Ward"}
+        answer: b
+        explanation: "Xét mọi mức mật độ."
+      - id: t16
+        topic: noise
+        lesson: 04_dbscan.ipynb
+        type: multi
+        question: "Thuật toán nào có thể gán điểm là nhiễu (−1)?"
+        options: {a: "DBSCAN", b: "HDBSCAN", c: "K-Means", d: "Agglomerative"}
+        answer: ab
+        explanation: "Dựa trên mật độ."
+  math:
+    questions:
+      - id: m01
+        topic: centroid
+        lesson: 01_kmeans_from_scratch.ipynb
+        type: numeric
+        decimals: 2
+        question: "Cụm 1D gồm {2, 4, 9}. Tâm sau bước cập nhật = ?"
+        answer: 5
+        explanation: "Trung bình."
+      - id: m02
+        topic: inertia
+        lesson: 01_kmeans_from_scratch.ipynb
+        type: numeric
+        decimals: 2
+        question: "Cụm {2, 4, 9} với tâm 5. Đóng góp inertia của cụm = ?"
+        answer: 26
+        explanation: "9 + 1 + 16."
+      - id: m03
+        topic: silhouette
+        lesson: 02_choosing_k_and_failure_cases.ipynb
+        type: numeric
+        decimals: 3
+        question: "a(i) = 2, b(i) = 5. s(i) = ?"
+        answer: 0.6
+        explanation: "(5 − 2)/5."
+      - id: m04
+        topic: complexity
+        lesson: 01_kmeans_from_scratch.ipynb
+        type: numeric
+        decimals: 0
+        question: "K-Means: n = 10 000 điểm, K = 10, d = 5. Số phép tính khoảng cách (cặp điểm–tâm) mỗi vòng = ?"
+        answer: 100000
+        explanation: "n·K."
+      - id: m05
+        topic: merges
+        lesson: 03_hierarchical_clustering.ipynb
+        type: numeric
+        decimals: 0
+        question: "Agglomerative clustering trên 50 điểm cho tới khi còn 1 cụm thực hiện bao nhiêu lần gộp?"
+        answer: 49
+        explanation: "n − 1."
+coding:
+  tasks:
+    - id: c01
+      title: Bước gán và cập nhật
+      prompt: |
+        Viết `lloyd_step(X, centers)` trả về `(labels, new_centers)`: gán mỗi điểm về tâm gần nhất (Euclid), tâm mới = trung bình các điểm
+        của cụm (giữ tâm cũ nếu cụm rỗng).
+      code: |
+        def lloyd_step(X, centers):
+            ### START CODE HERE ### (≈ 3 dòng)
+            labels = ((X[:, None, :] - centers[None]) ** 2).sum(-1).argmin(1)
+            new_centers = np.array([X[labels == k].mean(0) if np.any(labels == k) else centers[k] for k in range(len(centers))])
+            ### END CODE HERE ###
+            return labels, new_centers
+      tests: |
+        X = np.array([[0, 0], [0, 1], [10, 10], [10, 11.0]])
+        labels, c = lloyd_step(X, np.array([[0, 0], [10, 10.0]]))
+        check_equal(labels.tolist(), [0, 0, 1, 1], "gán")
+        check_close(c, [[0, 0.5], [10, 10.5]], message="tâm mới")
+        _, c2 = lloyd_step(X, np.array([[0, 0], [10, 10.0], [100, 100.0]]))
+        check_close(c2[2], [100, 100], message="cụm rỗng giữ tâm cũ")
+    - id: c02
+      title: Silhouette một điểm
+      prompt: |
+        Viết `silhouette_point(i, X, labels)` (khoảng cách Euclid) theo định nghĩa s(i) = (b − a)/max(a, b).
+      code: |
+        def silhouette_point(i, X, labels):
+            ### START CODE HERE ### (≈ 5 dòng)
+            d = np.linalg.norm(X - X[i], axis=1)
+            same = (labels == labels[i]) & (np.arange(len(X)) != i)
+            a = d[same].mean()
+            b = min(d[labels == c].mean() for c in np.unique(labels) if c != labels[i])
+            s = (b - a) / max(a, b)
+            ### END CODE HERE ###
+            return s
+      tests: |
+        from sklearn.metrics import silhouette_samples
+        rng = np.random.default_rng(3)
+        X = rng.normal(size=(40, 2))
+        labels = rng.integers(0, 3, 40)
+        ref = silhouette_samples(X, labels)
+        check_close([silhouette_point(i, X, labels) for i in range(5)], ref[:5], tol=1e-9, message="khớp sklearn")
+analysis:
+  prompt: |
+    Một chuỗi bán lẻ chạy K-Means (K = 8, không chuẩn hoá) trên các cột: tổng chi tiêu năm (VND, 0 → 2 tỉ), số lần mua, tuổi, mã quận (1–24).
+    Họ báo cáo "8 phân khúc khách hàng", nhưng khi xem lại, các cụm chỉ khác nhau về tổng chi tiêu; chạy lại tháng sau thì các cụm thay đổi
+    hoàn toàn. Họ chọn K = 8 vì "inertia nhỏ hơn K = 4". Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra không chuẩn hoá: tổng chi tiêu (đơn vị VND, thang đo rất lớn) áp đảo khoảng cách → cụm chỉ theo chi tiêu"
+    - "Chỉ ra mã quận là biến phân loại, coi như số liên tục trong khoảng cách Euclid là sai → one-hot/bỏ/encode khác hoặc dùng thuật toán cho dữ liệu hỗn hợp"
+    - "Chỉ ra chọn K bằng inertia nhỏ nhất là sai (inertia luôn giảm) → elbow/silhouette + mục đích kinh doanh"
+    - "Chỉ ra cụm không ổn định → kiểm tra độ ổn định (bootstrap/ARI giữa các lần chạy), cố định random_state, n_init"
+    - "Đề xuất quy trình: chọn feature hành vi có ý nghĩa, log-transform chi tiêu lệch, scale, chọn K theo chỉ số + khả năng hành động, profile và đặt tên cụm"
+  sample_answer: |
+    (1) Không scale: tổng chi tiêu theo VND có độ lớn ~10⁹ → khoảng cách gần như chỉ do chi tiêu → cụm chỉ khác nhau về chi tiêu. Log-transform chi tiêu (lệch phải) rồi chuẩn hoá.
+    (2) Mã quận 1–24 là category; khoảng cách giữa quận 1 và quận 24 không có nghĩa → one-hot (có trọng số phù hợp), hoặc dùng feature địa lý thật (khoảng cách tới trung tâm), hoặc thuật toán cho dữ liệu hỗn hợp (k-prototypes, Gower).
+    (3) Inertia luôn giảm khi K tăng → chọn K bằng elbow/silhouette và số phân khúc marketing thực sự phục vụ được.
+    (4) Cụm thay đổi giữa các tháng → kiểm tra độ ổn định (bootstrap, ARI giữa các lần chạy), n_init lớn hơn, cố định seed; cụm không ổn định thì không nên dùng ra quyết định.
+    (5) Cuối cùng profile từng cụm (trung vị feature), đặt tên, kiểm tra với đội kinh doanh.
+project:
+  prompt: |
+    **Mini project — Phát hiện nhóm và điểm bất thường.** Dữ liệu tổng hợp: hai cụm hình mặt trăng (`make_moons(n_samples=800, noise=0.05, random_state=11)`)
+    cộng 40 điểm nhiễu đều trong hộp [−1.5, 2.5] × [−1, 1.5] (`np.random.default_rng(11)`). Dùng DBSCAN hoặc HDBSCAN (chọn tham số hợp lý, có thể dùng k-distance)
+    để tìm cụm. Yêu cầu: ARI trên 800 điểm gốc **≥ 0.95** (biến `ari`) và **≥ 60%** điểm nhiễu thêm vào được gán −1 (biến `noise_recall`).
+  code: |
+    from sklearn.cluster import DBSCAN
+    from sklearn.datasets import make_moons
+    from sklearn.metrics import adjusted_rand_score
+
+    X0, y0 = make_moons(n_samples=800, noise=0.05, random_state=11)
+    noise_pts = np.random.default_rng(11).uniform([-1.5, -1], [2.5, 1.5], (40, 2))
+    X = np.vstack([X0, noise_pts])
+    ### START CODE HERE ### (≈ 4 dòng)
+    labels = DBSCAN(eps=0.12, min_samples=6).fit_predict(X)
+    ari = adjusted_rand_score(y0, labels[:800])
+    noise_recall = np.mean(labels[800:] == -1)
+    ### END CODE HERE ###
+    print(f"số cụm = {labels.max() + 1} | ARI = {ari:.3f} | tỉ lệ điểm nhiễu bị gán −1 = {noise_recall:.0%}")
+  tests: |
+    check_greater(ari, 0.95, "ARI ≥ 0.95")
+    check_greater(noise_recall, 0.6, "≥ 60% điểm nhiễu được phát hiện")

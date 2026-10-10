@@ -1,0 +1,288 @@
+title: "23 · Probabilistic Machine Learning"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: covariance geometry
+        lesson: 01_multivariate_gaussian.ipynb
+        type: mcq
+        question: "Các trục của ellipse đồng mức của 𝒩(μ, Σ) nằm theo:"
+        options: {a: "Vector riêng của Σ, bán trục tỉ lệ √λ", b: "Các trục toạ độ", c: "Hướng của μ", d: "Vector riêng của Σ, bán trục tỉ lệ λ²"}
+        answer: a
+        explanation: "Σ = QΛQᵀ."
+      - id: t02
+        topic: conditional
+        lesson: 01_multivariate_gaussian.ipynb
+        type: multi
+        question: "Với Gaussian chung, phân phối có điều kiện p(x_a | x_b):"
+        options:
+          a: "Vẫn là Gaussian"
+          b: "Có kỳ vọng tuyến tính theo x_b"
+          c: "Có phương sai phụ thuộc giá trị x_b quan sát được"
+          d: "Có phương sai không lớn hơn phương sai biên"
+        answer: abd
+        explanation: "Σ_a|b = Σ_aa − Σ_ab Σ_bb⁻¹ Σ_ba không phụ thuộc x_b."
+      - id: t03
+        topic: sampling
+        lesson: 01_multivariate_gaussian.ipynb
+        type: mcq
+        question: "Lấy mẫu từ 𝒩(μ, Σ) khi có bộ sinh z ~ 𝒩(0, I):"
+        options: {a: "x = μ + Lz với Σ = LLᵀ (Cholesky)", b: "x = μ + Σz", c: "x = μ + z/Σ", d: "x = Σμ + z"}
+        answer: a
+        explanation: "Cov(Lz) = LLᵀ = Σ."
+      - id: t04
+        topic: LDA vs QDA
+        lesson: 01_multivariate_gaussian.ipynb
+        type: mcq
+        question: "LDA cho ranh giới tuyến tính vì:"
+        options:
+          a: "Mọi lớp dùng chung một ma trận hiệp phương sai nên số hạng bậc hai triệt tiêu"
+          b: "Nó dùng hồi quy tuyến tính"
+          c: "Các feature độc lập"
+          d: "Nó chỉ dùng trung bình"
+        answer: a
+        explanation: "QDA: Σ riêng mỗi lớp → bậc hai."
+      - id: t05
+        topic: shrinkage
+        lesson: 01_multivariate_gaussian.ipynb
+        type: tf
+        question: "Khi số mẫu n nhỏ hơn số chiều d, ma trận hiệp phương sai MLE suy biến; shrinkage (Ledoit–Wolf) khắc phục."
+        answer: true
+        explanation: "Rank ≤ n − 1."
+      - id: t06
+        topic: EM
+        lesson: 02_gmm_and_em.ipynb
+        type: mcq
+        question: "Trong EM cho GMM, E-step tính:"
+        options: {a: "Responsibility r_ik = P(z_i = k | x_i)", b: "Trung bình mới", c: "Số cụm tối ưu", d: "Gradient của log-likelihood"}
+        answer: a
+        explanation: "M-step dùng r_ik làm trọng số để cập nhật π, μ, Σ."
+      - id: t07
+        topic: EM monotone
+        lesson: 02_gmm_and_em.ipynb
+        type: multi
+        question: "Phát biểu đúng về EM:"
+        options:
+          a: "Log-likelihood không giảm qua các vòng"
+          b: "Luôn hội tụ tới cực đại toàn cục"
+          c: "Kết quả phụ thuộc khởi tạo"
+          d: "E-step làm cận dưới (ELBO) chạm log-likelihood"
+        answer: acd
+        explanation: "Chỉ bảo đảm cực đại địa phương → n_init."
+      - id: t08
+        topic: choosing K
+        lesson: 02_gmm_and_em.ipynb
+        type: mcq
+        question: "Chọn số thành phần GMM bằng:"
+        options: {a: "BIC nhỏ nhất", b: "Log-likelihood train lớn nhất", c: "Số thành phần lớn nhất có thể", d: "Accuracy"}
+        answer: a
+        explanation: "Log-likelihood luôn tăng theo K."
+      - id: t09
+        topic: singularity
+        lesson: 02_gmm_and_em.ipynb
+        type: mcq
+        question: "Một thành phần GMM co về đúng một điểm dữ liệu với phương sai → 0. Điều gì xảy ra?"
+        options: {a: "Log-likelihood → +∞ (suy biến); chữa bằng reg_covar hoặc prior", b: "Log-likelihood → −∞", c: "EM dừng với nghiệm tốt nhất", d: "Không thể xảy ra"}
+        answer: a
+        explanation: "Mật độ tại điểm đó tiến tới vô cùng."
+      - id: t10
+        topic: posterior
+        lesson: 03_bayesian_linear_regression.ipynb
+        type: mcq
+        question: "Trong hồi quy tuyến tính Bayes với prior 𝒩(0, α⁻¹I) và nhiễu precision β, trung bình hậu nghiệm bằng nghiệm Ridge với λ = ?"
+        options: {a: "α/β", b: "β/α", c: "αβ", d: "1/α"}
+        answer: a
+        explanation: "MAP = Ridge."
+      - id: t11
+        topic: predictive variance
+        lesson: 03_bayesian_linear_regression.ipynb
+        type: multi
+        question: "Phương sai dự đoán β⁻¹ + φᵀS_Nφ:"
+        options:
+          a: "Thành phần β⁻¹ là nhiễu không giảm được"
+          b: "φᵀS_Nφ giảm khi có thêm dữ liệu gần x"
+          c: "Lớn hơn ở vùng không có dữ liệu (trong phạm vi hàm cơ sở)"
+          d: "Luôn bằng 0 với đủ dữ liệu"
+        answer: abc
+        explanation: "Không bao giờ nhỏ hơn mức nhiễu."
+      - id: t12
+        topic: evidence
+        lesson: 03_bayesian_linear_regression.ipynb
+        type: tf
+        question: "Marginal likelihood (evidence) tăng mãi khi tăng bậc đa thức, giống sai số train giảm mãi."
+        answer: false
+        explanation: "Bayesian Occam's razor — evidence phạt độ phức tạp."
+      - id: t13
+        topic: GP definition
+        lesson: 04_gaussian_processes.ipynb
+        type: mcq
+        question: "Kernel k(x, x') trong Gaussian Process biểu diễn:"
+        options: {a: "Hiệp phương sai giữa f(x) và f(x')", b: "Khoảng cách Euclid", c: "Trọng số của mạng", d: "Learning rate"}
+        answer: a
+        explanation: "Mọi tập hữu hạn giá trị hàm ~ Gaussian với hiệp phương sai K."
+      - id: t14
+        topic: length scale
+        lesson: 04_gaussian_processes.ipynb
+        type: mcq
+        question: "Length scale ℓ của RBF quá nhỏ dẫn tới:"
+        options: {a: "Hàm uốn qua mọi điểm, bất định lớn ngay giữa các điểm dữ liệu", b: "Gần đường thẳng", c: "Không thay đổi gì", d: "Phương sai bằng 0"}
+        answer: a
+        explanation: "Chọn ℓ bằng log marginal likelihood."
+      - id: t15
+        topic: extrapolation
+        lesson: 04_gaussian_processes.ipynb
+        type: mcq
+        question: "GP với kernel RBF dự đoán xa ngoài vùng dữ liệu sẽ:"
+        options: {a: "Quay về trung bình prior, độ bất định về mức prior", b: "Tiếp tục xu hướng tuyến tính", c: "Lặp lại mùa vụ", d: "Báo lỗi"}
+        answer: a
+        explanation: "Cần kernel tuyến tính/tuần hoàn để ngoại suy xu hướng/mùa vụ."
+      - id: t16
+        topic: GP cost
+        lesson: 04_gaussian_processes.ipynb
+        type: mcq
+        question: "Chi phí huấn luyện GP chính xác với n điểm:"
+        options: {a: "O(n³) thời gian, O(n²) bộ nhớ", b: "O(n)", c: "O(n log n)", d: "O(d³) theo số feature"}
+        answer: a
+        explanation: "Cholesky của ma trận n × n."
+      - id: t17
+        topic: HMM problems
+        lesson: 05_hidden_markov_models.ipynb
+        type: mcq
+        question: "Thuật toán tìm chuỗi trạng thái ẩn khả dĩ nhất của HMM:"
+        options: {a: "Viterbi", b: "Forward", c: "Baum–Welch", d: "K-Means"}
+        answer: a
+        explanation: "Forward: likelihood; Baum–Welch: học tham số."
+      - id: t18
+        topic: forward complexity
+        lesson: 05_hidden_markov_models.ipynb
+        type: tf
+        question: "Thuật toán forward tính P(x₁..x_T) với chi phí O(T·K²) thay vì O(K^T) nhờ quy hoạch động."
+        answer: true
+        explanation: "Tính α_t từ α_{t−1}."
+  math:
+    questions:
+      - id: m01
+        topic: conditional mean
+        lesson: 01_multivariate_gaussian.ipynb
+        type: numeric
+        decimals: 2
+        question: "μ = [0, 0], Σ = [[1, 0.5], [0.5, 1]]. E[x₁ | x₂ = 2] = ?"
+        answer: 1
+        explanation: "0 + 0.5/1 · 2."
+      - id: m02
+        topic: conditional variance
+        lesson: 01_multivariate_gaussian.ipynb
+        type: numeric
+        decimals: 2
+        question: "Cùng Σ = [[1, 0.5], [0.5, 1]]. Var(x₁ | x₂) = ?"
+        answer: 0.75
+        explanation: "1 − 0.5²/1."
+      - id: m03
+        topic: responsibility
+        lesson: 02_gmm_and_em.ipynb
+        type: numeric
+        decimals: 3
+        question: "GMM 1D: π = [0.5, 0.5], μ = [0, 2], σ = [1, 1]. Responsibility của thành phần 1 tại x = 1?"
+        answer: 0.5
+        explanation: "x cách đều hai tâm, cùng σ và π."
+      - id: m04
+        topic: bayes posterior
+        lesson: 03_bayesian_linear_regression.ipynb
+        type: numeric
+        decimals: 3
+        question: "y = wx + ε, prior w ~ 𝒩(0, 1), β = 1. Một điểm x = 1, y = 2. Trung bình hậu nghiệm m_N = ?"
+        answer: 1
+        explanation: "S_N = 1/(1 + 1) = 0.5; m_N = 1 · 0.5 · 1 · 2 = 1."
+      - id: m05
+        topic: markov
+        lesson: 05_hidden_markov_models.ipynb
+        type: numeric
+        decimals: 2
+        question: "Chuỗi Markov 2 trạng thái A = [[0.9, 0.1], [0.5, 0.5]]. Xác suất dừng của trạng thái 1?"
+        answer: 0.83
+        explanation: "π₁·0.1 = π₂·0.5 → π₁ = 5/6."
+coding:
+  tasks:
+    - id: c01
+      title: Gaussian có điều kiện (2 biến)
+      prompt: |
+        Viết `conditional_1d(mu, Sigma, x2)` trả về `(mean, var)` của x₁ | x₂ cho Gaussian 2 chiều.
+      code: |
+        def conditional_1d(mu, Sigma, x2):
+            ### START CODE HERE ### (≈ 2 dòng)
+            mean = mu[0] + Sigma[0][1] / Sigma[1][1] * (x2 - mu[1])
+            var = Sigma[0][0] - Sigma[0][1] ** 2 / Sigma[1][1]
+            ### END CODE HERE ###
+            return mean, var
+      tests: |
+        m, v = conditional_1d([1, 2], [[4, 2], [2, 3]], 5)
+        check_close(m, 3.0, message="kỳ vọng")
+        check_close(v, 8 / 3, message="phương sai")
+        m0, v0 = conditional_1d([0, 0], [[2, 0], [0, 1]], 10)
+        check_close([m0, v0], [0.0, 2.0], message="độc lập → không đổi")
+    - id: c02
+      title: Responsibility của GMM
+      prompt: |
+        Viết `responsibilities(x, weights, means, stds)` cho GMM 1D: trả về ma trận (n, K) với r_ik, tính trong không gian log (dùng `scipy.special.logsumexp`).
+      code: |
+        from scipy.special import logsumexp
+        from scipy.stats import norm
+
+        def responsibilities(x, weights, means, stds):
+            x = np.asarray(x, float)
+            ### START CODE HERE ### (≈ 2 dòng)
+            log_p = np.log(weights)[None] + norm.logpdf(x[:, None], np.asarray(means)[None], np.asarray(stds)[None])
+            return np.exp(log_p - logsumexp(log_p, axis=1, keepdims=True))
+            ### END CODE HERE ###
+      tests: |
+        R = responsibilities([1.0, 1.5, 100.0], [0.5, 0.5], [0, 2], [1, 1])
+        check_close(R.sum(1), np.ones(3), message="mỗi hàng tổng = 1")
+        check_close(R[0, 0], 0.5, message="điểm cách đều hai tâm")
+        check_close(R[1, 0], 1 / (1 + np.exp(1.0)), tol=1e-9, message="x = 1.5")
+        check_true(np.isfinite(R).all() and R[2, 1] > 0.999, "ổn định số khi x rất xa")
+analysis:
+  prompt: |
+    Một công ty logistics dự báo thời gian giao hàng (giờ). Nhóm A dùng Gradient Boosting (RMSE tốt nhất) và báo cáo "sai số ±2 giờ" cho mọi đơn.
+    Nhóm B đề xuất hồi quy Bayes / Gaussian Process để có khoảng dự đoán riêng cho từng đơn. Dữ liệu: 50 000 đơn/tháng, nhiều tuyến mới mở
+    gần như chưa có dữ liệu; một số tuyến có thời gian giao rất biến động (ùn tắc). Ban lãnh đạo muốn cam kết thời gian giao với khách hàng
+    "đúng hạn ≥ 95%". Bạn khuyến nghị gì? Nêu cách kiểm chứng.
+  rubric:
+    - "Chỉ ra một sai số ±2 giờ chung bỏ qua bất định khác nhau giữa các đơn (tuyến mới, tuyến biến động); cam kết 95% cần khoảng theo từng đơn"
+    - "Nêu ưu điểm mô hình xác suất: bất định tăng ở vùng ít dữ liệu (tuyến mới); phân biệt nhiễu (aleatoric) và thiếu dữ liệu (epistemic)"
+    - "Nêu giới hạn: GP chính xác O(n³) không chạy với 50 000 đơn/tháng → sparse GP, Bayesian linear trên feature, quantile regression/GBM, conformal prediction; nhiễu thay đổi theo tuyến (heteroscedastic) vi phạm giả định nhiễu chung"
+    - "Đề xuất kiểm chứng bằng độ phủ thực tế của khoảng 95% trên dữ liệu giữ lại theo thời gian, theo nhóm tuyến (mới/cũ, biến động)"
+    - "Đề cập quyết định kinh doanh: cam kết dựa trên phân vị 95% của từng đơn, theo dõi và hiệu chỉnh lại khi dữ liệu thay đổi"
+  sample_answer: |
+    (1) Sai số ±2 giờ chung là trung bình — tuyến mới (thiếu dữ liệu) và tuyến ùn tắc (nhiễu lớn) sẽ trễ hạn nhiều hơn 5%; tuyến ổn định thì cam kết quá
+    rộng. Cần khoảng dự đoán riêng từng đơn. (2) Mô hình xác suất cho bất định gồm nhiễu (aleatoric) + thiếu dữ liệu (epistemic, lớn ở tuyến mới).
+    (3) Nhưng GP chính xác O(n³) không khả thi với 50 000 đơn → sparse GP / Bayesian linear trên feature tốt / quantile regression bằng GBM (phân vị 95%)
+    / conformal prediction bao quanh model tốt nhất; nhiễu khác nhau theo tuyến → cần mô hình phương sai thay đổi. (4) Kiểm chứng: backtest theo thời gian,
+    đo tỉ lệ đơn rơi vào khoảng 95% tổng thể và theo nhóm tuyến; hiệu chỉnh nếu lệch. (5) Cam kết = phân vị 95% từng đơn, theo dõi liên tục.
+project:
+  prompt: |
+    **Mini project — Gaussian Process cho chuỗi có xu hướng và mùa vụ.** Dữ liệu: 80 quan sát của y = 0.4x + 2·sin(2πx/3) + nhiễu (σ = 0.3)
+    trên x ∈ [0, 12]. Dự báo x ∈ (12, 18]. Chọn kernel (sklearn) sao cho: RMSE ngoại suy so với hàm thật < 0.5 (biến `rmse_future`)
+    **và** độ phủ khoảng 95% trên 500 điểm mới có nhiễu trong (12, 18] ≥ 0.85 (biến `coverage`).
+  code: |
+    from sklearn.gaussian_process import GaussianProcessRegressor
+    from sklearn.gaussian_process.kernels import RBF, ConstantKernel, DotProduct, ExpSineSquared, WhiteKernel
+
+    rng = np.random.default_rng(0)
+    f = lambda x: 0.4 * x + 2 * np.sin(2 * np.pi * x / 3)
+    x_tr = np.sort(rng.uniform(0, 12, 80))
+    y_tr = f(x_tr) + rng.normal(0, 0.3, 80)
+    x_new = rng.uniform(12, 18, 500)
+    y_new = f(x_new) + rng.normal(0, 0.3, 500)
+    ### START CODE HERE ### (≈ 6 dòng)
+    kernel = ConstantKernel(0.1) * DotProduct(1.0) + ConstantKernel(1.0) * ExpSineSquared(1.0, 3.0) + WhiteKernel(0.1)
+    gp = GaussianProcessRegressor(kernel, normalize_y=True, n_restarts_optimizer=3, random_state=0).fit(x_tr[:, None], y_tr)
+    grid = np.linspace(12, 18, 200)
+    rmse_future = np.sqrt(np.mean((gp.predict(grid[:, None]) - f(grid)) ** 2))
+    m, s = gp.predict(x_new[:, None], return_std=True)
+    coverage = np.mean(np.abs(y_new - m) < 1.96 * s)
+    ### END CODE HERE ###
+    print(gp.kernel_)
+    print(f"RMSE ngoại suy = {rmse_future:.3f} | độ phủ 95% = {coverage:.3f}")
+  tests: |
+    check_less(rmse_future, 0.5, "RMSE ngoại suy < 0.5")
+    check_greater(coverage, 0.85, "độ phủ khoảng 95% ≥ 0.85")

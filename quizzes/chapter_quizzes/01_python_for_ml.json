@@ -1,0 +1,212 @@
+{
+ "id": "01_python_for_ml",
+ "kind": "Chapter",
+ "title": "01 · Python for ML",
+ "next": "02_mathematics_for_ml",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "list vs ndarray",
+     "answer_hashes": [
+      "61693a3a096a416760ad"
+     ],
+     "lesson": "01_python_basics.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "aliasing",
+     "answer_hashes": [
+      "e7687b5e884663404d02"
+     ],
+     "lesson": "01_python_basics.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "mutable default argument",
+     "answer_hashes": [
+      "3b1e481ee3f581527902"
+     ],
+     "lesson": "01_python_basics.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "view vs copy",
+     "answer_hashes": [
+      "5646026e0f5ee812b1a1"
+     ],
+     "lesson": "02_numpy.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "axis",
+     "answer_hashes": [
+      "958ef20a9cf44dc40549"
+     ],
+     "lesson": "02_numpy.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "tf",
+     "topic": "* vs @",
+     "answer_hashes": [
+      "6776b70575f5974297a1"
+     ],
+     "lesson": "02_numpy.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "multi",
+     "topic": "vectorization",
+     "answer_hashes": [
+      "3d5035b233420dd1d75e"
+     ],
+     "lesson": "03_numpy_vectorization_and_broadcasting.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "ổn định số học softmax",
+     "answer_hashes": [
+      "efebe3fb47e0c2e22965"
+     ],
+     "lesson": "03_numpy_vectorization_and_broadcasting.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "SettingWithCopyWarning",
+     "answer_hashes": [
+      "10e40a0cf59357a19554"
+     ],
+     "lesson": "04_pandas_essentials.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "bug (n,) vs (n,1)",
+     "answer_hashes": [
+      "b31e009fc080b776026d"
+     ],
+     "lesson": "06_debugging_shapes_and_performance.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "NoneType",
+     "answer_hashes": [
+      "bf94c44c5ee8457e3dfb"
+     ],
+     "lesson": "07_common_python_errors.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "tf",
+     "topic": "except pass",
+     "answer_hashes": [
+      "e348aa17577104b5b5da"
+     ],
+     "lesson": "07_common_python_errors.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "kernel environment",
+     "answer_hashes": [
+      "7911ac0be80a28e733d4"
+     ],
+     "lesson": "07_common_python_errors.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "logic errors",
+     "answer_hashes": [
+      "d49e271e931312792dbd"
+     ],
+     "lesson": "07_common_python_errors.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "broadcasting shape",
+     "answer_hashes": [
+      "9da13425457d0045402a"
+     ],
+     "decimals": 0,
+     "lesson": "03_numpy_vectorization_and_broadcasting.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "axis",
+     "answer_hashes": [
+      "529c182c5a70bae8f40b"
+     ],
+     "decimals": 0,
+     "lesson": "02_numpy.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "dot product",
+     "answer_hashes": [
+      "41acbda2a5b763b5750c"
+     ],
+     "decimals": 0,
+     "lesson": "02_numpy.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "chuẩn hoá",
+     "answer_hashes": [
+      "a71d5712229f68c7d1e6"
+     ],
+     "decimals": 2,
+     "lesson": "03_numpy_vectorization_and_broadcasting.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "bộ nhớ",
+     "answer_hashes": [
+      "ba457d0799206ee5a265"
+     ],
+     "decimals": 0,
+     "lesson": "06_debugging_shapes_and_performance.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {}
+}

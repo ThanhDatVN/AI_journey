@@ -1,0 +1,253 @@
+{
+ "id": "29_cnn",
+ "kind": "Chapter",
+ "title": "29 · CNN",
+ "next": "30_sequence_models",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "why conv",
+     "answer_hashes": [
+      "72f80a4c5332f89f6e70"
+     ],
+     "lesson": "01_convolution_from_scratch.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "output size",
+     "answer_hashes": [
+      "391dd1dcc84efaf0d787"
+     ],
+     "lesson": "01_convolution_from_scratch.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "params",
+     "answer_hashes": [
+      "c57f70da5271ba049a44"
+     ],
+     "lesson": "01_convolution_from_scratch.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "im2col",
+     "answer_hashes": [
+      "f2e1431e45c3242c8f80"
+     ],
+     "lesson": "01_convolution_from_scratch.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "equivariance",
+     "answer_hashes": [
+      "51af5f2efefa95847763"
+     ],
+     "lesson": "01_convolution_from_scratch.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "receptive field",
+     "answer_hashes": [
+      "df8435a58e9b99a0f0f4"
+     ],
+     "lesson": "01_convolution_from_scratch.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "gap vs flatten",
+     "answer_hashes": [
+      "9604ac9b748d2fadf093"
+     ],
+     "lesson": "02_cnn_with_pytorch.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "augmentation",
+     "answer_hashes": [
+      "09b03252ae8c38765953"
+     ],
+     "lesson": "02_cnn_with_pytorch.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "features",
+     "answer_hashes": [
+      "229880be46a9f662be55"
+     ],
+     "lesson": "02_cnn_with_pytorch.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "vgg",
+     "answer_hashes": [
+      "50ffced656fd579fae33"
+     ],
+     "lesson": "03_architectures_lenet_to_resnet.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "1x1 conv",
+     "answer_hashes": [
+      "8184cf049977a300e778"
+     ],
+     "lesson": "03_architectures_lenet_to_resnet.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "depthwise",
+     "answer_hashes": [
+      "f39bc5a8ff469310d853"
+     ],
+     "lesson": "03_architectures_lenet_to_resnet.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "topic": "degradation",
+     "answer_hashes": [
+      "1a70b9ec0f3ca249a8a8"
+     ],
+     "lesson": "03_architectures_lenet_to_resnet.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "residual",
+     "answer_hashes": [
+      "76ee62209b29acae8d81"
+     ],
+     "lesson": "03_architectures_lenet_to_resnet.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "params zoo",
+     "answer_hashes": [
+      "1ca322f8f944643542dc"
+     ],
+     "lesson": "03_architectures_lenet_to_resnet.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "augmentation validity",
+     "answer_hashes": [
+      "3ce2bb21866b12a17e85"
+     ],
+     "lesson": "04_cnn_on_real_images.ipynb"
+    },
+    {
+     "id": "t17",
+     "type": "tf",
+     "topic": "channel normalization",
+     "answer_hashes": [
+      "446c9af0ad6ced91fc15"
+     ],
+     "lesson": "04_cnn_on_real_images.ipynb"
+    },
+    {
+     "id": "t18",
+     "type": "mcq",
+     "topic": "why cnn",
+     "answer_hashes": [
+      "7ba2531f664a3ad536f5"
+     ],
+     "lesson": "04_cnn_on_real_images.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "output size",
+     "answer_hashes": [
+      "76a97f8c78ee2c409bcf"
+     ],
+     "decimals": 0,
+     "lesson": "01_convolution_from_scratch.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "params",
+     "answer_hashes": [
+      "207f42de78508322a3d4"
+     ],
+     "decimals": 0,
+     "lesson": "01_convolution_from_scratch.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "receptive field",
+     "answer_hashes": [
+      "437ad57887ce6006f795"
+     ],
+     "decimals": 0,
+     "lesson": "01_convolution_from_scratch.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "pooling",
+     "answer_hashes": [
+      "21db0b3ec16ce328450c"
+     ],
+     "decimals": 0,
+     "lesson": "01_convolution_from_scratch.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "separable",
+     "answer_hashes": [
+      "656d4ffeff09f99268c4"
+     ],
+     "decimals": 0,
+     "lesson": "03_architectures_lenet_to_resnet.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

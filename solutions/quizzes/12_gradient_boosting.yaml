@@ -1,0 +1,285 @@
+title: "12 · Gradient Boosting"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: bagging vs boosting
+        lesson: 01_boosting_intuition_adaboost.ipynb
+        type: mcq
+        question: "Khác biệt cốt lõi giữa bagging và boosting:"
+        options:
+          a: "Boosting train các model tuần tự, model sau tập trung vào lỗi của model trước"
+          b: "Boosting dùng bootstrap, bagging thì không"
+          c: "Bagging chỉ dùng cho hồi quy"
+          d: "Không có khác biệt"
+        answer: a
+        explanation: "Bagging: song song, độc lập; boosting: tuần tự."
+      - id: t02
+        topic: weak learner
+        lesson: 01_boosting_intuition_adaboost.ipynb
+        type: mcq
+        question: "Boosting thường dùng base learner nào?"
+        options: {a: "Cây rất sâu", b: "Weak learner bias cao như stump/cây nông", c: "KNN k=1", d: "Mạng neural lớn"}
+        answer: b
+        explanation: "Boosting giảm bias."
+      - id: t03
+        topic: AdaBoost weights
+        lesson: 01_boosting_intuition_adaboost.ipynb
+        type: mcq
+        question: "Sau mỗi vòng AdaBoost, trọng số của mẫu bị phân loại SAI:"
+        options: {a: "Giảm", b: "Tăng (nhân e^α)", c: "Không đổi", d: "Bằng 0"}
+        answer: b
+        explanation: "Model sau tập trung vào điểm khó."
+      - id: t04
+        topic: AdaBoost loss
+        lesson: 01_boosting_intuition_adaboost.ipynb
+        type: mcq
+        question: "AdaBoost tương đương forward stagewise additive modeling với loss:"
+        options: {a: "MSE", b: "Exponential loss e^(−yF)", c: "Hinge loss", d: "Log-loss"}
+        answer: b
+        explanation: "Friedman, Hastie & Tibshirani (2000)."
+      - id: t05
+        topic: noise
+        lesson: 01_boosting_intuition_adaboost.ipynb
+        type: tf
+        question: "Với nhãn nhiễu, chạy AdaBoost càng nhiều vòng thì accuracy test càng tăng."
+        answer: false
+        explanation: "Trọng số dồn vào điểm bị lật → học thuộc nhiễu; cần dừng sớm."
+      - id: t06
+        topic: pseudo-residual
+        lesson: 02_gradient_boosting_from_scratch.ipynb
+        type: mcq
+        question: "Với loss MSE ½(y − F)², pseudo-residual mà mỗi cây fit vào là:"
+        options: {a: "y − F", b: "(y − F)²", c: "sign(y − F)", d: "F"}
+        answer: a
+        explanation: "−∂L/∂F = y − F."
+      - id: t07
+        topic: log-loss residual
+        lesson: 02_gradient_boosting_from_scratch.ipynb
+        type: mcq
+        question: "GB phân loại nhị phân với log-loss, F là log-odds. Pseudo-residual là:"
+        options: {a: "y − F", b: "y − σ(F)", c: "σ(F) − y", d: "log(y)"}
+        answer: b
+        explanation: "Giống gradient của logistic regression (đổi dấu)."
+      - id: t08
+        topic: learning rate
+        lesson: 02_gradient_boosting_from_scratch.ipynb
+        type: mcq
+        question: "Giảm learning rate 10 lần, để đạt chất lượng tương tự thường cần:"
+        options: {a: "Giảm số cây", b: "Tăng số cây (khoảng 10 lần)", c: "Giữ nguyên số cây", d: "Tăng độ sâu lên 10 lần"}
+        answer: b
+        explanation: "η × số cây ~ 'lượng học'."
+      - id: t09
+        topic: overfit theo số cây
+        lesson: 02_gradient_boosting_from_scratch.ipynb
+        type: tf
+        question: "Giống Random Forest, thêm cây vào Gradient Boosting không bao giờ gây overfit."
+        answer: false
+        explanation: "Cần early stopping."
+      - id: t10
+        topic: robust loss
+        lesson: 02_gradient_boosting_from_scratch.ipynb
+        type: multi
+        question: "Loss nào giúp GB hồi quy robust với outlier ở y?"
+        options: {a: "MSE", b: "MAE (absolute_error)", c: "Huber", d: "Quantile"}
+        answer: bcd
+        explanation: "Pseudo-residual bị chặn."
+      - id: t11
+        topic: XGBoost
+        lesson: 03_xgboost_lightgbm_catboost.ipynb
+        type: mcq
+        question: "XGBoost tính giá trị lá tối ưu bằng:"
+        options: {a: "Trung bình y trong lá", b: "−G/(H + λ) từ khai triển Taylor bậc hai", c: "Gradient descent nhiều bước", d: "Median"}
+        answer: b
+        explanation: "G, H: tổng gradient, hessian trong lá."
+      - id: t12
+        topic: histogram
+        lesson: 03_xgboost_lightgbm_catboost.ipynb
+        type: mcq
+        question: "Histogram binning (LightGBM, HistGradientBoosting) tăng tốc chủ yếu vì:"
+        options:
+          a: "Tìm split trên ≤ 255 bin thay vì trên mọi giá trị"
+          b: "Dùng ít cây hơn"
+          c: "Không cần gradient"
+          d: "Bỏ bớt feature"
+        answer: a
+        explanation: "Và tận dụng hiệu histogram cha − con."
+      - id: t13
+        topic: leaf-wise
+        lesson: 03_xgboost_lightgbm_catboost.ipynb
+        type: mcq
+        question: "LightGBM phát triển cây theo kiểu leaf-wise nghĩa là:"
+        options:
+          a: "Tách mọi lá cùng tầng"
+          b: "Luôn tách lá có gain lớn nhất → cần giới hạn num_leaves để tránh overfit"
+          c: "Chỉ dùng một lá"
+          d: "Cây đối xứng"
+        answer: b
+        explanation: "CatBoost mới dùng cây đối xứng (oblivious)."
+      - id: t14
+        topic: CatBoost
+        lesson: 03_xgboost_lightgbm_catboost.ipynb
+        type: mcq
+        question: "CatBoost dùng ordered target statistics để:"
+        options: {a: "Tăng tốc GPU", b: "Mã hoá categorical bằng target mà không rò rỉ target", c: "Xử lý ảnh", d: "Chọn learning rate"}
+        answer: b
+        explanation: "Tính thống kê theo thứ tự ngẫu nhiên, chỉ dùng mẫu 'trước'."
+      - id: t15
+        topic: RF vs GB
+        lesson: 04_tuning_and_rf_vs_gb.ipynb
+        type: multi
+        question: "Phát biểu nào đúng?"
+        options:
+          a: "GB thường đạt đỉnh cao hơn RF khi tune kỹ"
+          b: "GB nhạy với hyperparameter hơn RF"
+          c: "RF cần early stopping theo số cây"
+          d: "Cả hai đều không ngoại suy được"
+        answer: abd
+        explanation: "RF không cần early stopping."
+      - id: t16
+        topic: monotonic
+        lesson: 04_tuning_and_rf_vs_gb.ipynb
+        type: mcq
+        question: "monotonic_cst = [1, 0, -1] trong HistGradientBoosting nghĩa là:"
+        options:
+          a: "Dự đoán không giảm theo feature 1, không ràng buộc feature 2, không tăng theo feature 3"
+          b: "Chỉ dùng feature 1 và 3"
+          c: "Feature 2 bị loại"
+          d: "Đặt trọng số cho feature"
+        answer: a
+        explanation: "Đưa hiểu biết miền vào model."
+  math:
+    questions:
+      - id: m01
+        topic: AdaBoost alpha
+        lesson: 01_boosting_intuition_adaboost.ipynb
+        type: numeric
+        decimals: 3
+        question: "Weak learner có lỗi có trọng số ε = 0.25. α = ½ ln((1−ε)/ε) = ?"
+        answer: 0.5493
+        explanation: "½ ln 3 ≈ 0.549."
+      - id: m02
+        topic: GB step
+        lesson: 02_gradient_boosting_from_scratch.ipynb
+        type: numeric
+        decimals: 2
+        question: "F₀ = 10, residual tại một điểm = 4, cây dự đoán đúng 4 cho điểm đó, η = 0.1. F₁ = ?"
+        answer: 10.4
+        explanation: "10 + 0.1·4."
+      - id: m03
+        topic: XGBoost leaf
+        lesson: 03_xgboost_lightgbm_catboost.ipynb
+        type: numeric
+        decimals: 3
+        question: "Lá có G = −6, H = 2, λ = 1. Giá trị lá w* = −G/(H + λ) = ?"
+        answer: 2
+        explanation: "6/3 = 2."
+      - id: m04
+        topic: log-loss gradient
+        lesson: 03_xgboost_lightgbm_catboost.ipynb
+        type: numeric
+        decimals: 3
+        question: "Log-loss, y = 1, p = 0.8. Hessian h = p(1 − p) = ?"
+        answer: 0.16
+        explanation: "0.8 · 0.2."
+      - id: m05
+        topic: F0 log-odds
+        lesson: 02_gradient_boosting_from_scratch.ipynb
+        type: numeric
+        decimals: 3
+        question: "GB phân loại, 20% mẫu là lớp 1. F₀ = log(p/(1−p)) = ?"
+        answer: -1.3863
+        explanation: "ln(0.25) ≈ −1.386."
+coding:
+  tasks:
+    - id: c01
+      title: Một vòng AdaBoost
+      prompt: |
+        Viết `adaboost_update(w, y, pred)` (nhãn ±1) trả về `(alpha, w_new)`: ε = tổng trọng số mẫu sai (clip vào [1e-10, 1 − 1e-10]),
+        α = ½ ln((1 − ε)/ε), w_new = w·exp(−α·y·pred) đã chuẩn hoá.
+      code: |
+        def adaboost_update(w, y, pred):
+            ### START CODE HERE ### (≈ 4 dòng)
+            eps = np.clip(np.sum(w[pred != y]), 1e-10, 1 - 1e-10)
+            alpha = 0.5 * np.log((1 - eps) / eps)
+            w_new = w * np.exp(-alpha * y * pred)
+            w_new = w_new / w_new.sum()
+            ### END CODE HERE ###
+            return alpha, w_new
+      tests: |
+        w = np.full(10, 0.1)
+        y = np.array([1, 1, 1, 1, 1, -1, -1, -1, -1, -1])
+        pred = np.array([1, 1, 1, 1, -1, -1, -1, -1, -1, 1])
+        alpha, w_new = adaboost_update(w, y, pred)
+        check_close(alpha, np.log(2), message="α = ln 2 khi ε = 0.2")
+        check_close(w_new.sum(), 1.0, message="chuẩn hoá")
+        check_close(w_new[[4, 9]].sum(), 0.5, message="mẫu sai chiếm 50% trọng số")
+    - id: c02
+      title: Gradient Boosting MSE một vài vòng
+      prompt: |
+        Viết `gb_mse(X, y, n_estimators, lr, max_depth)` trả về dự đoán **trên tập train** sau `n_estimators` vòng:
+        F₀ = trung bình y; mỗi vòng fit `DecisionTreeRegressor(max_depth=max_depth, random_state=0)` vào residual, F += lr·tree.predict(X).
+      code: |
+        from sklearn.tree import DecisionTreeRegressor
+
+
+        def gb_mse(X, y, n_estimators=50, lr=0.1, max_depth=2):
+            F = np.full(len(y), y.mean())
+            ### START CODE HERE ### (≈ 3 dòng)
+            for _ in range(n_estimators):
+                tree = DecisionTreeRegressor(max_depth=max_depth, random_state=0).fit(X, y - F)
+                F = F + lr * tree.predict(X)
+            ### END CODE HERE ###
+            return F
+      tests: |
+        rng = np.random.default_rng(0)
+        X = rng.uniform(-3, 3, (200, 1))
+        y = np.sin(X[:, 0]) + rng.normal(0, 0.1, 200)
+        F10, F100 = gb_mse(X, y, 10), gb_mse(X, y, 100)
+        check_less(np.mean((y - F100) ** 2), np.mean((y - F10) ** 2), "loss train giảm theo số vòng")
+        check_less(np.mean((y - F100) ** 2), 0.03, "MSE train sau 100 vòng nhỏ")
+analysis:
+  prompt: |
+    Một nhóm dùng XGBoost dự đoán khách hàng vỡ nợ. Cấu hình: `learning_rate=0.5`, `max_depth=12`, `n_estimators=3000`, không early stopping,
+    `reg_lambda=0`. Họ báo cáo ROC-AUC train 1.000 và ROC-AUC test 0.71, trong khi Logistic Regression đạt 0.78. Họ kết luận
+    "gradient boosting không hợp với dữ liệu này". Một feature là `num_late_payments_next_quarter`. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra overfit nặng: learning_rate lớn, cây rất sâu, 3000 vòng không early stopping, không regularization"
+    - "Đề xuất quy trình tuning: learning_rate nhỏ (0.03–0.1) + early stopping trên validation, max_depth nông (3–6), min_child_weight, subsample/colsample, reg_lambda"
+    - "Chỉ ra num_late_payments_next_quarter là thông tin tương lai → target leakage, phải loại"
+    - "Nhận xét kết luận 'GB không hợp' là vội vàng — so sánh phải công bằng (cả hai đều tune, cùng protocol CV)"
+    - "Đề xuất kiểm tra baseline/so sánh bằng CV và xem xét calibration/ngưỡng theo chi phí cho bài toán vỡ nợ"
+  sample_answer: |
+    (1) ROC-AUC train 1.0 vs test 0.71: overfit nặng do η = 0.5, cây sâu 12, 3000 vòng, không early stopping, reg_lambda = 0.
+    (2) Tuning lại: η 0.03–0.1 + early stopping, max_depth 3–6, min_child_weight, subsample/colsample 0.7–0.9, reg_lambda > 0; chọn bằng CV.
+    (3) num_late_payments_next_quarter là dữ liệu tương lai → leakage; loại ngay và đánh giá lại.
+    (4) Kết luận "GB không hợp" chưa có cơ sở: so sánh hai model với cùng protocol, cả hai đều được tune.
+    (5) Với bài toán vỡ nợ: đánh giá thêm PR-AUC, calibration, chọn ngưỡng theo chi phí.
+project:
+  prompt: |
+    **Mini project — Gradient Boosting cho giá nhà.** Đọc `house_prices.csv` (`repo_path("data", "sample", "house_prices.csv")`),
+    target `price_billion_vnd`; dùng `district` dạng `category`. Chia train/test 75/25 (`random_state=0`). Train
+    `HistGradientBoostingRegressor` với early stopping và tune ít nhất 2 hyperparameter bằng CV. Đạt **MAE test ≤ 0.50** (biến `test_mae`).
+  code: |
+    import pandas as pd
+    from sklearn.ensemble import HistGradientBoostingRegressor
+    from sklearn.metrics import mean_absolute_error
+    from sklearn.model_selection import GridSearchCV, train_test_split
+    from ml_course.utils import repo_path
+
+    df = pd.read_csv(repo_path("data", "sample", "house_prices.csv"))
+    ### START CODE HERE ### (≈ 10 dòng)
+    X = df.drop(columns=["price_billion_vnd"])
+    X["district"] = X["district"].astype("category")
+    X["has_garden"] = X["has_garden"].astype(int)
+    y = df["price_billion_vnd"]
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25, random_state=0)
+    grid = GridSearchCV(HistGradientBoostingRegressor(learning_rate=0.05, max_iter=2000, categorical_features="from_dtype",
+                                                      early_stopping=True, n_iter_no_change=30, random_state=0),
+                        {"max_leaf_nodes": [7, 15, 31], "min_samples_leaf": [5, 20, 50]}, cv=4,
+                        scoring="neg_mean_absolute_error").fit(X_tr, y_tr)
+    test_mae = mean_absolute_error(y_te, grid.predict(X_te))
+    ### END CODE HERE ###
+    print(grid.best_params_, "| MAE test:", round(test_mae, 3))
+  tests: |
+    check_less(test_mae, 0.50, "MAE test ≤ 0.50 tỉ")

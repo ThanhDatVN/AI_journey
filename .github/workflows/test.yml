@@ -1,0 +1,69 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install (đúng phiên bản trong uv.lock)
+        run: uv sync --locked --group dev
+
+      - name: Lint — code và mọi notebook (gồm tên chưa định nghĩa trong notebook người học)
+        run: uv run ruff check .
+
+      - name: File sinh ra đồng bộ với nguồn (quiz, bài tập, mục lục)
+        run: |
+          uv run python tools/build_quizzes.py --check
+          uv run python tools/make_exercises.py --check
+          uv run python tools/generate_index.py --check
+
+      - name: Unit tests (metrics, preprocessing, thuật toán from scratch, engine checkpoint, dữ liệu)
+        run: uv run pytest
+
+  fraud-service:
+    # Project 08: dịch vụ thật — test, rồi build image Docker và gọi thử API.
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/08_end_to_end_ml_system/fraud_service
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        working-directory: .
+        run: uv sync --locked --group dev --extra mlops
+
+      - name: Tests (dữ liệu → mô hình → API → đóng gói → giám sát)
+        run: ../../../.venv/bin/python -m pytest
+
+      - name: Build image (train → freeze → docker build)
+        run: make docker-build PYTHON=../../../.venv/bin/python
+
+      - name: Smoke test
+        run: |
+          docker run -d --name fraud -p 8000:8000 fraud-api:1.0.0
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:8000/health && break; sleep 1; done
+          curl -sf http://127.0.0.1:8000/health
+          curl -sf -X POST http://127.0.0.1:8000/v1/score -H "Content-Type: application/json" \
+            -d '[{"amount_vnd": 9500000, "hour": 2, "merchant_category": "electronics", "distance_from_home_km": 35, "is_foreign": true, "n_tx_last_24h": 6, "card_age_days": 40}]'
+
+      - name: Container logs
+        if: always()
+        run: docker logs fraud || true

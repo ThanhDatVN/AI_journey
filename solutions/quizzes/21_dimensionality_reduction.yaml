@@ -1,0 +1,266 @@
+title: "21 · Dimensionality Reduction"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: PCA objective
+        lesson: 01_pca_from_scratch.ipynb
+        type: mcq
+        question: "Thành phần chính thứ nhất (PC1) là hướng:"
+        options: {a: "Phương sai của dữ liệu chiếu lên lớn nhất", b: "Tương quan với target lớn nhất", c: "Trục x", d: "Phương sai nhỏ nhất"}
+        answer: a
+        explanation: "Vector riêng của trị riêng lớn nhất."
+      - id: t02
+        topic: equivalence
+        lesson: 01_pca_from_scratch.ipynb
+        type: tf
+        question: "Tối đa phương sai hình chiếu tương đương tối thiểu sai số tái tạo (khoảng cách vuông góc)."
+        answer: true
+        explanation: "Hai góc nhìn của PCA."
+      - id: t03
+        topic: centering
+        lesson: 01_pca_from_scratch.ipynb
+        type: mcq
+        question: "Vì sao trừ trung bình trước PCA?"
+        options:
+          a: "Để các thành phần mô tả biến thiên quanh trung bình chứ không phải vị trí của dữ liệu"
+          b: "Để tăng tốc"
+          c: "Để dữ liệu dương"
+          d: "Không cần thiết"
+        answer: a
+        explanation: "Ma trận hiệp phương sai tính trên dữ liệu đã center."
+      - id: t04
+        topic: SVD
+        lesson: 01_pca_from_scratch.ipynb
+        type: mcq
+        question: "Với X_c = UΣVᵀ, phương sai của thành phần j bằng:"
+        options: {a: "σⱼ", b: "σⱼ²/(n − 1)", c: "1/σⱼ", d: "Uⱼⱼ"}
+        answer: b
+        explanation: "λ = σ²/(n − 1)."
+      - id: t05
+        topic: PCA vs regression
+        lesson: 01_pca_from_scratch.ipynb
+        type: mcq
+        question: "Khác biệt giữa đường PC1 và đường Linear Regression:"
+        options:
+          a: "PCA tối thiểu khoảng cách vuông góc, đối xứng giữa các biến; hồi quy tối thiểu sai số theo trục y"
+          b: "Giống hệt nhau"
+          c: "PCA chỉ cho dữ liệu 2D"
+          d: "Hồi quy không có hệ số chặn"
+        answer: a
+        explanation: "PCA không có biến mục tiêu."
+      - id: t06
+        topic: scaling
+        lesson: 02_pca_in_practice.ipynb
+        type: mcq
+        question: "Feature có đơn vị khác nhau (diện tích m², tuổi năm, giá VND). Trước PCA nên:"
+        options: {a: "Chuẩn hoá (StandardScaler)", b: "Không làm gì", c: "One-hot", d: "Log mọi cột"}
+        answer: a
+        explanation: "Không scale → PC1 ≈ feature có đơn vị lớn nhất."
+      - id: t07
+        topic: unsupervised
+        lesson: 02_pca_in_practice.ipynb
+        type: tf
+        question: "PCA chọn hướng dựa trên khả năng dự đoán target."
+        answer: false
+        explanation: "PCA không nhìn nhãn — có thể vứt tín hiệu."
+      - id: t08
+        topic: denoising
+        lesson: 02_pca_in_practice.ipynb
+        type: mcq
+        question: "Vì sao chiếu lên vài thành phần đầu rồi tái tạo có thể khử nhiễu?"
+        options:
+          a: "Tín hiệu tập trung ở vài hướng đầu, nhiễu phân tán đều trên mọi hướng"
+          b: "PCA biết đâu là nhiễu"
+          c: "Vì làm mượt ảnh"
+          d: "Không khử được"
+        answer: a
+        explanation: "Bỏ các hướng phần lớn là nhiễu."
+      - id: t09
+        topic: variants
+        lesson: 02_pca_in_practice.ipynb
+        type: mcq
+        question: "Ma trận TF-IDF thưa 200 000 cột. Phương pháp giảm chiều phù hợp:"
+        options: {a: "PCA (cần trừ trung bình → ma trận dày)", b: "TruncatedSVD", c: "t-SNE trực tiếp", d: "Kernel PCA"}
+        answer: b
+        explanation: "Không cần center, làm việc trên ma trận thưa (LSA)."
+      - id: t10
+        topic: pipeline
+        lesson: 02_pca_in_practice.ipynb
+        type: tf
+        question: "PCA dùng làm tiền xử lý phải được fit bên trong Pipeline/CV, không fit trên toàn bộ dữ liệu trước."
+        answer: true
+        explanation: "Mọi bước học từ dữ liệu."
+      - id: t11
+        topic: t-SNE goal
+        lesson: 03_tsne_umap.ipynb
+        type: mcq
+        question: "t-SNE ưu tiên giữ:"
+        options: {a: "Khoảng cách toàn cục", b: "Láng giềng cục bộ", c: "Phương sai", d: "Thứ tự các điểm"}
+        answer: b
+        explanation: "KL phạt nặng khi láng giềng gần bị đặt xa."
+      - id: t12
+        topic: student-t
+        lesson: 03_tsne_umap.ipynb
+        type: mcq
+        question: "t-SNE dùng phân phối Student-t (đuôi nặng) ở không gian thấp chiều để:"
+        options: {a: "Giảm crowding problem — cho phép điểm vừa xa được đặt xa", b: "Tăng tốc", c: "Giữ phương sai", d: "Làm kết quả xác định"}
+        answer: a
+        explanation: "van der Maaten & Hinton (2008)."
+      - id: t13
+        topic: pitfalls
+        lesson: 03_tsne_umap.ipynb
+        type: multi
+        question: "Trên biểu đồ t-SNE, điều gì KHÔNG nên diễn giải định lượng?"
+        options: {a: "Kích thước cụm", b: "Khoảng cách giữa các cụm", c: "Việc vài điểm là láng giềng gần nhau", d: "Vị trí tuyệt đối của cụm"}
+        answer: abd
+        explanation: "Láng giềng cục bộ là phần đáng tin nhất."
+      - id: t14
+        topic: perplexity
+        lesson: 03_tsne_umap.ipynb
+        type: mcq
+        question: "Perplexity trong t-SNE xấp xỉ:"
+        options: {a: "Số láng giềng hiệu dụng mỗi điểm xem xét", b: "Số chiều đầu ra", c: "Learning rate", d: "Số cụm"}
+        answer: a
+        explanation: "Nhỏ → cấu trúc vụn; lớn → mượt, toàn cục hơn."
+      - id: t15
+        topic: transform
+        lesson: 03_tsne_umap.ipynb
+        type: multi
+        question: "Phương pháp nào có transform cho điểm mới?"
+        options: {a: "PCA", b: "UMAP", c: "t-SNE (sklearn)", d: "Kernel PCA"}
+        answer: abd
+        explanation: "t-SNE không ánh xạ điểm mới."
+      - id: t16
+        topic: features
+        lesson: 03_tsne_umap.ipynb
+        type: tf
+        question: "Toạ độ t-SNE 2D là feature tốt để train model phân loại."
+        answer: false
+        explanation: "Không có transform, phụ thuộc seed, méo khoảng cách."
+  math:
+    questions:
+      - id: m01
+        topic: explained variance
+        lesson: 01_pca_from_scratch.ipynb
+        type: numeric
+        decimals: 3
+        question: "Trị riêng 6, 3, 1. Tỉ lệ phương sai giải thích của PC1?"
+        answer: 0.6
+        explanation: "6/10."
+      - id: m02
+        topic: reconstruction
+        lesson: 01_pca_from_scratch.ipynb
+        type: numeric
+        decimals: 2
+        question: "Trị riêng 6, 3, 1. Giữ 2 thành phần, phương sai còn lại (sai số tái tạo) = ?"
+        answer: 1
+        explanation: "Trị riêng bị bỏ."
+      - id: m03
+        topic: svd variance
+        lesson: 01_pca_from_scratch.ipynb
+        type: numeric
+        decimals: 2
+        question: "n = 101, giá trị kỳ dị σ₁ = 20. Phương sai PC1 = σ²/(n − 1) = ?"
+        answer: 4
+        explanation: "400/100."
+      - id: m04
+        topic: compression
+        lesson: 02_pca_in_practice.ipynb
+        type: numeric
+        decimals: 0
+        question: "1 000 ảnh 64 pixel, giữ 10 thành phần. Số con số cần lưu (toạ độ + thành phần + mean)?"
+        answer: 10704
+        explanation: "1000·10 + 10·64 + 64."
+      - id: m05
+        topic: eigen
+        lesson: 01_pca_from_scratch.ipynb
+        type: numeric
+        decimals: 2
+        question: "C = [[3, 0], [0, 1]]. Trị riêng lớn nhất = ?"
+        answer: 3
+        explanation: "Ma trận chéo."
+coding:
+  tasks:
+    - id: c01
+      title: PCA qua SVD
+      prompt: |
+        Viết `pca_fit(X, k)` trả về `(mean, components, explained_variance)`: trừ trung bình, SVD, k hàng đầu của Vᵀ, phương sai σ²/(n − 1).
+      code: |
+        def pca_fit(X, k):
+            ### START CODE HERE ### (≈ 4 dòng)
+            mean = X.mean(0)
+            _, S, Vt = np.linalg.svd(X - mean, full_matrices=False)
+            components = Vt[:k]
+            explained_variance = S[:k] ** 2 / (len(X) - 1)
+            ### END CODE HERE ###
+            return mean, components, explained_variance
+      tests: |
+        from sklearn.decomposition import PCA
+        rng = np.random.default_rng(0)
+        X = rng.normal(size=(200, 6)) @ rng.normal(size=(6, 6))
+        mean, comps, var = pca_fit(X, 3)
+        ref = PCA(3).fit(X)
+        check_close(var, ref.explained_variance_, tol=1e-8, message="phương sai")
+        check_close(np.abs((comps * ref.components_).sum(1)), np.ones(3), tol=1e-8, message="thành phần (đến dấu)")
+    - id: c02
+      title: Tái tạo
+      prompt: |
+        Viết `reconstruct(X, mean, components)` = chiếu lên các thành phần rồi tái tạo về không gian gốc.
+      code: |
+        def reconstruct(X, mean, components):
+            ### START CODE HERE ### (≈ 2 dòng)
+            Z = (X - mean) @ components.T
+            X_hat = Z @ components + mean
+            ### END CODE HERE ###
+            return X_hat
+      tests: |
+        from sklearn.decomposition import PCA
+        rng = np.random.default_rng(1)
+        X = rng.normal(size=(100, 5)) @ rng.normal(size=(5, 5))
+        p = PCA(2).fit(X)
+        check_close(reconstruct(X, p.mean_, p.components_), p.inverse_transform(p.transform(X)), tol=1e-8, message="khớp sklearn")
+        p5 = PCA(5).fit(X)
+        check_close(reconstruct(X, p5.mean_, p5.components_), X, tol=1e-8, message="giữ đủ thành phần → tái tạo hoàn hảo")
+analysis:
+  prompt: |
+    Một nhóm có 300 feature từ cảm biến máy móc (nhiệt độ °C, áp suất Pa, độ rung mm/s, dòng điện A...) để dự đoán hỏng hóc (2% positive).
+    Họ: (1) chạy PCA trên dữ liệu thô (không chuẩn hoá) và toàn bộ dữ liệu trước khi chia train/test; (2) giữ 2 thành phần vì "giải thích 99.9%
+    phương sai"; (3) model trên 2 thành phần cho kết quả kém; (4) vẽ t-SNE thấy "các máy hỏng tạo thành cụm nhỏ xa các máy khác" nên kết luận
+    chúng "rất khác biệt" và dùng toạ độ t-SNE làm feature. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra không chuẩn hoá: áp suất (Pa, giá trị lớn) chiếm gần hết phương sai → 99.9% là ảo, PC1–2 chỉ là áp suất"
+    - "Chỉ ra PCA fit trên toàn bộ dữ liệu trước khi chia → rò rỉ; đặt vào Pipeline"
+    - "Chỉ ra PCA không nhìn nhãn — tín hiệu hỏng hóc có thể nằm ở hướng phương sai nhỏ → chọn số thành phần bằng CV, cân nhắc phương pháp có giám sát hoặc không giảm chiều"
+    - "Chỉ ra kích thước/khoảng cách cụm trên t-SNE không có ý nghĩa định lượng; cần kiểm chứng bằng cách khác"
+    - "Chỉ ra toạ độ t-SNE không dùng làm feature (không có transform, phụ thuộc seed)"
+  sample_answer: |
+    (1) Không chuẩn hoá: áp suất theo Pa có giá trị ~10⁵ → phương sai áp đảo; "99.9% phương sai" chỉ là phương sai của áp suất. Chuẩn hoá trước PCA.
+    (2) PCA fit trên toàn bộ dữ liệu → rò rỉ; Pipeline(StandardScaler, PCA, model) trong CV.
+    (3) PCA không nhìn nhãn; hỏng hóc hiếm (2%) có thể thể hiện ở hướng phương sai nhỏ → 2 thành phần vứt tín hiệu. Chọn số thành phần bằng CV theo metric PR-AUC, hoặc dùng model trên feature gốc (boosting), feature selection.
+    (4) t-SNE: cụm nhỏ/xa không có nghĩa "rất khác biệt"; kiểm chứng bằng so sánh feature, clustering trên không gian gốc.
+    (5) Không dùng toạ độ t-SNE làm feature (không có transform cho dữ liệu mới, phụ thuộc seed, méo khoảng cách).
+project:
+  prompt: |
+    **Mini project — PCA + KNN cho chữ số viết tay.** Dùng `load_digits()`. Chia train/test 75/25 (`random_state=0`, `stratify`).
+    Xây Pipeline PCA → KNN, chọn `n_components` và `n_neighbors` bằng GridSearchCV (5-fold) trên train. Yêu cầu accuracy test ≥ 0.98
+    (biến `test_acc`) **và** số thành phần ≤ 40 (biến `n_comp`).
+  code: |
+    from sklearn.datasets import load_digits
+    from sklearn.decomposition import PCA
+    from sklearn.model_selection import GridSearchCV, train_test_split
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.pipeline import make_pipeline
+
+    X, y = load_digits(return_X_y=True)
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25, random_state=0, stratify=y)
+    ### START CODE HERE ### (≈ 5 dòng)
+    grid = GridSearchCV(make_pipeline(PCA(), KNeighborsClassifier()),
+                        {"pca__n_components": [10, 20, 30, 40], "kneighborsclassifier__n_neighbors": [1, 3, 5]}, cv=5).fit(X_tr, y_tr)
+    test_acc = grid.score(X_te, y_te)
+    n_comp = grid.best_params_["pca__n_components"]
+    ### END CODE HERE ###
+    print(grid.best_params_, "| accuracy test:", round(test_acc, 4))
+  tests: |
+    check_greater(test_acc, 0.98, "accuracy test ≥ 0.98")
+    check_less(n_comp, 41, "≤ 40 thành phần")

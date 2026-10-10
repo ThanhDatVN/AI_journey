@@ -1,0 +1,293 @@
+title: "24 · Ensemble Learning"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: condorcet
+        lesson: 01_voting_and_diversity.ipynb
+        type: mcq
+        question: "Bỏ phiếu đa số của nhiều model chỉ tăng mạnh độ chính xác khi:"
+        options:
+          a: "Mỗi model tốt hơn ngẫu nhiên và lỗi của chúng ít tương quan"
+          b: "Các model giống hệt nhau"
+          c: "Có ít nhất một model hoàn hảo"
+          d: "Các model đều yếu hơn ngẫu nhiên"
+        answer: a
+        explanation: "Tương quan cao → lợi ích biến mất."
+      - id: t02
+        topic: ambiguity
+        lesson: 01_voting_and_diversity.ipynb
+        type: multi
+        question: "Theo phân rã ambiguity, ensemble trung bình (hồi quy, MSE):"
+        options:
+          a: "Không bao giờ tệ hơn lỗi trung bình của các thành viên"
+          b: "Luôn tốt hơn thành viên tốt nhất"
+          c: "Càng đa dạng (với cùng lỗi thành viên) càng tốt"
+          d: "Tốt hơn trung bình thành viên đúng bằng độ đa dạng"
+        answer: acd
+        explanation: "Có thể thua thành viên tốt nhất khi có thành viên rất yếu."
+      - id: t03
+        topic: soft voting
+        lesson: 01_voting_and_diversity.ipynb
+        type: mcq
+        question: "Soft voting đòi hỏi điều gì để hoạt động tốt?"
+        options: {a: "Xác suất dự đoán của các model được hiệu chỉnh tương đối tốt", b: "Các model cùng thuật toán", c: "Số model lẻ", d: "Dữ liệu cân bằng tuyệt đối"}
+        answer: a
+        explanation: "Model quá tự tin (vd Naive Bayes) chi phối trung bình."
+      - id: t04
+        topic: weak members
+        lesson: 01_voting_and_diversity.ipynb
+        type: tf
+        question: "Thêm một model yếu vào hard voting của 3 model không bao giờ làm giảm độ chính xác."
+        answer: false
+        explanation: "Model yếu có thể lật phiếu đa số — ví dụ 0.9 + 0.6 + 0.6 → 0.792."
+      - id: t05
+        topic: diversity
+        lesson: 01_voting_and_diversity.ipynb
+        type: mcq
+        question: "Hai model bất đồng ở 15% mẫu. Kết luận nào đúng?"
+        options:
+          a: "Chưa đủ: cần biết chúng có cùng giỏi không — bất đồng cao có thể chỉ vì một model sai nhiều"
+          b: "Chắc chắn kết hợp tốt"
+          c: "Chắc chắn kết hợp tệ"
+          d: "Nên chọn model ngẫu nhiên"
+        answer: a
+        explanation: "Muốn: đều giỏi và sai khác chỗ nhau."
+      - id: t06
+        topic: oof
+        lesson: 02_stacking_and_blending.ipynb
+        type: mcq
+        question: "Vì sao meta-model trong stacking phải học trên dự đoán out-of-fold?"
+        options:
+          a: "Dự đoán in-sample quá lạc quan, meta-model sẽ dồn trọng số cho model overfit"
+          b: "Để chạy nhanh hơn"
+          c: "Vì sklearn yêu cầu"
+          d: "Để giảm số feature"
+        answer: a
+        explanation: "OOF mô phỏng dự đoán trên dữ liệu mới."
+      - id: t07
+        topic: stacking procedure
+        lesson: 02_stacking_and_blending.ipynb
+        type: multi
+        question: "Các bước đúng của stacking chuẩn:"
+        options:
+          a: "cross_val_predict từng base model trên train"
+          b: "Train meta-model trên ma trận OOF"
+          c: "Fit lại base model trên toàn bộ train để dự đoán test"
+          d: "Train meta-model trên dự đoán của tập test"
+        answer: abc
+        explanation: "Không bao giờ dùng test để train."
+      - id: t08
+        topic: meta-model
+        lesson: 02_stacking_and_blending.ipynb
+        type: mcq
+        question: "Meta-model nên:"
+        options:
+          a: "Đơn giản (tuyến tính, regularized hoặc trọng số không âm)"
+          b: "Càng phức tạp càng tốt"
+          c: "Là một ensemble khác nhiều tầng"
+          d: "Không có tham số"
+        answer: a
+        explanation: "Meta-feature ít và tương quan rất mạnh — model phức tạp dễ overfit."
+      - id: t09
+        topic: blending
+        lesson: 02_stacking_and_blending.ipynb
+        type: mcq
+        question: "Nhược điểm chính của blending so với stacking OOF:"
+        options: {a: "Lãng phí dữ liệu — meta-model chỉ học trên holdout", b: "Rò rỉ dữ liệu", c: "Không dùng được cho hồi quy", d: "Chậm hơn nhiều"}
+        answer: a
+        explanation: "Đổi lại đơn giản và rẻ hơn."
+      - id: t10
+        topic: time series stacking
+        lesson: 02_stacking_and_blending.ipynb
+        type: tf
+        question: "Với chuỗi thời gian, có thể tạo meta-feature OOF bằng KFold xáo trộn."
+        answer: false
+        explanation: "Rò rỉ tương lai — dùng TimeSeriesSplit."
+      - id: t11
+        topic: sources of diversity
+        lesson: 03_ensemble_design.ipynb
+        type: multi
+        question: "Nguồn tạo đa dạng cho ensemble:"
+        options: {a: "Thuật toán khác họ", b: "Tập con dữ liệu/feature", c: "Siêu tham số/seed khác", d: "Dùng cùng một model đã fit nhiều lần"}
+        answer: abc
+        explanation: "Model giống hệt không thêm đa dạng."
+      - id: t12
+        topic: ensemble selection
+        lesson: 03_ensemble_design.ipynb
+        type: mcq
+        question: "Ensemble selection (Caruana) chọn model:"
+        options:
+          a: "Tham lam, có hoàn lại, mỗi bước thêm model làm metric validation của trung bình tốt nhất"
+          b: "Ngẫu nhiên"
+          c: "Theo thời gian train"
+          d: "Bằng gradient descent trên test"
+        answer: a
+        explanation: "Trọng số = số lần được chọn."
+      - id: t13
+        topic: validation overfit
+        lesson: 03_ensemble_design.ipynb
+        type: tf
+        question: "Metric validation của ensemble sau khi chọn bằng chính validation là ước lượng không chệch cho test."
+        answer: false
+        explanation: "Lạc quan — cần test riêng."
+      - id: t14
+        topic: cost
+        lesson: 03_ensemble_design.ipynb
+        type: multi
+        question: "Cách giảm chi phí khi triển khai ensemble:"
+        options: {a: "Chọn ít thành viên", b: "Distillation sang một model đơn", c: "Chạy batch offline khi không cần độ trễ thấp", d: "Thêm thật nhiều thành viên"}
+        answer: abc
+        explanation: "Cân nhắc lợi ích so với chi phí."
+      - id: t15
+        topic: disagreement
+        lesson: 03_ensemble_design.ipynb
+        type: mcq
+        question: "Độ bất đồng giữa các thành viên ensemble trên một mẫu thường:"
+        options: {a: "Tương quan với sai số — dùng để gắn cờ dự đoán cần kiểm tra", b: "Không liên quan đến sai số", c: "Luôn bằng 0", d: "Là khoảng tin cậy 95% đã hiệu chỉnh"}
+        answer: a
+        explanation: "Tín hiệu bất định, chưa phải khoảng hiệu chỉnh."
+  math:
+    questions:
+      - id: m01
+        topic: majority vote
+        lesson: 01_voting_and_diversity.ipynb
+        type: numeric
+        decimals: 3
+        question: "3 classifier độc lập, mỗi cái đúng với xác suất 0.8. Xác suất bỏ phiếu đa số đúng?"
+        answer: 0.896
+        explanation: "0.8³ + 3·0.8²·0.2 = 0.512 + 0.384."
+      - id: m02
+        topic: ambiguity
+        lesson: 01_voting_and_diversity.ipynb
+        type: numeric
+        decimals: 3
+        question: "Hai model dự đoán 2 và 6, giá trị thật 3. Lỗi bình phương của ensemble trung bình?"
+        answer: 1
+        explanation: "(4 − 3)² = 1; = (1 + 9)/2 − (4 + 4)/2."
+      - id: m03
+        topic: ambiguity
+        lesson: 01_voting_and_diversity.ipynb
+        type: numeric
+        decimals: 3
+        question: "Cùng ví dụ (dự đoán 2 và 6). Độ đa dạng (ambiguity) = ?"
+        answer: 4
+        explanation: "((2 − 4)² + (6 − 4)²)/2."
+      - id: m04
+        topic: correlated variance
+        lesson: 01_voting_and_diversity.ipynb
+        type: numeric
+        decimals: 3
+        question: "Trung bình 10 model, mỗi model phương sai σ² = 1, tương quan từng cặp ρ = 0.5. Phương sai của trung bình = ρσ² + (1 − ρ)σ²/M = ?"
+        answer: 0.55
+        explanation: "0.5 + 0.5/10."
+      - id: m05
+        topic: weighted vote
+        lesson: 01_voting_and_diversity.ipynb
+        type: numeric
+        decimals: 2
+        question: "Soft voting, trọng số [2, 1, 1]. Xác suất lớp 1 của ba model: 0.6, 0.2, 0.4. Xác suất lớp 1 của ensemble?"
+        answer: 0.45
+        explanation: "(2·0.6 + 0.2 + 0.4)/4."
+coding:
+  tasks:
+    - id: c01
+      title: Phân rã ambiguity
+      prompt: |
+        Viết `ambiguity_decomposition(P, y)` với P là ma trận (n_samples, n_models) dự đoán. Trả về `(ens_mse, avg_member_mse, ambiguity)`
+        (trung bình trên mọi mẫu).
+      code: |
+        def ambiguity_decomposition(P, y):
+            ### START CODE HERE ### (≈ 4 dòng)
+            f_bar = P.mean(1)
+            ens_mse = np.mean((f_bar - y) ** 2)
+            avg_member_mse = np.mean((P - y[:, None]) ** 2)
+            ambiguity = np.mean((P - f_bar[:, None]) ** 2)
+            ### END CODE HERE ###
+            return ens_mse, avg_member_mse, ambiguity
+      tests: |
+        e, a, d = ambiguity_decomposition(np.array([[3.0, 5.0, 7.0]]), np.array([4.0]))
+        check_close([e, a, d], [1.0, 11 / 3, 8 / 3], message="ví dụ tính tay")
+        rng = np.random.default_rng(0)
+        y = rng.normal(size=200)
+        P = y[:, None] + rng.normal(size=(200, 4))
+        e, a, d = ambiguity_decomposition(P, y)
+        check_close(e, a - d, tol=1e-10, message="phân rã đúng với mọi dữ liệu")
+    - id: c02
+      title: Dự đoán out-of-fold
+      prompt: |
+        Viết `oof_predict(model, X, y, n_splits=5, seed=0)` dùng `KFold(n_splits, shuffle=True, random_state=seed)` và `clone`,
+        trả về vector dự đoán out-of-fold (không dùng cross_val_predict).
+      code: |
+        from sklearn.base import clone
+        from sklearn.model_selection import KFold
+
+        def oof_predict(model, X, y, n_splits=5, seed=0):
+            oof = np.zeros(len(y))
+            ### START CODE HERE ### (≈ 2 dòng)
+            for tr, va in KFold(n_splits, shuffle=True, random_state=seed).split(X):
+                oof[va] = clone(model).fit(X[tr], y[tr]).predict(X[va])
+            ### END CODE HERE ###
+            return oof
+      tests: |
+        from sklearn.linear_model import Ridge
+        from sklearn.model_selection import KFold, cross_val_predict
+        from sklearn.tree import DecisionTreeRegressor
+        rng = np.random.default_rng(1)
+        X = rng.normal(size=(300, 4))
+        y = X @ [1.0, -2.0, 0.5, 0.0] + rng.normal(0, 0.5, 300)
+        ref = cross_val_predict(Ridge(), X, y, cv=KFold(5, shuffle=True, random_state=0))
+        check_close(oof_predict(Ridge(), X, y), ref, tol=1e-10, message="khớp cross_val_predict")
+        tree = DecisionTreeRegressor(random_state=0)
+        in_sample = clone(tree).fit(X, y).predict(X)
+        check_greater(np.mean((oof_predict(tree, X, y) - y) ** 2), np.mean((in_sample - y) ** 2) + 0.1, "OOF không lạc quan như in-sample")
+analysis:
+  prompt: |
+    Một đội Kaggle báo cáo: "Ensemble 3 tầng gồm 40 model đạt RMSE CV 0.512, tốt hơn model đơn tốt nhất (0.530)". Cách làm:
+    (1) tầng 1: 40 model (25 trong số đó là LightGBM khác seed); (2) tầng 2: meta-model là một LightGBM sâu train trên dự đoán in-sample của tầng 1;
+    (3) siêu tham số của mọi tầng được tune trên cùng 5 fold dùng để báo cáo RMSE CV; (4) dữ liệu là doanh số theo ngày, KFold xáo trộn.
+    Công ty muốn đưa ensemble này vào production với yêu cầu trả lời < 50 ms. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra meta-model train trên dự đoán in-sample → rò rỉ, ưu ái model overfit; phải dùng OOF"
+    - "Chỉ ra tune và báo cáo trên cùng các fold → RMSE CV lạc quan; cần nested CV hoặc holdout riêng"
+    - "Chỉ ra dữ liệu chuỗi thời gian với KFold xáo trộn → rò rỉ tương lai; dùng TimeSeriesSplit/backtest cho cả base và meta"
+    - "Chỉ ra 25 LightGBM khác seed ít đa dạng; meta-model sâu dễ overfit — nên meta tuyến tính/không âm, chọn thành viên đa dạng"
+    - "Chỉ ra chi phí/độ trễ 40 model với yêu cầu 50 ms; đề xuất ensemble selection dưới ngân sách, distillation, hoặc model đơn; đánh giá lợi ích 0.018 RMSE so với chi phí"
+  sample_answer: |
+    (1) Meta-model học trên dự đoán in-sample → thấy model overfit "hoàn hảo" → rò rỉ; phải dùng dự đoán OOF. (2) Tune mọi tầng trên chính các fold
+    dùng để báo cáo → 0.512 lạc quan; cần nested CV hoặc holdout cuối chưa từng chạm. (3) Doanh số theo ngày + KFold xáo trộn → model dùng tương lai
+    để đoán quá khứ; dùng TimeSeriesSplit cho OOF và backtest đánh giá. (4) 25 LightGBM khác seed gần như trùng lỗi — ít đa dạng; meta LightGBM sâu
+    trên vài chục meta-feature tương quan cao dễ overfit → meta tuyến tính không âm, thành viên khác họ. (5) Production 50 ms với 40 model là khó;
+    dùng ensemble selection có ngân sách hoặc distillation; nếu sau khi đánh giá đúng lợi ích chỉ ~0.01 RMSE thì model đơn tốt có thể hợp lý hơn.
+project:
+  prompt: |
+    **Mini project — Ensemble cho chữ số viết tay.** Dùng `load_digits()`, chia train/test 60/40 (`random_state=0`, `stratify`).
+    Xây ensemble từ **ít nhất 3 họ model khác nhau** (biến `n_families`) sao cho accuracy test `ens_acc` ≥ 0.98 **và** cao hơn accuracy
+    của mọi thành viên (`best_member_acc`).
+  code: |
+    from sklearn.datasets import load_digits
+    from sklearn.ensemble import VotingClassifier
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import accuracy_score
+    from sklearn.model_selection import train_test_split
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.svm import SVC
+
+    X, y = load_digits(return_X_y=True)
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.4, random_state=0, stratify=y)
+    ### START CODE HERE ### (≈ 8 dòng)
+    members = [("lr", make_pipeline(StandardScaler(), LogisticRegression(max_iter=3000))),
+               ("knn", make_pipeline(StandardScaler(), KNeighborsClassifier(5))),
+               ("svc", make_pipeline(StandardScaler(), SVC(probability=True, random_state=0)))]
+    n_families = 3
+    best_member_acc = max(accuracy_score(y_te, m.fit(X_tr, y_tr).predict(X_te)) for _, m in members)
+    ens = VotingClassifier(members, voting="soft").fit(X_tr, y_tr)
+    ens_acc = accuracy_score(y_te, ens.predict(X_te))
+    ### END CODE HERE ###
+    print(f"thành viên tốt nhất = {best_member_acc:.4f} | ensemble = {ens_acc:.4f}")
+  tests: |
+    check_true(n_families >= 3, "ít nhất 3 họ model")
+    check_greater(ens_acc, 0.98, "accuracy ensemble ≥ 0.98")
+    check_greater(ens_acc, best_member_acc, "ensemble tốt hơn mọi thành viên")

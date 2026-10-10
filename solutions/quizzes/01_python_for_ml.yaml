@@ -1,0 +1,240 @@
+title: "01 · Python for ML"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: list vs ndarray
+        lesson: 01_python_basics.ipynb
+        type: mcq
+        question: "Với `nums = [1, 2, 3]`, biểu thức `nums * 2` cho kết quả gì?"
+        options: {a: "[2, 4, 6]", b: "[1, 2, 3, 1, 2, 3]", c: "Lỗi TypeError", d: "12"}
+        answer: b
+        explanation: "Nhân list với số nguyên là lặp lại list. Muốn nhân từng phần tử: dùng comprehension hoặc NumPy."
+      - id: t02
+        topic: aliasing
+        lesson: 01_python_basics.ipynb
+        type: tf
+        question: "Sau `b = a` (a là list) rồi `b.append(1)`, list `a` cũng có thêm phần tử 1."
+        answer: true
+        explanation: "Phép gán chỉ tạo thêm một tên trỏ tới cùng object. Dùng `a.copy()` để sao chép."
+      - id: t03
+        topic: mutable default argument
+        lesson: 01_python_basics.ipynb
+        type: mcq
+        question: "Vì sao không nên viết `def log(value, history=[])`?"
+        options:
+          a: "Python không cho phép giá trị mặc định là list"
+          b: "List mặc định được tạo một lần và dùng chung giữa các lần gọi hàm"
+          c: "Làm hàm chạy chậm"
+          d: "Không có vấn đề gì"
+        answer: b
+        explanation: "Giá trị mặc định được tính khi định nghĩa hàm; dùng `history=None` rồi tạo list mới trong thân hàm."
+      - id: t04
+        topic: view vs copy
+        lesson: 02_numpy.ipynb
+        type: mcq
+        question: "Phép nào trả về VIEW (dùng chung bộ nhớ với mảng gốc `a`)?"
+        options: {a: "a[:, 1:3]", b: "a[[0, 2]]", c: "a[a > 0]", d: "a.copy()"}
+        answer: a
+        explanation: "Slicing cơ bản trả về view; fancy indexing và boolean indexing tạo bản sao."
+      - id: t05
+        topic: axis
+        lesson: 02_numpy.ipynb
+        type: mcq
+        question: "X có shape (n_samples, n_features). Lệnh nào cho trung bình của TỪNG FEATURE?"
+        options: {a: "X.mean()", b: "X.mean(axis=0)", c: "X.mean(axis=1)", d: "X.T.mean()"}
+        answer: b
+        explanation: "axis=0 gộp theo chiều mẫu → còn lại chiều feature."
+      - id: t06
+        topic: "* vs @"
+        lesson: 02_numpy.ipynb
+        type: tf
+        question: "Với hai ma trận NumPy 2×2, `A * B` là phép nhân ma trận."
+        answer: false
+        explanation: "`*` nhân từng phần tử; nhân ma trận dùng `@` hoặc `np.dot`."
+      - id: t07
+        topic: vectorization
+        lesson: 03_numpy_vectorization_and_broadcasting.ipynb
+        type: multi
+        question: "Những lý do nào khiến `X @ w` nhanh hơn vòng lặp Python?"
+        options:
+          a: "Vòng lặp chạy trong C, không kiểm tra kiểu cho từng phần tử"
+          b: "Dùng BLAS tối ưu với SIMD, cache, đa luồng"
+          c: "NumPy bỏ qua một số phép nhân"
+          d: "Dữ liệu nằm liên tục trong bộ nhớ"
+        answer: abd
+        explanation: "NumPy không bỏ phép tính nào; tốc độ đến từ C/BLAS/SIMD và bố trí bộ nhớ liên tục."
+      - id: t08
+        topic: ổn định số học softmax
+        lesson: 03_numpy_vectorization_and_broadcasting.ipynb
+        type: mcq
+        question: "Vì sao cài đặt softmax thường trừ đi max của mỗi hàng trước khi lấy exp?"
+        options:
+          a: "Để kết quả có tổng bằng 1"
+          b: "Để tránh exp bị tràn số (overflow) mà không làm đổi kết quả"
+          c: "Để làm softmax chạy nhanh hơn"
+          d: "Để các xác suất khác nhau rõ hơn"
+        answer: b
+        explanation: "e^(x−c)/Σe^(x−c) = e^x/Σe^x; trừ max giữ các số mũ ≤ 0 nên không overflow."
+      - id: t09
+        topic: SettingWithCopyWarning
+        lesson: 04_pandas_essentials.ipynb
+        type: mcq
+        question: "Cách AN TOÀN để gán giá trị cho các hàng thoả điều kiện trong DataFrame `df`?"
+        options:
+          a: "df[df.x > 0]['y'] = 1"
+          b: "df.loc[df.x > 0, 'y'] = 1"
+          c: "for i, r in df.iterrows(): r['y'] = 1"
+          d: "df.query('x > 0').y = 1"
+        answer: b
+        explanation: "Dùng `.loc[mask, col]` trên DataFrame gốc; các cách khác gán vào bản sao/tạm."
+      - id: t10
+        topic: bug (n,) vs (n,1)
+        lesson: 06_debugging_shapes_and_performance.ipynb
+        type: mcq
+        question: "y có shape (100,), y_hat có shape (100, 1). `np.mean((y - y_hat)**2)` tính trung bình trên bao nhiêu phần tử?"
+        options: {a: "100", b: "1", c: "10 000", d: "Báo lỗi"}
+        answer: c
+        explanation: "Broadcasting (100,) − (100,1) → (100,100): lỗi âm thầm kinh điển."
+      - id: t11
+        topic: NoneType
+        lesson: 07_common_python_errors.ipynb
+        type: mcq
+        question: "Hàm f của bạn quên lệnh return. Gọi f(x)[0] sẽ báo lỗi gì?"
+        options: {a: "TypeError: 'NoneType' object is not subscriptable", b: "IndexError: list index out of range", c: "NameError", d: "SyntaxError"}
+        answer: a
+        explanation: "Hàm không return trả về None; None không truy cập chỉ số được."
+      - id: t12
+        topic: except pass
+        lesson: 07_common_python_errors.ipynb
+        type: tf
+        question: "`except Exception: pass` là cách an toàn để chương trình ML không bao giờ dừng giữa chừng vì lỗi."
+        answer: false
+        explanation: "Nó nuốt cả lỗi lập trình (gõ sai tên biến, sai shape) → kết quả sai mà không ai biết. Chỉ bắt đúng loại lỗi dự liệu được."
+      - id: t13
+        topic: kernel environment
+        lesson: 07_common_python_errors.ipynb
+        type: mcq
+        question: "Đã chạy `pip install lightgbm` trong terminal nhưng notebook vẫn báo ModuleNotFoundError. Nguyên nhân khả dĩ nhất?"
+        options: {a: "Kernel của notebook chạy một môi trường Python khác", b: "lightgbm không hỗ trợ Windows", c: "Phải khởi động lại máy tính", d: "Thiếu dấu chấm phẩy"}
+        answer: a
+        explanation: "pip của terminal và kernel của notebook là hai môi trường khác nhau → dùng %pip install trong notebook hoặc chọn đúng kernel."
+      - id: t14
+        topic: logic errors
+        lesson: 07_common_python_errors.ipynb
+        type: multi
+        question: "Những trường hợp nào là lỗi LOGIC — code chạy không báo exception nhưng kết quả sai ý?"
+        options: {a: "So sánh hai số thực bằng ==", b: "Viết '5' * 2 khi muốn nhân số 5 với 2", c: "int('3.5')", d: "Xoá phần tử của một list trong lúc đang duyệt chính list đó"}
+        answer: abd
+        explanation: "int('3.5') báo ValueError ngay (lỗi ồn ào); ba trường hợp còn lại chạy êm nhưng sai."
+  math:
+    questions:
+      - id: m01
+        topic: broadcasting shape
+        lesson: 03_numpy_vectorization_and_broadcasting.ipynb
+        type: numeric
+        decimals: 0
+        question: "`np.ones((4, 1)) + np.ones((1, 6))` có bao nhiêu phần tử?"
+        answer: 24
+        explanation: "(4,1) + (1,6) → (4,6) = 24 phần tử."
+      - id: m02
+        topic: axis
+        lesson: 02_numpy.ipynb
+        type: numeric
+        decimals: 0
+        question: "Với `X = np.array([[1, 2, 3], [4, 5, 6]])`, giá trị của `X.sum(axis=0)[2]` là?"
+        answer: 9
+        explanation: "Tổng cột thứ 3: 3 + 6 = 9."
+      - id: m03
+        topic: dot product
+        lesson: 02_numpy.ipynb
+        type: numeric
+        decimals: 0
+        question: "`np.array([1, 2, 3]) @ np.array([4, 5, 6])` bằng bao nhiêu?"
+        answer: 32
+        explanation: "1·4 + 2·5 + 3·6 = 32."
+      - id: m04
+        topic: chuẩn hoá
+        lesson: 03_numpy_vectorization_and_broadcasting.ipynb
+        type: numeric
+        decimals: 2
+        question: "Chuẩn hoá giá trị 8 trong cột [2, 4, 6, 8] bằng z = (x − mean) / std (std của toàn bộ, ddof=0). z = ?"
+        answer: 1.3416
+        explanation: "mean = 5, std = √5 ≈ 2.236 → z = 3/2.236 ≈ 1.34."
+      - id: m05
+        topic: bộ nhớ
+        lesson: 06_debugging_shapes_and_performance.ipynb
+        type: numeric
+        decimals: 0
+        question: "Mảng float32 shape (1000, 500) chiếm bao nhiêu MB (1 MB = 10^6 byte)?"
+        answer: 2
+        explanation: "1000 × 500 × 4 byte = 2 000 000 byte = 2 MB."
+coding:
+  tasks:
+    - id: c01
+      title: Softmax theo hàng, ổn định số học
+      prompt: |
+        Viết `softmax(Z)` cho ma trận `Z` shape `(n, k)`: mỗi hàng trả về phân phối xác suất. Không dùng vòng lặp; phải đúng cả với giá trị rất lớn (vd 1000).
+      code: |
+        def softmax(Z):
+            ### START CODE HERE ### (≈ 3 dòng)
+            Z = Z - Z.max(axis=1, keepdims=True)
+            E = np.exp(Z)
+            P = E / E.sum(axis=1, keepdims=True)
+            ### END CODE HERE ###
+            return P
+      tests: |
+        P = softmax(np.array([[1.0, 2.0, 3.0], [1000.0, 1000.0, 1000.0]]))
+        check_close(P.sum(axis=1), [1, 1], message="mỗi hàng tổng = 1")
+        check_close(P[1], [1/3, 1/3, 1/3], message="ổn định với giá trị lớn")
+        check_close(P[0], [0.09003057, 0.24472847, 0.66524096], tol=1e-7)
+    - id: c02
+      title: Chia train/test bằng fancy indexing
+      prompt: |
+        Viết `shuffle_split(X, y, test_size, seed)` trả về `X_train, X_test, y_train, y_test`: xáo trộn chỉ số bằng
+        `np.random.default_rng(seed).permutation(n)`, lấy `round(n * test_size)` chỉ số **cuối** làm test.
+      code: |
+        def shuffle_split(X, y, test_size=0.2, seed=0):
+            n = len(X)
+            ### START CODE HERE ### (≈ 4 dòng)
+            perm = np.random.default_rng(seed).permutation(n)
+            n_test = round(n * test_size)
+            train_idx, test_idx = perm[: n - n_test], perm[n - n_test :]
+            result = (X[train_idx], X[test_idx], y[train_idx], y[test_idx])
+            ### END CODE HERE ###
+            return result
+      tests: |
+        X = np.arange(20).reshape(10, 2)
+        y = np.arange(10)
+        X_tr, X_te, y_tr, y_te = shuffle_split(X, y, test_size=0.3, seed=1)
+        check_shape(X_te, (3, 2))
+        check_equal(sorted(np.concatenate([y_tr, y_te]).tolist()), list(range(10)), "không mất / trùng mẫu")
+        check_equal(X_te[:, 0] // 2, y_te, "X và y được xáo trộn cùng nhau")
+project:
+  prompt: |
+    **Mini project — Báo cáo churn bằng Pandas.** Với `../../data/sample/customer_churn.csv`, viết hàm
+    `churn_report(df)` trả về **dict** gồm:
+    - `"overall"`: tỉ lệ churn chung (float);
+    - `"by_contract"`: `pd.Series` tỉ lệ churn theo `contract`, sắp xếp **giảm dần**;
+    - `"worst_tenure_group"`: nhãn nhóm tenure (`pd.cut` với `bins=[-1, 12, 24, 48, 72]`, `labels=["0-12", "13-24", "25-48", "49-72"]`) có tỉ lệ churn cao nhất.
+  code: |
+    import pandas as pd
+
+    def churn_report(df):
+        ### START CODE HERE ### (≈ 6 dòng)
+        overall = df["churn"].mean()
+        by_contract = df.groupby("contract")["churn"].mean().sort_values(ascending=False)
+        groups = pd.cut(df["tenure_months"], bins=[-1, 12, 24, 48, 72], labels=["0-12", "13-24", "25-48", "49-72"])
+        worst = df.groupby(groups, observed=True)["churn"].mean().idxmax()
+        report = {"overall": overall, "by_contract": by_contract, "worst_tenure_group": worst}
+        ### END CODE HERE ###
+        return report
+
+    report = churn_report(pd.read_csv("../../data/sample/customer_churn.csv"))
+    report
+  tests: |
+    df = pd.read_csv("../../data/sample/customer_churn.csv")
+    check_close(report["overall"], df["churn"].mean(), message="tỉ lệ churn chung")
+    check_equal(report["by_contract"].index[0], "month-to-month", "month-to-month churn cao nhất")
+    check_true(report["by_contract"].is_monotonic_decreasing, "sắp xếp giảm dần")
+    check_equal(str(report["worst_tenure_group"]), "0-12", "nhóm tenure rủi ro nhất")

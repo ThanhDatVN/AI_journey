@@ -1,0 +1,296 @@
+title: "14 · Model Evaluation"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: accuracy paradox
+        lesson: 01_confusion_matrix_and_metrics.ipynb
+        type: mcq
+        question: "Dữ liệu có 1% positive. Model luôn đoán negative đạt accuracy:"
+        options: {a: "50%", b: "1%", c: "99%", d: "0%"}
+        answer: c
+        explanation: "Accuracy bị lớp đa số chi phối."
+      - id: t02
+        topic: precision vs recall
+        lesson: 01_confusion_matrix_and_metrics.ipynb
+        type: mcq
+        question: "'Trong các email model đánh dấu spam, bao nhiêu % thật là spam?' là metric:"
+        options: {a: "Recall", b: "Precision", c: "Specificity", d: "Accuracy"}
+        answer: b
+        explanation: "TP/(TP + FP)."
+      - id: t03
+        topic: F-beta
+        lesson: 01_confusion_matrix_and_metrics.ipynb
+        type: mcq
+        question: "Sàng lọc bệnh: bỏ sót rất nguy hiểm. Nên dùng:"
+        options: {a: "F0.5", b: "F2 (β > 1)", c: "Precision", d: "Accuracy"}
+        answer: b
+        explanation: "β > 1 ưu tiên recall."
+      - id: t04
+        topic: averaging
+        lesson: 01_confusion_matrix_and_metrics.ipynb
+        type: mcq
+        question: "Bài toán nhiều lớp, lớp hiếm quan trọng như lớp phổ biến. Dùng:"
+        options: {a: "Micro-F1", b: "Weighted-F1", c: "Macro-F1", d: "Accuracy"}
+        answer: c
+        explanation: "Macro: mỗi lớp như nhau."
+      - id: t05
+        topic: micro = accuracy
+        lesson: 01_confusion_matrix_and_metrics.ipynb
+        type: tf
+        question: "Với bài toán đa lớp single-label, micro-F1 bằng accuracy."
+        answer: true
+        explanation: "Tổng FP = tổng FN."
+      - id: t06
+        topic: AUC meaning
+        lesson: 02_roc_pr_and_thresholds.ipynb
+        type: mcq
+        question: "ROC-AUC = 0.8 nghĩa là:"
+        options:
+          a: "80% dự đoán đúng"
+          b: "Chọn ngẫu nhiên một positive và một negative, 80% khả năng positive có điểm cao hơn"
+          c: "Precision = 0.8"
+          d: "Ngưỡng tối ưu = 0.8"
+        answer: b
+        explanation: "Mann–Whitney."
+      - id: t07
+        topic: AUC invariance
+        lesson: 02_roc_pr_and_thresholds.ipynb
+        type: tf
+        question: "Lấy căn bậc ba mọi điểm số (biến đổi đơn điệu tăng) làm thay đổi ROC-AUC."
+        answer: false
+        explanation: "AUC chỉ phụ thuộc thứ tự."
+      - id: t08
+        topic: PR vs ROC
+        lesson: 02_roc_pr_and_thresholds.ipynb
+        type: mcq
+        question: "Khi tỉ lệ positive giảm (cùng model), điều gì thường xảy ra?"
+        options: {a: "ROC-AUC giảm mạnh, PR-AUC không đổi", b: "ROC-AUC gần như không đổi, PR-AUC giảm mạnh", c: "Cả hai không đổi", d: "Cả hai tăng"}
+        answer: b
+        explanation: "Precision phụ thuộc tỉ lệ lớp."
+      - id: t09
+        topic: PR baseline
+        lesson: 02_roc_pr_and_thresholds.ipynb
+        type: mcq
+        question: "PR-AUC (average precision) của model ngẫu nhiên xấp xỉ:"
+        options: {a: "0.5", b: "Tỉ lệ positive", c: "0", d: "1"}
+        answer: b
+        explanation: "Precision ngẫu nhiên = tỉ lệ positive."
+      - id: t10
+        topic: threshold
+        lesson: 02_roc_pr_and_thresholds.ipynb
+        type: multi
+        question: "Cách chọn ngưỡng hợp lý trong thực tế?"
+        options:
+          a: "Tối thiểu chi phí FP/FN trên validation"
+          b: "Thoả ràng buộc nghiệp vụ (recall ≥ X%, tối đa k cảnh báo)"
+          c: "Luôn dùng 0.5"
+          d: "Chọn trên tập test để có kết quả tốt nhất"
+        answer: ab
+        explanation: "Chọn trên test là leakage."
+      - id: t11
+        topic: probability metrics
+        lesson: 02_roc_pr_and_thresholds.ipynb
+        type: mcq
+        question: "Hai model có cùng ROC-AUC. Muốn biết xác suất model nào đáng tin hơn, dùng:"
+        options: {a: "Accuracy", b: "Log-loss / Brier score", c: "Recall", d: "ROC-AUC"}
+        answer: b
+        explanation: "AUC không đánh giá giá trị xác suất."
+      - id: t12
+        topic: MAE vs MSE
+        lesson: 03_regression_metrics.ipynb
+        type: mcq
+        question: "Dự đoán hằng số tối ưu cho MAE là:"
+        options: {a: "Trung bình", b: "Trung vị", c: "Mode", d: "Max"}
+        answer: b
+        explanation: "MSE ↔ trung bình; MAE ↔ trung vị; pinball ↔ phân vị."
+      - id: t13
+        topic: MAPE
+        lesson: 03_regression_metrics.ipynb
+        type: mcq
+        question: "Vì sao MAPE không phù hợp cho doanh số ngày của sản phẩm bán chậm?"
+        options: {a: "Tính quá chậm", b: "Chia cho y gần 0 → bùng nổ", c: "Không có đơn vị", d: "Luôn bằng 0"}
+        answer: b
+        explanation: "Dùng WAPE/MAE."
+      - id: t14
+        topic: R2
+        lesson: 03_regression_metrics.ipynb
+        type: multi
+        question: "Phát biểu đúng về R²:"
+        options:
+          a: "Có thể âm"
+          b: "Phụ thuộc phương sai của y trong tập đánh giá"
+          c: "Luôn nằm trong [0, 1]"
+          d: "R² = 0 tương đương dự đoán bằng trung bình"
+        answer: abd
+        explanation: "Không so sánh R² giữa các tập dữ liệu khác nhau."
+      - id: t15
+        topic: precision@k
+        lesson: 04_choosing_metrics_case_studies.ipynb
+        type: mcq
+        question: "Đội kiểm tra chỉ xử lý được 200 cảnh báo/ngày. Metric phù hợp nhất:"
+        options: {a: "Accuracy", b: "Precision@200 / Recall@200", c: "R²", d: "Micro-F1"}
+        answer: b
+        explanation: "Khớp với năng lực vận hành."
+      - id: t16
+        topic: paired comparison
+        lesson: 04_choosing_metrics_case_studies.ipynb
+        type: mcq
+        question: "So sánh hai model trên cùng tập test, cách đúng là:"
+        options:
+          a: "Xem hai khoảng tin cậy riêng có chồng nhau không"
+          b: "Bootstrap hiệu metric trên cùng các mẫu (paired) hoặc McNemar"
+          c: "Chọn model có số lớn hơn"
+          d: "Chạy lại trên tập test cho đến khi khác biệt rõ"
+        answer: b
+        explanation: "Hai model tương quan vì cùng dữ liệu."
+  math:
+    questions:
+      - id: m01
+        topic: precision
+        lesson: 01_confusion_matrix_and_metrics.ipynb
+        type: numeric
+        decimals: 3
+        question: "TP = 30, FP = 20, FN = 10. Precision = ?"
+        answer: 0.6
+        explanation: "30/50."
+      - id: m02
+        topic: F1
+        lesson: 01_confusion_matrix_and_metrics.ipynb
+        type: numeric
+        decimals: 3
+        question: "TP = 30, FP = 20, FN = 10. F1 = ?"
+        answer: 0.6667
+        explanation: "P = 0.6, R = 0.75 → 2·0.45/1.35."
+      - id: m03
+        topic: AUC pairs
+        lesson: 02_roc_pr_and_thresholds.ipynb
+        type: numeric
+        decimals: 3
+        question: "Positive có điểm [0.9, 0.4], negative có điểm [0.5, 0.2]. ROC-AUC = ?"
+        answer: 0.75
+        explanation: "3/4 cặp xếp đúng."
+      - id: m04
+        topic: optimal threshold
+        lesson: 02_roc_pr_and_thresholds.ipynb
+        type: numeric
+        decimals: 3
+        question: "C_FP = 1, C_FN = 9, xác suất calibrated. Ngưỡng tối ưu = ?"
+        answer: 0.1
+        explanation: "1/(1 + 9)."
+      - id: m05
+        topic: RMSE
+        lesson: 03_regression_metrics.ipynb
+        type: numeric
+        decimals: 3
+        question: "Sai số [1, −1, 3, −3]. RMSE = ?"
+        answer: 2.2361
+        explanation: "√(20/4) = √5."
+      - id: m06
+        topic: WAPE
+        lesson: 03_regression_metrics.ipynb
+        type: numeric
+        decimals: 3
+        question: "y = [10, 20, 70], ŷ = [12, 18, 60]. WAPE = Σ|e|/Σ|y| = ?"
+        answer: 0.14
+        explanation: "14/100."
+coding:
+  tasks:
+    - id: c01
+      title: Các metric từ confusion matrix
+      prompt: |
+        Viết `binary_metrics(y_true, y_pred)` trả về dict với khoá `precision`, `recall`, `specificity`, `f1` (nhãn 0/1; mẫu số 0 → trả 0.0).
+      code: |
+        def binary_metrics(y_true, y_pred):
+            ### START CODE HERE ### (≈ 8 dòng)
+            tp = np.sum((y_true == 1) & (y_pred == 1))
+            fp = np.sum((y_true == 0) & (y_pred == 1))
+            fn = np.sum((y_true == 1) & (y_pred == 0))
+            tn = np.sum((y_true == 0) & (y_pred == 0))
+            precision = tp / (tp + fp) if tp + fp else 0.0
+            recall = tp / (tp + fn) if tp + fn else 0.0
+            specificity = tn / (tn + fp) if tn + fp else 0.0
+            f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+            ### END CODE HERE ###
+            return {"precision": precision, "recall": recall, "specificity": specificity, "f1": f1}
+      tests: |
+        from sklearn import metrics as skm
+        rng = np.random.default_rng(1)
+        yt, yp = rng.integers(0, 2, 300), rng.integers(0, 2, 300)
+        m = binary_metrics(yt, yp)
+        check_close(m["precision"], skm.precision_score(yt, yp), message="precision")
+        check_close(m["recall"], skm.recall_score(yt, yp), message="recall")
+        check_close(m["f1"], skm.f1_score(yt, yp), message="F1")
+        check_close(m["specificity"], skm.recall_score(1 - yt, 1 - yp), message="specificity")
+        check_equal(binary_metrics(np.array([0, 0]), np.array([0, 0]))["precision"], 0.0, "mẫu số 0")
+    - id: c02
+      title: ROC-AUC bằng đếm cặp
+      prompt: |
+        Viết `auc_pairwise(y, s)` = tỉ lệ cặp (positive, negative) mà positive có điểm cao hơn, cặp hoà tính 0.5.
+      code: |
+        def auc_pairwise(y, s):
+            ### START CODE HERE ### (≈ 3 dòng)
+            sp, sn = s[y == 1], s[y == 0]
+            diff = sp[:, None] - sn[None, :]
+            auc = np.mean(diff > 0) + 0.5 * np.mean(diff == 0)
+            ### END CODE HERE ###
+            return auc
+      tests: |
+        from sklearn import metrics as skm
+        rng = np.random.default_rng(2)
+        y = rng.integers(0, 2, 400)
+        s = np.round(rng.normal(y * 0.7, 1), 1)
+        check_close(auc_pairwise(y, s), skm.roc_auc_score(y, s), tol=1e-12, message="khớp sklearn (có hoà)")
+analysis:
+  prompt: |
+    Một bệnh viện đánh giá model phát hiện sớm nhiễm trùng huyết (tỉ lệ 2%). Báo cáo của nhóm: accuracy 98.3%, ROC-AUC 0.91,
+    ngưỡng 0.5 cho recall 22%; F1 tính bằng `average="weighted"` = 0.97. Model mới có ROC-AUC 0.915 trên cùng tập test 1 500 bệnh nhân
+    nên nhóm đề xuất thay thế. Tập test được lấy ngẫu nhiên từ dữ liệu 2019–2023, model sẽ dùng từ 2025. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra accuracy 98.3% gần baseline 98% và weighted-F1 bị lớp đa số chi phối → báo cáo recall/precision/PR-AUC cho lớp dương"
+    - "Chỉ ra ngưỡng 0.5 không phù hợp (recall 22% quá thấp cho bệnh nguy hiểm) → chọn ngưỡng theo recall tối thiểu/chi phí trên validation"
+    - "Chỉ ra chênh ROC-AUC 0.005 trên ~30 ca dương cần khoảng tin cậy/paired bootstrap trước khi kết luận"
+    - "Chỉ ra chia ngẫu nhiên 2019–2023 không phản ánh triển khai 2025 → đánh giá theo thời gian (train quá khứ, test gần nhất)"
+    - "Đề xuất metric gắn với lâm sàng: specificity/số báo động tại recall cố định, calibration, phân tích theo nhóm bệnh nhân"
+  sample_answer: |
+    (1) 2% dương → đoán "không bệnh" đã đạt 98%; weighted-F1 bị lớp âm chi phối → báo cáo recall, precision, PR-AUC lớp dương.
+    (2) Recall 22% ở ngưỡng 0.5 là không chấp nhận được; chọn ngưỡng đạt recall yêu cầu (vd ≥ 85%) trên validation, báo cáo specificity/số báo động nhầm tại đó.
+    (3) 1 500 bệnh nhân × 2% ≈ 30 ca dương → ROC-AUC có khoảng tin cậy rộng; chênh 0.005 cần paired bootstrap/DeLong, nhiều khả năng không có ý nghĩa.
+    (4) Test ngẫu nhiên trên 2019–2023 lạc quan so với 2025 (drift quy trình, thiết bị) → đánh giá theo thời gian.
+    (5) Thêm calibration (xác suất dùng để ưu tiên), phân tích theo nhóm (tuổi, khoa), và theo dõi sau triển khai.
+project:
+  prompt: |
+    **Mini project — Báo cáo đánh giá model churn.** Đọc `customer_churn.csv` (`repo_path("data", "sample", "customer_churn.csv")`).
+    Chia train/valid/test 60/20/20 (`random_state=0`, `stratify`). Train Logistic Regression (one-hot + scale). Trên **valid**, chọn ngưỡng
+    tối thiểu chi phí với C_FP = 1 (gọi điện giữ chân), C_FN = 5 (mất khách). Báo cáo trên **test**: ROC-AUC (`test_auc`),
+    chi phí trung bình mỗi khách tại ngưỡng đã chọn (`test_cost_per_customer`) và so với hai chiến lược "gọi tất cả" (`cost_all`), "không gọi ai" (`cost_none`).
+    Yêu cầu: `test_auc ≥ 0.80` và chi phí của model **thấp hơn cả hai** chiến lược đơn giản.
+  code: |
+    import pandas as pd
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import roc_auc_score
+    from sklearn.model_selection import train_test_split
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import StandardScaler
+    from ml_course.utils import repo_path
+
+    df = pd.read_csv(repo_path("data", "sample", "customer_churn.csv"))
+    X = pd.get_dummies(df.drop(columns=["customer_id", "churn"]), dtype=float)
+    y = df["churn"].to_numpy()
+    ### START CODE HERE ### (≈ 12 dòng)
+    X_tmp, X_te, y_tmp, y_te = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
+    X_tr, X_va, y_tr, y_va = train_test_split(X_tmp, y_tmp, test_size=0.25, random_state=0, stratify=y_tmp)
+    model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=3000)).fit(X_tr, y_tr)
+    p_va, p_te = model.predict_proba(X_va)[:, 1], model.predict_proba(X_te)[:, 1]
+    cost = lambda yy, pred: (1 * np.sum((pred == 1) & (yy == 0)) + 5 * np.sum((pred == 0) & (yy == 1))) / len(yy)
+    ts = np.linspace(0.01, 0.99, 99)
+    best_t = ts[int(np.argmin([cost(y_va, (p_va >= t).astype(int)) for t in ts]))]
+    test_auc = roc_auc_score(y_te, p_te)
+    test_cost_per_customer = cost(y_te, (p_te >= best_t).astype(int))
+    cost_all = cost(y_te, np.ones_like(y_te))
+    cost_none = cost(y_te, np.zeros_like(y_te))
+    ### END CODE HERE ###
+    print(f"ngưỡng = {best_t:.2f} | ROC-AUC = {test_auc:.3f} | chi phí/khách: model = {test_cost_per_customer:.3f}, gọi tất cả = {cost_all:.3f}, không gọi = {cost_none:.3f}")
+  tests: |
+    check_greater(test_auc, 0.80, "ROC-AUC test ≥ 0.80")
+    check_less(test_cost_per_customer, min(cost_all, cost_none), "model rẻ hơn cả hai chiến lược đơn giản")

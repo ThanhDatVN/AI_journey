@@ -1,0 +1,358 @@
+title: "06 · Linear Regression"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: cost function
+        lesson: 01_linear_regression_one_variable.ipynb
+        type: mcq
+        question: "Vì sao cost function của Linear Regression thường có hệ số 1/2: J = 1/(2m) Σ(h(x) − y)²?"
+        options:
+          a: "Để cost luôn nhỏ hơn 1"
+          b: "Để triệt tiêu số 2 khi lấy đạo hàm — không làm đổi điểm tối ưu"
+          c: "Vì dữ liệu được chia đôi train/test"
+          d: "Để gradient descent hội tụ nhanh gấp đôi"
+        answer: b
+        explanation: "Nhân hằng số dương không đổi argmin."
+      - id: t02
+        topic: cập nhật đồng thời
+        lesson: 01_linear_regression_one_variable.ipynb
+        type: tf
+        question: "Trong gradient descent, θ0 và θ1 phải được cập nhật đồng thời (đều dùng giá trị của vòng lặp trước)."
+        answer: true
+        explanation: "Cập nhật tuần tự là một thuật toán khác (coordinate-wise), không phải GD chuẩn."
+      - id: t03
+        topic: vector hoá gradient
+        lesson: 02_linear_regression_multiple_variables.ipynb
+        type: mcq
+        question: "Dạng vector hoá của gradient descent cho Linear Regression là:"
+        options:
+          a: "θ := θ − (α/m) Xᵀ(Xθ − y)"
+          b: "θ := θ − (α/m) X(Xᵀθ − y)"
+          c: "θ := θ + (α/m) Xᵀ(Xθ − y)"
+          d: "θ := (XᵀX)⁻¹Xᵀy − α"
+        answer: a
+        explanation: "∇J = (1/m)Xᵀ(Xθ − y); đi ngược chiều gradient."
+      - id: t04
+        topic: chuẩn hoá khi dự đoán
+        lesson: 02_linear_regression_multiple_variables.ipynb
+        type: mcq
+        question: "Model train trên feature đã chuẩn hoá z = (x − μ)/σ. Khi dự đoán cho nhà mới, cần làm gì?"
+        options:
+          a: "Đưa thẳng giá trị gốc vào model"
+          b: "Chuẩn hoá bằng μ, σ tính từ chính căn nhà mới"
+          c: "Chuẩn hoá bằng μ, σ đã học từ tập train"
+          d: "Train lại model"
+        answer: c
+        explanation: "Dùng đúng phép biến đổi đã học từ train."
+      - id: t05
+        topic: normal equation complexity
+        lesson: 03_normal_equation_and_gd_tips.ipynb
+        type: mcq
+        question: "Normal equation trở nên chậm khi nào?"
+        options:
+          a: "Số mẫu m lên tới vài triệu, số feature 20"
+          b: "Số feature n rất lớn (hàng chục nghìn trở lên)"
+          c: "Learning rate quá lớn"
+          d: "Dữ liệu chưa chuẩn hoá"
+        answer: b
+        explanation: "Chi phí O(mn² + n³): bậc ba theo số feature."
+      - id: t06
+        topic: XᵀX suy biến
+        lesson: 03_normal_equation_and_gd_tips.ipynb
+        type: multi
+        question: "Trường hợp nào làm XᵀX không khả nghịch?"
+        options:
+          a: "Có cả cột diện tích m² và diện tích feet²"
+          b: "Số feature lớn hơn số mẫu"
+          c: "Feature chưa được chuẩn hoá"
+          d: "One-hot đủ K cột cùng với cột bias"
+        answer: abd
+        explanation: "Chuẩn hoá không ảnh hưởng tới tính khả nghịch."
+      - id: t07
+        topic: mini-batch GD
+        lesson: 04_batch_sgd_minibatch_gd.ipynb
+        type: mcq
+        question: "Vì sao mini-batch GD là lựa chọn mặc định trong deep learning?"
+        options:
+          a: "Gradient chính xác tuyệt đối"
+          b: "Cân bằng giữa số lần cập nhật/epoch và tận dụng vectorization/GPU"
+          c: "Không cần learning rate"
+          d: "Luôn tìm được cực tiểu toàn cục"
+        answer: b
+        explanation: "Ít nhiễu hơn SGD, cập nhật nhiều hơn batch GD, chạy hiệu quả trên phần cứng."
+      - id: t08
+        topic: SGD noise
+        lesson: 04_batch_sgd_minibatch_gd.ipynb
+        type: tf
+        question: "Với learning rate cố định, SGD (batch = 1) thường dao động quanh cực tiểu chứ không hội tụ hẳn."
+        answer: true
+        explanation: "Gradient của một mẫu là ước lượng nhiễu; cần giảm dần learning rate."
+      - id: t09
+        topic: polynomial regression
+        lesson: 05_polynomial_regression.ipynb
+        type: mcq
+        question: "Vì sao hồi quy đa thức vẫn được giải bằng Linear Regression?"
+        options:
+          a: "Vì đa thức bậc cao xấp xỉ đường thẳng"
+          b: "Vì model vẫn tuyến tính theo tham số θ — chỉ thêm feature x², x³..."
+          c: "Vì sklearn không hỗ trợ model phi tuyến"
+          d: "Không đúng, cần thuật toán khác"
+        answer: b
+        explanation: "Tuyến tính theo tham số, phi tuyến theo x."
+      - id: t10
+        topic: ngoại suy
+        lesson: 05_polynomial_regression.ipynb
+        type: tf
+        question: "Đa thức bậc cao fit tốt trên vùng dữ liệu train thì cũng ngoại suy tốt ra ngoài vùng đó."
+        answer: false
+        explanation: "Đa thức bậc cao bùng nổ khi ra ngoài vùng dữ liệu."
+      - id: t11
+        topic: MLE view
+        lesson: 06_probabilistic_view_scratch_and_sklearn.ipynb
+        type: mcq
+        question: "Linear Regression (MSE) là MLE dưới giả định nào về nhiễu?"
+        options: {a: "Laplace", b: "Gauss, độc lập, phương sai không đổi", c: "Poisson", d: "Uniform"}
+        answer: b
+        explanation: "Xem chương 02, bài 07."
+      - id: t12
+        topic: diễn giải hệ số
+        lesson: 06_probabilistic_view_scratch_and_sklearn.ipynb
+        type: mcq
+        question: "Diễn giải ĐÚNG của hệ số w_j trong Linear Regression đa biến:"
+        options:
+          a: "Tương quan giữa x_j và y"
+          b: "Thay đổi kỳ vọng của y khi x_j tăng 1 đơn vị, giữ các feature khác không đổi"
+          c: "Hiệu ứng nhân quả của x_j lên y"
+          d: "Mức độ quan trọng của x_j, so sánh được giữa mọi feature"
+        answer: b
+        explanation: "Ảnh hưởng có điều kiện; không phải nhân quả; phụ thuộc đơn vị."
+      - id: t13
+        topic: không phạt bias
+        lesson: 07_regularization_ridge_lasso.ipynb
+        type: mcq
+        question: "Vì sao regularization không phạt θ0 (bias)?"
+        options:
+          a: "θ0 luôn bằng 0"
+          b: "Bias chỉ dịch dự đoán lên/xuống, không làm model phức tạp hơn"
+          c: "Để tính toán nhanh hơn"
+          d: "Vì θ0 không có gradient"
+        answer: b
+        explanation: "Phạt bias sẽ kéo dự đoán về 0 vô lý."
+      - id: t14
+        topic: Lasso sparsity
+        lesson: 07_regularization_ridge_lasso.ipynb
+        type: mcq
+        question: "Muốn model tự loại bỏ các feature không quan trọng (hệ số = 0), nên dùng:"
+        options: {a: "Ridge", b: "Lasso", c: "OLS", d: "Polynomial features"}
+        answer: b
+        explanation: "L1 cho nghiệm thưa."
+      - id: t15
+        topic: sklearn alpha
+        lesson: 07_regularization_ridge_lasso.ipynb
+        type: tf
+        question: "Trong sklearn.linear_model.Ridge(alpha=...), alpha là learning rate."
+        answer: false
+        explanation: "alpha là hệ số regularization λ."
+      - id: t16
+        topic: heteroscedasticity
+        lesson: 08_diagnostics_and_failure_cases.ipynb
+        type: mcq
+        question: "Residual vs fitted có hình phễu mở rộng. Cách khắc phục phổ biến nhất?"
+        options: {a: "Thêm dữ liệu", b: "Log-transform target", c: "Tăng learning rate", d: "Bỏ cột bias"}
+        answer: b
+        explanation: "Sai số tương đối trở nên đều trên thang log."
+      - id: t17
+        topic: leverage
+        lesson: 08_diagnostics_and_failure_cases.ipynb
+        type: mcq
+        question: "Điểm nào có khả năng làm lệch đường hồi quy nhiều nhất?"
+        options:
+          a: "Outlier về y nằm giữa vùng x của dữ liệu"
+          b: "Điểm có x rất xa phần còn lại (leverage cao) và y bất thường"
+          c: "Điểm trùng lặp"
+          d: "Điểm nằm đúng trên đường hồi quy"
+        answer: b
+        explanation: "Đòn bẩy cao + residual lớn → Cook's distance lớn."
+      - id: t18
+        topic: omitted variable bias
+        lesson: 08_diagnostics_and_failure_cases.ipynb
+        type: tf
+        question: "Bỏ sót một biến quan trọng có tương quan với feature đang dùng có thể làm hệ số của feature đó sai lệch có hệ thống."
+        answer: true
+        explanation: "Feature đang có 'gánh' luôn ảnh hưởng của biến bị bỏ."
+      - id: t19
+        topic: monitor SGD
+        lesson: 04_batch_sgd_minibatch_gd.ipynb
+        type: mcq
+        question: "Huấn luyện SGD trên 100 triệu mẫu. Cách RẺ để theo dõi thuật toán có đang hội tụ:"
+        options: {a: "Vẽ trung bình loss của ~1 000 mẫu gần nhất, mỗi loss tính TRƯỚC khi dùng mẫu đó để cập nhật", b: "Tính MSE trên toàn bộ dữ liệu sau mỗi bước", c: "Chỉ nhìn loss của mẫu cuối cùng", d: "Không cần theo dõi"}
+        answer: a
+        explanation: "Loss của mẫu tính trước khi cập nhật gần như miễn phí và là ước lượng trung thực của loss hiện tại."
+      - id: t20
+        topic: map-reduce
+        lesson: 04_batch_sgd_minibatch_gd.ipynb
+        type: tf
+        question: "Gradient của batch gradient descent tính song song được bằng map-reduce vì nó là tổng các thành phần độc lập trên từng mẫu."
+        answer: true
+        explanation: "Mỗi máy tính tổng trên phần dữ liệu của mình (map), một máy cộng lại (reduce) — kết quả giống hệt tính trên một máy."
+      - id: t21
+        topic: online learning
+        lesson: 04_batch_sgd_minibatch_gd.ipynb
+        type: mcq
+        question: "Ưu điểm chính của online learning (partial_fit theo từng lô mới) khi quan hệ x → y trôi dần theo thời gian:"
+        options: {a: "Thích nghi với thay đổi mà không cần lưu và huấn luyện lại toàn bộ lịch sử", b: "Luôn chính xác hơn huấn luyện theo batch", c: "Không cần giám sát mô hình", d: "Miễn nhiễm với dữ liệu bẩn"}
+        answer: a
+        explanation: "Đổi lại, mô hình dễ bị kéo lệch bởi dữ liệu bẩn → luôn kèm giám sát và khả năng quay về phiên bản cũ."
+  math:
+    questions:
+      - id: m01
+        topic: dự đoán
+        lesson: 01_linear_regression_one_variable.ipynb
+        type: numeric
+        decimals: 2
+        question: "h(x) = 2 + 0.5x. Dự đoán tại x = 7?"
+        answer: 5.5
+        explanation: "2 + 3.5 = 5.5."
+      - id: m02
+        topic: cost function
+        lesson: 01_linear_regression_one_variable.ipynb
+        type: numeric
+        decimals: 3
+        question: "Dữ liệu (x, y) = (1, 1), (2, 3). Tính J(θ0 = 0, θ1 = 1) = 1/(2m) Σ(h − y)²."
+        answer: 0.25
+        explanation: "Sai số: 0 và −1 → (0 + 1)/(2·2) = 0.25."
+      - id: m03
+        topic: một bước GD
+        lesson: 01_linear_regression_one_variable.ipynb
+        type: numeric
+        decimals: 3
+        question: "Cùng dữ liệu (1, 1), (2, 3), θ = (0, 0), α = 0.1. Giá trị θ1 sau một bước GD?"
+        answer: 0.35
+        explanation: "∂J/∂θ1 = (1/m)Σ(h − y)x = ((0−1)·1 + (0−3)·2)/2 = −3.5 → θ1 = 0 − 0.1·(−3.5) = 0.35."
+      - id: m04
+        topic: nghiệm OLS một biến
+        lesson: 01_linear_regression_one_variable.ipynb
+        type: numeric
+        decimals: 2
+        question: "Dữ liệu (0, 1), (1, 3), (2, 5). Độ dốc θ1 của đường hồi quy OLS?"
+        answer: 2
+        explanation: "Các điểm nằm đúng trên y = 1 + 2x."
+      - id: m05
+        topic: số lần cập nhật / epoch
+        lesson: 04_batch_sgd_minibatch_gd.ipynb
+        type: numeric
+        decimals: 0
+        question: "Có 50 000 mẫu, batch size 256. Mỗi epoch có bao nhiêu lần cập nhật θ (batch cuối có thể nhỏ hơn)?"
+        answer: 196
+        explanation: "⌈50000/256⌉ = 196."
+      - id: m06
+        topic: polynomial features
+        lesson: 05_polynomial_regression.ipynb
+        type: numeric
+        decimals: 0
+        question: "PolynomialFeatures(degree=2, include_bias=False) với 3 feature tạo ra bao nhiêu cột?"
+        answer: 9
+        explanation: "3 bậc 1 + 6 bậc 2 (3 bình phương + 3 tương tác) = 9."
+      - id: m07
+        topic: VIF
+        lesson: 08_diagnostics_and_failure_cases.ipynb
+        type: numeric
+        decimals: 1
+        question: "Hồi quy feature x_j theo các feature còn lại được R² = 0.9. VIF_j = ?"
+        answer: 10
+        explanation: "1/(1 − 0.9) = 10."
+coding:
+  tasks:
+    - id: c01
+      title: Gradient descent vector hoá
+      prompt: |
+        Viết `gd_linear(X, y, alpha, num_iters)` (X **đã có** cột bias) trả về `(theta, J_history)`,
+        với $\theta := \theta - \frac{\alpha}{m}X^\top(X\theta - y)$ và $J = \frac{1}{2m}\lVert X\theta - y\rVert^2$ ghi sau mỗi vòng.
+      code: |
+        def gd_linear(X, y, alpha=0.1, num_iters=500):
+            m = len(y)
+            theta = np.zeros(X.shape[1])
+            J_history = []
+            for _ in range(num_iters):
+                ### START CODE HERE ### (≈ 3 dòng)
+                theta = theta - alpha / m * X.T @ (X @ theta - y)
+                err = X @ theta - y
+                J_history.append(err @ err / (2 * m))
+                ### END CODE HERE ###
+            return theta, J_history
+      tests: |
+        rng = np.random.default_rng(1)
+        Z = rng.normal(size=(200, 3))
+        X = np.c_[np.ones(200), Z]
+        y = X @ np.array([1.0, 2.0, -3.0, 0.5]) + rng.normal(0, 0.1, 200)
+        theta, J = gd_linear(X, y, alpha=0.1, num_iters=1000)
+        check_close(theta, np.linalg.lstsq(X, y, rcond=None)[0], tol=1e-3, message="hội tụ về nghiệm tối ưu")
+        check_true(all(np.diff(J) <= 1e-12), "J giảm mỗi vòng lặp")
+    - id: c02
+      title: Ridge nghiệm đóng (không phạt bias)
+      prompt: |
+        Viết `ridge_closed(X, y, lam)` (X **đã có** cột bias ở đầu) giải $(X^\top X + \lambda I')\theta = X^\top y$, với $I'$ là ma trận đơn vị có phần tử $[0, 0] = 0$. Dùng `np.linalg.solve`.
+      code: |
+        def ridge_closed(X, y, lam):
+            ### START CODE HERE ### (≈ 3 dòng)
+            I = np.eye(X.shape[1])
+            I[0, 0] = 0.0
+            theta = np.linalg.solve(X.T @ X + lam * I, X.T @ y)
+            ### END CODE HERE ###
+            return theta
+      tests: |
+        from sklearn.linear_model import Ridge
+        rng = np.random.default_rng(2)
+        Z = rng.normal(size=(100, 4))
+        y = Z @ np.array([1.0, 0.0, -2.0, 3.0]) + 5 + rng.normal(size=100)
+        theta = ridge_closed(np.c_[np.ones(100), Z], y, 10.0)
+        ref = Ridge(alpha=10.0).fit(Z, y)
+        check_close(theta[1:], ref.coef_, tol=1e-8, message="hệ số khớp sklearn Ridge")
+        check_close(theta[0], ref.intercept_, tol=1e-8, message="bias không bị phạt")
+analysis:
+  prompt: |
+    Một model Linear Regression dự đoán giá nhà đạt R² = 0.82. Biểu đồ residual vs fitted cho thấy residual **loe rộng** khi giá dự đoán tăng và hơi **cong**; có một căn biệt thự 2 000 m² có residual rất lớn; hệ số của `bedrooms` **âm**.
+    Hãy (1) chẩn đoán từng hiện tượng, (2) đề xuất cách khắc phục, (3) giải thích hệ số âm của `bedrooms`.
+  rubric:
+    - "Nhận ra phương sai không đều (heteroscedasticity) và đề xuất log-transform target"
+    - "Nhận ra residual cong là dấu hiệu quan hệ phi tuyến; đề xuất feature phi tuyến (log diện tích, đa thức) hoặc model phi tuyến"
+    - "Phân tích căn biệt thự là điểm leverage cao; kiểm tra lỗi dữ liệu, Cook's distance, Huber/log"
+    - "Giải thích hệ số bedrooms âm là ảnh hưởng có điều kiện (cùng diện tích, nhiều phòng = phòng nhỏ) và/hoặc đa cộng tuyến với diện tích"
+    - "Nhắc rằng hệ số không phải quan hệ nhân quả / R² cao không có nghĩa model đúng"
+  sample_answer: |
+    (1) Residual loe rộng → heteroscedasticity (sai số tỉ lệ với giá); residual cong → quan hệ phi tuyến chưa được mô hình hoá; biệt thự 2 000 m² → điểm có leverage cao, có thể chi phối đường hồi quy.
+    (2) Log-transform giá (và log diện tích) — giải quyết cả phương sai không đều lẫn quan hệ nhân; thêm feature phi tuyến/tương tác; kiểm tra biệt thự có phải lỗi nhập liệu, đo Cook's distance, dùng Huber loss hoặc model bền vững; so sánh bằng CV.
+    (3) Hệ số bedrooms là ảnh hưởng KHI GIỮ diện tích cố định: cùng diện tích, nhiều phòng hơn nghĩa là phòng nhỏ hơn → có thể kém giá trị; ngoài ra bedrooms tương quan mạnh với diện tích (VIF cao) nên hệ số không ổn định. R² cao không đảm bảo model đúng, và hệ số không mang nghĩa nhân quả.
+project:
+  prompt: |
+    **Mini project — Dự đoán lương theo cấp bậc (Position_Salaries) và chọn model bằng LOOCV.**
+    Dữ liệu chỉ có 10 điểm. So sánh bằng **Leave-One-Out CV** (`LeaveOneOut()`, scoring MAE) ba model:
+    (a) Linear Regression; (b) đa thức bậc 4 (Pipeline: PolynomialFeatures → StandardScaler → LinearRegression);
+    (c) **log-linear**: Linear Regression trên log(Salary) rồi `exp` lại (dùng `TransformedTargetRegressor(func=np.log, inverse_func=np.exp)`).
+    Lưu MAE LOOCV vào dict `mae` với các khoá `"linear"`, `"poly4"`, `"loglinear"`. Model tốt nhất phải có MAE < 60 000.
+  code: |
+    import pandas as pd
+    from sklearn.compose import TransformedTargetRegressor
+    from sklearn.linear_model import LinearRegression
+    from sklearn.model_selection import LeaveOneOut, cross_val_score
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+
+    data = pd.read_csv("../../data/sample/Position_Salaries.csv")
+    X, y = data[["Level"]].to_numpy(float), data["Salary"].to_numpy(float)
+    models = {
+        "linear": LinearRegression(),
+        "poly4": make_pipeline(PolynomialFeatures(4), StandardScaler(), LinearRegression()),
+        "loglinear": TransformedTargetRegressor(regressor=LinearRegression(), func=np.log, inverse_func=np.exp),
+    }
+    mae = {}
+    ### START CODE HERE ### (≈ 2 dòng)
+    for name, model in models.items():
+        mae[name] = -cross_val_score(model, X, y, cv=LeaveOneOut(), scoring="neg_mean_absolute_error").mean()
+    ### END CODE HERE ###
+    print({k: round(v) for k, v in mae.items()})
+  tests: |
+    check_equal(set(mae), {"linear", "poly4", "loglinear"}, "đủ 3 model")
+    check_less(min(mae.values()), 60000, "model tốt nhất có MAE LOOCV < 60 000")
+    check_true(mae["linear"] > min(mae["poly4"], mae["loglinear"]), "đường thẳng thua model phi tuyến")

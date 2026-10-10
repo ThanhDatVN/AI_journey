@@ -1,0 +1,278 @@
+title: "33 · Computer Vision"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: tensor layout
+        lesson: 01_images_and_augmentation.ipynb
+        type: mcq
+        question: "Ảnh đọc bằng PIL có shape (H, W, 3). Để đưa vào Conv2d của PyTorch, cần:"
+        options: {a: "permute về (3, H, W) (và thêm chiều batch)", b: "reshape thành (3, H, W)", c: "giữ nguyên (H, W, 3)", d: "đổi sang (W, H, 3)"}
+        answer: a
+        explanation: "reshape xáo trộn pixel mà không báo lỗi."
+      - id: t02
+        topic: antialias
+        lesson: 01_images_and_augmentation.ipynb
+        type: tf
+        question: "Thu nhỏ ảnh nhiều lần bằng nội suy nearest mà không làm mờ trước có thể gây aliasing (hoa văn giả)."
+        answer: true
+        explanation: "Dùng antialias."
+      - id: t03
+        topic: augmentation validity
+        lesson: 01_images_and_augmentation.ipynb
+        type: multi
+        question: "Phép augmentation nào KHÔNG giữ nhãn?"
+        options: {a: "Xoay 180° ảnh chữ số 6 trong bài nhận dạng chữ số", b: "Lật ngang ảnh biển báo 'cấm rẽ trái'", c: "Đổi độ sáng nhẹ ảnh con mèo", d: "Dịch nhẹ ảnh một chiếc xe"}
+        answer: ab
+        explanation: "6 thành 9; trái thành phải."
+      - id: t04
+        topic: augmentation choice
+        lesson: 01_images_and_augmentation.ipynb
+        type: mcq
+        question: "Trong thí nghiệm 300 ảnh, thêm xoay ngẫu nhiên vào augmentation không giúp vì:"
+        options: {a: "Các hình trong dữ liệu vốn đã xoay ngẫu nhiên — xoay không thêm biến thiên còn thiếu, chỉ làm bài toán khó hơn", b: "Xoay luôn có hại", c: "CNN bất biến với xoay", d: "Ảnh xám không xoay được"}
+        answer: a
+        explanation: "Augmentation phải lấp biến thiên còn thiếu."
+      - id: t05
+        topic: shortcut
+        lesson: 01_images_and_augmentation.ipynb
+        type: mcq
+        question: "Mô hình đạt 97% trên test cùng nguồn nhưng 45% khi màu sắc thay đổi. Hiện tượng này là:"
+        options: {a: "Shortcut learning — mô hình dựa vào màu tương quan giả với nhãn", b: "Underfitting", c: "Vanishing gradient", d: "Data leakage do chuẩn hoá"}
+        answer: a
+        explanation: "Augmentation màu phá đường tắt."
+      - id: t06
+        topic: transfer idea
+        lesson: 02_transfer_learning_and_fine_tuning.ipynb
+        type: tf
+        question: "Đặc trưng của các lớp đầu một CNN tiền huấn luyện (cạnh, kết cấu) thường dùng được cho nhiều bài toán ảnh khác."
+        answer: true
+        explanation: "Lớp sau càng đặc thù bài toán nguồn."
+      - id: t07
+        topic: linear probe
+        lesson: 02_transfer_learning_and_fine_tuning.ipynb
+        type: mcq
+        question: "Chỉ có 5 ảnh có nhãn mỗi lớp cho bài toán đích gần với bài toán nguồn. Lựa chọn hợp lý nhất:"
+        options: {a: "Linear probe trên đặc trưng tiền huấn luyện (hoặc fine-tune có train head trước)", b: "Train CNN lớn từ đầu", c: "Fine-tune toàn bộ với learning rate lớn", d: "Không cần nhãn"}
+        answer: a
+        explanation: "Ít tham số phải học → ít overfit."
+      - id: t08
+        topic: fine-tune lr
+        lesson: 02_transfer_learning_and_fine_tuning.ipynb
+        type: mcq
+        question: "Khi fine-tune, backbone thường dùng learning rate nhỏ hơn head vì:"
+        options: {a: "Đặc trưng tiền huấn luyện đã tốt; LR lớn sẽ phá chúng", b: "Backbone ít tham số", c: "Head không cần train", d: "Để train nhanh hơn"}
+        answer: a
+        explanation: "Learning rate phân tầng."
+      - id: t09
+        topic: preprocessing
+        lesson: 02_transfer_learning_and_fine_tuning.ipynb
+        type: multi
+        question: "Khi dùng một mô hình ImageNet tiền huấn luyện, cần khớp:"
+        options: {a: "Chuẩn hoá mean/std của ImageNet", b: "Kích thước đầu vào phù hợp", c: "Số kênh (3 kênh RGB)", d: "Số lớp đầu ra của ImageNet (1000)"}
+        answer: abc
+        explanation: "Head mới có số lớp của bài toán đích."
+      - id: t10
+        topic: iou
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: mcq
+        question: "Hai hộp 10×10 lệch nhau 5 pixel theo cả hai chiều có IoU khoảng:"
+        options: {a: "0.14", b: "0.5", c: "0.75", d: "0.25"}
+        answer: a
+        explanation: "25 / (100 + 100 − 25)."
+      - id: t11
+        topic: nms
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: mcq
+        question: "Non-Maximum Suppression dùng để:"
+        options: {a: "Loại các hộp trùng lặp cùng lớp chồng lên hộp có điểm cao hơn", b: "Tăng số hộp dự đoán", c: "Chuẩn hoá ảnh", d: "Tính mAP"}
+        answer: a
+        explanation: "Bước hậu xử lý của hầu hết detector."
+      - id: t12
+        topic: ap
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: multi
+        question: "Về AP/mAP trong phát hiện vật thể:"
+        options:
+          a: "AP là diện tích dưới đường precision–recall của một lớp"
+          b: "Một dự đoán là TP khi IoU với hộp thật cùng lớp chưa được ghép ≥ ngưỡng"
+          c: "mAP@[0.5:0.95] (COCO) khắt khe hơn mAP@0.5"
+          d: "Hộp trùng lặp được tính là TP"
+        answer: abc
+        explanation: "Hộp trùng là FP."
+      - id: t13
+        topic: grid detector
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: mcq
+        question: "Trong detector dạng lưới (YOLO gốc), ô nào chịu trách nhiệm dự đoán một vật thể?"
+        options: {a: "Ô chứa tâm của vật thể", b: "Mọi ô chồng lên vật", c: "Ô góc trên-trái", d: "Ô có pixel sáng nhất"}
+        answer: a
+        explanation: "Hai vật có tâm cùng ô là hạn chế — anchor/đa tỉ lệ giải quyết."
+      - id: t14
+        topic: detector families
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: mcq
+        question: "Detector nào không cần NMS nhờ dự đoán tập hợp và ghép cặp một-một khi train?"
+        options: {a: "DETR", b: "Faster R-CNN", c: "YOLOv3", d: "SSD"}
+        answer: a
+        explanation: "Ghép cặp Hungarian."
+      - id: t15
+        topic: seg metric
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: tf
+        question: "Trong phân đoạn với nền chiếm đa số pixel, pixel accuracy cao chứng tỏ mô hình phân đoạn tốt vật thể."
+        answer: false
+        explanation: "Đoán toàn nền đã ~93% pixel accuracy; dùng mIoU/Dice."
+      - id: t16
+        topic: unet
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: mcq
+        question: "Skip connection trong U-Net giúp:"
+        options: {a: "Mang đặc trưng độ phân giải cao sang nhánh giải mã, giữ chi tiết biên", b: "Giảm số tham số", c: "Thay thế hàm loss", d: "Tăng kích thước ảnh đầu vào"}
+        answer: a
+        explanation: "Không skip: lỗi tập trung ở biên."
+  math:
+    questions:
+      - id: m01
+        topic: iou
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: numeric
+        decimals: 3
+        question: "Hộp A = [0, 0, 4, 4], B = [2, 0, 6, 4]. IoU(A, B) = ?"
+        answer: 0.333
+        explanation: "giao 8, hợp 24."
+      - id: m02
+        topic: tensor size
+        lesson: 01_images_and_augmentation.ipynb
+        type: numeric
+        decimals: 0
+        question: "Một batch 32 ảnh RGB 224×224 lưu float32 chiếm bao nhiêu MB (1 MB = 2²⁰ byte)? (làm tròn)"
+        answer: 18
+        explanation: "32·3·224·224·4 / 2²⁰ ≈ 18.4."
+      - id: m03
+        topic: ap
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: numeric
+        decimals: 3
+        question: "2 vật thể thật; dự đoán theo điểm giảm dần: TP, FP, TP. AP (precision nội suy) = ?"
+        answer: 0.833
+        explanation: "0.5·1 + 0.5·(2/3)."
+      - id: m04
+        topic: dice
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: numeric
+        decimals: 3
+        question: "Mask dự đoán 30 pixel, mask thật 20 pixel, giao 15 pixel. Dice = 2|A∩B|/(|A|+|B|) = ?"
+        answer: 0.6
+        explanation: "30/50."
+      - id: m05
+        topic: grid
+        lesson: 03_detection_and_segmentation_concepts.ipynb
+        type: numeric
+        decimals: 0
+        question: "Ảnh 64×64, lưới 8×8; vật có tâm (37, 50). Ô chịu trách nhiệm có chỉ số hàng × 8 + cột = ? (hàng = y // 8, cột = x // 8)"
+        answer: 52
+        explanation: "hàng 6, cột 4 → 6·8 + 4."
+coding:
+  tasks:
+    - id: c01
+      title: IoU hai hộp
+      prompt: |
+        Viết `iou(a, b)` cho hai hộp dạng [x1, y1, x2, y2] (list hoặc tuple); trả về 0 nếu không giao nhau.
+      code: |
+        def iou(a, b):
+            ### START CODE HERE ### (≈ 5 dòng)
+            w = max(0.0, min(a[2], b[2]) - max(a[0], b[0]))
+            h = max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
+            inter = w * h
+            union = (a[2] - a[0]) * (a[3] - a[1]) + (b[2] - b[0]) * (b[3] - b[1]) - inter
+            return inter / union
+            ### END CODE HERE ###
+      tests: |
+        check_close(iou([0, 0, 10, 10], [0, 0, 10, 10]), 1.0, message="trùng nhau")
+        check_close(iou([0, 0, 10, 10], [5, 5, 15, 15]), 25 / 175, message="chồng 1/4")
+        check_close(iou([0, 0, 10, 10], [20, 20, 30, 30]), 0.0, message="không giao")
+        check_close(iou([0, 0, 4, 4], [2, 0, 6, 4]), 1 / 3, message="nửa chồng")
+    - id: c02
+      title: Dice và IoU của mask
+      prompt: |
+        Viết `mask_scores(pred, true)` cho hai mảng bool cùng shape, trả về `(dice, iou)`; nếu cả hai rỗng trả về `(1.0, 1.0)`.
+      code: |
+        def mask_scores(pred, true):
+            ### START CODE HERE ### (≈ 5 dòng)
+            inter = np.logical_and(pred, true).sum()
+            total = pred.sum() + true.sum()
+            if total == 0:
+                return 1.0, 1.0
+            return 2 * inter / total, inter / (total - inter)
+            ### END CODE HERE ###
+      tests: |
+        a = np.zeros((10, 10), bool); a[:5] = True
+        b = np.zeros((10, 10), bool); b[2:7] = True
+        d, j = mask_scores(a, b)
+        check_close(d, 2 * 30 / 100, message="Dice")
+        check_close(j, 30 / 70, message="IoU")
+        check_close(mask_scores(np.zeros((3, 3), bool), np.zeros((3, 3), bool)), (1.0, 1.0), message="cả hai rỗng")
+        check_close(d, 2 * j / (1 + j), message="Dice = 2·IoU/(1 + IoU)")
+analysis:
+  prompt: |
+    Một bệnh viện muốn phát hiện khối u trên ảnh X-quang ngực. Có 800 ảnh có nhãn hộp (một số ảnh có nhiều khối u nhỏ), lấy từ 2 bệnh viện;
+    80% ảnh bệnh viện 1 có khối u, chỉ 20% ảnh bệnh viện 2 có. Nhóm đề xuất: (1) train detector từ đầu; (2) augmentation: lật dọc, xoay 0–360°,
+    đổi màu mạnh; (3) chia train/test ngẫu nhiên theo ảnh; (4) báo cáo pixel accuracy và mAP@0.5. Đánh giá và đề xuất.
+  rubric:
+    - "Nêu nguy cơ shortcut: mô hình học dấu hiệu nhận diện bệnh viện (ký hiệu trên phim, độ sáng) vì tỉ lệ khối u khác nhau giữa hai nơi → đánh giá theo bệnh viện, cân bằng/kiểm tra"
+    - "Augmentation phải giữ nhãn/hợp lý: X-quang có hướng chuẩn (lật trái-phải đổi vị trí tim, ký hiệu L/R), xoay 360° và đổi màu mạnh không thực tế; biến đổi hình học phải áp dụng lên hộp"
+    - "800 ảnh ít → transfer learning từ mô hình tiền huấn luyện (tốt nhất trên ảnh y tế), không train từ đầu"
+    - "Chia theo bệnh nhân (nhiều ảnh/bệnh nhân) và theo bệnh viện; tránh rò rỉ"
+    - "Metric: pixel accuracy không dùng cho detection; mAP + recall/độ nhạy ở ngưỡng vận hành, phân tích theo kích thước khối u (khối nhỏ), FP/ảnh; có bác sĩ đánh giá"
+  sample_answer: |
+    (1) 800 ảnh không đủ train từ đầu → fine-tune detector tiền huấn luyện (COCO, hoặc tốt hơn là backbone tiền huấn luyện trên X-quang).
+    (2) Lật dọc/xoay 360° tạo ảnh không thể gặp (X-quang chụp theo tư thế chuẩn), lật ngang đổi vị trí tim và ký hiệu L/R; màu không có ý nghĩa với
+    ảnh xám — dùng xoay nhỏ, đổi sáng/tương phản, nhiễu nhẹ, và biến đổi hộp tương ứng. (3) Tỉ lệ khối u khác nhau giữa hai bệnh viện → mô hình có
+    thể học "ảnh của bệnh viện 1" (ký hiệu, độ sáng) thay vì khối u; đánh giá riêng theo bệnh viện, kiểm tra vùng mô hình nhìn vào; chia theo bệnh
+    nhân để tránh rò rỉ. (4) Pixel accuracy vô nghĩa cho detection; báo cáo mAP và độ nhạy ở ngưỡng vận hành, số FP mỗi ảnh, kết quả theo kích
+    thước khối u; so với bác sĩ; mô hình chỉ hỗ trợ, không thay thế chẩn đoán.
+project:
+  prompt: |
+    **Mini project — Phân loại hình khi ít dữ liệu.** Chỉ có 300 ảnh train (`make_shapes(300, seed=0)`), test trên `make_shapes(1000, seed=1)`.
+    Dùng CNN + data augmentation phù hợp để đạt accuracy test `acc` ≥ 0.88 (không augmentation chỉ khoảng 0.73).
+  code: |
+    import torch
+    import torch.nn.functional as F
+    from torch import nn
+
+    from ml_course.datasets import make_shapes
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    X, y = make_shapes(300, seed=0)
+    X_test, y_test = make_shapes(1000, seed=1)
+    X, X_test = torch.tensor(X[:, None]), torch.tensor(X_test[:, None])
+    y, y_test = torch.tensor(y), torch.tensor(y_test)
+    ### START CODE HERE ### (≈ 25 dòng)
+    def shift_flip(x, g, max_shift=0.15):
+        B = x.shape[0]
+        shift = (torch.rand(2, B, generator=g) * 2 - 1) * max_shift * 2
+        sx = torch.where(torch.rand(B, generator=g) < 0.5, -1.0, 1.0)
+        zeros, ones = torch.zeros(B), torch.ones(B)
+        theta = torch.stack([torch.stack([sx, zeros, shift[0]], 1), torch.stack([zeros, ones, shift[1]], 1)], 1)
+        return F.grid_sample(x, F.affine_grid(theta, x.shape, align_corners=False), align_corners=False)
+
+    torch.manual_seed(0)
+    model = nn.Sequential(nn.Conv2d(1, 16, 3, padding=1), nn.ReLU(), nn.MaxPool2d(2),
+                          nn.Conv2d(16, 32, 3, padding=1), nn.ReLU(), nn.MaxPool2d(2),
+                          nn.Conv2d(32, 64, 3, padding=1), nn.ReLU(), nn.Flatten(), nn.Linear(64 * 7 * 7, 5)).to(device)
+    opt = torch.optim.Adam(model.parameters(), lr=1e-3)
+    g = torch.Generator().manual_seed(0)
+    for _ in range(1500):
+        model.train()
+        idx = torch.randint(0, len(X), (64,), generator=g)
+        opt.zero_grad()
+        F.cross_entropy(model(shift_flip(X[idx], g).to(device)), y[idx].to(device)).backward()
+        opt.step()
+    model.eval()
+    with torch.no_grad():
+        acc = (model(X_test.to(device)).argmax(1).cpu() == y_test).float().mean().item()
+    ### END CODE HERE ###
+    print(f"accuracy test = {acc:.3f}")
+  tests: |
+    check_greater(acc, 0.88, "accuracy test ≥ 0.88")

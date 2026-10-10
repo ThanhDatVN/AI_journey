@@ -1,0 +1,302 @@
+title: "30 · Sequence Models"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: weight sharing
+        lesson: 01_rnn_from_scratch.ipynb
+        type: tf
+        question: "Số tham số của một RNN không phụ thuộc độ dài chuỗi đầu vào."
+        answer: true
+        explanation: "Cùng W_xh, W_hh dùng ở mọi bước."
+      - id: t02
+        topic: tasks
+        lesson: 01_rnn_from_scratch.ipynb
+        type: mcq
+        question: "Dịch một câu tiếng Anh sang tiếng Việt là dạng bài toán:"
+        options: {a: "many-to-many (độ dài vào/ra khác nhau) — encoder–decoder", b: "many-to-one", c: "one-to-one", d: "phân cụm"}
+        answer: a
+        explanation: "Seq2seq."
+      - id: t03
+        topic: bptt
+        lesson: 01_rnn_from_scratch.ipynb
+        type: mcq
+        question: "Trong BPTT, gradient theo trạng thái h_t nhận đóng góp từ:"
+        options: {a: "Đầu ra tại bước t và trạng thái h_{t+1}", b: "Chỉ đầu ra tại bước t", c: "Chỉ h_{t−1}", d: "Không có gì"}
+        answer: a
+        explanation: "Cộng hai nguồn."
+      - id: t04
+        topic: truncated
+        lesson: 01_rnn_from_scratch.ipynb
+        type: mcq
+        question: "Truncated BPTT:"
+        options:
+          a: "Cắt gradient sau một số bước cố định để tiết kiệm tính toán, đổi lại không học phụ thuộc dài hơn cửa sổ"
+          b: "Cắt bớt dữ liệu"
+          c: "Làm tròn trọng số"
+          d: "Dừng train sớm"
+        answer: a
+        explanation: "Trạng thái vẫn được truyền tiếp, gradient thì không."
+      - id: t05
+        topic: vanishing
+        lesson: 02_vanishing_exploding_gradients.ipynb
+        type: mcq
+        question: "Gradient từ bước T về bước k của RNN tanh là tích (T − k) ma trận diag(1 − h²)W_hh. Khi bán kính phổ của W_hh nhỏ hơn 1:"
+        options: {a: "Gradient tắt dần theo hàm mũ", b: "Gradient bùng nổ", c: "Gradient không đổi", d: "Gradient luôn bằng 1"}
+        answer: a
+        explanation: "Không học được phụ thuộc xa."
+      - id: t06
+        topic: clipping
+        lesson: 02_vanishing_exploding_gradients.ipynb
+        type: multi
+        question: "Gradient clipping:"
+        options: {a: "Giới hạn độ dài gradient, giữ hướng", b: "Ngăn bùng nổ thành NaN", c: "Chữa vanishing gradient", d: "Thay thế được learning rate hợp lý"}
+        answer: ab
+        explanation: "Chỉ là lưới an toàn cho exploding."
+      - id: t07
+        topic: lstm cell
+        lesson: 03_lstm_gru.ipynb
+        type: mcq
+        question: "Trong LSTM, c_t = f ⊙ c_{t−1} + i ⊙ g. Đường đi này giúp gradient vì:"
+        options:
+          a: "∂c_t/∂c_{t−1} = diag(f) — không nhân ma trận W hay tanh'; f ≈ 1 thì gradient gần nguyên vẹn"
+          b: "Vì có nhiều tham số hơn"
+          c: "Vì dùng ReLU"
+          d: "Vì không có bias"
+        answer: a
+        explanation: "Đường cộng."
+      - id: t08
+        topic: forget bias
+        lesson: 03_lstm_gru.ipynb
+        type: tf
+        question: "Khởi tạo bias cổng quên của LSTM bằng giá trị dương (vd 1) giúp mặc định 'nhớ' và học phụ thuộc xa dễ hơn."
+        answer: true
+        explanation: "Jozefowicz et al. (2015)."
+      - id: t09
+        topic: gru
+        lesson: 03_lstm_gru.ipynb
+        type: mcq
+        question: "GRU khác LSTM ở chỗ:"
+        options: {a: "Không có trạng thái ô riêng; hai cổng (cập nhật, reset); ít tham số hơn", b: "Không có cổng", c: "Chỉ dùng cho ảnh", d: "Không train bằng BPTT"}
+        answer: a
+        explanation: "3 khối trọng số so với 4."
+      - id: t10
+        topic: bidirectional
+        lesson: 03_lstm_gru.ipynb
+        type: tf
+        question: "LSTM hai chiều phù hợp cho dự báo chuỗi thời gian bước tiếp theo."
+        answer: false
+        explanation: "Nhìn tương lai — chỉ dùng khi có toàn bộ chuỗi lúc dự đoán."
+      - id: t11
+        topic: padding
+        lesson: 03_lstm_gru.ipynb
+        type: mcq
+        question: "Với batch chuỗi độ dài khác nhau đệm ở cuối, lấy out[:, −1] làm biểu diễn chuỗi là:"
+        options: {a: "Sai với chuỗi ngắn — đó là trạng thái sau khi đọc phần đệm; dùng pack_padded_sequence hoặc lấy tại lens − 1", b: "Đúng", c: "Chỉ sai với LSTM", d: "Chỉ sai khi batch = 1"}
+        answer: a
+        explanation: "Bài tập 7."
+      - id: t12
+        topic: teacher forcing
+        lesson: 04_seq2seq_and_attention.ipynb
+        type: mcq
+        question: "Teacher forcing nghĩa là khi train decoder:"
+        options: {a: "Đầu vào mỗi bước là token đúng của bước trước", b: "Đầu vào là dự đoán của chính mô hình", c: "Không dùng encoder", d: "Dùng nhãn của batch khác"}
+        answer: a
+        explanation: "Gây exposure bias khi suy luận."
+      - id: t13
+        topic: bottleneck
+        lesson: 04_seq2seq_and_attention.ipynb
+        type: mcq
+        question: "Seq2seq không attention giảm độ chính xác khi chuỗi dài vì:"
+        options: {a: "Toàn bộ chuỗi nguồn phải nén vào một vector ngữ cảnh kích thước cố định", b: "Decoder quá sâu", c: "Không dùng softmax", d: "Thiếu dữ liệu"}
+        answer: a
+        explanation: "Attention cho truy cập mọi trạng thái encoder."
+      - id: t14
+        topic: attention
+        lesson: 04_seq2seq_and_attention.ipynb
+        type: multi
+        question: "Dot-product attention:"
+        options:
+          a: "Tính điểm giữa trạng thái decoder và từng trạng thái encoder"
+          b: "Chuẩn hoá điểm bằng softmax"
+          c: "Ngữ cảnh = trung bình có trọng số các trạng thái encoder"
+          d: "Bắt buộc dùng CNN"
+        answer: abc
+        explanation: "Trọng số attention cho thấy căn chỉnh."
+      - id: t15
+        topic: beam
+        lesson: 04_seq2seq_and_attention.ipynb
+        type: mcq
+        question: "Beam search so với greedy:"
+        options: {a: "Giữ k ứng viên tốt nhất mỗi bước, thường tìm chuỗi có tổng log-prob cao hơn", b: "Luôn tạo văn bản đa dạng hơn", c: "Nhanh hơn greedy", d: "Không cần mô hình"}
+        answer: a
+        explanation: "Sinh văn bản tự do thường dùng lấy mẫu thay vì beam."
+      - id: t16
+        topic: length generalization
+        lesson: 04_seq2seq_and_attention.ipynb
+        type: tf
+        question: "Seq2seq có attention train với chuỗi dài tối đa 15 thường xử lý tốt chuỗi dài 20."
+        answer: false
+        explanation: "Thí nghiệm: cả hai mô hình đều thất bại ở độ dài chưa thấy."
+  math:
+    questions:
+      - id: m01
+        topic: rnn step
+        lesson: 01_rnn_from_scratch.ipynb
+        type: numeric
+        decimals: 4
+        question: "h_t = tanh(0.5·h_{t−1} + x_t), h_0 = 0, x_1 = 1. h_1 = ?"
+        answer: 0.7616
+        explanation: "tanh(1)."
+      - id: m02
+        topic: params
+        lesson: 03_lstm_gru.ipynb
+        type: numeric
+        decimals: 0
+        question: "nn.LSTM(input_size=8, hidden_size=16), 1 lớp, có bias: số tham số?"
+        answer: 1664
+        explanation: "4·(16·8 + 16·16 + 2·16)."
+      - id: m03
+        topic: lstm cell
+        lesson: 03_lstm_gru.ipynb
+        type: numeric
+        decimals: 2
+        question: "c_{t−1} = 2, f = 0.5, i = 1, g = −0.5. c_t = ?"
+        answer: 0.5
+        explanation: "0.5·2 + 1·(−0.5)."
+      - id: m04
+        topic: vanishing
+        lesson: 02_vanishing_exploding_gradients.ipynb
+        type: numeric
+        decimals: 4
+        question: "Mỗi bước nhân gradient với 0.5. Sau 10 bước, hệ số còn lại?"
+        answer: 0.001
+        explanation: "0.5¹⁰ ≈ 0.000977."
+      - id: m05
+        topic: attention
+        lesson: 04_seq2seq_and_attention.ipynb
+        type: numeric
+        decimals: 3
+        question: "Hai trạng thái encoder có điểm attention 0 và ln 3. Trọng số của trạng thái thứ hai?"
+        answer: 0.75
+        explanation: "3/(1 + 3)."
+coding:
+  tasks:
+    - id: c01
+      title: Bước RNN
+      prompt: |
+        Viết `rnn_step(x, h, W_xh, W_hh, b)` trả về tanh(W_xh x + W_hh h + b).
+      code: |
+        def rnn_step(x, h, W_xh, W_hh, b):
+            ### START CODE HERE ### (≈ 1 dòng)
+            return np.tanh(W_xh @ x + W_hh @ h + b)
+            ### END CODE HERE ###
+      tests: |
+        import torch
+        torch.manual_seed(0)
+        cell = torch.nn.RNNCell(3, 4).double()
+        x, h = torch.randn(3, dtype=torch.float64), torch.randn(4, dtype=torch.float64)
+        ref = cell(x[None], h[None])[0].detach().numpy()
+        W = {k: v.detach().numpy() for k, v in cell.state_dict().items()}
+        check_close(rnn_step(x.numpy(), h.numpy(), W["weight_ih"], W["weight_hh"], W["bias_ih"] + W["bias_hh"]), ref, tol=1e-10, message="khớp nn.RNNCell")
+    - id: c02
+      title: Trọng số attention
+      prompt: |
+        Viết `attention_weights(s, H)`: s vector trạng thái decoder (d,), H ma trận trạng thái encoder (T, d); trả về softmax(H s).
+      code: |
+        def attention_weights(s, H):
+            ### START CODE HERE ### (≈ 3 dòng)
+            scores = H @ s
+            e = np.exp(scores - scores.max())
+            return e / e.sum()
+            ### END CODE HERE ###
+      tests: |
+        H = np.array([[1.0, 0.0], [0.0, 1.0], [1.0, 1.0]])
+        w = attention_weights(np.array([0.0, np.log(3.0)]), H)
+        check_close(w.sum(), 1.0, message="tổng = 1")
+        check_close(w, np.array([1.0, 3.0, 3.0]) / 7, message="softmax([0, ln3, ln3])")
+        check_true(np.isfinite(attention_weights(np.array([1000.0, 0.0]), H)).all(), "ổn định số")
+analysis:
+  prompt: |
+    Một ngân hàng muốn phát hiện giao dịch gian lận từ chuỗi 200 giao dịch gần nhất của mỗi tài khoản. Đề xuất: (1) RNN tanh 1 lớp,
+    đọc 200 giao dịch, không clipping; (2) đặc trưng: số tiền, loại giao dịch; (3) dùng LSTM hai chiều để "tận dụng tối đa ngữ cảnh"
+    khi chấm điểm giao dịch mới nhất theo thời gian thực; (4) đánh giá bằng chia ngẫu nhiên các tài khoản... nhưng có cả chia ngẫu nhiên
+    các cửa sổ chồng lấn của cùng một tài khoản. Loss huấn luyện đôi khi thành NaN. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra RNN tanh với 200 bước gặp vanishing gradient (không học được tín hiệu xa) → LSTM/GRU (bias cổng quên), hoặc attention/Transformer; truncated hoặc tổng hợp đặc trưng"
+    - "Chỉ ra NaN do exploding gradient → gradient clipping, LR nhỏ hơn, khởi tạo hợp lý"
+    - "Chỉ ra LSTM hai chiều không dùng được khi chấm điểm thời gian thực (cần nhân quả) — chỉ dùng một chiều"
+    - "Chỉ ra rò rỉ khi chia ngẫu nhiên cửa sổ chồng lấn của cùng tài khoản → chia theo tài khoản và theo thời gian"
+    - "Đề xuất đặc trưng thứ tự/thời gian (khoảng cách thời gian, thiết bị, vị trí), mất cân bằng (chương 19), so baseline (boosting trên đặc trưng tổng hợp)"
+  sample_answer: |
+    (1) RNN tanh với 200 bước: gradient tới giao dịch xa tắt dần → mô hình chỉ thấy vài giao dịch cuối; dùng LSTM/GRU (bias cổng quên = 1),
+    hoặc attention; cân nhắc tổng hợp đặc trưng lịch sử cho boosting. (2) NaN = exploding gradient: bật clipping, giảm LR, khởi tạo trực giao.
+    (3) Chấm điểm thời gian thực chỉ có quá khứ → LSTM hai chiều không hợp lệ (nhìn tương lai trong train, không có lúc suy luận); dùng một chiều.
+    (4) Cửa sổ chồng lấn của cùng tài khoản rơi vào cả train và test → rò rỉ, đánh giá lạc quan; chia theo tài khoản và theo thời gian (backtest).
+    Thêm: khoảng thời gian giữa giao dịch, thiết bị/vị trí, kênh; xử lý mất cân bằng; metric PR-AUC/precision@k; so với baseline boosting.
+project:
+  prompt: |
+    **Mini project — Học thứ tự sự kiện.** Phiên gồm 10–30 sự kiện (mã 0–5 ngẫu nhiên), mỗi phiên có đúng một sự kiện 6 và một sự kiện 7;
+    nhãn = 1 nếu 7 xuất hiện **sau** 6. Train trên `make_sessions(2000, seed=10)`, test trên `make_sessions(1000, seed=11)`. Yêu cầu
+    accuracy test `acc` ≥ 0.95.
+  code: |
+    import torch
+    from torch import nn
+    from torch.nn.utils.rnn import pack_padded_sequence
+
+    def make_sessions(n, seed):
+        r = np.random.default_rng(seed)
+        seqs, labels = [], []
+        for _ in range(n):
+            L = r.integers(10, 31)
+            s = [int(v) for v in r.integers(0, 6, L)]
+            p1, p2 = sorted(r.choice(L + 2, 2, replace=False))
+            sus = r.random() < 0.5
+            a, b = (6, 7) if sus else (7, 6)
+            s.insert(p1, a)
+            s.insert(p2, b)
+            seqs.append(s)
+            labels.append(int(sus))
+        return seqs, np.array(labels)
+
+    tr_seqs, y_tr = make_sessions(2000, seed=10)
+    te_seqs, y_te = make_sessions(1000, seed=11)
+    torch.manual_seed(0)
+    ### START CODE HERE ### (≈ 25 dòng)
+    def pad(seqs):
+        lens = torch.tensor([len(s) for s in seqs])
+        X = torch.full((len(seqs), int(lens.max())), 8, dtype=torch.long)
+        for i, s in enumerate(seqs):
+            X[i, :len(s)] = torch.tensor(s)
+        return X, lens
+
+    class M(nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.emb = nn.Embedding(9, 16, padding_idx=8)
+            self.gru = nn.GRU(16, 32, batch_first=True)
+            self.out = nn.Linear(32, 2)
+
+        def forward(self, x, lens):
+            _, h = self.gru(pack_padded_sequence(self.emb(x), lens, batch_first=True, enforce_sorted=False))
+            return self.out(h[-1])
+
+    Xtr, Ltr = pad(tr_seqs)
+    Xte, Lte = pad(te_seqs)
+    ytr = torch.tensor(y_tr)
+    model = M()
+    opt = torch.optim.Adam(model.parameters(), lr=3e-3)
+    for epoch in range(15):
+        perm = torch.randperm(len(Xtr))
+        for s in range(0, len(perm), 64):
+            idx = perm[s:s + 64]
+            opt.zero_grad()
+            nn.functional.cross_entropy(model(Xtr[idx], Ltr[idx]), ytr[idx]).backward()
+            opt.step()
+    model.eval()
+    with torch.no_grad():
+        acc = (model(Xte, Lte).argmax(1).numpy() == y_te).mean()
+    ### END CODE HERE ###
+    print(f"accuracy test = {acc:.3f}")
+  tests: |
+    check_greater(acc, 0.95, "accuracy test ≥ 0.95")

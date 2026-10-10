@@ -1,0 +1,235 @@
+{
+ "id": "11_random_forest",
+ "kind": "Chapter",
+ "title": "11 · Random Forest",
+ "next": "12_gradient_boosting",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "variance of average",
+     "answer_hashes": [
+      "4a92e46f213c422f2fc2"
+     ],
+     "lesson": "01_bagging_and_variance_reduction.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "bootstrap",
+     "answer_hashes": [
+      "dd8cabfa0998d7d0d1aa"
+     ],
+     "lesson": "01_bagging_and_variance_reduction.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "bagging giảm gì",
+     "answer_hashes": [
+      "5cf07f6a03b81feaf53c"
+     ],
+     "lesson": "01_bagging_and_variance_reduction.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "base learner",
+     "answer_hashes": [
+      "69cc0b65a3833a296a50"
+     ],
+     "lesson": "01_bagging_and_variance_reduction.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "n_estimators",
+     "answer_hashes": [
+      "bbfbfd11d6d3353ff79e"
+     ],
+     "lesson": "01_bagging_and_variance_reduction.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "RF vs bagging",
+     "answer_hashes": [
+      "3bb5eea8194ff7e5c3da"
+     ],
+     "lesson": "02_random_forest_from_scratch.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "multi",
+     "topic": "max_features",
+     "answer_hashes": [
+      "0acd05378f2fbc9dac4e"
+     ],
+     "lesson": "02_random_forest_from_scratch.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "per-split randomness",
+     "answer_hashes": [
+      "4152995dcd9e6c16e498"
+     ],
+     "lesson": "02_random_forest_from_scratch.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "OOB",
+     "answer_hashes": [
+      "d482056f8464fb79276a"
+     ],
+     "lesson": "03_oob_importance_and_tuning.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "correlated features",
+     "answer_hashes": [
+      "ac1840a1feefc8679e01"
+     ],
+     "lesson": "03_oob_importance_and_tuning.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "tf",
+     "topic": "extrapolation",
+     "answer_hashes": [
+      "0faeb46db15dd8e6c0f5"
+     ],
+     "lesson": "03_oob_importance_and_tuning.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "Extra Trees",
+     "answer_hashes": [
+      "ee13d477447dd9495903"
+     ],
+     "lesson": "03_oob_importance_and_tuning.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "multi",
+     "topic": "failure",
+     "answer_hashes": [
+      "e333999a58a8b69ee3a6"
+     ],
+     "lesson": "03_oob_importance_and_tuning.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "hyperparameter",
+     "answer_hashes": [
+      "cf8e41d90211279d8c30"
+     ],
+     "lesson": "03_oob_importance_and_tuning.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "scaling",
+     "answer_hashes": [
+      "8f8769620952c2a2fa92"
+     ],
+     "lesson": "03_oob_importance_and_tuning.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "probability",
+     "answer_hashes": [
+      "d176506147e5402c9108"
+     ],
+     "lesson": "03_oob_importance_and_tuning.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "variance of average",
+     "answer_hashes": [
+      "bca3870d12e2914f1503"
+     ],
+     "decimals": 3,
+     "lesson": "01_bagging_and_variance_reduction.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "OOB",
+     "answer_hashes": [
+      "94837f7fa59fb8db261b"
+     ],
+     "decimals": 3,
+     "lesson": "01_bagging_and_variance_reduction.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "OOB count",
+     "answer_hashes": [
+      "0fc23662a0e07965bef3"
+     ],
+     "decimals": 0,
+     "lesson": "03_oob_importance_and_tuning.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "max_features",
+     "answer_hashes": [
+      "f341758c4ced40bfd185"
+     ],
+     "decimals": 0,
+     "lesson": "02_random_forest_from_scratch.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "soft voting",
+     "answer_hashes": [
+      "3e5f974924d3380ec7c4"
+     ],
+     "decimals": 3,
+     "lesson": "01_bagging_and_variance_reduction.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

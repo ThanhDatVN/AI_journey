@@ -1,0 +1,3001 @@
+text,sentiment,label
+"Mua nồi cơm điện cho gia đình, không hài lòng, dùng được hai ngày đã hỏng...",neg,0
+"Giá hợp lý, giống ảnh.",neu,0
+"Mua áo thun cho gia đình, pin trâu, dùng rất thích, rất đáng tiền!",pos,1
+Không hài lòng,neg,0
+"Không như kỳ vọng, hàng bị lỗi",neg,0
+"Rất đáng tiền, sản phẩm rất tốt.",pos,1
+"Mua tai nghe cho gia đình, không như kỳ vọng, phí tiền, không hài lòng!",neg,0
+"Chất lượng tuyệt vời, sẽ ủng hộ tiếp...",pos,1
+"Phí tiền, giao hàng quá chậm, không tốt lắm",neg,0
+"Shop tư vấn nhiệt tình, giao hàng nhanh, dùng rất thích.",pos,1
+"Mua sách cho gia đình, không giống mô tả, vải mỏng và xấu, không tốt lắm...",neg,1
+"Shop tư vấn nhiệt tình, dùng rất thích, rất đáng tiền",pos,1
+"Không tốt lắm, phí tiền.",neg,1
+"Mua áo thun cho gia đình, sẽ ủng hộ tiếp, shop tư vấn nhiệt tình.",pos,1
+Rất đáng tiền...,pos,1
+"Mua bàn phím cho gia đình, không như kỳ vọng, dùng được hai ngày đã hỏng",neg,0
+Vải mát và đẹp...,pos,0
+"Giao hàng nhanh, shop tư vấn nhiệt tình...",pos,1
+Pin trâu...,pos,1
+Đóng gói cẩn thận,pos,1
+Không tốt lắm,neg,0
+"Không giống mô tả, thất vọng.",neg,0
+Không tốt lắm!,neg,0
+"Sản phẩm rất tốt, pin trâu, rất đáng tiền!",pos,1
+"Mua điện thoại cho gia đình, shop trả lời thô lỗ, giao hàng quá chậm!",neg,0
+"Mua áo thun cho gia đình, thất vọng.",neg,0
+Phí tiền,neg,0
+"Sản phẩm rất tốt, chất lượng tuyệt vời",pos,1
+Không giống mô tả!,neg,0
+"Giá hợp lý, chưa dùng nhiều nên chưa biết!",neu,0
+"Hàng bị lỗi, không giống mô tả",neg,0
+"Mua tai nghe cho gia đình, chất lượng tuyệt vời, giao hàng nhanh...",pos,1
+"Mua giày cho gia đình, phí tiền, thất vọng, không đáng tiền",neg,0
+"Đóng gói cẩn thận, rất đáng tiền",pos,1
+"Dùng rất thích, pin trâu, chất lượng tuyệt vời!",pos,1
+Chất lượng tuyệt vời!,pos,1
+"Chưa dùng nhiều nên chưa biết, giống ảnh",neu,0
+"Chất lượng tuyệt vời, rất đáng tiền, dùng rất thích.",pos,1
+"Mua điện thoại cho gia đình, chất lượng tuyệt vời, sản phẩm rất tốt, vải mát và đẹp",pos,1
+"Shop tư vấn nhiệt tình, pin trâu.",pos,1
+"Mua tai nghe cho gia đình, không như kỳ vọng, pin rất yếu, dùng được hai ngày đã hỏng.",neg,0
+"Vải mát và đẹp, chất lượng tuyệt vời, giao hàng nhanh...",pos,1
+"Mua bàn phím cho gia đình, sản phẩm rất tốt, pin trâu, sẽ ủng hộ tiếp.",pos,1
+Chưa dùng nhiều nên chưa biết!,neu,0
+"Không giống mô tả, pin rất yếu, không như kỳ vọng.",neg,0
+Không tốt lắm.,neg,0
+"Tạm được, chưa dùng nhiều nên chưa biết",neu,0
+Thất vọng.,neg,0
+Phí tiền...,neg,0
+"Giá hợp lý, bình thường!",neu,0
+"Dùng được hai ngày đã hỏng, vải mỏng và xấu, không giống mô tả.",neg,0
+Không hài lòng.,neg,0
+"Mua áo thun cho gia đình, sẽ ủng hộ tiếp, shop tư vấn nhiệt tình, chất lượng tuyệt vời",pos,1
+"Mua nồi cơm điện cho gia đình, rất đáng tiền.",pos,1
+Shop tư vấn nhiệt tình.,pos,1
+"Không tốt lắm, phí tiền...",neg,0
+"Mua sách cho gia đình, giá hợp lý.",neu,0
+"Rất đáng tiền, shop tư vấn nhiệt tình.",pos,1
+"Mua bàn phím cho gia đình, giao hàng quá chậm",neg,0
+Chưa dùng nhiều nên chưa biết,neu,0
+"Giá hợp lý, giống ảnh...",neu,0
+"Chất lượng tuyệt vời, dùng rất thích",pos,1
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời.",pos,1
+Đóng gói cẩn thận!,pos,1
+"Pin trâu, giao hàng nhanh!",pos,1
+Giống ảnh!,neu,0
+"Chất lượng kém, không đáng tiền...",neg,0
+"Mua áo thun cho gia đình, sản phẩm rất tốt, giao hàng nhanh, dùng rất thích",pos,1
+"Mua nồi cơm điện cho gia đình, shop trả lời thô lỗ...",neg,0
+Chưa dùng nhiều nên chưa biết,neu,0
+"Không tốt lắm, không đáng tiền, không như kỳ vọng!",neg,1
+"Sẽ ủng hộ tiếp, giao hàng nhanh...",pos,1
+"Thất vọng, không tốt lắm",neg,0
+"Không đáng tiền, giao hàng quá chậm, không tốt lắm.",neg,0
+"Giao hàng nhanh, vải mát và đẹp, pin trâu",pos,1
+"Mua giày cho gia đình, đóng gói cẩn thận, rất đáng tiền.",pos,1
+Giống ảnh!,neu,0
+"Shop trả lời thô lỗ, phí tiền, không tốt lắm!",neg,0
+"Mua giày cho gia đình, dùng được hai ngày đã hỏng, giao hàng quá chậm, không giống mô tả...",neg,0
+"Mua điện thoại cho gia đình, pin rất yếu, giao hàng quá chậm, hàng bị lỗi",neg,0
+"Hàng bị lỗi, phí tiền",neg,0
+"Mua tai nghe cho gia đình, pin trâu, vải mát và đẹp, sản phẩm rất tốt",pos,1
+"Tạm được, giống ảnh.",neu,0
+Rất đáng tiền.,pos,0
+"Mua điện thoại cho gia đình, dùng rất thích, sẽ ủng hộ tiếp, chất lượng tuyệt vời.",pos,1
+"Không giống mô tả, không đáng tiền, phí tiền.",neg,0
+"Mua điện thoại cho gia đình, giống ảnh, chưa dùng nhiều nên chưa biết",neu,0
+Pin trâu...,pos,1
+"Mua điện thoại cho gia đình, chất lượng kém, dùng được hai ngày đã hỏng, không đáng tiền.",neg,0
+"Mua sách cho gia đình, vải mỏng và xấu, không như kỳ vọng, shop trả lời thô lỗ...",neg,0
+"Mua sách cho gia đình, tạm được, bình thường.",neu,0
+Giá hợp lý,neu,0
+Không giống mô tả,neg,0
+"Shop trả lời thô lỗ, không giống mô tả, pin rất yếu.",neg,0
+"Mua bàn phím cho gia đình, giao hàng nhanh, sẽ ủng hộ tiếp.",pos,1
+"Pin trâu, vải mát và đẹp...",pos,1
+Sẽ ủng hộ tiếp...,pos,1
+"Sẽ ủng hộ tiếp, rất đáng tiền.",pos,1
+"Pin rất yếu, không như kỳ vọng, shop trả lời thô lỗ!",neg,0
+"Pin rất yếu, shop trả lời thô lỗ!",neg,0
+"Giao hàng quá chậm, không như kỳ vọng, không đáng tiền...",neg,0
+"Rất đáng tiền, sản phẩm rất tốt, đóng gói cẩn thận.",pos,1
+"Mua điện thoại cho gia đình, dùng rất thích!",pos,1
+"Vải mát và đẹp, sản phẩm rất tốt, rất đáng tiền",pos,1
+"Pin trâu, giao hàng nhanh!",pos,1
+"Bình thường, chưa dùng nhiều nên chưa biết...",neu,0
+"Đóng gói cẩn thận, sản phẩm rất tốt.",pos,1
+Rất đáng tiền,pos,1
+"Không như kỳ vọng, không hài lòng, thất vọng!",neg,0
+"Mua giày cho gia đình, sản phẩm rất tốt, rất đáng tiền, đóng gói cẩn thận.",pos,1
+"Mua bàn phím cho gia đình, giống ảnh.",neu,0
+"Mua bàn phím cho gia đình, pin rất yếu, thất vọng.",neg,0
+"Thất vọng, vải mỏng và xấu...",neg,0
+"Pin trâu, dùng rất thích!",pos,1
+"Dùng được hai ngày đã hỏng, shop trả lời thô lỗ, không đáng tiền",neg,0
+Giá hợp lý!,neu,0
+"Mua điện thoại cho gia đình, shop tư vấn nhiệt tình, sẽ ủng hộ tiếp...",pos,1
+Chất lượng tuyệt vời.,pos,1
+"Mua tai nghe cho gia đình, giao hàng nhanh...",pos,1
+"Rất đáng tiền, dùng rất thích, vải mát và đẹp...",pos,1
+"Pin rất yếu, thất vọng, không giống mô tả",neg,0
+"Pin trâu, sẽ ủng hộ tiếp, đóng gói cẩn thận...",pos,1
+Chưa dùng nhiều nên chưa biết...,neu,0
+Chất lượng tuyệt vời.,pos,1
+"Pin rất yếu, không tốt lắm, phí tiền!",neg,0
+"Shop tư vấn nhiệt tình, rất đáng tiền",pos,1
+"Sản phẩm rất tốt, shop tư vấn nhiệt tình.",pos,1
+"Mua nồi cơm điện cho gia đình, không đáng tiền, hàng bị lỗi, không tốt lắm",neg,0
+"Shop tư vấn nhiệt tình, chất lượng tuyệt vời.",pos,1
+Không tốt lắm!,neg,0
+Dùng được hai ngày đã hỏng,neg,0
+Giống ảnh...,neu,0
+"Sẽ ủng hộ tiếp, giao hàng nhanh, pin trâu!",pos,1
+"Vải mỏng và xấu, không tốt lắm, không giống mô tả.",neg,0
+"Chưa dùng nhiều nên chưa biết, giá hợp lý!",neu,0
+"Mua tai nghe cho gia đình, giao hàng quá chậm!",neg,0
+Đóng gói cẩn thận!,pos,1
+"Vải mát và đẹp, sẽ ủng hộ tiếp",pos,1
+"Dùng rất thích, chất lượng tuyệt vời, đóng gói cẩn thận",pos,0
+"Mua áo thun cho gia đình, thất vọng, shop trả lời thô lỗ!",neg,0
+"Mua áo thun cho gia đình, đóng gói cẩn thận",pos,1
+"Vải mỏng và xấu, shop trả lời thô lỗ, không tốt lắm!",neg,0
+"Không đáng tiền, shop trả lời thô lỗ, không giống mô tả.",neg,0
+"Chất lượng tuyệt vời, sẽ ủng hộ tiếp...",pos,1
+"Mua bàn phím cho gia đình, sản phẩm rất tốt, chất lượng tuyệt vời, dùng rất thích.",pos,1
+"Mua áo thun cho gia đình, phí tiền, không tốt lắm.",neg,0
+"Mua giày cho gia đình, shop tư vấn nhiệt tình...",pos,1
+"Mua sách cho gia đình, rất đáng tiền, chất lượng tuyệt vời.",pos,1
+Tạm được...,neu,0
+"Mua tai nghe cho gia đình, vải mát và đẹp, rất đáng tiền",pos,0
+Sẽ ủng hộ tiếp!,pos,1
+"Mua giày cho gia đình, chất lượng tuyệt vời",pos,1
+"Giao hàng quá chậm, shop trả lời thô lỗ, chất lượng kém.",neg,0
+"Mua bàn phím cho gia đình, shop tư vấn nhiệt tình.",pos,1
+Giao hàng quá chậm...,neg,0
+Không giống mô tả,neg,0
+"Shop tư vấn nhiệt tình, chất lượng tuyệt vời, vải mát và đẹp",pos,1
+"Phí tiền, hàng bị lỗi, không tốt lắm!",neg,0
+Vải mỏng và xấu!,neg,0
+"Mua bàn phím cho gia đình, vải mát và đẹp!",pos,1
+"Pin trâu, shop tư vấn nhiệt tình, đóng gói cẩn thận!",pos,1
+Không tốt lắm.,neg,0
+"Mua giày cho gia đình, sẽ ủng hộ tiếp, giao hàng nhanh.",pos,1
+"Bình thường, tạm được",neu,0
+"Chất lượng kém, không giống mô tả.",neg,0
+"Sẽ ủng hộ tiếp, shop tư vấn nhiệt tình.",pos,1
+"Sẽ ủng hộ tiếp, pin trâu, chất lượng tuyệt vời...",pos,1
+"Thất vọng, vải mỏng và xấu, không giống mô tả",neg,0
+Hàng bị lỗi,neg,0
+Vải mát và đẹp,pos,1
+"Mua sách cho gia đình, dùng được hai ngày đã hỏng",neg,0
+"Shop tư vấn nhiệt tình, chất lượng tuyệt vời, vải mát và đẹp!",pos,1
+Giá hợp lý...,neu,0
+"Pin rất yếu, vải mỏng và xấu, không đáng tiền",neg,0
+Hàng bị lỗi.,neg,0
+"Vải mát và đẹp, đóng gói cẩn thận, shop tư vấn nhiệt tình",pos,1
+"Sẽ ủng hộ tiếp, dùng rất thích!",pos,1
+Tạm được.,neu,0
+Đóng gói cẩn thận.,pos,1
+"Chất lượng tuyệt vời, giao hàng nhanh, dùng rất thích",pos,1
+Sẽ ủng hộ tiếp.,pos,1
+Giao hàng quá chậm.,neg,0
+"Mua áo thun cho gia đình, giá hợp lý, chưa dùng nhiều nên chưa biết.",neu,0
+"Vải mát và đẹp, chất lượng tuyệt vời, sẽ ủng hộ tiếp",pos,0
+Giá hợp lý.,neu,0
+Không đáng tiền,neg,0
+"Mua sách cho gia đình, giao hàng quá chậm!",neg,0
+"Giá hợp lý, giống ảnh!",neu,0
+"Mua điện thoại cho gia đình, sẽ ủng hộ tiếp, pin trâu, sản phẩm rất tốt",pos,1
+Bình thường!,neu,0
+"Rất đáng tiền, sản phẩm rất tốt.",pos,1
+"Mua nồi cơm điện cho gia đình, giá hợp lý, bình thường...",neu,0
+Sản phẩm rất tốt,pos,1
+"Pin rất yếu, không giống mô tả...",neg,0
+Đóng gói cẩn thận.,pos,1
+"Mua giày cho gia đình, giao hàng quá chậm, dùng được hai ngày đã hỏng, chất lượng kém.",neg,0
+Giao hàng nhanh,pos,1
+"Mua điện thoại cho gia đình, không hài lòng, dùng được hai ngày đã hỏng...",neg,0
+"Mua điện thoại cho gia đình, chưa dùng nhiều nên chưa biết, giống ảnh!",neu,0
+Giá hợp lý.,neu,0
+"Mua nồi cơm điện cho gia đình, hàng bị lỗi, không tốt lắm",neg,0
+"Mua sách cho gia đình, bình thường...",neu,0
+Chưa dùng nhiều nên chưa biết.,neu,0
+Vải mát và đẹp...,pos,1
+Giá hợp lý...,neu,0
+"Hàng bị lỗi, pin rất yếu",neg,0
+"Dùng rất thích, shop tư vấn nhiệt tình, vải mát và đẹp!",pos,1
+"Không tốt lắm, dùng được hai ngày đã hỏng, pin rất yếu!",neg,0
+"Sẽ ủng hộ tiếp, đóng gói cẩn thận, shop tư vấn nhiệt tình...",pos,1
+Tạm được...,neu,0
+"Chất lượng tuyệt vời, giao hàng nhanh.",pos,1
+"Mua giày cho gia đình, không giống mô tả, hàng bị lỗi!",neg,0
+"Mua bàn phím cho gia đình, không giống mô tả, thất vọng, không hài lòng.",neg,0
+Chất lượng tuyệt vời...,pos,1
+"Rất đáng tiền, vải mát và đẹp",pos,1
+"Sản phẩm rất tốt, đóng gói cẩn thận",pos,1
+Vải mỏng và xấu!,neg,0
+"Chất lượng kém, không như kỳ vọng",neg,0
+"Mua nồi cơm điện cho gia đình, dùng được hai ngày đã hỏng, shop trả lời thô lỗ!",neg,0
+"Bình thường, chưa dùng nhiều nên chưa biết",neu,0
+"Giao hàng quá chậm, shop trả lời thô lỗ, pin rất yếu.",neg,0
+Rất đáng tiền...,pos,1
+"Vải mát và đẹp, dùng rất thích, chất lượng tuyệt vời.",pos,1
+"Chất lượng kém, giao hàng quá chậm, thất vọng.",neg,0
+Chưa dùng nhiều nên chưa biết.,neu,0
+"Shop trả lời thô lỗ, không hài lòng, không giống mô tả.",neg,0
+"Mua sách cho gia đình, rất đáng tiền, dùng rất thích, giao hàng nhanh",pos,1
+"Dùng rất thích, chất lượng tuyệt vời...",pos,1
+"Giá hợp lý, tạm được.",neu,0
+Bình thường!,neu,0
+"Pin trâu, đóng gói cẩn thận, sẽ ủng hộ tiếp",pos,1
+Chất lượng tuyệt vời...,pos,1
+"Mua áo thun cho gia đình, không giống mô tả, giao hàng quá chậm, vải mỏng và xấu.",neg,0
+"Mua áo thun cho gia đình, vải mỏng và xấu.",neg,0
+"Mua giày cho gia đình, sản phẩm rất tốt, đóng gói cẩn thận, shop tư vấn nhiệt tình",pos,1
+"Mua điện thoại cho gia đình, dùng rất thích, chất lượng tuyệt vời, vải mát và đẹp",pos,1
+"Chất lượng tuyệt vời, rất đáng tiền, đóng gói cẩn thận...",pos,1
+"Dùng được hai ngày đã hỏng, không giống mô tả.",neg,0
+"Mua giày cho gia đình, đóng gói cẩn thận.",pos,0
+"Thất vọng, không như kỳ vọng.",neg,0
+"Giao hàng nhanh, shop tư vấn nhiệt tình",pos,1
+"Mua nồi cơm điện cho gia đình, rất đáng tiền...",pos,1
+"Vải mỏng và xấu, thất vọng",neg,0
+Sẽ ủng hộ tiếp...,pos,1
+"Vải mát và đẹp, chất lượng tuyệt vời",pos,1
+Giao hàng nhanh...,pos,1
+"Hàng bị lỗi, dùng được hai ngày đã hỏng, không tốt lắm.",neg,0
+Không đáng tiền,neg,0
+"Mua giày cho gia đình, hàng bị lỗi, phí tiền, dùng được hai ngày đã hỏng...",neg,0
+"Mua điện thoại cho gia đình, không hài lòng.",neg,0
+Sản phẩm rất tốt.,pos,1
+"Mua tai nghe cho gia đình, chất lượng tuyệt vời, sản phẩm rất tốt!",pos,1
+Không đáng tiền,neg,0
+Sản phẩm rất tốt.,pos,1
+"Vải mát và đẹp, pin trâu, giao hàng nhanh...",pos,1
+"Đóng gói cẩn thận, sản phẩm rất tốt",pos,1
+Không đáng tiền,neg,0
+"Mua tai nghe cho gia đình, không đáng tiền, không như kỳ vọng, phí tiền...",neg,0
+Sẽ ủng hộ tiếp.,pos,1
+"Dùng được hai ngày đã hỏng, shop trả lời thô lỗ!",neg,0
+"Giá hợp lý, bình thường!",neu,0
+"Thất vọng, không giống mô tả...",neg,0
+"Sản phẩm rất tốt, rất đáng tiền.",pos,1
+Vải mát và đẹp...,pos,1
+"Mua sách cho gia đình, giao hàng nhanh, vải mát và đẹp, shop tư vấn nhiệt tình...",pos,1
+Tạm được,neu,0
+Sẽ ủng hộ tiếp...,pos,1
+"Mua tai nghe cho gia đình, chất lượng tuyệt vời, giao hàng nhanh, vải mát và đẹp!",pos,1
+Không hài lòng,neg,0
+Thất vọng.,neg,0
+"Không như kỳ vọng, không giống mô tả",neg,0
+"Mua bàn phím cho gia đình, shop tư vấn nhiệt tình, sẽ ủng hộ tiếp!",pos,1
+"Không giống mô tả, vải mỏng và xấu",neg,0
+"Rất đáng tiền, giao hàng nhanh.",pos,0
+Thất vọng!,neg,0
+"Mua bàn phím cho gia đình, sẽ ủng hộ tiếp, rất đáng tiền...",pos,1
+"Shop trả lời thô lỗ, không tốt lắm.",neg,0
+"Mua bàn phím cho gia đình, pin rất yếu.",neg,0
+Dùng rất thích,pos,1
+"Chất lượng kém, shop trả lời thô lỗ, giao hàng quá chậm",neg,0
+"Sản phẩm rất tốt, đóng gói cẩn thận...",pos,1
+Bình thường...,neu,0
+Bình thường,neu,0
+"Mua áo thun cho gia đình, sản phẩm rất tốt",pos,1
+"Mua điện thoại cho gia đình, không tốt lắm, thất vọng, vải mỏng và xấu!",neg,0
+"Mua tai nghe cho gia đình, giống ảnh.",neu,0
+Giống ảnh,neu,0
+"Vải mỏng và xấu, không tốt lắm, dùng được hai ngày đã hỏng.",neg,0
+"Không như kỳ vọng, không hài lòng",neg,0
+"Dùng được hai ngày đã hỏng, không đáng tiền!",neg,0
+Dùng rất thích,pos,1
+"Mua giày cho gia đình, chưa dùng nhiều nên chưa biết, tạm được.",neu,0
+Bình thường...,neu,0
+"Mua điện thoại cho gia đình, giá hợp lý.",neu,0
+Giao hàng nhanh...,pos,1
+"Không tốt lắm, chất lượng kém",neg,0
+"Mua nồi cơm điện cho gia đình, bình thường, tạm được.",neu,0
+"Mua nồi cơm điện cho gia đình, đóng gói cẩn thận, pin trâu, sẽ ủng hộ tiếp...",pos,1
+"Mua áo thun cho gia đình, pin trâu, giao hàng nhanh!",pos,1
+"Mua bàn phím cho gia đình, không tốt lắm",neg,0
+"Dùng rất thích, rất đáng tiền...",pos,1
+Giá hợp lý!,neu,0
+"Mua giày cho gia đình, chất lượng tuyệt vời, sẽ ủng hộ tiếp...",pos,1
+Giá hợp lý,neu,0
+"Dùng rất thích, shop tư vấn nhiệt tình, vải mát và đẹp!",pos,1
+"Chưa dùng nhiều nên chưa biết, bình thường...",neu,0
+Giá hợp lý!,neu,1
+"Mua điện thoại cho gia đình, vải mỏng và xấu, không hài lòng, dùng được hai ngày đã hỏng...",neg,0
+"Mua tai nghe cho gia đình, vải mát và đẹp, giao hàng nhanh",pos,1
+"Giao hàng nhanh, chất lượng tuyệt vời, pin trâu!",pos,1
+"Tạm được, giống ảnh.",neu,0
+Dùng được hai ngày đã hỏng!,neg,0
+"Sẽ ủng hộ tiếp, vải mát và đẹp.",pos,1
+"Mua nồi cơm điện cho gia đình, chất lượng kém, giao hàng quá chậm, không tốt lắm",neg,0
+Chất lượng tuyệt vời!,pos,1
+"Chất lượng tuyệt vời, sẽ ủng hộ tiếp, giao hàng nhanh.",pos,1
+"Shop tư vấn nhiệt tình, chất lượng tuyệt vời",pos,1
+"Hàng bị lỗi, không hài lòng",neg,0
+"Mua giày cho gia đình, giống ảnh, giá hợp lý!",neu,0
+"Sẽ ủng hộ tiếp, rất đáng tiền!",pos,1
+"Giao hàng quá chậm, thất vọng, không đáng tiền",neg,0
+"Chưa dùng nhiều nên chưa biết, tạm được!",neu,0
+"Sẽ ủng hộ tiếp, dùng rất thích!",pos,1
+"Mua áo thun cho gia đình, chất lượng tuyệt vời.",pos,1
+Tạm được,neu,0
+"Mua giày cho gia đình, chất lượng tuyệt vời",pos,1
+Bình thường...,neu,0
+"Mua bàn phím cho gia đình, đóng gói cẩn thận",pos,1
+"Pin trâu, chất lượng tuyệt vời",pos,1
+"Sẽ ủng hộ tiếp, giao hàng nhanh, pin trâu...",pos,1
+Shop tư vấn nhiệt tình...,pos,1
+"Mua điện thoại cho gia đình, vải mát và đẹp, đóng gói cẩn thận!",pos,1
+"Đóng gói cẩn thận, rất đáng tiền",pos,1
+"Mua điện thoại cho gia đình, thất vọng, giao hàng quá chậm, dùng được hai ngày đã hỏng",neg,0
+"Mua điện thoại cho gia đình, dùng được hai ngày đã hỏng, không đáng tiền, giao hàng quá chậm.",neg,0
+Chất lượng kém,neg,0
+"Mua nồi cơm điện cho gia đình, shop trả lời thô lỗ!",neg,0
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp, rất đáng tiền",pos,1
+Vải mát và đẹp...,pos,1
+"Mua tai nghe cho gia đình, vải mát và đẹp, rất đáng tiền, chất lượng tuyệt vời.",pos,1
+Tạm được...,neu,0
+"Giao hàng nhanh, shop tư vấn nhiệt tình, sẽ ủng hộ tiếp!",pos,1
+"Mua bàn phím cho gia đình, hàng bị lỗi, không tốt lắm, chất lượng kém!",neg,0
+"Pin trâu, dùng rất thích...",pos,1
+"Không giống mô tả, thất vọng, không tốt lắm...",neg,0
+"Đóng gói cẩn thận, shop tư vấn nhiệt tình, sản phẩm rất tốt",pos,1
+"Mua tai nghe cho gia đình, rất đáng tiền, dùng rất thích",pos,1
+"Sản phẩm rất tốt, chất lượng tuyệt vời, dùng rất thích!",pos,1
+Bình thường,neu,0
+"Mua tai nghe cho gia đình, không hài lòng, không đáng tiền.",neg,0
+"Pin rất yếu, vải mỏng và xấu.",neg,0
+Chưa dùng nhiều nên chưa biết!,neu,0
+"Chất lượng tuyệt vời, rất đáng tiền, dùng rất thích...",pos,1
+"Mua sách cho gia đình, đóng gói cẩn thận, vải mát và đẹp.",pos,1
+"Giao hàng nhanh, đóng gói cẩn thận, pin trâu...",pos,1
+"Shop trả lời thô lỗ, hàng bị lỗi.",neg,0
+"Shop trả lời thô lỗ, không hài lòng.",neg,0
+"Mua nồi cơm điện cho gia đình, giống ảnh, bình thường.",neu,0
+Đóng gói cẩn thận.,pos,1
+Dùng rất thích,pos,1
+"Không hài lòng, dùng được hai ngày đã hỏng...",neg,0
+"Mua tai nghe cho gia đình, phí tiền, thất vọng!",neg,0
+"Mua giày cho gia đình, dùng được hai ngày đã hỏng.",neg,0
+Không như kỳ vọng...,neg,0
+"Chất lượng tuyệt vời, vải mát và đẹp, giao hàng nhanh...",pos,1
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời...",pos,1
+"Giao hàng quá chậm, không hài lòng...",neg,0
+Không tốt lắm!,neg,0
+Đóng gói cẩn thận!,pos,1
+"Đóng gói cẩn thận, rất đáng tiền, sản phẩm rất tốt!",pos,1
+"Không đáng tiền, không như kỳ vọng, pin rất yếu...",neg,0
+"Pin trâu, rất đáng tiền",pos,1
+"Mua bàn phím cho gia đình, dùng được hai ngày đã hỏng, shop trả lời thô lỗ, pin rất yếu.",neg,0
+"Mua nồi cơm điện cho gia đình, đóng gói cẩn thận, vải mát và đẹp...",pos,1
+"Mua bàn phím cho gia đình, giao hàng quá chậm",neg,0
+Dùng được hai ngày đã hỏng...,neg,0
+Không giống mô tả,neg,0
+"Mua sách cho gia đình, không đáng tiền, không hài lòng, phí tiền!",neg,0
+"Sẽ ủng hộ tiếp, pin trâu",pos,1
+"Không hài lòng, không như kỳ vọng, phí tiền...",neg,0
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời",pos,1
+Hàng bị lỗi!,neg,0
+"Shop trả lời thô lỗ, vải mỏng và xấu!",neg,0
+"Mua tai nghe cho gia đình, dùng rất thích.",pos,1
+Tạm được.,neu,0
+"Mua áo thun cho gia đình, không như kỳ vọng!",neg,0
+"Mua bàn phím cho gia đình, thất vọng.",neg,0
+"Mua giày cho gia đình, hàng bị lỗi",neg,0
+"Pin rất yếu, shop trả lời thô lỗ.",neg,0
+Giá hợp lý.,neu,0
+Không hài lòng.,neg,0
+"Không hài lòng, không như kỳ vọng!",neg,0
+"Thất vọng, không giống mô tả.",neg,0
+Phí tiền!,neg,0
+"Không tốt lắm, pin rất yếu, không giống mô tả.",neg,0
+"Mua nồi cơm điện cho gia đình, chất lượng kém.",neg,0
+"Chất lượng kém, giao hàng quá chậm",neg,0
+"Mua nồi cơm điện cho gia đình, rất đáng tiền, sản phẩm rất tốt, đóng gói cẩn thận",pos,1
+"Mua giày cho gia đình, không đáng tiền, chất lượng kém, không giống mô tả...",neg,0
+"Shop trả lời thô lỗ, không hài lòng!",neg,0
+"Sản phẩm rất tốt, dùng rất thích, vải mát và đẹp",pos,1
+Không hài lòng,neg,0
+Đóng gói cẩn thận.,pos,1
+"Tạm được, bình thường",neu,0
+Giá hợp lý...,neu,0
+"Shop tư vấn nhiệt tình, sẽ ủng hộ tiếp, dùng rất thích.",pos,1
+Rất đáng tiền!,pos,1
+"Sản phẩm rất tốt, shop tư vấn nhiệt tình...",pos,1
+"Dùng rất thích, giao hàng nhanh, chất lượng tuyệt vời",pos,1
+"Mua áo thun cho gia đình, giao hàng nhanh...",pos,1
+Chất lượng tuyệt vời!,pos,1
+Dùng được hai ngày đã hỏng.,neg,0
+"Mua tai nghe cho gia đình, giao hàng nhanh, pin trâu.",pos,1
+"Không đáng tiền, thất vọng!",neg,0
+Shop trả lời thô lỗ...,neg,0
+Sản phẩm rất tốt,pos,1
+"Chất lượng tuyệt vời, vải mát và đẹp!",pos,1
+"Không hài lòng, không tốt lắm, không đáng tiền!",neg,0
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt.",pos,1
+Hàng bị lỗi!,neg,0
+Chất lượng kém.,neg,0
+"Sản phẩm rất tốt, sẽ ủng hộ tiếp!",pos,0
+"Không đáng tiền, không hài lòng, không giống mô tả",neg,0
+"Mua tai nghe cho gia đình, pin trâu, sẽ ủng hộ tiếp, đóng gói cẩn thận",pos,1
+"Mua áo thun cho gia đình, rất đáng tiền!",pos,1
+"Mua sách cho gia đình, vải mỏng và xấu...",neg,0
+"Vải mát và đẹp, chất lượng tuyệt vời!",pos,1
+"Chưa dùng nhiều nên chưa biết, bình thường",neu,0
+"Rất đáng tiền, giao hàng nhanh.",pos,1
+"Chất lượng tuyệt vời, vải mát và đẹp, shop tư vấn nhiệt tình...",pos,1
+Giá hợp lý.,neu,0
+"Mua giày cho gia đình, pin rất yếu...",neg,0
+"Mua nồi cơm điện cho gia đình, bình thường.",neu,0
+"Mua tai nghe cho gia đình, shop tư vấn nhiệt tình.",pos,1
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp!",pos,1
+Chất lượng tuyệt vời.,pos,1
+"Tạm được, giá hợp lý...",neu,0
+"Không tốt lắm, shop trả lời thô lỗ, pin rất yếu!",neg,0
+"Mua giày cho gia đình, hàng bị lỗi",neg,0
+"Mua sách cho gia đình, chưa dùng nhiều nên chưa biết, tạm được...",neu,0
+"Mua giày cho gia đình, vải mỏng và xấu, thất vọng, không như kỳ vọng.",neg,0
+"Mua giày cho gia đình, pin trâu!",pos,1
+"Shop tư vấn nhiệt tình, sản phẩm rất tốt!",pos,1
+Vải mát và đẹp...,pos,1
+"Sản phẩm rất tốt, giao hàng nhanh!",pos,1
+"Chất lượng tuyệt vời, vải mát và đẹp, pin trâu",pos,1
+"Mua áo thun cho gia đình, không hài lòng...",neg,0
+"Mua tai nghe cho gia đình, không giống mô tả, phí tiền",neg,0
+"Mua tai nghe cho gia đình, phí tiền, không giống mô tả, hàng bị lỗi",neg,0
+"Mua tai nghe cho gia đình, hàng bị lỗi...",neg,0
+"Tạm được, bình thường!",neu,0
+"Pin rất yếu, chất lượng kém.",neg,0
+"Mua tai nghe cho gia đình, không giống mô tả, pin rất yếu, không tốt lắm.",neg,0
+"Chưa dùng nhiều nên chưa biết, bình thường!",neu,0
+"Mua tai nghe cho gia đình, dùng rất thích",pos,1
+Shop trả lời thô lỗ.,neg,0
+"Rất đáng tiền, sản phẩm rất tốt",pos,1
+Chưa dùng nhiều nên chưa biết!,neu,0
+Không đáng tiền.,neg,0
+"Giao hàng nhanh, sẽ ủng hộ tiếp!",pos,1
+"Pin trâu, dùng rất thích",pos,1
+"Mua áo thun cho gia đình, không giống mô tả, pin rất yếu, giao hàng quá chậm",neg,0
+"Sẽ ủng hộ tiếp, rất đáng tiền, shop tư vấn nhiệt tình.",pos,1
+"Sản phẩm rất tốt, rất đáng tiền, sẽ ủng hộ tiếp",pos,1
+"Không tốt lắm, vải mỏng và xấu, không như kỳ vọng.",neg,0
+"Rất đáng tiền, pin trâu, dùng rất thích.",pos,1
+Thất vọng.,neg,0
+Không giống mô tả!,neg,0
+"Mua nồi cơm điện cho gia đình, chất lượng kém, phí tiền!",neg,1
+Không hài lòng.,neg,0
+"Giá hợp lý, tạm được!",neu,0
+"Rất đáng tiền, dùng rất thích...",pos,0
+"Mua giày cho gia đình, bình thường!",neu,0
+Chất lượng tuyệt vời.,pos,1
+"Mua nồi cơm điện cho gia đình, hàng bị lỗi, không như kỳ vọng, không tốt lắm!",neg,0
+"Giao hàng nhanh, sẽ ủng hộ tiếp, chất lượng tuyệt vời...",pos,1
+"Không đáng tiền, phí tiền.",neg,0
+"Mua áo thun cho gia đình, thất vọng, vải mỏng và xấu, phí tiền.",neg,0
+"Chất lượng tuyệt vời, vải mát và đẹp, sản phẩm rất tốt.",pos,1
+"Mua điện thoại cho gia đình, phí tiền.",neg,0
+Giá hợp lý...,neu,0
+"Mua bàn phím cho gia đình, hàng bị lỗi, vải mỏng và xấu",neg,0
+Phí tiền!,neg,0
+"Không đáng tiền, thất vọng, không giống mô tả!",neg,0
+"Mua tai nghe cho gia đình, thất vọng!",neg,0
+Shop tư vấn nhiệt tình,pos,1
+"Mua sách cho gia đình, shop tư vấn nhiệt tình, sản phẩm rất tốt, vải mát và đẹp.",pos,1
+"Mua tai nghe cho gia đình, shop tư vấn nhiệt tình, chất lượng tuyệt vời, giao hàng nhanh...",pos,1
+"Phí tiền, vải mỏng và xấu, không tốt lắm...",neg,0
+Dùng rất thích.,pos,1
+"Mua áo thun cho gia đình, thất vọng, shop trả lời thô lỗ, pin rất yếu",neg,0
+Không hài lòng!,neg,0
+"Mua bàn phím cho gia đình, dùng được hai ngày đã hỏng, chất lượng kém, không hài lòng!",neg,0
+"Mua bàn phím cho gia đình, giao hàng nhanh, sản phẩm rất tốt",pos,1
+"Mua giày cho gia đình, pin trâu, sản phẩm rất tốt, giao hàng nhanh...",pos,1
+"Không tốt lắm, không giống mô tả",neg,0
+Không hài lòng...,neg,0
+"Dùng được hai ngày đã hỏng, pin rất yếu",neg,0
+Pin trâu...,pos,1
+Pin rất yếu!,neg,0
+"Không tốt lắm, shop trả lời thô lỗ...",neg,0
+"Mua bàn phím cho gia đình, hàng bị lỗi, shop trả lời thô lỗ.",neg,0
+"Mua bàn phím cho gia đình, shop trả lời thô lỗ, phí tiền, pin rất yếu...",neg,0
+"Không như kỳ vọng, phí tiền, vải mỏng và xấu!",neg,0
+"Mua điện thoại cho gia đình, giá hợp lý, bình thường!",neu,0
+Giao hàng nhanh!,pos,1
+Không như kỳ vọng.,neg,0
+"Mua giày cho gia đình, không tốt lắm, không như kỳ vọng",neg,0
+"Không như kỳ vọng, dùng được hai ngày đã hỏng, chất lượng kém",neg,0
+"Shop trả lời thô lỗ, chất lượng kém",neg,0
+"Mua nồi cơm điện cho gia đình, pin trâu, shop tư vấn nhiệt tình, rất đáng tiền!",pos,1
+"Tạm được, giá hợp lý...",neu,0
+"Mua bàn phím cho gia đình, chất lượng tuyệt vời.",pos,1
+Hàng bị lỗi.,neg,0
+Đóng gói cẩn thận...,pos,1
+"Giao hàng quá chậm, dùng được hai ngày đã hỏng, không như kỳ vọng",neg,0
+"Mua sách cho gia đình, shop trả lời thô lỗ, không như kỳ vọng...",neg,0
+"Mua bàn phím cho gia đình, giống ảnh, tạm được!",neu,0
+"Mua tai nghe cho gia đình, hàng bị lỗi, pin rất yếu!",neg,0
+"Không như kỳ vọng, hàng bị lỗi.",neg,0
+"Rất đáng tiền, chất lượng tuyệt vời...",pos,1
+"Mua sách cho gia đình, sản phẩm rất tốt, chất lượng tuyệt vời, vải mát và đẹp!",pos,1
+"Giao hàng quá chậm, không giống mô tả, thất vọng...",neg,0
+Rất đáng tiền...,pos,1
+"Vải mát và đẹp, dùng rất thích",pos,1
+"Mua áo thun cho gia đình, không đáng tiền, không như kỳ vọng, thất vọng",neg,0
+"Mua tai nghe cho gia đình, không tốt lắm.",neg,0
+"Sẽ ủng hộ tiếp, giao hàng nhanh!",pos,1
+"Không hài lòng, shop trả lời thô lỗ, thất vọng!",neg,0
+"Shop tư vấn nhiệt tình, sẽ ủng hộ tiếp",pos,1
+"Mua sách cho gia đình, không tốt lắm, thất vọng.",neg,0
+Không đáng tiền...,neg,0
+"Mua bàn phím cho gia đình, chưa dùng nhiều nên chưa biết, giá hợp lý",neu,0
+Dùng được hai ngày đã hỏng,neg,0
+"Chưa dùng nhiều nên chưa biết, giống ảnh.",neu,0
+"Mua áo thun cho gia đình, vải mỏng và xấu, thất vọng!",neg,1
+Dùng rất thích!,pos,1
+"Mua nồi cơm điện cho gia đình, pin rất yếu, chất lượng kém!",neg,0
+Thất vọng...,neg,1
+"Không hài lòng, không giống mô tả, không đáng tiền...",neg,0
+"Chất lượng kém, hàng bị lỗi, không hài lòng",neg,0
+"Mua bàn phím cho gia đình, chất lượng kém, không như kỳ vọng, dùng được hai ngày đã hỏng.",neg,0
+"Không đáng tiền, dùng được hai ngày đã hỏng.",neg,0
+"Không tốt lắm, vải mỏng và xấu, hàng bị lỗi!",neg,0
+"Sẽ ủng hộ tiếp, rất đáng tiền...",pos,1
+"Shop trả lời thô lỗ, hàng bị lỗi, thất vọng",neg,0
+"Mua điện thoại cho gia đình, dùng rất thích, chất lượng tuyệt vời...",pos,1
+Pin rất yếu...,neg,0
+"Shop tư vấn nhiệt tình, giao hàng nhanh, rất đáng tiền.",pos,1
+"Shop tư vấn nhiệt tình, sẽ ủng hộ tiếp...",pos,1
+"Mua giày cho gia đình, rất đáng tiền, sản phẩm rất tốt, pin trâu",pos,1
+"Mua sách cho gia đình, sẽ ủng hộ tiếp, vải mát và đẹp.",pos,1
+"Mua điện thoại cho gia đình, vải mát và đẹp, đóng gói cẩn thận, chất lượng tuyệt vời",pos,1
+"Không như kỳ vọng, không đáng tiền!",neg,0
+"Vải mát và đẹp, đóng gói cẩn thận, pin trâu!",pos,1
+Giao hàng nhanh...,pos,1
+"Giao hàng nhanh, vải mát và đẹp...",pos,1
+"Mua bàn phím cho gia đình, phí tiền",neg,0
+"Mua bàn phím cho gia đình, không tốt lắm, pin rất yếu.",neg,0
+Không như kỳ vọng.,neg,1
+Vải mỏng và xấu,neg,0
+"Giá hợp lý, giống ảnh...",neu,0
+"Mua nồi cơm điện cho gia đình, giá hợp lý!",neu,0
+Tạm được...,neu,0
+Bình thường,neu,0
+"Mua áo thun cho gia đình, rất đáng tiền, pin trâu, đóng gói cẩn thận...",pos,1
+Vải mát và đẹp.,pos,1
+Vải mát và đẹp...,pos,1
+"Dùng được hai ngày đã hỏng, không hài lòng, vải mỏng và xấu.",neg,0
+"Tạm được, giá hợp lý...",neu,0
+"Phí tiền, hàng bị lỗi, không hài lòng.",neg,0
+Pin trâu!,pos,1
+Sản phẩm rất tốt.,pos,1
+Pin rất yếu.,neg,0
+"Mua giày cho gia đình, rất đáng tiền, chất lượng tuyệt vời",pos,1
+Không hài lòng,neg,0
+"Không giống mô tả, không như kỳ vọng",neg,0
+"Sẽ ủng hộ tiếp, rất đáng tiền",pos,1
+"Mua bàn phím cho gia đình, pin rất yếu, không giống mô tả!",neg,0
+"Mua tai nghe cho gia đình, vải mỏng và xấu, pin rất yếu.",neg,0
+Shop trả lời thô lỗ.,neg,0
+"Rất đáng tiền, chất lượng tuyệt vời",pos,1
+"Không như kỳ vọng, dùng được hai ngày đã hỏng, shop trả lời thô lỗ...",neg,0
+"Giao hàng nhanh, đóng gói cẩn thận.",pos,1
+"Mua giày cho gia đình, sẽ ủng hộ tiếp, dùng rất thích",pos,1
+"Mua bàn phím cho gia đình, không như kỳ vọng, hàng bị lỗi.",neg,0
+Giao hàng nhanh!,pos,1
+Giao hàng nhanh.,pos,1
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời.",pos,1
+Giao hàng nhanh.,pos,1
+"Vải mỏng và xấu, không như kỳ vọng.",neg,0
+"Rất đáng tiền, dùng rất thích!",pos,1
+"Mua tai nghe cho gia đình, pin trâu, đóng gói cẩn thận, shop tư vấn nhiệt tình",pos,1
+"Giá hợp lý, giống ảnh.",neu,0
+"Phí tiền, chất lượng kém.",neg,0
+"Dùng rất thích, shop tư vấn nhiệt tình, pin trâu.",pos,1
+"Pin trâu, chất lượng tuyệt vời...",pos,1
+"Vải mỏng và xấu, chất lượng kém...",neg,0
+"Mua giày cho gia đình, thất vọng, phí tiền.",neg,0
+"Mua áo thun cho gia đình, pin trâu, chất lượng tuyệt vời, giao hàng nhanh.",pos,1
+Dùng rất thích,pos,1
+"Mua bàn phím cho gia đình, tạm được",neu,0
+"Mua giày cho gia đình, tạm được, bình thường.",neu,0
+"Giao hàng nhanh, vải mát và đẹp, pin trâu.",pos,1
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp!",pos,1
+"Pin trâu, giao hàng nhanh.",pos,1
+"Shop trả lời thô lỗ, chất lượng kém, thất vọng...",neg,0
+Không tốt lắm.,neg,0
+Rất đáng tiền.,pos,1
+"Dùng rất thích, vải mát và đẹp",pos,1
+"Mua bàn phím cho gia đình, hàng bị lỗi, pin rất yếu...",neg,0
+Giống ảnh,neu,0
+"Mua áo thun cho gia đình, sản phẩm rất tốt, shop tư vấn nhiệt tình, đóng gói cẩn thận...",pos,1
+"Shop tư vấn nhiệt tình, chất lượng tuyệt vời, đóng gói cẩn thận",pos,1
+"Mua bàn phím cho gia đình, chất lượng tuyệt vời, shop tư vấn nhiệt tình, pin trâu!",pos,1
+"Mua tai nghe cho gia đình, giao hàng nhanh, rất đáng tiền, shop tư vấn nhiệt tình!",pos,1
+"Mua giày cho gia đình, pin trâu, sản phẩm rất tốt, dùng rất thích",pos,1
+Giao hàng nhanh,pos,1
+Phí tiền.,neg,0
+"Rất đáng tiền, dùng rất thích, pin trâu...",pos,1
+"Shop trả lời thô lỗ, không hài lòng.",neg,0
+"Sản phẩm rất tốt, vải mát và đẹp...",pos,1
+"Mua áo thun cho gia đình, không đáng tiền.",neg,1
+"Không giống mô tả, giao hàng quá chậm",neg,0
+"Giao hàng nhanh, dùng rất thích...",pos,1
+"Vải mát và đẹp, sản phẩm rất tốt, dùng rất thích",pos,1
+"Mua điện thoại cho gia đình, sản phẩm rất tốt, pin trâu!",pos,0
+"Chất lượng tuyệt vời, vải mát và đẹp",pos,1
+"Pin trâu, dùng rất thích",pos,1
+"Mua áo thun cho gia đình, chưa dùng nhiều nên chưa biết, bình thường!",neu,0
+"Chất lượng tuyệt vời, dùng rất thích.",pos,1
+"Chất lượng tuyệt vời, dùng rất thích, pin trâu...",pos,1
+Hàng bị lỗi,neg,0
+"Mua tai nghe cho gia đình, sản phẩm rất tốt, rất đáng tiền, dùng rất thích...",pos,1
+"Mua giày cho gia đình, không như kỳ vọng!",neg,0
+"Mua giày cho gia đình, vải mát và đẹp!",pos,1
+"Chất lượng tuyệt vời, giao hàng nhanh...",pos,1
+"Sản phẩm rất tốt, pin trâu, rất đáng tiền...",pos,1
+Hàng bị lỗi,neg,0
+"Mua nồi cơm điện cho gia đình, rất đáng tiền",pos,1
+"Không tốt lắm, hàng bị lỗi...",neg,0
+Giao hàng nhanh...,pos,1
+"Mua tai nghe cho gia đình, rất đáng tiền!",pos,1
+"Mua giày cho gia đình, chất lượng tuyệt vời, đóng gói cẩn thận, vải mát và đẹp",pos,1
+"Mua điện thoại cho gia đình, thất vọng, hàng bị lỗi.",neg,0
+"Chất lượng tuyệt vời, sẽ ủng hộ tiếp...",pos,1
+"Tạm được, bình thường",neu,0
+"Dùng rất thích, sẽ ủng hộ tiếp!",pos,1
+Sẽ ủng hộ tiếp.,pos,1
+"Mua áo thun cho gia đình, giá hợp lý!",neu,0
+"Pin trâu, rất đáng tiền...",pos,1
+Vải mỏng và xấu.,neg,0
+"Thất vọng, không tốt lắm, không đáng tiền",neg,0
+"Mua áo thun cho gia đình, chất lượng tuyệt vời.",pos,1
+"Vải mát và đẹp, sẽ ủng hộ tiếp, shop tư vấn nhiệt tình.",pos,1
+Shop tư vấn nhiệt tình!,pos,1
+"Pin trâu, sản phẩm rất tốt, chất lượng tuyệt vời.",pos,1
+Phí tiền...,neg,0
+"Mua áo thun cho gia đình, giao hàng nhanh...",pos,1
+"Mua điện thoại cho gia đình, rất đáng tiền",pos,1
+Pin trâu,pos,1
+Tạm được.,neu,0
+"Đóng gói cẩn thận, rất đáng tiền, vải mát và đẹp",pos,1
+"Mua bàn phím cho gia đình, sản phẩm rất tốt, pin trâu",pos,1
+"Sản phẩm rất tốt, giao hàng nhanh.",pos,1
+"Mua điện thoại cho gia đình, đóng gói cẩn thận, vải mát và đẹp.",pos,1
+"Giao hàng quá chậm, không giống mô tả, không như kỳ vọng...",neg,0
+"Chất lượng kém, pin rất yếu, không tốt lắm...",neg,0
+"Mua nồi cơm điện cho gia đình, sản phẩm rất tốt, rất đáng tiền!",pos,1
+"Mua giày cho gia đình, pin trâu, sản phẩm rất tốt!",pos,1
+"Dùng rất thích, vải mát và đẹp...",pos,1
+"Mua điện thoại cho gia đình, phí tiền, không như kỳ vọng, thất vọng!",neg,0
+Giá hợp lý!,neu,0
+"Mua tai nghe cho gia đình, không hài lòng.",neg,0
+Giao hàng quá chậm,neg,0
+"Phí tiền, dùng được hai ngày đã hỏng.",neg,0
+"Mua điện thoại cho gia đình, vải mát và đẹp!",pos,1
+"Dùng rất thích, giao hàng nhanh, vải mát và đẹp",pos,1
+"Mua bàn phím cho gia đình, không giống mô tả, vải mỏng và xấu",neg,0
+Rất đáng tiền!,pos,1
+"Không hài lòng, thất vọng, không giống mô tả!",neg,0
+Pin trâu...,pos,1
+"Mua điện thoại cho gia đình, không tốt lắm, không đáng tiền!",neg,0
+Sản phẩm rất tốt!,pos,1
+"Shop tư vấn nhiệt tình, rất đáng tiền...",pos,1
+"Chất lượng tuyệt vời, dùng rất thích...",pos,1
+"Dùng rất thích, đóng gói cẩn thận, chất lượng tuyệt vời!",pos,1
+"Mua bàn phím cho gia đình, sản phẩm rất tốt, đóng gói cẩn thận, giao hàng nhanh!",pos,1
+"Mua sách cho gia đình, bình thường",neu,0
+"Giá hợp lý, chưa dùng nhiều nên chưa biết.",neu,0
+"Giao hàng quá chậm, dùng được hai ngày đã hỏng, pin rất yếu.",neg,0
+Bình thường...,neu,0
+Sản phẩm rất tốt...,pos,1
+"Rất đáng tiền, đóng gói cẩn thận, sẽ ủng hộ tiếp",pos,1
+"Mua tai nghe cho gia đình, không hài lòng...",neg,0
+"Mua bàn phím cho gia đình, vải mỏng và xấu...",neg,0
+Rất đáng tiền...,pos,1
+"Rất đáng tiền, chất lượng tuyệt vời, vải mát và đẹp...",pos,1
+"Pin trâu, sản phẩm rất tốt",pos,1
+"Mua giày cho gia đình, chất lượng kém, vải mỏng và xấu",neg,0
+"Mua áo thun cho gia đình, đóng gói cẩn thận, shop tư vấn nhiệt tình!",pos,1
+"Mua tai nghe cho gia đình, không tốt lắm.",neg,0
+"Giao hàng nhanh, đóng gói cẩn thận, sản phẩm rất tốt",pos,1
+"Vải mỏng và xấu, shop trả lời thô lỗ, thất vọng.",neg,0
+"Không đáng tiền, hàng bị lỗi, chất lượng kém",neg,0
+Dùng được hai ngày đã hỏng!,neg,0
+"Phí tiền, dùng được hai ngày đã hỏng!",neg,0
+"Dùng rất thích, vải mát và đẹp!",pos,1
+"Shop tư vấn nhiệt tình, đóng gói cẩn thận, giao hàng nhanh...",pos,1
+"Vải mỏng và xấu, không tốt lắm, không như kỳ vọng...",neg,0
+Shop trả lời thô lỗ!,neg,0
+"Đóng gói cẩn thận, dùng rất thích, rất đáng tiền",pos,1
+"Dùng được hai ngày đã hỏng, không đáng tiền!",neg,0
+"Vải mát và đẹp, shop tư vấn nhiệt tình...",pos,1
+"Dùng được hai ngày đã hỏng, không giống mô tả, vải mỏng và xấu...",neg,0
+"Mua sách cho gia đình, giống ảnh, chưa dùng nhiều nên chưa biết...",neu,0
+"Pin rất yếu, không hài lòng, shop trả lời thô lỗ.",neg,0
+"Shop trả lời thô lỗ, giao hàng quá chậm.",neg,0
+Không như kỳ vọng.,neg,0
+"Mua nồi cơm điện cho gia đình, pin trâu, vải mát và đẹp, chất lượng tuyệt vời...",pos,1
+"Rất đáng tiền, dùng rất thích, sẽ ủng hộ tiếp.",pos,1
+"Không như kỳ vọng, không hài lòng.",neg,0
+"Mua nồi cơm điện cho gia đình, chưa dùng nhiều nên chưa biết, bình thường...",neu,0
+"Pin rất yếu, không hài lòng...",neg,0
+"Hàng bị lỗi, không hài lòng.",neg,0
+"Pin rất yếu, hàng bị lỗi, vải mỏng và xấu!",neg,0
+Shop tư vấn nhiệt tình!,pos,1
+"Chất lượng tuyệt vời, đóng gói cẩn thận, vải mát và đẹp.",pos,1
+"Không tốt lắm, vải mỏng và xấu",neg,0
+"Vải mát và đẹp, pin trâu!",pos,1
+"Sản phẩm rất tốt, chất lượng tuyệt vời, đóng gói cẩn thận",pos,1
+"Mua tai nghe cho gia đình, tạm được, giá hợp lý!",neu,0
+"Mua bàn phím cho gia đình, pin rất yếu",neg,0
+"Mua áo thun cho gia đình, pin trâu.",pos,1
+Vải mỏng và xấu...,neg,0
+"Không như kỳ vọng, phí tiền, dùng được hai ngày đã hỏng!",neg,0
+Không tốt lắm!,neg,0
+"Không hài lòng, không tốt lắm...",neg,0
+Vải mát và đẹp,pos,1
+"Mua sách cho gia đình, chất lượng tuyệt vời, sản phẩm rất tốt",pos,1
+"Shop trả lời thô lỗ, không giống mô tả.",neg,0
+Pin trâu,pos,1
+"Mua áo thun cho gia đình, rất đáng tiền",pos,1
+Dùng rất thích.,pos,1
+Shop tư vấn nhiệt tình!,pos,1
+Sẽ ủng hộ tiếp,pos,1
+"Mua tai nghe cho gia đình, không giống mô tả!",neg,0
+"Sản phẩm rất tốt, dùng rất thích!",pos,1
+"Shop tư vấn nhiệt tình, vải mát và đẹp",pos,1
+Không hài lòng.,neg,0
+"Mua bàn phím cho gia đình, rất đáng tiền, pin trâu.",pos,1
+"Rất đáng tiền, đóng gói cẩn thận, dùng rất thích.",pos,1
+"Mua giày cho gia đình, chất lượng tuyệt vời, vải mát và đẹp!",pos,1
+Sản phẩm rất tốt!,pos,1
+"Mua tai nghe cho gia đình, shop tư vấn nhiệt tình, pin trâu.",pos,1
+"Pin trâu, đóng gói cẩn thận, shop tư vấn nhiệt tình",pos,1
+"Giống ảnh, chưa dùng nhiều nên chưa biết",neu,0
+"Vải mỏng và xấu, chất lượng kém, pin rất yếu...",neg,0
+"Pin trâu, vải mát và đẹp, shop tư vấn nhiệt tình.",pos,1
+"Mua sách cho gia đình, chất lượng kém, pin rất yếu, không đáng tiền...",neg,0
+Giá hợp lý...,neu,0
+Rất đáng tiền.,pos,1
+"Mua điện thoại cho gia đình, giao hàng quá chậm...",neg,0
+"Mua giày cho gia đình, giá hợp lý.",neu,0
+"Chất lượng kém, không tốt lắm!",neg,0
+"Mua áo thun cho gia đình, sản phẩm rất tốt",pos,1
+"Mua sách cho gia đình, giá hợp lý.",neu,0
+"Chất lượng tuyệt vời, pin trâu, rất đáng tiền...",pos,1
+"Bình thường, giống ảnh",neu,0
+"Mua sách cho gia đình, giao hàng quá chậm, vải mỏng và xấu, không đáng tiền",neg,0
+"Dùng được hai ngày đã hỏng, phí tiền, chất lượng kém",neg,0
+"Pin trâu, dùng rất thích.",pos,1
+Giao hàng nhanh...,pos,0
+"Mua sách cho gia đình, dùng được hai ngày đã hỏng, hàng bị lỗi, vải mỏng và xấu.",neg,0
+"Mua sách cho gia đình, chất lượng tuyệt vời.",pos,1
+"Không như kỳ vọng, shop trả lời thô lỗ",neg,0
+"Giao hàng nhanh, sản phẩm rất tốt!",pos,1
+Giao hàng nhanh...,pos,1
+"Giao hàng quá chậm, vải mỏng và xấu.",neg,0
+Giao hàng quá chậm!,neg,0
+"Dùng được hai ngày đã hỏng, shop trả lời thô lỗ!",neg,0
+"Pin trâu, sẽ ủng hộ tiếp.",pos,1
+"Sẽ ủng hộ tiếp, pin trâu, dùng rất thích...",pos,1
+"Thất vọng, không như kỳ vọng, vải mỏng và xấu!",neg,0
+"Mua bàn phím cho gia đình, đóng gói cẩn thận, vải mát và đẹp...",pos,1
+"Thất vọng, shop trả lời thô lỗ.",neg,0
+"Sản phẩm rất tốt, đóng gói cẩn thận, chất lượng tuyệt vời!",pos,1
+"Mua áo thun cho gia đình, rất đáng tiền, pin trâu!",pos,1
+Dùng rất thích,pos,1
+"Shop tư vấn nhiệt tình, giao hàng nhanh, sản phẩm rất tốt...",pos,1
+"Không như kỳ vọng, không giống mô tả.",neg,0
+"Vải mỏng và xấu, không giống mô tả, dùng được hai ngày đã hỏng...",neg,0
+"Mua giày cho gia đình, shop trả lời thô lỗ, không tốt lắm, không đáng tiền!",neg,0
+Vải mát và đẹp,pos,1
+"Thất vọng, pin rất yếu",neg,1
+"Giao hàng quá chậm, hàng bị lỗi, pin rất yếu",neg,0
+Rất đáng tiền...,pos,1
+"Pin rất yếu, không giống mô tả",neg,0
+Bình thường...,neu,0
+Giao hàng quá chậm,neg,0
+"Mua áo thun cho gia đình, thất vọng, hàng bị lỗi!",neg,0
+"Mua tai nghe cho gia đình, đóng gói cẩn thận, rất đáng tiền.",pos,1
+"Mua giày cho gia đình, đóng gói cẩn thận...",pos,1
+Giống ảnh.,neu,0
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp",pos,1
+"Mua điện thoại cho gia đình, sẽ ủng hộ tiếp, giao hàng nhanh",pos,1
+Dùng rất thích.,pos,0
+"Mua bàn phím cho gia đình, sản phẩm rất tốt, đóng gói cẩn thận!",pos,1
+"Mua điện thoại cho gia đình, pin trâu",pos,1
+"Mua giày cho gia đình, shop trả lời thô lỗ.",neg,0
+Pin trâu!,pos,1
+"Dùng rất thích, sản phẩm rất tốt.",pos,1
+Giao hàng nhanh!,pos,1
+"Giá hợp lý, chưa dùng nhiều nên chưa biết.",neu,0
+Pin trâu.,pos,1
+Pin trâu...,pos,1
+"Mua tai nghe cho gia đình, bình thường...",neu,0
+Dùng được hai ngày đã hỏng.,neg,0
+"Mua bàn phím cho gia đình, giao hàng nhanh",pos,1
+"Mua áo thun cho gia đình, shop trả lời thô lỗ, không giống mô tả!",neg,0
+Không như kỳ vọng.,neg,0
+"Chưa dùng nhiều nên chưa biết, bình thường...",neu,0
+"Phí tiền, chất lượng kém, pin rất yếu...",neg,0
+"Dùng rất thích, đóng gói cẩn thận",pos,1
+"Pin rất yếu, không tốt lắm.",neg,0
+"Mua sách cho gia đình, thất vọng.",neg,0
+"Shop tư vấn nhiệt tình, đóng gói cẩn thận, giao hàng nhanh...",pos,1
+"Không giống mô tả, chất lượng kém, phí tiền!",neg,0
+"Mua giày cho gia đình, tạm được, giống ảnh...",neu,0
+Không tốt lắm...,neg,0
+"Mua giày cho gia đình, đóng gói cẩn thận, pin trâu!",pos,1
+"Mua giày cho gia đình, pin trâu, đóng gói cẩn thận...",pos,1
+"Không giống mô tả, phí tiền...",neg,0
+"Mua bàn phím cho gia đình, hàng bị lỗi, không giống mô tả, vải mỏng và xấu.",neg,0
+"Vải mát và đẹp, sẽ ủng hộ tiếp, rất đáng tiền.",pos,1
+"Mua áo thun cho gia đình, phí tiền, thất vọng",neg,0
+"Mua sách cho gia đình, phí tiền, pin rất yếu",neg,0
+"Pin rất yếu, vải mỏng và xấu, không đáng tiền!",neg,0
+"Không tốt lắm, phí tiền!",neg,0
+Giá hợp lý!,neu,0
+"Phí tiền, dùng được hai ngày đã hỏng, không như kỳ vọng.",neg,0
+"Pin rất yếu, không đáng tiền, shop trả lời thô lỗ...",neg,0
+"Hàng bị lỗi, phí tiền...",neg,0
+"Vải mỏng và xấu, hàng bị lỗi, dùng được hai ngày đã hỏng.",neg,0
+Hàng bị lỗi.,neg,0
+"Chất lượng tuyệt vời, shop tư vấn nhiệt tình...",pos,1
+"Mua giày cho gia đình, không như kỳ vọng, hàng bị lỗi",neg,1
+"Mua áo thun cho gia đình, thất vọng...",neg,0
+"Mua tai nghe cho gia đình, tạm được...",neu,0
+"Đóng gói cẩn thận, dùng rất thích!",pos,1
+"Không hài lòng, không giống mô tả, thất vọng...",neg,0
+"Mua bàn phím cho gia đình, chưa dùng nhiều nên chưa biết, giá hợp lý...",neu,0
+"Mua tai nghe cho gia đình, pin rất yếu, không hài lòng",neg,0
+"Mua áo thun cho gia đình, sẽ ủng hộ tiếp!",pos,1
+"Vải mỏng và xấu, không đáng tiền!",neg,0
+"Shop tư vấn nhiệt tình, giao hàng nhanh, dùng rất thích.",pos,1
+"Mua điện thoại cho gia đình, sản phẩm rất tốt, vải mát và đẹp",pos,1
+"Pin trâu, chất lượng tuyệt vời...",pos,1
+"Mua áo thun cho gia đình, dùng rất thích...",pos,1
+Chất lượng kém,neg,0
+"Mua tai nghe cho gia đình, vải mát và đẹp!",pos,1
+"Mua sách cho gia đình, sẽ ủng hộ tiếp, shop tư vấn nhiệt tình, dùng rất thích...",pos,1
+Giá hợp lý...,neu,0
+Rất đáng tiền!,pos,1
+"Shop trả lời thô lỗ, không tốt lắm",neg,0
+"Mua sách cho gia đình, không giống mô tả, dùng được hai ngày đã hỏng, pin rất yếu.",neg,0
+"Chất lượng kém, không giống mô tả.",neg,0
+Không đáng tiền.,neg,0
+Giá hợp lý,neu,0
+"Sẽ ủng hộ tiếp, vải mát và đẹp, pin trâu!",pos,1
+"Không như kỳ vọng, pin rất yếu, không hài lòng",neg,0
+Dùng rất thích!,pos,1
+"Mua nồi cơm điện cho gia đình, sẽ ủng hộ tiếp, vải mát và đẹp, sản phẩm rất tốt...",pos,1
+"Mua bàn phím cho gia đình, chưa dùng nhiều nên chưa biết",neu,0
+"Mua bàn phím cho gia đình, chưa dùng nhiều nên chưa biết, tạm được.",neu,0
+"Chất lượng kém, phí tiền, dùng được hai ngày đã hỏng...",neg,0
+"Thất vọng, không giống mô tả",neg,0
+Đóng gói cẩn thận...,pos,1
+"Mua điện thoại cho gia đình, tạm được, giá hợp lý",neu,0
+Pin rất yếu...,neg,0
+"Thất vọng, dùng được hai ngày đã hỏng, shop trả lời thô lỗ...",neg,1
+"Mua giày cho gia đình, shop tư vấn nhiệt tình...",pos,1
+"Mua tai nghe cho gia đình, không như kỳ vọng, không đáng tiền, chất lượng kém",neg,0
+"Không giống mô tả, hàng bị lỗi, shop trả lời thô lỗ.",neg,0
+Hàng bị lỗi.,neg,0
+"Shop tư vấn nhiệt tình, chất lượng tuyệt vời, sẽ ủng hộ tiếp",pos,0
+Không như kỳ vọng.,neg,0
+"Giao hàng nhanh, pin trâu, shop tư vấn nhiệt tình!",pos,1
+Không tốt lắm...,neg,0
+"Tạm được, giá hợp lý!",neu,0
+"Sản phẩm rất tốt, chất lượng tuyệt vời.",pos,1
+"Mua bàn phím cho gia đình, sẽ ủng hộ tiếp, giao hàng nhanh...",pos,1
+Chưa dùng nhiều nên chưa biết...,neu,0
+"Sản phẩm rất tốt, shop tư vấn nhiệt tình",pos,1
+"Dùng rất thích, sẽ ủng hộ tiếp, giao hàng nhanh",pos,1
+"Vải mỏng và xấu, pin rất yếu.",neg,0
+"Mua giày cho gia đình, dùng rất thích, vải mát và đẹp, sẽ ủng hộ tiếp.",pos,1
+"Không hài lòng, vải mỏng và xấu!",neg,0
+"Mua sách cho gia đình, dùng rất thích, sản phẩm rất tốt...",pos,1
+"Rất đáng tiền, sẽ ủng hộ tiếp, vải mát và đẹp.",pos,1
+"Mua nồi cơm điện cho gia đình, dùng rất thích...",pos,0
+"Mua áo thun cho gia đình, vải mỏng và xấu, chất lượng kém.",neg,0
+Shop tư vấn nhiệt tình,pos,1
+"Mua giày cho gia đình, sản phẩm rất tốt, dùng rất thích",pos,1
+Rất đáng tiền.,pos,1
+"Giá hợp lý, tạm được!",neu,0
+"Hàng bị lỗi, thất vọng",neg,0
+"Mua bàn phím cho gia đình, vải mỏng và xấu, phí tiền!",neg,0
+Thất vọng,neg,0
+"Mua tai nghe cho gia đình, chất lượng tuyệt vời",pos,1
+Đóng gói cẩn thận...,pos,1
+"Sản phẩm rất tốt, vải mát và đẹp, chất lượng tuyệt vời.",pos,1
+"Không đáng tiền, không giống mô tả",neg,1
+"Không đáng tiền, không như kỳ vọng.",neg,0
+"Vải mát và đẹp, shop tư vấn nhiệt tình, giao hàng nhanh...",pos,1
+"Tạm được, giá hợp lý!",neu,0
+"Mua điện thoại cho gia đình, không đáng tiền, chất lượng kém",neg,0
+"Pin rất yếu, không tốt lắm.",neg,0
+Đóng gói cẩn thận,pos,1
+"Mua giày cho gia đình, không đáng tiền, không hài lòng.",neg,0
+"Mua nồi cơm điện cho gia đình, vải mát và đẹp, chất lượng tuyệt vời",pos,1
+"Shop tư vấn nhiệt tình, vải mát và đẹp",pos,1
+"Không như kỳ vọng, shop trả lời thô lỗ, không đáng tiền...",neg,0
+"Mua nồi cơm điện cho gia đình, vải mát và đẹp, rất đáng tiền...",pos,1
+"Mua tai nghe cho gia đình, shop trả lời thô lỗ, không như kỳ vọng, giao hàng quá chậm.",neg,1
+"Mua nồi cơm điện cho gia đình, tạm được!",neu,0
+"Mua áo thun cho gia đình, tạm được...",neu,0
+"Sản phẩm rất tốt, giao hàng nhanh, rất đáng tiền!",pos,1
+"Mua sách cho gia đình, phí tiền, hàng bị lỗi, dùng được hai ngày đã hỏng",neg,0
+"Mua bàn phím cho gia đình, sản phẩm rất tốt, dùng rất thích, giao hàng nhanh",pos,1
+"Mua bàn phím cho gia đình, phí tiền, pin rất yếu",neg,0
+"Pin trâu, giao hàng nhanh, đóng gói cẩn thận.",pos,1
+"Dùng rất thích, vải mát và đẹp, sẽ ủng hộ tiếp",pos,1
+"Không hài lòng, dùng được hai ngày đã hỏng...",neg,0
+"Mua bàn phím cho gia đình, vải mát và đẹp, shop tư vấn nhiệt tình.",pos,1
+Bình thường.,neu,0
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp",pos,1
+"Mua giày cho gia đình, không như kỳ vọng",neg,0
+"Vải mát và đẹp, rất đáng tiền, giao hàng nhanh...",pos,1
+Dùng rất thích.,pos,1
+"Chất lượng tuyệt vời, sẽ ủng hộ tiếp",pos,1
+Giống ảnh...,neu,0
+"Mua sách cho gia đình, giao hàng nhanh!",pos,1
+Dùng rất thích!,pos,1
+"Mua giày cho gia đình, pin trâu, sản phẩm rất tốt.",pos,1
+"Mua điện thoại cho gia đình, sản phẩm rất tốt!",pos,1
+"Giao hàng nhanh, shop tư vấn nhiệt tình, dùng rất thích!",pos,1
+"Thất vọng, giao hàng quá chậm, dùng được hai ngày đã hỏng!",neg,0
+"Mua điện thoại cho gia đình, chưa dùng nhiều nên chưa biết...",neu,0
+"Dùng được hai ngày đã hỏng, chất lượng kém, phí tiền...",neg,0
+"Mua bàn phím cho gia đình, dùng được hai ngày đã hỏng, không hài lòng!",neg,0
+Shop tư vấn nhiệt tình!,pos,1
+"Mua điện thoại cho gia đình, rất đáng tiền.",pos,1
+"Tạm được, giống ảnh",neu,0
+Tạm được!,neu,0
+"Tạm được, giá hợp lý.",neu,0
+Bình thường...,neu,0
+"Không tốt lắm, không đáng tiền",neg,0
+"Mua bàn phím cho gia đình, chất lượng tuyệt vời, giao hàng nhanh!",pos,1
+Sản phẩm rất tốt!,pos,1
+"Mua áo thun cho gia đình, sẽ ủng hộ tiếp, đóng gói cẩn thận...",pos,1
+"Dùng rất thích, sản phẩm rất tốt.",pos,1
+"Mua giày cho gia đình, không như kỳ vọng...",neg,0
+"Chất lượng tuyệt vời, sản phẩm rất tốt, shop tư vấn nhiệt tình!",pos,1
+Giống ảnh.,neu,0
+"Mua giày cho gia đình, hàng bị lỗi, phí tiền, chất lượng kém...",neg,0
+"Shop tư vấn nhiệt tình, dùng rất thích, chất lượng tuyệt vời.",pos,1
+"Giao hàng quá chậm, không hài lòng, không đáng tiền...",neg,0
+"Mua giày cho gia đình, chất lượng kém, pin rất yếu, vải mỏng và xấu",neg,0
+"Giá hợp lý, giống ảnh",neu,1
+Dùng rất thích...,pos,1
+"Sản phẩm rất tốt, chất lượng tuyệt vời, dùng rất thích.",pos,1
+"Mua giày cho gia đình, rất đáng tiền!",pos,1
+"Rất đáng tiền, đóng gói cẩn thận",pos,1
+"Mua tai nghe cho gia đình, chất lượng kém, không hài lòng, không đáng tiền...",neg,1
+"Không tốt lắm, hàng bị lỗi!",neg,0
+Sẽ ủng hộ tiếp.,pos,1
+"Dùng được hai ngày đã hỏng, chất lượng kém, pin rất yếu.",neg,0
+"Không tốt lắm, hàng bị lỗi, dùng được hai ngày đã hỏng!",neg,0
+"Mua áo thun cho gia đình, không tốt lắm, pin rất yếu, dùng được hai ngày đã hỏng!",neg,0
+"Shop tư vấn nhiệt tình, dùng rất thích...",pos,1
+"Đóng gói cẩn thận, vải mát và đẹp!",pos,1
+"Vải mát và đẹp, sẽ ủng hộ tiếp",pos,1
+"Mua điện thoại cho gia đình, giao hàng nhanh, pin trâu, rất đáng tiền",pos,0
+Shop tư vấn nhiệt tình.,pos,1
+Pin trâu!,pos,1
+"Mua nồi cơm điện cho gia đình, giao hàng nhanh...",pos,1
+Dùng được hai ngày đã hỏng...,neg,0
+Giao hàng nhanh,pos,0
+Vải mỏng và xấu!,neg,0
+Chưa dùng nhiều nên chưa biết,neu,0
+Đóng gói cẩn thận.,pos,1
+"Pin rất yếu, không giống mô tả...",neg,0
+"Không tốt lắm, không giống mô tả...",neg,0
+Sẽ ủng hộ tiếp...,pos,1
+"Vải mát và đẹp, shop tư vấn nhiệt tình, giao hàng nhanh...",pos,1
+Chưa dùng nhiều nên chưa biết!,neu,0
+"Sản phẩm rất tốt, rất đáng tiền, giao hàng nhanh...",pos,1
+"Shop trả lời thô lỗ, phí tiền.",neg,0
+"Phí tiền, không hài lòng.",neg,0
+Chất lượng tuyệt vời!,pos,1
+Tạm được,neu,1
+"Mua nồi cơm điện cho gia đình, giao hàng quá chậm, không như kỳ vọng, dùng được hai ngày đã hỏng.",neg,0
+"Mua nồi cơm điện cho gia đình, tạm được!",neu,0
+"Phí tiền, không giống mô tả, vải mỏng và xấu...",neg,0
+"Dùng rất thích, giao hàng nhanh!",pos,1
+"Mua sách cho gia đình, dùng được hai ngày đã hỏng",neg,0
+"Pin rất yếu, không đáng tiền, vải mỏng và xấu...",neg,0
+"Pin rất yếu, chất lượng kém, không giống mô tả.",neg,0
+"Mua bàn phím cho gia đình, rất đáng tiền",pos,1
+"Mua nồi cơm điện cho gia đình, shop tư vấn nhiệt tình, vải mát và đẹp, giao hàng nhanh!",pos,0
+Sản phẩm rất tốt!,pos,1
+"Dùng rất thích, pin trâu.",pos,1
+"Mua bàn phím cho gia đình, giá hợp lý, bình thường!",neu,0
+"Mua tai nghe cho gia đình, không tốt lắm, không đáng tiền, giao hàng quá chậm!",neg,0
+"Mua áo thun cho gia đình, pin trâu...",pos,1
+Giá hợp lý.,neu,0
+"Mua sách cho gia đình, không như kỳ vọng, shop trả lời thô lỗ.",neg,0
+"Shop trả lời thô lỗ, vải mỏng và xấu.",neg,0
+Không như kỳ vọng.,neg,0
+"Mua nồi cơm điện cho gia đình, không tốt lắm, thất vọng!",neg,0
+"Mua điện thoại cho gia đình, không như kỳ vọng...",neg,1
+"Rất đáng tiền, vải mát và đẹp...",pos,1
+"Chưa dùng nhiều nên chưa biết, giá hợp lý...",neu,0
+"Mua giày cho gia đình, dùng được hai ngày đã hỏng, phí tiền...",neg,0
+"Mua giày cho gia đình, vải mát và đẹp, sản phẩm rất tốt, shop tư vấn nhiệt tình...",pos,1
+Giá hợp lý,neu,0
+Giao hàng nhanh!,pos,1
+"Rất đáng tiền, chất lượng tuyệt vời, shop tư vấn nhiệt tình.",pos,1
+"Rất đáng tiền, dùng rất thích.",pos,1
+"Mua điện thoại cho gia đình, pin trâu, dùng rất thích...",pos,1
+"Mua giày cho gia đình, sẽ ủng hộ tiếp!",pos,1
+"Mua áo thun cho gia đình, chưa dùng nhiều nên chưa biết, giống ảnh!",neu,0
+Dùng được hai ngày đã hỏng!,neg,0
+"Dùng được hai ngày đã hỏng, vải mỏng và xấu, chất lượng kém.",neg,0
+Dùng được hai ngày đã hỏng...,neg,0
+"Sản phẩm rất tốt, đóng gói cẩn thận, dùng rất thích!",pos,1
+"Sản phẩm rất tốt, vải mát và đẹp!",pos,0
+"Tạm được, giống ảnh...",neu,0
+"Giống ảnh, bình thường.",neu,0
+"Không đáng tiền, chất lượng kém!",neg,0
+Dùng được hai ngày đã hỏng...,neg,0
+Tạm được,neu,0
+Dùng được hai ngày đã hỏng...,neg,0
+"Mua điện thoại cho gia đình, chất lượng tuyệt vời, dùng rất thích...",pos,1
+Vải mát và đẹp,pos,1
+Pin trâu.,pos,1
+"Mua bàn phím cho gia đình, tạm được, giá hợp lý.",neu,0
+"Hàng bị lỗi, vải mỏng và xấu!",neg,0
+"Mua tai nghe cho gia đình, sản phẩm rất tốt, vải mát và đẹp, shop tư vấn nhiệt tình",pos,1
+"Mua áo thun cho gia đình, không như kỳ vọng!",neg,0
+Rất đáng tiền!,pos,1
+Không như kỳ vọng,neg,0
+"Pin trâu, dùng rất thích...",pos,1
+Không hài lòng!,neg,0
+"Mua nồi cơm điện cho gia đình, không tốt lắm, hàng bị lỗi, không đáng tiền.",neg,0
+"Dùng rất thích, shop tư vấn nhiệt tình...",pos,1
+"Sản phẩm rất tốt, chất lượng tuyệt vời, giao hàng nhanh.",pos,1
+"Mua tai nghe cho gia đình, giống ảnh, giá hợp lý...",neu,0
+"Thất vọng, giao hàng quá chậm, không hài lòng!",neg,0
+"Mua bàn phím cho gia đình, thất vọng.",neg,0
+"Mua tai nghe cho gia đình, shop trả lời thô lỗ.",neg,0
+Giống ảnh.,neu,0
+"Pin trâu, đóng gói cẩn thận, shop tư vấn nhiệt tình!",pos,1
+"Mua tai nghe cho gia đình, sản phẩm rất tốt.",pos,1
+Pin rất yếu.,neg,0
+"Mua bàn phím cho gia đình, sản phẩm rất tốt.",pos,1
+"Chất lượng tuyệt vời, sản phẩm rất tốt, shop tư vấn nhiệt tình!",pos,1
+Dùng được hai ngày đã hỏng.,neg,0
+Không như kỳ vọng!,neg,0
+"Mua bàn phím cho gia đình, pin trâu, vải mát và đẹp...",pos,1
+"Rất đáng tiền, pin trâu, sản phẩm rất tốt!",pos,1
+"Mua nồi cơm điện cho gia đình, không đáng tiền, phí tiền, vải mỏng và xấu!",neg,0
+"Dùng được hai ngày đã hỏng, chất lượng kém",neg,0
+Shop tư vấn nhiệt tình,pos,1
+"Vải mỏng và xấu, không đáng tiền, shop trả lời thô lỗ",neg,0
+"Không hài lòng, không tốt lắm.",neg,0
+Chưa dùng nhiều nên chưa biết,neu,0
+Giao hàng nhanh,pos,1
+"Pin trâu, đóng gói cẩn thận!",pos,1
+"Mua bàn phím cho gia đình, không đáng tiền, vải mỏng và xấu, không giống mô tả.",neg,0
+"Sản phẩm rất tốt, pin trâu...",pos,1
+"Mua tai nghe cho gia đình, sản phẩm rất tốt, sẽ ủng hộ tiếp!",pos,1
+"Shop tư vấn nhiệt tình, chất lượng tuyệt vời!",pos,1
+"Sản phẩm rất tốt, rất đáng tiền",pos,1
+Vải mát và đẹp...,pos,1
+Dùng rất thích.,pos,1
+Tạm được!,neu,0
+Pin rất yếu.,neg,0
+"Không hài lòng, shop trả lời thô lỗ, không giống mô tả!",neg,0
+"Shop tư vấn nhiệt tình, sẽ ủng hộ tiếp, dùng rất thích.",pos,1
+"Chất lượng kém, thất vọng",neg,0
+"Không hài lòng, không tốt lắm",neg,0
+"Mua nồi cơm điện cho gia đình, shop tư vấn nhiệt tình, chất lượng tuyệt vời...",pos,1
+"Vải mát và đẹp, đóng gói cẩn thận, rất đáng tiền!",pos,1
+Shop trả lời thô lỗ.,neg,0
+"Mua nồi cơm điện cho gia đình, sản phẩm rất tốt, pin trâu...",pos,1
+"Mua áo thun cho gia đình, shop trả lời thô lỗ",neg,0
+"Mua bàn phím cho gia đình, chất lượng kém, không giống mô tả, không đáng tiền",neg,0
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời...",pos,1
+Tạm được!,neu,0
+"Mua tai nghe cho gia đình, đóng gói cẩn thận...",pos,1
+"Mua áo thun cho gia đình, shop trả lời thô lỗ!",neg,0
+"Chất lượng kém, phí tiền, pin rất yếu.",neg,0
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời, dùng rất thích...",pos,1
+"Đóng gói cẩn thận, sản phẩm rất tốt, giao hàng nhanh!",pos,1
+Không hài lòng,neg,0
+"Chưa dùng nhiều nên chưa biết, giá hợp lý...",neu,0
+"Mua giày cho gia đình, rất đáng tiền, chất lượng tuyệt vời...",pos,0
+"Mua sách cho gia đình, hàng bị lỗi",neg,0
+"Mua tai nghe cho gia đình, vải mát và đẹp, giao hàng nhanh, sản phẩm rất tốt",pos,1
+"Mua tai nghe cho gia đình, thất vọng, vải mỏng và xấu!",neg,0
+"Mua sách cho gia đình, không tốt lắm, chất lượng kém, không như kỳ vọng...",neg,0
+Giao hàng quá chậm.,neg,0
+"Mua điện thoại cho gia đình, vải mát và đẹp...",pos,1
+"Dùng được hai ngày đã hỏng, không như kỳ vọng, giao hàng quá chậm.",neg,0
+"Mua nồi cơm điện cho gia đình, giao hàng nhanh, pin trâu, sẽ ủng hộ tiếp.",pos,1
+"Mua sách cho gia đình, shop trả lời thô lỗ, không như kỳ vọng.",neg,0
+"Shop tư vấn nhiệt tình, sản phẩm rất tốt",pos,1
+"Dùng rất thích, vải mát và đẹp!",pos,1
+"Mua giày cho gia đình, rất đáng tiền",pos,1
+"Mua tai nghe cho gia đình, bình thường.",neu,0
+"Giao hàng nhanh, dùng rất thích...",pos,1
+Rất đáng tiền!,pos,0
+Thất vọng...,neg,0
+"Mua tai nghe cho gia đình, chất lượng tuyệt vời",pos,1
+Pin trâu...,pos,1
+"Pin trâu, rất đáng tiền!",pos,1
+Giao hàng nhanh,pos,1
+"Shop tư vấn nhiệt tình, pin trâu, rất đáng tiền",pos,1
+"Rất đáng tiền, đóng gói cẩn thận.",pos,1
+"Mua điện thoại cho gia đình, shop trả lời thô lỗ, dùng được hai ngày đã hỏng...",neg,0
+"Mua nồi cơm điện cho gia đình, chưa dùng nhiều nên chưa biết, giống ảnh!",neu,0
+"Giao hàng nhanh, dùng rất thích...",pos,1
+"Mua sách cho gia đình, đóng gói cẩn thận...",pos,1
+"Mua áo thun cho gia đình, giống ảnh.",neu,0
+"Mua giày cho gia đình, giống ảnh...",neu,0
+"Shop tư vấn nhiệt tình, giao hàng nhanh, sản phẩm rất tốt...",pos,1
+Giao hàng nhanh,pos,0
+"Bình thường, giống ảnh!",neu,0
+"Chất lượng kém, dùng được hai ngày đã hỏng, không hài lòng!",neg,0
+"Mua tai nghe cho gia đình, không đáng tiền, vải mỏng và xấu...",neg,0
+"Không hài lòng, shop trả lời thô lỗ!",neg,0
+"Hàng bị lỗi, dùng được hai ngày đã hỏng",neg,0
+"Không như kỳ vọng, hàng bị lỗi...",neg,0
+"Mua nồi cơm điện cho gia đình, pin rất yếu...",neg,0
+"Không giống mô tả, không đáng tiền!",neg,0
+Shop trả lời thô lỗ!,neg,0
+"Không hài lòng, hàng bị lỗi...",neg,0
+Shop trả lời thô lỗ!,neg,1
+"Giao hàng nhanh, sản phẩm rất tốt.",pos,1
+"Giao hàng nhanh, đóng gói cẩn thận, sản phẩm rất tốt!",pos,1
+"Không giống mô tả, shop trả lời thô lỗ.",neg,0
+"Chất lượng tuyệt vời, giao hàng nhanh",pos,1
+"Phí tiền, không như kỳ vọng.",neg,0
+Không tốt lắm...,neg,0
+"Sẽ ủng hộ tiếp, giao hàng nhanh.",pos,1
+"Chất lượng tuyệt vời, dùng rất thích, pin trâu...",pos,1
+"Mua nồi cơm điện cho gia đình, chất lượng tuyệt vời, dùng rất thích",pos,1
+"Mua tai nghe cho gia đình, phí tiền, không hài lòng, không đáng tiền!",neg,0
+"Mua giày cho gia đình, không tốt lắm, hàng bị lỗi.",neg,0
+"Vải mỏng và xấu, giao hàng quá chậm, không giống mô tả...",neg,0
+Chất lượng kém.,neg,0
+"Mua nồi cơm điện cho gia đình, bình thường",neu,0
+"Dùng rất thích, sản phẩm rất tốt, rất đáng tiền",pos,1
+"Rất đáng tiền, vải mát và đẹp...",pos,1
+Dùng được hai ngày đã hỏng.,neg,0
+Chưa dùng nhiều nên chưa biết.,neu,0
+Pin trâu,pos,1
+"Mua giày cho gia đình, bình thường, giống ảnh",neu,0
+"Giao hàng nhanh, pin trâu, vải mát và đẹp.",pos,1
+"Chất lượng kém, hàng bị lỗi, không đáng tiền...",neg,0
+"Shop trả lời thô lỗ, vải mỏng và xấu, phí tiền.",neg,0
+"Tạm được, chưa dùng nhiều nên chưa biết!",neu,0
+"Mua áo thun cho gia đình, phí tiền...",neg,0
+"Mua sách cho gia đình, hàng bị lỗi.",neg,0
+"Bình thường, chưa dùng nhiều nên chưa biết!",neu,0
+"Dùng rất thích, đóng gói cẩn thận...",pos,1
+"Mua giày cho gia đình, chưa dùng nhiều nên chưa biết...",neu,0
+"Dùng rất thích, rất đáng tiền, đóng gói cẩn thận.",pos,1
+"Mua áo thun cho gia đình, tạm được",neu,0
+"Không đáng tiền, không tốt lắm, không như kỳ vọng!",neg,0
+Chất lượng kém.,neg,0
+"Vải mỏng và xấu, không hài lòng...",neg,0
+"Pin trâu, vải mát và đẹp...",pos,1
+"Không tốt lắm, dùng được hai ngày đã hỏng, thất vọng",neg,0
+"Rất đáng tiền, sẽ ủng hộ tiếp, pin trâu",pos,1
+"Chất lượng tuyệt vời, rất đáng tiền...",pos,1
+"Mua điện thoại cho gia đình, pin rất yếu!",neg,0
+Phí tiền...,neg,0
+Không đáng tiền!,neg,0
+Không hài lòng,neg,0
+Không giống mô tả!,neg,0
+"Rất đáng tiền, giao hàng nhanh",pos,1
+Sẽ ủng hộ tiếp,pos,1
+"Mua điện thoại cho gia đình, chưa dùng nhiều nên chưa biết!",neu,0
+"Mua giày cho gia đình, vải mỏng và xấu, shop trả lời thô lỗ...",neg,0
+Phí tiền...,neg,0
+Dùng được hai ngày đã hỏng,neg,0
+"Mua áo thun cho gia đình, pin trâu...",pos,1
+Sản phẩm rất tốt.,pos,1
+"Mua sách cho gia đình, hàng bị lỗi...",neg,0
+Rất đáng tiền,pos,1
+"Mua tai nghe cho gia đình, dùng được hai ngày đã hỏng!",neg,0
+Giao hàng quá chậm,neg,0
+"Hàng bị lỗi, pin rất yếu, thất vọng.",neg,0
+"Mua bàn phím cho gia đình, chất lượng kém",neg,0
+"Pin trâu, rất đáng tiền, chất lượng tuyệt vời...",pos,1
+"Mua giày cho gia đình, vải mát và đẹp",pos,1
+Shop trả lời thô lỗ!,neg,0
+"Mua bàn phím cho gia đình, không giống mô tả, không đáng tiền, thất vọng!",neg,0
+"Mua giày cho gia đình, phí tiền...",neg,0
+"Mua giày cho gia đình, không đáng tiền, không giống mô tả, vải mỏng và xấu",neg,0
+Sản phẩm rất tốt!,pos,1
+"Dùng rất thích, pin trâu",pos,1
+"Mua giày cho gia đình, dùng được hai ngày đã hỏng",neg,0
+Dùng rất thích...,pos,1
+"Mua bàn phím cho gia đình, không giống mô tả, pin rất yếu!",neg,0
+"Dùng rất thích, vải mát và đẹp.",pos,1
+Sản phẩm rất tốt.,pos,0
+"Chất lượng tuyệt vời, giao hàng nhanh, sản phẩm rất tốt!",pos,1
+"Dùng được hai ngày đã hỏng, hàng bị lỗi...",neg,0
+Giống ảnh,neu,0
+"Dùng rất thích, shop tư vấn nhiệt tình...",pos,1
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp, dùng rất thích!",pos,1
+Pin rất yếu...,neg,0
+"Tạm được, bình thường...",neu,0
+"Chưa dùng nhiều nên chưa biết, giá hợp lý.",neu,0
+Giao hàng nhanh!,pos,1
+"Chưa dùng nhiều nên chưa biết, tạm được",neu,0
+"Mua áo thun cho gia đình, rất đáng tiền, giao hàng nhanh.",pos,1
+"Mua sách cho gia đình, shop trả lời thô lỗ, không hài lòng, pin rất yếu",neg,0
+"Mua điện thoại cho gia đình, tạm được, chưa dùng nhiều nên chưa biết.",neu,0
+Giá hợp lý!,neu,0
+Sẽ ủng hộ tiếp,pos,1
+Giống ảnh.,neu,0
+Không tốt lắm,neg,0
+"Mua sách cho gia đình, không tốt lắm, dùng được hai ngày đã hỏng.",neg,0
+"Mua giày cho gia đình, vải mỏng và xấu, giao hàng quá chậm",neg,0
+Sẽ ủng hộ tiếp.,pos,1
+"Không như kỳ vọng, shop trả lời thô lỗ, không hài lòng.",neg,0
+"Mua bàn phím cho gia đình, rất đáng tiền, vải mát và đẹp, chất lượng tuyệt vời!",pos,1
+"Mua điện thoại cho gia đình, giá hợp lý.",neu,0
+"Mua điện thoại cho gia đình, thất vọng, shop trả lời thô lỗ!",neg,0
+Tạm được.,neu,0
+Pin trâu,pos,1
+"Mua giày cho gia đình, sản phẩm rất tốt, vải mát và đẹp.",pos,1
+"Mua điện thoại cho gia đình, chất lượng kém, không như kỳ vọng!",neg,0
+"Mua điện thoại cho gia đình, phí tiền, giao hàng quá chậm...",neg,0
+"Mua áo thun cho gia đình, dùng được hai ngày đã hỏng, shop trả lời thô lỗ, không hài lòng",neg,0
+"Mua bàn phím cho gia đình, dùng rất thích, sản phẩm rất tốt!",pos,1
+Tạm được,neu,0
+"Chất lượng tuyệt vời, sản phẩm rất tốt, đóng gói cẩn thận!",pos,1
+"Mua bàn phím cho gia đình, chất lượng tuyệt vời!",pos,1
+"Giao hàng nhanh, sản phẩm rất tốt!",pos,1
+"Mua tai nghe cho gia đình, không giống mô tả!",neg,0
+Chưa dùng nhiều nên chưa biết.,neu,0
+Vải mát và đẹp.,pos,1
+"Dùng được hai ngày đã hỏng, không tốt lắm!",neg,0
+"Không giống mô tả, chất lượng kém, thất vọng!",neg,0
+"Sản phẩm rất tốt, rất đáng tiền.",pos,1
+"Phí tiền, không đáng tiền...",neg,0
+"Thất vọng, pin rất yếu!",neg,0
+Giá hợp lý!,neu,0
+"Rất đáng tiền, dùng rất thích, pin trâu!",pos,1
+"Mua bàn phím cho gia đình, đóng gói cẩn thận, shop tư vấn nhiệt tình...",pos,1
+"Giao hàng quá chậm, thất vọng, không giống mô tả...",neg,0
+"Mua bàn phím cho gia đình, dùng rất thích!",pos,1
+"Rất đáng tiền, sẽ ủng hộ tiếp, giao hàng nhanh",pos,1
+"Chất lượng kém, pin rất yếu.",neg,0
+Sẽ ủng hộ tiếp.,pos,1
+"Mua sách cho gia đình, chất lượng tuyệt vời, pin trâu, đóng gói cẩn thận.",pos,1
+"Mua tai nghe cho gia đình, vải mỏng và xấu, phí tiền, chất lượng kém!",neg,1
+"Mua điện thoại cho gia đình, vải mỏng và xấu...",neg,0
+Không giống mô tả!,neg,0
+"Mua bàn phím cho gia đình, chưa dùng nhiều nên chưa biết",neu,0
+Pin trâu!,pos,1
+"Mua sách cho gia đình, shop trả lời thô lỗ, không hài lòng.",neg,0
+Vải mỏng và xấu.,neg,0
+"Mua tai nghe cho gia đình, bình thường, tạm được",neu,0
+"Chất lượng tuyệt vời, sẽ ủng hộ tiếp",pos,1
+"Mua bàn phím cho gia đình, chất lượng tuyệt vời, pin trâu",pos,1
+"Rất đáng tiền, dùng rất thích, đóng gói cẩn thận.",pos,1
+"Mua áo thun cho gia đình, shop tư vấn nhiệt tình!",pos,1
+Hàng bị lỗi.,neg,0
+"Vải mát và đẹp, giao hàng nhanh.",pos,1
+"Rất đáng tiền, sản phẩm rất tốt",pos,1
+"Không giống mô tả, phí tiền, dùng được hai ngày đã hỏng...",neg,0
+"Tạm được, giá hợp lý",neu,0
+"Mua giày cho gia đình, pin rất yếu",neg,0
+"Mua giày cho gia đình, chất lượng kém, vải mỏng và xấu...",neg,1
+"Hàng bị lỗi, phí tiền, không như kỳ vọng.",neg,0
+Tạm được...,neu,0
+"Không tốt lắm, shop trả lời thô lỗ, pin rất yếu.",neg,0
+"Mua áo thun cho gia đình, giống ảnh...",neu,0
+"Dùng được hai ngày đã hỏng, không giống mô tả.",neg,0
+"Bình thường, giá hợp lý...",neu,0
+"Rất đáng tiền, giao hàng nhanh...",pos,1
+"Giá hợp lý, bình thường!",neu,0
+"Giá hợp lý, chưa dùng nhiều nên chưa biết...",neu,0
+"Bình thường, giá hợp lý!",neu,0
+"Sản phẩm rất tốt, shop tư vấn nhiệt tình, rất đáng tiền!",pos,1
+Không như kỳ vọng,neg,0
+Đóng gói cẩn thận...,pos,1
+Bình thường,neu,0
+Đóng gói cẩn thận!,pos,1
+"Vải mát và đẹp, rất đáng tiền",pos,1
+"Mua nồi cơm điện cho gia đình, chất lượng kém",neg,0
+"Rất đáng tiền, giao hàng nhanh, đóng gói cẩn thận...",pos,1
+"Mua tai nghe cho gia đình, vải mát và đẹp, sản phẩm rất tốt",pos,1
+"Chất lượng kém, phí tiền, không tốt lắm.",neg,0
+"Mua điện thoại cho gia đình, shop tư vấn nhiệt tình, giao hàng nhanh, dùng rất thích...",pos,1
+"Mua tai nghe cho gia đình, rất đáng tiền, đóng gói cẩn thận, sẽ ủng hộ tiếp...",pos,1
+Giao hàng nhanh,pos,1
+"Mua nồi cơm điện cho gia đình, sẽ ủng hộ tiếp, pin trâu",pos,1
+Chất lượng tuyệt vời!,pos,1
+"Rất đáng tiền, dùng rất thích.",pos,1
+"Giao hàng quá chậm, vải mỏng và xấu!",neg,1
+"Thất vọng, không hài lòng",neg,0
+Chất lượng tuyệt vời...,pos,1
+"Mua tai nghe cho gia đình, hàng bị lỗi, không giống mô tả, giao hàng quá chậm!",neg,0
+"Shop trả lời thô lỗ, pin rất yếu, giao hàng quá chậm...",neg,0
+"Pin trâu, vải mát và đẹp, chất lượng tuyệt vời...",pos,1
+"Rất đáng tiền, shop tư vấn nhiệt tình, vải mát và đẹp!",pos,1
+"Tạm được, giá hợp lý.",neu,0
+Rất đáng tiền!,pos,0
+"Mua bàn phím cho gia đình, thất vọng, không hài lòng, hàng bị lỗi",neg,0
+"Mua sách cho gia đình, không giống mô tả",neg,0
+"Chất lượng kém, pin rất yếu, phí tiền.",neg,0
+"Không giống mô tả, shop trả lời thô lỗ",neg,0
+"Mua sách cho gia đình, chất lượng kém, không tốt lắm, không đáng tiền",neg,0
+"Mua bàn phím cho gia đình, không đáng tiền, thất vọng.",neg,0
+Hàng bị lỗi!,neg,0
+Phí tiền!,neg,1
+Sẽ ủng hộ tiếp.,pos,1
+Bình thường.,neu,0
+Rất đáng tiền,pos,1
+"Giao hàng nhanh, rất đáng tiền.",pos,1
+"Không đáng tiền, chất lượng kém, không giống mô tả",neg,0
+"Mua điện thoại cho gia đình, sẽ ủng hộ tiếp, vải mát và đẹp, sản phẩm rất tốt...",pos,1
+"Mua tai nghe cho gia đình, tạm được",neu,0
+"Đóng gói cẩn thận, shop tư vấn nhiệt tình.",pos,1
+"Đóng gói cẩn thận, rất đáng tiền.",pos,1
+"Dùng rất thích, vải mát và đẹp, shop tư vấn nhiệt tình...",pos,1
+"Thất vọng, không đáng tiền...",neg,0
+"Không tốt lắm, không hài lòng",neg,0
+"Không tốt lắm, vải mỏng và xấu.",neg,0
+Sản phẩm rất tốt,pos,1
+Không tốt lắm...,neg,0
+"Mua bàn phím cho gia đình, không tốt lắm, phí tiền, thất vọng!",neg,0
+"Mua sách cho gia đình, shop tư vấn nhiệt tình.",pos,1
+"Mua giày cho gia đình, shop tư vấn nhiệt tình, sản phẩm rất tốt, pin trâu.",pos,1
+"Rất đáng tiền, đóng gói cẩn thận, chất lượng tuyệt vời.",pos,1
+"Mua tai nghe cho gia đình, giao hàng nhanh, shop tư vấn nhiệt tình.",pos,1
+Không giống mô tả.,neg,0
+"Sẽ ủng hộ tiếp, vải mát và đẹp, dùng rất thích.",pos,1
+Shop trả lời thô lỗ,neg,0
+Pin rất yếu.,neg,0
+"Mua điện thoại cho gia đình, shop trả lời thô lỗ, hàng bị lỗi",neg,0
+"Mua giày cho gia đình, sẽ ủng hộ tiếp, sản phẩm rất tốt.",pos,1
+Giống ảnh...,neu,0
+"Không giống mô tả, vải mỏng và xấu!",neg,0
+"Giá hợp lý, bình thường!",neu,0
+"Vải mát và đẹp, chất lượng tuyệt vời, sẽ ủng hộ tiếp",pos,1
+"Chất lượng tuyệt vời, đóng gói cẩn thận, sản phẩm rất tốt...",pos,1
+Phí tiền!,neg,0
+"Pin trâu, dùng rất thích",pos,1
+Phí tiền!,neg,0
+"Mua tai nghe cho gia đình, bình thường, giá hợp lý!",neu,0
+"Giá hợp lý, bình thường!",neu,0
+"Dùng rất thích, sẽ ủng hộ tiếp, rất đáng tiền...",pos,1
+"Rất đáng tiền, shop tư vấn nhiệt tình.",pos,1
+Chất lượng kém.,neg,0
+"Pin trâu, sản phẩm rất tốt",pos,1
+"Phí tiền, pin rất yếu!",neg,0
+Đóng gói cẩn thận!,pos,1
+Giao hàng nhanh,pos,1
+"Mua sách cho gia đình, không đáng tiền, thất vọng",neg,0
+Chưa dùng nhiều nên chưa biết...,neu,0
+"Mua tai nghe cho gia đình, đóng gói cẩn thận, giao hàng nhanh.",pos,1
+Đóng gói cẩn thận...,pos,1
+"Hàng bị lỗi, pin rất yếu, chất lượng kém",neg,0
+Đóng gói cẩn thận,pos,1
+Sẽ ủng hộ tiếp.,pos,1
+"Giá hợp lý, bình thường...",neu,0
+"Hàng bị lỗi, không giống mô tả, dùng được hai ngày đã hỏng...",neg,0
+"Giá hợp lý, bình thường!",neu,0
+"Mua sách cho gia đình, chất lượng tuyệt vời, sản phẩm rất tốt, đóng gói cẩn thận...",pos,0
+"Giao hàng quá chậm, pin rất yếu...",neg,0
+"Phí tiền, không tốt lắm...",neg,0
+"Pin rất yếu, không tốt lắm.",neg,0
+"Pin trâu, chất lượng tuyệt vời!",pos,1
+"Giá hợp lý, giống ảnh",neu,0
+Shop trả lời thô lỗ!,neg,0
+"Mua giày cho gia đình, đóng gói cẩn thận, giao hàng nhanh...",pos,1
+"Mua điện thoại cho gia đình, dùng rất thích, chất lượng tuyệt vời, sẽ ủng hộ tiếp!",pos,1
+"Thất vọng, hàng bị lỗi",neg,0
+"Shop trả lời thô lỗ, vải mỏng và xấu!",neg,0
+Chất lượng tuyệt vời.,pos,1
+"Giá hợp lý, giống ảnh",neu,0
+"Vải mát và đẹp, sản phẩm rất tốt.",pos,1
+"Chất lượng tuyệt vời, sẽ ủng hộ tiếp, shop tư vấn nhiệt tình...",pos,1
+"Mua điện thoại cho gia đình, chất lượng tuyệt vời, vải mát và đẹp!",pos,1
+"Mua tai nghe cho gia đình, shop tư vấn nhiệt tình",pos,1
+"Mua sách cho gia đình, đóng gói cẩn thận, chất lượng tuyệt vời...",pos,1
+"Thất vọng, pin rất yếu...",neg,0
+"Mua điện thoại cho gia đình, rất đáng tiền...",pos,1
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt, vải mát và đẹp...",pos,1
+"Shop trả lời thô lỗ, không như kỳ vọng, không hài lòng!",neg,0
+"Mua áo thun cho gia đình, pin rất yếu, phí tiền.",neg,0
+"Mua điện thoại cho gia đình, shop tư vấn nhiệt tình",pos,1
+"Phí tiền, không tốt lắm, không hài lòng...",neg,0
+"Không giống mô tả, thất vọng, không đáng tiền",neg,1
+"Thất vọng, vải mỏng và xấu...",neg,0
+"Mua bàn phím cho gia đình, tạm được...",neu,0
+"Shop trả lời thô lỗ, giao hàng quá chậm, không tốt lắm...",neg,0
+Dùng rất thích,pos,0
+Giá hợp lý...,neu,0
+"Thất vọng, hàng bị lỗi",neg,0
+Chất lượng tuyệt vời...,pos,1
+"Không hài lòng, dùng được hai ngày đã hỏng",neg,0
+"Mua bàn phím cho gia đình, không tốt lắm, không như kỳ vọng, không đáng tiền",neg,0
+"Không giống mô tả, pin rất yếu, hàng bị lỗi...",neg,0
+Bình thường.,neu,0
+Sẽ ủng hộ tiếp...,pos,1
+"Vải mát và đẹp, dùng rất thích",pos,1
+"Mua giày cho gia đình, shop tư vấn nhiệt tình, dùng rất thích, chất lượng tuyệt vời",pos,1
+"Vải mỏng và xấu, không hài lòng, hàng bị lỗi!",neg,0
+"Mua bàn phím cho gia đình, giao hàng nhanh, dùng rất thích.",pos,1
+Sản phẩm rất tốt!,pos,1
+"Giao hàng quá chậm, không tốt lắm, không hài lòng!",neg,0
+"Vải mỏng và xấu, giao hàng quá chậm, không đáng tiền...",neg,0
+"Mua giày cho gia đình, không giống mô tả, hàng bị lỗi, giao hàng quá chậm...",neg,0
+"Mua nồi cơm điện cho gia đình, bình thường...",neu,0
+"Mua sách cho gia đình, giá hợp lý.",neu,0
+"Mua sách cho gia đình, pin rất yếu, không đáng tiền, không hài lòng!",neg,0
+"Giao hàng quá chậm, không giống mô tả...",neg,0
+"Mua nồi cơm điện cho gia đình, chất lượng tuyệt vời.",pos,1
+"Giao hàng nhanh, sẽ ủng hộ tiếp...",pos,1
+"Mua điện thoại cho gia đình, chưa dùng nhiều nên chưa biết, tạm được.",neu,0
+"Bình thường, tạm được!",neu,0
+"Mua bàn phím cho gia đình, chất lượng tuyệt vời, dùng rất thích, giao hàng nhanh!",pos,1
+"Mua tai nghe cho gia đình, sẽ ủng hộ tiếp, vải mát và đẹp, giao hàng nhanh!",pos,1
+Giao hàng nhanh.,pos,1
+"Phí tiền, pin rất yếu, không hài lòng...",neg,0
+Đóng gói cẩn thận...,pos,1
+"Mua giày cho gia đình, pin rất yếu",neg,1
+"Mua giày cho gia đình, chưa dùng nhiều nên chưa biết, bình thường",neu,0
+"Thất vọng, không như kỳ vọng, chất lượng kém.",neg,0
+"Không đáng tiền, pin rất yếu",neg,0
+"Mua nồi cơm điện cho gia đình, đóng gói cẩn thận, chất lượng tuyệt vời.",pos,1
+"Mua giày cho gia đình, shop tư vấn nhiệt tình...",pos,1
+Sẽ ủng hộ tiếp...,pos,1
+Sẽ ủng hộ tiếp,pos,1
+"Không tốt lắm, không đáng tiền",neg,0
+Phí tiền...,neg,0
+"Chất lượng tuyệt vời, vải mát và đẹp, rất đáng tiền",pos,1
+"Mua giày cho gia đình, không như kỳ vọng, dùng được hai ngày đã hỏng, không giống mô tả...",neg,0
+"Mua điện thoại cho gia đình, rất đáng tiền...",pos,1
+"Sẽ ủng hộ tiếp, pin trâu, giao hàng nhanh...",pos,1
+"Giao hàng nhanh, rất đáng tiền, pin trâu",pos,1
+"Không tốt lắm, giao hàng quá chậm",neg,0
+"Mua điện thoại cho gia đình, không đáng tiền, phí tiền, không hài lòng.",neg,0
+"Vải mỏng và xấu, chất lượng kém",neg,0
+"Rất đáng tiền, dùng rất thích, giao hàng nhanh.",pos,1
+"Mua áo thun cho gia đình, không đáng tiền, chất lượng kém, shop trả lời thô lỗ.",neg,0
+"Bình thường, giá hợp lý!",neu,0
+"Mua tai nghe cho gia đình, hàng bị lỗi, chất lượng kém!",neg,0
+Dùng rất thích...,pos,1
+"Rất đáng tiền, sản phẩm rất tốt",pos,1
+"Pin trâu, chất lượng tuyệt vời, vải mát và đẹp!",pos,1
+"Mua sách cho gia đình, vải mát và đẹp, sẽ ủng hộ tiếp, dùng rất thích...",pos,1
+"Dùng rất thích, sẽ ủng hộ tiếp",pos,1
+"Mua sách cho gia đình, không tốt lắm, hàng bị lỗi, không hài lòng...",neg,0
+Rất đáng tiền.,pos,1
+"Pin trâu, giao hàng nhanh.",pos,1
+"Sản phẩm rất tốt, chất lượng tuyệt vời, vải mát và đẹp.",pos,1
+"Không đáng tiền, vải mỏng và xấu, phí tiền!",neg,0
+Pin rất yếu...,neg,0
+"Hàng bị lỗi, không đáng tiền, giao hàng quá chậm",neg,0
+"Không đáng tiền, không giống mô tả...",neg,0
+"Mua tai nghe cho gia đình, đóng gói cẩn thận, sẽ ủng hộ tiếp...",pos,1
+"Giá hợp lý, giống ảnh.",neu,0
+Đóng gói cẩn thận...,pos,1
+"Đóng gói cẩn thận, shop tư vấn nhiệt tình, rất đáng tiền.",pos,1
+"Phí tiền, thất vọng...",neg,0
+"Mua điện thoại cho gia đình, không tốt lắm.",neg,0
+"Bình thường, giống ảnh.",neu,0
+"Mua áo thun cho gia đình, chất lượng tuyệt vời, giao hàng nhanh",pos,1
+"Hàng bị lỗi, shop trả lời thô lỗ, vải mỏng và xấu",neg,0
+"Giao hàng quá chậm, không hài lòng!",neg,0
+"Mua điện thoại cho gia đình, không đáng tiền",neg,0
+"Chất lượng tuyệt vời, dùng rất thích!",pos,1
+Shop tư vấn nhiệt tình,pos,1
+"Mua nồi cơm điện cho gia đình, chất lượng kém.",neg,0
+"Dùng rất thích, pin trâu, shop tư vấn nhiệt tình",pos,1
+"Chất lượng tuyệt vời, dùng rất thích",pos,1
+"Không như kỳ vọng, không hài lòng...",neg,0
+"Mua nồi cơm điện cho gia đình, sẽ ủng hộ tiếp, rất đáng tiền, giao hàng nhanh",pos,1
+"Mua giày cho gia đình, sản phẩm rất tốt, đóng gói cẩn thận!",pos,1
+Pin trâu.,pos,1
+"Mua điện thoại cho gia đình, không đáng tiền, dùng được hai ngày đã hỏng...",neg,0
+"Dùng rất thích, rất đáng tiền",pos,1
+"Mua tai nghe cho gia đình, chất lượng kém.",neg,0
+"Không hài lòng, pin rất yếu, không tốt lắm",neg,0
+"Chất lượng kém, shop trả lời thô lỗ.",neg,0
+"Rất đáng tiền, đóng gói cẩn thận!",pos,1
+Chất lượng tuyệt vời,pos,1
+"Mua sách cho gia đình, rất đáng tiền.",pos,1
+Chất lượng tuyệt vời...,pos,1
+Giống ảnh!,neu,0
+"Không giống mô tả, phí tiền!",neg,0
+Hàng bị lỗi,neg,0
+Không đáng tiền,neg,0
+"Mua áo thun cho gia đình, pin trâu, dùng rất thích",pos,1
+"Mua nồi cơm điện cho gia đình, bình thường.",neu,0
+Pin trâu!,pos,1
+"Rất đáng tiền, đóng gói cẩn thận, giao hàng nhanh",pos,1
+"Mua giày cho gia đình, giao hàng quá chậm, không hài lòng, vải mỏng và xấu!",neg,0
+Rất đáng tiền,pos,1
+"Không tốt lắm, chất lượng kém, shop trả lời thô lỗ...",neg,0
+"Đóng gói cẩn thận, rất đáng tiền.",pos,1
+"Sẽ ủng hộ tiếp, pin trâu...",pos,1
+Phí tiền...,neg,0
+Shop trả lời thô lỗ,neg,0
+Sản phẩm rất tốt.,pos,1
+Không như kỳ vọng,neg,0
+"Mua tai nghe cho gia đình, vải mỏng và xấu, dùng được hai ngày đã hỏng!",neg,0
+"Shop tư vấn nhiệt tình, rất đáng tiền, chất lượng tuyệt vời...",pos,1
+"Mua điện thoại cho gia đình, chất lượng tuyệt vời, shop tư vấn nhiệt tình, đóng gói cẩn thận.",pos,1
+"Giống ảnh, bình thường.",neu,0
+Không tốt lắm...,neg,0
+"Dùng rất thích, vải mát và đẹp.",pos,1
+"Phí tiền, không hài lòng, thất vọng...",neg,0
+"Phí tiền, hàng bị lỗi...",neg,0
+"Mua điện thoại cho gia đình, dùng được hai ngày đã hỏng, không hài lòng, shop trả lời thô lỗ.",neg,0
+"Mua điện thoại cho gia đình, giao hàng nhanh, shop tư vấn nhiệt tình.",pos,1
+"Mua nồi cơm điện cho gia đình, không hài lòng, phí tiền, shop trả lời thô lỗ.",neg,0
+Chất lượng tuyệt vời!,pos,1
+"Không hài lòng, chất lượng kém, giao hàng quá chậm",neg,0
+"Mua áo thun cho gia đình, vải mỏng và xấu, không hài lòng, dùng được hai ngày đã hỏng...",neg,0
+Đóng gói cẩn thận,pos,1
+Pin trâu...,pos,1
+Pin trâu,pos,1
+Tạm được.,neu,0
+"Pin trâu, vải mát và đẹp, sản phẩm rất tốt",pos,1
+"Không giống mô tả, vải mỏng và xấu, hàng bị lỗi.",neg,1
+Giống ảnh.,neu,0
+"Giao hàng nhanh, rất đáng tiền, sẽ ủng hộ tiếp...",pos,1
+"Đóng gói cẩn thận, dùng rất thích, shop tư vấn nhiệt tình!",pos,1
+"Chất lượng kém, shop trả lời thô lỗ, không như kỳ vọng!",neg,0
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt",pos,1
+"Không hài lòng, hàng bị lỗi, thất vọng.",neg,0
+"Giống ảnh, tạm được...",neu,1
+"Shop tư vấn nhiệt tình, chất lượng tuyệt vời, dùng rất thích...",pos,1
+"Mua tai nghe cho gia đình, pin trâu, sản phẩm rất tốt, đóng gói cẩn thận!",pos,1
+"Tạm được, giống ảnh",neu,0
+"Dùng được hai ngày đã hỏng, không hài lòng, vải mỏng và xấu.",neg,0
+"Chưa dùng nhiều nên chưa biết, bình thường.",neu,0
+"Pin trâu, sản phẩm rất tốt, dùng rất thích.",pos,1
+"Mua bàn phím cho gia đình, vải mát và đẹp, shop tư vấn nhiệt tình, dùng rất thích...",pos,1
+"Vải mát và đẹp, giao hàng nhanh, sẽ ủng hộ tiếp.",pos,1
+"Dùng rất thích, vải mát và đẹp, pin trâu.",pos,1
+"Dùng được hai ngày đã hỏng, shop trả lời thô lỗ...",neg,0
+"Mua giày cho gia đình, sẽ ủng hộ tiếp, rất đáng tiền, đóng gói cẩn thận...",pos,1
+"Chưa dùng nhiều nên chưa biết, giá hợp lý",neu,0
+"Thất vọng, hàng bị lỗi, không như kỳ vọng!",neg,0
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt!",pos,1
+Chất lượng tuyệt vời...,pos,1
+"Mua áo thun cho gia đình, không giống mô tả...",neg,0
+"Shop trả lời thô lỗ, không hài lòng!",neg,0
+"Đóng gói cẩn thận, dùng rất thích...",pos,1
+"Mua giày cho gia đình, không như kỳ vọng, không giống mô tả!",neg,0
+"Pin rất yếu, thất vọng, không hài lòng.",neg,0
+"Mua sách cho gia đình, vải mát và đẹp, shop tư vấn nhiệt tình!",pos,1
+"Đóng gói cẩn thận, giao hàng nhanh...",pos,1
+Sản phẩm rất tốt,pos,1
+"Giao hàng quá chậm, không giống mô tả!",neg,0
+"Vải mỏng và xấu, không đáng tiền, không giống mô tả...",neg,0
+Vải mỏng và xấu,neg,0
+"Mua áo thun cho gia đình, sẽ ủng hộ tiếp, rất đáng tiền, vải mát và đẹp",pos,1
+"Rất đáng tiền, dùng rất thích!",pos,1
+"Mua nồi cơm điện cho gia đình, rất đáng tiền...",pos,1
+"Mua điện thoại cho gia đình, không giống mô tả, không như kỳ vọng...",neg,0
+Pin trâu,pos,1
+"Mua sách cho gia đình, rất đáng tiền",pos,1
+"Chất lượng kém, dùng được hai ngày đã hỏng, không giống mô tả.",neg,0
+"Mua sách cho gia đình, giống ảnh, chưa dùng nhiều nên chưa biết...",neu,0
+"Không đáng tiền, chất lượng kém!",neg,0
+Không hài lòng,neg,0
+Pin trâu,pos,1
+Không tốt lắm...,neg,0
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt, vải mát và đẹp...",pos,1
+"Đóng gói cẩn thận, rất đáng tiền...",pos,1
+Giống ảnh...,neu,0
+"Mua sách cho gia đình, dùng rất thích",pos,1
+"Mua sách cho gia đình, dùng được hai ngày đã hỏng",neg,0
+"Tạm được, bình thường...",neu,0
+Chất lượng tuyệt vời...,pos,1
+"Mua bàn phím cho gia đình, chất lượng tuyệt vời, vải mát và đẹp, đóng gói cẩn thận...",pos,1
+"Chất lượng tuyệt vời, shop tư vấn nhiệt tình.",pos,1
+"Không hài lòng, chất lượng kém, vải mỏng và xấu!",neg,0
+Vải mát và đẹp,pos,1
+Thất vọng.,neg,0
+"Phí tiền, hàng bị lỗi.",neg,0
+"Mua bàn phím cho gia đình, không như kỳ vọng.",neg,0
+"Giao hàng nhanh, shop tư vấn nhiệt tình...",pos,1
+"Bình thường, tạm được.",neu,0
+"Mua điện thoại cho gia đình, thất vọng!",neg,0
+"Mua áo thun cho gia đình, sản phẩm rất tốt, đóng gói cẩn thận, dùng rất thích",pos,1
+"Mua bàn phím cho gia đình, pin trâu, vải mát và đẹp...",pos,1
+Bình thường!,neu,0
+"Chưa dùng nhiều nên chưa biết, giá hợp lý.",neu,0
+"Mua điện thoại cho gia đình, chất lượng kém, dùng được hai ngày đã hỏng",neg,0
+"Mua sách cho gia đình, vải mát và đẹp, shop tư vấn nhiệt tình, sẽ ủng hộ tiếp",pos,1
+Giá hợp lý...,neu,0
+"Mua bàn phím cho gia đình, không đáng tiền, giao hàng quá chậm.",neg,0
+"Mua áo thun cho gia đình, chất lượng tuyệt vời...",pos,1
+Không đáng tiền.,neg,0
+"Mua điện thoại cho gia đình, vải mát và đẹp.",pos,1
+Không tốt lắm!,neg,0
+"Giao hàng quá chậm, không giống mô tả",neg,0
+"Mua sách cho gia đình, pin trâu, vải mát và đẹp, dùng rất thích",pos,1
+"Không hài lòng, dùng được hai ngày đã hỏng, phí tiền.",neg,0
+Chất lượng tuyệt vời...,pos,1
+"Mua áo thun cho gia đình, dùng rất thích, rất đáng tiền, sẽ ủng hộ tiếp.",pos,1
+"Mua áo thun cho gia đình, pin rất yếu...",neg,0
+"Không tốt lắm, thất vọng, vải mỏng và xấu",neg,0
+"Mua áo thun cho gia đình, đóng gói cẩn thận, shop tư vấn nhiệt tình, sẽ ủng hộ tiếp",pos,1
+"Chưa dùng nhiều nên chưa biết, giống ảnh",neu,0
+"Mua áo thun cho gia đình, bình thường",neu,0
+"Mua tai nghe cho gia đình, rất đáng tiền!",pos,1
+"Mua bàn phím cho gia đình, tạm được, chưa dùng nhiều nên chưa biết!",neu,1
+"Vải mỏng và xấu, phí tiền, không giống mô tả",neg,0
+"Mua sách cho gia đình, giống ảnh, tạm được!",neu,0
+"Mua sách cho gia đình, chất lượng tuyệt vời, pin trâu, giao hàng nhanh...",pos,1
+"Rất đáng tiền, đóng gói cẩn thận, sản phẩm rất tốt!",pos,1
+"Không tốt lắm, hàng bị lỗi, vải mỏng và xấu!",neg,0
+Vải mát và đẹp,pos,1
+"Mua bàn phím cho gia đình, chất lượng kém",neg,0
+"Vải mát và đẹp, rất đáng tiền, sẽ ủng hộ tiếp.",pos,1
+"Bình thường, giống ảnh!",neu,0
+"Chưa dùng nhiều nên chưa biết, giống ảnh...",neu,0
+"Sản phẩm rất tốt, rất đáng tiền, vải mát và đẹp.",pos,1
+"Mua sách cho gia đình, chất lượng kém, hàng bị lỗi, phí tiền!",neg,0
+"Mua điện thoại cho gia đình, tạm được...",neu,0
+"Vải mát và đẹp, rất đáng tiền, sản phẩm rất tốt.",pos,1
+"Mua nồi cơm điện cho gia đình, giống ảnh...",neu,0
+Vải mỏng và xấu,neg,0
+"Mua nồi cơm điện cho gia đình, giao hàng nhanh, chất lượng tuyệt vời!",pos,1
+"Sản phẩm rất tốt, đóng gói cẩn thận, sẽ ủng hộ tiếp.",pos,1
+"Chất lượng kém, không tốt lắm, thất vọng...",neg,0
+Không tốt lắm!,neg,0
+"Vải mỏng và xấu, phí tiền!",neg,0
+Không tốt lắm,neg,0
+"Vải mát và đẹp, đóng gói cẩn thận!",pos,1
+Không như kỳ vọng,neg,0
+"Giao hàng nhanh, sẽ ủng hộ tiếp, dùng rất thích...",pos,1
+"Mua áo thun cho gia đình, hàng bị lỗi, thất vọng, không giống mô tả...",neg,0
+"Mua tai nghe cho gia đình, chất lượng kém!",neg,0
+"Mua nồi cơm điện cho gia đình, pin trâu, sẽ ủng hộ tiếp...",pos,1
+"Dùng rất thích, vải mát và đẹp, sản phẩm rất tốt...",pos,1
+"Mua áo thun cho gia đình, chưa dùng nhiều nên chưa biết, bình thường",neu,0
+"Mua áo thun cho gia đình, pin trâu, đóng gói cẩn thận...",pos,1
+"Đóng gói cẩn thận, pin trâu...",pos,1
+"Vải mát và đẹp, sẽ ủng hộ tiếp...",pos,1
+Không như kỳ vọng,neg,0
+"Không giống mô tả, dùng được hai ngày đã hỏng!",neg,0
+Vải mỏng và xấu!,neg,0
+"Pin trâu, rất đáng tiền",pos,1
+Giống ảnh,neu,0
+"Mua giày cho gia đình, chất lượng kém, không tốt lắm!",neg,0
+"Pin trâu, vải mát và đẹp, chất lượng tuyệt vời!",pos,1
+"Pin trâu, vải mát và đẹp",pos,1
+"Mua giày cho gia đình, chưa dùng nhiều nên chưa biết, giống ảnh.",neu,0
+"Tạm được, giá hợp lý",neu,0
+"Mua tai nghe cho gia đình, giao hàng quá chậm",neg,0
+"Mua giày cho gia đình, shop tư vấn nhiệt tình, giao hàng nhanh, sản phẩm rất tốt...",pos,1
+"Dùng rất thích, chất lượng tuyệt vời, sẽ ủng hộ tiếp.",pos,1
+"Phí tiền, không hài lòng, thất vọng",neg,0
+"Rất đáng tiền, giao hàng nhanh, chất lượng tuyệt vời.",pos,1
+"Giao hàng nhanh, sẽ ủng hộ tiếp...",pos,1
+"Mua giày cho gia đình, vải mỏng và xấu",neg,0
+"Dùng được hai ngày đã hỏng, pin rất yếu.",neg,0
+"Mua bàn phím cho gia đình, giá hợp lý, chưa dùng nhiều nên chưa biết",neu,0
+"Pin rất yếu, không đáng tiền.",neg,0
+Thất vọng!,neg,0
+"Vải mỏng và xấu, thất vọng, phí tiền...",neg,0
+Shop trả lời thô lỗ.,neg,0
+Giống ảnh.,neu,0
+Giống ảnh.,neu,0
+"Chất lượng tuyệt vời, sẽ ủng hộ tiếp, sản phẩm rất tốt!",pos,1
+Dùng rất thích!,pos,1
+"Sẽ ủng hộ tiếp, đóng gói cẩn thận, pin trâu",pos,1
+"Mua tai nghe cho gia đình, giao hàng nhanh!",pos,1
+"Mua tai nghe cho gia đình, không tốt lắm, không đáng tiền, giao hàng quá chậm!",neg,0
+Không tốt lắm,neg,0
+"Mua giày cho gia đình, sản phẩm rất tốt, dùng rất thích, pin trâu!",pos,1
+"Mua bàn phím cho gia đình, thất vọng...",neg,0
+"Mua tai nghe cho gia đình, không như kỳ vọng, phí tiền, giao hàng quá chậm...",neg,0
+"Phí tiền, không đáng tiền, vải mỏng và xấu...",neg,0
+Sản phẩm rất tốt.,pos,1
+"Giá hợp lý, tạm được...",neu,0
+"Mua giày cho gia đình, dùng được hai ngày đã hỏng",neg,0
+"Sẽ ủng hộ tiếp, đóng gói cẩn thận, rất đáng tiền...",pos,1
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp, rất đáng tiền!",pos,1
+"Chất lượng tuyệt vời, pin trâu...",pos,1
+"Dùng được hai ngày đã hỏng, không như kỳ vọng!",neg,0
+Dùng rất thích.,pos,1
+"Giá hợp lý, chưa dùng nhiều nên chưa biết...",neu,0
+"Vải mát và đẹp, sản phẩm rất tốt.",pos,1
+"Mua giày cho gia đình, không hài lòng, không tốt lắm, không như kỳ vọng...",neg,0
+"Không hài lòng, shop trả lời thô lỗ, không như kỳ vọng.",neg,0
+"Chưa dùng nhiều nên chưa biết, giống ảnh...",neu,0
+Chất lượng tuyệt vời,pos,1
+"Mua áo thun cho gia đình, tạm được.",neu,0
+"Không như kỳ vọng, shop trả lời thô lỗ!",neg,0
+Vải mỏng và xấu,neg,0
+Rất đáng tiền,pos,1
+"Mua nồi cơm điện cho gia đình, dùng được hai ngày đã hỏng, không giống mô tả, không như kỳ vọng",neg,0
+Hàng bị lỗi!,neg,0
+Tạm được!,neu,0
+"Dùng rất thích, shop tư vấn nhiệt tình, vải mát và đẹp.",pos,1
+Đóng gói cẩn thận,pos,1
+"Không hài lòng, hàng bị lỗi...",neg,0
+"Không như kỳ vọng, vải mỏng và xấu!",neg,0
+"Pin rất yếu, không giống mô tả",neg,0
+Đóng gói cẩn thận.,pos,1
+"Mua điện thoại cho gia đình, shop tư vấn nhiệt tình",pos,1
+"Pin trâu, rất đáng tiền, đóng gói cẩn thận",pos,1
+"Đóng gói cẩn thận, pin trâu, sản phẩm rất tốt",pos,1
+"Chưa dùng nhiều nên chưa biết, giá hợp lý.",neu,0
+Không hài lòng.,neg,0
+"Pin trâu, đóng gói cẩn thận!",pos,1
+"Vải mát và đẹp, đóng gói cẩn thận, rất đáng tiền...",pos,1
+Tạm được...,neu,0
+"Giao hàng nhanh, sản phẩm rất tốt...",pos,1
+Bình thường.,neu,0
+"Mua áo thun cho gia đình, không tốt lắm, thất vọng, không đáng tiền...",neg,0
+"Sẽ ủng hộ tiếp, pin trâu, sản phẩm rất tốt.",pos,1
+"Mua áo thun cho gia đình, sản phẩm rất tốt.",pos,1
+"Pin trâu, dùng rất thích, đóng gói cẩn thận...",pos,1
+"Shop trả lời thô lỗ, phí tiền...",neg,0
+"Mua áo thun cho gia đình, thất vọng, giao hàng quá chậm, phí tiền...",neg,0
+Giá hợp lý.,neu,0
+"Rất đáng tiền, đóng gói cẩn thận",pos,1
+"Phí tiền, shop trả lời thô lỗ, không tốt lắm",neg,0
+"Giá hợp lý, tạm được!",neu,0
+"Mua sách cho gia đình, đóng gói cẩn thận, sản phẩm rất tốt...",pos,1
+"Giao hàng quá chậm, pin rất yếu!",neg,0
+"Hàng bị lỗi, vải mỏng và xấu",neg,0
+"Vải mát và đẹp, shop tư vấn nhiệt tình, dùng rất thích!",pos,1
+Chất lượng kém!,neg,0
+"Mua nồi cơm điện cho gia đình, không giống mô tả, không hài lòng...",neg,0
+Giao hàng nhanh...,pos,1
+Sẽ ủng hộ tiếp...,pos,1
+Không hài lòng...,neg,0
+Thất vọng...,neg,0
+Pin trâu,pos,1
+"Giá hợp lý, bình thường.",neu,0
+"Dùng rất thích, chất lượng tuyệt vời!",pos,1
+"Mua điện thoại cho gia đình, dùng rất thích",pos,1
+Sẽ ủng hộ tiếp!,pos,0
+"Pin trâu, sản phẩm rất tốt!",pos,1
+"Mua tai nghe cho gia đình, bình thường!",neu,0
+"Mua nồi cơm điện cho gia đình, sản phẩm rất tốt, dùng rất thích!",pos,1
+"Shop tư vấn nhiệt tình, sẽ ủng hộ tiếp, chất lượng tuyệt vời...",pos,1
+"Không hài lòng, không giống mô tả.",neg,0
+Bình thường.,neu,0
+"Không tốt lắm, thất vọng, không như kỳ vọng.",neg,0
+"Mua tai nghe cho gia đình, không giống mô tả, không tốt lắm, dùng được hai ngày đã hỏng",neg,0
+"Mua điện thoại cho gia đình, rất đáng tiền, dùng rất thích, pin trâu.",pos,1
+"Mua nồi cơm điện cho gia đình, không như kỳ vọng, chất lượng kém!",neg,0
+"Mua tai nghe cho gia đình, chất lượng tuyệt vời...",pos,1
+"Mua tai nghe cho gia đình, giao hàng nhanh, rất đáng tiền.",pos,1
+"Vải mát và đẹp, dùng rất thích.",pos,1
+"Mua tai nghe cho gia đình, thất vọng.",neg,0
+"Sản phẩm rất tốt, shop tư vấn nhiệt tình",pos,1
+"Shop trả lời thô lỗ, pin rất yếu, không như kỳ vọng",neg,0
+"Chất lượng tuyệt vời, sản phẩm rất tốt...",pos,1
+"Hàng bị lỗi, không tốt lắm, không giống mô tả!",neg,0
+"Mua tai nghe cho gia đình, không tốt lắm...",neg,0
+"Thất vọng, dùng được hai ngày đã hỏng...",neg,0
+"Không tốt lắm, pin rất yếu!",neg,0
+"Mua tai nghe cho gia đình, không hài lòng.",neg,0
+"Mua áo thun cho gia đình, giao hàng nhanh, sẽ ủng hộ tiếp...",pos,0
+"Vải mát và đẹp, đóng gói cẩn thận!",pos,1
+"Giá hợp lý, tạm được.",neu,0
+"Không như kỳ vọng, shop trả lời thô lỗ, hàng bị lỗi!",neg,0
+"Mua điện thoại cho gia đình, bình thường...",neu,0
+"Mua điện thoại cho gia đình, giá hợp lý...",neu,0
+"Dùng được hai ngày đã hỏng, phí tiền",neg,0
+Giá hợp lý...,neu,0
+"Shop trả lời thô lỗ, vải mỏng và xấu.",neg,0
+"Mua bàn phím cho gia đình, vải mát và đẹp.",pos,1
+"Hàng bị lỗi, không tốt lắm",neg,0
+"Chưa dùng nhiều nên chưa biết, bình thường...",neu,0
+Giá hợp lý,neu,0
+"Hàng bị lỗi, giao hàng quá chậm, phí tiền...",neg,0
+"Mua nồi cơm điện cho gia đình, tạm được, giống ảnh",neu,0
+"Mua điện thoại cho gia đình, giống ảnh...",neu,0
+"Phí tiền, giao hàng quá chậm...",neg,0
+"Giao hàng nhanh, đóng gói cẩn thận, sản phẩm rất tốt.",pos,1
+"Không đáng tiền, shop trả lời thô lỗ...",neg,0
+"Mua áo thun cho gia đình, tạm được.",neu,0
+"Chất lượng kém, vải mỏng và xấu",neg,0
+Dùng rất thích.,pos,1
+"Mua tai nghe cho gia đình, tạm được, chưa dùng nhiều nên chưa biết!",neu,0
+"Rất đáng tiền, pin trâu...",pos,1
+"Shop tư vấn nhiệt tình, sản phẩm rất tốt, đóng gói cẩn thận",pos,1
+"Vải mát và đẹp, giao hàng nhanh",pos,1
+"Vải mát và đẹp, giao hàng nhanh.",pos,0
+Phí tiền,neg,0
+"Mua áo thun cho gia đình, chất lượng kém!",neg,0
+"Mua sách cho gia đình, sẽ ủng hộ tiếp!",pos,1
+"Mua tai nghe cho gia đình, pin trâu, giao hàng nhanh, vải mát và đẹp",pos,1
+"Vải mát và đẹp, đóng gói cẩn thận, pin trâu!",pos,1
+"Không tốt lắm, pin rất yếu!",neg,0
+"Mua áo thun cho gia đình, vải mát và đẹp, rất đáng tiền, pin trâu...",pos,1
+"Rất đáng tiền, dùng rất thích...",pos,1
+"Mua nồi cơm điện cho gia đình, vải mát và đẹp, pin trâu!",pos,1
+"Mua nồi cơm điện cho gia đình, bình thường, chưa dùng nhiều nên chưa biết.",neu,0
+"Giao hàng nhanh, sẽ ủng hộ tiếp, dùng rất thích.",pos,1
+"Mua sách cho gia đình, hàng bị lỗi, không đáng tiền, không hài lòng!",neg,0
+"Đóng gói cẩn thận, rất đáng tiền",pos,1
+"Mua áo thun cho gia đình, sẽ ủng hộ tiếp, dùng rất thích, pin trâu...",pos,1
+"Pin trâu, đóng gói cẩn thận, dùng rất thích.",pos,1
+"Pin trâu, rất đáng tiền, sẽ ủng hộ tiếp!",pos,0
+"Mua điện thoại cho gia đình, vải mát và đẹp.",pos,1
+"Bình thường, giống ảnh...",neu,0
+"Dùng được hai ngày đã hỏng, vải mỏng và xấu, không như kỳ vọng!",neg,0
+"Mua điện thoại cho gia đình, giao hàng nhanh, shop tư vấn nhiệt tình.",pos,1
+"Sẽ ủng hộ tiếp, vải mát và đẹp",pos,0
+"Chưa dùng nhiều nên chưa biết, giá hợp lý.",neu,1
+"Mua nồi cơm điện cho gia đình, vải mát và đẹp...",pos,1
+"Vải mỏng và xấu, thất vọng, hàng bị lỗi...",neg,1
+"Chất lượng tuyệt vời, giao hàng nhanh, vải mát và đẹp!",pos,1
+Không giống mô tả,neg,0
+"Mua giày cho gia đình, pin rất yếu, chất lượng kém, không như kỳ vọng",neg,0
+"Sẽ ủng hộ tiếp, rất đáng tiền!",pos,1
+Vải mỏng và xấu,neg,0
+"Mua tai nghe cho gia đình, sẽ ủng hộ tiếp.",pos,1
+"Mua nồi cơm điện cho gia đình, đóng gói cẩn thận, sản phẩm rất tốt.",pos,1
+"Đóng gói cẩn thận, rất đáng tiền, dùng rất thích...",pos,1
+"Mua áo thun cho gia đình, vải mỏng và xấu, phí tiền, không hài lòng",neg,0
+"Mua bàn phím cho gia đình, không như kỳ vọng, pin rất yếu, không đáng tiền",neg,0
+"Phí tiền, shop trả lời thô lỗ...",neg,0
+Pin trâu...,pos,1
+Phí tiền,neg,0
+"Mua bàn phím cho gia đình, vải mát và đẹp, rất đáng tiền!",pos,1
+"Mua bàn phím cho gia đình, sản phẩm rất tốt.",pos,1
+"Thất vọng, dùng được hai ngày đã hỏng...",neg,0
+Sản phẩm rất tốt.,pos,1
+"Vải mỏng và xấu, chất lượng kém",neg,0
+"Không giống mô tả, không tốt lắm...",neg,0
+"Chất lượng tuyệt vời, shop tư vấn nhiệt tình!",pos,1
+"Rất đáng tiền, vải mát và đẹp!",pos,1
+"Shop tư vấn nhiệt tình, pin trâu",pos,1
+"Bình thường, giống ảnh",neu,0
+"Mua tai nghe cho gia đình, chất lượng tuyệt vời, đóng gói cẩn thận...",pos,1
+"Shop trả lời thô lỗ, giao hàng quá chậm.",neg,0
+"Thất vọng, phí tiền.",neg,0
+"Mua nồi cơm điện cho gia đình, tạm được...",neu,0
+Không giống mô tả!,neg,0
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp...",pos,1
+"Pin rất yếu, chất lượng kém, shop trả lời thô lỗ.",neg,0
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt, pin trâu!",pos,1
+Không hài lòng.,neg,0
+"Sản phẩm rất tốt, chất lượng tuyệt vời, đóng gói cẩn thận",pos,1
+"Không tốt lắm, vải mỏng và xấu.",neg,0
+"Sẽ ủng hộ tiếp, pin trâu",pos,1
+"Không tốt lắm, phí tiền...",neg,0
+"Mua bàn phím cho gia đình, dùng rất thích, chất lượng tuyệt vời!",pos,1
+Không giống mô tả!,neg,0
+"Đóng gói cẩn thận, dùng rất thích, rất đáng tiền.",pos,1
+"Không như kỳ vọng, không giống mô tả...",neg,0
+"Mua nồi cơm điện cho gia đình, rất đáng tiền.",pos,1
+"Không đáng tiền, không hài lòng, hàng bị lỗi.",neg,0
+"Pin trâu, sản phẩm rất tốt.",pos,1
+"Mua điện thoại cho gia đình, chưa dùng nhiều nên chưa biết, giống ảnh!",neu,0
+"Thất vọng, không hài lòng.",neg,0
+"Vải mát và đẹp, sản phẩm rất tốt, pin trâu!",pos,1
+Sẽ ủng hộ tiếp!,pos,1
+"Mua bàn phím cho gia đình, shop trả lời thô lỗ, dùng được hai ngày đã hỏng",neg,0
+"Shop tư vấn nhiệt tình, vải mát và đẹp, đóng gói cẩn thận.",pos,1
+Giống ảnh!,neu,0
+"Vải mát và đẹp, đóng gói cẩn thận, giao hàng nhanh...",pos,1
+"Chưa dùng nhiều nên chưa biết, bình thường.",neu,0
+"Giống ảnh, giá hợp lý.",neu,0
+Sẽ ủng hộ tiếp,pos,1
+Tạm được.,neu,0
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt, dùng rất thích.",pos,1
+"Chưa dùng nhiều nên chưa biết, tạm được.",neu,0
+"Dùng rất thích, sẽ ủng hộ tiếp, giao hàng nhanh",pos,1
+"Đóng gói cẩn thận, sản phẩm rất tốt!",pos,1
+"Mua sách cho gia đình, chưa dùng nhiều nên chưa biết...",neu,0
+"Mua điện thoại cho gia đình, không hài lòng...",neg,0
+"Mua tai nghe cho gia đình, giống ảnh, bình thường",neu,0
+Pin rất yếu.,neg,0
+"Mua giày cho gia đình, pin rất yếu, vải mỏng và xấu.",neg,0
+"Dùng được hai ngày đã hỏng, hàng bị lỗi!",neg,0
+"Không đáng tiền, dùng được hai ngày đã hỏng, không hài lòng...",neg,0
+"Mua giày cho gia đình, dùng rất thích",pos,1
+"Dùng được hai ngày đã hỏng, hàng bị lỗi",neg,0
+"Đóng gói cẩn thận, pin trâu, rất đáng tiền...",pos,1
+"Mua giày cho gia đình, sản phẩm rất tốt, sẽ ủng hộ tiếp, dùng rất thích.",pos,1
+"Mua điện thoại cho gia đình, sẽ ủng hộ tiếp, dùng rất thích",pos,1
+"Mua tai nghe cho gia đình, thất vọng, không đáng tiền, hàng bị lỗi",neg,0
+"Mua áo thun cho gia đình, không hài lòng, vải mỏng và xấu, pin rất yếu",neg,0
+Shop tư vấn nhiệt tình!,pos,1
+"Hàng bị lỗi, không tốt lắm, pin rất yếu",neg,0
+Đóng gói cẩn thận...,pos,1
+Chất lượng kém...,neg,0
+"Không tốt lắm, hàng bị lỗi, không như kỳ vọng...",neg,0
+"Thất vọng, không tốt lắm...",neg,0
+"Mua tai nghe cho gia đình, vải mát và đẹp, pin trâu, dùng rất thích!",pos,1
+"Giống ảnh, giá hợp lý!",neu,0
+"Mua sách cho gia đình, không hài lòng, pin rất yếu, hàng bị lỗi...",neg,0
+"Không giống mô tả, pin rất yếu, giao hàng quá chậm...",neg,0
+Không tốt lắm...,neg,0
+"Không đáng tiền, không giống mô tả",neg,0
+"Mua áo thun cho gia đình, giao hàng nhanh, sẽ ủng hộ tiếp...",pos,1
+Chất lượng kém...,neg,0
+"Sẽ ủng hộ tiếp, giao hàng nhanh!",pos,1
+"Mua điện thoại cho gia đình, hàng bị lỗi, giao hàng quá chậm.",neg,0
+"Mua tai nghe cho gia đình, không đáng tiền, không như kỳ vọng, phí tiền!",neg,0
+Chưa dùng nhiều nên chưa biết.,neu,0
+"Mua nồi cơm điện cho gia đình, shop trả lời thô lỗ...",neg,0
+Sẽ ủng hộ tiếp!,pos,1
+"Vải mỏng và xấu, phí tiền, không như kỳ vọng",neg,0
+"Giá hợp lý, giống ảnh!",neu,0
+"Shop trả lời thô lỗ, thất vọng, không đáng tiền",neg,0
+"Mua nồi cơm điện cho gia đình, chất lượng kém.",neg,0
+"Đóng gói cẩn thận, giao hàng nhanh, rất đáng tiền...",pos,1
+"Mua bàn phím cho gia đình, pin trâu, vải mát và đẹp...",pos,1
+Chất lượng kém...,neg,0
+"Đóng gói cẩn thận, giao hàng nhanh, dùng rất thích",pos,1
+Shop tư vấn nhiệt tình,pos,1
+"Shop tư vấn nhiệt tình, sản phẩm rất tốt...",pos,1
+"Đóng gói cẩn thận, sản phẩm rất tốt, chất lượng tuyệt vời...",pos,1
+"Phí tiền, không tốt lắm, pin rất yếu.",neg,0
+"Chất lượng tuyệt vời, pin trâu, shop tư vấn nhiệt tình...",pos,1
+"Vải mát và đẹp, rất đáng tiền, pin trâu.",pos,1
+"Mua áo thun cho gia đình, sản phẩm rất tốt, giao hàng nhanh.",pos,1
+"Dùng rất thích, giao hàng nhanh...",pos,1
+Rất đáng tiền...,pos,1
+"Mua sách cho gia đình, thất vọng",neg,0
+Hàng bị lỗi...,neg,0
+"Mua giày cho gia đình, giao hàng quá chậm...",neg,0
+Shop trả lời thô lỗ.,neg,0
+Dùng rất thích,pos,1
+Tạm được...,neu,0
+"Sản phẩm rất tốt, đóng gói cẩn thận, giao hàng nhanh...",pos,1
+Không đáng tiền!,neg,0
+"Chất lượng kém, thất vọng...",neg,0
+"Đóng gói cẩn thận, giao hàng nhanh, rất đáng tiền",pos,1
+"Mua áo thun cho gia đình, chưa dùng nhiều nên chưa biết, giống ảnh.",neu,0
+Pin trâu.,pos,1
+Không tốt lắm...,neg,0
+"Thất vọng, không như kỳ vọng, giao hàng quá chậm!",neg,0
+"Thất vọng, không hài lòng, shop trả lời thô lỗ!",neg,0
+"Mua bàn phím cho gia đình, pin trâu, shop tư vấn nhiệt tình...",pos,1
+"Mua áo thun cho gia đình, không hài lòng",neg,0
+Giá hợp lý!,neu,0
+"Mua điện thoại cho gia đình, sản phẩm rất tốt, shop tư vấn nhiệt tình",pos,1
+"Giao hàng quá chậm, dùng được hai ngày đã hỏng, không tốt lắm.",neg,0
+"Đóng gói cẩn thận, vải mát và đẹp!",pos,1
+"Shop tư vấn nhiệt tình, chất lượng tuyệt vời, sẽ ủng hộ tiếp",pos,1
+"Mua áo thun cho gia đình, dùng rất thích, rất đáng tiền, shop tư vấn nhiệt tình!",pos,1
+"Mua áo thun cho gia đình, dùng được hai ngày đã hỏng, giao hàng quá chậm, không hài lòng...",neg,0
+"Mua bàn phím cho gia đình, giống ảnh.",neu,0
+"Tạm được, bình thường.",neu,0
+"Sẽ ủng hộ tiếp, dùng rất thích, sản phẩm rất tốt!",pos,1
+"Mua điện thoại cho gia đình, đóng gói cẩn thận.",pos,1
+"Chất lượng tuyệt vời, dùng rất thích, sản phẩm rất tốt.",pos,1
+"Bình thường, giống ảnh",neu,0
+"Mua sách cho gia đình, giá hợp lý, tạm được!",neu,0
+"Sản phẩm rất tốt, shop tư vấn nhiệt tình, sẽ ủng hộ tiếp",pos,1
+"Mua tai nghe cho gia đình, sẽ ủng hộ tiếp, shop tư vấn nhiệt tình.",pos,1
+"Mua giày cho gia đình, shop trả lời thô lỗ, chất lượng kém, không giống mô tả",neg,0
+"Sản phẩm rất tốt, dùng rất thích.",pos,1
+"Không như kỳ vọng, dùng được hai ngày đã hỏng...",neg,0
+"Mua điện thoại cho gia đình, shop trả lời thô lỗ, chất lượng kém, không như kỳ vọng",neg,0
+"Bình thường, chưa dùng nhiều nên chưa biết.",neu,0
+"Shop tư vấn nhiệt tình, rất đáng tiền, sản phẩm rất tốt.",pos,1
+"Mua điện thoại cho gia đình, sẽ ủng hộ tiếp, vải mát và đẹp, chất lượng tuyệt vời...",pos,0
+"Phí tiền, không hài lòng, giao hàng quá chậm...",neg,0
+"Giao hàng quá chậm, dùng được hai ngày đã hỏng, chất lượng kém...",neg,0
+Không tốt lắm...,neg,0
+"Pin trâu, sản phẩm rất tốt.",pos,1
+"Mua nồi cơm điện cho gia đình, chất lượng tuyệt vời, shop tư vấn nhiệt tình, rất đáng tiền.",pos,0
+"Mua áo thun cho gia đình, sản phẩm rất tốt, vải mát và đẹp!",pos,1
+Dùng rất thích...,pos,1
+Chất lượng kém,neg,0
+"Chất lượng tuyệt vời, vải mát và đẹp!",pos,1
+"Mua nồi cơm điện cho gia đình, phí tiền",neg,0
+Dùng rất thích!,pos,1
+"Mua bàn phím cho gia đình, thất vọng, shop trả lời thô lỗ, pin rất yếu!",neg,0
+Chưa dùng nhiều nên chưa biết!,neu,0
+Thất vọng...,neg,0
+Shop trả lời thô lỗ.,neg,0
+"Mua sách cho gia đình, bình thường, giá hợp lý.",neu,0
+Vải mỏng và xấu...,neg,0
+"Sản phẩm rất tốt, sẽ ủng hộ tiếp!",pos,1
+"Mua giày cho gia đình, rất đáng tiền.",pos,1
+"Mua áo thun cho gia đình, vải mỏng và xấu, phí tiền...",neg,0
+"Mua tai nghe cho gia đình, dùng được hai ngày đã hỏng",neg,0
+"Mua nồi cơm điện cho gia đình, đóng gói cẩn thận",pos,1
+Chưa dùng nhiều nên chưa biết,neu,0
+Đóng gói cẩn thận!,pos,1
+"Mua sách cho gia đình, bình thường!",neu,0
+"Sẽ ủng hộ tiếp, đóng gói cẩn thận.",pos,1
+"Hàng bị lỗi, thất vọng, không như kỳ vọng...",neg,0
+"Chất lượng tuyệt vời, rất đáng tiền, sẽ ủng hộ tiếp...",pos,1
+"Phí tiền, chất lượng kém, giao hàng quá chậm...",neg,0
+"Hàng bị lỗi, vải mỏng và xấu, không như kỳ vọng!",neg,0
+"Sẽ ủng hộ tiếp, shop tư vấn nhiệt tình!",pos,1
+"Rất đáng tiền, chất lượng tuyệt vời.",pos,1
+"Mua nồi cơm điện cho gia đình, rất đáng tiền, dùng rất thích.",pos,1
+"Tạm được, giá hợp lý",neu,0
+"Mua giày cho gia đình, rất đáng tiền, sản phẩm rất tốt, đóng gói cẩn thận",pos,1
+Vải mát và đẹp,pos,1
+Giá hợp lý,neu,0
+"Mua áo thun cho gia đình, vải mát và đẹp",pos,1
+"Không hài lòng, hàng bị lỗi",neg,0
+"Pin rất yếu, vải mỏng và xấu, chất lượng kém.",neg,0
+"Pin trâu, rất đáng tiền.",pos,1
+Sản phẩm rất tốt!,pos,0
+"Vải mát và đẹp, sẽ ủng hộ tiếp.",pos,1
+"Shop tư vấn nhiệt tình, giao hàng nhanh...",pos,1
+"Mua giày cho gia đình, rất đáng tiền!",pos,0
+"Giống ảnh, chưa dùng nhiều nên chưa biết",neu,0
+"Phí tiền, vải mỏng và xấu!",neg,0
+Đóng gói cẩn thận!,pos,1
+Giao hàng nhanh!,pos,1
+"Mua áo thun cho gia đình, không như kỳ vọng, chất lượng kém, pin rất yếu!",neg,0
+"Giao hàng nhanh, dùng rất thích, chất lượng tuyệt vời...",pos,1
+"Mua điện thoại cho gia đình, đóng gói cẩn thận",pos,1
+"Mua sách cho gia đình, dùng được hai ngày đã hỏng, không giống mô tả, vải mỏng và xấu.",neg,0
+"Mua điện thoại cho gia đình, giao hàng nhanh, sản phẩm rất tốt, rất đáng tiền",pos,1
+"Chưa dùng nhiều nên chưa biết, giá hợp lý",neu,0
+"Rất đáng tiền, shop tư vấn nhiệt tình, đóng gói cẩn thận...",pos,1
+Chất lượng kém!,neg,0
+Thất vọng!,neg,0
+"Rất đáng tiền, pin trâu, sản phẩm rất tốt.",pos,1
+"Pin trâu, giao hàng nhanh, đóng gói cẩn thận!",pos,1
+"Mua giày cho gia đình, tạm được, giá hợp lý",neu,0
+"Mua nồi cơm điện cho gia đình, dùng được hai ngày đã hỏng, giao hàng quá chậm, không giống mô tả.",neg,0
+"Dùng được hai ngày đã hỏng, phí tiền, không như kỳ vọng.",neg,0
+Hàng bị lỗi...,neg,0
+Thất vọng.,neg,0
+"Pin rất yếu, thất vọng, không hài lòng.",neg,0
+Chất lượng kém.,neg,0
+"Mua tai nghe cho gia đình, giống ảnh, tạm được",neu,0
+"Pin trâu, shop tư vấn nhiệt tình, rất đáng tiền",pos,1
+Giao hàng nhanh,pos,1
+"Đóng gói cẩn thận, chất lượng tuyệt vời!",pos,1
+"Sẽ ủng hộ tiếp, dùng rất thích...",pos,1
+"Mua điện thoại cho gia đình, dùng rất thích.",pos,1
+"Mua tai nghe cho gia đình, chất lượng tuyệt vời!",pos,1
+Bình thường!,neu,0
+"Mua sách cho gia đình, shop tư vấn nhiệt tình, dùng rất thích...",pos,0
+"Không như kỳ vọng, phí tiền, shop trả lời thô lỗ.",neg,0
+Pin trâu...,pos,1
+Rất đáng tiền!,pos,1
+"Chất lượng kém, không giống mô tả, hàng bị lỗi!",neg,0
+"Phí tiền, dùng được hai ngày đã hỏng, không hài lòng.",neg,0
+"Sản phẩm rất tốt, giao hàng nhanh",pos,1
+"Giao hàng quá chậm, dùng được hai ngày đã hỏng, không hài lòng!",neg,0
+"Mua áo thun cho gia đình, vải mát và đẹp...",pos,1
+Shop trả lời thô lỗ...,neg,0
+"Mua giày cho gia đình, không giống mô tả.",neg,0
+"Mua nồi cơm điện cho gia đình, đóng gói cẩn thận, shop tư vấn nhiệt tình.",pos,1
+Giống ảnh!,neu,0
+"Đóng gói cẩn thận, sản phẩm rất tốt, rất đáng tiền...",pos,1
+"Chất lượng kém, vải mỏng và xấu, dùng được hai ngày đã hỏng...",neg,0
+Không như kỳ vọng!,neg,0
+"Sản phẩm rất tốt, vải mát và đẹp...",pos,1
+"Hàng bị lỗi, không giống mô tả, pin rất yếu...",neg,0
+"Không tốt lắm, thất vọng...",neg,0
+Pin rất yếu.,neg,0
+"Mua bàn phím cho gia đình, thất vọng, phí tiền, dùng được hai ngày đã hỏng",neg,0
+Vải mỏng và xấu!,neg,0
+Chất lượng tuyệt vời.,pos,1
+"Vải mát và đẹp, shop tư vấn nhiệt tình, sản phẩm rất tốt.",pos,1
+"Không đáng tiền, không hài lòng, shop trả lời thô lỗ...",neg,0
+Giá hợp lý!,neu,0
+"Không như kỳ vọng, hàng bị lỗi, giao hàng quá chậm!",neg,0
+"Mua áo thun cho gia đình, vải mỏng và xấu",neg,0
+"Mua áo thun cho gia đình, phí tiền, không tốt lắm, vải mỏng và xấu.",neg,0
+"Dùng được hai ngày đã hỏng, hàng bị lỗi",neg,0
+"Mua giày cho gia đình, thất vọng, không như kỳ vọng.",neg,0
+"Bình thường, giá hợp lý.",neu,0
+"Phí tiền, không đáng tiền, không tốt lắm...",neg,0
+"Vải mát và đẹp, sẽ ủng hộ tiếp.",pos,1
+"Không hài lòng, phí tiền...",neg,0
+"Shop tư vấn nhiệt tình, sản phẩm rất tốt, giao hàng nhanh!",pos,1
+"Chưa dùng nhiều nên chưa biết, tạm được!",neu,0
+Chưa dùng nhiều nên chưa biết,neu,0
+"Mua giày cho gia đình, đóng gói cẩn thận, chất lượng tuyệt vời.",pos,1
+"Giao hàng nhanh, shop tư vấn nhiệt tình!",pos,1
+Pin rất yếu.,neg,0
+"Phí tiền, hàng bị lỗi, không giống mô tả",neg,0
+"Đóng gói cẩn thận, sản phẩm rất tốt, sẽ ủng hộ tiếp...",pos,1
+"Sẽ ủng hộ tiếp, đóng gói cẩn thận, chất lượng tuyệt vời...",pos,0
+"Phí tiền, thất vọng, pin rất yếu...",neg,0
+"Mua sách cho gia đình, không đáng tiền, chất lượng kém...",neg,0
+"Mua bàn phím cho gia đình, sản phẩm rất tốt, chất lượng tuyệt vời, đóng gói cẩn thận",pos,1
+Sản phẩm rất tốt.,pos,1
+"Mua giày cho gia đình, phí tiền, không giống mô tả...",neg,0
+"Không tốt lắm, hàng bị lỗi",neg,0
+"Mua điện thoại cho gia đình, vải mát và đẹp, pin trâu.",pos,1
+"Vải mỏng và xấu, dùng được hai ngày đã hỏng, không hài lòng...",neg,0
+"Dùng rất thích, sẽ ủng hộ tiếp",pos,1
+"Mua nồi cơm điện cho gia đình, dùng rất thích, shop tư vấn nhiệt tình.",pos,1
+"Mua sách cho gia đình, pin rất yếu, shop trả lời thô lỗ, không đáng tiền...",neg,0
+"Chất lượng tuyệt vời, đóng gói cẩn thận",pos,1
+"Mua bàn phím cho gia đình, đóng gói cẩn thận...",pos,1
+"Dùng rất thích, chất lượng tuyệt vời...",pos,1
+"Sẽ ủng hộ tiếp, đóng gói cẩn thận, shop tư vấn nhiệt tình.",pos,1
+"Mua áo thun cho gia đình, pin trâu, chất lượng tuyệt vời",pos,1
+"Giá hợp lý, giống ảnh!",neu,1
+"Giống ảnh, giá hợp lý.",neu,0
+Sẽ ủng hộ tiếp!,pos,1
+"Tạm được, bình thường!",neu,0
+Không hài lòng!,neg,0
+"Mua nồi cơm điện cho gia đình, tạm được, chưa dùng nhiều nên chưa biết...",neu,0
+Chưa dùng nhiều nên chưa biết.,neu,0
+Đóng gói cẩn thận...,pos,1
+"Hàng bị lỗi, không đáng tiền!",neg,0
+"Shop tư vấn nhiệt tình, chất lượng tuyệt vời, giao hàng nhanh",pos,1
+"Sẽ ủng hộ tiếp, giao hàng nhanh.",pos,1
+Thất vọng!,neg,0
+"Đóng gói cẩn thận, pin trâu, vải mát và đẹp...",pos,1
+"Thất vọng, hàng bị lỗi.",neg,0
+"Vải mỏng và xấu, không hài lòng, phí tiền.",neg,0
+"Mua tai nghe cho gia đình, giao hàng quá chậm, chất lượng kém, không hài lòng",neg,0
+"Dùng rất thích, chất lượng tuyệt vời",pos,1
+Không tốt lắm!,neg,0
+"Giao hàng nhanh, dùng rất thích, vải mát và đẹp...",pos,1
+"Vải mát và đẹp, đóng gói cẩn thận.",pos,1
+"Hàng bị lỗi, pin rất yếu, dùng được hai ngày đã hỏng",neg,0
+"Chất lượng tuyệt vời, dùng rất thích, shop tư vấn nhiệt tình...",pos,1
+"Không hài lòng, shop trả lời thô lỗ.",neg,0
+"Rất đáng tiền, chất lượng tuyệt vời, shop tư vấn nhiệt tình.",pos,1
+"Mua sách cho gia đình, vải mỏng và xấu, không hài lòng",neg,0
+"Không tốt lắm, chất lượng kém",neg,0
+"Giá hợp lý, chưa dùng nhiều nên chưa biết!",neu,0
+"Mua sách cho gia đình, dùng được hai ngày đã hỏng, phí tiền, không tốt lắm!",neg,0
+"Dùng được hai ngày đã hỏng, vải mỏng và xấu!",neg,0
+"Giao hàng quá chậm, không như kỳ vọng.",neg,0
+"Sẽ ủng hộ tiếp, đóng gói cẩn thận, dùng rất thích",pos,1
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt",pos,1
+"Phí tiền, không đáng tiền, không tốt lắm.",neg,0
+"Mua giày cho gia đình, giống ảnh, chưa dùng nhiều nên chưa biết.",neu,0
+Giá hợp lý...,neu,0
+"Đóng gói cẩn thận, shop tư vấn nhiệt tình, sản phẩm rất tốt!",pos,1
+"Mua sách cho gia đình, giá hợp lý, giống ảnh...",neu,0
+"Pin trâu, dùng rất thích, rất đáng tiền!",pos,1
+"Dùng được hai ngày đã hỏng, giao hàng quá chậm",neg,0
+Không tốt lắm...,neg,0
+"Chất lượng kém, shop trả lời thô lỗ, pin rất yếu!",neg,0
+Dùng rất thích...,pos,1
+"Mua sách cho gia đình, shop trả lời thô lỗ!",neg,0
+"Shop trả lời thô lỗ, chất lượng kém, dùng được hai ngày đã hỏng.",neg,0
+"Mua áo thun cho gia đình, bình thường, chưa dùng nhiều nên chưa biết...",neu,0
+"Mua điện thoại cho gia đình, pin trâu.",pos,1
+Giao hàng quá chậm,neg,0
+"Hàng bị lỗi, không tốt lắm.",neg,0
+"Pin rất yếu, không tốt lắm, không hài lòng...",neg,0
+"Shop trả lời thô lỗ, pin rất yếu, phí tiền",neg,0
+"Mua nồi cơm điện cho gia đình, sản phẩm rất tốt",pos,0
+"Không hài lòng, dùng được hai ngày đã hỏng",neg,0
+"Mua áo thun cho gia đình, đóng gói cẩn thận...",pos,1
+"Shop trả lời thô lỗ, thất vọng, vải mỏng và xấu...",neg,0
+"Mua sách cho gia đình, giao hàng nhanh, vải mát và đẹp...",pos,1
+"Mua nồi cơm điện cho gia đình, dùng được hai ngày đã hỏng, hàng bị lỗi, không hài lòng.",neg,0
+Rất đáng tiền,pos,1
+"Không tốt lắm, phí tiền",neg,0
+"Shop tư vấn nhiệt tình, dùng rất thích, vải mát và đẹp!",pos,1
+"Mua điện thoại cho gia đình, dùng rất thích, đóng gói cẩn thận, pin trâu",pos,1
+"Giao hàng quá chậm, không đáng tiền, pin rất yếu",neg,0
+Chất lượng tuyệt vời!,pos,1
+"Rất đáng tiền, sẽ ủng hộ tiếp",pos,1
+"Mua tai nghe cho gia đình, giá hợp lý, tạm được...",neu,0
+"Giao hàng quá chậm, phí tiền.",neg,0
+"Hàng bị lỗi, pin rất yếu, chất lượng kém!",neg,0
+"Shop tư vấn nhiệt tình, pin trâu!",pos,1
+"Mua giày cho gia đình, không tốt lắm, shop trả lời thô lỗ!",neg,0
+"Mua sách cho gia đình, giống ảnh, giá hợp lý.",neu,0
+"Mua điện thoại cho gia đình, chất lượng tuyệt vời, sẽ ủng hộ tiếp, vải mát và đẹp",pos,1
+Chất lượng kém!,neg,0
+Chưa dùng nhiều nên chưa biết.,neu,0
+"Mua tai nghe cho gia đình, dùng rất thích, rất đáng tiền!",pos,1
+"Dùng rất thích, rất đáng tiền, đóng gói cẩn thận!",pos,1
+Pin trâu...,pos,1
+"Mua nồi cơm điện cho gia đình, shop tư vấn nhiệt tình, sẽ ủng hộ tiếp.",pos,1
+Giao hàng nhanh...,pos,1
+"Mua bàn phím cho gia đình, pin rất yếu, không hài lòng",neg,1
+"Sản phẩm rất tốt, chất lượng tuyệt vời, rất đáng tiền!",pos,1
+"Rất đáng tiền, chất lượng tuyệt vời, pin trâu.",pos,1
+"Đóng gói cẩn thận, pin trâu, dùng rất thích",pos,1
+"Shop trả lời thô lỗ, giao hàng quá chậm...",neg,0
+"Sản phẩm rất tốt, pin trâu...",pos,1
+"Mua sách cho gia đình, chất lượng tuyệt vời, đóng gói cẩn thận, pin trâu...",pos,1
+Chất lượng tuyệt vời...,pos,1
+"Mua bàn phím cho gia đình, shop trả lời thô lỗ",neg,0
+"Tạm được, bình thường!",neu,0
+Không giống mô tả,neg,0
+"Bình thường, giống ảnh...",neu,0
+"Mua giày cho gia đình, vải mát và đẹp!",pos,1
+Bình thường...,neu,0
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt, đóng gói cẩn thận.",pos,1
+"Chất lượng tuyệt vời, shop tư vấn nhiệt tình.",pos,1
+"Shop tư vấn nhiệt tình, vải mát và đẹp, chất lượng tuyệt vời...",pos,1
+"Giao hàng quá chậm, không đáng tiền, không hài lòng...",neg,0
+"Pin trâu, vải mát và đẹp...",pos,1
+Đóng gói cẩn thận...,pos,1
+Tạm được!,neu,1
+"Không đáng tiền, dùng được hai ngày đã hỏng.",neg,0
+"Không hài lòng, chất lượng kém...",neg,0
+"Không như kỳ vọng, dùng được hai ngày đã hỏng",neg,0
+"Chất lượng kém, không giống mô tả!",neg,0
+"Shop tư vấn nhiệt tình, sản phẩm rất tốt, sẽ ủng hộ tiếp",pos,1
+"Không như kỳ vọng, chất lượng kém, phí tiền",neg,0
+Vải mỏng và xấu...,neg,0
+"Vải mỏng và xấu, hàng bị lỗi",neg,0
+"Mua tai nghe cho gia đình, đóng gói cẩn thận, chất lượng tuyệt vời!",pos,1
+"Mua bàn phím cho gia đình, hàng bị lỗi, phí tiền!",neg,1
+"Mua tai nghe cho gia đình, giao hàng nhanh, đóng gói cẩn thận, vải mát và đẹp",pos,1
+"Mua sách cho gia đình, giống ảnh, chưa dùng nhiều nên chưa biết...",neu,0
+"Phí tiền, pin rất yếu, giao hàng quá chậm...",neg,0
+Không tốt lắm,neg,0
+Pin rất yếu,neg,0
+"Mua điện thoại cho gia đình, rất đáng tiền, dùng rất thích, sẽ ủng hộ tiếp...",pos,1
+"Mua áo thun cho gia đình, giá hợp lý, chưa dùng nhiều nên chưa biết!",neu,0
+"Dùng được hai ngày đã hỏng, không như kỳ vọng",neg,0
+"Sản phẩm rất tốt, rất đáng tiền, sẽ ủng hộ tiếp!",pos,1
+Pin trâu,pos,1
+"Giá hợp lý, bình thường!",neu,0
+"Phí tiền, không giống mô tả, hàng bị lỗi!",neg,0
+"Mua giày cho gia đình, vải mỏng và xấu, giao hàng quá chậm, dùng được hai ngày đã hỏng!",neg,0
+"Mua áo thun cho gia đình, rất đáng tiền, shop tư vấn nhiệt tình, đóng gói cẩn thận...",pos,1
+"Mua nồi cơm điện cho gia đình, sẽ ủng hộ tiếp, đóng gói cẩn thận, sản phẩm rất tốt...",pos,1
+Sản phẩm rất tốt!,pos,1
+"Mua tai nghe cho gia đình, dùng rất thích, đóng gói cẩn thận",pos,1
+Giống ảnh,neu,0
+"Sản phẩm rất tốt, chất lượng tuyệt vời",pos,1
+Shop trả lời thô lỗ...,neg,0
+"Giá hợp lý, chưa dùng nhiều nên chưa biết",neu,0
+Không như kỳ vọng...,neg,0
+"Chất lượng tuyệt vời, sản phẩm rất tốt, pin trâu.",pos,1
+Chưa dùng nhiều nên chưa biết...,neu,1
+Tạm được,neu,0
+"Mua điện thoại cho gia đình, sản phẩm rất tốt, đóng gói cẩn thận...",pos,1
+"Rất đáng tiền, giao hàng nhanh.",pos,1
+"Mua bàn phím cho gia đình, sản phẩm rất tốt, dùng rất thích, shop tư vấn nhiệt tình...",pos,1
+"Mua sách cho gia đình, tạm được!",neu,0
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời, vải mát và đẹp.",pos,1
+"Mua áo thun cho gia đình, không đáng tiền, shop trả lời thô lỗ, vải mỏng và xấu!",neg,0
+"Mua điện thoại cho gia đình, đóng gói cẩn thận...",pos,1
+"Giao hàng nhanh, vải mát và đẹp, rất đáng tiền.",pos,1
+Đóng gói cẩn thận.,pos,1
+Shop tư vấn nhiệt tình,pos,1
+Vải mát và đẹp.,pos,1
+"Rất đáng tiền, shop tư vấn nhiệt tình, vải mát và đẹp.",pos,1
+"Vải mỏng và xấu, hàng bị lỗi, phí tiền",neg,0
+"Không tốt lắm, dùng được hai ngày đã hỏng...",neg,0
+Không đáng tiền.,neg,0
+Bình thường!,neu,0
+Vải mỏng và xấu!,neg,0
+"Dùng rất thích, chất lượng tuyệt vời...",pos,0
+"Mua áo thun cho gia đình, rất đáng tiền.",pos,1
+"Mua áo thun cho gia đình, không đáng tiền...",neg,0
+Sản phẩm rất tốt...,pos,1
+Không giống mô tả...,neg,1
+"Mua tai nghe cho gia đình, đóng gói cẩn thận.",pos,1
+Giá hợp lý...,neu,0
+"Mua tai nghe cho gia đình, vải mát và đẹp, sản phẩm rất tốt!",pos,1
+Shop tư vấn nhiệt tình...,pos,1
+"Mua áo thun cho gia đình, phí tiền",neg,0
+"Không hài lòng, chất lượng kém, vải mỏng và xấu",neg,0
+"Dùng rất thích, pin trâu, sản phẩm rất tốt...",pos,1
+"Mua bàn phím cho gia đình, không đáng tiền!",neg,0
+"Mua nồi cơm điện cho gia đình, không tốt lắm, giao hàng quá chậm.",neg,0
+Không tốt lắm.,neg,0
+Không tốt lắm...,neg,0
+"Mua điện thoại cho gia đình, không tốt lắm.",neg,0
+"Hàng bị lỗi, dùng được hai ngày đã hỏng, chất lượng kém!",neg,0
+Bình thường.,neu,0
+Chất lượng tuyệt vời!,pos,1
+"Rất đáng tiền, dùng rất thích.",pos,1
+"Sẽ ủng hộ tiếp, pin trâu, shop tư vấn nhiệt tình.",pos,1
+Pin trâu...,pos,1
+"Giá hợp lý, chưa dùng nhiều nên chưa biết...",neu,0
+"Không hài lòng, pin rất yếu, không đáng tiền",neg,0
+"Giao hàng nhanh, sản phẩm rất tốt, rất đáng tiền!",pos,1
+"Mua sách cho gia đình, không hài lòng.",neg,0
+"Mua điện thoại cho gia đình, giao hàng nhanh...",pos,1
+"Mua sách cho gia đình, shop tư vấn nhiệt tình, dùng rất thích",pos,1
+"Đóng gói cẩn thận, sản phẩm rất tốt, rất đáng tiền",pos,1
+"Mua nồi cơm điện cho gia đình, chưa dùng nhiều nên chưa biết!",neu,0
+Dùng rất thích!,pos,1
+"Mua sách cho gia đình, giao hàng nhanh, chất lượng tuyệt vời!",pos,1
+"Không tốt lắm, hàng bị lỗi.",neg,0
+"Mua điện thoại cho gia đình, giá hợp lý!",neu,0
+"Pin trâu, giao hàng nhanh...",pos,1
+Shop tư vấn nhiệt tình,pos,1
+Giá hợp lý...,neu,0
+"Dùng rất thích, đóng gói cẩn thận, sẽ ủng hộ tiếp.",pos,1
+"Sản phẩm rất tốt, shop tư vấn nhiệt tình, pin trâu",pos,0
+"Mua điện thoại cho gia đình, phí tiền...",neg,0
+"Mua tai nghe cho gia đình, phí tiền, không như kỳ vọng!",neg,0
+Pin rất yếu!,neg,0
+"Thất vọng, dùng được hai ngày đã hỏng, không đáng tiền...",neg,0
+Dùng được hai ngày đã hỏng,neg,0
+Phí tiền.,neg,0
+"Mua tai nghe cho gia đình, sẽ ủng hộ tiếp, rất đáng tiền, đóng gói cẩn thận.",pos,1
+"Rất đáng tiền, giao hàng nhanh, sản phẩm rất tốt...",pos,1
+"Phí tiền, không hài lòng, không như kỳ vọng.",neg,0
+Đóng gói cẩn thận...,pos,1
+"Mua áo thun cho gia đình, vải mát và đẹp",pos,1
+"Giao hàng nhanh, chất lượng tuyệt vời, vải mát và đẹp...",pos,1
+"Mua tai nghe cho gia đình, shop tư vấn nhiệt tình, đóng gói cẩn thận, vải mát và đẹp!",pos,1
+Rất đáng tiền.,pos,1
+"Đóng gói cẩn thận, rất đáng tiền, sẽ ủng hộ tiếp",pos,1
+"Shop tư vấn nhiệt tình, sản phẩm rất tốt, chất lượng tuyệt vời.",pos,1
+"Mua điện thoại cho gia đình, pin trâu, rất đáng tiền...",pos,1
+"Giống ảnh, giá hợp lý!",neu,0
+"Mua tai nghe cho gia đình, shop trả lời thô lỗ, phí tiền.",neg,0
+Vải mát và đẹp.,pos,1
+"Không như kỳ vọng, pin rất yếu, shop trả lời thô lỗ.",neg,0
+"Mua giày cho gia đình, sản phẩm rất tốt, sẽ ủng hộ tiếp",pos,1
+"Mua bàn phím cho gia đình, thất vọng.",neg,0
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp, pin trâu",pos,1
+"Pin trâu, dùng rất thích!",pos,1
+"Mua áo thun cho gia đình, bình thường!",neu,0
+Chưa dùng nhiều nên chưa biết!,neu,0
+Không như kỳ vọng!,neg,0
+Giá hợp lý.,neu,0
+"Mua nồi cơm điện cho gia đình, sẽ ủng hộ tiếp",pos,1
+"Tạm được, giống ảnh...",neu,0
+"Hàng bị lỗi, không tốt lắm.",neg,0
+"Mua áo thun cho gia đình, dùng rất thích!",pos,1
+"Không hài lòng, thất vọng, không tốt lắm!",neg,0
+"Sẽ ủng hộ tiếp, pin trâu, dùng rất thích!",pos,1
+"Sẽ ủng hộ tiếp, dùng rất thích, đóng gói cẩn thận...",pos,1
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời, pin trâu",pos,1
+Rất đáng tiền.,pos,1
+"Không tốt lắm, giao hàng quá chậm, dùng được hai ngày đã hỏng",neg,0
+"Mua áo thun cho gia đình, shop tư vấn nhiệt tình, vải mát và đẹp, rất đáng tiền!",pos,1
+"Không giống mô tả, pin rất yếu",neg,0
+"Mua bàn phím cho gia đình, giao hàng nhanh, shop tư vấn nhiệt tình, pin trâu.",pos,1
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời",pos,1
+Sẽ ủng hộ tiếp!,pos,1
+"Mua giày cho gia đình, chất lượng kém",neg,0
+"Giao hàng nhanh, vải mát và đẹp, dùng rất thích...",pos,1
+Pin trâu.,pos,1
+"Mua giày cho gia đình, rất đáng tiền, vải mát và đẹp, sản phẩm rất tốt!",pos,1
+Shop tư vấn nhiệt tình,pos,1
+"Không tốt lắm, chất lượng kém, hàng bị lỗi.",neg,0
+"Mua tai nghe cho gia đình, sản phẩm rất tốt, rất đáng tiền, pin trâu.",pos,1
+"Không tốt lắm, chất lượng kém...",neg,0
+"Tạm được, giá hợp lý!",neu,0
+Dùng được hai ngày đã hỏng...,neg,0
+"Rất đáng tiền, vải mát và đẹp, đóng gói cẩn thận...",pos,1
+"Mua áo thun cho gia đình, vải mát và đẹp, đóng gói cẩn thận...",pos,1
+"Giá hợp lý, tạm được!",neu,0
+"Không tốt lắm, thất vọng",neg,0
+"Shop trả lời thô lỗ, chất lượng kém!",neg,0
+Đóng gói cẩn thận!,pos,1
+"Không hài lòng, dùng được hai ngày đã hỏng!",neg,0
+"Mua điện thoại cho gia đình, bình thường, chưa dùng nhiều nên chưa biết.",neu,0
+"Mua tai nghe cho gia đình, chất lượng kém, shop trả lời thô lỗ...",neg,0
+Dùng rất thích,pos,1
+"Mua tai nghe cho gia đình, không giống mô tả, không như kỳ vọng, không tốt lắm",neg,0
+Không tốt lắm!,neg,0
+"Mua tai nghe cho gia đình, pin trâu, vải mát và đẹp...",pos,1
+"Pin trâu, shop tư vấn nhiệt tình",pos,1
+"Không như kỳ vọng, pin rất yếu.",neg,0
+"Mua áo thun cho gia đình, dùng được hai ngày đã hỏng.",neg,0
+"Thất vọng, giao hàng quá chậm, dùng được hai ngày đã hỏng",neg,0
+Bình thường,neu,1
+"Phí tiền, không tốt lắm, chất lượng kém...",neg,0
+Chưa dùng nhiều nên chưa biết!,neu,0
+Dùng rất thích!,pos,1
+Giống ảnh...,neu,0
+"Không như kỳ vọng, phí tiền, không hài lòng!",neg,0
+"Rất đáng tiền, sản phẩm rất tốt.",pos,1
+"Mua sách cho gia đình, sản phẩm rất tốt, vải mát và đẹp.",pos,1
+"Mua áo thun cho gia đình, đóng gói cẩn thận, sẽ ủng hộ tiếp...",pos,1
+Pin trâu!,pos,1
+Tạm được...,neu,0
+"Hàng bị lỗi, phí tiền...",neg,0
+Pin rất yếu...,neg,0
+Hàng bị lỗi...,neg,0
+"Chất lượng kém, shop trả lời thô lỗ!",neg,0
+"Pin trâu, vải mát và đẹp, dùng rất thích...",pos,1
+Không đáng tiền,neg,0
+"Giao hàng quá chậm, hàng bị lỗi, không hài lòng...",neg,0
+Sẽ ủng hộ tiếp!,pos,1
+"Đóng gói cẩn thận, dùng rất thích, sản phẩm rất tốt!",pos,1
+"Mua bàn phím cho gia đình, pin trâu.",pos,1
+"Rất đáng tiền, sản phẩm rất tốt!",pos,1
+"Không tốt lắm, shop trả lời thô lỗ, giao hàng quá chậm",neg,0
+"Dùng được hai ngày đã hỏng, pin rất yếu!",neg,0
+"Mua áo thun cho gia đình, dùng được hai ngày đã hỏng.",neg,0
+"Shop tư vấn nhiệt tình, pin trâu.",pos,1
+"Đóng gói cẩn thận, pin trâu...",pos,1
+"Giống ảnh, chưa dùng nhiều nên chưa biết!",neu,0
+"Shop tư vấn nhiệt tình, giao hàng nhanh, pin trâu.",pos,1
+Shop trả lời thô lỗ...,neg,0
+Chất lượng kém.,neg,0
+"Dùng được hai ngày đã hỏng, vải mỏng và xấu, shop trả lời thô lỗ!",neg,0
+"Mua giày cho gia đình, bình thường",neu,0
+Phí tiền...,neg,0
+"Mua nồi cơm điện cho gia đình, đóng gói cẩn thận!",pos,1
+"Mua giày cho gia đình, vải mát và đẹp, rất đáng tiền, sản phẩm rất tốt!",pos,1
+"Dùng rất thích, giao hàng nhanh, shop tư vấn nhiệt tình!",pos,1
+"Chưa dùng nhiều nên chưa biết, bình thường!",neu,0
+"Vải mỏng và xấu, shop trả lời thô lỗ, không đáng tiền!",neg,0
+"Không hài lòng, thất vọng, không đáng tiền!",neg,0
+"Mua sách cho gia đình, không tốt lắm, hàng bị lỗi, dùng được hai ngày đã hỏng...",neg,0
+"Phí tiền, shop trả lời thô lỗ, chất lượng kém",neg,0
+"Mua áo thun cho gia đình, pin rất yếu, shop trả lời thô lỗ.",neg,0
+"Đóng gói cẩn thận, giao hàng nhanh!",pos,1
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp, vải mát và đẹp",pos,1
+"Không hài lòng, giao hàng quá chậm, chất lượng kém.",neg,0
+"Chất lượng tuyệt vời, rất đáng tiền, pin trâu.",pos,1
+"Mua bàn phím cho gia đình, giao hàng nhanh, đóng gói cẩn thận",pos,1
+"Mua điện thoại cho gia đình, tạm được.",neu,0
+"Vải mát và đẹp, chất lượng tuyệt vời",pos,1
+"Giao hàng nhanh, sản phẩm rất tốt.",pos,1
+Pin trâu,pos,1
+Giá hợp lý,neu,0
+"Sẽ ủng hộ tiếp, rất đáng tiền, sản phẩm rất tốt",pos,1
+"Mua nồi cơm điện cho gia đình, giao hàng quá chậm, không đáng tiền",neg,0
+Đóng gói cẩn thận,pos,1
+"Không giống mô tả, hàng bị lỗi, không tốt lắm.",neg,0
+"Mua tai nghe cho gia đình, sản phẩm rất tốt, dùng rất thích, shop tư vấn nhiệt tình.",pos,1
+Vải mát và đẹp.,pos,1
+"Mua giày cho gia đình, chất lượng kém, vải mỏng và xấu, pin rất yếu...",neg,0
+"Phí tiền, không hài lòng, giao hàng quá chậm",neg,1
+"Phí tiền, vải mỏng và xấu, không đáng tiền",neg,0
+Sản phẩm rất tốt...,pos,1
+"Mua nồi cơm điện cho gia đình, vải mát và đẹp, dùng rất thích...",pos,1
+"Shop tư vấn nhiệt tình, sẽ ủng hộ tiếp...",pos,1
+"Mua bàn phím cho gia đình, giá hợp lý...",neu,0
+"Mua áo thun cho gia đình, không tốt lắm, giao hàng quá chậm, phí tiền!",neg,0
+Chưa dùng nhiều nên chưa biết...,neu,0
+"Sản phẩm rất tốt, vải mát và đẹp...",pos,1
+"Dùng rất thích, giao hàng nhanh, shop tư vấn nhiệt tình",pos,1
+"Mua điện thoại cho gia đình, vải mát và đẹp, pin trâu, giao hàng nhanh...",pos,1
+"Mua nồi cơm điện cho gia đình, giao hàng nhanh, dùng rất thích.",pos,1
+"Mua tai nghe cho gia đình, giao hàng nhanh, đóng gói cẩn thận!",pos,1
+"Giá hợp lý, tạm được!",neu,0
+"Mua áo thun cho gia đình, thất vọng, không hài lòng...",neg,0
+Vải mát và đẹp!,pos,1
+Không như kỳ vọng...,neg,0
+"Dùng rất thích, sẽ ủng hộ tiếp, sản phẩm rất tốt!",pos,1
+"Đóng gói cẩn thận, shop tư vấn nhiệt tình, giao hàng nhanh!",pos,1
+"Rất đáng tiền, sẽ ủng hộ tiếp, sản phẩm rất tốt!",pos,1
+"Chưa dùng nhiều nên chưa biết, giá hợp lý",neu,0
+"Mua tai nghe cho gia đình, vải mỏng và xấu, shop trả lời thô lỗ",neg,0
+Giao hàng nhanh!,pos,1
+"Sản phẩm rất tốt, rất đáng tiền",pos,1
+"Mua nồi cơm điện cho gia đình, giao hàng quá chậm, vải mỏng và xấu, phí tiền...",neg,0
+"Mua điện thoại cho gia đình, tạm được...",neu,0
+Pin rất yếu.,neg,0
+Bình thường...,neu,1
+Không giống mô tả...,neg,0
+"Sản phẩm rất tốt, shop tư vấn nhiệt tình!",pos,1
+"Dùng rất thích, sản phẩm rất tốt, shop tư vấn nhiệt tình...",pos,1
+"Mua sách cho gia đình, giao hàng nhanh.",pos,0
+Shop trả lời thô lỗ.,neg,0
+"Mua áo thun cho gia đình, dùng rất thích.",pos,1
+"Không đáng tiền, pin rất yếu, không giống mô tả...",neg,0
+"Dùng được hai ngày đã hỏng, hàng bị lỗi!",neg,0
+"Đóng gói cẩn thận, sản phẩm rất tốt, sẽ ủng hộ tiếp",pos,1
+"Đóng gói cẩn thận, rất đáng tiền",pos,1
+"Mua tai nghe cho gia đình, thất vọng, giao hàng quá chậm...",neg,0
+Vải mát và đẹp...,pos,1
+"Mua áo thun cho gia đình, thất vọng, không hài lòng.",neg,1
+"Bình thường, giống ảnh.",neu,0
+"Pin rất yếu, giao hàng quá chậm, chất lượng kém",neg,0
+"Thất vọng, pin rất yếu...",neg,0
+"Mua bàn phím cho gia đình, shop tư vấn nhiệt tình",pos,0
+"Sẽ ủng hộ tiếp, shop tư vấn nhiệt tình, pin trâu!",pos,1
+"Rất đáng tiền, dùng rất thích.",pos,1
+"Mua áo thun cho gia đình, giao hàng nhanh, pin trâu.",pos,1
+"Mua sách cho gia đình, chưa dùng nhiều nên chưa biết!",neu,0
+"Phí tiền, không như kỳ vọng...",neg,0
+Không hài lòng,neg,0
+"Chất lượng tuyệt vời, giao hàng nhanh...",pos,1
+Bình thường...,neu,0
+"Pin trâu, giao hàng nhanh",pos,1
+"Mua tai nghe cho gia đình, rất đáng tiền.",pos,1
+"Dùng được hai ngày đã hỏng, vải mỏng và xấu, không tốt lắm!",neg,1
+"Phí tiền, shop trả lời thô lỗ",neg,0
+"Rất đáng tiền, pin trâu!",pos,1
+"Shop trả lời thô lỗ, không hài lòng!",neg,0
+"Vải mát và đẹp, đóng gói cẩn thận.",pos,1
+"Mua sách cho gia đình, vải mát và đẹp...",pos,0
+"Mua tai nghe cho gia đình, không giống mô tả, không như kỳ vọng, giao hàng quá chậm!",neg,0
+"Mua giày cho gia đình, giao hàng quá chậm, không hài lòng, shop trả lời thô lỗ",neg,0
+"Mua nồi cơm điện cho gia đình, giá hợp lý, chưa dùng nhiều nên chưa biết.",neu,0
+Giống ảnh,neu,0
+"Dùng được hai ngày đã hỏng, không giống mô tả!",neg,0
+"Mua bàn phím cho gia đình, shop tư vấn nhiệt tình, sẽ ủng hộ tiếp, chất lượng tuyệt vời...",pos,1
+"Chất lượng kém, không đáng tiền, phí tiền.",neg,0
+"Mua áo thun cho gia đình, giao hàng nhanh, vải mát và đẹp, pin trâu.",pos,1
+Dùng rất thích,pos,1
+"Sản phẩm rất tốt, đóng gói cẩn thận, sẽ ủng hộ tiếp!",pos,1
+Chất lượng tuyệt vời...,pos,1
+"Mua nồi cơm điện cho gia đình, vải mỏng và xấu, phí tiền",neg,0
+"Mua áo thun cho gia đình, sản phẩm rất tốt, chất lượng tuyệt vời!",pos,1
+"Phí tiền, hàng bị lỗi, không tốt lắm!",neg,0
+"Không hài lòng, chất lượng kém...",neg,0
+"Không đáng tiền, shop trả lời thô lỗ, không như kỳ vọng...",neg,0
+"Mua bàn phím cho gia đình, chưa dùng nhiều nên chưa biết...",neu,0
+"Mua tai nghe cho gia đình, sẽ ủng hộ tiếp!",pos,1
+Shop tư vấn nhiệt tình...,pos,1
+Tạm được!,neu,0
+"Mua điện thoại cho gia đình, vải mát và đẹp, sản phẩm rất tốt, pin trâu.",pos,0
+"Không đáng tiền, không tốt lắm...",neg,0
+"Giao hàng nhanh, vải mát và đẹp...",pos,1
+"Không giống mô tả, dùng được hai ngày đã hỏng",neg,0
+"Không như kỳ vọng, không hài lòng.",neg,0
+Giao hàng quá chậm,neg,0
+Pin trâu,pos,1
+"Mua áo thun cho gia đình, chất lượng tuyệt vời.",pos,1
+"Mua sách cho gia đình, thất vọng.",neg,0
+"Phí tiền, không giống mô tả, shop trả lời thô lỗ",neg,0
+"Giống ảnh, tạm được",neu,0
+Thất vọng!,neg,0
+Sẽ ủng hộ tiếp!,pos,1
+"Không hài lòng, giao hàng quá chậm!",neg,0
+"Mua nồi cơm điện cho gia đình, sẽ ủng hộ tiếp...",pos,0
+"Đóng gói cẩn thận, dùng rất thích, sản phẩm rất tốt...",pos,1
+"Mua áo thun cho gia đình, giống ảnh, tạm được.",neu,0
+"Pin rất yếu, không tốt lắm...",neg,0
+Sẽ ủng hộ tiếp!,pos,1
+"Mua nồi cơm điện cho gia đình, bình thường...",neu,0
+"Mua sách cho gia đình, không tốt lắm...",neg,0
+"Đóng gói cẩn thận, giao hàng nhanh!",pos,1
+Tạm được...,neu,0
+"Mua áo thun cho gia đình, chất lượng kém...",neg,0
+"Mua tai nghe cho gia đình, không tốt lắm, dùng được hai ngày đã hỏng",neg,1
+"Dùng rất thích, đóng gói cẩn thận!",pos,1
+"Dùng được hai ngày đã hỏng, không hài lòng, không đáng tiền!",neg,0
+Rất đáng tiền!,pos,1
+Giá hợp lý.,neu,0
+"Vải mát và đẹp, rất đáng tiền, sản phẩm rất tốt",pos,0
+"Đóng gói cẩn thận, rất đáng tiền!",pos,1
+"Giao hàng nhanh, shop tư vấn nhiệt tình.",pos,1
+"Phí tiền, giao hàng quá chậm.",neg,0
+"Shop trả lời thô lỗ, hàng bị lỗi, không hài lòng",neg,0
+"Thất vọng, không như kỳ vọng, không hài lòng...",neg,0
+"Không đáng tiền, không như kỳ vọng, giao hàng quá chậm.",neg,0
+"Mua tai nghe cho gia đình, giao hàng quá chậm, phí tiền, chất lượng kém...",neg,0
+"Giao hàng nhanh, pin trâu, sẽ ủng hộ tiếp...",pos,1
+"Pin trâu, rất đáng tiền, vải mát và đẹp",pos,1
+"Mua giày cho gia đình, bình thường, giá hợp lý!",neu,0
+"Shop trả lời thô lỗ, không tốt lắm",neg,0
+"Pin trâu, sản phẩm rất tốt",pos,1
+"Mua nồi cơm điện cho gia đình, vải mỏng và xấu, không như kỳ vọng!",neg,0
+"Giao hàng nhanh, pin trâu, dùng rất thích.",pos,1
+"Đóng gói cẩn thận, chất lượng tuyệt vời, sản phẩm rất tốt!",pos,1
+"Shop tư vấn nhiệt tình, sẽ ủng hộ tiếp, đóng gói cẩn thận",pos,1
+"Thất vọng, giao hàng quá chậm, chất lượng kém.",neg,0
+"Chất lượng tuyệt vời, pin trâu, dùng rất thích.",pos,0
+Rất đáng tiền.,pos,1
+"Mua sách cho gia đình, pin trâu, sẽ ủng hộ tiếp!",pos,1
+Giao hàng nhanh!,pos,1
+Vải mát và đẹp...,pos,1
+"Thất vọng, chất lượng kém, không giống mô tả",neg,0
+"Hàng bị lỗi, không đáng tiền, vải mỏng và xấu...",neg,0
+"Mua tai nghe cho gia đình, không đáng tiền, chất lượng kém.",neg,0
+"Mua áo thun cho gia đình, giao hàng nhanh...",pos,1
+"Shop trả lời thô lỗ, chất lượng kém!",neg,0
+"Mua tai nghe cho gia đình, vải mỏng và xấu, không giống mô tả!",neg,0
+"Shop tư vấn nhiệt tình, sẽ ủng hộ tiếp, sản phẩm rất tốt",pos,1
+"Mua bàn phím cho gia đình, chất lượng tuyệt vời, sẽ ủng hộ tiếp.",pos,1
+"Giống ảnh, chưa dùng nhiều nên chưa biết!",neu,0
+"Vải mát và đẹp, shop tư vấn nhiệt tình, pin trâu.",pos,1
+Thất vọng,neg,0
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời.",pos,1
+"Giao hàng nhanh, vải mát và đẹp, sản phẩm rất tốt!",pos,1
+"Rất đáng tiền, shop tư vấn nhiệt tình, dùng rất thích...",pos,1
+Pin trâu!,pos,1
+"Mua sách cho gia đình, chất lượng tuyệt vời, giao hàng nhanh...",pos,1
+"Mua giày cho gia đình, không hài lòng!",neg,0
+"Pin rất yếu, giao hàng quá chậm, dùng được hai ngày đã hỏng...",neg,0
+"Pin rất yếu, thất vọng",neg,0
+"Mua áo thun cho gia đình, giao hàng nhanh, pin trâu!",pos,1
+"Shop tư vấn nhiệt tình, pin trâu.",pos,1
+"Vải mỏng và xấu, shop trả lời thô lỗ, chất lượng kém.",neg,1
+"Giao hàng nhanh, shop tư vấn nhiệt tình, dùng rất thích!",pos,1
+"Mua sách cho gia đình, không hài lòng!",neg,0
+"Mua bàn phím cho gia đình, sẽ ủng hộ tiếp, vải mát và đẹp, pin trâu...",pos,0
+Pin trâu...,pos,1
+"Không đáng tiền, chất lượng kém, dùng được hai ngày đã hỏng.",neg,0
+"Mua điện thoại cho gia đình, phí tiền.",neg,0
+"Vải mát và đẹp, dùng rất thích, chất lượng tuyệt vời",pos,1
+"Chất lượng tuyệt vời, sẽ ủng hộ tiếp, dùng rất thích...",pos,1
+Không tốt lắm...,neg,0
+Bình thường.,neu,0
+Không giống mô tả.,neg,0
+"Mua áo thun cho gia đình, không đáng tiền, không hài lòng.",neg,0
+"Mua nồi cơm điện cho gia đình, không giống mô tả, giao hàng quá chậm, không tốt lắm.",neg,0
+Giống ảnh.,neu,0
+"Sẽ ủng hộ tiếp, vải mát và đẹp.",pos,1
+Rất đáng tiền...,pos,1
+"Mua nồi cơm điện cho gia đình, chưa dùng nhiều nên chưa biết, tạm được!",neu,0
+Giống ảnh...,neu,0
+Giao hàng nhanh...,pos,0
+"Mua điện thoại cho gia đình, vải mát và đẹp, giao hàng nhanh!",pos,1
+"Không hài lòng, không tốt lắm, pin rất yếu",neg,0
+Vải mỏng và xấu.,neg,0
+"Mua bàn phím cho gia đình, sẽ ủng hộ tiếp",pos,1
+"Giá hợp lý, chưa dùng nhiều nên chưa biết!",neu,0
+"Mua điện thoại cho gia đình, không như kỳ vọng, chất lượng kém, pin rất yếu",neg,0
+Không như kỳ vọng.,neg,0
+"Phí tiền, pin rất yếu...",neg,0
+Đóng gói cẩn thận!,pos,1
+"Chất lượng tuyệt vời, sản phẩm rất tốt, rất đáng tiền",pos,1
+"Mua sách cho gia đình, không tốt lắm...",neg,1
+"Dùng được hai ngày đã hỏng, giao hàng quá chậm.",neg,0
+Tạm được!,neu,0
+"Tạm được, chưa dùng nhiều nên chưa biết...",neu,0
+"Mua bàn phím cho gia đình, shop trả lời thô lỗ, không tốt lắm...",neg,1
+"Sản phẩm rất tốt, pin trâu!",pos,1
+Không hài lòng.,neg,0
+"Mua áo thun cho gia đình, giao hàng quá chậm",neg,0
+"Sẽ ủng hộ tiếp, vải mát và đẹp, dùng rất thích...",pos,1
+"Pin trâu, chất lượng tuyệt vời!",pos,1
+Giao hàng nhanh,pos,1
+Giá hợp lý,neu,0
+"Vải mát và đẹp, đóng gói cẩn thận, shop tư vấn nhiệt tình!",pos,1
+"Không giống mô tả, không tốt lắm!",neg,0
+"Không đáng tiền, không hài lòng, không giống mô tả.",neg,0
+"Chất lượng tuyệt vời, đóng gói cẩn thận",pos,1
+"Mua nồi cơm điện cho gia đình, vải mỏng và xấu.",neg,0
+"Mua điện thoại cho gia đình, giao hàng nhanh, chất lượng tuyệt vời!",pos,1
+"Mua giày cho gia đình, sẽ ủng hộ tiếp.",pos,1
+"Không đáng tiền, shop trả lời thô lỗ, không tốt lắm",neg,0
+Không hài lòng...,neg,0
+"Mua sách cho gia đình, hàng bị lỗi, shop trả lời thô lỗ",neg,0
+"Mua tai nghe cho gia đình, giao hàng nhanh, sản phẩm rất tốt, shop tư vấn nhiệt tình!",pos,1
+"Rất đáng tiền, vải mát và đẹp...",pos,1
+"Mua áo thun cho gia đình, giá hợp lý, chưa dùng nhiều nên chưa biết!",neu,0
+"Mua giày cho gia đình, chất lượng kém, giao hàng quá chậm, hàng bị lỗi...",neg,0
+Không giống mô tả.,neg,0
+"Không đáng tiền, thất vọng, không hài lòng!",neg,0
+"Rất đáng tiền, sản phẩm rất tốt...",pos,0
+"Dùng rất thích, chất lượng tuyệt vời, vải mát và đẹp...",pos,1
+"Mua sách cho gia đình, vải mỏng và xấu, dùng được hai ngày đã hỏng.",neg,0
+"Không hài lòng, hàng bị lỗi.",neg,0
+"Không tốt lắm, pin rất yếu",neg,0
+"Mua nồi cơm điện cho gia đình, không tốt lắm!",neg,0
+Dùng rất thích.,pos,1
+"Phí tiền, không hài lòng, pin rất yếu.",neg,0
+"Sẽ ủng hộ tiếp, shop tư vấn nhiệt tình, pin trâu...",pos,1
+Vải mỏng và xấu...,neg,0
+"Mua bàn phím cho gia đình, giao hàng nhanh, sẽ ủng hộ tiếp",pos,1
+Pin trâu,pos,1
+Pin trâu,pos,1
+"Vải mát và đẹp, giao hàng nhanh, shop tư vấn nhiệt tình.",pos,1
+"Thất vọng, chất lượng kém",neg,0
+"Mua sách cho gia đình, rất đáng tiền, shop tư vấn nhiệt tình.",pos,1
+"Mua tai nghe cho gia đình, shop tư vấn nhiệt tình, sản phẩm rất tốt, giao hàng nhanh...",pos,1
+"Mua điện thoại cho gia đình, pin trâu, chất lượng tuyệt vời",pos,1
+"Giao hàng quá chậm, pin rất yếu.",neg,0
+Sẽ ủng hộ tiếp,pos,1
+Giống ảnh.,neu,0
+"Mua nồi cơm điện cho gia đình, vải mát và đẹp.",pos,1
+"Mua giày cho gia đình, không giống mô tả",neg,0
+"Vải mát và đẹp, dùng rất thích",pos,1
+"Sẽ ủng hộ tiếp, shop tư vấn nhiệt tình.",pos,1
+"Đóng gói cẩn thận, rất đáng tiền!",pos,1
+"Hàng bị lỗi, không đáng tiền, thất vọng!",neg,0
+Không hài lòng,neg,0
+"Shop trả lời thô lỗ, vải mỏng và xấu...",neg,0
+"Sản phẩm rất tốt, đóng gói cẩn thận...",pos,1
+"Pin trâu, vải mát và đẹp, rất đáng tiền...",pos,1
+Thất vọng.,neg,0
+Pin trâu.,pos,1
+Giống ảnh!,neu,0
+"Mua điện thoại cho gia đình, giá hợp lý",neu,1
+"Mua sách cho gia đình, vải mỏng và xấu!",neg,0
+Phí tiền!,neg,0
+"Pin trâu, đóng gói cẩn thận, giao hàng nhanh.",pos,1
+"Vải mát và đẹp, pin trâu!",pos,1
+Shop trả lời thô lỗ...,neg,0
+"Vải mát và đẹp, sẽ ủng hộ tiếp...",pos,1
+"Đóng gói cẩn thận, chất lượng tuyệt vời.",pos,1
+"Shop tư vấn nhiệt tình, dùng rất thích, giao hàng nhanh",pos,1
+"Mua nồi cơm điện cho gia đình, chưa dùng nhiều nên chưa biết, giá hợp lý...",neu,0
+"Mua bàn phím cho gia đình, vải mát và đẹp!",pos,1
+"Thất vọng, không tốt lắm",neg,0
+"Mua áo thun cho gia đình, bình thường, giá hợp lý",neu,0
+Vải mát và đẹp...,pos,1
+"Sản phẩm rất tốt, giao hàng nhanh, đóng gói cẩn thận!",pos,1
+"Mua nồi cơm điện cho gia đình, giao hàng quá chậm.",neg,0
+"Mua nồi cơm điện cho gia đình, giao hàng quá chậm, chất lượng kém, shop trả lời thô lỗ",neg,0
+"Pin trâu, chất lượng tuyệt vời!",pos,1
+"Rất đáng tiền, đóng gói cẩn thận.",pos,1
+"Mua áo thun cho gia đình, không hài lòng.",neg,0
+Vải mát và đẹp.,pos,1
+"Vải mỏng và xấu, chất lượng kém, không hài lòng...",neg,0
+"Mua giày cho gia đình, chất lượng kém, giao hàng quá chậm, không tốt lắm.",neg,0
+"Mua tai nghe cho gia đình, pin trâu.",pos,1
+"Shop tư vấn nhiệt tình, đóng gói cẩn thận, rất đáng tiền!",pos,1
+"Mua nồi cơm điện cho gia đình, shop trả lời thô lỗ, hàng bị lỗi...",neg,0
+"Không như kỳ vọng, không đáng tiền, vải mỏng và xấu...",neg,0
+"Mua áo thun cho gia đình, bình thường!",neu,0
+"Chất lượng tuyệt vời, rất đáng tiền.",pos,1
+"Mua tai nghe cho gia đình, shop trả lời thô lỗ, không tốt lắm, chất lượng kém",neg,0
+"Mua nồi cơm điện cho gia đình, rất đáng tiền, sản phẩm rất tốt, giao hàng nhanh...",pos,1
+"Mua áo thun cho gia đình, đóng gói cẩn thận, sản phẩm rất tốt...",pos,1
+"Mua nồi cơm điện cho gia đình, phí tiền...",neg,1
+"Mua bàn phím cho gia đình, chất lượng tuyệt vời, shop tư vấn nhiệt tình, giao hàng nhanh!",pos,1
+"Đóng gói cẩn thận, sẽ ủng hộ tiếp, vải mát và đẹp...",pos,1
+"Dùng được hai ngày đã hỏng, giao hàng quá chậm, pin rất yếu!",neg,0
+Dùng được hai ngày đã hỏng,neg,0
+"Rất đáng tiền, pin trâu",pos,1
+"Mua bàn phím cho gia đình, đóng gói cẩn thận!",pos,1
+Không giống mô tả!,neg,0
+"Mua áo thun cho gia đình, sản phẩm rất tốt",pos,1
+Tạm được!,neu,0
+"Mua áo thun cho gia đình, chất lượng tuyệt vời, sẽ ủng hộ tiếp...",pos,1
+"Pin rất yếu, hàng bị lỗi.",neg,0
+"Mua nồi cơm điện cho gia đình, phí tiền...",neg,0
+"Shop tư vấn nhiệt tình, giao hàng nhanh, rất đáng tiền...",pos,1
+Chất lượng tuyệt vời!,pos,1
+"Không tốt lắm, pin rất yếu",neg,0
+Sẽ ủng hộ tiếp.,pos,1
+Chưa dùng nhiều nên chưa biết.,neu,0
+Tạm được,neu,0
+"Rất đáng tiền, dùng rất thích!",pos,1
+"Mua bàn phím cho gia đình, pin trâu, shop tư vấn nhiệt tình, vải mát và đẹp...",pos,1
+"Mua áo thun cho gia đình, sẽ ủng hộ tiếp, giao hàng nhanh",pos,1
+"Dùng được hai ngày đã hỏng, không tốt lắm",neg,0
+"Đóng gói cẩn thận, dùng rất thích, chất lượng tuyệt vời!",pos,1
+"Mua bàn phím cho gia đình, không như kỳ vọng, vải mỏng và xấu, hàng bị lỗi!",neg,0
+Giao hàng quá chậm...,neg,0
+Dùng được hai ngày đã hỏng.,neg,0
+"Mua điện thoại cho gia đình, không tốt lắm, chất lượng kém",neg,0
+"Mua điện thoại cho gia đình, chưa dùng nhiều nên chưa biết",neu,0
+Pin trâu,pos,1
+"Mua điện thoại cho gia đình, chất lượng tuyệt vời!",pos,1
+Phí tiền,neg,0
+"Giao hàng nhanh, sẽ ủng hộ tiếp",pos,1
+Chất lượng tuyệt vời,pos,1
+"Dùng được hai ngày đã hỏng, giao hàng quá chậm, phí tiền!",neg,0
+Đóng gói cẩn thận,pos,1
+"Mua bàn phím cho gia đình, thất vọng, dùng được hai ngày đã hỏng, hàng bị lỗi",neg,0
+Sẽ ủng hộ tiếp...,pos,1
+"Dùng được hai ngày đã hỏng, pin rất yếu, không giống mô tả...",neg,0
+"Rất đáng tiền, pin trâu.",pos,1
+Pin rất yếu,neg,0
+"Mua bàn phím cho gia đình, chất lượng kém, hàng bị lỗi!",neg,1
+"Dùng rất thích, sản phẩm rất tốt",pos,1
+"Chất lượng tuyệt vời, giao hàng nhanh, rất đáng tiền...",pos,1
+"Mua giày cho gia đình, rất đáng tiền",pos,1
+"Vải mỏng và xấu, không như kỳ vọng",neg,0
+"Vải mát và đẹp, sẽ ủng hộ tiếp!",pos,1
+Không giống mô tả,neg,0
+"Giao hàng nhanh, sản phẩm rất tốt, đóng gói cẩn thận!",pos,1
+Đóng gói cẩn thận...,pos,1
+Giao hàng nhanh,pos,1
+Không như kỳ vọng!,neg,0
+Sản phẩm rất tốt!,pos,1
+"Sẽ ủng hộ tiếp, chất lượng tuyệt vời, rất đáng tiền.",pos,1
+"Chất lượng kém, dùng được hai ngày đã hỏng, không như kỳ vọng!",neg,0
+"Tạm được, giống ảnh",neu,0
+Đóng gói cẩn thận...,pos,1
+"Mua nồi cơm điện cho gia đình, không giống mô tả...",neg,0
+Giao hàng nhanh.,pos,1
+Sẽ ủng hộ tiếp...,pos,1
+Shop tư vấn nhiệt tình.,pos,0
+Sẽ ủng hộ tiếp.,pos,1
+"Chất lượng tuyệt vời, rất đáng tiền.",pos,1
+"Mua nồi cơm điện cho gia đình, pin trâu...",pos,1
+Vải mỏng và xấu!,neg,0
+Shop tư vấn nhiệt tình...,pos,1
+"Mua áo thun cho gia đình, giao hàng nhanh, chất lượng tuyệt vời...",pos,1
+"Mua áo thun cho gia đình, shop trả lời thô lỗ...",neg,0
+"Giao hàng quá chậm, không đáng tiền, chất lượng kém!",neg,0
+"Đóng gói cẩn thận, pin trâu, dùng rất thích!",pos,1
+"Dùng được hai ngày đã hỏng, shop trả lời thô lỗ, pin rất yếu",neg,0
+"Pin rất yếu, shop trả lời thô lỗ...",neg,0
+"Giá hợp lý, chưa dùng nhiều nên chưa biết.",neu,0
+"Mua sách cho gia đình, vải mỏng và xấu, không hài lòng.",neg,0
+"Bình thường, giá hợp lý.",neu,0
+"Không giống mô tả, không hài lòng!",neg,0
+"Giao hàng quá chậm, dùng được hai ngày đã hỏng!",neg,0
+Bình thường...,neu,0
+Bình thường!,neu,0
+"Đóng gói cẩn thận, chất lượng tuyệt vời",pos,1
+"Mua áo thun cho gia đình, rất đáng tiền, vải mát và đẹp, pin trâu.",pos,1
+"Vải mỏng và xấu, không hài lòng!",neg,0
+"Mua nồi cơm điện cho gia đình, chất lượng tuyệt vời, sản phẩm rất tốt!",pos,1
+"Mua điện thoại cho gia đình, không tốt lắm",neg,0
+"Hàng bị lỗi, dùng được hai ngày đã hỏng.",neg,0
+"Dùng được hai ngày đã hỏng, giao hàng quá chậm, thất vọng...",neg,0
+"Thất vọng, pin rất yếu, không như kỳ vọng!",neg,0
+"Mua điện thoại cho gia đình, bình thường, giá hợp lý",neu,0
+"Mua điện thoại cho gia đình, thất vọng, shop trả lời thô lỗ!",neg,0
+Sẽ ủng hộ tiếp!,pos,1
+"Không như kỳ vọng, không đáng tiền, không tốt lắm...",neg,0
+"Vải mát và đẹp, sản phẩm rất tốt...",pos,1
+"Giao hàng nhanh, vải mát và đẹp, đóng gói cẩn thận.",pos,1
+"Mua nồi cơm điện cho gia đình, không tốt lắm!",neg,0
+"Không như kỳ vọng, không đáng tiền, phí tiền",neg,0
+"Mua áo thun cho gia đình, pin rất yếu, không tốt lắm.",neg,0
+"Giao hàng quá chậm, shop trả lời thô lỗ, không đáng tiền!",neg,0
+"Mua nồi cơm điện cho gia đình, giá hợp lý, bình thường!",neu,0
+"Sản phẩm rất tốt, chất lượng tuyệt vời, giao hàng nhanh.",pos,1
+"Sản phẩm rất tốt, dùng rất thích",pos,1
+Vải mỏng và xấu,neg,0
+Bình thường.,neu,0
+"Đóng gói cẩn thận, vải mát và đẹp...",pos,1
+"Vải mỏng và xấu, không như kỳ vọng.",neg,0
+"Shop tư vấn nhiệt tình, rất đáng tiền!",pos,1
+"Mua áo thun cho gia đình, sản phẩm rất tốt, chất lượng tuyệt vời, sẽ ủng hộ tiếp...",pos,1
+Hàng bị lỗi,neg,0
+"Shop trả lời thô lỗ, không như kỳ vọng...",neg,0
+Giao hàng nhanh...,pos,1
+"Hàng bị lỗi, shop trả lời thô lỗ!",neg,0
+"Đóng gói cẩn thận, chất lượng tuyệt vời, dùng rất thích",pos,1
+"Giao hàng nhanh, sản phẩm rất tốt, rất đáng tiền",pos,1
+"Rất đáng tiền, pin trâu, chất lượng tuyệt vời",pos,1
+"Shop trả lời thô lỗ, không đáng tiền, phí tiền!",neg,0
+"Giao hàng nhanh, rất đáng tiền, pin trâu!",pos,1
+"Mua giày cho gia đình, giá hợp lý...",neu,0
+"Mua giày cho gia đình, không giống mô tả, phí tiền, giao hàng quá chậm!",neg,0
+Pin rất yếu,neg,0
+"Bình thường, tạm được",neu,0
+Giá hợp lý.,neu,0
+"Mua nồi cơm điện cho gia đình, giao hàng quá chậm...",neg,0
+"Mua giày cho gia đình, không hài lòng, dùng được hai ngày đã hỏng.",neg,0
+Phí tiền!,neg,0
+"Không như kỳ vọng, không giống mô tả, không đáng tiền",neg,0
+"Giống ảnh, bình thường",neu,0
+"Mua giày cho gia đình, shop trả lời thô lỗ, không như kỳ vọng, không tốt lắm!",neg,0
+"Shop tư vấn nhiệt tình, sản phẩm rất tốt, pin trâu...",pos,1
+"Không giống mô tả, vải mỏng và xấu...",neg,0
+"Thất vọng, phí tiền.",neg,0
+"Không đáng tiền, không tốt lắm, shop trả lời thô lỗ",neg,0
+"Mua sách cho gia đình, shop trả lời thô lỗ, thất vọng, vải mỏng và xấu",neg,0
+"Giá hợp lý, giống ảnh.",neu,0
+"Giao hàng quá chậm, pin rất yếu, không tốt lắm.",neg,0
+"Mua áo thun cho gia đình, sẽ ủng hộ tiếp.",pos,1
+"Dùng rất thích, rất đáng tiền, đóng gói cẩn thận...",pos,1
+"Không tốt lắm, vải mỏng và xấu...",neg,0
+"Mua điện thoại cho gia đình, pin rất yếu, không tốt lắm!",neg,0
+"Mua nồi cơm điện cho gia đình, đóng gói cẩn thận, dùng rất thích!",pos,1
+"Mua nồi cơm điện cho gia đình, sẽ ủng hộ tiếp, vải mát và đẹp!",pos,1
+"Giao hàng nhanh, chất lượng tuyệt vời!",pos,1
+"Giá hợp lý, tạm được!",neu,0
+"Shop tư vấn nhiệt tình, sẽ ủng hộ tiếp, rất đáng tiền.",pos,1
+"Mua sách cho gia đình, bình thường, tạm được",neu,0
+"Mua áo thun cho gia đình, pin trâu, chất lượng tuyệt vời, shop tư vấn nhiệt tình!",pos,1
+"Mua điện thoại cho gia đình, dùng rất thích",pos,1
+"Mua tai nghe cho gia đình, không hài lòng!",neg,0
+"Pin trâu, chất lượng tuyệt vời",pos,1
+"Không giống mô tả, phí tiền, không như kỳ vọng",neg,0
+"Mua áo thun cho gia đình, không như kỳ vọng, vải mỏng và xấu, pin rất yếu",neg,0
+"Hàng bị lỗi, chất lượng kém...",neg,0
+"Giao hàng quá chậm, phí tiền, không giống mô tả...",neg,0
+"Chất lượng tuyệt vời, sẽ ủng hộ tiếp.",pos,1
+"Shop trả lời thô lỗ, không đáng tiền, dùng được hai ngày đã hỏng",neg,0
+"Không hài lòng, thất vọng, pin rất yếu!",neg,0
+"Mua áo thun cho gia đình, không như kỳ vọng, không tốt lắm",neg,0
+"Không giống mô tả, không hài lòng!",neg,0
+"Giao hàng quá chậm, dùng được hai ngày đã hỏng!",neg,0
+"Mua giày cho gia đình, chất lượng kém",neg,0
+"Mua áo thun cho gia đình, vải mát và đẹp, sẽ ủng hộ tiếp",pos,1
+"Mua tai nghe cho gia đình, không đáng tiền, dùng được hai ngày đã hỏng, vải mỏng và xấu",neg,0
+"Giao hàng nhanh, sẽ ủng hộ tiếp, dùng rất thích",pos,1
+"Mua áo thun cho gia đình, giao hàng quá chậm, chất lượng kém, không đáng tiền",neg,0
+"Sẽ ủng hộ tiếp, shop tư vấn nhiệt tình, rất đáng tiền!",pos,1
+"Sản phẩm rất tốt, dùng rất thích, shop tư vấn nhiệt tình.",pos,1
+"Mua áo thun cho gia đình, giao hàng nhanh, sản phẩm rất tốt, shop tư vấn nhiệt tình",pos,1
+"Giao hàng nhanh, đóng gói cẩn thận, shop tư vấn nhiệt tình.",pos,1
+Rất đáng tiền!,pos,1
+"Mua tai nghe cho gia đình, hàng bị lỗi, không hài lòng.",neg,0
+Thất vọng!,neg,0
+"Hàng bị lỗi, không giống mô tả!",neg,0
+"Mua bàn phím cho gia đình, rất đáng tiền, sản phẩm rất tốt, sẽ ủng hộ tiếp",pos,1
+"Thất vọng, không đáng tiền...",neg,0
+Rất đáng tiền...,pos,1
+"Phí tiền, chất lượng kém, shop trả lời thô lỗ",neg,1
+"Tạm được, giá hợp lý...",neu,1
+"Mua bàn phím cho gia đình, pin trâu, rất đáng tiền!",pos,1
+"Mua áo thun cho gia đình, pin rất yếu, không như kỳ vọng, không đáng tiền...",neg,0
+"Shop tư vấn nhiệt tình, đóng gói cẩn thận!",pos,1
+"Mua tai nghe cho gia đình, tạm được",neu,0
+Giao hàng nhanh...,pos,1
+"Không giống mô tả, vải mỏng và xấu",neg,0
+"Mua áo thun cho gia đình, pin trâu, sẽ ủng hộ tiếp, đóng gói cẩn thận.",pos,1
+"Không như kỳ vọng, không đáng tiền.",neg,0
+"Vải mỏng và xấu, shop trả lời thô lỗ...",neg,0
+Chưa dùng nhiều nên chưa biết!,neu,0
+"Mua tai nghe cho gia đình, vải mát và đẹp",pos,1
+"Mua điện thoại cho gia đình, vải mát và đẹp, sản phẩm rất tốt.",pos,0
+"Rất đáng tiền, shop tư vấn nhiệt tình!",pos,1
+Shop trả lời thô lỗ!,neg,0
+"Sản phẩm rất tốt, dùng rất thích",pos,1
+Tạm được,neu,0
+"Mua điện thoại cho gia đình, dùng rất thích, pin trâu, rất đáng tiền",pos,1
+Không như kỳ vọng.,neg,0
+Vải mỏng và xấu,neg,0
+"Giá hợp lý, chưa dùng nhiều nên chưa biết...",neu,0
+Bình thường.,neu,0
+"Sẽ ủng hộ tiếp, giao hàng nhanh!",pos,1
+"Sản phẩm rất tốt, sẽ ủng hộ tiếp, rất đáng tiền...",pos,1
+"Vải mát và đẹp, sản phẩm rất tốt...",pos,1
+"Mua nồi cơm điện cho gia đình, sẽ ủng hộ tiếp, pin trâu, dùng rất thích...",pos,1
+"Pin trâu, giao hàng nhanh, chất lượng tuyệt vời",pos,1
+"Giống ảnh, bình thường...",neu,0
+"Hàng bị lỗi, giao hàng quá chậm.",neg,0
+"Shop tư vấn nhiệt tình, vải mát và đẹp...",pos,1
+"Mua áo thun cho gia đình, pin trâu, dùng rất thích, shop tư vấn nhiệt tình",pos,1
+Rất đáng tiền.,pos,1
+"Không như kỳ vọng, thất vọng",neg,0
+"Pin trâu, giao hàng nhanh, vải mát và đẹp!",pos,1
+"Giao hàng nhanh, sẽ ủng hộ tiếp.",pos,1
+"Chất lượng tuyệt vời, rất đáng tiền, pin trâu...",pos,1
+Giá hợp lý...,neu,0
+Giao hàng nhanh!,pos,1
+"Mua bàn phím cho gia đình, pin trâu, sẽ ủng hộ tiếp...",pos,1
+"Pin rất yếu, giao hàng quá chậm.",neg,0
+"Mua áo thun cho gia đình, chưa dùng nhiều nên chưa biết.",neu,0
+"Sản phẩm rất tốt, vải mát và đẹp!",pos,1
+"Vải mát và đẹp, sẽ ủng hộ tiếp...",pos,1
+"Pin trâu, đóng gói cẩn thận.",pos,1
+Sẽ ủng hộ tiếp,pos,1
+"Bình thường, giống ảnh...",neu,0
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt.",pos,1
+"Mua bàn phím cho gia đình, chất lượng kém, shop trả lời thô lỗ, không đáng tiền",neg,0
+"Không hài lòng, phí tiền, hàng bị lỗi...",neg,0
+"Mua điện thoại cho gia đình, shop trả lời thô lỗ, không giống mô tả.",neg,0
+"Mua bàn phím cho gia đình, phí tiền!",neg,0
+"Mua điện thoại cho gia đình, pin rất yếu, shop trả lời thô lỗ, không như kỳ vọng",neg,0
+Chất lượng tuyệt vời.,pos,1
+"Sản phẩm rất tốt, đóng gói cẩn thận, dùng rất thích",pos,1
+"Mua giày cho gia đình, không giống mô tả, không như kỳ vọng, không hài lòng",neg,0
+"Mua giày cho gia đình, hàng bị lỗi, pin rất yếu.",neg,0
+Sản phẩm rất tốt!,pos,1
+"Hàng bị lỗi, shop trả lời thô lỗ, pin rất yếu.",neg,0
+"Không hài lòng, shop trả lời thô lỗ, hàng bị lỗi...",neg,0
+Giao hàng quá chậm!,neg,0
+"Mua nồi cơm điện cho gia đình, chưa dùng nhiều nên chưa biết.",neu,0
+"Mua điện thoại cho gia đình, dùng được hai ngày đã hỏng...",neg,0
+Shop tư vấn nhiệt tình,pos,1
+"Không đáng tiền, pin rất yếu!",neg,0
+"Giao hàng nhanh, rất đáng tiền",pos,1
+"Mua áo thun cho gia đình, không giống mô tả, không như kỳ vọng, giao hàng quá chậm.",neg,0
+"Thất vọng, không đáng tiền, không hài lòng...",neg,0
+"Bình thường, giống ảnh...",neu,0
+Bình thường!,neu,0
+"Chất lượng tuyệt vời, đóng gói cẩn thận, sản phẩm rất tốt...",pos,1
+"Dùng rất thích, vải mát và đẹp",pos,1
+Giống ảnh,neu,0
+"Shop trả lời thô lỗ, chất lượng kém.",neg,0
+Vải mỏng và xấu...,neg,0
+Pin rất yếu,neg,0
+"Không tốt lắm, dùng được hai ngày đã hỏng.",neg,0
+"Mua tai nghe cho gia đình, sẽ ủng hộ tiếp, chất lượng tuyệt vời, shop tư vấn nhiệt tình...",pos,1
+"Sản phẩm rất tốt, vải mát và đẹp.",pos,1
+"Vải mát và đẹp, chất lượng tuyệt vời...",pos,1
+"Mua áo thun cho gia đình, chất lượng kém, hàng bị lỗi!",neg,0
+Hàng bị lỗi.,neg,0
+"Mua tai nghe cho gia đình, chất lượng tuyệt vời, rất đáng tiền",pos,1
+"Không đáng tiền, không hài lòng, giao hàng quá chậm",neg,0
+"Mua sách cho gia đình, chưa dùng nhiều nên chưa biết, bình thường",neu,0
+"Không đáng tiền, giao hàng quá chậm, pin rất yếu.",neg,0
+"Sẽ ủng hộ tiếp, pin trâu, chất lượng tuyệt vời",pos,1
+"Mua nồi cơm điện cho gia đình, vải mỏng và xấu, giao hàng quá chậm, shop trả lời thô lỗ.",neg,0
+Rất đáng tiền!,pos,1
+Không hài lòng...,neg,0
+"Pin trâu, sản phẩm rất tốt...",pos,1
+"Rất đáng tiền, shop tư vấn nhiệt tình.",pos,1
+Không tốt lắm...,neg,0
+"Mua giày cho gia đình, sản phẩm rất tốt, rất đáng tiền, đóng gói cẩn thận.",pos,1
+"Không giống mô tả, không hài lòng, giao hàng quá chậm...",neg,0
+"Giao hàng quá chậm, vải mỏng và xấu",neg,0
+"Bình thường, giống ảnh!",neu,0
+Tạm được!,neu,0
+"Chưa dùng nhiều nên chưa biết, giá hợp lý!",neu,0
+"Shop tư vấn nhiệt tình, đóng gói cẩn thận...",pos,1
+"Mua nồi cơm điện cho gia đình, sẽ ủng hộ tiếp",pos,1
+"Mua giày cho gia đình, không tốt lắm!",neg,0
+"Mua sách cho gia đình, hàng bị lỗi, phí tiền",neg,0
+"Mua tai nghe cho gia đình, không giống mô tả",neg,0
+"Mua giày cho gia đình, shop trả lời thô lỗ, không như kỳ vọng",neg,0
+"Sẽ ủng hộ tiếp, sản phẩm rất tốt, vải mát và đẹp...",pos,1
+"Không đáng tiền, pin rất yếu, không tốt lắm...",neg,0

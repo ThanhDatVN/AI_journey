@@ -1,0 +1,301 @@
+title: "10 · Decision Trees"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: axis-aligned
+        lesson: 01_intuition_entropy_gini.ipynb
+        type: mcq
+        question: "Decision boundary của Decision Tree (CART) gồm:"
+        options: {a: "Các đường cong trơn", b: "Các đoạn song song trục toạ độ (vùng hình hộp)", c: "Một siêu phẳng", d: "Các đường tròn"}
+        answer: b
+        explanation: "Mỗi split có dạng x_j ≤ t."
+      - id: t02
+        topic: impurity
+        lesson: 01_intuition_entropy_gini.ipynb
+        type: multi
+        question: "Những phát biểu nào đúng về entropy và Gini?"
+        options:
+          a: "Bằng 0 khi node thuần"
+          b: "Lớn nhất khi các lớp chia đều"
+          c: "Gini nhị phân tối đa bằng 1"
+          d: "Đều là hàm lõm chặt theo tỉ lệ lớp"
+        answer: abd
+        explanation: "Gini nhị phân tối đa 0.5; entropy nhị phân tối đa 1."
+      - id: t03
+        topic: misclassification
+        lesson: 01_intuition_entropy_gini.ipynb
+        type: mcq
+        question: "Vì sao CART không dùng misclassification error để chọn split?"
+        options:
+          a: "Không tính được"
+          b: "Kém nhạy: nhiều split khác nhau (kể cả split tạo node thuần) có cùng giá trị"
+          c: "Tính quá chậm"
+          d: "Chỉ dùng được cho hồi quy"
+        answer: b
+        explanation: "Nó tuyến tính từng khúc, không lõm chặt."
+      - id: t04
+        topic: greedy
+        lesson: 01_intuition_entropy_gini.ipynb
+        type: tf
+        question: "Thuật toán CART tìm được cây tối ưu toàn cục."
+        answer: false
+        explanation: "Greedy từng node; tìm cây tối ưu là NP-hard."
+      - id: t05
+        topic: split search
+        lesson: 02_classifier_from_scratch.ipynb
+        type: mcq
+        question: "Kỹ thuật sắp xếp + tổng tích luỹ (cumsum) giúp tìm split tốt nhất cho một feature với độ phức tạp:"
+        options: {a: "O(n²)", b: "O(n log n)", c: "O(1)", d: "O(2ⁿ)"}
+        answer: b
+        explanation: "Sắp xếp O(n log n), quét O(n)."
+      - id: t06
+        topic: MDI
+        lesson: 02_classifier_from_scratch.ipynb
+        type: mcq
+        question: "Feature importance mặc định của sklearn tree (MDI) được tính bằng:"
+        options:
+          a: "Hệ số hồi quy"
+          b: "Tổng mức giảm impurity có trọng số (số mẫu) tại các node dùng feature đó"
+          c: "Số lần feature xuất hiện trong dữ liệu"
+          d: "Tương quan với target"
+        answer: b
+        explanation: "Chuẩn hoá về tổng 1."
+      - id: t07
+        topic: regression leaf
+        lesson: 03_regression_trees.ipynb
+        type: mcq
+        question: "Lá của regression tree với criterion squared_error dự đoán:"
+        options: {a: "Trung vị y trong lá", b: "Trung bình y trong lá", c: "Giá trị lớn nhất", d: "Một hàm tuyến tính"}
+        answer: b
+        explanation: "Trung bình tối thiểu hoá SSE."
+      - id: t08
+        topic: extrapolation
+        lesson: 03_regression_trees.ipynb
+        type: tf
+        question: "Regression tree train trên doanh số tăng dần theo thời gian sẽ dự đoán tiếp xu hướng tăng cho tương lai."
+        answer: false
+        explanation: "Ngoài vùng train, dự đoán là hằng số của lá ngoài cùng."
+      - id: t09
+        topic: MAE criterion
+        lesson: 03_regression_trees.ipynb
+        type: mcq
+        question: "criterion='absolute_error' hữu ích khi:"
+        options: {a: "Dữ liệu có outlier ở y", b: "Cần train nhanh hơn", c: "Feature chưa scale", d: "Bài toán phân loại"}
+        answer: a
+        explanation: "Lá dùng trung vị — robust."
+      - id: t10
+        topic: overfitting
+        lesson: 04_overfitting_and_pruning.ipynb
+        type: mcq
+        question: "Cây không giới hạn độ sâu thường có:"
+        options:
+          a: "Bias cao, variance thấp"
+          b: "Bias thấp, variance cao — train accuracy ~100%"
+          c: "Bias và variance đều thấp"
+          d: "Không thể train"
+        answer: b
+        explanation: "Mỗi lá gần như chỉ còn vài mẫu."
+      - id: t11
+        topic: post-pruning
+        lesson: 04_overfitting_and_pruning.ipynb
+        type: mcq
+        question: "Tăng ccp_alpha trong sklearn thì:"
+        options: {a: "Cây lớn hơn", b: "Cây bị cắt nhiều hơn (ít lá hơn)", c: "Học nhanh hơn", d: "Không ảnh hưởng"}
+        answer: b
+        explanation: "Phạt α·|T| mạnh hơn."
+      - id: t12
+        topic: pre vs post
+        lesson: 04_overfitting_and_pruning.ipynb
+        type: mcq
+        question: "Ưu điểm của post-pruning so với pre-pruning:"
+        options:
+          a: "Luôn nhanh hơn"
+          b: "Không bỏ lỡ các split tốt nằm sau một split 'trông vô ích' (vd XOR)"
+          c: "Không cần chọn hyperparameter"
+          d: "Cho cây sâu hơn"
+        answer: b
+        explanation: "Trồng đầy đủ rồi cắt ngược."
+      - id: t13
+        topic: instability
+        lesson: 04_overfitting_and_pruning.ipynb
+        type: tf
+        question: "Thay đổi nhỏ trong dữ liệu train có thể làm cấu trúc cây quyết định thay đổi lớn."
+        answer: true
+        explanation: "Variance cao → động lực cho bagging/Random Forest."
+      - id: t14
+        topic: scaling
+        lesson: 05_failure_cases_and_interpretation.ipynb
+        type: tf
+        question: "Decision Tree cần chuẩn hoá feature (StandardScaler) để hoạt động tốt."
+        answer: false
+        explanation: "Split chỉ phụ thuộc thứ tự giá trị."
+      - id: t15
+        topic: MDI bias
+        lesson: 05_failure_cases_and_interpretation.ipynb
+        type: mcq
+        question: "Một cột ID ngẫu nhiên (mọi giá trị khác nhau) nhận MDI importance cao. Nguyên nhân?"
+        options:
+          a: "ID thực sự quan trọng"
+          b: "MDI tính trên train, thưởng cho split học thuộc nhiễu, thiên vị feature nhiều giá trị"
+          c: "Lỗi của sklearn"
+          d: "Do không scale"
+        answer: b
+        explanation: "Dùng permutation importance trên held-out + regularize model."
+      - id: t16
+        topic: diagonal boundary
+        lesson: 05_failure_cases_and_interpretation.ipynb
+        type: mcq
+        question: "Cách nhanh nhất giúp cây nông học ranh giới x1 + x2 > 0:"
+        options: {a: "Tăng max_depth lên 50", b: "Thêm feature x1 + x2", c: "Dùng entropy thay Gini", d: "Scale dữ liệu"}
+        answer: b
+        explanation: "Ranh giới chéo thành split song song trục của feature mới."
+  math:
+    questions:
+      - id: m01
+        topic: entropy
+        lesson: 01_intuition_entropy_gini.ipynb
+        type: numeric
+        decimals: 3
+        question: "Entropy (log₂) của node có 4 mẫu lớp A và 4 mẫu lớp B?"
+        answer: 1
+        explanation: "−2 · 0.5 log₂ 0.5 = 1."
+      - id: m02
+        topic: Gini
+        lesson: 01_intuition_entropy_gini.ipynb
+        type: numeric
+        decimals: 3
+        question: "Gini của node có tỉ lệ lớp (0.5, 0.25, 0.25)?"
+        answer: 0.625
+        explanation: "1 − (0.25 + 0.0625 + 0.0625) = 0.625."
+      - id: m03
+        topic: information gain
+        lesson: 01_intuition_entropy_gini.ipynb
+        type: numeric
+        decimals: 3
+        question: "Node cha entropy 1 (8 mẫu). Split tạo hai con thuần, mỗi con 4 mẫu. Information gain?"
+        answer: 1
+        explanation: "1 − 0 = 1."
+      - id: m04
+        topic: số lá
+        lesson: 03_regression_trees.ipynb
+        type: numeric
+        decimals: 0
+        question: "Cây nhị phân độ sâu 5 có tối đa bao nhiêu lá?"
+        answer: 32
+        explanation: "2⁵."
+      - id: m05
+        topic: variance reduction
+        lesson: 03_regression_trees.ipynb
+        type: numeric
+        decimals: 3
+        question: "Node y = [0, 0, 4, 4]. Split thành [0, 0] | [4, 4]. Mức giảm phương sai?"
+        answer: 4
+        explanation: "Var cha = 4, hai con = 0."
+      - id: m06
+        topic: cost complexity
+        lesson: 04_overfitting_and_pruning.ipynb
+        type: numeric
+        decimals: 3
+        question: "Cây con T có R(T) = 0.10 và 5 lá; nếu cắt thành 1 lá thì R = 0.18. Với α nào thì hai lựa chọn có cùng chi phí R + α|T|?"
+        answer: 0.02
+        explanation: "(0.18 − 0.10)/(5 − 1) = 0.02 — weakest link."
+coding:
+  tasks:
+    - id: c01
+      title: Gini và information gain
+      prompt: |
+        Viết `gini(y)` và `gini_gain(y, mask)` — mức giảm Gini khi chia `y` thành `y[mask]` và `y[~mask]` (có trọng số theo số mẫu).
+      code: |
+        def gini(y):
+            ### START CODE HERE ### (≈ 2 dòng)
+            _, counts = np.unique(y, return_counts=True)
+            p = counts / counts.sum()
+            ### END CODE HERE ###
+            return 1 - np.sum(p**2)
+
+
+        def gini_gain(y, mask):
+            ### START CODE HERE ### (≈ 2 dòng)
+            left, right = y[mask], y[~mask]
+            child = (len(left) * gini(left) + len(right) * gini(right)) / len(y)
+            ### END CODE HERE ###
+            return gini(y) - child
+      tests: |
+        y = np.array([0, 0, 0, 1, 1, 1, 1, 2])
+        check_close(gini(y), 1 - (9 + 16 + 1) / 64, message="gini 3 lớp")
+        check_close(gini_gain(np.array([0, 0, 1, 1]), np.array([True, True, False, False])), 0.5, message="split hoàn hảo")
+        check_close(gini_gain(np.array([0, 1, 0, 1]), np.array([True, True, False, False])), 0.0, message="split vô ích")
+    - id: c02
+      title: Split hồi quy tốt nhất
+      prompt: |
+        Viết `best_threshold_regression(x, y)` trả về ngưỡng (trung điểm giữa hai giá trị liên tiếp khác nhau của `x` đã sắp xếp)
+        làm **tổng SSE hai bên** nhỏ nhất. Được phép dùng vòng lặp.
+      code: |
+        def best_threshold_regression(x, y):
+            order = np.argsort(x)
+            xs, ys = x[order], y[order]
+            best_t, best_sse = None, np.inf
+            ### START CODE HERE ### (≈ 6 dòng)
+            for i in range(len(xs) - 1):
+                if xs[i] == xs[i + 1]:
+                    continue
+                left, right = ys[: i + 1], ys[i + 1 :]
+                sse = ((left - left.mean()) ** 2).sum() + ((right - right.mean()) ** 2).sum()
+                if sse < best_sse:
+                    best_t, best_sse = (xs[i] + xs[i + 1]) / 2, sse
+            ### END CODE HERE ###
+            return best_t
+      tests: |
+        from sklearn.tree import DecisionTreeRegressor
+        rng = np.random.default_rng(2)
+        x = rng.uniform(0, 10, 80)
+        y = np.where(x > 6.3, 5.0, 1.0) + rng.normal(0, 0.3, 80)
+        t = best_threshold_regression(x, y)
+        ref = DecisionTreeRegressor(max_depth=1).fit(x[:, None], y).tree_.threshold[0]
+        check_close(t, ref, tol=1e-4, message="khớp sklearn stump (sklearn lưu ngưỡng float32)")
+analysis:
+  prompt: |
+    Một ngân hàng dùng Decision Tree không giới hạn độ sâu để xét duyệt khoản vay. Báo cáo của nhóm:
+    "accuracy 100% (trên dữ liệu train), feature quan trọng nhất là `customer_id` (MDI = 0.31), mô hình dễ giải thích nên đủ để trình
+    cơ quan quản lý." Khi train lại với dữ liệu tháng mới, cây có cấu trúc khác hẳn và một số khách hàng bị đổi kết quả.
+    Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra accuracy 100% trên train là overfit/vô nghĩa → đánh giá bằng CV/test"
+    - "Chỉ ra customer_id có MDI cao là do thiên lệch MDI với feature nhiều giá trị/học thuộc → loại ID, dùng permutation importance trên held-out"
+    - "Đề xuất giới hạn độ phức tạp: max_depth/min_samples_leaf/ccp_alpha chọn bằng CV"
+    - "Chỉ ra cây không ổn định (variance cao) → kết quả thay đổi khi dữ liệu thay đổi; đề xuất kiểm tra độ ổn định, ensemble hoặc cây nhỏ có kiểm định"
+    - "Nhận xét 'dễ giải thích' chỉ đúng với cây nhỏ; cây sâu hàng trăm lá không dễ giải thích, và cấu trúc cây không phải nhân quả"
+  sample_answer: |
+    (1) Accuracy 100% trên train của cây không giới hạn là tất yếu (mỗi lá thuộc lòng vài mẫu) — phải báo cáo CV/test.
+    (2) customer_id có MDI cao vì cây dùng nó để "học thuộc" từng khách hàng; MDI tính trên train thiên vị feature nhiều giá trị → loại ID, dùng permutation importance trên held-out.
+    (3) Chọn max_depth/min_samples_leaf/ccp_alpha bằng CV.
+    (4) Cây sâu có variance cao: dữ liệu tháng mới → cây khác → quyết định thay đổi; kiểm tra độ ổn định (bootstrap), cân nhắc ensemble + giải thích (SHAP) hoặc cây nhỏ đã kiểm định.
+    (5) Cây hàng trăm lá không "dễ giải thích"; các split là liên hệ, không phải nhân quả — cần thận trọng khi trình cơ quan quản lý.
+project:
+  prompt: |
+    **Mini project — Cây dự đoán churn có thể giải thích.** Đọc `customer_churn.csv` (`repo_path("data", "sample", "customer_churn.csv")`),
+    bỏ `customer_id`, one-hot cột phân loại. Chia train/test 75/25 (`random_state=0`, `stratify`). Chọn `max_depth` (≤ 6) và
+    `min_samples_leaf` bằng `GridSearchCV` (5-fold, `roc_auc`). Yêu cầu: **ROC-AUC test ≥ 0.78** (biến `test_auc`) và cây có **≤ 40 lá** (biến `n_leaves`).
+  code: |
+    import pandas as pd
+    from sklearn.metrics import roc_auc_score
+    from sklearn.model_selection import GridSearchCV, train_test_split
+    from sklearn.tree import DecisionTreeClassifier
+    from ml_course.utils import repo_path
+
+    df = pd.read_csv(repo_path("data", "sample", "customer_churn.csv"))
+    ### START CODE HERE ### (≈ 8 dòng)
+    X = pd.get_dummies(df.drop(columns=["customer_id", "churn"]), dtype=float)
+    y = df["churn"]
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25, random_state=0, stratify=y)
+    grid = GridSearchCV(DecisionTreeClassifier(random_state=0),
+                        {"max_depth": [3, 4, 5, 6], "min_samples_leaf": [20, 50, 100]}, cv=5, scoring="roc_auc").fit(X_tr, y_tr)
+    best = grid.best_estimator_
+    test_auc = roc_auc_score(y_te, best.predict_proba(X_te)[:, 1])
+    n_leaves = best.get_n_leaves()
+    ### END CODE HERE ###
+    print(grid.best_params_, "| ROC-AUC test:", round(test_auc, 4), "| số lá:", n_leaves)
+  tests: |
+    check_greater(test_auc, 0.78, "ROC-AUC test ≥ 0.78")
+    check_less(n_leaves, 41, "≤ 40 lá")

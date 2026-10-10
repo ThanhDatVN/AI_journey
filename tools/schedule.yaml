@@ -1,0 +1,483 @@
+header: '# 📅 Lịch học theo tuần
+
+
+  > Lịch **44 tuần** (~10 tháng) với **6–10 giờ mỗi tuần** — kế thừa cách tổ chức theo tuần của khoá [AIVN-Machine-Learning](https://github.com/thanhhff/AIVN-Machine-Learning), mở rộng tới Deep Learning,
+  ML đáng tin cậy và MLOps. Mỗi tuần: đọc và chạy bài học → làm bài tập `90_exercises` → **PASS** checkpoint `99_checkpoint` trước khi sang tuần sau. Học nhanh hay chậm hơn đều được — thứ tự mới là điều
+  quan trọng. Lộ trình rút gọn theo mục tiêu: xem [ROADMAP.md](ROADMAP.md).
+
+
+  Ký hiệu: 📖 bài học · 💻 assignment · 📝 bài tập L0–L7 · ✅ checkpoint · 🏋️ luyện tập xen kẽ · 🛠️ project · 🎓 bài thi tổng hợp.
+
+
+  > File này được sinh tự động từ `tools/schedule.yaml` bởi `python tools/generate_index.py` — sửa YAML, đừng sửa trực tiếp.'
+weeks:
+- week: 1
+  title: Định hướng & công cụ
+  goal: Cài môi trường, học cách dùng notebook, Colab, kỹ năng tự học; hiểu ML là gì.
+  items:
+  - notebooks/00_course_orientation/01_how_to_use_this_course.ipynb
+  - notebooks/00_course_orientation/02_jupyter_notebook_and_markdown.ipynb
+  - notebooks/00_course_orientation/03_google_colab_tips.ipynb
+  - notebooks/00_course_orientation/04_pycharm_and_vscode.ipynb
+  - notebooks/00_course_orientation/05_google_search_and_learning_skills.ipynb
+  - notebooks/00_course_orientation/90_exercises.ipynb
+  - notebooks/00_course_orientation/99_checkpoint.ipynb
+- week: 2
+  title: Python & NumPy
+  goal: Viết Python gọn gàng, nghĩ theo mảng thay vì vòng lặp.
+  items:
+  - notebooks/01_python_for_ml/01_python_basics.ipynb
+  - notebooks/01_python_for_ml/02_numpy.ipynb
+  - notebooks/01_python_for_ml/03_numpy_vectorization_and_broadcasting.ipynb
+  - notebooks/01_python_for_ml/91_assignment_math_formulas_in_python.ipynb
+  - notebooks/01_python_for_ml/92_assignment_numpy_practice.ipynb
+  - notebooks/01_python_for_ml/93_assignment_python_basics_with_numpy.ipynb
+- week: 3
+  title: pandas, Matplotlib, gỡ lỗi
+  goal: Xử lý bảng dữ liệu, vẽ biểu đồ, đọc lỗi shape và lỗi Python thường gặp.
+  items:
+  - notebooks/01_python_for_ml/04_pandas_essentials.ipynb
+  - notebooks/01_python_for_ml/05_matplotlib.ipynb
+  - notebooks/01_python_for_ml/06_debugging_shapes_and_performance.ipynb
+  - notebooks/01_python_for_ml/07_common_python_errors.ipynb
+  - notebooks/01_python_for_ml/94_assignment_matplotlib.ipynb
+  - notebooks/01_python_for_ml/90_exercises.ipynb
+  - notebooks/01_python_for_ml/99_checkpoint.ipynb
+- week: 4
+  title: Đại số tuyến tính
+  goal: Vector, ma trận, hạng, trị riêng, SVD — ngôn ngữ của ML.
+  items:
+  - notebooks/02_mathematics_for_ml/01_math_notation.ipynb
+  - notebooks/02_mathematics_for_ml/02_linear_algebra.ipynb
+  - notebooks/02_mathematics_for_ml/03_rank_inverse_eigen_svd.ipynb
+  - notebooks/02_mathematics_for_ml/91_assignment_image_correlation.ipynb
+- week: 5
+  title: Giải tích, tối ưu, xác suất, thống kê
+  goal: Gradient, gradient descent, MLE/MAP, suy luận thống kê.
+  items:
+  - notebooks/02_mathematics_for_ml/04_calculus_and_gradients.ipynb
+  - notebooks/02_mathematics_for_ml/05_gradient_descent.ipynb
+  - notebooks/02_mathematics_for_ml/06_probability.ipynb
+  - notebooks/02_mathematics_for_ml/07_likelihood_mle_map.ipynb
+  - notebooks/02_mathematics_for_ml/08_statistics.ipynb
+  - notebooks/02_mathematics_for_ml/90_exercises.ipynb
+  - notebooks/02_mathematics_for_ml/99_checkpoint.ipynb
+  - exercises/basic/02_math_and_statistics.ipynb
+- week: 6
+  title: Phân tích dữ liệu & EDA
+  goal: Đặt câu hỏi cho dữ liệu, tìm vấn đề chất lượng.
+  items:
+  - notebooks/03_data_analysis_and_eda/01_types_of_data_and_storage.ipynb
+  - notebooks/03_data_analysis_and_eda/02_eda_workflow.ipynb
+  - notebooks/03_data_analysis_and_eda/03_univariate_and_bivariate_analysis.ipynb
+  - notebooks/03_data_analysis_and_eda/04_data_quality_and_pitfalls.ipynb
+  - notebooks/03_data_analysis_and_eda/90_exercises.ipynb
+  - notebooks/03_data_analysis_and_eda/99_checkpoint.ipynb
+  - exercises/basic/01_python_numpy_pandas.ipynb
+- week: 7
+  title: Tiền xử lý dữ liệu
+  goal: Dữ liệu thiếu, ngoại lai, chuẩn hoá, mã hoá, pipeline.
+  items:
+  - notebooks/04_data_preprocessing/01_missing_values_and_outliers.ipynb
+  - notebooks/04_data_preprocessing/02_feature_scaling.ipynb
+  - notebooks/04_data_preprocessing/03_encoding_categorical.ipynb
+  - notebooks/04_data_preprocessing/04_pipelines_and_column_transformer.ipynb
+  - notebooks/04_data_preprocessing/90_exercises.ipynb
+  - notebooks/04_data_preprocessing/99_checkpoint.ipynb
+- week: 8
+  title: Nền tảng ML (1)
+  goal: Loại bài toán, train/validation/test, overfitting, bias–variance.
+  items:
+  - notebooks/05_machine_learning_fundamentals/01_what_is_machine_learning.ipynb
+  - notebooks/05_machine_learning_fundamentals/02_types_of_machine_learning.ipynb
+  - notebooks/05_machine_learning_fundamentals/03_train_validation_test_and_model_selection.ipynb
+  - notebooks/05_machine_learning_fundamentals/04_overfitting_and_bias_variance.ipynb
+- week: 9
+  title: Nền tảng ML (2) · Bài thi 1
+  goal: Đường cong học, rò rỉ dữ liệu, dịch chuyển phân phối.
+  items:
+  - notebooks/05_machine_learning_fundamentals/05_learning_curves_and_error_analysis.ipynb
+  - notebooks/05_machine_learning_fundamentals/06_curse_of_dimensionality_and_no_free_lunch.ipynb
+  - notebooks/05_machine_learning_fundamentals/07_data_leakage.ipynb
+  - notebooks/05_machine_learning_fundamentals/08_distribution_shift.ipynb
+  - notebooks/05_machine_learning_fundamentals/90_exercises.ipynb
+  - notebooks/05_machine_learning_fundamentals/99_checkpoint.ipynb
+  - exercises/basic/03_ml_workflow.ipynb
+  - quizzes/final_exams/final_exam_1_foundations.ipynb
+- week: 10
+  title: Hồi quy tuyến tính (1)
+  goal: Đơn biến, đa biến, normal equation, SGD/mini-batch.
+  items:
+  - notebooks/06_linear_regression/01_linear_regression_one_variable.ipynb
+  - notebooks/06_linear_regression/02_linear_regression_multiple_variables.ipynb
+  - notebooks/06_linear_regression/03_normal_equation_and_gd_tips.ipynb
+  - notebooks/06_linear_regression/04_batch_sgd_minibatch_gd.ipynb
+  - notebooks/06_linear_regression/91_assignment_linear_regression_one_variable.ipynb
+  - notebooks/06_linear_regression/93_assignment_sgd_minibatch.ipynb
+- week: 11
+  title: Hồi quy tuyến tính (2)
+  goal: Đa thức, góc nhìn xác suất, Ridge/Lasso, chẩn đoán.
+  items:
+  - notebooks/06_linear_regression/05_polynomial_regression.ipynb
+  - notebooks/06_linear_regression/06_probabilistic_view_scratch_and_sklearn.ipynb
+  - notebooks/06_linear_regression/07_regularization_ridge_lasso.ipynb
+  - notebooks/06_linear_regression/08_diagnostics_and_failure_cases.ipynb
+  - notebooks/06_linear_regression/92_assignment_linear_regression_multiple_variables.ipynb
+  - notebooks/06_linear_regression/90_exercises.ipynb
+  - notebooks/06_linear_regression/99_checkpoint.ipynb
+- week: 12
+  title: Hồi quy logistic (1)
+  goal: Sigmoid, log-loss, tự cài và tối ưu, regularization.
+  items:
+  - notebooks/07_logistic_regression/01_logistic_regression.ipynb
+  - notebooks/07_logistic_regression/02_from_scratch_and_optimization.ipynb
+  - notebooks/07_logistic_regression/03_regularized_logistic_regression.ipynb
+  - notebooks/07_logistic_regression/04_handwritten_digits_binary.ipynb
+  - notebooks/07_logistic_regression/91_assignment_logistic_regression.ipynb
+- week: 13
+  title: Hồi quy logistic (2)
+  goal: One-vs-all, softmax, ngưỡng, failure cases; bộ phân loại tuyến tính trên CIFAR-10.
+  items:
+  - notebooks/07_logistic_regression/05_one_vs_all.ipynb
+  - notebooks/07_logistic_regression/06_softmax_regression.ipynb
+  - notebooks/07_logistic_regression/07_threshold_and_failure_cases.ipynb
+  - notebooks/07_logistic_regression/08_linear_classifiers_cifar10.ipynb
+  - notebooks/07_logistic_regression/92_assignment_regularized_logistic_regression.ipynb
+  - notebooks/07_logistic_regression/93_assignment_softmax_regression.ipynb
+  - notebooks/07_logistic_regression/90_exercises.ipynb
+  - notebooks/07_logistic_regression/99_checkpoint.ipynb
+- week: 14
+  title: kNN & Naive Bayes
+  goal: Mô hình dựa trên khoảng cách và xác suất có điều kiện.
+  items:
+  - notebooks/08_knn/01_intuition_and_distances.ipynb
+  - notebooks/08_knn/02_from_scratch.ipynb
+  - notebooks/08_knn/03_scaling_and_choosing_k.ipynb
+  - notebooks/08_knn/04_failure_cases_and_curse_of_dimensionality.ipynb
+  - notebooks/08_knn/90_exercises.ipynb
+  - notebooks/08_knn/99_checkpoint.ipynb
+  - notebooks/09_naive_bayes/01_bayes_and_naive_assumption.ipynb
+  - notebooks/09_naive_bayes/02_gaussian_nb_from_scratch.ipynb
+  - notebooks/09_naive_bayes/03_multinomial_bernoulli_text.ipynb
+  - notebooks/09_naive_bayes/04_why_naive_works_and_fails.ipynb
+  - notebooks/09_naive_bayes/90_exercises.ipynb
+  - notebooks/09_naive_bayes/99_checkpoint.ipynb
+- week: 15
+  title: Cây quyết định
+  goal: Entropy/Gini, tự cài cây, overfitting và cắt tỉa.
+  items:
+  - notebooks/10_decision_trees/01_intuition_entropy_gini.ipynb
+  - notebooks/10_decision_trees/02_classifier_from_scratch.ipynb
+  - notebooks/10_decision_trees/03_regression_trees.ipynb
+  - notebooks/10_decision_trees/04_overfitting_and_pruning.ipynb
+  - notebooks/10_decision_trees/05_failure_cases_and_interpretation.ipynb
+  - notebooks/10_decision_trees/90_exercises.ipynb
+  - notebooks/10_decision_trees/99_checkpoint.ipynb
+- week: 16
+  title: Random Forest & Gradient Boosting
+  goal: Bagging giảm phương sai, boosting giảm bias.
+  items:
+  - notebooks/11_random_forest/01_bagging_and_variance_reduction.ipynb
+  - notebooks/11_random_forest/02_random_forest_from_scratch.ipynb
+  - notebooks/11_random_forest/03_oob_importance_and_tuning.ipynb
+  - notebooks/11_random_forest/90_exercises.ipynb
+  - notebooks/11_random_forest/99_checkpoint.ipynb
+  - notebooks/12_gradient_boosting/01_boosting_intuition_adaboost.ipynb
+  - notebooks/12_gradient_boosting/02_gradient_boosting_from_scratch.ipynb
+  - notebooks/12_gradient_boosting/03_xgboost_lightgbm_catboost.ipynb
+  - notebooks/12_gradient_boosting/04_tuning_and_rf_vs_gb.ipynb
+  - notebooks/12_gradient_boosting/90_exercises.ipynb
+  - notebooks/12_gradient_boosting/99_checkpoint.ipynb
+- week: 17
+  title: SVM · Bài thi 2 · Project 01
+  goal: Lề cực đại, kernel; tổng kết học có giám sát.
+  items:
+  - notebooks/13_svm_and_kernels/01_maximum_margin_intuition.ipynb
+  - notebooks/13_svm_and_kernels/02_soft_margin_hinge_loss_from_scratch.ipynb
+  - notebooks/13_svm_and_kernels/03_kernel_trick.ipynb
+  - notebooks/13_svm_and_kernels/04_svm_in_practice_and_failure_cases.ipynb
+  - notebooks/13_svm_and_kernels/90_exercises.ipynb
+  - notebooks/13_svm_and_kernels/99_checkpoint.ipynb
+  - exercises/intermediate/01_from_scratch_algorithms.ipynb
+  - quizzes/final_exams/final_exam_2_supervised.ipynb
+  - projects/01_regression/project.ipynb
+- week: 18
+  title: Đánh giá mô hình
+  goal: Metric đúng cho bài toán, ROC/PR, ngưỡng.
+  items:
+  - notebooks/14_model_evaluation/01_confusion_matrix_and_metrics.ipynb
+  - notebooks/14_model_evaluation/02_roc_pr_and_thresholds.ipynb
+  - notebooks/14_model_evaluation/03_regression_metrics.ipynb
+  - notebooks/14_model_evaluation/04_choosing_metrics_case_studies.ipynb
+  - notebooks/14_model_evaluation/90_exercises.ipynb
+  - notebooks/14_model_evaluation/99_checkpoint.ipynb
+- week: 19
+  title: Cross-validation & tối ưu siêu tham số
+  goal: Sơ đồ chia đúng, nested CV, random/Bayesian search.
+  items:
+  - notebooks/15_cross_validation/01_holdout_kfold_stratified.ipynb
+  - notebooks/15_cross_validation/02_group_timeseries_loo.ipynb
+  - notebooks/15_cross_validation/03_nested_cv_and_protocol.ipynb
+  - notebooks/15_cross_validation/90_exercises.ipynb
+  - notebooks/15_cross_validation/99_checkpoint.ipynb
+  - notebooks/16_hyperparameter_optimization/01_grid_vs_random_search.ipynb
+  - notebooks/16_hyperparameter_optimization/02_successive_halving_hyperband.ipynb
+  - notebooks/16_hyperparameter_optimization/03_bayesian_optimization_optuna.ipynb
+  - notebooks/16_hyperparameter_optimization/90_exercises.ipynb
+  - notebooks/16_hyperparameter_optimization/99_checkpoint.ipynb
+- week: 20
+  title: Feature engineering & selection
+  goal: Tạo và chọn đặc trưng không rò rỉ.
+  items:
+  - notebooks/17_feature_engineering/01_numeric_transforms.ipynb
+  - notebooks/17_feature_engineering/02_categorical_encoding.ipynb
+  - notebooks/17_feature_engineering/03_interaction_datetime_text_aggregation.ipynb
+  - notebooks/17_feature_engineering/04_end_to_end_pipeline.ipynb
+  - notebooks/17_feature_engineering/90_exercises.ipynb
+  - notebooks/17_feature_engineering/99_checkpoint.ipynb
+  - notebooks/18_feature_selection/01_filter_methods.ipynb
+  - notebooks/18_feature_selection/02_wrapper_methods.ipynb
+  - notebooks/18_feature_selection/03_embedded_methods_and_pitfalls.ipynb
+  - notebooks/18_feature_selection/90_exercises.ipynb
+  - notebooks/18_feature_selection/99_checkpoint.ipynb
+- week: 21
+  title: Dữ liệu mất cân bằng · Bài thi 3 · Project 02
+  goal: Resampling, class weight, ngưỡng theo chi phí.
+  items:
+  - notebooks/19_imbalanced_learning/01_why_accuracy_lies.ipynb
+  - notebooks/19_imbalanced_learning/02_resampling_and_smote.ipynb
+  - notebooks/19_imbalanced_learning/03_class_weights_threshold_cost.ipynb
+  - notebooks/19_imbalanced_learning/90_exercises.ipynb
+  - notebooks/19_imbalanced_learning/99_checkpoint.ipynb
+  - exercises/intermediate/02_model_selection_and_evaluation.ipynb
+  - exercises/intermediate/03_debugging_ml_code.ipynb
+  - quizzes/final_exams/final_exam_3_practical_ml.ipynb
+  - projects/02_classification/project.ipynb
+- week: 22
+  title: Phân cụm & giảm chiều
+  goal: K-Means, phân cấp, DBSCAN; PCA, t-SNE, UMAP.
+  items:
+  - notebooks/20_clustering/01_kmeans_from_scratch.ipynb
+  - notebooks/20_clustering/02_choosing_k_and_failure_cases.ipynb
+  - notebooks/20_clustering/03_hierarchical_clustering.ipynb
+  - notebooks/20_clustering/04_dbscan.ipynb
+  - notebooks/20_clustering/90_exercises.ipynb
+  - notebooks/20_clustering/99_checkpoint.ipynb
+  - notebooks/21_dimensionality_reduction/01_pca_from_scratch.ipynb
+  - notebooks/21_dimensionality_reduction/02_pca_in_practice.ipynb
+  - notebooks/21_dimensionality_reduction/03_tsne_umap.ipynb
+  - notebooks/21_dimensionality_reduction/90_exercises.ipynb
+  - notebooks/21_dimensionality_reduction/99_checkpoint.ipynb
+- week: 23
+  title: Phát hiện bất thường · Project 03
+  goal: Phương pháp thống kê, Isolation Forest, LOF; đánh giá khi ít nhãn.
+  items:
+  - notebooks/22_anomaly_detection/01_statistical_and_gaussian_methods.ipynb
+  - notebooks/22_anomaly_detection/02_isolation_forest_lof_ocsvm.ipynb
+  - notebooks/22_anomaly_detection/03_evaluation_and_practice.ipynb
+  - notebooks/22_anomaly_detection/90_exercises.ipynb
+  - notebooks/22_anomaly_detection/99_checkpoint.ipynb
+  - projects/03_clustering/project.ipynb
+- week: 24
+  title: ML xác suất
+  goal: Gaussian nhiều chiều, GMM/EM, hồi quy Bayes, Gaussian Process, HMM.
+  items:
+  - notebooks/23_probabilistic_machine_learning/01_multivariate_gaussian.ipynb
+  - notebooks/23_probabilistic_machine_learning/02_gmm_and_em.ipynb
+  - notebooks/23_probabilistic_machine_learning/03_bayesian_linear_regression.ipynb
+  - notebooks/23_probabilistic_machine_learning/04_gaussian_processes.ipynb
+  - notebooks/23_probabilistic_machine_learning/05_hidden_markov_models.ipynb
+  - notebooks/23_probabilistic_machine_learning/90_exercises.ipynb
+  - notebooks/23_probabilistic_machine_learning/99_checkpoint.ipynb
+- week: 25
+  title: Ensemble & chuỗi thời gian
+  goal: Voting, stacking; baseline, ARIMA, backtesting.
+  items:
+  - notebooks/24_ensemble_learning/01_voting_and_diversity.ipynb
+  - notebooks/24_ensemble_learning/02_stacking_and_blending.ipynb
+  - notebooks/24_ensemble_learning/03_ensemble_design.ipynb
+  - notebooks/24_ensemble_learning/90_exercises.ipynb
+  - notebooks/24_ensemble_learning/99_checkpoint.ipynb
+  - notebooks/25_time_series/01_components_and_stationarity.ipynb
+  - notebooks/25_time_series/02_baselines_and_smoothing.ipynb
+  - notebooks/25_time_series/03_arima_family.ipynb
+  - notebooks/25_time_series/04_feature_based_forecasting_and_backtesting.ipynb
+  - notebooks/25_time_series/90_exercises.ipynb
+  - notebooks/25_time_series/99_checkpoint.ipynb
+- week: 26
+  title: Hệ gợi ý · Bài thi 4 · Project 04–05
+  goal: Content-based, collaborative filtering, matrix factorization, metric xếp hạng.
+  items:
+  - notebooks/26_recommender_systems/01_popularity_and_content_based.ipynb
+  - notebooks/26_recommender_systems/02_collaborative_filtering.ipynb
+  - notebooks/26_recommender_systems/03_matrix_factorization.ipynb
+  - notebooks/26_recommender_systems/04_ranking_metrics.ipynb
+  - notebooks/26_recommender_systems/90_exercises.ipynb
+  - notebooks/26_recommender_systems/99_checkpoint.ipynb
+  - quizzes/final_exams/final_exam_4_unsupervised_advanced.ipynb
+  - projects/04_time_series/project.ipynb
+  - projects/05_recommendation/project.ipynb
+- week: 27
+  title: Nền tảng deep learning
+  goal: Perceptron, đồ thị tính toán, backprop, mạng nơ-ron từ đầu, PyTorch, TensorFlow/Keras.
+  items:
+  - notebooks/27_deep_learning_foundations/01_perceptron_and_neuron.ipynb
+  - notebooks/27_deep_learning_foundations/02_computational_graph_and_backprop.ipynb
+  - notebooks/27_deep_learning_foundations/03_neural_network_from_scratch.ipynb
+  - notebooks/27_deep_learning_foundations/04_pytorch_fundamentals.ipynb
+  - notebooks/27_deep_learning_foundations/05_tensorflow_and_keras.ipynb
+  - notebooks/27_deep_learning_foundations/90_exercises.ipynb
+  - notebooks/27_deep_learning_foundations/99_checkpoint.ipynb
+- week: 28
+  title: Mạng nơ-ron
+  goal: Hàm kích hoạt, khởi tạo, chuẩn hoá, optimizer, điều chuẩn.
+  items:
+  - notebooks/28_neural_networks/01_activation_functions.ipynb
+  - notebooks/28_neural_networks/02_initialization_and_normalization.ipynb
+  - notebooks/28_neural_networks/03_optimizers.ipynb
+  - notebooks/28_neural_networks/04_regularization_and_training_recipes.ipynb
+  - notebooks/28_neural_networks/91_assignment_activation_functions.ipynb
+  - notebooks/28_neural_networks/90_exercises.ipynb
+  - notebooks/28_neural_networks/99_checkpoint.ipynb
+- week: 29
+  title: CNN
+  goal: Tích chập từ đầu, CNN với PyTorch, LeNet → ResNet, CNN trên ảnh thật.
+  items:
+  - notebooks/29_cnn/01_convolution_from_scratch.ipynb
+  - notebooks/29_cnn/02_cnn_with_pytorch.ipynb
+  - notebooks/29_cnn/03_architectures_lenet_to_resnet.ipynb
+  - notebooks/29_cnn/04_cnn_on_real_images.ipynb
+  - notebooks/29_cnn/90_exercises.ipynb
+  - notebooks/29_cnn/99_checkpoint.ipynb
+- week: 30
+  title: Mô hình chuỗi
+  goal: RNN, gradient tiêu biến/bùng nổ, LSTM/GRU, seq2seq + attention.
+  items:
+  - notebooks/30_sequence_models/01_rnn_from_scratch.ipynb
+  - notebooks/30_sequence_models/02_vanishing_exploding_gradients.ipynb
+  - notebooks/30_sequence_models/03_lstm_gru.ipynb
+  - notebooks/30_sequence_models/04_seq2seq_and_attention.ipynb
+  - notebooks/30_sequence_models/90_exercises.ipynb
+  - notebooks/30_sequence_models/99_checkpoint.ipynb
+- week: 31
+  title: Transformer
+  goal: Attention từ đầu, multi-head, positional encoding, mini-GPT, BERT/GPT/ViT.
+  items:
+  - notebooks/31_transformers/01_attention_from_scratch.ipynb
+  - notebooks/31_transformers/02_multi_head_and_positional_encoding.ipynb
+  - notebooks/31_transformers/03_mini_gpt.ipynb
+  - notebooks/31_transformers/04_encoder_decoder_bert_gpt_vit.ipynb
+  - notebooks/31_transformers/90_exercises.ipynb
+  - notebooks/31_transformers/99_checkpoint.ipynb
+- week: 32
+  title: NLP · Project 06
+  goal: Tiền xử lý tiếng Việt, BoW/TF-IDF, embedding, truy hồi ngữ nghĩa.
+  items:
+  - notebooks/32_nlp/01_text_preprocessing_and_tokenization.ipynb
+  - notebooks/32_nlp/02_bow_tfidf_classification.ipynb
+  - notebooks/32_nlp/03_word_embeddings.ipynb
+  - notebooks/32_nlp/04_semantic_similarity_and_retrieval.ipynb
+  - notebooks/32_nlp/90_exercises.ipynb
+  - notebooks/32_nlp/99_checkpoint.ipynb
+  - projects/06_nlp/project.ipynb
+- week: 33
+  title: Thị giác máy tính · Project 07
+  goal: Augmentation, transfer learning, phát hiện & phân đoạn.
+  items:
+  - notebooks/33_computer_vision/01_images_and_augmentation.ipynb
+  - notebooks/33_computer_vision/02_transfer_learning_and_fine_tuning.ipynb
+  - notebooks/33_computer_vision/03_detection_and_segmentation_concepts.ipynb
+  - notebooks/33_computer_vision/90_exercises.ipynb
+  - notebooks/33_computer_vision/99_checkpoint.ipynb
+  - projects/07_computer_vision/project.ipynb
+- week: 34
+  title: Học biểu diễn
+  goal: Autoencoder, VAE, học tương phản / tự giám sát.
+  items:
+  - notebooks/34_representation_learning/01_autoencoders.ipynb
+  - notebooks/34_representation_learning/02_variational_autoencoder.ipynb
+  - notebooks/34_representation_learning/03_contrastive_and_self_supervised.ipynb
+  - notebooks/34_representation_learning/90_exercises.ipynb
+  - notebooks/34_representation_learning/99_checkpoint.ipynb
+- week: 35
+  title: Học tăng cường · Bài thi 5
+  goal: MDP, Monte Carlo/TD, Q-learning, DQN, policy gradient, neuroevolution.
+  items:
+  - notebooks/35_reinforcement_learning/01_mdp_and_bellman.ipynb
+  - notebooks/35_reinforcement_learning/02_monte_carlo_and_td.ipynb
+  - notebooks/35_reinforcement_learning/03_q_learning_and_sarsa.ipynb
+  - notebooks/35_reinforcement_learning/04_dqn_and_policy_gradient.ipynb
+  - notebooks/35_reinforcement_learning/05_neuroevolution_genetic_algorithm.ipynb
+  - notebooks/35_reinforcement_learning/90_exercises.ipynb
+  - notebooks/35_reinforcement_learning/99_checkpoint.ipynb
+  - exercises/advanced/02_deep_learning_internals.ipynb
+  - quizzes/final_exams/final_exam_5_deep_learning.ipynb
+- week: 36
+  title: Explainable AI
+  goal: Giải thích toàn cục/cục bộ, SHAP, cạm bẫy của giải thích.
+  items:
+  - notebooks/36_explainable_ai/01_global_explanations.ipynb
+  - notebooks/36_explainable_ai/02_local_explanations_lime_shap.ipynb
+  - notebooks/36_explainable_ai/03_pitfalls_of_explanations.ipynb
+  - notebooks/36_explainable_ai/90_exercises.ipynb
+  - notebooks/36_explainable_ai/99_checkpoint.ipynb
+- week: 37
+  title: Bất định & hiệu chỉnh
+  goal: Calibration, Platt/isotonic, aleatoric/epistemic, conformal prediction.
+  items:
+  - notebooks/37_uncertainty_and_calibration/01_calibration_reliability_brier.ipynb
+  - notebooks/37_uncertainty_and_calibration/02_platt_and_isotonic.ipynb
+  - notebooks/37_uncertainty_and_calibration/03_aleatoric_and_epistemic.ipynb
+  - notebooks/37_uncertainty_and_calibration/04_conformal_prediction.ipynb
+  - notebooks/37_uncertainty_and_calibration/90_exercises.ipynb
+  - notebooks/37_uncertainty_and_calibration/99_checkpoint.ipynb
+- week: 38
+  title: Suy luận nhân quả
+  goal: DAG, kết quả tiềm năng, điểm xu hướng, meta-learner, uplift.
+  items:
+  - notebooks/38_causal_machine_learning/01_correlation_vs_causation_dags.ipynb
+  - notebooks/38_causal_machine_learning/02_potential_outcomes.ipynb
+  - notebooks/38_causal_machine_learning/03_propensity_score_methods.ipynb
+  - notebooks/38_causal_machine_learning/04_meta_learners_and_uplift.ipynb
+  - notebooks/38_causal_machine_learning/90_exercises.ipynb
+  - notebooks/38_causal_machine_learning/99_checkpoint.ipynb
+  - exercises/advanced/03_trustworthy_ml_and_causality.ipynb
+- week: 39
+  title: Hệ thống ML
+  goal: Thiết kế hệ thống, tái lập, đóng gói, model registry.
+  items:
+  - notebooks/39_ml_systems/01_ml_system_design.ipynb
+  - notebooks/39_ml_systems/02_reproducibility_and_experiment_tracking.ipynb
+  - notebooks/39_ml_systems/03_packaging_and_model_registry.ipynb
+  - notebooks/39_ml_systems/90_exercises.ipynb
+  - notebooks/39_ml_systems/99_checkpoint.ipynb
+  - exercises/advanced/01_advanced_ml_techniques.ipynb
+- week: 40
+  title: MLOps · Project 08
+  goal: FastAPI, Docker, CI/CD, giám sát trôi, chiến lược triển khai.
+  items:
+  - notebooks/40_mlops/01_serving_with_fastapi.ipynb
+  - notebooks/40_mlops/02_docker_and_ci_cd.ipynb
+  - notebooks/40_mlops/03_monitoring_and_drift.ipynb
+  - notebooks/40_mlops/04_deployment_strategies.ipynb
+  - notebooks/40_mlops/90_exercises.ipynb
+  - notebooks/40_mlops/99_checkpoint.ipynb
+  - projects/08_end_to_end_ml_system/project.ipynb
+- week: 41
+  title: 'Capstone: hướng dẫn & capstone mẫu'
+  goal: Chọn đề tài, viết design doc, đi qua một capstone hoàn chỉnh.
+  items:
+  - notebooks/41_capstone_projects/01_capstone_guide.ipynb
+  - notebooks/41_capstone_projects/02_capstone_walkthrough.ipynb
+- week: 42–44
+  title: Capstone của bạn · Bài thi 6
+  goal: Làm capstone theo lộ trình 6 tuần rút gọn (bài 01), tự chấm bằng rubric; hoàn thành checkpoint chương 41 và bài thi cuối.
+  items:
+  - notebooks/41_capstone_projects/90_exercises.ipynb
+  - notebooks/41_capstone_projects/99_checkpoint.ipynb
+  - quizzes/final_exams/final_exam_6_trustworthy_systems.ipynb
+footer: '---
+
+
+  **Gợi ý nhịp học**: 2–3 buổi/tuần, mỗi buổi 2–3 giờ. Buổi 1: đọc và chạy bài học, tự gõ lại phần "tự code". Buổi 2: bài tập L0–L5. Buổi 3: L6–L7, checkpoint, ôn `questions.md` của tuần trước. Nếu checkpoint
+  báo **REVIEW**, ôn đúng các chủ đề yếu được liệt kê rồi làm lại — đừng đi tiếp khi chưa PASS. Xem thêm [STUDY_GUIDE.md](STUDY_GUIDE.md).'

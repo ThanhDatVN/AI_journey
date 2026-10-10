@@ -1,0 +1,25 @@
+# Môi trường conda cho khoá học.
+#   conda env create -f environment.yml
+#   conda activate ml-course
+# Mặc định chỉ cài core stack (đủ cho Phase 0 → Phase 7). Thư viện nâng cao cài khi học tới chương tương ứng:
+#   pip install -e ".[boosting]"   # ch.12, 24 — XGBoost, LightGBM, CatBoost
+#   pip install -e ".[tuning]"     # ch.16 — Optuna
+#   pip install -e ".[stats]"      # ch.25 — statsmodels
+#   pip install -e ".[viz]"        # ch.21 — UMAP
+#   pip install -e ".[dl]"         # ch.27–35 — PyTorch, torchvision (GPU: cài torch theo hướng dẫn pytorch.org trước)
+#   pip install -e ".[tf]"         # ch.27 bài 05 (tuỳ chọn) — TensorFlow/Keras
+#   pip install -e ".[xai]"        # ch.36 — SHAP
+#   pip install -e ".[mlops]"      # ch.39–41, project 08 — MLflow, FastAPI, uvicorn, httpx, pydantic, skops, ONNX
+#   pip install -e ".[all]"        # tất cả
+name: ml-course
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -e .
+      - pytest>=8.0
+      - ruff>=0.5
+      - nbformat>=5.9
+      - nbclient>=0.10

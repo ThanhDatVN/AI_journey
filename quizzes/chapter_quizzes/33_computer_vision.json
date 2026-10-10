@@ -1,0 +1,235 @@
+{
+ "id": "33_computer_vision",
+ "kind": "Chapter",
+ "title": "33 · Computer Vision",
+ "next": "34_representation_learning",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "tensor layout",
+     "answer_hashes": [
+      "e210be9f3db02a9c3aca"
+     ],
+     "lesson": "01_images_and_augmentation.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "antialias",
+     "answer_hashes": [
+      "749c486419c5533056f4"
+     ],
+     "lesson": "01_images_and_augmentation.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "multi",
+     "topic": "augmentation validity",
+     "answer_hashes": [
+      "86b2e7ad5a599e04c08a"
+     ],
+     "lesson": "01_images_and_augmentation.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "augmentation choice",
+     "answer_hashes": [
+      "6e19427ab3610b6ac993"
+     ],
+     "lesson": "01_images_and_augmentation.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "shortcut",
+     "answer_hashes": [
+      "fa4a328a46324c31673c"
+     ],
+     "lesson": "01_images_and_augmentation.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "tf",
+     "topic": "transfer idea",
+     "answer_hashes": [
+      "2864e839b138c20e131e"
+     ],
+     "lesson": "02_transfer_learning_and_fine_tuning.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "linear probe",
+     "answer_hashes": [
+      "755187744bd59e672469"
+     ],
+     "lesson": "02_transfer_learning_and_fine_tuning.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "fine-tune lr",
+     "answer_hashes": [
+      "62a382b057b5c68a566b"
+     ],
+     "lesson": "02_transfer_learning_and_fine_tuning.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "multi",
+     "topic": "preprocessing",
+     "answer_hashes": [
+      "d1e3a1e77b45c18c8389"
+     ],
+     "lesson": "02_transfer_learning_and_fine_tuning.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "iou",
+     "answer_hashes": [
+      "79536949a30c46a5eff6"
+     ],
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "nms",
+     "answer_hashes": [
+      "724169e5e83ed3ff4944"
+     ],
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "multi",
+     "topic": "ap",
+     "answer_hashes": [
+      "97c77a35c64749b8ea4d"
+     ],
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "grid detector",
+     "answer_hashes": [
+      "01e1abee018669a7a536"
+     ],
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "detector families",
+     "answer_hashes": [
+      "7fe982b68c49875c38a7"
+     ],
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "seg metric",
+     "answer_hashes": [
+      "b068917f4c05a650b6b6"
+     ],
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "unet",
+     "answer_hashes": [
+      "b391f2afc02943f7a271"
+     ],
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "iou",
+     "answer_hashes": [
+      "49b2e36297907fdf0756"
+     ],
+     "decimals": 3,
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "tensor size",
+     "answer_hashes": [
+      "ad8222eff85fa2fb1f79"
+     ],
+     "decimals": 0,
+     "lesson": "01_images_and_augmentation.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "ap",
+     "answer_hashes": [
+      "0e50ae180ce4b5da9dd7"
+     ],
+     "decimals": 3,
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "dice",
+     "answer_hashes": [
+      "161f8dc0492f1fb87198"
+     ],
+     "decimals": 3,
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "grid",
+     "answer_hashes": [
+      "4b4e623d21a0ddc642f8"
+     ],
+     "decimals": 0,
+     "lesson": "03_detection_and_segmentation_concepts.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

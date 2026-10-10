@@ -1,0 +1,265 @@
+title: "25 · Time Series"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: decomposition
+        lesson: 01_components_and_stationarity.ipynb
+        type: mcq
+        question: "Biên độ mùa vụ của doanh số tăng theo mức doanh số. Nên dùng:"
+        options: {a: "Phân rã nhân tính (hoặc lấy log rồi phân rã cộng tính)", b: "Phân rã cộng tính trên dữ liệu gốc", c: "Bỏ mùa vụ", d: "Sai phân bậc 2"}
+        answer: a
+        explanation: "log biến nhân tính thành cộng tính."
+      - id: t02
+        topic: moving average
+        lesson: 01_components_and_stationarity.ipynb
+        type: mcq
+        question: "Trung bình trượt căn giữa 7 ngày dùng để ước lượng xu hướng vì:"
+        options: {a: "Một cửa sổ đúng một chu kỳ tuần làm triệt tiêu mùa vụ tuần", b: "7 là số nguyên tố", c: "Nó dự báo được tương lai", d: "Nó loại bỏ xu hướng"}
+        answer: a
+        explanation: "Tổng mùa vụ trong một chu kỳ ≈ 0."
+      - id: t03
+        topic: stationarity
+        lesson: 01_components_and_stationarity.ipynb
+        type: multi
+        question: "Chuỗi nào KHÔNG dừng?"
+        options: {a: "Bước ngẫu nhiên", b: "Nhiễu trắng", c: "AR(1) với φ = 0.5", d: "Chuỗi có xu hướng tăng tuyến tính"}
+        answer: ad
+        explanation: "Bước ngẫu nhiên: phương sai tăng theo t; xu hướng: trung bình thay đổi."
+      - id: t04
+        topic: spurious
+        lesson: 01_components_and_stationarity.ipynb
+        type: tf
+        question: "Hai chuỗi có xu hướng tương quan 0.9 chứng tỏ chúng có quan hệ với nhau."
+        answer: false
+        explanation: "Tương quan giả — phân tích trên sai phân hoặc phần dư."
+      - id: t05
+        topic: leakage
+        lesson: 01_components_and_stationarity.ipynb
+        type: mcq
+        question: "Dùng s.rolling(7).mean() làm feature để dự báo doanh số ngày t là:"
+        options: {a: "Rò rỉ — cửa sổ chứa chính ngày t; cần shift", b: "Đúng", c: "Chỉ sai khi dữ liệu thiếu", d: "Tốt hơn lag 1"}
+        answer: a
+        explanation: "Luôn shift(h) với tầm dự báo h."
+      - id: t06
+        topic: MASE
+        lesson: 02_baselines_and_smoothing.ipynb
+        type: mcq
+        question: "MASE = 0.8 nghĩa là:"
+        options: {a: "MAE bằng 80% MAE của seasonal naive một bước trên train", b: "Sai số 80%", c: "R² = 0.8", d: "Tệ hơn baseline"}
+        answer: a
+        explanation: "< 1 là tốt hơn seasonal naive."
+      - id: t07
+        topic: SES
+        lesson: 02_baselines_and_smoothing.ipynb
+        type: mcq
+        question: "SES với α = 1 tương đương:"
+        options: {a: "Naive (giá trị cuối)", b: "Trung bình toàn bộ", c: "Seasonal naive", d: "Drift"}
+        answer: a
+        explanation: "ℓ_t = y_t."
+      - id: t08
+        topic: single holdout
+        lesson: 02_baselines_and_smoothing.ipynb
+        type: tf
+        question: "Xếp hạng mô hình trên một điểm gốc dự báo duy nhất là đáng tin cậy."
+        answer: false
+        explanation: "Có thể do may mắn — backtest nhiều điểm gốc."
+      - id: t09
+        topic: ACF PACF
+        lesson: 03_arima_family.ipynb
+        type: mcq
+        question: "PACF cắt sau độ trễ 2, ACF giảm dần. Mô hình phù hợp:"
+        options: {a: "AR(2)", b: "MA(2)", c: "Nhiễu trắng", d: "Bước ngẫu nhiên"}
+        answer: a
+        explanation: "AR(p): PACF cắt sau p."
+      - id: t10
+        topic: AR forecast
+        lesson: 03_arima_family.ipynb
+        type: mcq
+        question: "Dự báo của AR dừng khi tầm h rất lớn:"
+        options: {a: "Tiến về trung bình c/(1 − Σφ)", b: "Tăng vô hạn", c: "Bằng giá trị cuối", d: "Dao động mãi"}
+        answer: a
+        explanation: "Quay về trung bình; khoảng tiến tới phương sai không điều kiện."
+      - id: t11
+        topic: SARIMA
+        lesson: 03_arima_family.ipynb
+        type: mcq
+        question: "Sau sai phân mùa vụ lag 7, ACF có đỉnh âm lớn ở trễ 7. Thành phần nên thêm:"
+        options: {a: "MA mùa vụ (Θ₁)", b: "Sai phân thêm lần nữa", c: "Xu hướng bậc 2", d: "Không cần gì"}
+        answer: a
+        explanation: "Dấu hiệu SARIMA (·)(0,1,1)₇."
+      - id: t12
+        topic: exogenous
+        lesson: 03_arima_family.ipynb
+        type: tf
+        question: "Biến ngoại sinh trong ARIMAX phải biết giá trị tương lai tại thời điểm dự báo."
+        answer: true
+        explanation: "Ví dụ lịch khuyến mãi đã lên kế hoạch."
+      - id: t13
+        topic: random cv
+        lesson: 04_feature_based_forecasting_and_backtesting.ipynb
+        type: mcq
+        question: "Vì sao KFold xáo trộn đánh giá quá cao HistGradientBoosting trên chuỗi có xu hướng?"
+        options:
+          a: "Fold test nằm xen giữa train nên cây chỉ cần nội suy; dự báo thật cần ngoại suy xu hướng mà cây không làm được"
+          b: "Vì KFold dùng ít dữ liệu"
+          c: "Vì boosting không dùng được cho chuỗi thời gian"
+          d: "Vì random_state"
+        answer: a
+        explanation: "Dùng backtest theo thời gian; khử xu hướng hoặc lai tuyến tính + cây."
+      - id: t14
+        topic: feature availability
+        lesson: 04_feature_based_forecasting_and_backtesting.ipynb
+        type: multi
+        question: "Dự báo 28 ngày tới (chiến lược direct). Feature nào dùng được?"
+        options: {a: "Thứ trong tuần", b: "Lịch khuyến mãi đã lên kế hoạch", c: "Doanh số hôm qua (lag 1)", d: "Doanh số cách 28 ngày (lag 28)"}
+        answer: abd
+        explanation: "Lag phải ≥ tầm dự báo."
+      - id: t15
+        topic: intervals
+        lesson: 04_feature_based_forecasting_and_backtesting.ipynb
+        type: mcq
+        question: "Khoảng dự báo từ phân vị phần dư nên lấy phần dư từ:"
+        options: {a: "Dự báo ngoài mẫu (backtest)", b: "Phần dư trên train", c: "Tập test cuối", d: "Phân phối chuẩn chuẩn tắc"}
+        answer: a
+        explanation: "Phần dư trên train thường quá nhỏ (lạc quan)."
+      - id: t16
+        topic: fourier
+        lesson: 04_feature_based_forecasting_and_backtesting.ipynb
+        type: mcq
+        question: "Ưu điểm của feature Fourier (sin/cos) cho mùa vụ năm so với 365 biến giả theo ngày:"
+        options: {a: "Ít tham số, mùa vụ trơn, khái quát tốt", b: "Bắt được mọi sự kiện đặc biệt", c: "Không cần dữ liệu", d: "Luôn chính xác hơn"}
+        answer: a
+        explanation: "Sự kiện hẹp (Tết) cần feature riêng hoặc nhiều số hạng."
+  math:
+    questions:
+      - id: m01
+        topic: SES
+        lesson: 02_baselines_and_smoothing.ipynb
+        type: numeric
+        decimals: 2
+        question: "SES α = 0.2, ℓ₀ = 100, y₁ = 110. ℓ₁ = ?"
+        answer: 102
+        explanation: "0.2·110 + 0.8·100."
+      - id: m02
+        topic: MASE
+        lesson: 02_baselines_and_smoothing.ipynb
+        type: numeric
+        decimals: 2
+        question: "MAE dự báo = 15, MAE seasonal naive một bước trên train = 20. MASE = ?"
+        answer: 0.75
+        explanation: "15/20."
+      - id: m03
+        topic: AR forecast
+        lesson: 03_arima_family.ipynb
+        type: numeric
+        decimals: 2
+        question: "AR(1): y_t = 1 + 0.5 y_{t−1}, y_T = 6. Dự báo ŷ_{T+2} = ?"
+        answer: 3
+        explanation: "ŷ_{T+1} = 1 + 0.5·6 = 4; ŷ_{T+2} = 1 + 0.5·4 = 3."
+      - id: m04
+        topic: AR mean
+        lesson: 03_arima_family.ipynb
+        type: numeric
+        decimals: 2
+        question: "AR(1): y_t = 3 + 0.4 y_{t−1} + ε_t. Trung bình dài hạn = ?"
+        answer: 5
+        explanation: "3/(1 − 0.4)."
+      - id: m05
+        topic: random walk variance
+        lesson: 01_components_and_stationarity.ipynb
+        type: numeric
+        decimals: 1
+        question: "Bước ngẫu nhiên y_t = y_{t−1} + ε_t, ε ~ N(0, 4), y_0 = 0. Phương sai của y_25 = ?"
+        answer: 100
+        explanation: "t·σ² = 25·4."
+coding:
+  tasks:
+    - id: c01
+      title: Seasonal naive và MASE
+      prompt: |
+        Viết `seasonal_naive(train, h, m)` (lặp lại m giá trị cuối) và `mase(y_true, y_pred, y_train, m)`.
+      code: |
+        def seasonal_naive(train, h, m):
+            ### START CODE HERE ### (≈ 1 dòng)
+            return np.tile(np.asarray(train, float)[-m:], h // m + 1)[:h]
+            ### END CODE HERE ###
+
+        def mase(y_true, y_pred, y_train, m):
+            ### START CODE HERE ### (≈ 2 dòng)
+            y_train = np.asarray(y_train, float)
+            return np.mean(np.abs(np.asarray(y_true) - np.asarray(y_pred))) / np.mean(np.abs(y_train[m:] - y_train[:-m]))
+            ### END CODE HERE ###
+      tests: |
+        check_close(seasonal_naive([1, 2, 3, 4, 5, 6, 7, 8], 5, 3), [6, 7, 8, 6, 7], message="seasonal naive")
+        check_close(mase([14, 16], [13, 13], [10, 12, 14, 11, 13, 15], 1), 2 / 2.2, message="MASE")
+        y = np.tile([1.0, 2, 3, 4, 5, 6, 7], 10)
+        check_close(mase(y[-7:], seasonal_naive(y[:-7], 7, 7), y[:-7] + np.arange(63) * 0.1, 7), 0.0, message="chuỗi tuần hoàn hoàn hảo → MASE 0")
+    - id: c02
+      title: Feature trễ không rò rỉ
+      prompt: |
+        Viết `lagged_rolling_mean(series, window, horizon)` = trung bình `window` giá trị mới nhất **đã biết** khi dự báo
+        `horizon` bước tới (pandas Series cùng index, NaN ở đầu).
+      code: |
+        def lagged_rolling_mean(series, window, horizon):
+            ### START CODE HERE ### (≈ 1 dòng)
+            return series.shift(horizon).rolling(window).mean()
+            ### END CODE HERE ###
+      tests: |
+        import pandas as pd
+        s = pd.Series(np.arange(30, dtype=float))
+        r = lagged_rolling_mean(s, 7, 1)
+        check_close(r.iloc[7], np.mean(np.arange(0, 7)), message="ngày 7 dùng ngày 0..6")
+        r14 = lagged_rolling_mean(s, 7, 14)
+        check_close(r14.iloc[20], np.mean(np.arange(0, 7)), message="tầm 14: ngày 20 dùng ngày 0..6")
+        check_true(r14.iloc[:20].isna().all(), "không đủ dữ liệu → NaN")
+analysis:
+  prompt: |
+    Một chuỗi siêu thị muốn dự báo nhu cầu từng mặt hàng ở 300 cửa hàng, 14 ngày tới, để đặt hàng. Đội dữ liệu đề xuất: (1) mỗi cặp
+    (cửa hàng, mặt hàng) một mô hình SARIMA riêng; (2) đánh giá bằng MAPE trên 14 ngày cuối; (3) feature thời tiết thực tế và
+    doanh số hôm qua; (4) dùng dự báo điểm để đặt hàng. Nhiều mặt hàng bán rất ít (nhiều ngày bằng 0). Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra hàng chục nghìn mô hình SARIMA riêng khó bảo trì, chuỗi thưa/ít dữ liệu ước lượng kém; đề xuất mô hình toàn cục (một mô hình boosting/feature cho nhiều chuỗi), phân cấp"
+    - "Chỉ ra MAPE vô nghĩa khi có số 0/giá trị nhỏ; dùng MASE/WAPE/RMSSE và so với baseline seasonal naive"
+    - "Chỉ ra đánh giá trên một khoảng 14 ngày là nhiễu; dùng rolling-origin backtest"
+    - "Chỉ ra thời tiết thực tế và doanh số hôm qua không có sẵn khi dự báo 14 ngày → dự báo thời tiết, lag ≥ 14 hoặc đệ quy"
+    - "Chỉ ra đặt hàng cần phân vị/khoảng dự báo (rủi ro thiếu hàng vs tồn kho), không chỉ dự báo điểm; kiểm tra độ phủ"
+  sample_answer: |
+    (1) 300 cửa hàng × hàng nghìn mặt hàng → quá nhiều SARIMA, nhiều chuỗi thưa (nhiều số 0) ước lượng kém; mô hình toàn cục (LightGBM với feature
+    lịch, giá, khuyến mãi, mã cửa hàng/mặt hàng, trễ ≥ 14) học chung giữa các chuỗi — cách thắng giải M5; kết hợp phân cấp. (2) MAPE chia cho 0/giá trị
+    nhỏ → bùng nổ; dùng MASE/RMSSE/WAPE, luôn so với seasonal naive. (3) Một cửa sổ 14 ngày nhiễu → backtest nhiều điểm gốc. (4) Thời tiết thực tế và
+    doanh số hôm qua chưa có khi dự báo 14 ngày → dự báo thời tiết, lag ≥ 14 (direct) hoặc đệ quy. (5) Đặt hàng theo phân vị nhu cầu (vd 90%) cân bằng
+    chi phí thiếu hàng/tồn kho → quantile regression hoặc khoảng từ phần dư backtest, kiểm tra độ phủ.
+project:
+  prompt: |
+    **Mini project — Dự báo 28 ngày cho một cửa hàng mới.** Dữ liệu `make_sales_series(n_days=900, start="2022-06-01", seed=11)`.
+    Dự báo 28 ngày cuối chỉ dùng dữ liệu trước đó (và lịch khuyến mãi/lễ của 28 ngày cuối — đã biết trước). Yêu cầu `holdout_mase` < 0.75
+    (thang đo: seasonal naive m = 7 trên phần dữ liệu train).
+  code: |
+    import pandas as pd
+    from sklearn.linear_model import LinearRegression
+    from ml_course.datasets import make_sales_series
+
+    data = make_sales_series(n_days=900, start="2022-06-01", seed=11).set_index("date").asfreq("D")
+    train, test = data.iloc[:-28], data.iloc[-28:]
+    ### START CODE HERE ### (≈ 14 dòng)
+    def feats(frame):
+        F = pd.DataFrame(index=frame.index)
+        F["t"] = (frame.index - data.index[0]).days / 365.25
+        for d in range(7):
+            F[f"dow_{d}"] = (frame.index.dayofweek == d).astype(float)
+        doy = frame.index.dayofyear.to_numpy()
+        for k in [1, 2, 3]:
+            F[f"sin_{k}"] = np.sin(2 * np.pi * k * doy / 365.25)
+            F[f"cos_{k}"] = np.cos(2 * np.pi * k * doy / 365.25)
+        F["tet"] = np.exp(-0.5 * ((doy - 30) / 7) ** 2)
+        F["promo"], F["holiday"] = frame["promo"].to_numpy(float), frame["is_holiday"].to_numpy(float)
+        return F
+    model = LinearRegression().fit(feats(train), np.log(train["sales"]))
+    forecast = np.exp(model.predict(feats(test)))
+    scale = np.mean(np.abs(train["sales"].to_numpy()[7:] - train["sales"].to_numpy()[:-7]))
+    holdout_mase = np.mean(np.abs(test["sales"].to_numpy() - forecast)) / scale
+    ### END CODE HERE ###
+    print(f"holdout MASE = {holdout_mase:.3f}")
+  tests: |
+    check_less(holdout_mase, 0.75, "MASE holdout < 0.75")

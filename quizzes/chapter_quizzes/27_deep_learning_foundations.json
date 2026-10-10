@@ -1,0 +1,271 @@
+{
+ "id": "27_deep_learning_foundations",
+ "kind": "Chapter",
+ "title": "27 · Deep Learning Foundations",
+ "next": "28_neural_networks",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "neuron",
+     "answer_hashes": [
+      "52b7285f93e453925b03"
+     ],
+     "lesson": "01_perceptron_and_neuron.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "perceptron convergence",
+     "answer_hashes": [
+      "3d76bb102d28c441bbf6"
+     ],
+     "lesson": "01_perceptron_and_neuron.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "tf",
+     "topic": "XOR",
+     "answer_hashes": [
+      "3cd6bc6618f099e9b358"
+     ],
+     "lesson": "01_perceptron_and_neuron.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "multi",
+     "topic": "universal approximation",
+     "answer_hashes": [
+      "b289bf42d5a22a45d548"
+     ],
+     "lesson": "01_perceptron_and_neuron.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "chain rule",
+     "answer_hashes": [
+      "9cd81e53e7af3abcbbf5"
+     ],
+     "lesson": "02_computational_graph_and_backprop.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "accumulate",
+     "answer_hashes": [
+      "4246ff040561b745726c"
+     ],
+     "lesson": "02_computational_graph_and_backprop.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "tf",
+     "topic": "topological order",
+     "answer_hashes": [
+      "cceebb81355773481cc3"
+     ],
+     "lesson": "02_computational_graph_and_backprop.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "efficiency",
+     "answer_hashes": [
+      "8277a585318200901013"
+     ],
+     "lesson": "02_computational_graph_and_backprop.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "linear backward",
+     "answer_hashes": [
+      "01ad19ad1f4d9a858d9c"
+     ],
+     "lesson": "03_neural_network_from_scratch.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "softmax CE",
+     "answer_hashes": [
+      "df0b23e84a4388052127"
+     ],
+     "lesson": "03_neural_network_from_scratch.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "tf",
+     "topic": "gradient check",
+     "answer_hashes": [
+      "2b48b4dc0567d1b8fdeb"
+     ],
+     "lesson": "03_neural_network_from_scratch.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "overfitting",
+     "answer_hashes": [
+      "1e7017bc551c588db0b2"
+     ],
+     "lesson": "03_neural_network_from_scratch.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "zero_grad",
+     "answer_hashes": [
+      "8fbf7f546d250e4d9c46"
+     ],
+     "lesson": "04_pytorch_fundamentals.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "cross entropy loss",
+     "answer_hashes": [
+      "0c14fc911db81b4cf9ae"
+     ],
+     "lesson": "04_pytorch_fundamentals.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "eval no_grad",
+     "answer_hashes": [
+      "c8a8518e08de4484772f"
+     ],
+     "lesson": "04_pytorch_fundamentals.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "tf",
+     "topic": "numpy interop",
+     "answer_hashes": [
+      "45e4b51d035459ffb7c1"
+     ],
+     "lesson": "04_pytorch_fundamentals.ipynb"
+    },
+    {
+     "id": "t17",
+     "type": "mcq",
+     "topic": "GradientTape",
+     "answer_hashes": [
+      "608e660d977d3994013d"
+     ],
+     "lesson": "05_tensorflow_and_keras.ipynb"
+    },
+    {
+     "id": "t18",
+     "type": "tf",
+     "topic": "tf.function tracing",
+     "answer_hashes": [
+      "b3ea8a90cdf547d3f907"
+     ],
+     "lesson": "05_tensorflow_and_keras.ipynb"
+    },
+    {
+     "id": "t19",
+     "type": "mcq",
+     "topic": "from_logits",
+     "answer_hashes": [
+      "736535d86d06162817ce"
+     ],
+     "lesson": "05_tensorflow_and_keras.ipynb"
+    },
+    {
+     "id": "t20",
+     "type": "multi",
+     "topic": "framework mapping",
+     "answer_hashes": [
+      "1aea9dfbf317706a64aa"
+     ],
+     "lesson": "05_tensorflow_and_keras.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "backprop scalar",
+     "answer_hashes": [
+      "64e835c693eca2338407"
+     ],
+     "decimals": 2,
+     "lesson": "02_computational_graph_and_backprop.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "sigmoid derivative",
+     "answer_hashes": [
+      "3b2a63f2be06e0fea32c"
+     ],
+     "decimals": 3,
+     "lesson": "02_computational_graph_and_backprop.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "parameters",
+     "answer_hashes": [
+      "2d7c7296a8678a6449a9"
+     ],
+     "decimals": 0,
+     "lesson": "03_neural_network_from_scratch.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "cross entropy",
+     "answer_hashes": [
+      "281f15ac0e8f500a288e"
+     ],
+     "decimals": 3,
+     "lesson": "03_neural_network_from_scratch.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "perceptron update",
+     "answer_hashes": [
+      "e89b96fa50605d73a54f"
+     ],
+     "decimals": 2,
+     "lesson": "01_perceptron_and_neuron.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

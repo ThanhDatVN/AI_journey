@@ -1,0 +1,321 @@
+title: "Bài thi tổng hợp 4 · Học không giám sát & ML cổ điển nâng cao (chương 20–26)"
+next: null
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: kmeans assumptions
+        lesson: 20_clustering
+        type: mcq
+        question: "K-Means hoạt động tốt nhất khi cụm:"
+        options: {a: "Gần cầu, kích thước và mật độ tương đương", b: "Hình trăng khuyết lồng nhau", c: "Mật độ rất khác nhau", d: "Có nhiều nhiễu ngoại lai"}
+        answer: a
+        explanation: "Gán theo tâm gần nhất → biên Voronoi tuyến tính."
+      - id: t02
+        topic: kmeans++
+        lesson: 20_clustering
+        type: mcq
+        question: "k-means++ cải thiện K-Means bằng cách:"
+        options: {a: "Chọn tâm khởi tạo xa nhau theo xác suất tỉ lệ khoảng cách bình phương", b: "Tự chọn k", c: "Dùng khoảng cách Manhattan", d: "Bỏ ngoại lai"}
+        answer: a
+        explanation: "Khởi tạo tốt → hội tụ nhanh, ít kẹt nghiệm kém."
+      - id: t03
+        topic: dbscan
+        lesson: 20_clustering
+        type: multi
+        question: "Ưu điểm của DBSCAN so với K-Means:"
+        options: {a: "Tìm cụm hình dạng tuỳ ý", b: "Đánh dấu điểm nhiễu", c: "Không cần chọn số cụm", d: "Không cần chọn tham số nào"}
+        answer: abc
+        explanation: "Vẫn cần eps và min_samples."
+      - id: t04
+        topic: silhouette
+        lesson: 20_clustering
+        type: mcq
+        question: "Silhouette của một điểm gần −1 nghĩa là:"
+        options: {a: "Điểm có lẽ bị gán nhầm cụm", b: "Điểm nằm sâu trong cụm", c: "Điểm nằm trên biên", d: "Cụm hoàn hảo"}
+        answer: a
+        explanation: "(b − a)/max(a, b) âm khi cụm khác gần hơn."
+      - id: t05
+        topic: pca scaling
+        lesson: 21_dimensionality_reduction
+        type: tf
+        question: "PCA nên chạy trên dữ liệu đã chuẩn hoá khi các đặc trưng có đơn vị khác nhau."
+        answer: true
+        explanation: "Nếu không, đặc trưng thang lớn chiếm hết phương sai."
+      - id: t06
+        topic: pca objective
+        lesson: 21_dimensionality_reduction
+        type: mcq
+        question: "Thành phần chính thứ nhất là hướng:"
+        options: {a: "Có phương sai dữ liệu chiếu lên lớn nhất", b: "Phân biệt các lớp tốt nhất", c: "Có giá trị trung bình lớn nhất", d: "Ngẫu nhiên"}
+        answer: a
+        explanation: "PCA không dùng nhãn (khác LDA)."
+      - id: t07
+        topic: tsne
+        lesson: 21_dimensionality_reduction
+        type: mcq
+        question: "Trên biểu đồ t-SNE, điều nào KHÔNG nên diễn giải?"
+        options: {a: "Khoảng cách giữa các cụm và kích thước cụm", b: "Các điểm gần nhau trong cụm", c: "Có cấu trúc cụm cục bộ", d: "Màu theo nhãn"}
+        answer: a
+        explanation: "t-SNE bảo toàn láng giềng cục bộ, không bảo toàn khoảng cách toàn cục."
+      - id: t08
+        topic: isolation forest
+        lesson: 22_anomaly_detection
+        type: mcq
+        question: "Isolation Forest coi một điểm là bất thường khi:"
+        options: {a: "Nó bị cô lập sau ít lần chia ngẫu nhiên (đường đi ngắn)", b: "Nó gần tâm dữ liệu", c: "Nó có nhãn bất thường", d: "Nó có nhiều láng giềng"}
+        answer: a
+        explanation: "Điểm hiếm, xa dễ tách."
+      - id: t09
+        topic: anomaly evaluation
+        lesson: 22_anomaly_detection
+        type: mcq
+        question: "Đánh giá mô hình phát hiện bất thường khi có rất ít nhãn bất thường, nên:"
+        options: {a: "Dùng precision@k / PR-AUC trên tập nhỏ có nhãn, kết hợp kiểm tra thủ công top cảnh báo", b: "Dùng accuracy", c: "Không cần đánh giá", d: "Dùng R²"}
+        answer: a
+        explanation: "Ngân sách điều tra là top-k."
+      - id: t10
+        topic: gmm
+        lesson: 23_probabilistic_machine_learning
+        type: mcq
+        question: "So với K-Means, Gaussian Mixture Model:"
+        options: {a: "Cho xác suất thuộc cụm (gán mềm) và cụm hình elip", b: "Luôn nhanh hơn", c: "Không cần số cụm", d: "Không dùng EM"}
+        answer: a
+        explanation: "K-Means là trường hợp giới hạn của GMM."
+      - id: t11
+        topic: bayesian regression
+        lesson: 23_probabilistic_machine_learning
+        type: mcq
+        question: "Hồi quy tuyến tính Bayes cho dự đoán kèm độ bất định, và độ bất định này:"
+        options: {a: "Lớn hơn ở vùng xa dữ liệu huấn luyện", b: "Bằng nhau mọi nơi", c: "Nhỏ hơn ở vùng xa dữ liệu", d: "Bằng 0 khi có prior"}
+        answer: a
+        explanation: "Phương sai hậu nghiệm của dự đoán tăng khi ngoại suy."
+      - id: t12
+        topic: gp kernel
+        lesson: 23_probabilistic_machine_learning
+        type: mcq
+        question: "Trong Gaussian Process với kernel RBF, length scale nhỏ cho hàm:"
+        options: {a: "Dao động nhanh, linh hoạt", b: "Rất mượt", c: "Tuyến tính", d: "Hằng số"}
+        answer: a
+        explanation: "Tương quan giảm nhanh theo khoảng cách."
+      - id: t13
+        topic: hmm
+        lesson: 23_probabilistic_machine_learning
+        type: mcq
+        question: "Thuật toán Viterbi trong HMM tìm:"
+        options: {a: "Chuỗi trạng thái ẩn có xác suất lớn nhất", b: "Xác suất của chuỗi quan sát", c: "Tham số mô hình", d: "Số trạng thái"}
+        answer: a
+        explanation: "Forward cho likelihood, Baum-Welch cho tham số."
+      - id: t14
+        topic: stacking
+        lesson: 24_ensemble_learning
+        type: mcq
+        question: "Khi stacking, mô hình tầng 2 phải học trên:"
+        options: {a: "Dự đoán out-of-fold của các mô hình tầng 1", b: "Dự đoán trên train của chính chúng", c: "Nhãn test", d: "Đặc trưng gốc only"}
+        answer: a
+        explanation: "Dự đoán in-sample quá lạc quan → meta-learner tin nhầm mô hình overfit."
+      - id: t15
+        topic: ensemble diversity
+        lesson: 24_ensemble_learning
+        type: tf
+        question: "Trung bình 10 mô hình gần như giống hệt nhau giảm lỗi nhiều như trung bình 10 mô hình đa dạng có cùng độ chính xác."
+        answer: false
+        explanation: "Lợi ích ensemble đến từ lỗi ít tương quan."
+      - id: t16
+        topic: stationarity
+        lesson: 25_time_series
+        type: mcq
+        question: "Chuỗi có xu hướng tăng tuyến tính. Để đưa về dừng (cho ARIMA), thường:"
+        options: {a: "Lấy sai phân bậc 1", b: "Chuẩn hoá z-score", c: "Xáo trộn thứ tự", d: "Bỏ giá trị lớn"}
+        answer: a
+        explanation: "d = 1 trong ARIMA(p, d, q)."
+      - id: t17
+        topic: seasonal naive
+        lesson: 25_time_series
+        type: mcq
+        question: "Baseline seasonal naive với mùa vụ tuần dự báo ngày thứ Hai tới bằng:"
+        options: {a: "Giá trị thứ Hai tuần trước", b: "Trung bình toàn chuỗi", c: "Giá trị hôm qua", d: "0"}
+        answer: a
+        explanation: "Baseline mạnh cho dữ liệu có mùa vụ."
+      - id: t18
+        topic: backtesting
+        lesson: 25_time_series
+        type: mcq
+        question: "Đánh giá mô hình dự báo đúng cách là:"
+        options: {a: "Backtest nhiều điểm cắt theo thời gian (rolling origin)", b: "KFold ngẫu nhiên", c: "Một lần chia 80/20 ngẫu nhiên", d: "Đánh giá trên train"}
+        answer: a
+        explanation: "Mô phỏng nhiều lần dự báo tương lai."
+      - id: t19
+        topic: cold start
+        lesson: 26_recommender_systems
+        type: mcq
+        question: "Collaborative filtering gặp khó với người dùng mới vì:"
+        options: {a: "Chưa có lịch sử tương tác để tìm người/món tương tự", b: "Thiếu GPU", c: "Ma trận quá dày", d: "Không có nhãn"}
+        answer: a
+        explanation: "Dùng content-based/phổ biến theo thể loại cho đến khi có dữ liệu."
+      - id: t20
+        topic: ranking metric
+        lesson: 26_recommender_systems
+        type: mcq
+        question: "NDCG@k khác Precision@k ở chỗ:"
+        options: {a: "Thưởng nhiều hơn khi món liên quan ở vị trí cao", b: "Không quan tâm thứ tự", c: "Chỉ dùng cho hồi quy", d: "Luôn bằng 1"}
+        answer: a
+        explanation: "Chiết khấu theo log vị trí."
+  math:
+    questions:
+      - id: m01
+        topic: explained variance
+        lesson: 21_dimensionality_reduction
+        type: numeric
+        decimals: 2
+        question: "Trị riêng của ma trận hiệp phương sai: [4, 1]. Tỉ lệ phương sai giải thích của PC1 = ?"
+        answer: 0.8
+        explanation: "4/5."
+      - id: m02
+        topic: centroid
+        lesson: 20_clustering
+        type: numeric
+        decimals: 1
+        question: "Cụm gồm các điểm (1, 2), (3, 4), (5, 0). Toạ độ x của tâm cụm = ?"
+        answer: 3
+        explanation: "(1 + 3 + 5)/3."
+      - id: m03
+        topic: silhouette
+        lesson: 20_clustering
+        type: numeric
+        decimals: 2
+        question: "Điểm có khoảng cách TB trong cụm a = 2, tới cụm gần nhất b = 4. Silhouette = (b − a)/max(a, b) = ?"
+        answer: 0.5
+        explanation: "2/4."
+      - id: m04
+        topic: exponential smoothing
+        lesson: 25_time_series
+        type: numeric
+        decimals: 1
+        question: "Làm trơn mũ: s_t = α·x_t + (1 − α)·s_{t−1}, α = 0.5, x_t = 10, s_{t−1} = 6. s_t = ?"
+        answer: 8
+        explanation: "5 + 3."
+      - id: m05
+        topic: differencing
+        lesson: 25_time_series
+        type: numeric
+        decimals: 0
+        question: "Chuỗi [3, 5, 9, 15]. Sai phân bậc 2 ở vị trí cuối = ?"
+        answer: 2
+        explanation: "Sai phân 1: [2, 4, 6]; bậc 2: [2, 2]."
+      - id: m06
+        topic: dcg
+        lesson: 26_recommender_systems
+        type: numeric
+        decimals: 3
+        question: "Top-3 gợi ý có mức liên quan nhị phân [0, 1, 1]. DCG = Σ rel_i / log2(i + 1) = ?"
+        answer: 1.131
+        explanation: "1/log2(3) + 1/log2(4) = 0.631 + 0.5."
+      - id: m07
+        topic: gmm responsibility
+        lesson: 23_probabilistic_machine_learning
+        type: numeric
+        decimals: 2
+        question: "Hai thành phần, trọng số 0.5 và 0.5; mật độ của một điểm theo hai thành phần là 0.3 và 0.1. Responsibility của thành phần 1 = ?"
+        answer: 0.75
+        explanation: "0.15/(0.15 + 0.05)."
+      - id: m08
+        topic: voting
+        lesson: 24_ensemble_learning
+        type: numeric
+        decimals: 3
+        question: "3 mô hình độc lập, mỗi mô hình đúng với xác suất 0.7. Xác suất bỏ phiếu đa số đúng = ?"
+        answer: 0.784
+        explanation: "0.7³ + 3·0.7²·0.3."
+coding:
+  tasks:
+    - id: c01
+      title: Một vòng K-Means
+      prompt: |
+        Viết `kmeans_step(X, centers)` → `(labels, new_centers)`: gán mỗi điểm vào tâm gần nhất (Euclid), rồi cập nhật tâm = trung bình
+        các điểm của cụm (cụm rỗng giữ tâm cũ).
+      code: |
+        def kmeans_step(X, centers):
+            ### START CODE HERE ### (≈ 6 dòng)
+            X, centers = np.asarray(X, float), np.asarray(centers, float)
+            d = ((X[:, None, :] - centers[None, :, :]) ** 2).sum(-1)
+            labels = d.argmin(axis=1)
+            new = centers.copy()
+            for k in range(len(centers)):
+                if np.any(labels == k):
+                    new[k] = X[labels == k].mean(axis=0)
+            return labels, new
+            ### END CODE HERE ###
+      tests: |
+        X = np.array([[0.0, 0], [0, 1], [10, 10], [10, 11]])
+        labels, centers = kmeans_step(X, np.array([[0.0, 0], [10, 10]]))
+        check_equal(list(labels), [0, 0, 1, 1], "gán cụm")
+        check_close(centers, [[0, 0.5], [10, 10.5]], message="cập nhật tâm")
+        _, kept = kmeans_step(X, np.array([[0.0, 0], [10, 10], [100, 100]]))
+        check_close(kept[2], [100, 100], message="cụm rỗng giữ tâm cũ")
+    - id: c02
+      title: PCA bằng SVD
+      prompt: |
+        Viết `pca(X, k)` → `(Z, explained_ratio)`: trừ trung bình theo cột, SVD, chiếu lên k thành phần đầu (Z = X_c · V_k),
+        explained_ratio = σᵢ² / Σσ² của k thành phần đầu.
+      code: |
+        def pca(X, k):
+            ### START CODE HERE ### (≈ 4 dòng)
+            Xc = np.asarray(X, float) - np.mean(X, axis=0)
+            U, s, Vt = np.linalg.svd(Xc, full_matrices=False)
+            ratio = s ** 2 / np.sum(s ** 2)
+            return Xc @ Vt[:k].T, ratio[:k]
+            ### END CODE HERE ###
+      tests: |
+        from sklearn.decomposition import PCA
+        rng = np.random.default_rng(0)
+        X = rng.normal(size=(100, 4)) @ rng.normal(size=(4, 4))
+        Z, ratio = pca(X, 2)
+        ref = PCA(2).fit(X)
+        check_close(ratio, ref.explained_variance_ratio_, message="tỉ lệ phương sai giải thích")
+        check_close(np.abs(Z), np.abs(ref.transform(X)), tol=1e-6, message="toạ độ chiếu (sai khác dấu cho phép)")
+analysis:
+  prompt: |
+    Một chuỗi bán lẻ phân cụm 50.000 khách hàng bằng K-Means trên 40 đặc trưng (doanh thu tính bằng đồng, số lượt mua, tỉ lệ mua online, ...) không chuẩn
+    hoá, chọn k = 12 vì inertia nhỏ nhất trong khoảng 2–12, rồi vẽ t-SNE và kết luận "cụm 3 và cụm 7 nằm xa nhau nên là hai nhóm khách hàng rất khác biệt".
+    Phân tích các vấn đề và đề xuất quy trình đúng.
+  rubric:
+    - "Chỉ ra không chuẩn hoá → doanh thu (thang lớn) chi phối khoảng cách"
+    - "Chỉ ra inertia luôn giảm khi k tăng → không dùng inertia nhỏ nhất; dùng silhouette/elbow/BIC/ổn định và tính hữu ích nghiệp vụ"
+    - "Chỉ ra khoảng cách giữa các cụm trên t-SNE không có ý nghĩa → so sánh hồ sơ cụm ở không gian gốc"
+    - "Đề xuất kiểm tra độ ổn định (nhiều seed, bootstrap), xử lý ngoại lai/đặc trưng lệch (log), cân nhắc GMM/giảm chiều"
+    - "Đề xuất đánh giá bằng hành động: phân khúc có dẫn tới chiến lược khác nhau và đo được hiệu quả (A/B)"
+  sample_answer: |
+    Không chuẩn hoá: doanh thu tính bằng đồng (hàng triệu) lấn át mọi đặc trưng khác — K-Means chỉ chia theo doanh thu; cần log cho đặc trưng lệch và chuẩn
+    hoá. Inertia luôn giảm theo k nên "nhỏ nhất ở k = 12" chỉ phản ánh k lớn nhất đã thử; chọn k bằng elbow, silhouette, BIC (GMM), độ ổn định giữa các lần
+    chạy, và quan trọng nhất là số phân khúc đội marketing có thể hành động. t-SNE bảo toàn láng giềng cục bộ, không bảo toàn khoảng cách giữa cụm — hai
+    cụm xa nhau trên t-SNE chưa chắc khác nhau nhiều; so sánh trung bình/phân phối đặc trưng của từng cụm ở không gian gốc. Quy trình: làm sạch, biến đổi,
+    chuẩn hoá, có thể PCA giữ 90% phương sai; thử K-Means và GMM với nhiều k; kiểm tra ổn định (nhiều seed, bootstrap, ARI); đặt tên cụm theo hồ sơ; kiểm
+    chứng giá trị bằng thí nghiệm theo phân khúc.
+project:
+  prompt: |
+    **Mini project — Phân khúc khách hàng.** Với `customer_segments.csv` (4 đặc trưng `FEATURES`): chuẩn hoá; chọn k ∈ [2, 8] có silhouette lớn nhất
+    với `KMeans(k, n_init=10, random_state=0)` → `best_k`; gán nhãn `labels`; tính `ari` so với cột `true_segment` (chỉ để kiểm chứng). Yêu cầu: best_k = 5,
+    ARI > 0.85.
+  code: |
+    import pandas as pd
+    from sklearn.cluster import KMeans
+    from sklearn.metrics import adjusted_rand_score, silhouette_score
+    from sklearn.preprocessing import StandardScaler
+
+    from ml_course.utils import repo_path
+
+    customers = pd.read_csv(repo_path("data", "sample", "customer_segments.csv"))
+    FEATURES = ["annual_income_musd", "spending_score", "age", "visits_per_month"]
+    ### START CODE HERE ### (≈ 5 dòng)
+    X = StandardScaler().fit_transform(customers[FEATURES])
+    scores = {k: silhouette_score(X, KMeans(k, n_init=10, random_state=0).fit_predict(X)) for k in range(2, 9)}
+    best_k = max(scores, key=scores.get)
+    labels = KMeans(best_k, n_init=10, random_state=0).fit_predict(X)
+    ari = adjusted_rand_score(customers.true_segment, labels)
+    ### END CODE HERE ###
+    print(f"k = {best_k} | ARI = {ari:.3f}")
+  tests: |
+    check_equal(best_k, 5, "silhouette chọn k = 5")
+    check_greater(ari, 0.85, "ARI > 0.85")
+    check_equal(len(labels), 600, "mọi khách được gán cụm")

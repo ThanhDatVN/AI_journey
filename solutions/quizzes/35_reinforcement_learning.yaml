@@ -1,0 +1,266 @@
+title: "35 · Reinforcement Learning"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: rl vs supervised
+        lesson: 01_mdp_and_bellman.ipynb
+        type: multi
+        question: "Điểm khác biệt của học tăng cường so với học có giám sát:"
+        options: {a: "Không có đáp án đúng cho từng bước, chỉ có phần thưởng (thường trễ)", b: "Dữ liệu phụ thuộc vào hành động của tác tử", c: "Phải cân bằng khám phá và khai thác", d: "Không cần hàm mục tiêu"}
+        answer: abc
+        explanation: "Mục tiêu là return."
+      - id: t02
+        topic: bandit
+        lesson: 01_mdp_and_bellman.ipynb
+        type: mcq
+        question: "UCB chọn cần gạt theo:"
+        options: {a: "Giá trị ước lượng cộng một phần thưởng cho độ không chắc chắn (cần gạt ít được thử)", b: "Cần gạt ngẫu nhiên", c: "Cần gạt có giá trị ước lượng cao nhất", d: "Cần gạt được thử nhiều nhất"}
+        answer: a
+        explanation: "Khám phá có định hướng."
+      - id: t03
+        topic: bellman
+        lesson: 01_mdp_and_bellman.ipynb
+        type: tf
+        question: "Với chính sách cố định và mô hình đã biết, phương trình Bellman kỳ vọng là một hệ phương trình tuyến tính có thể giải trực tiếp."
+        answer: true
+        explanation: "V = (I − γP^π)^(-1) R^π."
+      - id: t04
+        topic: vi vs pi
+        lesson: 01_mdp_and_bellman.ipynb
+        type: mcq
+        question: "So với value iteration, policy iteration thường:"
+        options: {a: "Cần rất ít vòng, nhưng mỗi vòng đắt hơn (đánh giá chính sách đầy đủ)", b: "Không hội tụ", c: "Cho kết quả khác", d: "Không cần mô hình"}
+        answer: a
+        explanation: "Cùng V*."
+      - id: t05
+        topic: slippery
+        lesson: 01_mdp_and_bellman.ipynb
+        type: mcq
+        question: "Trên FrozenLake trơn, chính sách tối ưu có lúc hướng vào tường vì:"
+        options: {a: "Đi vào tường thì các hướng trượt có thể xảy ra đều không dẫn xuống hố", b: "Lỗi thuật toán", c: "γ quá nhỏ", d: "Tường cho phần thưởng"}
+        answer: a
+        explanation: "Hành vi tránh rủi ro tự nảy sinh."
+      - id: t06
+        topic: gamma
+        lesson: 01_mdp_and_bellman.ipynb
+        type: mcq
+        question: "Giảm γ từ 0.999 xuống 0.9 trên FrozenLake 8×8 trơn làm tác tử:"
+        options: {a: "Thiếu kiên nhẫn hơn — chọn đường nhanh nhưng rủi ro, tỉ lệ thắng giảm", b: "Thắng nhiều hơn", c: "Không thay đổi", d: "Không bao giờ tới đích"}
+        answer: a
+        explanation: "Thưởng xa bị chiết khấu mạnh."
+      - id: t07
+        topic: td vs mc
+        lesson: 02_monte_carlo_and_td.ipynb
+        type: mcq
+        question: "TD(0) thường hội tụ nhanh hơn Monte Carlo vì:"
+        options: {a: "Mục tiêu cập nhật có phương sai thấp hơn (một bước + ước lượng)", b: "TD không thiên lệch", c: "TD cần mô hình", d: "MC không hội tụ"}
+        answer: a
+        explanation: "Đổi lại TD có thiên lệch."
+      - id: t08
+        topic: bootstrapping
+        lesson: 02_monte_carlo_and_td.ipynb
+        type: tf
+        question: "TD học được cả khi lượt chơi không bao giờ kết thúc, còn Monte Carlo thì không."
+        answer: true
+        explanation: "MC cần return hoàn chỉnh."
+      - id: t09
+        topic: sarsa vs q
+        lesson: 03_q_learning_and_sarsa.ipynb
+        type: mcq
+        question: "Trên Cliff Walking với ε = 0.1 cố định, Q-learning có tổng thưởng khi đang học thấp hơn SARSA vì:"
+        options: {a: "Nó học và đi đường tối ưu sát vực; khám phá ngẫu nhiên khiến thỉnh thoảng rơi xuống vực", b: "Nó học chậm hơn", c: "Nó không hội tụ", d: "Nó dùng γ khác"}
+        answer: a
+        explanation: "SARSA học giá trị của chính sách có khám phá nên tránh xa vực."
+      - id: t10
+        topic: off-policy
+        lesson: 03_q_learning_and_sarsa.ipynb
+        type: mcq
+        question: "Off-policy nghĩa là:"
+        options: {a: "Học giá trị của một chính sách (mục tiêu) từ dữ liệu sinh bởi chính sách khác (hành vi)", b: "Không dùng chính sách", c: "Chỉ học khi offline", d: "Không có phần thưởng"}
+        answer: a
+        explanation: "Q-learning, DQN là off-policy."
+      - id: t11
+        topic: max bias
+        lesson: 03_q_learning_and_sarsa.ipynb
+        type: mcq
+        question: "Thiên lệch cực đại của Q-learning xuất phát từ:"
+        options: {a: "Lấy max trên các ước lượng nhiễu → kỳ vọng của max ≥ max của kỳ vọng", b: "Learning rate quá nhỏ", c: "Thiếu khám phá", d: "Dùng γ < 1"}
+        answer: a
+        explanation: "Double Q-learning tách chọn và đánh giá."
+      - id: t12
+        topic: dqn
+        lesson: 04_dqn_and_policy_gradient.ipynb
+        type: multi
+        question: "Các thành phần giúp DQN ổn định hơn Q-learning với mạng nơ-ron ngây thơ:"
+        options: {a: "Experience replay", b: "Target network", c: "Double DQN", d: "Bỏ hoàn toàn khám phá"}
+        answer: abc
+        explanation: "Khám phá vẫn cần."
+      - id: t13
+        topic: timeout
+        lesson: 04_dqn_and_policy_gradient.ipynb
+        type: tf
+        question: "Khi lượt chơi dừng vì hết giờ (đạt số bước tối đa), mục tiêu TD vẫn nên bootstrap từ trạng thái kế tiếp."
+        answer: true
+        explanation: "Hết giờ không phải trạng thái kết thúc thật."
+      - id: t14
+        topic: baseline
+        lesson: 04_dqn_and_policy_gradient.ipynb
+        type: mcq
+        question: "Baseline trong REINFORCE:"
+        options: {a: "Giảm phương sai ước lượng gradient mà không làm lệch kỳ vọng", b: "Làm gradient thiên lệch để học nhanh hơn", c: "Thay thế hàm phần thưởng", d: "Chỉ dùng cho hành động liên tục"}
+        answer: a
+        explanation: "Advantage = G − V(s)."
+      - id: t15
+        topic: seeds
+        lesson: 04_dqn_and_policy_gradient.ipynb
+        type: tf
+        question: "Kết quả deep RL trên một seed là đủ để kết luận thuật toán tốt hơn."
+        answer: false
+        explanation: "Cùng cấu hình, các seed DQN cho đường cong khác hẳn nhau."
+      - id: t16
+        topic: evolution
+        lesson: 05_neuroevolution_genetic_algorithm.ipynb
+        type: multi
+        question: "Về thuật toán tiến hoá:"
+        options:
+          a: "Chỉ cần đánh giá được fitness, không cần gradient"
+          b: "Đột biến quá nhỏ dễ hội tụ sớm; quá lớn làm mất thông tin di truyền"
+          c: "Song song hoá dễ vì các cá thể đánh giá độc lập"
+          d: "Luôn đảm bảo tìm được lời giải tối ưu"
+        answer: abc
+        explanation: "GA không chứng minh tối ưu."
+  math:
+    questions:
+      - id: m01
+        topic: return
+        lesson: 01_mdp_and_bellman.ipynb
+        type: numeric
+        decimals: 3
+        question: "Chuỗi thưởng [0, 0, 1], γ = 0.9. Return G_0 = ?"
+        answer: 0.81
+        explanation: "0.9²."
+      - id: m02
+        topic: bellman
+        lesson: 01_mdp_and_bellman.ipynb
+        type: numeric
+        decimals: 2
+        question: "Một trạng thái mỗi bước cho thưởng 1 và quay lại chính nó mãi mãi, γ = 0.9. V = ?"
+        answer: 10
+        explanation: "V = 1 + 0.9V."
+      - id: m03
+        topic: td update
+        lesson: 02_monte_carlo_and_td.ipynb
+        type: numeric
+        decimals: 3
+        question: "V(s) = 0.5, V(s') = 0.8, r = 0, γ = 1, α = 0.1. Sau cập nhật TD(0), V(s) = ?"
+        answer: 0.53
+        explanation: "0.5 + 0.1·(0.8 − 0.5)."
+      - id: m04
+        topic: q update
+        lesson: 03_q_learning_and_sarsa.ipynb
+        type: numeric
+        decimals: 2
+        question: "Q(s, a) = 1, r = −1, max Q(s', ·) = 4, γ = 0.5, α = 0.5. Sau cập nhật Q-learning, Q(s, a) = ?"
+        answer: 1
+        explanation: "Mục tiêu −1 + 2 = 1 → không đổi."
+      - id: m05
+        topic: epsilon greedy
+        lesson: 03_q_learning_and_sarsa.ipynb
+        type: numeric
+        decimals: 3
+        question: "ε-greedy với ε = 0.2 và 4 hành động (một hành động tốt nhất duy nhất). Xác suất chọn hành động tốt nhất = ?"
+        answer: 0.85
+        explanation: "0.8 + 0.2/4."
+coding:
+  tasks:
+    - id: c01
+      title: Return từ mỗi bước
+      prompt: |
+        Viết `discounted_returns(rewards, gamma)` trả về mảng G với G[t] = r[t] + γ·r[t+1] + γ²·r[t+2] + ... (tính ngược từ cuối, O(T)).
+      code: |
+        def discounted_returns(rewards, gamma):
+            ### START CODE HERE ### (≈ 5 dòng)
+            G, running = np.zeros(len(rewards)), 0.0
+            for t in reversed(range(len(rewards))):
+                running = rewards[t] + gamma * running
+                G[t] = running
+            return G
+            ### END CODE HERE ###
+      tests: |
+        check_close(discounted_returns([0, 0, 1], 0.9), [0.81, 0.9, 1.0], message="thưởng ở cuối")
+        check_close(discounted_returns([1, 1, 1, 1], 1.0), [4, 3, 2, 1], message="γ = 1")
+        check_close(discounted_returns([], 0.9).shape, (0,), message="lượt rỗng")
+    - id: c02
+      title: Bellman backup
+      prompt: |
+        MDP nhỏ cho dưới dạng `P[s][a]` = danh sách (xác suất, s_tiếp, phần_thưởng, kết_thúc). Viết `bellman_backup(P, V, gamma)` trả về mảng Q
+        (n_states, n_actions) với Q[s, a] = Σ p·(r + γ·V[s'] nếu chưa kết thúc).
+      code: |
+        def bellman_backup(P, V, gamma):
+            ### START CODE HERE ### (≈ 3 dòng)
+            n_s, n_a = len(P), len(P[0])
+            return np.array([[sum(p * (r + gamma * V[s2] * (not done)) for p, s2, r, done in P[s][a]) for a in range(n_a)] for s in range(n_s)])
+            ### END CODE HERE ###
+      tests: |
+        P = {0: {0: [(1.0, 1, 0.0, False)], 1: [(0.5, 0, 1.0, False), (0.5, 1, 0.0, True)]},
+             1: {0: [(1.0, 1, 0.0, True)], 1: [(1.0, 0, 2.0, False)]}}
+        Q = bellman_backup(P, np.array([1.0, 3.0]), 0.9)
+        check_close(Q, [[2.7, 0.5 * (1 + 0.9)], [0.0, 2 + 0.9]], message="Q sau một backup")
+        V = np.zeros(2)
+        for _ in range(500):
+            V = bellman_backup(P, V, 0.9).max(1)
+        check_close(V, bellman_backup(P, V, 0.9).max(1), tol=1e-9, message="lặp tới điểm bất động (Bellman tối ưu)")
+analysis:
+  prompt: |
+    Một bệnh viện muốn dùng RL để đề xuất liều thuốc cho bệnh nhân ICU. Dữ liệu: hồ sơ 20 000 lượt điều trị trong quá khứ (liều bác sĩ đã cho,
+    chỉ số sinh tồn mỗi giờ, kết quả cuối cùng sống/tử vong). Nhóm đề xuất: (1) train DQN off-policy trên log, phần thưởng +1 nếu sống, −1 nếu
+    tử vong ở cuối lượt; (2) đánh giá bằng cách cho chính sách mới "chạy lại" trên bộ mô phỏng huấn luyện từ chính dữ liệu đó; (3) một seed;
+    (4) nếu chính sách mới khác bác sĩ ở nhiều ca thì càng tốt vì "mô hình phát hiện điều bác sĩ bỏ sót". Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra RL offline trên dữ liệu quan sát có confounding (bác sĩ chọn liều theo mức độ nặng không ghi nhận đủ) và vấn đề phân phối: chính sách mới chọn hành động hiếm/chưa từng có trong log → Q ước lượng sai (extrapolation, overestimation) → cần offline RL bảo thủ (CQL, BCQ) và giới hạn gần chính sách bác sĩ"
+    - "Chỉ ra đánh giá trên mô phỏng học từ cùng dữ liệu là lạc quan → cần đánh giá off-policy (IPS/WIS/DR) với propensity ước lượng, khoảng tin cậy, kiểm định với chuyên gia"
+    - "Chỉ ra thưởng thưa/trễ (chỉ cuối lượt) → credit assignment khó; cân nhắc thưởng trung gian có ý nghĩa lâm sàng nhưng tránh reward hacking"
+    - "Chỉ ra cần nhiều seed/khoảng tin cậy và phân tích theo nhóm bệnh nhân"
+    - "Chỉ ra 'khác bác sĩ nhiều' là dấu hiệu rủi ro chứ không phải ưu điểm; an toàn, đạo đức, con người trong vòng lặp, thử nghiệm lâm sàng trước khi dùng"
+  sample_answer: |
+    (1) Đây là offline RL trên dữ liệu quan sát: liều bác sĩ chọn phụ thuộc mức độ nặng (confounder có thể không ghi đủ), và DQN off-policy sẽ
+    ngoại suy Q cho các liều hiếm/chưa từng xuất hiện → đánh giá quá cao những hành động lạ (max bias + extrapolation). Cần phương pháp offline
+    bảo thủ (CQL, BCQ, IQL), ràng buộc gần chính sách bác sĩ. Thưởng chỉ ở cuối → credit assignment khó; có thể thêm mục tiêu trung gian lâm sàng
+    nhưng cẩn thận reward hacking. (2) Mô phỏng học từ chính dữ liệu kế thừa mọi sai lệch → đánh giá off-policy (WIS/DR) với propensity ước lượng,
+    khoảng tin cậy, phân tích nhóm. (3) Nhiều seed, báo cáo độ dao động. (4) Khác bác sĩ nhiều là cờ đỏ (có thể do ngoại suy), không phải bằng chứng
+    tốt hơn; chỉ dùng làm hỗ trợ, có bác sĩ duyệt, kiểm chứng tiến cứu/thử nghiệm lâm sàng, xem xét đạo đức.
+project:
+  prompt: |
+    **Mini project — Q-learning trên băng trơn.** Môi trường `GridWorld("4x4", slip=2/3)` (FrozenLake trơn), γ = 0.99. Cài Q-learning dạng bảng
+    (ε-greedy giảm dần), **không** dùng `env.P`. Đánh giá chính sách tham lam cuối cùng trên 2 000 lượt (`env.reset(seed=50_000 + i)`), lưu tỉ lệ
+    thắng vào `win_rate`. Yêu cầu `win_rate` ≥ 0.74 (chính sách tối ưu đạt khoảng 0.81).
+  code: |
+    from ml_course.envs import GridWorld
+
+    env = GridWorld("4x4", slip=2 / 3)
+    rng = np.random.default_rng(0)
+    ### START CODE HERE ### (≈ 20 dòng)
+    Q = np.zeros((env.n_states, env.n_actions))
+    episodes = 20000
+    for ep in range(episodes):
+        eps = max(0.05, 1 - ep / (episodes / 2))
+        s, done = env.reset(seed=ep), False
+        while not done:
+            a = int(rng.integers(4)) if rng.random() < eps else int(rng.choice(np.flatnonzero(Q[s] == Q[s].max())))
+            s2, r, done = env.step(a)
+            target = r if done else r + 0.99 * Q[s2].max()
+            Q[s, a] += 0.1 * (target - Q[s, a])
+            s = s2
+    policy = Q.argmax(1)
+    wins = 0
+    for i in range(2000):
+        s, done = env.reset(seed=50_000 + i), False
+        while not done:
+            s, r, done = env.step(policy[s])
+        wins += r
+    win_rate = wins / 2000
+    ### END CODE HERE ###
+    print(f"tỉ lệ thắng = {win_rate:.3f}")
+  tests: |
+    check_greater(win_rate, 0.74, "tỉ lệ thắng ≥ 0.74")

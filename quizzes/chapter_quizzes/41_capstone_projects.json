@@ -1,0 +1,226 @@
+{
+ "id": "41_capstone_projects",
+ "kind": "Chapter",
+ "title": "41 · Capstone Projects",
+ "next": null,
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "capstone vs kaggle",
+     "answer_hashes": [
+      "b7eb6c84cb8c0a71ce86"
+     ],
+     "lesson": "01_capstone_guide.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "end-to-end early",
+     "answer_hashes": [
+      "4248a0edd1b7236a5481"
+     ],
+     "lesson": "01_capstone_guide.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "rubric",
+     "answer_hashes": [
+      "666f8542a769f6686950"
+     ],
+     "lesson": "01_capstone_guide.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "multi",
+     "topic": "design doc",
+     "answer_hashes": [
+      "9e0cf2a0485167cc6995"
+     ],
+     "lesson": "01_capstone_guide.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "data issues",
+     "answer_hashes": [
+      "426755698f545d5c5707"
+     ],
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "label maturity",
+     "answer_hashes": [
+      "d16d3833747673290373"
+     ],
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "post-decision leakage",
+     "answer_hashes": [
+      "40347bb033c0124f746a"
+     ],
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "temporal split",
+     "answer_hashes": [
+      "09270b767ead1af8f095"
+     ],
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "calibration for decisions",
+     "answer_hashes": [
+      "93b5cee93aebe69730e2"
+     ],
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "multi",
+     "topic": "model choice",
+     "answer_hashes": [
+      "273cd0cb65095e2c362d"
+     ],
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "reason codes",
+     "answer_hashes": [
+      "a1c3c42294a9ce4d704e"
+     ],
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "proxy label",
+     "answer_hashes": [
+      "044ab0b6fc51098409a8"
+     ],
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "topic": "input monitoring",
+     "answer_hashes": [
+      "c6e48b9d6c75f8e78742"
+     ],
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "group calibration",
+     "answer_hashes": [
+      "115811ca740a3f9f4b9f"
+     ],
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "multi",
+     "topic": "report honesty",
+     "answer_hashes": [
+      "7e52230ee688ec0f4656"
+     ],
+     "lesson": "01_capstone_guide.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "break-even threshold",
+     "answer_hashes": [
+      "3fc7a555884eacbc63d1"
+     ],
+     "decimals": 3,
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "expected profit",
+     "answer_hashes": [
+      "12ace4d69b2b919e9930"
+     ],
+     "decimals": 1,
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "proxy inversion",
+     "answer_hashes": [
+      "9b7252bee1097b0ec6b6"
+     ],
+     "decimals": 3,
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "odds multiplier",
+     "answer_hashes": [
+      "9befd77d53cc5355857b"
+     ],
+     "decimals": 2,
+     "lesson": "02_capstone_walkthrough.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "label delay",
+     "answer_hashes": [
+      "bf0e665dbd808b495790"
+     ],
+     "decimals": 0,
+     "lesson": "02_capstone_walkthrough.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

@@ -1,0 +1,253 @@
+{
+ "id": "23_probabilistic_machine_learning",
+ "kind": "Chapter",
+ "title": "23 · Probabilistic Machine Learning",
+ "next": "24_ensemble_learning",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "covariance geometry",
+     "answer_hashes": [
+      "733196ea9fb62724cb13"
+     ],
+     "lesson": "01_multivariate_gaussian.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "multi",
+     "topic": "conditional",
+     "answer_hashes": [
+      "5f0a18bec77210b937d1"
+     ],
+     "lesson": "01_multivariate_gaussian.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "sampling",
+     "answer_hashes": [
+      "b6841ba7eb15bc372bde"
+     ],
+     "lesson": "01_multivariate_gaussian.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "LDA vs QDA",
+     "answer_hashes": [
+      "ebe4a7f469b8a9ed9588"
+     ],
+     "lesson": "01_multivariate_gaussian.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "shrinkage",
+     "answer_hashes": [
+      "9a1222531e039159d044"
+     ],
+     "lesson": "01_multivariate_gaussian.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "EM",
+     "answer_hashes": [
+      "0a6033c39850610a6331"
+     ],
+     "lesson": "02_gmm_and_em.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "multi",
+     "topic": "EM monotone",
+     "answer_hashes": [
+      "aafd18ba357292bd0ed9"
+     ],
+     "lesson": "02_gmm_and_em.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "choosing K",
+     "answer_hashes": [
+      "fe09a8cd8cb7fb1dc636"
+     ],
+     "lesson": "02_gmm_and_em.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "singularity",
+     "answer_hashes": [
+      "635a9c7fb19d457159a6"
+     ],
+     "lesson": "02_gmm_and_em.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "posterior",
+     "answer_hashes": [
+      "1ac7e839b5828fd38d8d"
+     ],
+     "lesson": "03_bayesian_linear_regression.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "multi",
+     "topic": "predictive variance",
+     "answer_hashes": [
+      "4755d4417c6beb927bea"
+     ],
+     "lesson": "03_bayesian_linear_regression.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "tf",
+     "topic": "evidence",
+     "answer_hashes": [
+      "49c0d5204bf2b1f8a6c9"
+     ],
+     "lesson": "03_bayesian_linear_regression.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "GP definition",
+     "answer_hashes": [
+      "cf9bcb5568f09291c660"
+     ],
+     "lesson": "04_gaussian_processes.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "length scale",
+     "answer_hashes": [
+      "56c331158e48acc59250"
+     ],
+     "lesson": "04_gaussian_processes.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "extrapolation",
+     "answer_hashes": [
+      "5d631b78da3944bc58af"
+     ],
+     "lesson": "04_gaussian_processes.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "GP cost",
+     "answer_hashes": [
+      "84e16d24a9985c8da615"
+     ],
+     "lesson": "04_gaussian_processes.ipynb"
+    },
+    {
+     "id": "t17",
+     "type": "mcq",
+     "topic": "HMM problems",
+     "answer_hashes": [
+      "a475c48d7ff39a86b50a"
+     ],
+     "lesson": "05_hidden_markov_models.ipynb"
+    },
+    {
+     "id": "t18",
+     "type": "tf",
+     "topic": "forward complexity",
+     "answer_hashes": [
+      "aea86b14f9d3a8872cc8"
+     ],
+     "lesson": "05_hidden_markov_models.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "conditional mean",
+     "answer_hashes": [
+      "6841171793fe5b975084"
+     ],
+     "decimals": 2,
+     "lesson": "01_multivariate_gaussian.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "conditional variance",
+     "answer_hashes": [
+      "466a5e0c990575a42a7c"
+     ],
+     "decimals": 2,
+     "lesson": "01_multivariate_gaussian.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "responsibility",
+     "answer_hashes": [
+      "33e657e59d7135561850"
+     ],
+     "decimals": 3,
+     "lesson": "02_gmm_and_em.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "bayes posterior",
+     "answer_hashes": [
+      "1519423126ea44bf31ac"
+     ],
+     "decimals": 3,
+     "lesson": "03_bayesian_linear_regression.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "markov",
+     "answer_hashes": [
+      "2b1de93bd5075d17923a"
+     ],
+     "decimals": 2,
+     "lesson": "05_hidden_markov_models.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

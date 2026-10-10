@@ -1,0 +1,244 @@
+{
+ "id": "39_ml_systems",
+ "kind": "Chapter",
+ "title": "39 · ML Systems",
+ "next": "40_mlops",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "ml system components",
+     "answer_hashes": [
+      "234f74be2967b157bdcf"
+     ],
+     "lesson": "01_ml_system_design.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "point-in-time leakage",
+     "answer_hashes": [
+      "df4b030b18857ed25746"
+     ],
+     "lesson": "01_ml_system_design.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "tf",
+     "topic": "random split",
+     "answer_hashes": [
+      "898da3594ccbcf4c6bce"
+     ],
+     "lesson": "01_ml_system_design.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "training-serving skew",
+     "answer_hashes": [
+      "80f7aa670bc8175d60dd"
+     ],
+     "lesson": "01_ml_system_design.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "system constraints",
+     "answer_hashes": [
+      "03f21fc7bfbcd2b941d4"
+     ],
+     "lesson": "01_ml_system_design.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "batch vs online",
+     "answer_hashes": [
+      "94fbb595270e104f946f"
+     ],
+     "lesson": "01_ml_system_design.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "reproducibility levels",
+     "answer_hashes": [
+      "12a81e845c06922814b2"
+     ],
+     "lesson": "02_reproducibility_and_experiment_tracking.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "seeds",
+     "answer_hashes": [
+      "bd54b3417e6829e18f18"
+     ],
+     "lesson": "02_reproducibility_and_experiment_tracking.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "paired comparison",
+     "answer_hashes": [
+      "4745f87af4245bf82ad8"
+     ],
+     "lesson": "02_reproducibility_and_experiment_tracking.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "multi",
+     "topic": "hidden nondeterminism",
+     "answer_hashes": [
+      "085538b92d8ffffeb0a2"
+     ],
+     "lesson": "02_reproducibility_and_experiment_tracking.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "winner's curse",
+     "answer_hashes": [
+      "93d70d3ae0d64c3f636b"
+     ],
+     "lesson": "02_reproducibility_and_experiment_tracking.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "multi",
+     "topic": "experiment tracking",
+     "answer_hashes": [
+      "8e36e5e9bf76e51cf980"
+     ],
+     "lesson": "02_reproducibility_and_experiment_tracking.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "pickle security",
+     "answer_hashes": [
+      "4c14731f2e8e1b41add1"
+     ],
+     "lesson": "03_packaging_and_model_registry.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "__main__ pitfall",
+     "answer_hashes": [
+      "5c6363b3565b1c1ecbf7"
+     ],
+     "lesson": "03_packaging_and_model_registry.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "input validation",
+     "answer_hashes": [
+      "b9b43eea3234b055a266"
+     ],
+     "lesson": "03_packaging_and_model_registry.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "registry",
+     "answer_hashes": [
+      "fe5856c3fb6191a5231e"
+     ],
+     "lesson": "03_packaging_and_model_registry.ipynb"
+    },
+    {
+     "id": "t17",
+     "type": "multi",
+     "topic": "promotion gate",
+     "answer_hashes": [
+      "b229eafea97d5009ff83"
+     ],
+     "lesson": "03_packaging_and_model_registry.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "point-in-time feature",
+     "answer_hashes": [
+      "cfe245f3a8a8e01a1388"
+     ],
+     "decimals": 0,
+     "lesson": "01_ml_system_design.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "leaky feature",
+     "answer_hashes": [
+      "a1abf8bb9465dbdade11"
+     ],
+     "decimals": 0,
+     "lesson": "01_ml_system_design.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "paired t",
+     "answer_hashes": [
+      "f1305b0410a410c07d3b"
+     ],
+     "decimals": 2,
+     "lesson": "02_reproducibility_and_experiment_tracking.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "latency budget",
+     "answer_hashes": [
+      "81e2ea619b1ea4208cec"
+     ],
+     "decimals": 0,
+     "lesson": "01_ml_system_design.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "winner's curse",
+     "answer_hashes": [
+      "5e41a5628a9a3afb1be8"
+     ],
+     "decimals": 3,
+     "lesson": "02_reproducibility_and_experiment_tracking.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

@@ -1,0 +1,301 @@
+{
+ "id": "final_exam_6_trustworthy_systems",
+ "kind": "Exam",
+ "title": "Bài thi tổng hợp 6 · ML đáng tin cậy & hệ thống (chương 36–41)",
+ "next": null,
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "permutation importance",
+     "answer_hashes": [
+      "e6e25afe0930ba37c41c"
+     ],
+     "lesson": "36_explainable_ai"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "shap additivity",
+     "answer_hashes": [
+      "0a0036df46f1379dafac"
+     ],
+     "lesson": "36_explainable_ai"
+    },
+    {
+     "id": "t03",
+     "type": "tf",
+     "topic": "explanation not causation",
+     "answer_hashes": [
+      "5fca2f0d6b22fba57ded"
+     ],
+     "lesson": "36_explainable_ai"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "calibration methods",
+     "answer_hashes": [
+      "03381f65bcd349407537"
+     ],
+     "lesson": "37_uncertainty_and_calibration"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "conformal",
+     "answer_hashes": [
+      "7b1253eec5be7f49eb9f"
+     ],
+     "lesson": "37_uncertainty_and_calibration"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "epistemic",
+     "answer_hashes": [
+      "3e50ee7db2af293fc8aa"
+     ],
+     "lesson": "37_uncertainty_and_calibration"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "confounding",
+     "answer_hashes": [
+      "129b3c1cd153e58617c0"
+     ],
+     "lesson": "38_causal_machine_learning"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "ipw",
+     "answer_hashes": [
+      "a57e84a414fbdbc9efc2"
+     ],
+     "lesson": "38_causal_machine_learning"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "uplift",
+     "answer_hashes": [
+      "a8f374292bd89438e41b"
+     ],
+     "lesson": "38_causal_machine_learning"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "point in time",
+     "answer_hashes": [
+      "8b3c60ff682b11d05609"
+     ],
+     "lesson": "39_ml_systems"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "skew",
+     "answer_hashes": [
+      "8a33b7f71a8dd06496d3"
+     ],
+     "lesson": "39_ml_systems"
+    },
+    {
+     "id": "t12",
+     "type": "tf",
+     "topic": "pickle",
+     "answer_hashes": [
+      "80cf304633ad0ff8c10b"
+     ],
+     "lesson": "39_ml_systems"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "registry",
+     "answer_hashes": [
+      "4857fbdae038ff0f1203"
+     ],
+     "lesson": "39_ml_systems"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "drift",
+     "answer_hashes": [
+      "f469cf475f0f31cec448"
+     ],
+     "lesson": "40_mlops"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "psi vs pvalue",
+     "answer_hashes": [
+      "5c62b9806a61f50ee44d"
+     ],
+     "lesson": "40_mlops"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "canary",
+     "answer_hashes": [
+      "45dadf7e4853f18202a3"
+     ],
+     "lesson": "40_mlops"
+    },
+    {
+     "id": "t17",
+     "type": "mcq",
+     "topic": "peeking",
+     "answer_hashes": [
+      "d3d7843b936cdf91fae0"
+     ],
+     "lesson": "40_mlops"
+    },
+    {
+     "id": "t18",
+     "type": "mcq",
+     "topic": "feedback loop",
+     "answer_hashes": [
+      "4aa5c5c349f2d2f1a0c3"
+     ],
+     "lesson": "40_mlops"
+    },
+    {
+     "id": "t19",
+     "type": "mcq",
+     "topic": "label maturity",
+     "answer_hashes": [
+      "70944a72f581114d5bdc"
+     ],
+     "lesson": "41_capstone_projects"
+    },
+    {
+     "id": "t20",
+     "type": "multi",
+     "topic": "expected loss decisions",
+     "answer_hashes": [
+      "4b5045cb3bf192266e68"
+     ],
+     "lesson": "41_capstone_projects"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "conformal quantile",
+     "answer_hashes": [
+      "a9eb3547834e273bcded"
+     ],
+     "decimals": 0,
+     "lesson": "37_uncertainty_and_calibration"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "brier",
+     "answer_hashes": [
+      "76b72c5908a156e32827"
+     ],
+     "decimals": 3,
+     "lesson": "37_uncertainty_and_calibration"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "ipw weight",
+     "answer_hashes": [
+      "fd985d62f3af25534a77"
+     ],
+     "decimals": 1,
+     "lesson": "38_causal_machine_learning"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "ate",
+     "answer_hashes": [
+      "60c58fd8d2f4221adf87"
+     ],
+     "decimals": 1,
+     "lesson": "38_causal_machine_learning"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "psi",
+     "answer_hashes": [
+      "1cdd252e2e446cdbca6f"
+     ],
+     "decimals": 3,
+     "lesson": "40_mlops"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "sample size",
+     "answer_hashes": [
+      "82d5536761036af0d108"
+     ],
+     "decimals": 0,
+     "lesson": "40_mlops"
+    },
+    {
+     "id": "m07",
+     "type": "numeric",
+     "topic": "break-even",
+     "answer_hashes": [
+      "39fb4c94c52252e99aab"
+     ],
+     "decimals": 3,
+     "lesson": "41_capstone_projects"
+    },
+    {
+     "id": "m08",
+     "type": "numeric",
+     "topic": "expected loss",
+     "answer_hashes": [
+      "4e155fce1f33ebe92d2c"
+     ],
+     "decimals": 0,
+     "lesson": "41_capstone_projects"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

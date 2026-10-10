@@ -1,0 +1,131 @@
+title: "00 · Course Orientation"
+intro: |
+  Checkpoint đầu tiên giúp bạn làm quen với cơ chế **gate** của khoá học. Đừng lo — chương này nhẹ nhàng!
+sections:
+  theory:
+    threshold: 0.8
+    questions:
+      - id: t01
+        topic: triết lý 4 tầng
+        lesson: 01_how_to_use_this_course.ipynb
+        type: mcq
+        question: "Biết vì sao model thất bại trên một tập dữ liệu và chẩn đoán được nguyên nhân thuộc tầng kiến thức nào?"
+        options: {a: USE, b: UNDERSTAND, c: ANALYZE, d: DESIGN}
+        answer: c
+        explanation: "ANALYZE = biết tại sao model tốt/xấu. UNDERSTAND là hiểu cơ chế; DESIGN là chọn và thiết kế giải pháp."
+      - id: t02
+        topic: hệ thống bài tập L0–L7
+        lesson: 01_how_to_use_this_course.ipynb
+        type: mcq
+        question: "Bài tập 'Train accuracy = 100%, test accuracy = 71%. Có vấn đề gì?' thuộc level nào?"
+        options: {a: L0, b: L2, c: L4, d: L7}
+        answer: c
+        explanation: "L4 = Debug: chẩn đoán một tình huống model hoạt động sai (ở đây là overfitting)."
+      - id: t03
+        topic: hidden state
+        lesson: 02_jupyter_notebook_and_markdown.ipynb
+        type: tf
+        question: "Nếu sửa một cell nhưng không chạy lại nó, các cell phía sau vẫn dùng giá trị CŨ của biến."
+        answer: true
+        explanation: "Kernel giữ trạng thái theo thứ tự thực thi, không theo vị trí cell. Đây là 'hidden state'."
+      - id: t04
+        topic: magic commands
+        lesson: 02_jupyter_notebook_and_markdown.ipynb
+        type: mcq
+        question: "Magic nào đo thời gian chạy một biểu thức bằng cách lặp lại nhiều lần để có kết quả ổn định?"
+        options: {a: "%time", b: "%timeit", c: "%pwd", d: "%who"}
+        answer: b
+        explanation: "%timeit lặp nhiều lần và báo trung bình ± độ lệch chuẩn; %time chỉ chạy một lần."
+      - id: t05
+        topic: Colab
+        lesson: 03_google_colab_tips.ipynb
+        type: mcq
+        question: "Cách đúng để không mất kết quả train khi phiên Colab bị ngắt là gì?"
+        options:
+          a: "Chạy script JavaScript tự click nút Connect"
+          b: "Lưu checkpoint định kỳ lên Google Drive và viết code có thể resume"
+          c: "Mở nhiều tab Colab cùng lúc"
+          d: "Tắt GPU để phiên dài hơn"
+        answer: b
+        explanation: "Thiết kế việc train chịu được ngắt kết nối; script tự click vi phạm điều khoản sử dụng."
+      - id: t06
+        topic: môi trường ảo
+        lesson: 04_pycharm_and_vscode.ipynb
+        type: tf
+        question: "Môi trường ảo (virtual environment) giúp mỗi dự án có bộ thư viện và phiên bản riêng, tránh xung đột."
+        answer: true
+        explanation: "Đó chính là mục đích của venv/conda/uv."
+      - id: t07
+        topic: đọc traceback
+        lesson: 05_google_search_and_learning_skills.ipynb
+        type: mcq
+        question: "Khi đọc một traceback dài, bạn nên đọc phần nào trước?"
+        options:
+          a: "Dòng đầu tiên"
+          b: "Dòng cuối cùng (loại lỗi + thông điệp), rồi tìm dòng đầu tiên thuộc code của bạn"
+          c: "Đường dẫn file thư viện"
+          d: "Không cần đọc, search toàn bộ traceback"
+        answer: b
+        explanation: "Dòng cuối nói lỗi gì; dòng code của bạn cho biết lỗi xuất phát từ đâu."
+      - id: t08
+        topic: tìm kiếm nâng cao
+        lesson: 05_google_search_and_learning_skills.ipynb
+        type: mcq
+        question: "Toán tử nào chỉ tìm kết quả bên trong trang scikit-learn.org?"
+        options: {a: "filetype:", b: "intitle:", c: "site:", d: '"..."'}
+        answer: c
+        explanation: "site:scikit-learn.org <từ khoá>."
+      - id: t09
+        topic: minimal reproducible example
+        lesson: 05_google_search_and_learning_skills.ipynb
+        type: multi
+        question: "Một câu hỏi tốt khi nhờ trợ giúp nên có những gì?"
+        options:
+          a: "Code tối thiểu tái hiện được lỗi"
+          b: "Ảnh chụp màn hình toàn bộ notebook"
+          c: "Thông báo lỗi đầy đủ dạng text"
+          d: "Những gì bạn đã thử"
+        answer: acd
+        explanation: "Ảnh chụp màn hình khó đọc/không copy được; code tối thiểu + lỗi dạng text + đã thử gì là chuẩn."
+      - id: t10
+        topic: dùng trợ lý AI
+        lesson: 05_google_search_and_learning_skills.ipynb
+        type: tf
+        question: "Nhờ trợ lý AI viết lời giải checkpoint là cách học hiệu quả vì giúp PASS nhanh hơn."
+        answer: false
+        explanation: "Checkpoint đo sự hiểu biết của bạn; nhờ AI làm hộ thì PASS nhưng không học được gì."
+      - id: t11
+        topic: intitle
+        lesson: 05_google_search_and_learning_skills.ipynb
+        type: mcq
+        question: "Toán tử tìm kiếm nào chỉ lấy các trang có từ khoá nằm trong TIÊU ĐỀ trang?"
+        options: {a: "intitle:", b: "site:", c: "filetype:", d: "dấu nháy kép \"...\""}
+        answer: a
+        explanation: "intitle: (allintitle: khi mọi từ khoá đều phải nằm trong tiêu đề); site: giới hạn theo trang web, filetype: theo loại file."
+coding:
+  tasks:
+    - id: c01
+      title: Kiểm tra môi trường
+      prompt: |
+        Viết hàm `library_versions(names)` nhận danh sách tên module và trả về **dict** `{tên: phiên_bản}`.
+        Module chưa cài thì giá trị là `None`. Gợi ý: `importlib.import_module`, thuộc tính `__version__`, bắt `ImportError`.
+      code: |
+        import importlib
+
+        def library_versions(names):
+            versions = {}
+            ### START CODE HERE ### (≈ 5 dòng)
+            for name in names:
+                try:
+                    versions[name] = importlib.import_module(name).__version__
+                except ImportError:
+                    versions[name] = None
+            ### END CODE HERE ###
+            return versions
+
+        library_versions(["numpy", "pandas", "sklearn", "matplotlib"])
+      tests: |
+        v = library_versions(["numpy", "sklearn", "this_module_does_not_exist"])
+        check_equal(type(v), dict, "trả về dict")
+        check_true(v["numpy"] is not None and v["sklearn"] is not None, "đã cài numpy và scikit-learn")
+        check_equal(v["this_module_does_not_exist"], None, "module chưa cài → None")

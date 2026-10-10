@@ -1,0 +1,122 @@
+{
+ "id": "00_course_orientation",
+ "kind": "Chapter",
+ "title": "00 · Course Orientation",
+ "next": "01_python_for_ml",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "triết lý 4 tầng",
+     "answer_hashes": [
+      "2f4eb41543af58ddbaf3"
+     ],
+     "lesson": "01_how_to_use_this_course.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "hệ thống bài tập L0–L7",
+     "answer_hashes": [
+      "243b0eee6a2c03e92c15"
+     ],
+     "lesson": "01_how_to_use_this_course.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "tf",
+     "topic": "hidden state",
+     "answer_hashes": [
+      "9a90f5496c2771110b4c"
+     ],
+     "lesson": "02_jupyter_notebook_and_markdown.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "magic commands",
+     "answer_hashes": [
+      "3b0d85e12ccd90c60d05"
+     ],
+     "lesson": "02_jupyter_notebook_and_markdown.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "Colab",
+     "answer_hashes": [
+      "851ec3270a428ca9008d"
+     ],
+     "lesson": "03_google_colab_tips.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "tf",
+     "topic": "môi trường ảo",
+     "answer_hashes": [
+      "4aa5500a787c11965217"
+     ],
+     "lesson": "04_pycharm_and_vscode.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "đọc traceback",
+     "answer_hashes": [
+      "a94bdd84df92f849e4f7"
+     ],
+     "lesson": "05_google_search_and_learning_skills.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "tìm kiếm nâng cao",
+     "answer_hashes": [
+      "1d2e28dd744560c81fad"
+     ],
+     "lesson": "05_google_search_and_learning_skills.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "multi",
+     "topic": "minimal reproducible example",
+     "answer_hashes": [
+      "8ef5d58b971b161921d7"
+     ],
+     "lesson": "05_google_search_and_learning_skills.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "tf",
+     "topic": "dùng trợ lý AI",
+     "answer_hashes": [
+      "a11a2681f9fd6665bb45"
+     ],
+     "lesson": "05_google_search_and_learning_skills.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "intitle",
+     "answer_hashes": [
+      "61427f6e25e6b8d74bf2"
+     ],
+     "lesson": "05_google_search_and_learning_skills.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01"
+   ]
+  }
+ },
+ "self_assess": {}
+}

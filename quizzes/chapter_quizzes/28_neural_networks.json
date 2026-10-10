@@ -1,0 +1,235 @@
+{
+ "id": "28_neural_networks",
+ "kind": "Chapter",
+ "title": "28 · Neural Networks",
+ "next": "29_cnn",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "tf",
+     "topic": "nonlinearity",
+     "answer_hashes": [
+      "1d0ee4bc1fe8ca01d9f6"
+     ],
+     "lesson": "01_activation_functions.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "multi",
+     "topic": "sigmoid",
+     "answer_hashes": [
+      "042e830aa27ce175ac0c"
+     ],
+     "lesson": "01_activation_functions.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "dying relu",
+     "answer_hashes": [
+      "c6676229b01446f54d00"
+     ],
+     "lesson": "01_activation_functions.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "output activation",
+     "answer_hashes": [
+      "a70f35895306e17ddab4"
+     ],
+     "lesson": "01_activation_functions.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "zero init",
+     "answer_hashes": [
+      "bb8e724022dccf79fe51"
+     ],
+     "lesson": "02_initialization_and_normalization.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "he init",
+     "answer_hashes": [
+      "cae33999aa11e35a895a"
+     ],
+     "lesson": "02_initialization_and_normalization.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "multi",
+     "topic": "batch norm",
+     "answer_hashes": [
+      "d835345c856035c54cdf"
+     ],
+     "lesson": "02_initialization_and_normalization.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "layer norm",
+     "answer_hashes": [
+      "492a25ef96ccce97fd70"
+     ],
+     "lesson": "02_initialization_and_normalization.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "momentum",
+     "answer_hashes": [
+      "4226b6885a60cd0aae4a"
+     ],
+     "lesson": "03_optimizers.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "adam bias correction",
+     "answer_hashes": [
+      "98761405b67b3cd324f5"
+     ],
+     "lesson": "03_optimizers.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "tf",
+     "topic": "adamw",
+     "answer_hashes": [
+      "68e638f78084ccb64ad3"
+     ],
+     "lesson": "03_optimizers.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "lr schedule",
+     "answer_hashes": [
+      "0bbe87bd9beb6441a893"
+     ],
+     "lesson": "03_optimizers.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "dropout",
+     "answer_hashes": [
+      "ea792c735936bb41e284"
+     ],
+     "lesson": "04_regularization_and_training_recipes.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "tf",
+     "topic": "early stopping",
+     "answer_hashes": [
+      "446e2312b4c02d971be5"
+     ],
+     "lesson": "04_regularization_and_training_recipes.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "recipe",
+     "answer_hashes": [
+      "ffd075cfa13e464bff85"
+     ],
+     "lesson": "04_regularization_and_training_recipes.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "batch size",
+     "answer_hashes": [
+      "b1b510bdf482947e7251"
+     ],
+     "lesson": "04_regularization_and_training_recipes.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "sigmoid derivative",
+     "answer_hashes": [
+      "372a6cb0d119437a893e"
+     ],
+     "decimals": 4,
+     "lesson": "01_activation_functions.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "xavier",
+     "answer_hashes": [
+      "0a6d80085fff68bafd89"
+     ],
+     "decimals": 4,
+     "lesson": "02_initialization_and_normalization.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "batch norm",
+     "answer_hashes": [
+      "9b53ab1d2c0d61912f53"
+     ],
+     "decimals": 3,
+     "lesson": "02_initialization_and_normalization.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "momentum",
+     "answer_hashes": [
+      "d784442f99d59a12f0c8"
+     ],
+     "decimals": 3,
+     "lesson": "03_optimizers.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "dropout scale",
+     "answer_hashes": [
+      "87df8519f00a1c5a9fae"
+     ],
+     "decimals": 3,
+     "lesson": "04_regularization_and_training_recipes.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

@@ -1,0 +1,235 @@
+{
+ "id": "36_explainable_ai",
+ "kind": "Chapter",
+ "title": "36 · Explainable AI",
+ "next": "37_uncertainty_and_calibration",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "global local",
+     "answer_hashes": [
+      "174d28561f5ee9645537"
+     ],
+     "lesson": "01_global_explanations.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "interpretable first",
+     "answer_hashes": [
+      "25c3c9e65ce90caa54df"
+     ],
+     "lesson": "01_global_explanations.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "multi",
+     "topic": "mdi bias",
+     "answer_hashes": [
+      "384d6228fe5de29a509b"
+     ],
+     "lesson": "01_global_explanations.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "permutation",
+     "answer_hashes": [
+      "e47cd4fd6d8d76e30c89"
+     ],
+     "lesson": "01_global_explanations.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "ice",
+     "answer_hashes": [
+      "2551884a46fa38ff5181"
+     ],
+     "lesson": "01_global_explanations.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "ale",
+     "answer_hashes": [
+      "9ae366393170be6da7e2"
+     ],
+     "lesson": "01_global_explanations.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "tf",
+     "topic": "surrogate",
+     "answer_hashes": [
+      "d6e983b1381b9f2dee93"
+     ],
+     "lesson": "01_global_explanations.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "multi",
+     "topic": "lime",
+     "answer_hashes": [
+      "ee0b3fb9acf97bb848f0"
+     ],
+     "lesson": "02_local_explanations_lime_shap.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "shapley properties",
+     "answer_hashes": [
+      "d8c4e8f816fac6686fe5"
+     ],
+     "lesson": "02_local_explanations_lime_shap.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "background",
+     "answer_hashes": [
+      "9a2199762e94479f93c9"
+     ],
+     "lesson": "02_local_explanations_lime_shap.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "linear shap",
+     "answer_hashes": [
+      "077896fd63adc5c62053"
+     ],
+     "lesson": "02_local_explanations_lime_shap.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "tf",
+     "topic": "counterfactual",
+     "answer_hashes": [
+      "1c10f4e7858c762238c2"
+     ],
+     "lesson": "02_local_explanations_lime_shap.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "correlated",
+     "answer_hashes": [
+      "377eb0cefc8f91b057b9"
+     ],
+     "lesson": "03_pitfalls_of_explanations.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "rashomon",
+     "answer_hashes": [
+      "04c2d89b1ff5e48d7050"
+     ],
+     "lesson": "03_pitfalls_of_explanations.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "leakage",
+     "answer_hashes": [
+      "37c4996d683f074ec74f"
+     ],
+     "lesson": "03_pitfalls_of_explanations.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "tf",
+     "topic": "fairness",
+     "answer_hashes": [
+      "e240f021dfb22ebfeaef"
+     ],
+     "lesson": "03_pitfalls_of_explanations.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "shapley",
+     "answer_hashes": [
+      "384935f58e50f0138903"
+     ],
+     "decimals": 2,
+     "lesson": "02_local_explanations_lime_shap.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "linear shap",
+     "answer_hashes": [
+      "b4d3aaffbc342eb527b4"
+     ],
+     "decimals": 2,
+     "lesson": "02_local_explanations_lime_shap.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "coalitions",
+     "answer_hashes": [
+      "180851d1bc52dad6c44c"
+     ],
+     "decimals": 0,
+     "lesson": "02_local_explanations_lime_shap.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "permutation",
+     "answer_hashes": [
+      "d4dfa343a88290dffa30"
+     ],
+     "decimals": 3,
+     "lesson": "01_global_explanations.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "shapley weight",
+     "answer_hashes": [
+      "4c3524a4964d3cc44b55"
+     ],
+     "decimals": 4,
+     "lesson": "02_local_explanations_lime_shap.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

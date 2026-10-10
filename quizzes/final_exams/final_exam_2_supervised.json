@@ -1,0 +1,301 @@
+{
+ "id": "final_exam_2_supervised",
+ "kind": "Exam",
+ "title": "Bài thi tổng hợp 2 · Học có giám sát (chương 06–13)",
+ "next": null,
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "ols assumptions",
+     "answer_hashes": [
+      "74ddfa90ad2951e50d7c"
+     ],
+     "lesson": "06_linear_regression"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "multicollinearity",
+     "answer_hashes": [
+      "86a829206591aeec6645"
+     ],
+     "lesson": "06_linear_regression"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "lasso",
+     "answer_hashes": [
+      "5ac6b67e01092f35d857"
+     ],
+     "lesson": "06_linear_regression"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "logistic loss",
+     "answer_hashes": [
+      "32a580cf3849ed459fe3"
+     ],
+     "lesson": "07_logistic_regression"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "decision boundary",
+     "answer_hashes": [
+      "466e0fd414f0de4c5985"
+     ],
+     "lesson": "07_logistic_regression"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "softmax",
+     "answer_hashes": [
+      "310234998a2aec89daee"
+     ],
+     "lesson": "07_logistic_regression"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "knn scaling",
+     "answer_hashes": [
+      "0fa2cdbba196129a0053"
+     ],
+     "lesson": "08_knn"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "knn k",
+     "answer_hashes": [
+      "868806ca8b3051d17df1"
+     ],
+     "lesson": "08_knn"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "naive bayes",
+     "answer_hashes": [
+      "4fda982bb5486dfe3611"
+     ],
+     "lesson": "09_naive_bayes"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "laplace smoothing",
+     "answer_hashes": [
+      "204ea9fb81d5c3ff073f"
+     ],
+     "lesson": "09_naive_bayes"
+    },
+    {
+     "id": "t11",
+     "type": "tf",
+     "topic": "tree invariance",
+     "answer_hashes": [
+      "8d2c07d533cd5964b928"
+     ],
+     "lesson": "10_decision_trees"
+    },
+    {
+     "id": "t12",
+     "type": "multi",
+     "topic": "tree overfitting",
+     "answer_hashes": [
+      "c82177ac01c33ed0521c"
+     ],
+     "lesson": "10_decision_trees"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "random forest",
+     "answer_hashes": [
+      "1c3d604838ec33ccbe3b"
+     ],
+     "lesson": "11_random_forest"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "oob",
+     "answer_hashes": [
+      "315076f81d810ef870e5"
+     ],
+     "lesson": "11_random_forest"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "boosting",
+     "answer_hashes": [
+      "fcbea4711a525ed8a9f3"
+     ],
+     "lesson": "12_gradient_boosting"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "learning rate boosting",
+     "answer_hashes": [
+      "0ba55642048d988c1efd"
+     ],
+     "lesson": "12_gradient_boosting"
+    },
+    {
+     "id": "t17",
+     "type": "mcq",
+     "topic": "svm margin",
+     "answer_hashes": [
+      "9d7359ef9e78e3ffdfc8"
+     ],
+     "lesson": "13_svm_and_kernels"
+    },
+    {
+     "id": "t18",
+     "type": "mcq",
+     "topic": "svm C",
+     "answer_hashes": [
+      "edfa4b892f04a441311a"
+     ],
+     "lesson": "13_svm_and_kernels"
+    },
+    {
+     "id": "t19",
+     "type": "mcq",
+     "topic": "rbf gamma",
+     "answer_hashes": [
+      "9181e97bd6a71c0474ed"
+     ],
+     "lesson": "13_svm_and_kernels"
+    },
+    {
+     "id": "t20",
+     "type": "mcq",
+     "topic": "model choice",
+     "answer_hashes": [
+      "b634db0c5cd812099d9f"
+     ],
+     "lesson": "12_gradient_boosting"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "simple regression",
+     "answer_hashes": [
+      "bdefb6c7330d1f1f4722"
+     ],
+     "decimals": 1,
+     "lesson": "06_linear_regression"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "ridge 1d",
+     "answer_hashes": [
+      "badc24cd9dc775e32d59"
+     ],
+     "decimals": 3,
+     "lesson": "06_linear_regression"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "sigmoid",
+     "answer_hashes": [
+      "4b5eb3b27e0c3ba89605"
+     ],
+     "decimals": 3,
+     "lesson": "07_logistic_regression"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "gini",
+     "answer_hashes": [
+      "b342bfe299a9ea48b260"
+     ],
+     "decimals": 3,
+     "lesson": "10_decision_trees"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "entropy",
+     "answer_hashes": [
+      "ae675550a01d72eed15e"
+     ],
+     "decimals": 3,
+     "lesson": "10_decision_trees"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "laplace",
+     "answer_hashes": [
+      "04e18ae8202e171bd48f"
+     ],
+     "decimals": 4,
+     "lesson": "09_naive_bayes"
+    },
+    {
+     "id": "m07",
+     "type": "numeric",
+     "topic": "hinge",
+     "answer_hashes": [
+      "3a1e8b34866f2c2fca21"
+     ],
+     "decimals": 1,
+     "lesson": "13_svm_and_kernels"
+    },
+    {
+     "id": "m08",
+     "type": "numeric",
+     "topic": "bagging",
+     "answer_hashes": [
+      "5da67b00bab2bae8275b"
+     ],
+     "decimals": 3,
+     "lesson": "11_random_forest"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

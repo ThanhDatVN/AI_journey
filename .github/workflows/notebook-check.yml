@@ -1,0 +1,52 @@
+name: notebook-check
+
+# Chạy lại toàn bộ notebook bài học + lời giải để bảo đảm khoá học luôn "chạy được".
+# Notebook người học tự điền (bài tập 9x_, checkpoint trống) được bỏ qua; phiên bản lời giải của chúng (solutions/) thì được chạy.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 3 * * 1" # mỗi thứ Hai — phát hiện sớm breaking change từ thư viện
+  workflow_dispatch:
+
+jobs:
+  notebooks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        part:
+          - "notebooks/0* notebooks/1*"
+          - "notebooks/2*"
+          - "notebooks/3* notebooks/4*"
+          - "solutions"
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.11"
+
+      - name: Install (mọi extra; PyTorch bản CPU)
+        run: |
+          uv sync --locked --group dev --extra stats --extra boosting --extra tuning --extra viz --extra tf --extra xai --extra mlops
+          uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Cache ảnh thật (Fashion-MNIST, CIFAR-10) — tải một lần
+        uses: actions/cache@v5
+        with:
+          path: |
+            data/raw/fashion-mnist
+            data/raw/cifar-10-python.tar.gz
+            data/raw/cifar-10-batches-py
+          key: real-datasets-v1
+
+      - name: Execute notebooks
+        env:
+          MLFLOW_DISABLE_AGENT_HINT: "1"
+          MLFLOW_ENABLE_ARTIFACTS_PROGRESS_BAR: "false"
+          TF_CPP_MIN_LOG_LEVEL: "2"
+        run: uv run --no-sync python tools/run_notebooks.py ${{ matrix.part }} --workers 2 --timeout 1200

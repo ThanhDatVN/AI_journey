@@ -1,0 +1,235 @@
+{
+ "id": "30_sequence_models",
+ "kind": "Chapter",
+ "title": "30 · Sequence Models",
+ "next": "31_transformers",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "tf",
+     "topic": "weight sharing",
+     "answer_hashes": [
+      "034e74a076b740326189"
+     ],
+     "lesson": "01_rnn_from_scratch.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "tasks",
+     "answer_hashes": [
+      "8b1d4ac053015b2553ab"
+     ],
+     "lesson": "01_rnn_from_scratch.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "bptt",
+     "answer_hashes": [
+      "cedd988f616320130644"
+     ],
+     "lesson": "01_rnn_from_scratch.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "truncated",
+     "answer_hashes": [
+      "78b282e944927bd15c78"
+     ],
+     "lesson": "01_rnn_from_scratch.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "vanishing",
+     "answer_hashes": [
+      "5d556ec74472fdbb7562"
+     ],
+     "lesson": "02_vanishing_exploding_gradients.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "multi",
+     "topic": "clipping",
+     "answer_hashes": [
+      "1e0d5b98dc2c76a0a9e0"
+     ],
+     "lesson": "02_vanishing_exploding_gradients.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "lstm cell",
+     "answer_hashes": [
+      "fa6ad54d8b39414bc5fd"
+     ],
+     "lesson": "03_lstm_gru.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "forget bias",
+     "answer_hashes": [
+      "57f8e06cd3a56ac7dc64"
+     ],
+     "lesson": "03_lstm_gru.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "gru",
+     "answer_hashes": [
+      "11c1ea1f2c703ef080fe"
+     ],
+     "lesson": "03_lstm_gru.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "tf",
+     "topic": "bidirectional",
+     "answer_hashes": [
+      "b0b462e97756b6144798"
+     ],
+     "lesson": "03_lstm_gru.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "padding",
+     "answer_hashes": [
+      "cef65fe81cb97d2a3e34"
+     ],
+     "lesson": "03_lstm_gru.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "teacher forcing",
+     "answer_hashes": [
+      "c54d8c6f6d5e931a91fb"
+     ],
+     "lesson": "04_seq2seq_and_attention.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "bottleneck",
+     "answer_hashes": [
+      "d1bf684188caca38f9c5"
+     ],
+     "lesson": "04_seq2seq_and_attention.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "attention",
+     "answer_hashes": [
+      "174eb2f590f076d2e3b5"
+     ],
+     "lesson": "04_seq2seq_and_attention.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "beam",
+     "answer_hashes": [
+      "591a0c3c35d1bb53b6c4"
+     ],
+     "lesson": "04_seq2seq_and_attention.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "tf",
+     "topic": "length generalization",
+     "answer_hashes": [
+      "25f5e903ddfed347dbdc"
+     ],
+     "lesson": "04_seq2seq_and_attention.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "rnn step",
+     "answer_hashes": [
+      "146ce5a6471ab54850fa"
+     ],
+     "decimals": 4,
+     "lesson": "01_rnn_from_scratch.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "params",
+     "answer_hashes": [
+      "85631810572fd0d2b353"
+     ],
+     "decimals": 0,
+     "lesson": "03_lstm_gru.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "lstm cell",
+     "answer_hashes": [
+      "333a2e538cc46f1c6213"
+     ],
+     "decimals": 2,
+     "lesson": "03_lstm_gru.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "vanishing",
+     "answer_hashes": [
+      "8ba447b50e359372e17a"
+     ],
+     "decimals": 4,
+     "lesson": "02_vanishing_exploding_gradients.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "attention",
+     "answer_hashes": [
+      "13c75f3076c01b2fb428"
+     ],
+     "decimals": 3,
+     "lesson": "04_seq2seq_and_attention.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

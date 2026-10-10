@@ -1,0 +1,300 @@
+{
+ "id": "06_linear_regression",
+ "kind": "Chapter",
+ "title": "06 · Linear Regression",
+ "next": "07_logistic_regression",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "cost function",
+     "answer_hashes": [
+      "5150e37d67dc282025af"
+     ],
+     "lesson": "01_linear_regression_one_variable.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "cập nhật đồng thời",
+     "answer_hashes": [
+      "fc37fa6c8250612c2f04"
+     ],
+     "lesson": "01_linear_regression_one_variable.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "vector hoá gradient",
+     "answer_hashes": [
+      "927c9585cc0adda12173"
+     ],
+     "lesson": "02_linear_regression_multiple_variables.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "chuẩn hoá khi dự đoán",
+     "answer_hashes": [
+      "198f80b10e8e773924a1"
+     ],
+     "lesson": "02_linear_regression_multiple_variables.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "normal equation complexity",
+     "answer_hashes": [
+      "0eb1d657528ef33637ae"
+     ],
+     "lesson": "03_normal_equation_and_gd_tips.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "multi",
+     "topic": "XᵀX suy biến",
+     "answer_hashes": [
+      "a7625890eaf97fbc2bf3"
+     ],
+     "lesson": "03_normal_equation_and_gd_tips.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "mini-batch GD",
+     "answer_hashes": [
+      "1a1599da4377b3c65526"
+     ],
+     "lesson": "04_batch_sgd_minibatch_gd.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "SGD noise",
+     "answer_hashes": [
+      "d42f9b5ad29ad1c5b462"
+     ],
+     "lesson": "04_batch_sgd_minibatch_gd.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "polynomial regression",
+     "answer_hashes": [
+      "069f464a86fd62b9b3ae"
+     ],
+     "lesson": "05_polynomial_regression.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "tf",
+     "topic": "ngoại suy",
+     "answer_hashes": [
+      "84f630c1dd37226df36e"
+     ],
+     "lesson": "05_polynomial_regression.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "MLE view",
+     "answer_hashes": [
+      "9f06c2d541c147270e3f"
+     ],
+     "lesson": "06_probabilistic_view_scratch_and_sklearn.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "diễn giải hệ số",
+     "answer_hashes": [
+      "a4184bc64652a69ad816"
+     ],
+     "lesson": "06_probabilistic_view_scratch_and_sklearn.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "không phạt bias",
+     "answer_hashes": [
+      "1b048fdc460b68370546"
+     ],
+     "lesson": "07_regularization_ridge_lasso.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "Lasso sparsity",
+     "answer_hashes": [
+      "59e0130b5a9def29880f"
+     ],
+     "lesson": "07_regularization_ridge_lasso.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "sklearn alpha",
+     "answer_hashes": [
+      "8f5dfde8e50d06506012"
+     ],
+     "lesson": "07_regularization_ridge_lasso.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "heteroscedasticity",
+     "answer_hashes": [
+      "2df1a3e18ec63a904d94"
+     ],
+     "lesson": "08_diagnostics_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t17",
+     "type": "mcq",
+     "topic": "leverage",
+     "answer_hashes": [
+      "b187ab325494f6cbf76c"
+     ],
+     "lesson": "08_diagnostics_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t18",
+     "type": "tf",
+     "topic": "omitted variable bias",
+     "answer_hashes": [
+      "f75d94675001bd685616"
+     ],
+     "lesson": "08_diagnostics_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t19",
+     "type": "mcq",
+     "topic": "monitor SGD",
+     "answer_hashes": [
+      "3821be2570c3fee5f5eb"
+     ],
+     "lesson": "04_batch_sgd_minibatch_gd.ipynb"
+    },
+    {
+     "id": "t20",
+     "type": "tf",
+     "topic": "map-reduce",
+     "answer_hashes": [
+      "6119cbeb06c7b5ccc6d9"
+     ],
+     "lesson": "04_batch_sgd_minibatch_gd.ipynb"
+    },
+    {
+     "id": "t21",
+     "type": "mcq",
+     "topic": "online learning",
+     "answer_hashes": [
+      "6b7b7940ffc0b8cffa6a"
+     ],
+     "lesson": "04_batch_sgd_minibatch_gd.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "dự đoán",
+     "answer_hashes": [
+      "0be05a7f331df23cbecf"
+     ],
+     "decimals": 2,
+     "lesson": "01_linear_regression_one_variable.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "cost function",
+     "answer_hashes": [
+      "3f55d4048be4a656d8cd"
+     ],
+     "decimals": 3,
+     "lesson": "01_linear_regression_one_variable.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "một bước GD",
+     "answer_hashes": [
+      "e55c14b4c7bbf20eeb3d"
+     ],
+     "decimals": 3,
+     "lesson": "01_linear_regression_one_variable.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "nghiệm OLS một biến",
+     "answer_hashes": [
+      "6d8b0d8dab507cb1c6c4"
+     ],
+     "decimals": 2,
+     "lesson": "01_linear_regression_one_variable.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "số lần cập nhật / epoch",
+     "answer_hashes": [
+      "882afa6ea59ebda4becc"
+     ],
+     "decimals": 0,
+     "lesson": "04_batch_sgd_minibatch_gd.ipynb"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "polynomial features",
+     "answer_hashes": [
+      "a0c21ed9c825032dc1b9"
+     ],
+     "decimals": 0,
+     "lesson": "05_polynomial_regression.ipynb"
+    },
+    {
+     "id": "m07",
+     "type": "numeric",
+     "topic": "VIF",
+     "answer_hashes": [
+      "d9d2dc44a5e275c3004c"
+     ],
+     "decimals": 1,
+     "lesson": "08_diagnostics_and_failure_cases.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

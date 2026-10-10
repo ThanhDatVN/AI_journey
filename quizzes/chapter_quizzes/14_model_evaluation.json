@@ -1,0 +1,245 @@
+{
+ "id": "14_model_evaluation",
+ "kind": "Chapter",
+ "title": "14 · Model Evaluation",
+ "next": "15_cross_validation",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "accuracy paradox",
+     "answer_hashes": [
+      "e85c84ec75906141bcae"
+     ],
+     "lesson": "01_confusion_matrix_and_metrics.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "precision vs recall",
+     "answer_hashes": [
+      "7d7a38de171363caeaa3"
+     ],
+     "lesson": "01_confusion_matrix_and_metrics.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "F-beta",
+     "answer_hashes": [
+      "30e21093873847b3ccea"
+     ],
+     "lesson": "01_confusion_matrix_and_metrics.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "averaging",
+     "answer_hashes": [
+      "47dec144e2260b7da0e5"
+     ],
+     "lesson": "01_confusion_matrix_and_metrics.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "micro = accuracy",
+     "answer_hashes": [
+      "88c080dffdbaf7fbbb39"
+     ],
+     "lesson": "01_confusion_matrix_and_metrics.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "AUC meaning",
+     "answer_hashes": [
+      "d02c5619821e64c33243"
+     ],
+     "lesson": "02_roc_pr_and_thresholds.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "tf",
+     "topic": "AUC invariance",
+     "answer_hashes": [
+      "303775ceb316476d5088"
+     ],
+     "lesson": "02_roc_pr_and_thresholds.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "PR vs ROC",
+     "answer_hashes": [
+      "b707cf124cde8d7e3385"
+     ],
+     "lesson": "02_roc_pr_and_thresholds.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "PR baseline",
+     "answer_hashes": [
+      "6797cf66a0332925020a"
+     ],
+     "lesson": "02_roc_pr_and_thresholds.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "multi",
+     "topic": "threshold",
+     "answer_hashes": [
+      "934869bdbd378c543749"
+     ],
+     "lesson": "02_roc_pr_and_thresholds.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "probability metrics",
+     "answer_hashes": [
+      "8d0ddcec640b0fc797a3"
+     ],
+     "lesson": "02_roc_pr_and_thresholds.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "MAE vs MSE",
+     "answer_hashes": [
+      "1d10164fdfe733aac673"
+     ],
+     "lesson": "03_regression_metrics.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "MAPE",
+     "answer_hashes": [
+      "dcf3a6ff2a3fcf692d64"
+     ],
+     "lesson": "03_regression_metrics.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "R2",
+     "answer_hashes": [
+      "82457f0d45510f11ab1e"
+     ],
+     "lesson": "03_regression_metrics.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "precision@k",
+     "answer_hashes": [
+      "ec4574f3fba4757eb100"
+     ],
+     "lesson": "04_choosing_metrics_case_studies.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "paired comparison",
+     "answer_hashes": [
+      "5996075d2d2652df0222"
+     ],
+     "lesson": "04_choosing_metrics_case_studies.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "precision",
+     "answer_hashes": [
+      "3312d7aee1ce0017ab28"
+     ],
+     "decimals": 3,
+     "lesson": "01_confusion_matrix_and_metrics.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "F1",
+     "answer_hashes": [
+      "a3b2bd234250b2b1169b"
+     ],
+     "decimals": 3,
+     "lesson": "01_confusion_matrix_and_metrics.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "AUC pairs",
+     "answer_hashes": [
+      "8dba9a61181fdff07e5a"
+     ],
+     "decimals": 3,
+     "lesson": "02_roc_pr_and_thresholds.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "optimal threshold",
+     "answer_hashes": [
+      "d8f08d8c20fc2d33a0a7"
+     ],
+     "decimals": 3,
+     "lesson": "02_roc_pr_and_thresholds.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "RMSE",
+     "answer_hashes": [
+      "b293aca41cd9fde991d5"
+     ],
+     "decimals": 3,
+     "lesson": "03_regression_metrics.ipynb"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "WAPE",
+     "answer_hashes": [
+      "6e4c34f2e11e60c34dec"
+     ],
+     "decimals": 3,
+     "lesson": "03_regression_metrics.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

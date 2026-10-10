@@ -1,0 +1,301 @@
+{
+ "id": "final_exam_4_unsupervised_advanced",
+ "kind": "Exam",
+ "title": "Bài thi tổng hợp 4 · Học không giám sát & ML cổ điển nâng cao (chương 20–26)",
+ "next": null,
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "kmeans assumptions",
+     "answer_hashes": [
+      "604fab9836a63a52f5c6"
+     ],
+     "lesson": "20_clustering"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "kmeans++",
+     "answer_hashes": [
+      "2f45c9d34309f4abd537"
+     ],
+     "lesson": "20_clustering"
+    },
+    {
+     "id": "t03",
+     "type": "multi",
+     "topic": "dbscan",
+     "answer_hashes": [
+      "d3e1fe340055eae5e3ca"
+     ],
+     "lesson": "20_clustering"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "silhouette",
+     "answer_hashes": [
+      "d282645fc3c6ac4b8472"
+     ],
+     "lesson": "20_clustering"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "pca scaling",
+     "answer_hashes": [
+      "738914795c9c0d24abb1"
+     ],
+     "lesson": "21_dimensionality_reduction"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "pca objective",
+     "answer_hashes": [
+      "e8be0c1479176d16c932"
+     ],
+     "lesson": "21_dimensionality_reduction"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "tsne",
+     "answer_hashes": [
+      "e4d6a05837c501733a5b"
+     ],
+     "lesson": "21_dimensionality_reduction"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "isolation forest",
+     "answer_hashes": [
+      "e38b8022bbb503cb17a3"
+     ],
+     "lesson": "22_anomaly_detection"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "anomaly evaluation",
+     "answer_hashes": [
+      "9798dc135a615fbe0b08"
+     ],
+     "lesson": "22_anomaly_detection"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "gmm",
+     "answer_hashes": [
+      "925d07bc4b38c2a7c08b"
+     ],
+     "lesson": "23_probabilistic_machine_learning"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "bayesian regression",
+     "answer_hashes": [
+      "fdd44b403d13e5ed0273"
+     ],
+     "lesson": "23_probabilistic_machine_learning"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "gp kernel",
+     "answer_hashes": [
+      "42aba4d594c9ae508f11"
+     ],
+     "lesson": "23_probabilistic_machine_learning"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "hmm",
+     "answer_hashes": [
+      "feaa07020357fdf21057"
+     ],
+     "lesson": "23_probabilistic_machine_learning"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "stacking",
+     "answer_hashes": [
+      "c2aee3cc050dbb9662ce"
+     ],
+     "lesson": "24_ensemble_learning"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "ensemble diversity",
+     "answer_hashes": [
+      "8adf824b56cd2f1f2b42"
+     ],
+     "lesson": "24_ensemble_learning"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "stationarity",
+     "answer_hashes": [
+      "2da29c793ddc031e8cee"
+     ],
+     "lesson": "25_time_series"
+    },
+    {
+     "id": "t17",
+     "type": "mcq",
+     "topic": "seasonal naive",
+     "answer_hashes": [
+      "98f7e9ae2036a66adae2"
+     ],
+     "lesson": "25_time_series"
+    },
+    {
+     "id": "t18",
+     "type": "mcq",
+     "topic": "backtesting",
+     "answer_hashes": [
+      "0abafcd31ab9635a611e"
+     ],
+     "lesson": "25_time_series"
+    },
+    {
+     "id": "t19",
+     "type": "mcq",
+     "topic": "cold start",
+     "answer_hashes": [
+      "9a41ac5744fdbb0e35db"
+     ],
+     "lesson": "26_recommender_systems"
+    },
+    {
+     "id": "t20",
+     "type": "mcq",
+     "topic": "ranking metric",
+     "answer_hashes": [
+      "3ecbc218d91e674cdc35"
+     ],
+     "lesson": "26_recommender_systems"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "explained variance",
+     "answer_hashes": [
+      "3aa1822b16e56f0153ca"
+     ],
+     "decimals": 2,
+     "lesson": "21_dimensionality_reduction"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "centroid",
+     "answer_hashes": [
+      "472c51a6f2af78dc799c"
+     ],
+     "decimals": 1,
+     "lesson": "20_clustering"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "silhouette",
+     "answer_hashes": [
+      "6c60c5f1515739c09606"
+     ],
+     "decimals": 2,
+     "lesson": "20_clustering"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "exponential smoothing",
+     "answer_hashes": [
+      "a869eca7301372a09812"
+     ],
+     "decimals": 1,
+     "lesson": "25_time_series"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "differencing",
+     "answer_hashes": [
+      "8fc94dc34f584a6f3647"
+     ],
+     "decimals": 0,
+     "lesson": "25_time_series"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "dcg",
+     "answer_hashes": [
+      "4e7c2c11fb8514b73819"
+     ],
+     "decimals": 3,
+     "lesson": "26_recommender_systems"
+    },
+    {
+     "id": "m07",
+     "type": "numeric",
+     "topic": "gmm responsibility",
+     "answer_hashes": [
+      "0e3c60ff092869acc954"
+     ],
+     "decimals": 2,
+     "lesson": "23_probabilistic_machine_learning"
+    },
+    {
+     "id": "m08",
+     "type": "numeric",
+     "topic": "voting",
+     "answer_hashes": [
+      "292a537bc6db74e2e3ca"
+     ],
+     "decimals": 3,
+     "lesson": "24_ensemble_learning"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

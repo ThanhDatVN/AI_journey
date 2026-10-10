@@ -1,0 +1,235 @@
+{
+ "id": "15_cross_validation",
+ "kind": "Chapter",
+ "title": "15 · Cross-Validation",
+ "next": "16_hyperparameter_optimization",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "holdout variance",
+     "answer_hashes": [
+      "4c6bd03f785eda9f79e9"
+     ],
+     "lesson": "01_holdout_kfold_stratified.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "k-fold count",
+     "answer_hashes": [
+      "51b42466271a9335ea55"
+     ],
+     "lesson": "01_holdout_kfold_stratified.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "choosing k",
+     "answer_hashes": [
+      "a889d8f6ca02d15d2116"
+     ],
+     "lesson": "01_holdout_kfold_stratified.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "stratified",
+     "answer_hashes": [
+      "829001b531d55ea91909"
+     ],
+     "lesson": "01_holdout_kfold_stratified.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "cross_val_predict",
+     "answer_hashes": [
+      "d7e215f3196cca3cb47b"
+     ],
+     "lesson": "01_holdout_kfold_stratified.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "group",
+     "answer_hashes": [
+      "99311232cb3026e44ba4"
+     ],
+     "lesson": "02_group_timeseries_loo.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "group leakage",
+     "answer_hashes": [
+      "a1894af2b20b139bc454"
+     ],
+     "lesson": "02_group_timeseries_loo.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "time series",
+     "answer_hashes": [
+      "590456ba2651b3d13662"
+     ],
+     "lesson": "02_group_timeseries_loo.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "multi",
+     "topic": "gap",
+     "answer_hashes": [
+      "95debe64dd02ed31abe3"
+     ],
+     "lesson": "02_group_timeseries_loo.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "multi",
+     "topic": "LOO",
+     "answer_hashes": [
+      "25eaa7f5f8d0418b304f"
+     ],
+     "lesson": "02_group_timeseries_loo.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "feature selection leakage",
+     "answer_hashes": [
+      "b3b1561577b7bf049546"
+     ],
+     "lesson": "03_nested_cv_and_protocol.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "selection bias",
+     "answer_hashes": [
+      "c003030686e7adde3bba"
+     ],
+     "lesson": "03_nested_cv_and_protocol.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "nested CV",
+     "answer_hashes": [
+      "7def08eb0fa3bf972bc4"
+     ],
+     "lesson": "03_nested_cv_and_protocol.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "pipeline",
+     "answer_hashes": [
+      "581902ad0863a57c940a"
+     ],
+     "lesson": "03_nested_cv_and_protocol.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "test reuse",
+     "answer_hashes": [
+      "3c1341662e2489ff5594"
+     ],
+     "lesson": "03_nested_cv_and_protocol.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "choosing strategy",
+     "answer_hashes": [
+      "0ea5c05907bbbde8355f"
+     ],
+     "lesson": "02_group_timeseries_loo.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "fold size",
+     "answer_hashes": [
+      "0e921078b243f2e53c89"
+     ],
+     "decimals": 0,
+     "lesson": "01_holdout_kfold_stratified.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "number of fits",
+     "answer_hashes": [
+      "b2f9ddd086b5e4d37e3f"
+     ],
+     "decimals": 0,
+     "lesson": "03_nested_cv_and_protocol.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "LOO count",
+     "answer_hashes": [
+      "ed1cfccea5db666907cd"
+     ],
+     "decimals": 0,
+     "lesson": "02_group_timeseries_loo.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "standard error",
+     "answer_hashes": [
+      "04be6d58f8775613e38e"
+     ],
+     "decimals": 3,
+     "lesson": "01_holdout_kfold_stratified.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "time split",
+     "answer_hashes": [
+      "776037270855bc4c99ba"
+     ],
+     "decimals": 0,
+     "lesson": "02_group_timeseries_loo.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

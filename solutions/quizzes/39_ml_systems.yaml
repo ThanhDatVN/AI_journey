@@ -1,0 +1,303 @@
+title: "39 · ML Systems"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: ml system components
+        lesson: 01_ml_system_design.ipynb
+        type: multi
+        question: "Những thành phần nào thuộc một hệ thống ML production (ngoài code mô hình)?"
+        options: {a: "Thu thập và kiểm tra dữ liệu", b: "Tính đặc trưng / feature store", c: "Phục vụ và giám sát", d: "Vòng phản hồi và huấn luyện lại"}
+        answer: abcd
+        explanation: "Code mô hình chỉ là một phần nhỏ (Sculley et al., 2015)."
+      - id: t02
+        topic: point-in-time leakage
+        lesson: 01_ml_system_design.ipynb
+        type: mcq
+        question: "Mô hình churn có AUC offline 0.99 nhưng khi triển khai chỉ 0.60. Đặc trưng được tính trên toàn bộ lịch sử đến hôm nay. Nguyên nhân khả dĩ nhất:"
+        options: {a: "Rò rỉ thời điểm — đặc trưng dùng thông tin sau thời điểm dự đoán", b: "Mô hình quá đơn giản", c: "Tập test quá nhỏ", d: "Thiếu điều chỉnh siêu tham số"}
+        answer: a
+        explanation: "Đặc trưng phải tính 'như tại thời điểm dự đoán' (point-in-time correct)."
+      - id: t03
+        topic: random split
+        lesson: 01_ml_system_design.ipynb
+        type: tf
+        question: "Chia train/test ngẫu nhiên đủ để phát hiện rò rỉ thời điểm trong đặc trưng."
+        answer: false
+        explanation: "Cả train và test đều mang cùng rò rỉ; cần xây dữ liệu đúng thời điểm và đánh giá theo thời gian."
+      - id: t04
+        topic: training-serving skew
+        lesson: 01_ml_system_design.ipynb
+        type: mcq
+        question: "Cách phòng tránh lệch train/serving hiệu quả nhất là:"
+        options: {a: "Đóng gói tiền xử lý cùng mô hình và dùng chung một đường đặc trưng cho train và serve", b: "Viết lại logic tiền xử lý cẩn thận ở dịch vụ phục vụ", c: "Huấn luyện lại thường xuyên hơn", d: "Dùng mô hình phức tạp hơn"}
+        answer: a
+        explanation: "Không viết lại logic — gọi đúng đối tượng đã huấn luyện; thêm kiểm thử parity."
+      - id: t05
+        topic: system constraints
+        lesson: 01_ml_system_design.ipynb
+        type: mcq
+        question: "API yêu cầu độ trễ p99 < 5 ms. Mô hình A: AUC 0.810, p99 1 ms; mô hình B: AUC 0.811, p99 17 ms. Nên chọn:"
+        options: {a: "A — B vi phạm ràng buộc độ trễ và chỉ hơn không đáng kể", b: "B — AUC cao hơn", c: "Trung bình hai mô hình", d: "Không chọn được"}
+        answer: a
+        explanation: "Chọn theo cả metric mô hình và ràng buộc vận hành."
+      - id: t06
+        topic: batch vs online
+        lesson: 01_ml_system_design.ipynb
+        type: mcq
+        question: "Danh sách khách cần gọi giữ chân được cập nhật mỗi đêm. Kiểu phục vụ phù hợp:"
+        options: {a: "Batch", b: "Online API", c: "Streaming", d: "Trên thiết bị người dùng"}
+        answer: a
+        explanation: "Không cần kết quả tức thì."
+      - id: t07
+        topic: reproducibility levels
+        lesson: 02_reproducibility_and_experiment_tracking.ipynb
+        type: mcq
+        question: "Đồng nghiệp chạy code, dữ liệu và cấu hình của bạn trên máy họ và ra cùng kết quả. Đây là:"
+        options: {a: "Tái lập (reproducible)", b: "Lặp lại (repeatable)", c: "Tái hiện (replicable)", d: "Tổng quát hoá"}
+        answer: a
+        explanation: "Lặp lại: máy mình; tái hiện: dữ liệu mới."
+      - id: t08
+        topic: seeds
+        lesson: 02_reproducibility_and_experiment_tracking.ipynb
+        type: tf
+        question: "Cố định random_state làm kết quả lặp lại được và đồng thời loại bỏ độ bất định của ước lượng hiệu năng."
+        answer: false
+        explanation: "Seed chỉ chọn một điểm trong phân phối kết quả; cần đo độ biến thiên theo seed/lần chia."
+      - id: t09
+        topic: paired comparison
+        lesson: 02_reproducibility_and_experiment_tracking.ipynb
+        type: mcq
+        question: "So sánh hai mô hình trên cùng 20 lần chia theo cặp chính xác hơn so hai trung bình độc lập vì:"
+        options: {a: "Độ khó của từng tập test tác động cả hai mô hình như nhau và bị triệt tiêu trong hiệu", b: "Có nhiều dữ liệu hơn", c: "Mô hình được huấn luyện lâu hơn", d: "Không có lý do"}
+        answer: a
+        explanation: "Phương sai của hiệu theo cặp nhỏ hơn nhiều."
+      - id: t10
+        topic: hidden nondeterminism
+        lesson: 02_reproducibility_and_experiment_tracking.ipynb
+        type: multi
+        question: "Nguồn bất định nào có thể làm kết quả thay đổi dù đã cố định seed của mô hình?"
+        options: {a: "Thứ tự duyệt set chuỗi (PYTHONHASHSEED)", b: "Thứ tự cộng số thực khi tính song song", c: "Phiên bản thư viện khác", d: "Dữ liệu nguồn được cập nhật"}
+        answer: abcd
+        explanation: "Cần sắp xếp tường minh, thuật toán tất định, lock file, hash dữ liệu."
+      - id: t11
+        topic: winner's curse
+        lesson: 02_reproducibility_and_experiment_tracking.ipynb
+        type: mcq
+        question: "Thử 100 cấu hình, chọn cấu hình có AUC validation cao nhất. AUC validation của nó:"
+        options: {a: "Lạc quan so với hiệu năng thật — cần đánh giá lại trên test chưa dùng", b: "Không chệch", c: "Bi quan", d: "Bằng AUC test"}
+        answer: a
+        explanation: "Lời nguyền người thắng; nặng hơn khi validation nhỏ."
+      - id: t12
+        topic: experiment tracking
+        lesson: 02_reproducibility_and_experiment_tracking.ipynb
+        type: multi
+        question: "Một run thí nghiệm nên ghi lại:"
+        options: {a: "Mọi siêu tham số kể cả seed", b: "Hash/phiên bản dữ liệu", c: "Commit code và phiên bản thư viện", d: "Chỉ metric tốt nhất"}
+        answer: abc
+        explanation: "Ghi mọi run (kể cả thất bại) để tái lập và để biết đã thử bao nhiêu cấu hình."
+      - id: t13
+        topic: pickle security
+        lesson: 03_packaging_and_model_registry.ipynb
+        type: mcq
+        question: "Vì sao không được joblib.load một file mô hình tải từ nguồn không tin cậy?"
+        options: {a: "Pickle có thể thực thi code tuỳ ý khi nạp", b: "File quá lớn", c: "Dự đoán sẽ chậm", d: "Phiên bản Python khác"}
+        answer: a
+        explanation: "__reduce__ chỉ định hàm sẽ được gọi khi unpickle; dùng skops/safetensors/ONNX hoặc kiểm tra hash."
+      - id: t14
+        topic: __main__ pitfall
+        lesson: 03_packaging_and_model_registry.ipynb
+        type: mcq
+        question: "Pipeline dùng FunctionTransformer với hàm định nghĩa trong notebook. Server báo \"Can't get attribute ... on module '__main__'\". Cách khắc phục đúng:"
+        options: {a: "Đưa hàm vào một package có thể import, cài ở cả môi trường train và serve", b: "Dùng pickle protocol cao hơn", c: "Đổi tên hàm", d: "Lưu bằng CSV"}
+        answer: a
+        explanation: "Pickle chỉ lưu tham chiếu module.tên, không lưu code."
+      - id: t15
+        topic: input validation
+        lesson: 03_packaging_and_model_registry.ipynb
+        type: tf
+        question: "Pipeline có OneHotEncoder(handle_unknown='ignore') sẽ báo lỗi khi nhận một loại hợp đồng gõ sai."
+        answer: false
+        explanation: "Giá trị lạ thành vector 0 và mô hình vẫn trả xác suất — cần kiểm tra schema trước."
+      - id: t16
+        topic: registry
+        lesson: 03_packaging_and_model_registry.ipynb
+        type: mcq
+        question: "Champion mới gây sự cố. Với model registry dùng alias, cách rollback nhanh nhất:"
+        options: {a: "Trỏ alias champion về phiên bản trước", b: "Huấn luyện lại mô hình cũ", c: "Sửa code phục vụ và deploy lại", d: "Xoá phiên bản mới rồi đăng ký lại"}
+        answer: a
+        explanation: "Phiên bản bất biến + alias → rollback là đổi con trỏ."
+      - id: t17
+        topic: promotion gate
+        lesson: 03_packaging_and_model_registry.ipynb
+        type: multi
+        question: "Cổng thăng hạng mô hình nên kiểm tra:"
+        options: {a: "Metric tổng trên holdout cố định", b: "Metric trong từng nhóm quan trọng", c: "Độ trễ và schema đầu vào", d: "Chỉ loss huấn luyện"}
+        answer: abc
+        explanation: "AUC tổng tăng vẫn có thể làm một nhóm tệ đi."
+  math:
+    questions:
+      - id: m01
+        topic: point-in-time feature
+        lesson: 01_ml_system_design.ipynb
+        type: numeric
+        decimals: 0
+        question: "Nhật ký hoạt động ngày 0→9: [1, 0, 1, 1, 0, 1, 0, 0, 0, 0]. Dự đoán tại as_of = 6 (chỉ dùng ngày < 6). days_since_last = as_of − 1 − (ngày hoạt động gần nhất) = ?"
+        answer: 0
+        explanation: "Ngày hoạt động gần nhất trước 6 là ngày 5 → 6 − 1 − 5 = 0."
+      - id: m02
+        topic: leaky feature
+        lesson: 01_ml_system_design.ipynb
+        type: numeric
+        decimals: 0
+        question: "Cùng nhật ký trên, nếu tính trên toàn bộ dữ liệu (as_of = 10): days_since_last = ?"
+        answer: 4
+        explanation: "10 − 1 − 5 = 4 — thông tin tương lai (khách đã ngừng hoạt động)."
+      - id: m03
+        topic: paired t
+        lesson: 02_reproducibility_and_experiment_tracking.ipynb
+        type: numeric
+        decimals: 2
+        question: "Chênh lệch AUC theo cặp trên 4 fold: trung bình 0.01, độ lệch chuẩn 0.01. Thống kê t = d̄ / (s/√n) = ?"
+        answer: 2
+        explanation: "0.01 / (0.01/2)."
+      - id: m04
+        topic: latency budget
+        lesson: 01_ml_system_design.ipynb
+        type: numeric
+        decimals: 0
+        question: "Ngân sách độ trễ API 50 ms; tải đặc trưng mất 18 ms, mạng và tuần tự hoá 12 ms. Thời gian tối đa cho mô hình (ms) = ?"
+        answer: 20
+        explanation: "50 − 18 − 12."
+      - id: m05
+        topic: winner's curse
+        lesson: 02_reproducibility_and_experiment_tracking.ipynb
+        type: numeric
+        decimals: 3
+        question: "Cấu hình thắng có AUC validation 0.824, AUC trên holdout lớn chưa dùng 0.808. Độ lạc quan = ?"
+        answer: 0.016
+        explanation: "0.824 − 0.808."
+coding:
+  tasks:
+    - id: c01
+      title: Khoảng tin cậy của chênh lệch theo cặp
+      prompt: |
+        Viết `paired_ci(a, b, confidence=0.95)` trả về `(mean_diff, lo, hi)`: d = a − b (cùng fold), trung bình d và khoảng tin cậy
+        theo phân phối t với n − 1 bậc tự do: mean ± t_{(1+confidence)/2, n−1} · sd(d, ddof = 1)/√n.
+      code: |
+        from scipy import stats
+
+
+        def paired_ci(a, b, confidence=0.95):
+            ### START CODE HERE ### (≈ 4 dòng)
+            d = np.asarray(a, float) - np.asarray(b, float)
+            half = stats.t.ppf((1 + confidence) / 2, len(d) - 1) * d.std(ddof=1) / np.sqrt(len(d))
+            return d.mean(), d.mean() - half, d.mean() + half
+            ### END CODE HERE ###
+      tests: |
+        m, lo, hi = paired_ci([0.81, 0.79, 0.83, 0.80, 0.82], [0.80, 0.79, 0.82, 0.79, 0.80])
+        check_close(m, 0.01, message="trung bình chênh lệch")
+        check_close(hi - m, stats.t.ppf(0.975, 4) * np.sqrt(0.00005) / np.sqrt(5), message="nửa độ rộng KTC")
+        check_close(m - lo, hi - m, message="KTC đối xứng")
+        m2, lo2, hi2 = paired_ci([1, 2, 3, 4], [1, 2, 3, 4])
+        check_close([m2, lo2, hi2], [0, 0, 0], message="hai mô hình giống hệt")
+        check_greater(paired_ci([0.81, 0.79, 0.83, 0.80, 0.82], [0.80, 0.79, 0.82, 0.79, 0.80], 0.99)[2], hi, "độ tin cậy cao hơn → KTC rộng hơn")
+    - id: c02
+      title: As-of join (nối đặc trưng đúng thời điểm)
+      prompt: |
+        Viết `as_of_join(labels, features)`: `labels` có cột `customer_id, ts, label`; `features` có cột `customer_id, ts, value`. Với mỗi dòng
+        của `labels`, lấy `value` của bản ghi đặc trưng **mới nhất có ts nhỏ hơn hẳn** `ts` của nhãn, cùng `customer_id` (không có → NaN).
+        Trả về DataFrame `labels` (giữ nguyên thứ tự dòng ban đầu) thêm cột `value`. Gợi ý: `pd.merge_asof(..., by=..., allow_exact_matches=False)`.
+      code: |
+        import pandas as pd
+
+
+        def as_of_join(labels, features):
+            ### START CODE HERE ### (≈ 5 dòng)
+            left = labels.reset_index().sort_values("ts")
+            right = features.sort_values("ts")
+            merged = pd.merge_asof(left, right, on="ts", by="customer_id", allow_exact_matches=False, direction="backward")
+            return merged.sort_values("index").set_index("index").rename_axis(None)
+            ### END CODE HERE ###
+      tests: |
+        feats = pd.DataFrame({"customer_id": ["a", "a", "a", "b"], "ts": [1, 5, 9, 3], "value": [10.0, 50.0, 90.0, 30.0]})
+        labs = pd.DataFrame({"customer_id": ["a", "b", "a", "a", "b"], "ts": [6, 2, 9, 12, 4], "label": [0, 1, 1, 0, 0]})
+        out = as_of_join(labs, feats)
+        check_equal(list(out.columns[:3]), ["customer_id", "ts", "label"], "giữ các cột của labels")
+        check_equal(list(out.label), [0, 1, 1, 0, 0], "giữ thứ tự dòng ban đầu")
+        check_close(out.value.values, [50.0, np.nan, 50.0, 90.0, 30.0], message="giá trị mới nhất có ts < ts nhãn (không lấy cùng thời điểm, không lấy tương lai)")
+analysis:
+  prompt: |
+    Một ngân hàng triển khai mô hình phát hiện gian lận. Offline: AUC 0.97 trên tập test chia ngẫu nhiên. Sau 2 tuần production: tỉ lệ phát hiện thấp
+    hơn nhiều so với kỳ vọng. Điều tra cho thấy: (1) đặc trưng "số giao dịch bị khiếu nại của thẻ" được tính từ bảng khiếu nại hiện tại; (2) đội
+    backend viết lại bước chuẩn hoá số tiền bằng Java; (3) mô hình được chọn trong 300 cấu hình theo AUC test; (4) không ai chạy lại được mô hình
+    đang production vì notebook huấn luyện đã bị sửa. Phân tích từng vấn đề và đề xuất quy trình/hạ tầng để tránh lặp lại.
+  rubric:
+    - "Chỉ ra (1) là rò rỉ thời điểm: khiếu nại xảy ra SAU giao dịch → cần đặc trưng point-in-time (as-of), đánh giá theo thời gian"
+    - "Chỉ ra (2) là lệch train/serving → đóng gói tiền xử lý cùng mô hình hoặc dùng chung feature pipeline, kiểm thử parity"
+    - "Chỉ ra (3) là lời nguyền người thắng/chọn trên test → tách validation và holdout chạm một lần, báo cáo độ biến thiên"
+    - "Chỉ ra (4) thiếu tái lập → tracker ghi params/commit/hash dữ liệu/môi trường, model registry với phiên bản bất biến và metadata"
+    - "Đề xuất quy trình tổng: cổng thăng hạng, shadow/A-B trước khi thay thế, giám sát sau triển khai (chương 40)"
+  sample_answer: |
+    (1) Bảng khiếu nại hiện tại chứa khiếu nại xảy ra sau giao dịch — chính là dấu hiệu gian lận đã bị phát hiện → rò rỉ thời điểm; offline 0.97 là ảo.
+    Sửa: tính đặc trưng bằng as-of join theo thời điểm giao dịch, kiểm thử tính chất "dữ liệu sau thời điểm không ảnh hưởng đặc trưng", đánh giá
+    train-quá-khứ/test-tương-lai. (2) Chuẩn hoá viết lại bằng Java khác Python (làm tròn, đơn vị, cách điền thiếu) → lệch train/serving; phục vụ
+    đúng pipeline đã train (hoặc xuất ONNX gồm cả tiền xử lý), log đặc trưng lúc phục vụ, kiểm thử parity trong CI. (3) Chọn trong 300 cấu hình
+    theo test → test thành validation, con số lạc quan; dùng CV/validation để chọn, holdout chạm một lần, báo cáo khoảng tin cậy. (4) Mỗi run phải
+    ghi commit, hash dữ liệu, cấu hình, môi trường; mô hình production lấy từ registry (phiên bản bất biến + metadata + model card), không từ
+    notebook. Quy trình: cổng thăng hạng tự động trên holdout theo thời gian (tổng + theo nhóm + độ trễ + schema), shadow deployment rồi A/B,
+    giám sát trôi dữ liệu và hiệu năng, rollback bằng alias.
+project:
+  prompt: |
+    **Mini project — Gói mô hình có kiểm chứng.** Với `make_customer_churn(5000, seed=3)` (chia 70/30, `random_state=0`, stratify): huấn luyện
+    pipeline `ColumnTransformer` (chuẩn hoá cột số, one-hot cột danh mục) + `LogisticRegression`; lưu vào thư mục `package_dir` gồm `model.joblib`
+    và `metadata.json` với các khoá `features` (danh sách cột), `test_roc_auc`, `sklearn_version`, `model_sha256` (sha256 của file model.joblib).
+    Nạp lại thành `reloaded` sau khi **kiểm tra hash**. Yêu cầu: AUC test > 0.78; dự đoán của `reloaded` khớp mô hình gốc.
+  code: |
+    import hashlib
+    import json
+    import tempfile
+    from pathlib import Path
+
+    import joblib
+    import sklearn
+    from sklearn.compose import ColumnTransformer
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import roc_auc_score
+    from sklearn.model_selection import train_test_split
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
+    from ml_course.datasets import make_customer_churn
+
+    data = make_customer_churn(5000, seed=3)
+    FEATURES = ["tenure_months", "contract", "internet_service", "monthly_charges", "total_charges",
+                "payment_method", "support_calls", "senior", "n_products"]
+    NUMERIC = ["tenure_months", "monthly_charges", "total_charges", "support_calls", "n_products"]
+    CATEGORICAL = ["contract", "internet_service", "payment_method", "senior"]
+    X_tr, X_te, y_tr, y_te = train_test_split(data[FEATURES], data.churn, test_size=0.3, random_state=0, stratify=data.churn)
+    package_dir = Path(tempfile.mkdtemp()) / "churn_v1"
+    ### START CODE HERE ### (≈ 14 dòng)
+    pre = ColumnTransformer([("num", StandardScaler(), NUMERIC), ("cat", OneHotEncoder(handle_unknown="ignore"), CATEGORICAL)])
+    model = make_pipeline(pre, LogisticRegression(max_iter=1000)).fit(X_tr, y_tr)
+    package_dir.mkdir(parents=True)
+    joblib.dump(model, package_dir / "model.joblib")
+    meta = {"features": FEATURES, "test_roc_auc": float(roc_auc_score(y_te, model.predict_proba(X_te)[:, 1])),
+            "sklearn_version": sklearn.__version__,
+            "model_sha256": hashlib.sha256((package_dir / "model.joblib").read_bytes()).hexdigest()}
+    (package_dir / "metadata.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+
+    loaded_meta = json.loads((package_dir / "metadata.json").read_text(encoding="utf-8"))
+    if hashlib.sha256((package_dir / "model.joblib").read_bytes()).hexdigest() != loaded_meta["model_sha256"]:
+        raise RuntimeError("hash không khớp")
+    reloaded = joblib.load(package_dir / "model.joblib")
+    ### END CODE HERE ###
+    print(json.dumps({k: v for k, v in meta.items() if k != "features"}, indent=2))
+  tests: |
+    saved = json.loads((package_dir / "metadata.json").read_text(encoding="utf-8"))
+    check_true({"features", "test_roc_auc", "sklearn_version", "model_sha256"} <= set(saved), "metadata đủ khoá")
+    check_equal(saved["model_sha256"], hashlib.sha256((package_dir / "model.joblib").read_bytes()).hexdigest(), "hash khớp file")
+    check_equal(saved["features"], FEATURES, "danh sách đặc trưng")
+    check_greater(saved["test_roc_auc"], 0.78, "AUC test")
+    check_close(reloaded.predict_proba(X_te)[:, 1], model.predict_proba(X_te)[:, 1], message="mô hình nạp lại khớp bản gốc")
+    check_equal(saved["sklearn_version"], sklearn.__version__, "ghi phiên bản scikit-learn")

@@ -1,0 +1,319 @@
+title: "22 · Anomaly Detection"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: when to use
+        lesson: 01_statistical_and_gaussian_methods.ipynb
+        type: multi
+        question: "Dấu hiệu nên dùng anomaly detection thay vì (hoặc cùng với) phân loại có giám sát:"
+        options:
+          a: "Positive cực hiếm và có rất ít nhãn"
+          b: "Kiểu bất thường đa dạng, thay đổi theo thời gian"
+          c: "Có hàng chục nghìn nhãn cho mọi kiểu bất thường, kiểu bất thường ổn định"
+          d: "Cần phát hiện kiểu bất thường chưa từng thấy"
+        answer: abd
+        explanation: "Có nhiều nhãn và kiểu ổn định → có giám sát thường tốt hơn."
+      - id: t02
+        topic: anomaly types
+        lesson: 01_statistical_and_gaussian_methods.ipynb
+        type: mcq
+        question: "Nhiệt độ 35°C bình thường vào tháng 6 nhưng bất thường vào tháng 12. Đây là bất thường:"
+        options: {a: "Điểm", b: "Ngữ cảnh", c: "Tập thể", d: "Không phải bất thường"}
+        answer: b
+        explanation: "Bất thường phụ thuộc ngữ cảnh (thời gian)."
+      - id: t03
+        topic: masking
+        lesson: 01_statistical_and_gaussian_methods.ipynb
+        type: mcq
+        question: "Vì sao z-score kém khi dữ liệu có nhiều outlier?"
+        options:
+          a: "Outlier kéo trung bình và thổi phồng độ lệch chuẩn → z-score của chính chúng nhỏ lại"
+          b: "Z-score chỉ dùng cho dữ liệu rời rạc"
+          c: "Z-score không tính được khi có outlier"
+          d: "Z-score luôn cảnh báo quá nhiều"
+        answer: a
+        explanation: "Masking — dùng median/MAD (robust z-score)."
+      - id: t04
+        topic: gaussian model
+        lesson: 01_statistical_and_gaussian_methods.ipynb
+        type: mcq
+        question: "Trong mô hình Gaussian phát hiện bất thường, μ và σ² được ước lượng trên:"
+        options:
+          a: "Dữ liệu (gần như) bình thường, không cần nhãn"
+          b: "Chỉ các điểm bất thường"
+          c: "Tập test"
+          d: "Tập validation có nhãn"
+        answer: a
+        explanation: "Validation có nhãn chỉ dùng để chọn ε."
+      - id: t05
+        topic: choosing epsilon
+        lesson: 01_statistical_and_gaussian_methods.ipynb
+        type: tf
+        question: "Nên chọn ngưỡng ε bằng accuracy trên validation."
+        answer: false
+        explanation: "Bất thường hiếm → accuracy cao nhất khi không cảnh báo gì; dùng F1 (hoặc precision@k)."
+      - id: t06
+        topic: multivariate
+        lesson: 01_statistical_and_gaussian_methods.ipynb
+        type: mcq
+        question: "Điểm có CPU cao nhưng lưu lượng mạng thấp (từng giá trị đều trong khoảng thường gặp; CPU và mạng tương quan mạnh). Mô hình bắt được tự động:"
+        options: {a: "Gaussian độc lập từng feature", b: "Gaussian nhiều chiều (Mahalanobis)", c: "Robust z-score từng cột", d: "IQR từng cột"}
+        answer: b
+        explanation: "Hiệp phương sai mô hình hoá tương quan; với mô hình độc lập phải tự tạo feature tỉ số."
+      - id: t07
+        topic: robust covariance
+        lesson: 01_statistical_and_gaussian_methods.ipynb
+        type: mcq
+        question: "Dữ liệu train có lẫn 15% bất thường cùng kiểu. Ước lượng hiệp phương sai nào nên dùng?"
+        options: {a: "np.cov thông thường", b: "Minimum Covariance Determinant (MCD)", c: "Ma trận đơn vị", d: "Không ước lượng được"}
+        answer: b
+        explanation: "MCD ước lượng trên tập con sạch nhất; chịu được nhiễm bẩn dưới ~50%."
+      - id: t08
+        topic: isolation forest
+        lesson: 02_isolation_forest_lof_ocsvm.ipynb
+        type: mcq
+        question: "Trong Isolation Forest, điểm bất thường có:"
+        options:
+          a: "Đường đi trung bình ngắn — bị cô lập sau ít phép cắt ngẫu nhiên"
+          b: "Đường đi trung bình dài"
+          c: "Mật độ cao"
+          d: "Khoảng cách nhỏ tới láng giềng"
+        answer: a
+        explanation: "Ít và khác biệt → dễ cô lập; điểm số 2^(−E[h]/c(ψ)) gần 1."
+      - id: t09
+        topic: LOF
+        lesson: 02_isolation_forest_lof_ocsvm.ipynb
+        type: mcq
+        question: "LOF(x) ≈ 3 nghĩa là:"
+        options:
+          a: "Mật độ quanh x thấp hơn khoảng 3 lần so với mật độ quanh các láng giềng của nó"
+          b: "x có 3 láng giềng"
+          c: "x cách tâm 3 độ lệch chuẩn"
+          d: "x thuộc cụm thứ 3"
+        answer: a
+        explanation: "LOF ≈ 1: như láng giềng; ≫ 1: bất thường cục bộ."
+      - id: t10
+        topic: local anomalies
+        lesson: 02_isolation_forest_lof_ocsvm.ipynb
+        type: tf
+        question: "LOF có thể phát hiện một điểm nằm sát một cụm rất dày (khoảng cách tuyệt đối nhỏ) mà Isolation Forest xếp sau nhiều điểm rìa của một cụm thưa."
+        answer: true
+        explanation: "LOF so với mật độ cục bộ; IF nhìn mức độ cô lập toàn cục."
+      - id: t11
+        topic: contamination
+        lesson: 02_isolation_forest_lof_ocsvm.ipynb
+        type: mcq
+        question: "Tham số contamination của IsolationForest ảnh hưởng tới:"
+        options: {a: "Ngưỡng của predict", b: "Giá trị score_samples", c: "Cấu trúc các cây", d: "Số cây"}
+        answer: a
+        explanation: "Điểm số không đổi; contamination chỉ đặt ngưỡng chuyển điểm số thành nhãn."
+      - id: t12
+        topic: ocsvm
+        lesson: 02_isolation_forest_lof_ocsvm.ipynb
+        type: multi
+        question: "Nhược điểm của One-Class SVM:"
+        options: {a: "Nhạy với gamma và nu", b: "Cần chuẩn hoá feature", c: "Chậm với dữ liệu rất lớn", d: "Chỉ học được ranh giới tuyến tính"}
+        answer: abc
+        explanation: "Kernel RBF cho ranh giới phi tuyến; nhưng khó tinh chỉnh khi không có nhãn."
+      - id: t13
+        topic: novelty vs outlier
+        lesson: 03_evaluation_and_practice.ipynb
+        type: mcq
+        question: "Novelty detection (bán giám sát) khác outlier detection (không giám sát) ở chỗ:"
+        options:
+          a: "Train chỉ trên dữ liệu bình thường đã xác nhận"
+          b: "Cần nhãn cho cả hai lớp"
+          c: "Không cần dữ liệu train"
+          d: "Chỉ dùng cho chuỗi thời gian"
+        answer: a
+        explanation: "Outlier detection train trên dữ liệu có lẫn bất thường, không nhãn."
+      - id: t14
+        topic: novel patterns
+        lesson: 03_evaluation_and_practice.ipynb
+        type: tf
+        question: "Model có giám sát train với rất nhiều nhãn của các kiểu gian lận cũ sẽ bắt tốt cả kiểu gian lận mới chưa từng thấy."
+        answer: false
+        explanation: "Nó học 'gian lận trông giống kiểu cũ' — chạy song song detector bất thường cho kiểu mới."
+      - id: t15
+        topic: reconstruction error
+        lesson: 03_evaluation_and_practice.ipynb
+        type: mcq
+        question: "Sai số tái tạo PCA là detector tốt khi:"
+        options:
+          a: "Dữ liệu bình thường nằm gần một không gian con ít chiều (feature tương quan mạnh)"
+          b: "Các feature độc lập với nhau"
+          c: "Chỉ có 1 feature"
+          d: "Bất thường nằm dọc các thành phần chính"
+        answer: a
+        explanation: "Không có cấu trúc ít chiều → độ lệch có thể nằm gọn trong không gian các thành phần → tái tạo tốt, bị bỏ sót."
+      - id: t16
+        topic: time series
+        lesson: 03_evaluation_and_practice.ipynb
+        type: multi
+        question: "Khi phát hiện bất thường trên doanh số ngày bằng rolling statistic, nên:"
+        options:
+          a: "Dùng .shift(1) để thống kê chỉ dựa trên quá khứ"
+          b: "Dùng median/MAD thay vì mean/std"
+          c: "Loại trừ hoặc mô hình hoá ngữ cảnh đã biết (khuyến mãi, ngày lễ)"
+          d: "Tính trung bình trên toàn bộ chuỗi kể cả tương lai"
+        answer: abc
+        explanation: "Không rò rỉ, robust, và biết ngữ cảnh."
+  math:
+    questions:
+      - id: m01
+        topic: robust z
+        lesson: 01_statistical_and_gaussian_methods.ipynb
+        type: numeric
+        decimals: 2
+        question: "Dữ liệu [10, 11, 12, 13, 40]. Robust z-score 0.6745·(x − median)/MAD của 40 = ?"
+        answer: 18.89
+        explanation: "median 12, độ lệch |x − 12| = [2, 1, 0, 1, 28] → MAD = 1 → 0.6745·28."
+      - id: m02
+        topic: gaussian density
+        lesson: 01_statistical_and_gaussian_methods.ipynb
+        type: numeric
+        decimals: 4
+        question: "Mô hình Gaussian độc lập μ = [0, 0], σ² = [1, 1]. p([1, 1]) = ? (φ(1) ≈ 0.24197)"
+        answer: 0.0585
+        explanation: "0.24197² ≈ 0.05855."
+      - id: m03
+        topic: mahalanobis
+        lesson: 01_statistical_and_gaussian_methods.ipynb
+        type: numeric
+        decimals: 2
+        question: "Σ = diag(4, 9), x − μ = [2, 3]. Bình phương khoảng cách Mahalanobis = ?"
+        answer: 2
+        explanation: "2²/4 + 3²/9 = 1 + 1."
+      - id: m04
+        topic: isolation score
+        lesson: 02_isolation_forest_lof_ocsvm.ipynb
+        type: numeric
+        decimals: 2
+        question: "Isolation Forest với ψ = 256 (c(ψ) ≈ 10.24). Điểm có độ dài đường đi trung bình 4. Anomaly score 2^(−E[h]/c(ψ)) = ?"
+        answer: 0.76
+        explanation: "2^(−4/10.24) ≈ 0.763 — khá bất thường."
+      - id: m05
+        topic: f1 top-k
+        lesson: 03_evaluation_and_practice.ipynb
+        type: numeric
+        decimals: 3
+        question: "Có 60 vụ gian lận. Duyệt 50 cảnh báo đầu, 30 là gian lận thật. F1 = ?"
+        answer: 0.545
+        explanation: "precision 0.6, recall 0.5 → F1 = 2·0.3/1.1."
+coding:
+  tasks:
+    - id: c01
+      title: Chọn ε bằng F1
+      prompt: |
+        Viết `select_threshold(y_val, p_val, n_steps=1000)` trả về `(best_eps, best_f1)`: thử `n_steps` giá trị ε đều nhau giữa min và max
+        của `p_val`, dự đoán bất thường khi `p_val < eps`, giữ ε có F1 lớn nhất.
+      code: |
+        from sklearn.metrics import f1_score
+
+        def select_threshold(y_val, p_val, n_steps=1000):
+            best_eps, best_f1 = 0.0, 0.0
+            ### START CODE HERE ### (≈ 5 dòng)
+            for eps in np.linspace(p_val.min(), p_val.max(), n_steps):
+                f1 = f1_score(y_val, p_val < eps, zero_division=0)
+                if f1 > best_f1:
+                    best_eps, best_f1 = eps, f1
+            ### END CODE HERE ###
+            return best_eps, best_f1
+      tests: |
+        y = np.array([0, 0, 0, 0, 1, 1])
+        p = np.array([0.9, 0.8, 0.85, 0.7, 0.1, 0.2])
+        eps, f1 = select_threshold(y, p)
+        check_close(f1, 1.0, message="tách hoàn hảo")
+        check_true(0.2 < eps <= 0.7, "ε giữa hai nhóm")
+        y2 = np.array([0, 0, 1, 0, 1])
+        p2 = np.array([0.5, 0.05, 0.1, 0.9, 0.2])
+        eps2, f12 = select_threshold(y2, p2)
+        check_close(f12, 0.8, tol=1e-9, message="F1 tốt nhất khi một điểm bình thường lẫn vào")
+    - id: c02
+      title: Robust z-score
+      prompt: |
+        Viết `robust_zscore(x)` = 0.6745·(x − median)/MAD với MAD = median(|x − median|).
+      code: |
+        def robust_zscore(x):
+            x = np.asarray(x, float)
+            ### START CODE HERE ### (≈ 3 dòng)
+            med = np.median(x)
+            mad = np.median(np.abs(x - med))
+            return 0.6745 * (x - med) / mad
+            ### END CODE HERE ###
+      tests: |
+        check_close(robust_zscore([10, 11, 12, 13, 40])[-1], 0.6745 * 28, tol=1e-9, message="robust z của 40")
+        rng = np.random.default_rng(0)
+        x = np.r_[rng.normal(100, 10, 900), rng.normal(300, 30, 100)]
+        rz = robust_zscore(x)
+        check_greater((np.abs(rz[900:]) > 3.5).mean(), 0.95, "bắt hầu hết 10% outlier (không bị masking)")
+        check_less((np.abs(rz[:900]) > 3.5).mean(), 0.01, "ít báo nhầm")
+analysis:
+  prompt: |
+    Một nhà máy muốn phát hiện sớm hỏng hóc máy CNC từ 40 cảm biến (nhiệt độ, độ rung, dòng điện... tương quan mạnh qua tải máy).
+    Có 2 năm dữ liệu, 12 sự cố được ghi nhận (không rõ thời điểm chính xác). Nhóm dữ liệu đề xuất: (1) train XGBoost phân loại "hỏng / không hỏng";
+    (2) đánh giá bằng accuracy trên dữ liệu tháng cuối; (3) nếu XGBoost kém thì dùng z-score từng cảm biến với ngưỡng 3;
+    (4) ngưỡng cảnh báo đặt contamination = 0.01 "vì 1% là con số hợp lý". Đánh giá và đề xuất phương án.
+  rubric:
+    - "Chỉ ra 12 sự cố quá ít nhãn (và nhãn thời điểm không chính xác) cho model có giám sát; sự cố mới có thể khác các sự cố cũ → anomaly/novelty detection phù hợp hơn, có giám sát chỉ bổ trợ"
+    - "Chỉ ra accuracy vô nghĩa khi sự cố hiếm; dùng precision@k / recall, PR-AUC, thời gian phát hiện sớm; đánh giá với ít nhãn rất nhiễu"
+    - "Chỉ ra z-score từng cảm biến bỏ qua tương quan (bất thường do quan hệ giữa các cảm biến) và bị masking; đề xuất Gaussian nhiều chiều/Mahalanobis robust (MCD), sai số tái tạo PCA/autoencoder (cảm biến tương quan → cấu trúc ít chiều), Isolation Forest"
+    - "Chỉ ra contamination chỉ đặt ngưỡng; ngưỡng nên chọn theo năng lực xử lý cảnh báo (top-k mỗi ngày) hoặc validation, không phải con số tuỳ ý"
+    - "Đề cập ngữ cảnh/thời gian: so với lịch sử của chính máy, loại trừ chế độ vận hành đã biết, không rò rỉ tương lai; vòng phản hồi kỹ sư → nhãn"
+  sample_answer: |
+    (1) 12 sự cố là quá ít để train có giám sát tin cậy, nhãn thời điểm lại mờ; sự cố tương lai có thể khác kiểu. Nên dùng novelty detection: học
+    "máy chạy bình thường" từ dữ liệu đã xác nhận không có sự cố, cảnh báo khi lệch. Có giám sát chỉ dùng sau khi tích luỹ đủ nhãn, chạy song song.
+    (2) Accuracy ~99.9% khi không bao giờ cảnh báo. Dùng precision@k (số cảnh báo kỹ sư xử lý được mỗi ngày), recall theo sự cố, thời gian phát hiện
+    trước khi hỏng; nhớ rằng 12 sự cố → ước lượng rất nhiễu.
+    (3) Cảm biến tương quan mạnh: hỏng hóc thường thể hiện ở quan hệ (nhiệt độ cao bất thường so với tải) → z-score từng cột bỏ sót; outlier còn thổi
+    phồng std. Dùng Mahalanobis với MCD, hoặc sai số tái tạo PCA/autoencoder (dữ liệu có cấu trúc ít chiều), Isolation Forest; feature tỉ số/so với tải.
+    (4) contamination chỉ chuyển điểm số thành nhãn; đặt ngưỡng theo năng lực xử lý cảnh báo hoặc chọn trên validation, theo dõi tỉ lệ cảnh báo.
+    (5) Ngữ cảnh: so với lịch sử của chính máy, theo chế độ vận hành; rolling stats chỉ dùng quá khứ; kỹ sư phản hồi từng cảnh báo để tích luỹ nhãn.
+project:
+  prompt: |
+    **Mini project — Phát hiện gian lận kiểu mới.** Dữ liệu giao dịch 5 feature. Tập train chỉ có hai kiểu gian lận đã biết (A, B — có nhãn);
+    tập test có thêm kiểu **C chưa từng thấy**. Đội kiểm soát duyệt 200 giao dịch đáng ngờ nhất. Xây hệ thống chấm điểm `score` (lớn = đáng ngờ)
+    cho tập test sao cho: PR-AUC ≥ 0.85 **và** trong 200 giao dịch điểm cao nhất có ≥ 80% số giao dịch kiểu C (`recall_c`).
+    Gợi ý: model có giám sát chỉ học A, B.
+  code: |
+    import pandas as pd
+    from sklearn.metrics import average_precision_score
+    from sklearn.neighbors import LocalOutlierFactor
+    from sklearn.preprocessing import StandardScaler
+
+
+    def make_tx(n_normal, n_per, patterns, seed):
+        r = np.random.default_rng(seed)
+        def normal(n):
+            return np.c_[r.normal(12.7, 0.9, n), np.log1p(r.exponential(8, n)), r.poisson(2, n),
+                         np.log(r.uniform(30, 3650, n)), r.random(n) < 0.04].astype(float)
+        X, kind = [normal(n_normal)], [np.zeros(n_normal, int)]
+        for k in patterns:
+            d = normal(n_per)
+            if k == 1:
+                d[:, 0], d[:, 1], d[:, 4] = r.normal(15, 0.6, n_per), np.log1p(r.exponential(300, n_per)), r.random(n_per) < 0.6
+            if k == 2:
+                d[:, 0], d[:, 2] = r.normal(9.5, 0.5, n_per), r.poisson(15, n_per)
+            if k == 3:
+                d[:, 3], d[:, 0], d[:, 2] = np.log(r.uniform(1, 7, n_per)), r.normal(14, 0.5, n_per), r.poisson(5, n_per)
+            X.append(d)
+            kind.append(np.full(n_per, k))
+        return np.vstack(X), np.concatenate(kind)
+
+
+    X_tr, kind_tr = make_tx(20000, 60, [1, 2], seed=0)        # kind 0 = bình thường, 1 = A, 2 = B
+    X_te, kind_te = make_tx(20000, 40, [1, 2, 3], seed=1)     # 3 = C (chỉ có ở test)
+    y_te = (kind_te > 0).astype(int)
+    ### START CODE HERE ### (≈ 4 dòng)
+    scaler = StandardScaler().fit(X_tr[kind_tr == 0])
+    lof = LocalOutlierFactor(n_neighbors=35, novelty=True).fit(scaler.transform(X_tr[kind_tr == 0]))
+    score = -lof.score_samples(scaler.transform(X_te))
+    ### END CODE HERE ###
+    top = np.argsort(-score)[:200]
+    pr_auc = average_precision_score(y_te, score)
+    recall_c = (kind_te[top] == 3).sum() / (kind_te == 3).sum()
+    print(f"PR-AUC = {pr_auc:.3f} | recall@200 kiểu C = {recall_c:.2f}")
+  tests: |
+    check_greater(pr_auc, 0.85, "PR-AUC ≥ 0.85")
+    check_greater(recall_c, 0.8, "bắt ≥ 80% kiểu C trong top 200")

@@ -1,0 +1,235 @@
+{
+ "id": "18_feature_selection",
+ "kind": "Chapter",
+ "title": "18 · Feature Selection",
+ "next": "19_imbalanced_learning",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "why select",
+     "answer_hashes": [
+      "1d5ba0cc37a8f9bc15c6"
+     ],
+     "lesson": "01_filter_methods.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "multi",
+     "topic": "filter blind spots",
+     "answer_hashes": [
+      "3b5c1bd663c9e27e3c04"
+     ],
+     "lesson": "01_filter_methods.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "MI vs F",
+     "answer_hashes": [
+      "2c83d86e77eb739fdc90"
+     ],
+     "lesson": "01_filter_methods.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "VIF",
+     "answer_hashes": [
+      "6ac7cb95e8669b807e38"
+     ],
+     "lesson": "01_filter_methods.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "wrapper",
+     "answer_hashes": [
+      "5d4f6dde80f702a90513"
+     ],
+     "lesson": "02_wrapper_methods.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "wrapper cost",
+     "answer_hashes": [
+      "39655bd1cefe4b5e8383"
+     ],
+     "lesson": "02_wrapper_methods.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "RFE",
+     "answer_hashes": [
+      "fcdf80226b566232c8a6"
+     ],
+     "lesson": "02_wrapper_methods.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "stopping",
+     "answer_hashes": [
+      "832a2b73ca2fcf7e4bb1"
+     ],
+     "lesson": "02_wrapper_methods.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "stability",
+     "answer_hashes": [
+      "4aa214e00ec21068e4a7"
+     ],
+     "lesson": "02_wrapper_methods.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "L1",
+     "answer_hashes": [
+      "6e6621209139e245a8c3"
+     ],
+     "lesson": "03_embedded_methods_and_pitfalls.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "correlated L1",
+     "answer_hashes": [
+      "e9d7dcdb9414597fcced"
+     ],
+     "lesson": "03_embedded_methods_and_pitfalls.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "shadow",
+     "answer_hashes": [
+      "9a0ec7de75ad33db9aa9"
+     ],
+     "lesson": "03_embedded_methods_and_pitfalls.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "stability selection",
+     "answer_hashes": [
+      "31934780ea6e995ea2af"
+     ],
+     "lesson": "03_embedded_methods_and_pitfalls.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "tf",
+     "topic": "causality",
+     "answer_hashes": [
+      "791fddd8066bc05cb314"
+     ],
+     "lesson": "03_embedded_methods_and_pitfalls.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "when selection helps",
+     "answer_hashes": [
+      "1f8bbb7983c376e7614b"
+     ],
+     "lesson": "03_embedded_methods_and_pitfalls.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "tf",
+     "topic": "leakage",
+     "answer_hashes": [
+      "5c9ad332c76d81115ffb"
+     ],
+     "lesson": "03_embedded_methods_and_pitfalls.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "VIF",
+     "answer_hashes": [
+      "6efe1ecb2d9ba4390cd0"
+     ],
+     "decimals": 2,
+     "lesson": "01_filter_methods.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "forward cost",
+     "answer_hashes": [
+      "e501a2dbc77b86195806"
+     ],
+     "decimals": 0,
+     "lesson": "02_wrapper_methods.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "subsets",
+     "answer_hashes": [
+      "076604139a64f6762e85"
+     ],
+     "decimals": 0,
+     "lesson": "02_wrapper_methods.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "MI",
+     "answer_hashes": [
+      "93dc707e87c74aa43019"
+     ],
+     "decimals": 3,
+     "lesson": "01_filter_methods.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "Lasso shrink",
+     "answer_hashes": [
+      "76ab4fd39804f46aa7c3"
+     ],
+     "decimals": 2,
+     "lesson": "03_embedded_methods_and_pitfalls.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

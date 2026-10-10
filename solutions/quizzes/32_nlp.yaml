@@ -1,0 +1,255 @@
+title: "32 · NLP"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: unicode
+        lesson: 01_text_preprocessing_and_tokenization.ipynb
+        type: mcq
+        question: "Hai chuỗi 'Việt Nam' nhìn giống hệt nhưng `==` trả về False. Nguyên nhân thường gặp nhất:"
+        options: {a: "Một chuỗi ở dạng NFC, chuỗi kia ở dạng NFD (dấu là code point riêng)", b: "Khác font chữ", c: "Python không hỗ trợ tiếng Việt", d: "Khác màu chữ"}
+        answer: a
+        explanation: "Chuẩn hoá NFC khi đọc dữ liệu."
+      - id: t02
+        topic: accents
+        lesson: 01_text_preprocessing_and_tokenization.ipynb
+        type: multi
+        question: "Về bỏ dấu tiếng Việt khi xử lý văn bản:"
+        options:
+          a: "Giúp khớp truy vấn người dùng gõ không dấu"
+          b: "Làm nhiều từ khác nghĩa trùng nhau (má, mà, mả → ma)"
+          c: "Nên áp dụng cho cả chỉ mục và truy vấn nếu dùng để so khớp"
+          d: "Luôn làm tăng độ chính xác của mọi mô hình"
+        answer: abc
+        explanation: "Là đánh đổi, không phải luôn tốt."
+      - id: t03
+        topic: segmentation
+        lesson: 01_text_preprocessing_and_tokenization.ipynb
+        type: mcq
+        question: "Tách từ bằng khớp cực đại tiến (forward maximum matching) sai với 'Học sinh học sinh học' vì:"
+        options: {a: "Thuật toán tham lam, luôn chọn từ dài nhất tại vị trí hiện tại mà không xét ngữ cảnh", b: "Từ điển quá lớn", c: "Câu có dấu", d: "Thuật toán dùng mạng nơ-ron"}
+        answer: a
+        explanation: "Công cụ thật dùng mô hình thống kê/học máy."
+      - id: t04
+        topic: stopwords
+        lesson: 01_text_preprocessing_and_tokenization.ipynb
+        type: tf
+        question: "Bỏ stopword theo một danh sách chung luôn an toàn cho phân tích cảm xúc."
+        answer: false
+        explanation: "Danh sách thường chứa 'không', 'chưa' — bỏ đi đảo nghĩa."
+      - id: t05
+        topic: bpe
+        lesson: 01_text_preprocessing_and_tokenization.ipynb
+        type: mcq
+        question: "Ưu điểm chính của BPE so với từ vựng theo từ:"
+        options: {a: "Không có từ ngoài từ vựng: từ lạ/lỗi chính tả vỡ thành các mảnh quen thuộc", b: "Chuỗi luôn ngắn hơn tách theo từ", c: "Không cần huấn luyện", d: "Hiểu nghĩa của từ"}
+        answer: a
+        explanation: "Đổi lại chuỗi dài hơn tách theo từ."
+      - id: t06
+        topic: zipf
+        lesson: 01_text_preprocessing_and_tokenization.ipynb
+        type: mcq
+        question: "Định luật Zipf nói rằng:"
+        options: {a: "Tần suất từ giảm gần theo luỹ thừa của hạng — vài từ rất phổ biến, rất nhiều từ hiếm", b: "Mọi từ có tần suất bằng nhau", c: "Từ dài xuất hiện nhiều hơn", d: "Số từ khác nhau không đổi khi thêm dữ liệu"}
+        answer: a
+        explanation: "Luôn có đuôi dài từ hiếm."
+      - id: t07
+        topic: tfidf
+        lesson: 02_bow_tfidf_classification.ipynb
+        type: mcq
+        question: "Thành phần IDF trong TF-IDF làm gì?"
+        options: {a: "Giảm trọng số của từ xuất hiện ở nhiều văn bản", b: "Tăng trọng số từ phổ biến", c: "Đếm số lần từ xuất hiện trong văn bản", d: "Chuẩn hoá độ dài văn bản"}
+        answer: a
+        explanation: "Chuẩn hoá độ dài là bước L2 riêng."
+      - id: t08
+        topic: linear baseline
+        lesson: 02_bow_tfidf_classification.ipynb
+        type: tf
+        question: "Logistic regression hoặc linear SVM trên TF-IDF n-gram là baseline mạnh cho phân loại văn bản và nên thử trước mạng nơ-ron."
+        answer: true
+        explanation: "Nhanh, mạnh, dễ diễn giải."
+      - id: t09
+        topic: negation
+        lesson: 02_bow_tfidf_classification.ipynb
+        type: mcq
+        question: "Unigram BoW + mô hình tuyến tính không phân biệt được 'không tốt' (chê) và 'không tệ' (khen) vì:"
+        options: {a: "Mất thứ tự; quan hệ 'không' đảo nghĩa từ đi sau là tương tác mà mô hình tuyến tính trên unigram không biểu diễn được", b: "Thiếu dữ liệu", c: "Từ 'không' bị bỏ", d: "Dùng TF-IDF thay vì đếm"}
+        answer: a
+        explanation: "Bigram 'không tốt' thêm đặc trưng tương tác."
+      - id: t10
+        topic: error analysis
+        lesson: 02_bow_tfidf_classification.ipynb
+        type: multi
+        question: "Khi phân tích lỗi mô hình phân loại tin tức, các nguyên nhân thường thấy:"
+        options: {a: "Nhãn bị gán sai", b: "Văn bản có đoạn lạc đề lấn át nội dung chính", c: "Từ ghép bị tách thành âm tiết mang nghĩa khác", d: "Mô hình tuyến tính không thể học được văn bản"}
+        answer: abc
+        explanation: "Phân tích lỗi trước khi đổi mô hình."
+      - id: t11
+        topic: distributional
+        lesson: 03_word_embeddings.ipynb
+        type: mcq
+        question: "Word embedding học được từ văn bản không nhãn dựa trên:"
+        options: {a: "Giả thuyết phân bố: từ có ngữ cảnh giống nhau có nghĩa giống nhau", b: "Từ điển đồng nghĩa có sẵn", c: "Nhãn chủ đề của văn bản", d: "Độ dài của từ"}
+        answer: a
+        explanation: "Firth: biết từ qua 'bạn bè' của nó."
+      - id: t12
+        topic: sgns
+        lesson: 03_word_embeddings.ipynb
+        type: mcq
+        question: "Negative sampling trong word2vec thay softmax trên cả từ vựng bằng:"
+        options: {a: "Phân biệt cặp (từ, ngữ cảnh) thật với vài cặp ngẫu nhiên lấy theo tần suất^0.75", b: "Chỉ dùng từ phổ biến", c: "Bỏ các từ hiếm", d: "Tính softmax trên một nửa từ vựng"}
+        answer: a
+        explanation: "Rẻ hơn rất nhiều."
+      - id: t13
+        topic: few labels
+        lesson: 03_word_embeddings.ipynb
+        type: tf
+        question: "Khi chỉ có vài chục văn bản có nhãn, trung bình embedding học từ ngữ liệu không nhãn có thể vượt TF-IDF vì nó biết các từ đồng nghĩa gần nhau."
+        answer: true
+        explanation: "Thông tin đến từ dữ liệu không nhãn."
+      - id: t14
+        topic: polysemy
+        lesson: 03_word_embeddings.ipynb
+        type: mcq
+        question: "Giới hạn chính của embedding tĩnh (word2vec, GloVe) mà BERT khắc phục:"
+        options: {a: "Mỗi từ có một vector bất kể ngữ cảnh, không phân biệt đa nghĩa", b: "Vector quá ngắn", c: "Không học được từ văn bản", d: "Không dùng được cho tiếng Việt"}
+        answer: a
+        explanation: "Embedding ngữ cảnh tính vector từ cả câu."
+      - id: t15
+        topic: bm25
+        lesson: 04_semantic_similarity_and_retrieval.ipynb
+        type: multi
+        question: "So với TF-IDF, BM25:"
+        options: {a: "Làm tần suất từ bão hoà (tham số k1)", b: "Chuẩn hoá theo độ dài tài liệu (tham số b)", c: "Là hàm xếp hạng mặc định của nhiều máy tìm kiếm", d: "Hiểu từ đồng nghĩa"}
+        answer: abc
+        explanation: "Vẫn là khớp từ vựng."
+      - id: t16
+        topic: hybrid
+        lesson: 04_semantic_similarity_and_retrieval.ipynb
+        type: mcq
+        question: "Trọng số kết hợp điểm lexical và dense trong hybrid search nên được chọn:"
+        options: {a: "Trên tập truy vấn validation riêng, rồi báo cáo trên tập test", b: "Luôn là 0.5", c: "Trên chính tập test", d: "Theo cảm tính"}
+        answer: a
+        explanation: "Trong bài, α tối ưu là 1 (bỏ lexical) — khác 0.5 nhiều."
+  math:
+    questions:
+      - id: m01
+        topic: idf
+        lesson: 02_bow_tfidf_classification.ipynb
+        type: numeric
+        decimals: 4
+        question: "N = 9 văn bản, từ t xuất hiện trong 4 văn bản. idf(t) theo scikit-learn: ln((1+N)/(1+df)) + 1 = ?"
+        answer: 1.6931
+        explanation: "ln(10/5) + 1."
+      - id: m02
+        topic: jaccard
+        lesson: 04_semantic_similarity_and_retrieval.ipynb
+        type: numeric
+        decimals: 3
+        question: "Tập từ A = {giá, vàng, tăng}, B = {giá, vàng, giảm, mạnh}. Jaccard(A, B) = ?"
+        answer: 0.4
+        explanation: "2/5."
+      - id: m03
+        topic: mrr
+        lesson: 04_semantic_similarity_and_retrieval.ipynb
+        type: numeric
+        decimals: 3
+        question: "Hai truy vấn có tài liệu đúng ở hạng 1 và 5. MRR = ?"
+        answer: 0.6
+        explanation: "(1 + 0.2)/2."
+      - id: m04
+        topic: cosine
+        lesson: 04_semantic_similarity_and_retrieval.ipynb
+        type: numeric
+        decimals: 3
+        question: "Cosine giữa u = [1, 1, 0] và v = [1, 0, 1]?"
+        answer: 0.5
+        explanation: "1/(√2·√2)."
+      - id: m05
+        topic: pmi
+        lesson: 03_word_embeddings.ipynb
+        type: numeric
+        decimals: 3
+        question: "P(w, c) = 0.01, P(w) = 0.05, P(c) = 0.1. PMI(w, c) = log2(P(w,c)/(P(w)P(c))) = ?"
+        answer: 1.0
+        explanation: "log2(0.01/0.005) = log2 2."
+coding:
+  tasks:
+    - id: c01
+      title: Bỏ dấu tiếng Việt
+      prompt: |
+        Viết `strip_accents(s)`: chữ thường, bỏ mọi dấu thanh và dấu mũ/móc (dùng `unicodedata.normalize("NFD", ...)` và bỏ ký tự loại "Mn"),
+        chuyển "đ" thành "d". Phải đúng cả khi đầu vào ở dạng NFC hay NFD.
+      code: |
+        import unicodedata
+
+        def strip_accents(s):
+            ### START CODE HERE ### (≈ 2 dòng)
+            s = unicodedata.normalize("NFD", s.lower()).replace("đ", "d")
+            return "".join(c for c in s if unicodedata.category(c) != "Mn")
+            ### END CODE HERE ###
+      tests: |
+        check_equal(strip_accents("Đường Lê Lợi"), "duong le loi", "đ và dấu")
+        check_equal(strip_accents("Hội An, Phú Quốc"), "hoi an, phu quoc", "dấu thanh + mũ")
+        check_equal(strip_accents(unicodedata.normalize("NFD", "Việt Nam")), "viet nam", "đầu vào NFD")
+        check_equal(strip_accents("abc 123"), "abc 123", "không đổi chữ không dấu")
+    - id: c02
+      title: Recall@k và MRR
+      prompt: |
+        Viết `retrieval_metrics(scores, gold, k)`: `scores` mảng (n_truy_vấn, n_tài_liệu), `gold[i]` chỉ số tài liệu đúng của truy vấn i.
+        Hạng của tài liệu đúng = 1 + số tài liệu có điểm **lớn hơn hẳn** nó. Trả về `(recall_at_k, mrr)`.
+      code: |
+        def retrieval_metrics(scores, gold, k):
+            ### START CODE HERE ### (≈ 2 dòng)
+            ranks = np.array([(s > s[g]).sum() + 1 for s, g in zip(scores, gold)])
+            return np.mean(ranks <= k), np.mean(1 / ranks)
+            ### END CODE HERE ###
+      tests: |
+        S = np.array([[0.9, 0.1, 0.3], [0.2, 0.5, 0.8], [0.1, 0.2, 0.3]])
+        r, m = retrieval_metrics(S, [0, 1, 0], k=2)
+        check_close(r, 2 / 3, message="Recall@2: hạng 1, 2, 3")
+        check_close(m, (1 + 1 / 2 + 1 / 3) / 3, message="MRR")
+        check_close(retrieval_metrics(S, [0, 2, 2], k=1), (1.0, 1.0), message="mọi truy vấn đúng ở hạng 1")
+analysis:
+  prompt: |
+    Một ngân hàng muốn tự động phân loại 50 000 tin nhắn khách hàng (tiếng Việt, nhiều tin gõ không dấu, viết tắt, lỗi chính tả) vào 20 nhóm
+    yêu cầu. Họ có 400 tin đã gán nhãn. Kỹ sư đề xuất: (1) bỏ dấu và bỏ stopword theo danh sách tiếng Anh dịch sang; (2) tách từ bằng
+    khớp cực đại với một từ điển chung; (3) unigram TF-IDF + logistic regression, đánh giá bằng accuracy trên 10% dữ liệu, chia ngẫu nhiên;
+    (4) nếu chưa đủ tốt thì "chuyển sang Transformer train từ đầu". Đánh giá và đề xuất.
+  rubric:
+    - "Chuẩn hoá: NFC, thống nhất kiểu dấu, xử lý không dấu/viết tắt/lỗi chính tả (n-gram ký tự, từ điển viết tắt); cảnh báo bỏ dấu gây trùng nghĩa và stopword làm mất phủ định"
+    - "Biểu diễn: thêm bigram/n-gram ký tự; từ điển tách từ chung không phủ thuật ngữ ngân hàng → subword hoặc từ điển miền"
+    - "Đánh giá: 20 lớp mất cân bằng → macro-F1/ma trận nhầm lẫn; 40 mẫu test quá ít, dùng cross-validation phân tầng; chú ý tin trùng lặp giữa train/test"
+    - "Ít nhãn: tận dụng 50 000 tin không nhãn (embedding/tiền huấn luyện), fine-tune mô hình tiếng Việt có sẵn (PhoBERT) thay vì train Transformer từ đầu; gán nhãn thêm có chủ đích"
+    - "Phân tích lỗi trước khi đổi mô hình; nêu rủi ro (dữ liệu cá nhân, tin nhắn khẩn cấp cần ưu tiên)"
+  sample_answer: |
+    (1) Chuẩn hoá NFC, thống nhất kiểu dấu; có thể thêm trường không dấu cho so khớp nhưng giữ bản có dấu cho mô hình; không dùng danh sách
+    stopword dịch máy (mất "không", "chưa"). Viết tắt/lỗi chính tả: n-gram ký tự, từ điển viết tắt miền ngân hàng. (2) Từ điển chung thiếu
+    thuật ngữ (sao kê, OTP, chuyển khoản liên ngân hàng) → từ điển miền hoặc subword. (3) Unigram bỏ phủ định/từ ghép → thêm bigram, n-gram ký tự;
+    20 lớp mất cân bằng: dùng macro-F1, ma trận nhầm lẫn; 10% của 400 = 40 tin quá ít → cross-validation phân tầng; loại tin trùng giữa train/test.
+    (4) 400 nhãn không đủ train Transformer từ đầu; tận dụng 50 000 tin không nhãn (embedding, tiếp tục tiền huấn luyện) và fine-tune PhoBERT;
+    active learning để gán nhãn thêm. Luôn phân tích lỗi; bảo mật dữ liệu khách hàng; nhóm khẩn cấp (mất thẻ, lừa đảo) cần recall cao.
+project:
+  prompt: |
+    **Mini project — Phân loại chủ đề tin tức.** Dữ liệu `make_news_vi(4000, seed=0)`, chia `train_test_split(test_size=0.3, random_state=0,
+    stratify=topic)`. Xây pipeline vectorizer + mô hình tuyến tính, lưu macro-F1 trên tập test vào `macro_f1`. Yêu cầu `macro_f1` ≥ 0.95
+    (gợi ý: unigram chưa đủ).
+  code: |
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics import f1_score
+    from sklearn.model_selection import train_test_split
+    from sklearn.pipeline import make_pipeline
+    from sklearn.svm import LinearSVC
+
+    from ml_course.datasets import make_news_vi
+
+    news = make_news_vi(4000, seed=0)
+    train, test = train_test_split(news, test_size=0.3, random_state=0, stratify=news.topic)
+    ### START CODE HERE ### (≈ 3 dòng)
+    model = make_pipeline(TfidfVectorizer(ngram_range=(1, 2)), LinearSVC(C=1.0))
+    model.fit(train.text, train.topic)
+    macro_f1 = f1_score(test.topic, model.predict(test.text), average="macro")
+    ### END CODE HERE ###
+    print(f"macro-F1 = {macro_f1:.3f}")
+  tests: |
+    check_greater(macro_f1, 0.95, "macro-F1 ≥ 0.95")

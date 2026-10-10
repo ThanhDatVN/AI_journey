@@ -1,0 +1,284 @@
+title: "29 · CNN"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: why conv
+        lesson: 01_convolution_from_scratch.ipynb
+        type: multi
+        question: "Lợi thế của lớp tích chập so với lớp fully-connected trên ảnh:"
+        options: {a: "Chia sẻ trọng số theo vị trí", b: "Kết nối cục bộ", c: "Số tham số không phụ thuộc kích thước ảnh", d: "Luôn bất biến với mọi phép biến đổi"}
+        answer: abc
+        explanation: "Conv chỉ đồng biến với phép dịch, không bất biến với xoay/co giãn."
+      - id: t02
+        topic: output size
+        lesson: 01_convolution_from_scratch.ipynb
+        type: mcq
+        question: "Ảnh 32×32, kernel 5×5, stride 1, padding 2. Kích thước đầu ra?"
+        options: {a: "32×32", b: "28×28", c: "30×30", d: "16×16"}
+        answer: a
+        explanation: "(32 + 4 − 5)/1 + 1 = 32 — padding 'same'."
+      - id: t03
+        topic: params
+        lesson: 01_convolution_from_scratch.ipynb
+        type: mcq
+        question: "Số tham số của Conv2d(64, 128, kernel_size=3) (có bias):"
+        options: {a: "73 856", b: "73 728", c: "1 152", d: "8 192"}
+        answer: a
+        explanation: "128·(64·9 + 1)."
+      - id: t04
+        topic: im2col
+        lesson: 01_convolution_from_scratch.ipynb
+        type: tf
+        question: "Có thể biến tích chập thành một phép nhân ma trận lớn bằng cách trải các mảnh ảnh thành cột (im2col)."
+        answer: true
+        explanation: "GPU nhân ma trận rất nhanh."
+      - id: t05
+        topic: equivariance
+        lesson: 01_convolution_from_scratch.ipynb
+        type: mcq
+        question: "Dịch ảnh đầu vào 3 pixel sang phải thì bản đồ đặc trưng của một lớp conv (stride 1):"
+        options: {a: "Dịch theo 3 pixel sang phải (đồng biến)", b: "Không đổi", c: "Thay đổi ngẫu nhiên", d: "Bị lật"}
+        answer: a
+        explanation: "Bất biến cần pooling (toàn cục)."
+      - id: t06
+        topic: receptive field
+        lesson: 01_convolution_from_scratch.ipynb
+        type: mcq
+        question: "Ba lớp conv 3×3 liên tiếp (stride 1) có trường tiếp nhận:"
+        options: {a: "7×7", b: "9×9", c: "3×3", d: "27×27"}
+        answer: a
+        explanation: "1 + 3·2."
+      - id: t07
+        topic: gap vs flatten
+        lesson: 02_cnn_with_pytorch.ipynb
+        type: mcq
+        question: "Train ở nửa trái ảnh, test ở nửa phải: mô hình nào tổng quát hoá tốt nhất?"
+        options: {a: "CNN + global average pooling", b: "MLP", c: "CNN + flatten + Linear", d: "Như nhau"}
+        answer: a
+        explanation: "Conv đồng biến + GAP bất biến với vị trí."
+      - id: t08
+        topic: augmentation
+        lesson: 02_cnn_with_pytorch.ipynb
+        type: mcq
+        question: "Augmentation hợp lệ phải:"
+        options: {a: "Giữ nguyên nhãn", b: "Thay đổi nhãn", c: "Chỉ dùng cho test", d: "Luôn gồm lật dọc"}
+        answer: a
+        explanation: "Lật dọc '6' thành '9' là sai."
+      - id: t09
+        topic: features
+        lesson: 02_cnn_with_pytorch.ipynb
+        type: mcq
+        question: "Bộ lọc ở lớp đầu của CNN thường học:"
+        options: {a: "Bộ dò cạnh/hướng/màu đơn giản", b: "Toàn bộ đối tượng", c: "Nhãn lớp", d: "Không có cấu trúc"}
+        answer: a
+        explanation: "Lớp sâu tổ hợp thành bộ phận, đối tượng."
+      - id: t10
+        topic: vgg
+        lesson: 03_architectures_lenet_to_resnet.ipynb
+        type: mcq
+        question: "Vì sao VGG dùng hai conv 3×3 thay cho một conv 5×5?"
+        options: {a: "Cùng trường tiếp nhận, ít tham số hơn, thêm một phi tuyến", b: "Nhanh hơn trên CPU", c: "Ít bộ nhớ hơn cho ảnh", d: "Không có lý do"}
+        answer: a
+        explanation: "18C² so với 25C²."
+      - id: t11
+        topic: 1x1 conv
+        lesson: 03_architectures_lenet_to_resnet.ipynb
+        type: mcq
+        question: "Conv 1×1 dùng để:"
+        options: {a: "Trộn thông tin giữa các kênh và đổi số kênh (bottleneck)", b: "Phát hiện cạnh", c: "Giảm kích thước không gian", d: "Thay thế pooling"}
+        answer: a
+        explanation: "Inception, ResNet-50."
+      - id: t12
+        topic: depthwise
+        lesson: 03_architectures_lenet_to_resnet.ipynb
+        type: mcq
+        question: "Depthwise separable convolution (MobileNet) gồm:"
+        options: {a: "Conv theo từng kênh (groups = C) rồi conv 1×1", b: "Hai conv 3×3", c: "Pooling rồi conv", d: "Conv 5×5"}
+        answer: a
+        explanation: "Giảm chi phí ≈ 1/C_out + 1/k² lần."
+      - id: t13
+        topic: degradation
+        lesson: 03_architectures_lenet_to_resnet.ipynb
+        type: tf
+        question: "Mạng trơn rất sâu có loss TRAIN cao hơn mạng nông hơn là do overfitting."
+        answer: false
+        explanation: "Đó là vấn đề tối ưu (degradation), không phải overfitting."
+      - id: t14
+        topic: residual
+        lesson: 03_architectures_lenet_to_resnet.ipynb
+        type: mcq
+        question: "Khối residual tính:"
+        options: {a: "y = F(x) + x", b: "y = F(x) · x", c: "y = F(F(x))", d: "y = x − F(x)"}
+        answer: a
+        explanation: "Gradient chảy thẳng qua nhánh tắt."
+      - id: t15
+        topic: params zoo
+        lesson: 03_architectures_lenet_to_resnet.ipynb
+        type: mcq
+        question: "Phần lớn tham số của VGG-16 nằm ở:"
+        options: {a: "Các lớp fully-connected cuối", b: "Lớp conv đầu tiên", c: "Batch norm", d: "Pooling"}
+        answer: a
+        explanation: "ResNet dùng global pooling nên gọn hơn."
+      - id: t16
+        topic: augmentation validity
+        lesson: 04_cnn_on_real_images.ipynb
+        type: mcq
+        question: "Phép augmentation nào KHÔNG phù hợp với CIFAR-10?"
+        options: {a: "Lật dọc (lộn ngược) ảnh", b: "Lật ngang ảnh", c: "Dịch chuyển vài pixel", d: "Thay đổi nhẹ độ sáng"}
+        answer: a
+        explanation: "Ảnh tự nhiên hiếm khi lộn ngược; lật ngang, dịch vài pixel, đổi nhẹ độ sáng vẫn giữ nhãn."
+      - id: t17
+        topic: channel normalization
+        lesson: 04_cnn_on_real_images.ipynb
+        type: tf
+        question: "Trung bình và độ lệch chuẩn theo kênh dùng để chuẩn hoá ảnh nên tính trên tập train rồi áp dụng cho validation/test."
+        answer: true
+        explanation: "Giống mọi bước tiền xử lý: fit trên train để không rò rỉ thông tin."
+      - id: t18
+        topic: why cnn
+        lesson: 04_cnn_on_real_images.ipynb
+        type: mcq
+        question: "Trên cùng 20 000 ảnh CIFAR-10, CNN nhỏ đạt ~73% so với ~40% của mô hình tuyến tính dù chỉ nhiều hơn ~2.4 lần số tham số. Lý do chính:"
+        options: {a: "Bộ lọc cục bộ dùng chung trọng số + pooling + đặc trưng phân cấp phù hợp cấu trúc ảnh", b: "CNN có nhiều tham số hơn rất nhiều", c: "CNN dùng optimizer Adam", d: "CNN được huấn luyện thêm trên tập test"}
+        answer: a
+        explanation: "Thiên kiến quy nạp phù hợp với ảnh quan trọng hơn số tham số."
+  math:
+    questions:
+      - id: m01
+        topic: output size
+        lesson: 01_convolution_from_scratch.ipynb
+        type: numeric
+        decimals: 0
+        question: "Ảnh 64×64, kernel 3×3, stride 2, padding 1. Chiều rộng đầu ra?"
+        answer: 32
+        explanation: "(64 + 2 − 3)/2 + 1 = 32 (lấy phần nguyên)."
+      - id: m02
+        topic: params
+        lesson: 01_convolution_from_scratch.ipynb
+        type: numeric
+        decimals: 0
+        question: "Số tham số Conv2d(3, 16, kernel_size=5) có bias?"
+        answer: 1216
+        explanation: "16·(3·25 + 1)."
+      - id: m03
+        topic: receptive field
+        lesson: 01_convolution_from_scratch.ipynb
+        type: numeric
+        decimals: 0
+        question: "conv3 → conv3 → maxpool2 (stride 2) → conv3. Trường tiếp nhận cuối?"
+        answer: 10
+        explanation: "3 → 5 → 6 → 6 + 2·2 = 10."
+      - id: m04
+        topic: pooling
+        lesson: 01_convolution_from_scratch.ipynb
+        type: numeric
+        decimals: 0
+        question: "Bản đồ 16 kênh × 28×28 qua MaxPool 2×2 rồi Flatten. Số phần tử?"
+        answer: 3136
+        explanation: "16·14·14."
+      - id: m05
+        topic: separable
+        lesson: 03_architectures_lenet_to_resnet.ipynb
+        type: numeric
+        decimals: 0
+        question: "Depthwise separable 64 → 64, kernel 3×3, không bias: số tham số?"
+        answer: 4672
+        explanation: "64·9 (depthwise) + 64·64 (pointwise)."
+coding:
+  tasks:
+    - id: c01
+      title: Kích thước đầu ra conv
+      prompt: |
+        Viết `conv_out_size(h, k, s, p)` trả về kích thước đầu ra của tích chập theo một chiều.
+      code: |
+        def conv_out_size(h, k, s=1, p=0):
+            ### START CODE HERE ### (≈ 1 dòng)
+            return (h + 2 * p - k) // s + 1
+            ### END CODE HERE ###
+      tests: |
+        check_equal(conv_out_size(28, 3, 1, 1), 28, "padding same")
+        check_equal(conv_out_size(64, 3, 2, 1), 32, "stride 2")
+        check_equal(conv_out_size(13, 3), 11, "không padding")
+        check_equal(conv_out_size(7, 3, 2, 0), 3, "làm tròn xuống")
+    - id: c02
+      title: Tích chập 2D một kênh
+      prompt: |
+        Viết `conv2d_single(x, k)` (stride 1, không padding) cho ảnh 2D `x` và kernel 2D `k` (cross-correlation).
+      code: |
+        def conv2d_single(x, k):
+            kh, kw = k.shape
+            H, W = x.shape[0] - kh + 1, x.shape[1] - kw + 1
+            out = np.zeros((H, W))
+            ### START CODE HERE ### (≈ 3 dòng)
+            for i in range(H):
+                for j in range(W):
+                    out[i, j] = np.sum(x[i:i + kh, j:j + kw] * k)
+            ### END CODE HERE ###
+            return out
+      tests: |
+        x = np.arange(16.0).reshape(4, 4)
+        k = np.array([[1.0, 0.0], [0.0, -1.0]])
+        check_close(conv2d_single(x, k), np.full((3, 3), -5.0), message="x[i,j] − x[i+1,j+1] = −5")
+        rng = np.random.default_rng(0)
+        x2, k2 = rng.normal(size=(6, 5)), rng.normal(size=(3, 3))
+        from scipy.signal import correlate2d
+        check_close(conv2d_single(x2, k2), correlate2d(x2, k2, mode="valid"), message="khớp scipy correlate2d")
+analysis:
+  prompt: |
+    Một bệnh viện xây mô hình phát hiện tổn thương trên ảnh X-quang 1024×1024 (2 000 ảnh có nhãn). Nhóm A dùng MLP trên ảnh thu nhỏ 64×64
+    (accuracy val 71%). Nhóm B dùng CNN tự thiết kế 30 lớp không có kết nối tắt, train từ đầu — loss train không giảm. Nhóm C dùng ResNet-50
+    với augmentation: lật dọc, xoay 180°, đổi màu ngẫu nhiên; accuracy val 93% nhưng khi triển khai ở bệnh viện khác chỉ còn 75%.
+    Đánh giá từng nhóm và đề xuất hướng tiếp cận.
+  rubric:
+    - "Nhóm A: MLP bỏ cấu trúc không gian, nhiều tham số, thu nhỏ 64×64 có thể mất tổn thương nhỏ; nên dùng CNN"
+    - "Nhóm B: mạng trơn 30 lớp gặp degradation/vanishing gradient → kết nối tắt (ResNet), BN, khởi tạo đúng; 2 000 ảnh quá ít để train từ đầu"
+    - "Nhóm C: augmentation cần giữ nhãn và hợp miền — lật/xoay có thể phá giải phẫu trái/phải; đổi màu vô nghĩa với ảnh xám"
+    - "Nêu chênh lệch triển khai là domain shift (máy chụp, quy trình khác) → đánh giá trên dữ liệu ngoài bệnh viện, chuẩn hoá, fine-tune, dữ liệu đa trung tâm"
+    - "Đề xuất transfer learning từ mô hình pretrained (ImageNet hoặc y tế), độ phân giải đủ cao, metric phù hợp (sensitivity), kiểm định lâm sàng"
+  sample_answer: |
+    A: MLP coi 4 096 pixel là vector, mất cấu trúc không gian, cần nhiều dữ liệu; thu nhỏ 64×64 có thể xoá tổn thương nhỏ → dùng CNN ở độ phân giải
+    cao hơn. B: CNN trơn 30 lớp gặp degradation/vanishing gradient → loss không giảm; dùng residual + BN + He init; và 2 000 ảnh là quá ít để train
+    sâu từ đầu → transfer learning. C: augmentation phải giữ nhãn và hợp với miền — lật trái/phải có thể đổi ý nghĩa giải phẫu (tim nằm bên trái),
+    xoay 180° phi thực tế, đổi màu vô nghĩa với ảnh xám; dùng dịch/xoay nhỏ, đổi độ tương phản. 93% → 75% ở bệnh viện khác là domain shift (máy
+    chụp, quy trình, quần thể bệnh nhân): cần validation ngoài, dữ liệu đa trung tâm, chuẩn hoá cường độ, fine-tune; báo cáo sensitivity/specificity
+    theo từng nơi, kiểm định lâm sàng trước khi dùng.
+project:
+  prompt: |
+    **Mini project — Tổng quát hoá ra vị trí mới.** Train **chỉ** với `make_shapes(3000, region="left", seed=40)`; đánh giá trên
+    `make_shapes(1000, region="right", seed=41)` (hình ở vị trí chưa từng thấy). Yêu cầu accuracy trên nửa phải `right_acc` ≥ 0.75.
+    Gợi ý: kiến trúc nào bất biến với vị trí? Hoặc augmentation nào?
+  code: |
+    import torch
+    from torch import nn
+    from ml_course.datasets import make_shapes
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    torch.backends.cudnn.deterministic = True
+    to_t = lambda a: torch.tensor(a[:, None], dtype=torch.float32)
+    XL, yL = make_shapes(3000, region="left", seed=40)
+    XR, yR = make_shapes(1000, region="right", seed=41)
+    XL, XR, yL, yR = to_t(XL), to_t(XR), torch.tensor(yL), torch.tensor(yR)
+    torch.manual_seed(0)
+    ### START CODE HERE ### (≈ 18 dòng)
+    model = nn.Sequential(nn.Conv2d(1, 16, 3, padding=1), nn.BatchNorm2d(16), nn.ReLU(), nn.MaxPool2d(2),
+                          nn.Conv2d(16, 32, 3, padding=1), nn.BatchNorm2d(32), nn.ReLU(), nn.MaxPool2d(2),
+                          nn.Conv2d(32, 64, 3, padding=1), nn.BatchNorm2d(64), nn.ReLU(),
+                          nn.AdaptiveAvgPool2d(1), nn.Flatten(), nn.Linear(64, 5)).to(device)
+    opt = torch.optim.Adam(model.parameters(), lr=1e-3)
+    g = torch.Generator().manual_seed(0)
+    for epoch in range(15):
+        model.train()
+        perm = torch.randperm(len(XL), generator=g)
+        for s in range(0, len(perm), 64):
+            idx = perm[s:s + 64]
+            opt.zero_grad()
+            nn.functional.cross_entropy(model(XL[idx].to(device)), yL[idx].to(device)).backward()
+            opt.step()
+    model.eval()
+    with torch.no_grad():
+        right_acc = (model(XR.to(device)).argmax(1).cpu() == yR).float().mean().item()
+    ### END CODE HERE ###
+    print(f"accuracy trên nửa phải (vị trí chưa từng thấy) = {right_acc:.3f}")
+  tests: |
+    check_greater(right_acc, 0.75, "tổng quát hoá ra vị trí mới ≥ 0.75")

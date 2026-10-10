@@ -1,0 +1,286 @@
+title: "16 · Hyperparameter Optimization"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: problem nature
+        lesson: 01_grid_vs_random_search.ipynb
+        type: multi
+        question: "Đặc điểm của bài toán tối ưu hyperparameter:"
+        options: {a: "Mỗi lần đánh giá đắt", b: "Kết quả đánh giá nhiễu", c: "Có gradient theo hyperparameter dễ tính", d: "Không gian có thể hỗn hợp/điều kiện"}
+        answer: abd
+        explanation: "Không có gradient thông thường."
+      - id: t02
+        topic: random vs grid
+        lesson: 01_grid_vs_random_search.ipynb
+        type: mcq
+        question: "Random search thường tốt hơn grid search cùng ngân sách vì:"
+        options:
+          a: "Random luôn may mắn hơn"
+          b: "Chỉ vài tham số quan trọng; random thử nhiều giá trị khác nhau hơn cho mỗi tham số"
+          c: "Grid search chậm hơn mỗi lần thử"
+          d: "Random dùng gradient"
+        answer: b
+        explanation: "Low effective dimensionality (Bergstra & Bengio)."
+      - id: t03
+        topic: log-uniform
+        lesson: 01_grid_vs_random_search.ipynb
+        type: mcq
+        question: "Phân phối hợp lý để lấy mẫu learning rate trong [1e-4, 1]:"
+        options: {a: "Uniform", b: "Log-uniform", c: "Normal(0.5, 0.1)", d: "Chỉ thử 0.1"}
+        answer: b
+        explanation: "Tác động theo bậc độ lớn."
+      - id: t04
+        topic: boundary
+        lesson: 01_grid_vs_random_search.ipynb
+        type: mcq
+        question: "Tham số tốt nhất nằm đúng ở biên không gian tìm kiếm. Nên:"
+        options: {a: "Chấp nhận", b: "Mở rộng không gian về phía biên đó", c: "Thu hẹp không gian", d: "Đổi metric"}
+        answer: b
+        explanation: "Tối ưu có thể nằm ngoài khoảng."
+      - id: t05
+        topic: early stopping
+        lesson: 01_grid_vs_random_search.ipynb
+        type: tf
+        question: "Nên tune số cây của gradient boosting bằng grid search thay vì early stopping."
+        answer: false
+        explanation: "Early stopping chọn số vòng rẻ và chính xác hơn."
+      - id: t06
+        topic: successive halving
+        lesson: 02_successive_halving_hyperband.ipynb
+        type: mcq
+        question: "Successive halving với η = 3 sau mỗi vòng:"
+        options:
+          a: "Giữ 1/3 cấu hình tốt nhất và nhân ngân sách lên 3"
+          b: "Giữ 3 cấu hình"
+          c: "Giảm ngân sách 3 lần"
+          d: "Thêm 3 cấu hình mới"
+        answer: a
+        explanation: "Chi phí mỗi vòng xấp xỉ bằng nhau."
+      - id: t07
+        topic: resource
+        lesson: 02_successive_halving_hyperband.ipynb
+        type: multi
+        question: "'Resource' trong successive halving có thể là:"
+        options: {a: "Số mẫu train", b: "Số epoch/vòng boosting", c: "Số feature", d: "Random seed"}
+        answer: abc
+        explanation: "Phổ biến nhất là số mẫu và số epoch."
+      - id: t08
+        topic: SH risk
+        lesson: 02_successive_halving_hyperband.ipynb
+        type: mcq
+        question: "Rủi ro chính của successive halving:"
+        options:
+          a: "Quá chậm"
+          b: "Cấu hình cần nhiều dữ liệu mới tốt có thể bị loại oan ở ngân sách nhỏ"
+          c: "Không song song được"
+          d: "Chỉ dùng cho SVM"
+        answer: b
+        explanation: "Thứ hạng ở ngân sách nhỏ ≠ ngân sách lớn."
+      - id: t09
+        topic: hyperband
+        lesson: 02_successive_halving_hyperband.ipynb
+        type: mcq
+        question: "Hyperband cải tiến successive halving bằng cách:"
+        options:
+          a: "Dùng GP"
+          b: "Chạy nhiều bracket với đánh đổi (số cấu hình × ngân sách ban đầu) khác nhau"
+          c: "Bỏ việc loại cấu hình"
+          d: "Dùng gradient"
+        answer: b
+        explanation: "Không phải chọn ngân sách nhỏ nhất."
+      - id: t10
+        topic: BO components
+        lesson: 03_bayesian_optimization_optuna.ipynb
+        type: mcq
+        question: "Hai thành phần của Bayesian optimization:"
+        options:
+          a: "Surrogate model và acquisition function"
+          b: "Gradient và Hessian"
+          c: "Bootstrap và bagging"
+          d: "Encoder và decoder"
+        answer: a
+        explanation: "Vd GP + Expected Improvement."
+      - id: t11
+        topic: exploration
+        lesson: 03_bayesian_optimization_optuna.ipynb
+        type: mcq
+        question: "Expected Improvement lớn ở vùng có μ không cao vì:"
+        options: {a: "Lỗi số học", b: "Độ bất định σ lớn — khám phá", c: "Luôn ưu tiên biên", d: "Do learning rate"}
+        answer: b
+        explanation: "Cân bằng khai thác/khám phá."
+      - id: t12
+        topic: TPE
+        lesson: 03_bayesian_optimization_optuna.ipynb
+        type: mcq
+        question: "TPE (Optuna) chọn điểm thử tiếp theo bằng cách:"
+        options:
+          a: "Tối đa tỉ số mật độ ℓ(x)/g(x) của nhóm cấu hình tốt so với xấu"
+          b: "Lấy trung bình các cấu hình"
+          c: "Duyệt lưới"
+          d: "Dùng gradient của CV score"
+        answer: a
+        explanation: "Xử lý tốt không gian hỗn hợp, điều kiện."
+      - id: t13
+        topic: conditional space
+        lesson: 03_bayesian_optimization_optuna.ipynb
+        type: mcq
+        question: "Không gian tìm kiếm 'điều kiện' nghĩa là:"
+        options:
+          a: "Có tham số chỉ tồn tại khi chọn một giá trị của tham số khác (vd C chỉ khi model = logreg)"
+          b: "Tham số bị ràng buộc dương"
+          c: "Không gian rời rạc"
+          d: "Có điều kiện dừng"
+        answer: a
+        explanation: "TPE hỗ trợ tự nhiên."
+      - id: t14
+        topic: pruning
+        lesson: 03_bayesian_optimization_optuna.ipynb
+        type: tf
+        question: "Pruning trong Optuna dừng sớm các lần thử có kết quả trung gian kém hơn các lần thử trước."
+        answer: true
+        explanation: "MedianPruner, HyperbandPruner."
+      - id: t15
+        topic: overfit validation
+        lesson: 03_bayesian_optimization_optuna.ipynb
+        type: mcq
+        question: "Thử 2 000 cấu hình trên một tập validation nhỏ cố định dẫn tới:"
+        options: {a: "Ước lượng chính xác hơn", b: "Overfit validation — chọn cấu hình 'may mắn'", c: "Không ảnh hưởng", d: "Model underfit"}
+        answer: b
+        explanation: "Selection bias — cần CV và test cuối."
+      - id: t16
+        topic: baseline
+        lesson: 03_bayesian_optimization_optuna.ipynb
+        type: tf
+        question: "Nên luôn có baseline với hyperparameter mặc định trước khi tuning."
+        answer: true
+        explanation: "Đo được lợi ích thật của tuning."
+  math:
+    questions:
+      - id: m01
+        topic: grid size
+        lesson: 01_grid_vs_random_search.ipynb
+        type: numeric
+        decimals: 0
+        question: "Grid 5 giá trị × 4 giá trị × 3 giá trị, 5-fold CV. Tổng số lần fit (không tính refit)?"
+        answer: 300
+        explanation: "60 × 5."
+      - id: m02
+        topic: distinct values
+        lesson: 01_grid_vs_random_search.ipynb
+        type: numeric
+        decimals: 0
+        question: "Ngân sách 64 lần thử, 3 tham số. Grid đều mỗi chiều có bao nhiêu giá trị khác nhau?"
+        answer: 4
+        explanation: "64^(1/3) = 4 (random: 64 giá trị mỗi chiều)."
+      - id: m03
+        topic: SH rounds
+        lesson: 02_successive_halving_hyperband.ipynb
+        type: numeric
+        decimals: 0
+        question: "Successive halving: 243 cấu hình, η = 3. Cần bao nhiêu vòng để còn 1 cấu hình (tính cả vòng đầu)?"
+        answer: 6
+        explanation: "243 → 81 → 27 → 9 → 3 → 1."
+      - id: m04
+        topic: loguniform
+        lesson: 01_grid_vs_random_search.ipynb
+        type: numeric
+        decimals: 2
+        question: "Lấy mẫu log-uniform trên [1e-4, 1]: xác suất mẫu nhỏ hơn 0.01 là bao nhiêu?"
+        answer: 0.5
+        explanation: "2 trong 4 bậc độ lớn."
+      - id: m05
+        topic: EI
+        lesson: 03_bayesian_optimization_optuna.ipynb
+        type: numeric
+        decimals: 3
+        question: "μ = f* (bằng giá trị tốt nhất hiện tại), σ = 0.2, ξ = 0. EI = σ·φ(0) = ?"
+        answer: 0.0798
+        explanation: "0.2 × 0.3989."
+coding:
+  tasks:
+    - id: c01
+      title: Expected Improvement
+      prompt: |
+        Viết `expected_improvement(mu, sigma, best, xi=0.0)` cho bài toán **tối đa hoá** (mu, sigma là mảng). Chặn sigma ≥ 1e-12.
+      code: |
+        from scipy.stats import norm
+
+
+        def expected_improvement(mu, sigma, best, xi=0.0):
+            ### START CODE HERE ### (≈ 3 dòng)
+            sigma = np.maximum(sigma, 1e-12)
+            z = (mu - best - xi) / sigma
+            ei = (mu - best - xi) * norm.cdf(z) + sigma * norm.pdf(z)
+            ### END CODE HERE ###
+            return ei
+      tests: |
+        from scipy.stats import norm
+        ei = expected_improvement(np.array([0.9, 0.8, 0.85]), np.array([0.1, 0.3, 0.0]), best=0.85)
+        check_close(ei[0], 0.05 * norm.cdf(0.5) + 0.1 * norm.pdf(0.5), message="điểm 1")
+        check_true(ei[1] > ei[0], "bất định lớn → EI lớn hơn")
+        check_close(ei[2], 0.0, tol=1e-9, message="σ = 0 và μ = best → EI = 0")
+    - id: c02
+      title: Một vòng successive halving
+      prompt: |
+        Viết `halving_step(configs, scores, eta)` trả về list các cấu hình được giữ: `max(1, len(configs) // eta)` cấu hình có điểm cao nhất,
+        theo thứ tự điểm giảm dần.
+      code: |
+        def halving_step(configs, scores, eta=3):
+            ### START CODE HERE ### (≈ 2 dòng)
+            keep = np.argsort(scores)[::-1][: max(1, len(configs) // eta)]
+            kept = [configs[i] for i in keep]
+            ### END CODE HERE ###
+            return kept
+      tests: |
+        cfgs = list("abcdefghi")
+        sc = [0.1, 0.9, 0.3, 0.8, 0.2, 0.7, 0.4, 0.6, 0.5]
+        check_equal(halving_step(cfgs, sc, 3), ["b", "d", "f"], "giữ 3 cấu hình tốt nhất")
+        check_equal(halving_step(["x", "y"], [0.2, 0.1], 3), ["x"], "luôn giữ ít nhất 1")
+analysis:
+  prompt: |
+    Một nhóm cần tune một mạng neural (mỗi lần train đầy đủ mất 2 giờ, 8 hyperparameter: learning rate, batch size, số lớp, dropout,
+    weight decay, optimizer, warmup, số epoch). Kế hoạch: grid search 4 giá trị mỗi tham số, learning rate lấy trong {0.1, 0.4, 0.7, 1.0},
+    chọn số epoch tốt nhất bằng grid, đánh giá trên một tập validation 500 mẫu, báo cáo điểm tốt nhất làm hiệu năng cuối.
+    Đánh giá kế hoạch và đề xuất thay thế.
+  rubric:
+    - "Chỉ ra grid 4^8 = 65 536 cấu hình × 2 giờ là bất khả thi → random search/TPE với ngân sách giới hạn"
+    - "Chỉ ra learning rate nên lấy log-uniform (vd 1e-5 → 1e-1) — lưới tuyến tính {0.1..1.0} bỏ qua vùng quan trọng"
+    - "Đề xuất early stopping thay vì tune số epoch, và multi-fidelity (successive halving/Hyperband/pruning theo epoch) để loại sớm"
+    - "Chỉ ra báo cáo điểm validation tốt nhất là lạc quan (selection bias, validation nhỏ) → đánh giá cuối trên test riêng/nested"
+    - "Đề xuất thực hành: baseline mặc định, không gian điều kiện (optimizer-specific), cố định seed, lưu lịch sử thử nghiệm"
+  sample_answer: |
+    (1) Grid 4^8 = 65 536 cấu hình × 2 giờ ≈ 15 năm GPU → không khả thi. Dùng random search hoặc TPE (Optuna) với ngân sách vài chục–vài trăm lần thử.
+    (2) Learning rate tác động theo bậc độ lớn → log-uniform 1e-5…1e-1; {0.1, 0.4, 0.7, 1.0} gần như toàn giá trị quá lớn.
+    (3) Không tune số epoch — early stopping; dùng Hyperband/ASHA hoặc Optuna pruning theo epoch để dừng sớm cấu hình kém (tiết kiệm hàng chục lần).
+    (4) Validation 500 mẫu + nhiều lần thử → điểm tốt nhất lạc quan; giữ test riêng đánh giá một lần, báo cáo CI.
+    (5) Baseline mặc định trước; không gian điều kiện (tham số riêng cho Adam/SGD); cố định seed; lưu lịch sử (MLflow/Optuna storage) và phân tích tầm quan trọng tham số.
+project:
+  prompt: |
+    **Mini project — Tuning có kỷ luật.** Đọc `customer_churn.csv` (`repo_path("data", "sample", "customer_churn.csv")`), one-hot.
+    Tách test 25% (`random_state=0`, `stratify`). Trên phần dev: tune `HistGradientBoostingClassifier` bằng `RandomizedSearchCV`
+    (≥ 15 cấu hình, 3-fold, `roc_auc`) với `learning_rate` **log-uniform**, `max_leaf_nodes`, `min_samples_leaf`, `l2_regularization` (log-uniform),
+    early stopping bật. Báo cáo `baseline_auc` (mặc định) và `tuned_auc` trên test. Yêu cầu `tuned_auc ≥ 0.80`.
+  code: |
+    import pandas as pd
+    from scipy.stats import loguniform, randint
+    from sklearn.ensemble import HistGradientBoostingClassifier
+    from sklearn.metrics import roc_auc_score
+    from sklearn.model_selection import RandomizedSearchCV, train_test_split
+    from ml_course.utils import repo_path
+
+    df = pd.read_csv(repo_path("data", "sample", "customer_churn.csv"))
+    X = pd.get_dummies(df.drop(columns=["customer_id", "churn"]), dtype=float)
+    y = df["churn"].to_numpy()
+    ### START CODE HERE ### (≈ 10 dòng)
+    X_dev, X_te, y_dev, y_te = train_test_split(X, y, test_size=0.25, random_state=0, stratify=y)
+    baseline_auc = roc_auc_score(y_te, HistGradientBoostingClassifier(random_state=0).fit(X_dev, y_dev).predict_proba(X_te)[:, 1])
+    space = {"learning_rate": loguniform(0.005, 0.3), "max_leaf_nodes": randint(3, 48), "min_samples_leaf": randint(10, 300),
+             "l2_regularization": loguniform(1e-3, 10)}
+    search = RandomizedSearchCV(HistGradientBoostingClassifier(max_iter=1000, early_stopping=True, n_iter_no_change=20, random_state=0),
+                                space, n_iter=15, cv=3, scoring="roc_auc", random_state=0).fit(X_dev, y_dev)
+    tuned_auc = roc_auc_score(y_te, search.predict_proba(X_te)[:, 1])
+    ### END CODE HERE ###
+    print(f"ROC-AUC test: mặc định = {baseline_auc:.4f} | đã tune = {tuned_auc:.4f}")
+  tests: |
+    check_greater(tuned_auc, 0.80, "ROC-AUC test (đã tune) ≥ 0.80")

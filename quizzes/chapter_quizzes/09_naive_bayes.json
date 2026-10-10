@@ -1,0 +1,245 @@
+{
+ "id": "09_naive_bayes",
+ "kind": "Chapter",
+ "title": "09 · Naive Bayes",
+ "next": "10_decision_trees",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "base rate",
+     "answer_hashes": [
+      "01895a226abbe990a2d1"
+     ],
+     "lesson": "01_bayes_and_naive_assumption.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "multi",
+     "topic": "generative vs discriminative",
+     "answer_hashes": [
+      "f86c31528cfeb492ec90"
+     ],
+     "lesson": "01_bayes_and_naive_assumption.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "giả định naive",
+     "answer_hashes": [
+      "998ecca870767a467cee"
+     ],
+     "lesson": "01_bayes_and_naive_assumption.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "zero-frequency",
+     "answer_hashes": [
+      "1f646009c4cb37722b1f"
+     ],
+     "lesson": "01_bayes_and_naive_assumption.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "log space",
+     "answer_hashes": [
+      "1afae88228f2475db291"
+     ],
+     "lesson": "01_bayes_and_naive_assumption.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "train Gaussian NB",
+     "answer_hashes": [
+      "4b02bd53739de6aa80bc"
+     ],
+     "lesson": "02_gaussian_nb_from_scratch.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "decision boundary",
+     "answer_hashes": [
+      "d8ac3c90f28390b3278d"
+     ],
+     "lesson": "02_gaussian_nb_from_scratch.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "scaling",
+     "answer_hashes": [
+      "baa40f9c16338c7b1632"
+     ],
+     "lesson": "02_gaussian_nb_from_scratch.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "tf",
+     "topic": "multinomial là tuyến tính",
+     "answer_hashes": [
+      "2677a98f829682a7099d"
+     ],
+     "lesson": "03_multinomial_bernoulli_text.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "Bernoulli vs Multinomial",
+     "answer_hashes": [
+      "62e5aa073370e6222c18"
+     ],
+     "lesson": "03_multinomial_bernoulli_text.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "vectorizer leakage",
+     "answer_hashes": [
+      "2d13a47e82845decdfd9"
+     ],
+     "lesson": "03_multinomial_bernoulli_text.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "phủ định",
+     "answer_hashes": [
+      "4bca611b13138febc3d2"
+     ],
+     "lesson": "03_multinomial_bernoulli_text.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "overconfidence",
+     "answer_hashes": [
+      "25e38cf6e9355d4ab3a7"
+     ],
+     "lesson": "04_why_naive_works_and_fails.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "NB vs LR",
+     "answer_hashes": [
+      "9f810c7a09092118e797"
+     ],
+     "lesson": "04_why_naive_works_and_fails.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "XOR",
+     "answer_hashes": [
+      "ec670d44b81446ea283e"
+     ],
+     "lesson": "04_why_naive_works_and_fails.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "tf",
+     "topic": "online learning",
+     "answer_hashes": [
+      "56b1ed7c6500dd22ccb2"
+     ],
+     "lesson": "04_why_naive_works_and_fails.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "Bayes",
+     "answer_hashes": [
+      "08a5681b147b7ceb091e"
+     ],
+     "decimals": 3,
+     "lesson": "01_bayes_and_naive_assumption.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "số tham số",
+     "answer_hashes": [
+      "a7ecb94b03cbdece9cb4"
+     ],
+     "decimals": 0,
+     "lesson": "01_bayes_and_naive_assumption.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "Laplace",
+     "answer_hashes": [
+      "38217081e1932fdc0737"
+     ],
+     "decimals": 3,
+     "lesson": "01_bayes_and_naive_assumption.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "Multinomial θ",
+     "answer_hashes": [
+      "2623a0fcbde3e4513316"
+     ],
+     "decimals": 3,
+     "lesson": "03_multinomial_bernoulli_text.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "Gaussian log-pdf",
+     "answer_hashes": [
+      "717fd1fca92b1649fe40"
+     ],
+     "decimals": 3,
+     "lesson": "02_gaussian_nb_from_scratch.ipynb"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "posterior từ log-score",
+     "answer_hashes": [
+      "ec0293e5552f97119e4d"
+     ],
+     "decimals": 3,
+     "lesson": "01_bayes_and_naive_assumption.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

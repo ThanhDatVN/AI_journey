@@ -1,0 +1,264 @@
+title: "38 · Causal Machine Learning"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: prediction vs causation
+        lesson: 01_correlation_vs_causation_dags.ipynb
+        type: mcq
+        question: "Doanh số kem dự đoán tốt số vụ đuối nước. Điều này cho thấy:"
+        options: {a: "Kem là đặc trưng dự đoán tốt nhưng không phải nguyên nhân — cả hai do nhiệt độ", b: "Cấm bán kem sẽ giảm đuối nước", c: "Đuối nước làm tăng doanh số kem", d: "Mô hình bị lỗi"}
+        answer: a
+        explanation: "Confounder: nhiệt độ."
+      - id: t02
+        topic: confounder
+        lesson: 01_correlation_vs_causation_dags.ipynb
+        type: mcq
+        question: "Trong DAG X ← Z → Y, kiểm soát Z:"
+        options: {a: "Chặn đường cửa sau, loại bỏ tương quan giả", b: "Tạo ra tương quan giả", c: "Chặn tác động thật của X", d: "Không ảnh hưởng"}
+        answer: a
+        explanation: "Z là confounder."
+      - id: t03
+        topic: mediator
+        lesson: 01_correlation_vs_causation_dags.ipynb
+        type: tf
+        question: "Muốn ước lượng tác động toàn phần của đào tạo lên lương, nên kiểm soát kỹ năng (biến nằm trên đường đào tạo → kỹ năng → lương)."
+        answer: false
+        explanation: "Kiểm soát mediator làm mất phần tác động đi qua nó."
+      - id: t04
+        topic: collider
+        lesson: 01_correlation_vs_causation_dags.ipynb
+        type: mcq
+        question: "Chỉ nghiên cứu người nổi tiếng (nổi tiếng do tài năng hoặc ngoại hình) làm xuất hiện tương quan âm giả giữa tài năng và ngoại hình. Đây là:"
+        options: {a: "Thiên lệch collider (Berkson)", b: "Confounding", c: "Nghịch lý Simpson", d: "Overfitting"}
+        answer: a
+        explanation: "Chọn mẫu theo hệ quả chung."
+      - id: t05
+        topic: simpson
+        lesson: 01_correlation_vs_causation_dags.ipynb
+        type: mcq
+        question: "Thuốc A tốt hơn B trong từng nhóm bệnh nhẹ và nặng nhưng gộp chung lại tệ hơn. Nguyên nhân:"
+        options: {a: "Mức độ bệnh là confounder — người nặng hay được chọn A", b: "Số liệu sai", c: "Thuốc A có hại", d: "Cỡ mẫu nhỏ"}
+        answer: a
+        explanation: "Nghịch lý Simpson."
+      - id: t06
+        topic: backdoor
+        lesson: 01_correlation_vs_causation_dags.ipynb
+        type: multi
+        question: "Theo tiêu chí cửa sau, tập điều chỉnh hợp lệ phải:"
+        options: {a: "Chặn mọi đường cửa sau từ X tới Y", b: "Không chứa hậu duệ của X (mediator, hệ quả của điều trị)", c: "Gồm mọi biến có trong dữ liệu", d: "Chỉ gồm biến tương quan mạnh nhất với Y"}
+        answer: ab
+        explanation: "'Thêm mọi biến' có thể gây chệch."
+      - id: t07
+        topic: fundamental problem
+        lesson: 02_potential_outcomes.ipynb
+        type: mcq
+        question: "\"Vấn đề cơ bản của suy luận nhân quả\" là:"
+        options: {a: "Mỗi cá thể chỉ quan sát được một trong hai kết quả tiềm năng", b: "Dữ liệu luôn quá ít", c: "Mô hình ML không đủ mạnh", d: "Không đo được kết quả"}
+        answer: a
+        explanation: "Suy luận nhân quả là bài toán dữ liệu khuyết."
+      - id: t08
+        topic: rct
+        lesson: 02_potential_outcomes.ipynb
+        type: tf
+        question: "Trong thí nghiệm ngẫu nhiên, chênh lệch trung bình hai nhóm là ước lượng không chệch của ATE."
+        answer: true
+        explanation: "Điều trị độc lập với kết quả tiềm năng."
+      - id: t09
+        topic: selection bias
+        lesson: 02_potential_outcomes.ipynb
+        type: mcq
+        question: "So sánh ngây thơ trên dữ liệu quan sát bằng:"
+        options: {a: "ATT + thiên lệch chọn lọc E[Y(0)|T=1] − E[Y(0)|T=0]", b: "ATE", c: "ATT", d: "0"}
+        answer: a
+        explanation: "Trong ví dụ, thiên lệch ≈ 103."
+      - id: t10
+        topic: assumptions
+        lesson: 02_potential_outcomes.ipynb
+        type: mcq
+        question: "Giả định nào KHÔNG kiểm chứng được từ dữ liệu quan sát?"
+        options: {a: "Không có confounder chưa đo", b: "Overlap (có thể xem phân phối điểm xu hướng)", c: "Cân bằng sau khi cân trọng số", d: "Cỡ mẫu"}
+        answer: a
+        explanation: "Cần hiểu biết lĩnh vực và phân tích độ nhạy."
+      - id: t11
+        topic: propensity
+        lesson: 03_propensity_score_methods.ipynb
+        type: mcq
+        question: "Chẩn đoán quan trọng nhất cho mô hình điểm xu hướng là:"
+        options: {a: "Cân bằng confounder sau khi cân (SMD) và overlap", b: "ROC-AUC càng cao càng tốt", c: "Accuracy của mô hình xu hướng", d: "Số tham số"}
+        answer: a
+        explanation: "AUC quá cao còn là dấu hiệu overlap kém."
+      - id: t12
+        topic: ipw
+        lesson: 03_propensity_score_methods.ipynb
+        type: mcq
+        question: "Trong IPW, người được điều trị nhưng có điểm xu hướng thấp nhận trọng số:"
+        options: {a: "Lớn (1/e)", b: "Nhỏ", c: "Bằng 0", d: "Bằng 1"}
+        answer: a
+        explanation: "Đại diện cho nhiều người giống họ nhưng không được điều trị."
+      - id: t13
+        topic: doubly robust
+        lesson: 03_propensity_score_methods.ipynb
+        type: tf
+        question: "AIPW cho ước lượng nhất quán nếu mô hình kết quả HOẶC mô hình xu hướng đúng."
+        answer: true
+        explanation: "Doubly robust."
+      - id: t14
+        topic: overlap
+        lesson: 03_propensity_score_methods.ipynb
+        type: mcq
+        question: "Khi overlap kém (điểm xu hướng gần 0 hoặc 1), cắt bỏ vùng đó (trimming):"
+        options: {a: "Ổn định ước lượng nhưng thay đổi tập đối tượng được ước lượng", b: "Không có tác dụng", c: "Khôi phục ATE toàn dân số", d: "Làm phương sai lớn hơn"}
+        answer: a
+        explanation: "Dữ liệu không có thông tin ở vùng thiếu overlap."
+      - id: t15
+        topic: meta learners
+        lesson: 04_meta_learners_and_uplift.ipynb
+        type: mcq
+        question: "T-learner ước lượng CATE bằng:"
+        options: {a: "Hiệu hai mô hình riêng học trên nhóm điều trị và nhóm đối chứng", b: "Một mô hình với T là đặc trưng", c: "Hồi quy phần dư", d: "Điểm xu hướng"}
+        answer: a
+        explanation: "S-learner là một mô hình; X-learner gán hiệu ứng rồi trộn."
+      - id: t16
+        topic: uplift
+        lesson: 04_meta_learners_and_uplift.ipynb
+        type: mcq
+        question: "Nhắm coupon theo 'chi tiêu dự đoán cao nhất' có thể kém hơn phát cho tất cả vì:"
+        options: {a: "Người chi tiêu nhiều không nhất thiết phản ứng mạnh với coupon — dự đoán phản hồi ≠ dự đoán tác động", b: "Mô hình chi tiêu sai", c: "Coupon luôn có hại", d: "Thiếu dữ liệu"}
+        answer: a
+        explanation: "Cần uplift (CATE)."
+  math:
+    questions:
+      - id: m01
+        topic: selection bias
+        lesson: 02_potential_outcomes.ipynb
+        type: numeric
+        decimals: 1
+        question: "So sánh ngây thơ = 230, ATT = 125. Thiên lệch chọn lọc = ?"
+        answer: 105
+        explanation: "230 − 125."
+      - id: m02
+        topic: ipw weight
+        lesson: 03_propensity_score_methods.ipynb
+        type: numeric
+        decimals: 2
+        question: "Một người KHÔNG được điều trị có điểm xu hướng e = 0.8. Trọng số IPW (cho ATE) = ?"
+        answer: 5
+        explanation: "1/(1 − 0.8)."
+      - id: m03
+        topic: smd
+        lesson: 03_propensity_score_methods.ipynb
+        type: numeric
+        decimals: 2
+        question: "Trung bình thu nhập: nhóm điều trị 18, đối chứng 16; phương sai hai nhóm đều 16. SMD = ?"
+        answer: 0.5
+        explanation: "2/√16."
+      - id: m04
+        topic: simpson
+        lesson: 01_correlation_vs_causation_dags.ipynb
+        type: numeric
+        decimals: 3
+        question: "Nhóm A: 30/100 khỏi (nặng) và 90/100 khỏi (nhẹ). Tỉ lệ khỏi gộp của A = ?"
+        answer: 0.6
+        explanation: "120/200."
+      - id: m05
+        topic: policy
+        lesson: 04_meta_learners_and_uplift.ipynb
+        type: numeric
+        decimals: 0
+        question: "Coupon tốn 100. Ba khách có hiệu ứng thật 250, 80, 140. Phát cho người có hiệu ứng > chi phí: tổng lợi nhuận = ?"
+        answer: 190
+        explanation: "(250 − 100) + (140 − 100)."
+coding:
+  tasks:
+    - id: c01
+      title: Chênh lệch trung bình và sai số chuẩn (A/B test)
+      prompt: |
+        Viết `ab_effect(y, t)` trả về `(diff, se)`: chênh lệch trung bình nhóm t = 1 trừ nhóm t = 0, và sai số chuẩn
+        sqrt(var1/n1 + var0/n0) (phương sai mẫu ddof = 1).
+      code: |
+        def ab_effect(y, t):
+            ### START CODE HERE ### (≈ 4 dòng)
+            y, t = np.asarray(y, float), np.asarray(t)
+            y1, y0 = y[t == 1], y[t == 0]
+            diff = y1.mean() - y0.mean()
+            return diff, np.sqrt(y1.var(ddof=1) / len(y1) + y0.var(ddof=1) / len(y0))
+            ### END CODE HERE ###
+      tests: |
+        d, s = ab_effect([3, 5, 1, 1], [1, 1, 0, 0])
+        check_close(d, 3.0, message="chênh lệch")
+        check_close(s, np.sqrt(2 / 2 + 0 / 2), message="sai số chuẩn")
+        r = np.random.default_rng(0)
+        t = (r.random(20000) < 0.5).astype(int)
+        y = 2 * t + r.normal(size=20000)
+        d2, s2 = ab_effect(y, t)
+        check_less(abs(d2 - 2), 4 * s2, "ước lượng gần hiệu ứng thật")
+    - id: c02
+      title: IPW (Hajek)
+      prompt: |
+        Viết `ipw_hajek(y, t, e)`: trung bình có trọng số t/e của y trong nhóm điều trị trừ trung bình có trọng số (1 − t)/(1 − e) trong nhóm đối chứng.
+      code: |
+        def ipw_hajek(y, t, e):
+            ### START CODE HERE ### (≈ 3 dòng)
+            y, t, e = (np.asarray(v, float) for v in (y, t, e))
+            w1, w0 = t / e, (1 - t) / (1 - e)
+            return (w1 * y).sum() / w1.sum() - (w0 * y).sum() / w0.sum()
+            ### END CODE HERE ###
+      tests: |
+        check_close(ipw_hajek([10, 6, 4, 2], [1, 1, 0, 0], [0.5, 0.8, 0.5, 0.2]), (20 + 7.5) / (2 + 1.25) - (8 + 2.5) / (2 + 1.25), message="ví dụ nhỏ")
+        r = np.random.default_rng(1)
+        x = r.normal(size=50000)
+        e = 1 / (1 + np.exp(-x))
+        t = (r.random(50000) < e).astype(int)
+        y = 3 * t + 2 * x + r.normal(size=50000)
+        check_less(abs(ipw_hajek(y, t, e) - 3), 0.1, "IPW với điểm xu hướng đúng ≈ ATE")
+        check_greater(y[t == 1].mean() - y[t == 0].mean() - 3, 1.0, "so sánh ngây thơ bị chệch")
+analysis:
+  prompt: |
+    Một ứng dụng giao đồ ăn muốn biết tính năng "giao hàng miễn phí cho thành viên Plus" có làm tăng số đơn không. Dữ liệu: khách đăng ký Plus
+    đặt nhiều đơn hơn 2.5 lần khách thường. Nhóm phân tích (1) kết luận Plus làm tăng đơn gấp 2.5 lần; (2) chạy hồi quy số đơn ~ Plus + mọi biến có
+    sẵn, gồm cả "số lần mở app trong tháng sau khi đăng ký"; (3) dùng propensity score với mô hình AUC 0.99 và báo cáo IPW; (4) đề xuất gửi lời mời
+    Plus cho những khách có số đơn dự đoán cao nhất. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra thiên lệch chọn lọc: người hay đặt đơn mới đăng ký Plus (confounding/nhân quả ngược) → 2.5 lần không phải tác động"
+    - "Chỉ ra 'số lần mở app sau đăng ký' là biến hậu điều trị (mediator/hệ quả) → bad control, chỉ kiểm soát confounder trước đăng ký"
+    - "Chỉ ra AUC 0.99 của mô hình xu hướng là dấu hiệu overlap kém → trọng số cực lớn, IPW bất ổn; kiểm tra overlap/cân bằng, trimming, AIPW"
+    - "Chỉ ra mời theo số đơn dự đoán ≠ theo uplift → cần CATE/uplift, tốt nhất từ thí nghiệm (mời ngẫu nhiên / encouragement design)"
+    - "Đề xuất A/B test (ví dụ ngẫu nhiên hoá lời mời hoặc ưu đãi dùng thử), DAG tường minh, phân tích độ nhạy"
+  sample_answer: |
+    (1) Khách Plus tự chọn đăng ký — thường là khách vốn đặt nhiều → so sánh ngây thơ gộp tác động với thiên lệch chọn lọc (và nhân quả ngược). (2)
+    "Số lần mở app sau đăng ký" bị Plus tác động (hậu điều trị) — kiểm soát nó làm chệch; chỉ kiểm soát confounder đo **trước** đăng ký (tần suất đặt
+    trước đó, chi tiêu, khu vực, thời gian dùng app...). (3) AUC 0.99 nghĩa là hai nhóm gần như tách hẳn → overlap kém, trọng số khổng lồ, IPW không
+    đáng tin; cần kiểm tra overlap, cân bằng, giới hạn vào vùng có overlap, dùng AIPW. (4) Mời theo số đơn dự đoán chọn người vốn đã đặt nhiều —
+    không phải người được Plus tác động nhiều nhất; cần uplift. Cách tốt nhất: thí nghiệm — ngẫu nhiên hoá lời mời/ưu đãi dùng thử miễn phí (thiết kế
+    khuyến khích, ước lượng bằng biến công cụ), rồi học uplift để nhắm mục tiêu; báo cáo kèm phân tích độ nhạy.
+project:
+  prompt: |
+    **Mini project — Ước lượng tác động từ dữ liệu quan sát.** Dữ liệu `make_causal_marketing(20000, seed=5)` (coupon không ngẫu nhiên). Dùng AIPW
+    với cross-fitting (5 fold, GBM cho kết quả, logistic cho xu hướng, cắt e vào [0.01, 0.99]) trên các đặc trưng `age`, `income_mvnd`,
+    `past_purchases`. Lưu ước lượng vào `ate_hat`, sai số chuẩn vào `se_hat`. Yêu cầu: |ate_hat − ATE thật| < 8 và so sánh ngây thơ lệch > 60.
+  code: |
+    from sklearn.ensemble import HistGradientBoostingRegressor
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.model_selection import KFold
+
+    from ml_course.datasets import make_causal_marketing
+
+    d = make_causal_marketing(20000, seed=5)
+    X, T, Y = d[["age", "income_mvnd", "past_purchases"]].values, d.coupon.values, d.spend_kvnd.values
+    true_ate = d.true_effect.mean()
+    naive = Y[T == 1].mean() - Y[T == 0].mean()
+    ### START CODE HERE ### (≈ 12 dòng)
+    mu1, mu0, e = np.zeros(len(Y)), np.zeros(len(Y)), np.zeros(len(Y))
+    for tr, te in KFold(5, shuffle=True, random_state=0).split(X):
+        mu1[te] = HistGradientBoostingRegressor(random_state=0).fit(X[tr][T[tr] == 1], Y[tr][T[tr] == 1]).predict(X[te])
+        mu0[te] = HistGradientBoostingRegressor(random_state=0).fit(X[tr][T[tr] == 0], Y[tr][T[tr] == 0]).predict(X[te])
+        e[te] = np.clip(LogisticRegression(max_iter=1000).fit(X[tr], T[tr]).predict_proba(X[te])[:, 1], 0.01, 0.99)
+    scores = mu1 - mu0 + T * (Y - mu1) / e - (1 - T) * (Y - mu0) / (1 - e)
+    ate_hat, se_hat = scores.mean(), scores.std() / np.sqrt(len(Y))
+    ### END CODE HERE ###
+    print(f"ngây thơ = {naive:.1f} | AIPW = {ate_hat:.1f} ± {1.96 * se_hat:.1f} | ATE thật = {true_ate:.1f}")
+  tests: |
+    check_less(abs(ate_hat - true_ate), 8, "AIPW gần ATE thật")
+    check_greater(abs(naive - true_ate), 60, "so sánh ngây thơ bị chệch")
+    check_less(se_hat, 5, "sai số chuẩn hợp lý")

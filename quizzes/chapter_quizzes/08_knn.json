@@ -1,0 +1,255 @@
+{
+ "id": "08_knn",
+ "kind": "Chapter",
+ "title": "08 · K-Nearest Neighbors",
+ "next": "09_naive_bayes",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "lazy learning",
+     "answer_hashes": [
+      "dd86f658c6c8e1a2175c"
+     ],
+     "lesson": "01_intuition_and_distances.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "non-parametric",
+     "answer_hashes": [
+      "3e0f91dad204f811b0d5"
+     ],
+     "lesson": "01_intuition_and_distances.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "k và bias-variance",
+     "answer_hashes": [
+      "4c6ef71e93c12bb8cb70"
+     ],
+     "lesson": "01_intuition_and_distances.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "k = 1",
+     "answer_hashes": [
+      "6c2c93534b4cbd4bd301"
+     ],
+     "lesson": "01_intuition_and_distances.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "cosine distance",
+     "answer_hashes": [
+      "7d84b40128286a6e37b2"
+     ],
+     "lesson": "01_intuition_and_distances.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "complexity",
+     "answer_hashes": [
+      "ed5c1dba654146e6bc6f"
+     ],
+     "lesson": "02_from_scratch.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "tf",
+     "topic": "KD-tree",
+     "answer_hashes": [
+      "00941b801021d2d21ff2"
+     ],
+     "lesson": "02_from_scratch.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "weighted KNN",
+     "answer_hashes": [
+      "a782beb502237fdfb921"
+     ],
+     "lesson": "02_from_scratch.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "scaling",
+     "answer_hashes": [
+      "ffc2276c2cdffb5f95f5"
+     ],
+     "lesson": "03_scaling_and_choosing_k.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "multi",
+     "topic": "scaling invariance",
+     "answer_hashes": [
+      "29ac68be6863530bb646"
+     ],
+     "lesson": "03_scaling_and_choosing_k.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "chọn k",
+     "answer_hashes": [
+      "a136230191f28e356b1e"
+     ],
+     "lesson": "03_scaling_and_choosing_k.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "tf",
+     "topic": "k lẻ",
+     "answer_hashes": [
+      "2c4a86b8fe9f70ccef4f"
+     ],
+     "lesson": "03_scaling_and_choosing_k.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "curse of dimensionality",
+     "answer_hashes": [
+      "718951f247d7db4323ab"
+     ],
+     "lesson": "04_failure_cases_and_curse_of_dimensionality.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "feature vô ích",
+     "answer_hashes": [
+      "6de958abbda34241b7e7"
+     ],
+     "lesson": "04_failure_cases_and_curse_of_dimensionality.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "ngoại suy",
+     "answer_hashes": [
+      "b588b70f7e56c30ad16d"
+     ],
+     "lesson": "04_failure_cases_and_curse_of_dimensionality.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "quy mô lớn",
+     "answer_hashes": [
+      "4bcb0d04aee9b4b959a7"
+     ],
+     "lesson": "04_failure_cases_and_curse_of_dimensionality.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "Euclid",
+     "answer_hashes": [
+      "f469a292ea71336b7dbf"
+     ],
+     "decimals": 3,
+     "lesson": "01_intuition_and_distances.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "Manhattan",
+     "answer_hashes": [
+      "b3ae938cef0914fb60ce"
+     ],
+     "decimals": 2,
+     "lesson": "01_intuition_and_distances.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "cosine",
+     "answer_hashes": [
+      "c36199322ef28d736dbd"
+     ],
+     "decimals": 3,
+     "lesson": "01_intuition_and_distances.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "KNN regression",
+     "answer_hashes": [
+      "ad87b86940a431eb660e"
+     ],
+     "decimals": 2,
+     "lesson": "02_from_scratch.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "weighted KNN",
+     "answer_hashes": [
+      "5f2491d1a3b6798fa896"
+     ],
+     "decimals": 2,
+     "lesson": "02_from_scratch.ipynb"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "số phép tính",
+     "answer_hashes": [
+      "ef35638af7f3c59830a3"
+     ],
+     "decimals": 0,
+     "lesson": "02_from_scratch.ipynb"
+    },
+    {
+     "id": "m07",
+     "type": "numeric",
+     "topic": "k heuristic",
+     "answer_hashes": [
+      "30286fe98eea23989afb"
+     ],
+     "decimals": 0,
+     "lesson": "03_scaling_and_choosing_k.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

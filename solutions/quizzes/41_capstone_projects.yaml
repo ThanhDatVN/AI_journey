@@ -1,0 +1,284 @@
+title: "41 · Capstone Projects"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: capstone vs kaggle
+        lesson: 01_capstone_guide.ipynb
+        type: multi
+        question: "Điều gì phân biệt một capstone tốt với một bài thi Kaggle?"
+        options: {a: "Tự định nghĩa quyết định và metric kinh doanh", b: "So sánh với cách làm hiện tại (baseline nghiệp vụ)", c: "Kế hoạch triển khai và giám sát", d: "Ensemble càng nhiều mô hình càng tốt"}
+        answer: abc
+        explanation: "Mô hình đủ tốt, hiểu được, phục vụ được quan trọng hơn +0.001 AUC."
+      - id: t02
+        topic: end-to-end early
+        lesson: 01_capstone_guide.ipynb
+        type: tf
+        question: "Nên dành 3 tuần đầu tối ưu mô hình, sau đó mới làm pipeline dữ liệu và triển khai."
+        answer: false
+        explanation: "Có baseline chạy đầu–cuối ngay tuần 1, rồi cải thiện từng phần."
+      - id: t03
+        topic: rubric
+        lesson: 01_capstone_guide.ipynb
+        type: mcq
+        question: "Rubric yêu cầu không tiêu chí nào ở mức 1 vì:"
+        options: {a: "Một lỗ hổng nghiêm trọng (vd rò rỉ dữ liệu) làm vô hiệu mọi kết quả khác", b: "Để dễ chấm", c: "Để tăng điểm trung bình", d: "Không có lý do"}
+        answer: a
+        explanation: "Mô hình xuất sắc trên dữ liệu rò rỉ vẫn không đạt."
+      - id: t04
+        topic: design doc
+        lesson: 01_capstone_guide.ipynb
+        type: multi
+        question: "Design doc nên trả lời trước khi viết code:"
+        options: {a: "Quyết định nào thay đổi, ai dùng", b: "Đặc trưng nào có sẵn tại thời điểm dự đoán", c: "Chia dữ liệu thế nào và vì sao", d: "Siêu tham số tối ưu của mô hình"}
+        answer: abc
+        explanation: "Siêu tham số là kết quả thí nghiệm, không phải thiết kế."
+      - id: t05
+        topic: data issues
+        lesson: 02_capstone_walkthrough.ipynb
+        type: mcq
+        question: "Thu nhập 15.2 trong một cột tính bằng đồng (đa số giá trị ~15.000.000) nhiều khả năng là:"
+        options: {a: "Lỗi đơn vị (nhập theo triệu đồng) — sửa được chắc chắn", b: "Khách hàng thu nhập rất thấp", c: "Ngoại lai cần giữ nguyên", d: "Lỗi ngày tháng"}
+        answer: a
+        explanation: "Thu nhập 15 đồng/tháng là bất khả — quy tắc sửa rõ ràng."
+      - id: t06
+        topic: label maturity
+        lesson: 02_capstone_walkthrough.ipynb
+        type: mcq
+        question: "Hồ sơ vay nộp 3 tháng trước ngày quan sát có nhãn 'vỡ nợ trong 12 tháng' bị thiếu. Cách xử lý đúng:"
+        options: {a: "Loại khỏi tập huấn luyện/đánh giá có nhãn (nhãn chưa trưởng thành)", b: "Điền 0 vì chưa vỡ nợ", c: "Điền tỉ lệ trung bình", d: "Điền 1 cho an toàn"}
+        answer: a
+        explanation: "Chưa quan sát đủ ≠ không vỡ nợ."
+      - id: t07
+        topic: post-decision leakage
+        lesson: 02_capstone_walkthrough.ipynb
+        type: mcq
+        question: "Cột 'quá hạn 30 ngày trong 3 tháng đầu' làm AUC tăng từ 0.70 lên 0.85. Kết luận:"
+        options: {a: "Rò rỉ — thông tin có sau khi duyệt vay, không dùng làm đặc trưng", b: "Đặc trưng xuất sắc, nên dùng", c: "Mô hình bị overfit", d: "Cần thêm dữ liệu"}
+        answer: a
+        explanation: "Hỏi: giá trị được ghi khi nào so với thời điểm quyết định?"
+      - id: t08
+        topic: temporal split
+        lesson: 02_capstone_walkthrough.ipynb
+        type: tf
+        question: "Với dữ liệu tín dụng có cú sốc kinh tế, chia train/test ngẫu nhiên vẫn cho ước lượng hiệu năng triển khai đáng tin."
+        answer: false
+        explanation: "Chia ngẫu nhiên trộn giai đoạn sau vào train và che mất trôi."
+      - id: t09
+        topic: calibration for decisions
+        lesson: 02_capstone_walkthrough.ipynb
+        type: mcq
+        question: "Mô hình có AUC test 0.74 (không giảm) nhưng chính sách theo mô hình lỗ hơn luật cũ. Nguyên nhân khả dĩ nhất:"
+        options: {a: "Xác suất bị đánh giá thấp (calibration lệch) nên duyệt quá tay", b: "AUC quá thấp", c: "Luật cũ dùng nhiều đặc trưng hơn", d: "Dữ liệu test quá nhỏ"}
+        answer: a
+        explanation: "Ngưỡng tính trên xác suất — xếp hạng đúng chưa đủ."
+      - id: t10
+        topic: model choice
+        lesson: 02_capstone_walkthrough.ipynb
+        type: multi
+        question: "Lý do chọn hồi quy logistic thay vì gradient boosting trong walkthrough:"
+        options: {a: "Xếp hạng không kém (KTC chênh lệch chứa 0)", b: "Xác suất hiệu chỉnh tốt hơn (Brier thấp hơn)", c: "Giải thích được từng quyết định (lý do từ chối)", d: "Gradient boosting luôn kém hơn"}
+        answer: abc
+        explanation: "Với dữ liệu bảng nhỏ, gần tuyến tính trong log-odds."
+      - id: t11
+        topic: reason codes
+        lesson: 02_capstone_walkthrough.ipynb
+        type: mcq
+        question: "Với hồi quy logistic, đóng góp của một đặc trưng vào quyết định của một người là:"
+        options: {a: "hệ số × giá trị đã chuẩn hoá (đóng góp vào log-odds)", b: "hệ số bình phương", c: "permutation importance", d: "p-value của hệ số"}
+        answer: a
+        explanation: "Chính xác, không cần xấp xỉ."
+      - id: t12
+        topic: proxy label
+        lesson: 02_capstone_walkthrough.ipynb
+        type: mcq
+        question: "Nhãn sớm có TPR 0.55 và FPR 0.04. Tỉ lệ nhãn sớm tăng từ 0.08 lên 0.11. Ước lượng tỉ lệ vỡ nợ mới cần:"
+        options: {a: "Suy ngược (0.11 − FPR)/(TPR − FPR), không dùng thẳng 0.11", b: "Dùng thẳng 0.11", c: "Nhân 0.11 với TPR", d: "Không ước lượng được"}
+        answer: a
+        explanation: "Nhãn sớm pha lẫn dương tính giả."
+      - id: t13
+        topic: input monitoring
+        lesson: 02_capstone_walkthrough.ipynb
+        type: tf
+        question: "Trong walkthrough, PSI của các đặc trưng đầu vào báo động sớm cú sốc kinh tế 2024."
+        answer: false
+        explanation: "Đầu vào không đổi — đó là trôi khái niệm, chỉ nhãn (sớm) mới thấy."
+      - id: t14
+        topic: group calibration
+        lesson: 02_capstone_walkthrough.ipynb
+        type: mcq
+        question: "Vì sao nên giám sát calibration theo nhóm (việc làm, tuổi), không chỉ tổng thể?"
+        options: {a: "Cú sốc tác động không đều; một nhóm có thể bị đánh giá thấp rủi ro nhiều hơn hẳn", b: "Để có nhiều biểu đồ", c: "Calibration tổng luôn sai", d: "Không cần thiết"}
+        answer: a
+        explanation: "Lao động tự do bị lệch ×2.4 so với ×1.3 của nhóm làm công ăn lương."
+      - id: t15
+        topic: report honesty
+        lesson: 01_capstone_guide.ipynb
+        type: multi
+        question: "Một báo cáo capstone trung thực nên có:"
+        options: {a: "Số cấu hình đã thử", b: "Khoảng tin cậy của kết quả chính", c: "Những gì không hiệu quả và hạn chế", d: "Chỉ con số tốt nhất"}
+        answer: abc
+        explanation: "Giấu thất bại làm người đọc đánh giá sai độ tin cậy."
+  math:
+    questions:
+      - id: m01
+        topic: break-even threshold
+        lesson: 02_capstone_walkthrough.ipynb
+        type: numeric
+        decimals: 3
+        question: "Lãi ròng nếu trả đủ g = 0.10 (theo tỉ lệ khoản vay), lỗ nếu vỡ nợ ℓ = 0.70. Ngưỡng xác suất vỡ nợ để duyệt p* = g/(g + ℓ) = ?"
+        answer: 0.125
+        explanation: "0.10 / 0.80."
+      - id: m02
+        topic: expected profit
+        lesson: 02_capstone_walkthrough.ipynb
+        type: numeric
+        decimals: 1
+        question: "Khoản vay 200 triệu, kỳ hạn 12 tháng, biên 5%/năm, LGD 70%, p = 0.05. Lợi nhuận kỳ vọng (triệu đồng) = ?"
+        answer: 2.5
+        explanation: "0.95 × 10 − 0.05 × 140 = 9.5 − 7."
+      - id: m03
+        topic: proxy inversion
+        lesson: 02_capstone_walkthrough.ipynb
+        type: numeric
+        decimals: 3
+        question: "TPR = 0.6, FPR = 0.05, tỉ lệ nhãn sớm 0.105. Tỉ lệ vỡ nợ ước lượng = ?"
+        answer: 0.1
+        explanation: "(0.105 − 0.05)/0.55."
+      - id: m04
+        topic: odds multiplier
+        lesson: 02_capstone_walkthrough.ipynb
+        type: numeric
+        decimals: 2
+        question: "Mô hình dự đoán p = 0.10. Nhân odds với k = 2 thì xác suất mới = ?"
+        answer: 0.18
+        explanation: "odds 1/9 × 2 = 2/9 → p = 2/11 ≈ 0.18."
+      - id: m05
+        topic: label delay
+        lesson: 02_capstone_walkthrough.ipynb
+        type: numeric
+        decimals: 0
+        question: "Nhãn 12 tháng. Ở đầu quý 3/2023 (01/07/2023), hồ sơ nộp muộn nhất có nhãn là tháng mấy năm 2022? (trả lời số tháng)"
+        answer: 7
+        explanation: "Nộp ngày 01/07/2022 + 12 tháng = 01/07/2023."
+coding:
+  tasks:
+    - id: c01
+      title: Đọc ngày hai định dạng
+      prompt: |
+        Viết `parse_dates(series)`: chuỗi dạng `yyyy-mm-dd` hoặc `dd/mm/yyyy` → `datetime64`; chuỗi không đọc được → NaT.
+      code: |
+        import pandas as pd
+
+
+        def parse_dates(series):
+            ### START CODE HERE ### (≈ 2 dòng)
+            s = series.astype(str)
+            return pd.to_datetime(s, format="%Y-%m-%d", errors="coerce").fillna(pd.to_datetime(s, format="%d/%m/%Y", errors="coerce"))
+            ### END CODE HERE ###
+      tests: |
+        out = parse_dates(pd.Series(["2024-03-05", "05/03/2024", "2023-12-31", "31/12/2023", "abc"]))
+        check_equal(list(out[:4]), [pd.Timestamp("2024-03-05")] * 2 + [pd.Timestamp("2023-12-31")] * 2, "hai định dạng")
+        check_true(pd.isna(out.iloc[4]), "không đọc được → NaT")
+        check_equal(parse_dates(pd.Series(["01/02/2024"])).iloc[0], pd.Timestamp("2024-02-01"), "dd/mm chứ không phải mm/dd")
+    - id: c02
+      title: Quyết định theo lợi nhuận kỳ vọng
+      prompt: |
+        Viết `approve(p, loan, term_months, margin=0.05, lgd=0.70)` → mảng bool: duyệt khi (1 − p)·g − p·ℓ > 0 với
+        g = margin × loan × term_months/12, ℓ = lgd × loan.
+      code: |
+        def approve(p, loan, term_months, margin=0.05, lgd=0.70):
+            ### START CODE HERE ### (≈ 3 dòng)
+            p, loan, term = (np.asarray(v, float) for v in (p, loan, term_months))
+            gain, loss = margin * loan * term / 12, lgd * loan
+            return (1 - p) * gain - p * loss > 0
+            ### END CODE HERE ###
+      tests: |
+        check_equal(list(approve([0.05, 0.12, 0.13], [1e8] * 3, [24] * 3)), [True, True, False], "ngưỡng 24 tháng 12.5%")
+        check_equal(list(approve([0.10] * 3, [1e8] * 3, [12, 24, 36])), [False, True, True], "ngưỡng theo kỳ hạn")
+        check_equal(list(approve([0.10], [5e7], [24], margin=0.02)), [False], "biên thấp → khắt khe hơn")
+analysis:
+  prompt: |
+    Một capstone dự đoán nhu cầu hàng tuần cho chuỗi cửa hàng báo cáo: "Mô hình LightGBM giảm MAPE từ 18% (mô hình cũ) xuống 11% trên tập test
+    gồm 20% tuần ngẫu nhiên. Chúng tôi thử 300 cấu hình, chọn cấu hình tốt nhất trên test. Dữ liệu có cột 'doanh số tuần sau đã hiệu chỉnh khuyến mãi'
+    dùng làm đặc trưng vì nó cải thiện MAPE nhiều nhất. Mô hình sẽ thay thế hoàn toàn mô hình cũ từ tuần tới." Đánh giá theo rubric capstone và
+    đề xuất những gì cần làm trước khi triển khai.
+  rubric:
+    - "Chỉ ra cột 'doanh số tuần sau...' là rò rỉ thông tin tương lai → loại bỏ; hỏi thời điểm ghi nhận của mọi cột"
+    - "Chỉ ra chia ngẫu nhiên theo tuần sai với chuỗi thời gian → backtest theo thời gian (rolling origin), so với mô hình cũ trên cùng giai đoạn"
+    - "Chỉ ra chọn cấu hình trên test (300 lần) → lời nguyền người thắng; cần validation/CV riêng và test chạm một lần, báo cáo độ bất định"
+    - "Chỉ ra metric: MAPE có vấn đề khi doanh số nhỏ; cần metric gắn với quyết định (chi phí tồn kho/thiếu hàng), theo nhóm cửa hàng/sản phẩm"
+    - "Đề xuất triển khai an toàn: shadow so với mô hình cũ, canary theo cửa hàng, giám sát sai số khi nhãn về (1 tuần), kế hoạch rollback"
+  sample_answer: |
+    Theo rubric: (1) **Dữ liệu** — 'doanh số tuần sau đã hiệu chỉnh' là thông tin tương lai, rò rỉ trực tiếp; MAPE 11% không có ý nghĩa. Cần rà soát
+    thời điểm ghi nhận của mọi cột. (2) **Đánh giá** — chia ngẫu nhiên các tuần làm mô hình thấy cả tuần trước và sau mỗi tuần test; phải backtest
+    theo thời gian với nhiều điểm cắt, so với mô hình cũ trên đúng các giai đoạn đó, báo cáo khoảng tin cậy. Chọn cấu hình trên test 300 lần biến
+    test thành validation → con số lạc quan; tách validation, test chạm một lần. (3) **Metric** — MAPE phóng đại sai số ở sản phẩm bán ít và không phản
+    ánh chi phí bất đối xứng (thiếu hàng vs tồn kho); dùng WAPE/MASE và một metric chi phí, xem theo nhóm cửa hàng/sản phẩm và các tuần có khuyến mãi.
+    (4) **Triển khai** — không thay hoàn toàn ngay: chạy shadow vài tuần so với mô hình cũ, canary ở một số cửa hàng, giám sát sai số hằng tuần khi
+    doanh số thực về, ngưỡng rollback rõ. (5) **Truyền đạt** — báo cáo số cấu hình đã thử, hạn chế, và những gì không hiệu quả.
+project:
+  prompt: |
+    **Mini capstone.** Từ dữ liệu thô `credit_applications_raw.csv`: làm sạch (trùng, ngày hai định dạng, số tiền dạng chuỗi, thu nhập theo triệu,
+    tuổi vô lý, danh mục), tạo đặc trưng `dti`, `log_income`; chia theo thời gian (train: trước 07/2023; validation: 07–12/2023); huấn luyện hồi quy
+    logistic **không dùng** `early_dpd30_3m`; áp dụng chính sách lợi nhuận kỳ vọng (biên 5%/năm, LGD 70%). Lưu `val_auc`, `profit_model`, `profit_rule`
+    (luật: không trễ hạn và DTI < 0.45), `profit_all` (duyệt tất cả) — đơn vị tỉ đồng. Yêu cầu: không dùng cột rò rỉ; AUC validation > 0.66; mô hình lãi hơn cả luật và duyệt tất cả.
+  code: |
+    import pandas as pd
+    from sklearn.compose import ColumnTransformer
+    from sklearn.impute import SimpleImputer
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import roc_auc_score
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
+    from ml_course.datasets import CREDIT_MONTHLY_RATE
+    from ml_course.utils import repo_path
+
+    raw = pd.read_csv(repo_path("data", "sample", "credit_applications_raw.csv"))
+    NUMERIC = ["age", "log_income", "loan_amount_vnd", "term_months", "n_dependents", "credit_history_months", "late_payments_12m", "dti"]
+    CATEGORICAL = ["employment_type", "purpose", "region", "has_collateral"]
+    ### START CODE HERE ### (≈ 30 dòng)
+    regions = {"tp.hcm": "TP.HCM", "ho chi minh": "TP.HCM", "hcm": "TP.HCM", "tp hcm": "TP.HCM", "hà nội": "Hà Nội", "ha noi": "Hà Nội",
+               "hn": "Hà Nội", "đà nẵng": "Đà Nẵng", "da nang": "Đà Nẵng", "khác": "Khác"}
+    df = raw.drop_duplicates().drop_duplicates("application_id").copy()
+    d = df.application_date.astype(str)
+    df["application_date"] = pd.to_datetime(d, format="%Y-%m-%d", errors="coerce").fillna(pd.to_datetime(d, format="%d/%m/%Y", errors="coerce"))
+    df["loan_amount_vnd"] = df.loan_amount_vnd.astype(str).str.replace(".", "", regex=False).astype(float)
+    df["monthly_income_vnd"] = np.where(df.monthly_income_vnd < 1000, df.monthly_income_vnd * 1e6, df.monthly_income_vnd)
+    df["age"] = df.age.where(df.age.between(18, 100))
+    df["employment_type"] = (df.employment_type.astype("string").str.strip().str.lower().str.replace("[- ]", "_", regex=True)
+                             .replace({"hop_dong": "contract"}).fillna("unknown").astype(str))
+    df["region"] = df.region.astype(str).str.strip().str.lower().map(regions)
+    annuity = CREDIT_MONTHLY_RATE / (1 - (1 + CREDIT_MONTHLY_RATE) ** -df.term_months)
+    df["dti"] = df.loan_amount_vnd * annuity / df.monthly_income_vnd
+    df["log_income"] = np.log(df.monthly_income_vnd)
+
+    train = df[df.application_date < "2023-07-01"]
+    val = df[(df.application_date >= "2023-07-01") & (df.application_date < "2024-01-01")]
+    model = make_pipeline(ColumnTransformer([("num", make_pipeline(SimpleImputer(strategy="median"), StandardScaler()), NUMERIC),
+                                             ("cat", OneHotEncoder(handle_unknown="ignore"), CATEGORICAL)]),
+                          LogisticRegression(max_iter=2000)).fit(train, train.defaulted)
+    p = model.predict_proba(val)[:, 1]
+    val_auc = roc_auc_score(val.defaulted, p)
+    gain = 0.05 * val.loan_amount_vnd.values * val.term_months.values / 12
+    loss = 0.70 * val.loan_amount_vnd.values
+    y = val.defaulted.values
+
+
+    def total(mask):
+        return float(np.where(mask, np.where(y == 1, -loss, gain), 0).sum() / 1e9)
+
+
+    profit_model = total((1 - p) * gain - p * loss > 0)
+    profit_rule = total(((val.late_payments_12m == 0) & (val.dti < 0.45)).values)
+    profit_all = total(np.ones(len(val), bool))
+    ### END CODE HERE ###
+    print(f"AUC validation = {val_auc:.3f} | lợi nhuận (tỉ): mô hình {profit_model:.2f}, luật {profit_rule:.2f}, duyệt tất cả {profit_all:.2f}")
+  tests: |
+    used = list(model[0].get_feature_names_out())
+    check_true(not any("early_dpd30" in name for name in used), "không dùng cột rò rỉ early_dpd30_3m")
+    check_greater(val_auc, 0.66, "AUC validation")
+    check_greater(profit_model, profit_rule, "mô hình lãi hơn luật hiện tại")
+    check_greater(profit_model, profit_all, "mô hình lãi hơn duyệt tất cả")
+    check_less(val_auc, 0.8, "AUC hợp lý (không rò rỉ)")

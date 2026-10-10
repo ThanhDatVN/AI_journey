@@ -1,0 +1,226 @@
+{
+ "id": "24_ensemble_learning",
+ "kind": "Chapter",
+ "title": "24 · Ensemble Learning",
+ "next": "25_time_series",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "condorcet",
+     "answer_hashes": [
+      "1c5525e2df2c85f6e4b2"
+     ],
+     "lesson": "01_voting_and_diversity.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "multi",
+     "topic": "ambiguity",
+     "answer_hashes": [
+      "5bb2b24eccfdb5f76a5c"
+     ],
+     "lesson": "01_voting_and_diversity.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "soft voting",
+     "answer_hashes": [
+      "6f784c43c681634fcf08"
+     ],
+     "lesson": "01_voting_and_diversity.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "weak members",
+     "answer_hashes": [
+      "1edab24dacd93486f2a6"
+     ],
+     "lesson": "01_voting_and_diversity.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "diversity",
+     "answer_hashes": [
+      "e7f69217152cfe458263"
+     ],
+     "lesson": "01_voting_and_diversity.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "oof",
+     "answer_hashes": [
+      "433ff29cc4e01155087f"
+     ],
+     "lesson": "02_stacking_and_blending.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "multi",
+     "topic": "stacking procedure",
+     "answer_hashes": [
+      "d43d469d5d364540bdb0"
+     ],
+     "lesson": "02_stacking_and_blending.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "meta-model",
+     "answer_hashes": [
+      "ef4e4f8731c462ada700"
+     ],
+     "lesson": "02_stacking_and_blending.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "blending",
+     "answer_hashes": [
+      "bde061b7a94ff70ddc6f"
+     ],
+     "lesson": "02_stacking_and_blending.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "tf",
+     "topic": "time series stacking",
+     "answer_hashes": [
+      "d0d1c319fe9557180d70"
+     ],
+     "lesson": "02_stacking_and_blending.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "multi",
+     "topic": "sources of diversity",
+     "answer_hashes": [
+      "8a1542456a8fd57e9eb5"
+     ],
+     "lesson": "03_ensemble_design.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "ensemble selection",
+     "answer_hashes": [
+      "ffc90ffcd98993ab088d"
+     ],
+     "lesson": "03_ensemble_design.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "topic": "validation overfit",
+     "answer_hashes": [
+      "31513bdef0fd13ed2ede"
+     ],
+     "lesson": "03_ensemble_design.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "cost",
+     "answer_hashes": [
+      "05208d9fa6cc0aa29753"
+     ],
+     "lesson": "03_ensemble_design.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "disagreement",
+     "answer_hashes": [
+      "5c7cc9922bf497606f84"
+     ],
+     "lesson": "03_ensemble_design.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "majority vote",
+     "answer_hashes": [
+      "8c0dfcd67c121e0ff699"
+     ],
+     "decimals": 3,
+     "lesson": "01_voting_and_diversity.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "ambiguity",
+     "answer_hashes": [
+      "fbd7bc3229c3cba455dc"
+     ],
+     "decimals": 3,
+     "lesson": "01_voting_and_diversity.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "ambiguity",
+     "answer_hashes": [
+      "b267174c2c0589aad1e1"
+     ],
+     "decimals": 3,
+     "lesson": "01_voting_and_diversity.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "correlated variance",
+     "answer_hashes": [
+      "0eebf34680a9839f0651"
+     ],
+     "decimals": 3,
+     "lesson": "01_voting_and_diversity.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "weighted vote",
+     "answer_hashes": [
+      "061b2242b708f5283f9e"
+     ],
+     "decimals": 2,
+     "lesson": "01_voting_and_diversity.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

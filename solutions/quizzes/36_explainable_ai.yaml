@@ -1,0 +1,280 @@
+title: "36 · Explainable AI"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: global local
+        lesson: 01_global_explanations.ipynb
+        type: mcq
+        question: "\"Vì sao khách hàng này bị dự đoán rời bỏ?\" là câu hỏi giải thích:"
+        options: {a: "Cục bộ", b: "Toàn cục", c: "Nhân quả", d: "Không thể trả lời"}
+        answer: a
+        explanation: "LIME, SHAP, counterfactual."
+      - id: t02
+        topic: interpretable first
+        lesson: 01_global_explanations.ipynb
+        type: tf
+        question: "Với dữ liệu cộng tính trong không gian logit, logistic regression có thể vừa chính xác nhất vừa tự giải thích được."
+        answer: true
+        explanation: "Thử mô hình dễ hiểu trước khi giải thích hộp đen."
+      - id: t03
+        topic: mdi bias
+        lesson: 01_global_explanations.ipynb
+        type: multi
+        question: "Về độ quan trọng MDI (impurity) của rừng ngẫu nhiên:"
+        options:
+          a: "Tính trên dữ liệu train"
+          b: "Thiên lệch về đặc trưng nhiều giá trị khác nhau, kể cả nhiễu"
+          c: "Một mã ID ngẫu nhiên có thể nhận MDI cao"
+          d: "Luôn bằng permutation importance trên tập test"
+        answer: abc
+        explanation: "Dùng permutation importance trên dữ liệu chưa thấy."
+      - id: t04
+        topic: permutation
+        lesson: 01_global_explanations.ipynb
+        type: mcq
+        question: "Permutation importance của một đặc trưng đo:"
+        options: {a: "Hiệu năng của mô hình giảm bao nhiêu khi xáo trộn cột đó", b: "Hệ số hồi quy của đặc trưng", c: "Tương quan với nhãn", d: "Số lần đặc trưng được dùng để tách"}
+        answer: a
+        explanation: "Không phụ thuộc mô hình."
+      - id: t05
+        topic: ice
+        lesson: 01_global_explanations.ipynb
+        type: mcq
+        question: "Các đường ICE cắt nhau (không song song) cho thấy:"
+        options: {a: "Có tương tác — ảnh hưởng của đặc trưng khác nhau giữa các mẫu", b: "Mô hình tuyến tính", c: "Đặc trưng không quan trọng", d: "Dữ liệu bị thiếu"}
+        answer: a
+        explanation: "PDP là trung bình các đường ICE."
+      - id: t06
+        topic: ale
+        lesson: 01_global_explanations.ipynb
+        type: mcq
+        question: "ALE được ưu tiên hơn PDP khi:"
+        options: {a: "Đặc trưng tương quan — PDP tạo tổ hợp phi thực tế, ALE chỉ dùng hiệu cục bộ trên dữ liệu thật", b: "Đặc trưng là phân loại", c: "Mô hình tuyến tính", d: "Dữ liệu ít"}
+        answer: a
+        explanation: "Tránh ngoại suy."
+      - id: t07
+        topic: surrogate
+        lesson: 01_global_explanations.ipynb
+        type: tf
+        question: "Độ trung thực của mô hình thay thế (surrogate) được đo bằng độ khớp với dự đoán của mô hình đen, không phải với nhãn thật."
+        answer: true
+        explanation: "Báo cáo kèm R² trung thực."
+      - id: t08
+        topic: lime
+        lesson: 02_local_explanations_lime_shap.ipynb
+        type: multi
+        question: "Những yếu tố làm lời giải thích LIME thay đổi:"
+        options: {a: "Số mẫu nhiễu loạn và seed", b: "Độ rộng kernel", c: "Cách nhiễu loạn dữ liệu", d: "Tên của các cột"}
+        answer: abc
+        explanation: "Kiểm tra độ ổn định."
+      - id: t09
+        topic: shapley properties
+        lesson: 02_local_explanations_lime_shap.ipynb
+        type: mcq
+        question: "Tính chất 'hiệu quả' của giá trị Shapley nói rằng:"
+        options: {a: "Tổng các giá trị Shapley bằng f(x) − E[f(X)]", b: "Mọi giá trị đều dương", c: "Đặc trưng quan trọng nhất có giá trị bằng 1", d: "Tính trong thời gian tuyến tính"}
+        answer: a
+        explanation: "Lời giải thích 'khép kín'."
+      - id: t10
+        topic: background
+        lesson: 02_local_explanations_lime_shap.ipynb
+        type: mcq
+        question: "Với hàm giá trị interventional, các đặc trưng không thuộc tập S lấy giá trị từ:"
+        options: {a: "Dữ liệu nền (background)", b: "Giá trị 0", c: "Chính điểm cần giải thích", d: "Nhãn"}
+        answer: a
+        explanation: "Kết quả phụ thuộc dữ liệu nền."
+      - id: t11
+        topic: linear shap
+        lesson: 02_local_explanations_lime_shap.ipynb
+        type: mcq
+        question: "Với mô hình tuyến tính và đặc trưng được can thiệp độc lập, giá trị Shapley của đặc trưng j là:"
+        options: {a: "β_j · (x_j − E[x_j])", b: "β_j", c: "β_j · x_j", d: "x_j − E[x_j]"}
+        answer: a
+        explanation: "Hệ số × độ lệch so với trung bình."
+      - id: t12
+        topic: counterfactual
+        lesson: 02_local_explanations_lime_shap.ipynb
+        type: tf
+        question: "Một counterfactual 'nếu chuyển sang hợp đồng 2 năm thì xác suất rời bỏ giảm xuống 39%' đảm bảo khách hàng thật sẽ ở lại nếu đổi hợp đồng."
+        answer: false
+        explanation: "Đó là hành vi của mô hình; tác động thật là câu hỏi nhân quả."
+      - id: t13
+        topic: correlated
+        lesson: 03_pitfalls_of_explanations.ipynb
+        type: mcq
+        question: "Bỏ tenure khỏi mô hình, độ quan trọng của total tăng hơn 10 lần dù AUC gần như không đổi. Điều này cho thấy:"
+        options: {a: "Đặc trưng tương quan thay thế nhau; độ quan trọng phản ánh mô hình chứ không phải tác động thật", b: "total là nguyên nhân rời bỏ", c: "Mô hình bị lỗi", d: "tenure không liên quan"}
+        answer: a
+        explanation: "Logit thật không chứa total."
+      - id: t14
+        topic: rashomon
+        lesson: 03_pitfalls_of_explanations.ipynb
+        type: mcq
+        question: "Hiệu ứng Rashomon là:"
+        options: {a: "Nhiều mô hình tốt ngang nhau có thể đưa ra giải thích khác nhau", b: "Mô hình càng lớn càng dễ giải thích", c: "Giải thích luôn giống nhau giữa các mô hình", d: "Một loại tấn công đối kháng"}
+        answer: a
+        explanation: "Xem độ quan trọng qua nhiều mô hình tốt."
+      - id: t15
+        topic: leakage
+        lesson: 03_pitfalls_of_explanations.ipynb
+        type: mcq
+        question: "Một đặc trưng có permutation importance áp đảo mọi đặc trưng khác và AUC tăng vọt. Câu hỏi đầu tiên nên đặt ra:"
+        options: {a: "Giá trị này có sẵn tại thời điểm dự đoán không (rò rỉ)?", b: "Nên tăng số cây?", c: "Nên dùng SHAP thay permutation?", d: "Nên bỏ các đặc trưng khác?"}
+        answer: a
+        explanation: "XAI hữu ích nhất cho gỡ lỗi."
+      - id: t16
+        topic: fairness
+        lesson: 03_pitfalls_of_explanations.ipynb
+        type: tf
+        question: "Loại bỏ thuộc tính nhạy cảm khỏi dữ liệu huấn luyện là đủ để mô hình không phân biệt đối xử."
+        answer: false
+        explanation: "Biến ủy nhiệm và nhãn thiên lệch."
+  math:
+    questions:
+      - id: m01
+        topic: shapley
+        lesson: 02_local_explanations_lime_shap.ipynb
+        type: numeric
+        decimals: 2
+        question: "Trò chơi 2 người: v(∅) = 0, v({1}) = 2, v({2}) = 6, v({1,2}) = 10. Giá trị Shapley của người 1?"
+        answer: 3
+        explanation: "½·2 + ½·(10 − 6)."
+      - id: m02
+        topic: linear shap
+        lesson: 02_local_explanations_lime_shap.ipynb
+        type: numeric
+        decimals: 2
+        question: "f(x) = 3x₁ + 5, E[x₁] = 2, x₁ = 4. φ₁ = ?"
+        answer: 6
+        explanation: "3·(4 − 2)."
+      - id: m03
+        topic: coalitions
+        lesson: 02_local_explanations_lime_shap.ipynb
+        type: numeric
+        decimals: 0
+        question: "Tính Shapley chính xác cho 12 đặc trưng cần đánh giá hàm giá trị trên bao nhiêu tập con?"
+        answer: 4096
+        explanation: "2¹²."
+      - id: m04
+        topic: permutation
+        lesson: 01_global_explanations.ipynb
+        type: numeric
+        decimals: 3
+        question: "AUC gốc 0.82; sau khi xáo trộn một cột, AUC = 0.74. Permutation importance của cột = ?"
+        answer: 0.08
+        explanation: "0.82 − 0.74."
+      - id: m05
+        topic: shapley weight
+        lesson: 02_local_explanations_lime_shap.ipynb
+        type: numeric
+        decimals: 4
+        question: "Với d = 4 đặc trưng, trọng số của tập con S có |S| = 1 trong công thức Shapley |S|!(d−|S|−1)!/d! = ?"
+        answer: 0.0833
+        explanation: "1!·2!/4! = 2/24."
+coding:
+  tasks:
+    - id: c01
+      title: Shapley từ bảng giá trị
+      prompt: |
+        Viết `shapley_from_values(values, d)`: `values` là dict ánh xạ tuple các chỉ số đã sắp xếp (tập con S ⊆ {0..d−1}) → v(S).
+        Trả về mảng φ độ dài d theo công thức Shapley.
+      code: |
+        from itertools import combinations
+        from math import factorial
+
+        def shapley_from_values(values, d):
+            ### START CODE HERE ### (≈ 8 dòng)
+            phi = np.zeros(d)
+            for j in range(d):
+                others = [i for i in range(d) if i != j]
+                for k in range(d):
+                    for S in combinations(others, k):
+                        w = factorial(k) * factorial(d - k - 1) / factorial(d)
+                        phi[j] += w * (values[tuple(sorted(S + (j,)))] - values[S])
+            return phi
+            ### END CODE HERE ###
+      tests: |
+        v2 = {(): 0, (0,): 4, (1,): 2, (0, 1): 10}
+        check_close(shapley_from_values(v2, 2), [6, 4], message="2 người chơi")
+        v3 = {S: float(len(S) ** 2) for k in range(4) for S in combinations(range(3), k)}
+        phi3 = shapley_from_values(v3, 3)
+        check_close(phi3, [3, 3, 3], message="đối xứng: trò chơi chỉ phụ thuộc |S|")
+        check_close(phi3.sum(), v3[(0, 1, 2)] - v3[()], message="hiệu quả")
+    - id: c02
+      title: Partial dependence
+      prompt: |
+        Viết `pdp_values(predict, X, feature, grid)` (X là DataFrame): với mỗi giá trị v trong grid, đặt cột `feature` = v cho mọi dòng, trả về
+        trung bình `predict` — mảng độ dài len(grid).
+      code: |
+        import pandas as pd
+
+        def pdp_values(predict, X, feature, grid):
+            ### START CODE HERE ### (≈ 1 dòng)
+            return np.array([predict(X.assign(**{feature: v})).mean() for v in grid])
+            ### END CODE HERE ###
+      tests: |
+        Xd = pd.DataFrame({"a": [1.0, 2.0, 3.0], "b": [0.0, 1.0, 2.0]})
+        lin = lambda D: 2 * D["a"].values + D["b"].values
+        check_close(pdp_values(lin, Xd, "a", [0, 1, 5]), [1.0, 3.0, 11.0], message="mô hình tuyến tính: PDP = 2v + E[b]")
+        inter = lambda D: D["a"].values * D["b"].values
+        check_close(pdp_values(inter, Xd, "a", [2]), [2.0], message="tương tác: 2·E[b]")
+analysis:
+  prompt: |
+    Một công ty bảo hiểm dùng gradient boosting định phí bảo hiểm sức khoẻ. Để "minh bạch", họ: (1) công bố biểu đồ MDI cho thấy "mã bưu
+    chính" là yếu tố quan trọng thứ hai; (2) dùng PDP để nói với khách "nếu bạn tăng số bước đi bộ mỗi ngày lên 10 000 thì phí giảm 15%";
+    (3) giải thích từng hồ sơ bằng LIME với cấu hình mặc định, chạy một lần; (4) kết luận mô hình công bằng vì đã bỏ cột giới tính và
+    SHAP của các đặc trưng còn lại "trông hợp lý". Đánh giá và đề xuất.
+  rubric:
+    - "MDI thiên lệch (train, nhiều giá trị — mã bưu chính có nhiều mức) → dùng permutation importance trên dữ liệu giữ lại; mã bưu chính có thể là proxy cho thu nhập/dân tộc → cần kiểm toán"
+    - "PDP mô tả mô hình, không phải nhân quả; số bước đi bộ tương quan với tuổi/sức khoẻ → PDP có thể ngoại suy; lời hứa 'tăng bước thì giảm phí' là tuyên bố nhân quả/chính sách cần cơ sở khác"
+    - "LIME mặc định một lần không ổn định → cố định seed, đủ mẫu, kiểm tra độ ổn định, cân nhắc SHAP với dữ liệu nền rõ ràng"
+    - "Công bằng phải đo kết quả theo nhóm (phí trung bình, tỉ lệ lỗi theo nhóm), kiểm tra proxy; SHAP 'trông hợp lý' không chứng minh công bằng"
+    - "Đề xuất: mô hình dễ hiểu hơn nếu hiệu năng tương đương; báo cáo giới hạn của giải thích; tuân thủ quy định; con người xem xét khiếu nại"
+  sample_answer: |
+    (1) MDI tính trên train và ưu ái đặc trưng nhiều mức — mã bưu chính có hàng nghìn giá trị nên MDI cao có thể chỉ là overfit; dùng permutation
+    importance trên dữ liệu giữ lại. Hơn nữa, mã bưu chính thường là proxy cho thu nhập/dân tộc — rủi ro phân biệt, cần kiểm toán. (2) PDP mô tả
+    phản ứng của mô hình, không phải tác động nhân quả; số bước tương quan với tuổi và tình trạng sức khoẻ, PDP có thể ngoại suy ở tổ hợp phi thực
+    tế. Hứa giảm phí theo hành vi là chính sách — cần thiết kế riêng (và kiểm chứng nhân quả). (3) LIME mặc định một lần: kết quả đổi theo seed/
+    kernel; cố định cấu hình, kiểm tra ổn định, hoặc dùng SHAP với dữ liệu nền nói rõ. (4) Bỏ giới tính không đủ: đo trực tiếp phí/lỗi theo nhóm,
+    kiểm tra proxy; giải thích "hợp lý" không phải bằng chứng công bằng. Cân nhắc GAM/mô hình đơn điệu dễ hiểu; tài liệu hoá giới hạn.
+project:
+  prompt: |
+    **Mini project — Dùng giải thích để gỡ lỗi.** Bảng churn có thêm 3 cột "mới": `survey_score`, `app_sessions`, `retention_call` — một trong
+    số đó là **rò rỉ**. Train `HistGradientBoostingClassifier` (cho sẵn), tính permutation importance (ROC-AUC) trên tập test, xác định cột
+    rò rỉ (lưu tên vào `leak_feature`), train lại không có nó và lưu ROC-AUC test vào `auc_clean`.
+  code: |
+    import pandas as pd
+    from sklearn.ensemble import HistGradientBoostingClassifier
+    from sklearn.inspection import permutation_importance
+    from sklearn.metrics import roc_auc_score
+    from sklearn.model_selection import train_test_split
+
+    from ml_course.datasets import make_customer_churn
+
+    raw = make_customer_churn(20000, seed=0)
+    r = np.random.default_rng(1)
+    y = raw.churn.values
+    D = pd.DataFrame({
+        "tenure": raw.tenure_months, "monthly": raw.monthly_charges, "support_calls": raw.support_calls,
+        "month_to_month": (raw.contract == "month-to-month").astype(int), "fiber": (raw.internet_service == "fiber").astype(int),
+        "survey_score": r.normal(7, 1.5, len(raw)) - 0.3 * y,
+        "app_sessions": r.poisson(8, len(raw)),
+        "retention_call": np.where(y == 1, r.random(len(raw)) < 0.6, r.random(len(raw)) < 0.03).astype(int),
+    }).astype(float)
+    D_train, D_test, y_train, y_test = train_test_split(D, y, test_size=0.3, random_state=0, stratify=y)
+    ### START CODE HERE ### (≈ 8 dòng)
+    model = HistGradientBoostingClassifier(max_iter=300, learning_rate=0.05, random_state=0).fit(D_train, y_train)
+    imp = permutation_importance(model, D_test, y_test, scoring="roc_auc", n_repeats=5, random_state=0)
+    ranking = pd.Series(imp.importances_mean, index=D.columns).sort_values(ascending=False)
+    print(ranking.round(3))
+    leak_feature = ranking.index[0]
+    keep = [c for c in D.columns if c != leak_feature]
+    clean = HistGradientBoostingClassifier(max_iter=300, learning_rate=0.05, random_state=0).fit(D_train[keep], y_train)
+    auc_clean = roc_auc_score(y_test, clean.predict_proba(D_test[keep])[:, 1])
+    ### END CODE HERE ###
+    print(f"cột rò rỉ: {leak_feature} | ROC-AUC sau khi bỏ = {auc_clean:.3f}")
+  tests: |
+    check_equal(leak_feature, "retention_call", "xác định đúng cột rò rỉ")
+    check_greater(auc_clean, 0.78, "mô hình sạch vẫn tốt")
+    check_less(auc_clean, 0.86, "không còn AUC 'đẹp như mơ'")

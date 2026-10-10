@@ -1,0 +1,220 @@
+title: "03 · Data Analysis & EDA"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: dữ liệu có/không cấu trúc
+        lesson: 01_types_of_data_and_storage.ipynb
+        type: mcq
+        question: "Dữ liệu nào là dữ liệu KHÔNG có cấu trúc?"
+        options: {a: "Bảng giao dịch ngân hàng", b: "File CSV điểm thi", c: "Ảnh chụp hoá đơn", d: "Bảng tồn kho"}
+        answer: c
+        explanation: "Ảnh cần được biến đổi thành vector đặc trưng trước khi dùng với model classical ML."
+      - id: t02
+        topic: biểu diễn ảnh
+        lesson: 01_types_of_data_and_storage.ipynb
+        type: mcq
+        question: "Một ảnh RGB kích thước 32×32 duỗi thành vector có bao nhiêu chiều?"
+        options: {a: "32", b: "1024", c: "3072", d: "96"}
+        answer: c
+        explanation: "32 × 32 × 3 = 3072."
+      - id: t03
+        topic: bag-of-words
+        lesson: 01_types_of_data_and_storage.ipynb
+        type: tf
+        question: "Bag-of-Words giữ được thứ tự của các từ trong câu."
+        answer: false
+        explanation: "BoW chỉ đếm số lần xuất hiện — 'chó cắn người' và 'người cắn chó' có cùng vector."
+      - id: t04
+        topic: bảo mật pickle
+        lesson: 01_types_of_data_and_storage.ipynb
+        type: mcq
+        question: "Vì sao không nên pickle.load một file từ nguồn không tin cậy?"
+        options:
+          a: "File pickle rất lớn"
+          b: "pickle.load có thể thực thi mã tuỳ ý chứa trong file"
+          c: "pickle không đọc được trên Windows"
+          d: "pickle làm mất kiểu dữ liệu"
+        answer: b
+        explanation: "Unpickling có thể gọi hàm bất kỳ → lỗ hổng thực thi mã."
+      - id: t05
+        topic: quy trình EDA
+        lesson: 02_eda_workflow.ipynb
+        type: mcq
+        question: "Sản phẩm QUAN TRỌNG NHẤT của EDA là gì?"
+        options:
+          a: "Thật nhiều biểu đồ đẹp"
+          b: "Danh sách insight, giả thuyết, rủi ro (leakage, dữ liệu bẩn) và ý tưởng feature"
+          c: "Model có accuracy cao nhất"
+          d: "File CSV đã xoá outlier"
+        answer: b
+        explanation: "EDA để hiểu dữ liệu và định hướng modeling, tránh sai lầm."
+      - id: t06
+        topic: định danh không phải feature
+        lesson: 02_eda_workflow.ipynb
+        type: tf
+        question: "Cột customer_id với 100% giá trị duy nhất là một feature tốt cho model churn."
+        answer: false
+        explanation: "ID không mang thông tin tổng quát hoá; model chỉ học thuộc ID."
+      - id: t07
+        topic: Pearson vs Spearman
+        lesson: 03_univariate_and_bivariate_analysis.ipynb
+        type: mcq
+        question: "y = e^x (đơn điệu tăng nhưng cong). Thước đo nào phản ánh quan hệ tốt hơn?"
+        options: {a: "Pearson", b: "Spearman", c: "Cả hai như nhau", d: "Cramér's V"}
+        answer: b
+        explanation: "Spearman đo quan hệ đơn điệu (trên thứ hạng) → bằng 1 với hàm tăng bất kỳ."
+      - id: t08
+        topic: Cramér's V / p-value
+        lesson: 03_univariate_and_bivariate_analysis.ipynb
+        type: mcq
+        question: "Chi-square test với 1 triệu mẫu cho p-value = 1e-30. Điều này cho biết gì?"
+        options:
+          a: "Hai biến liên hệ rất mạnh"
+          b: "Hai biến có liên hệ (khác độc lập), nhưng chưa biết mạnh hay yếu — cần thước đo như Cramér's V"
+          c: "Hai biến độc lập"
+          d: "Kết quả sai vì quá nhiều mẫu"
+        answer: b
+        explanation: "Với n lớn, liên hệ rất yếu cũng có p-value cực nhỏ."
+      - id: t09
+        topic: tương tác
+        lesson: 03_univariate_and_bivariate_analysis.ipynb
+        type: mcq
+        question: "Biểu đồ tỉ lệ churn theo tenure, mỗi đường một loại hợp đồng, các đường KHÔNG song song. Điều này gợi ý gì?"
+        options: {a: "Dữ liệu bị lỗi", b: "Có tương tác giữa tenure và contract", c: "Tenure không quan trọng", d: "Cần xoá outlier"}
+        answer: b
+        explanation: "Ảnh hưởng của tenure phụ thuộc loại hợp đồng."
+      - id: t10
+        topic: MCAR/MAR/MNAR
+        lesson: 04_data_quality_and_pitfalls.ipynb
+        type: mcq
+        question: "Người thu nhập cao thường bỏ trống câu hỏi về thu nhập. Đây là cơ chế missing nào?"
+        options: {a: MCAR, b: MAR, c: MNAR, d: "Không phải missing"}
+        answer: c
+        explanation: "Việc thiếu phụ thuộc chính giá trị bị thiếu."
+      - id: t11
+        topic: outlier
+        lesson: 04_data_quality_and_pitfalls.ipynb
+        type: tf
+        question: "Mọi điểm nằm ngoài râu boxplot đều là lỗi dữ liệu và nên xoá."
+        answer: false
+        explanation: "Outlier thống kê có thể là giá trị hợp lệ (nhà rất đắt). Chỉ xoá khi chắc chắn là lỗi."
+      - id: t12
+        topic: nghịch lý Simpson
+        lesson: 04_data_quality_and_pitfalls.ipynb
+        type: mcq
+        question: "Nghịch lý Simpson xảy ra chủ yếu do đâu?"
+        options:
+          a: "Dữ liệu quá ít"
+          b: "Một biến gây nhiễu (confounder) phân bố khác nhau giữa các nhóm"
+          c: "Sai số làm tròn"
+          d: "Dùng sai loại biểu đồ"
+        answer: b
+        explanation: "Ví dụ sỏi thận: kích thước sỏi ảnh hưởng cả việc chọn phương pháp và kết quả."
+      - id: t13
+        topic: data leakage
+        lesson: 04_data_quality_and_pitfalls.ipynb
+        type: multi
+        question: "Feature nào có nguy cơ gây leakage khi dự đoán khách hàng có huỷ dịch vụ trong tháng tới?"
+        options:
+          a: "Số tháng đã sử dụng dịch vụ"
+          b: "Lý do huỷ dịch vụ (cancellation_reason)"
+          c: "Số tiền được hoàn sau khi huỷ"
+          d: "Loại hợp đồng hiện tại"
+        answer: bc
+        explanation: "b, c chỉ có SAU khi khách hàng đã huỷ."
+      - id: t14
+        topic: external data
+        lesson: 01_types_of_data_and_storage.ipynb
+        type: mcq
+        question: "Cách làm đúng khi dự án dùng dữ liệu tải từ Internet:"
+        options: {a: "Tải một lần vào data/raw/, ghi nguồn + checksum, không sửa tay file gốc", b: "Sửa trực tiếp file gốc cho sạch rồi ghi đè", c: "Tải lại mỗi lần chạy mà không kiểm tra", d: "Dán dữ liệu thẳng vào code"}
+        answer: a
+        explanation: "Dữ liệu gốc bất biến + checksum giúp tái lập; code xử lý ghi kết quả sang data/processed."
+coding:
+  tasks:
+    - id: c01
+      title: Phát hiện outlier bằng IQR
+      prompt: |
+        Viết `iqr_outlier_mask(s, k=1.5)` nhận `pd.Series`, trả về Series boolean: True nếu giá trị nằm ngoài $[Q_1 - k\cdot IQR,\; Q_3 + k\cdot IQR]$.
+      code: |
+        import pandas as pd
+
+        def iqr_outlier_mask(s, k=1.5):
+            ### START CODE HERE ### (≈ 3 dòng)
+            q1, q3 = s.quantile([0.25, 0.75])
+            iqr = q3 - q1
+            mask = (s < q1 - k * iqr) | (s > q3 + k * iqr)
+            ### END CODE HERE ###
+            return mask
+      tests: |
+        s = pd.Series([1, 2, 3, 4, 5, 6, 7, 100, -50])
+        m = iqr_outlier_mask(s)
+        check_equal(m.tolist(), [False] * 7 + [True, True], "phát hiện 100 và -50")
+        check_equal(int(iqr_outlier_mask(s, k=100).sum()), 0, "k rất lớn → không có outlier")
+    - id: c02
+      title: Cramér's V
+      prompt: |
+        Viết `cramers_v(x, y)` (hai Series phân loại) dùng `scipy.stats.chi2_contingency` trên `pd.crosstab(x, y)`:
+        $V = \sqrt{\chi^2 / (n\,(\min(r, c) - 1))}$. Dùng `correction=False`.
+      code: |
+        import pandas as pd
+        from scipy import stats
+
+        def cramers_v(x, y):
+            ### START CODE HERE ### (≈ 4 dòng)
+            table = pd.crosstab(x, y)
+            chi2 = stats.chi2_contingency(table, correction=False)[0]
+            n = table.to_numpy().sum()
+            v = np.sqrt(chi2 / (n * (min(table.shape) - 1)))
+            ### END CODE HERE ###
+            return v
+      tests: |
+        a = pd.Series(["x", "x", "y", "y"] * 50)
+        check_close(cramers_v(a, a), 1.0, message="liên hệ hoàn hảo → V = 1")
+        rng = np.random.default_rng(0)
+        u = pd.Series(rng.choice(["p", "q"], 5000)); v = pd.Series(rng.choice(["r", "s", "t"], 5000))
+        check_less(cramers_v(u, v), 0.05, "độc lập → V ≈ 0")
+analysis:
+  prompt: |
+    Một bạn làm EDA cho bài toán dự đoán giá nhà và kết luận: *"Nhà ở Quận 1 đắt nhất, nên quận là feature quan trọng nhất; có 120 outlier về giá nên mình đã xoá hết; cột `age_years` thiếu 5% nên mình điền bằng median của toàn bộ dữ liệu trước khi chia train/test."*
+    Hãy phản biện **từng ý** và đề xuất cách làm đúng.
+  rubric:
+    - "Chỉ ra so sánh giá giữa quận có thể bị nhiễu bởi diện tích/khoảng cách → cần so sánh công bằng (giá/m²) hoặc phân tích đa biến"
+    - "Chỉ ra 'quan trọng nhất' cần được đo (vd: feature importance, so sánh model) chứ không suy từ một biểu đồ"
+    - "Chỉ ra outlier thống kê trên dữ liệu lệch phải không phải lỗi; nên xem trên thang log và chỉ xoá lỗi thật"
+    - "Chỉ ra điền median trên toàn bộ dữ liệu trước khi chia là data leakage; median phải học từ train"
+    - "Đề cập kiểm tra cơ chế missing (MCAR/MAR/MNAR) hoặc thêm cột chỉ báo missing"
+  sample_answer: |
+    (1) Quận 1 đắt có thể vì nhà ở đó khác về diện tích/khoảng cách — cần so sánh giá/m² hoặc phân tích đa biến; mức độ quan trọng phải đo bằng feature importance hay so sánh model có/không có feature.
+    (2) Giá nhà lệch phải: trên thang gốc nhiều căn đắt bị coi là outlier nhưng là dữ liệu hợp lệ. Xem trên log(giá), chỉ xoá lỗi nhập liệu rõ ràng; với outlier thật dùng model/ loss bền vững.
+    (3) Điền median từ toàn bộ dữ liệu là leakage (thông tin test lọt vào train). Đúng: chia train/test trước, học median trên train (SimpleImputer trong Pipeline). Kiểm tra cơ chế missing; nếu không phải MCAR, thêm cột age_is_missing.
+project:
+  prompt: |
+    **Mini project — Làm sạch dữ liệu giá nhà.** Viết `clean_houses(df)` nhận DataFrame từ `house_prices_dirty.csv` và trả về DataFrame đã:
+    1. xoá dòng trùng lặp;
+    2. chuẩn hoá `district` về đúng 5 giá trị `{"Quận 1", "Quận 3", "Quận 7", "Bình Thạnh", "Thủ Đức"}`;
+    3. sửa diện tích gõ thừa số 0: nếu `area_m2 / bedrooms > 150` thì chia `area_m2` cho 10.
+  code: |
+    import pandas as pd
+
+    def clean_houses(df):
+        df = df.copy()
+        ### START CODE HERE ### (≈ 6 dòng)
+        # STARTER: pass
+        df = df.drop_duplicates().reset_index(drop=True)
+        df["district"] = df["district"].map(
+            lambda s: " ".join(w.capitalize() for w in s.strip().lower().replace("q.", "quận").split()))
+        bad = df["area_m2"] / df["bedrooms"] > 150
+        df.loc[bad, "area_m2"] = df.loc[bad, "area_m2"] / 10
+        ### END CODE HERE ###
+        return df
+
+    raw = pd.read_csv("../../data/sample/house_prices_dirty.csv")
+    clean = clean_houses(raw)
+    clean.shape
+  tests: |
+    check_equal(int(clean.duplicated().sum()), 0, "không còn trùng lặp")
+    check_equal(set(clean["district"]), {"Quận 1", "Quận 3", "Quận 7", "Bình Thạnh", "Thủ Đức"}, "5 quận chuẩn")
+    check_true(bool((clean["area_m2"] / clean["bedrooms"]).max() <= 150), "đã sửa diện tích vô lý")
+    check_equal(len(clean), len(raw.drop_duplicates()), "không xoá nhầm hàng")

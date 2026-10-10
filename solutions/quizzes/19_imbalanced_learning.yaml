@@ -1,0 +1,269 @@
+title: "19 · Imbalanced Learning"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: accuracy paradox
+        lesson: 01_why_accuracy_lies.ipynb
+        type: mcq
+        question: "Với 1% positive, model luôn đoán negative có accuracy:"
+        options: {a: "1%", b: "50%", c: "99%", d: "Không tính được"}
+        answer: c
+        explanation: "Accuracy bị lớp đa số chi phối."
+      - id: t02
+        topic: metrics
+        lesson: 01_why_accuracy_lies.ipynb
+        type: multi
+        question: "Metric phù hợp cho phát hiện gian lận (rất mất cân bằng):"
+        options: {a: "PR-AUC", b: "Precision@k / recall@k", c: "Chi phí kỳ vọng", d: "Accuracy"}
+        answer: abc
+        explanation: "Accuracy gần như vô nghĩa."
+      - id: t03
+        topic: low probabilities
+        lesson: 01_why_accuracy_lies.ipynb
+        type: mcq
+        question: "Vì sao model calibrated hiếm khi cho P(gian lận) > 0.5?"
+        options:
+          a: "Model bị lỗi"
+          b: "Prior rất thấp — ngay cả giao dịch đáng ngờ gấp nhiều lần trung bình vẫn có xác suất < 0.5"
+          c: "Thiếu scaling"
+          d: "Do learning rate"
+        answer: b
+        explanation: "Vấn đề là ngưỡng, không phải model."
+      - id: t04
+        topic: minority count
+        lesson: 01_why_accuracy_lies.ipynb
+        type: mcq
+        question: "Điều gì thường giúp model nhất khi lớp thiểu số quá ít mẫu?"
+        options: {a: "Bỏ bớt lớp đa số", b: "Thu thập/gán nhãn thêm mẫu thiểu số", c: "Đổi sang accuracy", d: "Tăng ngưỡng"}
+        answer: b
+        explanation: "Undersampling không thêm thông tin."
+      - id: t05
+        topic: SMOTE
+        lesson: 02_resampling_and_smote.ipynb
+        type: mcq
+        question: "SMOTE tạo mẫu thiểu số mới bằng cách:"
+        options:
+          a: "Lặp lại mẫu cũ"
+          b: "Nội suy ngẫu nhiên trên đoạn thẳng giữa một mẫu thiểu số và láng giềng thiểu số của nó"
+          c: "Thêm nhiễu Gaussian vào mọi mẫu"
+          d: "Đổi nhãn mẫu đa số"
+        answer: b
+        explanation: "x + u·(x_nn − x)."
+      - id: t06
+        topic: resample placement
+        lesson: 02_resampling_and_smote.ipynb
+        type: mcq
+        question: "Resampling phải được thực hiện:"
+        options: {a: "Trên toàn bộ dữ liệu trước khi chia", b: "Chỉ trên phần train của mỗi fold", c: "Trên tập test", d: "Sau khi dự đoán"}
+        answer: b
+        explanation: "Resample trước khi chia → bản sao lọt vào test."
+      - id: t07
+        topic: resampling effect
+        lesson: 02_resampling_and_smote.ipynb
+        type: multi
+        question: "Undersample về 50/50 rồi train Logistic Regression thường làm:"
+        options: {a: "Xác suất dự đoán bị thổi phồng", b: "Log-loss tệ hơn", c: "ROC-AUC tăng mạnh", d: "Recall ở ngưỡng 0.5 tăng"}
+        answer: abd
+        explanation: "Xếp hạng gần như không đổi."
+      - id: t08
+        topic: prior correction
+        lesson: 02_resampling_and_smote.ipynb
+        type: tf
+        question: "Hiệu chỉnh prior sau undersampling làm thay đổi ROC-AUC."
+        answer: false
+        explanation: "Biến đổi đơn điệu — thứ hạng giữ nguyên."
+      - id: t09
+        topic: oversample leakage
+        lesson: 02_resampling_and_smote.ipynb
+        type: mcq
+        question: "Oversample toàn bộ dữ liệu rồi mới chia train/test dẫn tới:"
+        options: {a: "Kết quả ảo — bản sao của cùng mẫu nằm ở cả train và test", b: "Kết quả bi quan", c: "Không ảnh hưởng", d: "Lỗi chạy"}
+        answer: a
+        explanation: "Recall 'test' = 1.0 trong bài 02."
+      - id: t10
+        topic: class weight
+        lesson: 03_class_weights_threshold_cost.ipynb
+        type: mcq
+        question: "class_weight='balanced' tương đương gần đúng với:"
+        options: {a: "Undersampling", b: "Oversampling 'mềm' — nhân trọng số loss của lớp thiểu số", c: "Feature selection", d: "Early stopping"}
+        answer: b
+        explanation: "w_c = n/(K·n_c)."
+      - id: t11
+        topic: threshold fairness
+        lesson: 03_class_weights_threshold_cost.ipynb
+        type: mcq
+        question: "So sánh các kỹ thuật xử lý mất cân bằng ở ngưỡng 0.5 là không công bằng vì:"
+        options:
+          a: "Các kỹ thuật chủ yếu dịch xác suất — chọn ngưỡng tối ưu cho từng cách sẽ thu hẹp chênh lệch"
+          b: "0.5 quá cao cho mọi bài toán"
+          c: "Không tính được precision"
+          d: "Không có lý do"
+        answer: a
+        explanation: "Chọn model theo PR-AUC, ngưỡng theo chi phí."
+      - id: t12
+        topic: cost threshold
+        lesson: 03_class_weights_threshold_cost.ipynb
+        type: mcq
+        question: "Ngưỡng nên được chọn trên:"
+        options: {a: "Tập train", b: "Tập validation (hoặc dự đoán out-of-fold)", c: "Tập test", d: "Mặc định 0.5"}
+        answer: b
+        explanation: "Chọn trên test là rò rỉ."
+      - id: t13
+        topic: calibration
+        lesson: 03_class_weights_threshold_cost.ipynb
+        type: tf
+        question: "Model train với class_weight='balanced' cho xác suất calibrated theo tỉ lệ lớp thật."
+        answer: false
+        explanation: "Xác suất bị dịch lên."
+      - id: t14
+        topic: balanced RF
+        lesson: 03_class_weights_threshold_cost.ipynb
+        type: mcq
+        question: "class_weight='balanced_subsample' trong Random Forest:"
+        options: {a: "Tính trọng số lớp trên mẫu bootstrap của từng cây", b: "Bỏ lớp thiểu số", c: "Chỉ dùng cho hồi quy", d: "Tắt bootstrap"}
+        answer: a
+        explanation: "Biến thể cho ensemble."
+      - id: t15
+        topic: example-dependent
+        lesson: 03_class_weights_threshold_cost.ipynb
+        type: mcq
+        question: "Chi phí bỏ sót = số tiền giao dịch a, chi phí kiểm tra = c. Với xác suất calibrated p, nên cảnh báo khi:"
+        options: {a: "p > 0.5", b: "p·a > c", c: "a > c", d: "p > c"}
+        answer: b
+        explanation: "Kỳ vọng thiệt hại > chi phí kiểm tra."
+      - id: t16
+        topic: extreme imbalance
+        lesson: 01_why_accuracy_lies.ipynb
+        type: mcq
+        question: "Tỉ lệ positive 0.01% và chỉ vài chục nhãn positive. Hướng tiếp cận hợp lý:"
+        options: {a: "SMOTE về 50/50", b: "Anomaly detection / học bán giám sát, thu thập thêm nhãn", c: "Accuracy", d: "Tăng số cây"}
+        answer: b
+        explanation: "Chương 22."
+  math:
+    questions:
+      - id: m01
+        topic: balanced weight
+        lesson: 03_class_weights_threshold_cost.ipynb
+        type: numeric
+        decimals: 2
+        question: "1 000 mẫu, 20 positive, 2 lớp. Trọng số balanced của lớp positive = n/(2·n_pos) = ?"
+        answer: 25
+        explanation: "1000/40."
+      - id: m02
+        topic: prior correction
+        lesson: 02_resampling_and_smote.ipynb
+        type: numeric
+        decimals: 3
+        question: "Undersample 50/50, model dự đoán 0.5, tỉ lệ thật 1%. Xác suất hiệu chỉnh = ?"
+        answer: 0.01
+        explanation: "p_s = 0.5 = prior mẫu → về đúng prior thật."
+      - id: m03
+        topic: cost threshold
+        lesson: 03_class_weights_threshold_cost.ipynb
+        type: numeric
+        decimals: 3
+        question: "C_FP = 1, C_FN = 99, xác suất calibrated. Ngưỡng tối ưu = ?"
+        answer: 0.01
+        explanation: "1/(1 + 99)."
+      - id: m04
+        topic: precision at k
+        lesson: 01_why_accuracy_lies.ipynb
+        type: numeric
+        decimals: 2
+        question: "Top 200 cảnh báo có 36 gian lận. Precision@200 = ?"
+        answer: 0.18
+        explanation: "36/200."
+      - id: m05
+        topic: example cost
+        lesson: 03_class_weights_threshold_cost.ipynb
+        type: numeric
+        decimals: 0
+        question: "p = 0.002, số tiền a = 20 000 000 VND. Kỳ vọng thiệt hại nếu không cảnh báo p·a = ? (VND)"
+        answer: 40000
+        explanation: "Lớn hơn chi phí kiểm tra 30 000 → nên cảnh báo."
+coding:
+  tasks:
+    - id: c01
+      title: Random undersampling
+      prompt: |
+        Viết `undersample(X, y, ratio, seed)`: giữ mọi mẫu positive (1), lấy ngẫu nhiên không hoàn lại `min(n_neg, ratio·n_pos)` mẫu negative.
+        Trả về `(X_new, y_new)`.
+      code: |
+        def undersample(X, y, ratio=1.0, seed=0):
+            ### START CODE HERE ### (≈ 4 dòng)
+            r = np.random.default_rng(seed)
+            pos, neg = np.flatnonzero(y == 1), np.flatnonzero(y == 0)
+            keep = np.r_[pos, r.choice(neg, min(len(neg), int(ratio * len(pos))), replace=False)]
+            X_new, y_new = X[keep], y[keep]
+            ### END CODE HERE ###
+            return X_new, y_new
+      tests: |
+        rng = np.random.default_rng(0)
+        X = rng.normal(size=(1000, 3))
+        y = (rng.random(1000) < 0.05).astype(int)
+        Xu, yu = undersample(X, y, ratio=2.0)
+        check_equal(int(yu.sum()), int(y.sum()), "giữ mọi positive")
+        check_equal(int((yu == 0).sum()), int(2 * y.sum()), "negative = 2 × positive")
+        check_equal(Xu.shape[1], 3, "giữ số cột")
+    - id: c02
+      title: Hiệu chỉnh prior
+      prompt: |
+        Viết `prior_correct(p_s, pi, pi_s)` đưa xác suất của model train trên tỉ lệ positive `pi_s` về tỉ lệ thật `pi`.
+      code: |
+        def prior_correct(p_s, pi, pi_s):
+            ### START CODE HERE ### (≈ 3 dòng)
+            a = p_s * pi / pi_s
+            b = (1 - p_s) * (1 - pi) / (1 - pi_s)
+            p = a / (a + b)
+            ### END CODE HERE ###
+            return p
+      tests: |
+        check_close(prior_correct(np.array([0.5]), 0.01, 0.5), [0.01], message="p_s = π_s → π")
+        check_close(prior_correct(np.array([0.6]), 0.02, 0.5), [0.012 / 0.404], tol=1e-9, message="ví dụ")
+        p = np.array([0.1, 0.4, 0.9])
+        check_true(np.all(np.diff(prior_correct(p, 0.01, 0.5)) > 0), "giữ thứ tự (đơn điệu)")
+analysis:
+  prompt: |
+    Một bệnh viện xây model phát hiện sớm nhiễm khuẩn (2% bệnh nhân). Nhóm dùng SMOTE trên toàn bộ dữ liệu về 50/50, sau đó chia train/test,
+    báo cáo "accuracy 97%, recall 95%". Bác sĩ dùng xác suất model để quyết định ưu tiên ("P = 0.7 nghĩa là 70% khả năng nhiễm khuẩn").
+    Khi triển khai, rất nhiều báo động nhưng đa số là báo động nhầm. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra SMOTE trước khi chia → mẫu tổng hợp từ bệnh nhân test lọt vào train → kết quả ảo; resample chỉ trong train"
+    - "Chỉ ra test sau SMOTE có tỉ lệ 50/50 ≠ thực tế 2% → accuracy/precision không phản ánh triển khai; đánh giá trên phân phối thật với PR-AUC, precision/recall"
+    - "Chỉ ra xác suất sau SMOTE bị thổi phồng (không calibrated) → P = 0.7 không phải 70%; hiệu chỉnh prior hoặc calibrate, hoặc không resample"
+    - "Giải thích nhiều báo động nhầm: precision ở tỉ lệ thật 2% thấp hơn nhiều so với test 50/50"
+    - "Đề xuất: không resample (hoặc resample đúng chỗ), chọn ngưỡng theo chi phí/năng lực lâm sàng trên validation, báo cáo precision/recall tại ngưỡng, calibration"
+  sample_answer: |
+    (1) SMOTE trên toàn bộ dữ liệu rồi mới chia: mẫu tổng hợp nội suy từ bệnh nhân trong test nằm trong train → model "đã thấy" test → recall 95% là ảo.
+    (2) Test 50/50 không giống thực tế 2%: precision trên test cân bằng cao hơn rất nhiều so với khi triển khai → nhiều báo động nhầm là tất yếu.
+    (3) Xác suất từ model học trên 50/50 bị thổi phồng — P = 0.7 tương ứng xác suất thật nhỏ hơn nhiều; cần hiệu chỉnh prior/calibration.
+    (4) Đề xuất: chia train/valid/test theo phân phối thật (stratified, tốt hơn theo thời gian); train không resample (hoặc chỉ trong train); chọn ngưỡng theo năng lực xử lý/chi phí lâm sàng trên validation; báo cáo PR-AUC, precision/recall tại ngưỡng, reliability diagram.
+project:
+  prompt: |
+    **Mini project — Chống gian lận với năng lực xử lý cố định.** Đọc `fraud_transactions.csv` (`repo_path("data", "sample", "fraud_transactions.csv")`).
+    Feature: log(amount), hour, distance, is_foreign, n_tx_last_24h, card_age_days, one-hot merchant_category. Tách test 30% (stratified, `random_state=0`).
+    Train một model (tự chọn, có thể dùng class weight), đánh giá **recall@200** trên test (tỉ lệ gian lận bị bắt trong 200 giao dịch rủi ro nhất,
+    biến `recall_at_200`). Yêu cầu `recall_at_200 ≥ 0.20`.
+  code: |
+    import pandas as pd
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.model_selection import train_test_split
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import StandardScaler
+    from ml_course.utils import repo_path
+
+    df = pd.read_csv(repo_path("data", "sample", "fraud_transactions.csv"))
+    ### START CODE HERE ### (≈ 10 dòng)
+    feats = ["amount_vnd", "hour", "distance_from_home_km", "is_foreign", "n_tx_last_24h", "card_age_days"]
+    X = df[feats].astype(float).assign(amount_vnd=lambda d: np.log(d.amount_vnd))
+    X = X.join(pd.get_dummies(df.merchant_category, prefix="cat", dtype=float))
+    y = df["is_fraud"].to_numpy()
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.3, random_state=0, stratify=y)
+    model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=3000)).fit(X_tr, y_tr)
+    p = model.predict_proba(X_te)[:, 1]
+    recall_at_200 = y_te[np.argsort(-p)[:200]].sum() / y_te.sum()
+    ### END CODE HERE ###
+    print(f"recall@200 = {recall_at_200:.3f} ({int(y_te.sum())} gian lận trong test)")
+  tests: |
+    check_greater(recall_at_200, 0.20, "recall@200 ≥ 0.20")

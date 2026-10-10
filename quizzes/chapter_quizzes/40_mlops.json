@@ -1,0 +1,244 @@
+{
+ "id": "40_mlops",
+ "kind": "Chapter",
+ "title": "40 · MLOps",
+ "next": "41_capstone_projects",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "api contract",
+     "answer_hashes": [
+      "0623a0c8b154b0ef98bc"
+     ],
+     "lesson": "01_serving_with_fastapi.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "model loading",
+     "answer_hashes": [
+      "3a38509a12a0596d9ceb"
+     ],
+     "lesson": "01_serving_with_fastapi.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "tf",
+     "topic": "async",
+     "answer_hashes": [
+      "fef633f46e5f6a9897cd"
+     ],
+     "lesson": "01_serving_with_fastapi.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "parity test",
+     "answer_hashes": [
+      "fddf1746ef873f83d5d9"
+     ],
+     "lesson": "01_serving_with_fastapi.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "batching",
+     "answer_hashes": [
+      "b45984510ae3861a7d9a"
+     ],
+     "lesson": "01_serving_with_fastapi.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "ml testing",
+     "answer_hashes": [
+      "270baf7f5a21ac7aa813"
+     ],
+     "lesson": "02_docker_and_ci_cd.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "dockerfile cache",
+     "answer_hashes": [
+      "0a47fabd7aa47e10106a"
+     ],
+     "lesson": "02_docker_and_ci_cd.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "quality gate",
+     "answer_hashes": [
+      "710984b47452c17cc213"
+     ],
+     "lesson": "02_docker_and_ci_cd.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "continuous training",
+     "answer_hashes": [
+      "3adbdb96ab3ebae3f494"
+     ],
+     "lesson": "02_docker_and_ci_cd.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "data vs concept drift",
+     "answer_hashes": [
+      "02bc489a41532ad8a376"
+     ],
+     "lesson": "03_monitoring_and_drift.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "tf",
+     "topic": "data drift impact",
+     "answer_hashes": [
+      "29786857c0f00cae2e8f"
+     ],
+     "lesson": "03_monitoring_and_drift.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "p-value drift",
+     "answer_hashes": [
+      "26f3474f59115e66ecaa"
+     ],
+     "lesson": "03_monitoring_and_drift.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "domain classifier",
+     "answer_hashes": [
+      "22e4f1a71aa8c25c1521"
+     ],
+     "lesson": "03_monitoring_and_drift.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "shadow",
+     "answer_hashes": [
+      "4fed489e0bb6663938ca"
+     ],
+     "lesson": "04_deployment_strategies.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "routing",
+     "answer_hashes": [
+      "f72254283933e5948a37"
+     ],
+     "lesson": "04_deployment_strategies.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "peeking",
+     "answer_hashes": [
+      "82cb8a77acfceac64e79"
+     ],
+     "lesson": "04_deployment_strategies.ipynb"
+    },
+    {
+     "id": "t17",
+     "type": "multi",
+     "topic": "feedback loop",
+     "answer_hashes": [
+      "d54949e7c22d73f69e63"
+     ],
+     "lesson": "04_deployment_strategies.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "psi",
+     "answer_hashes": [
+      "7e486fcaf9c082972372"
+     ],
+     "decimals": 3,
+     "lesson": "03_monitoring_and_drift.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "sample size scaling",
+     "answer_hashes": [
+      "0ba691a48ddb49b67c2c"
+     ],
+     "decimals": 0,
+     "lesson": "04_deployment_strategies.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "throughput",
+     "answer_hashes": [
+      "052c05e752ab37e35e4d"
+     ],
+     "decimals": 0,
+     "lesson": "01_serving_with_fastapi.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "canary exposure",
+     "answer_hashes": [
+      "385eadd6a05cb69b4659"
+     ],
+     "decimals": 0,
+     "lesson": "04_deployment_strategies.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "label delay",
+     "answer_hashes": [
+      "bcc6967cdd26f80093dc"
+     ],
+     "decimals": 0,
+     "lesson": "03_monitoring_and_drift.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

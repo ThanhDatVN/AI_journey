@@ -1,0 +1,294 @@
+title: "34 · Representation Learning"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: autoencoder
+        lesson: 01_autoencoders.ipynb
+        type: mcq
+        question: "Autoencoder học biểu diễn bằng cách:"
+        options: {a: "Nén đầu vào qua nút cổ chai rồi tái tạo lại chính nó — không cần nhãn", b: "Dự đoán nhãn lớp", c: "Phân cụm dữ liệu", d: "Sinh dữ liệu đối kháng"}
+        answer: a
+        explanation: "Dữ liệu tự làm đáp án."
+      - id: t02
+        topic: linear ae pca
+        lesson: 01_autoencoders.ipynb
+        type: tf
+        question: "Autoencoder tuyến tính với loss MSE học được không gian con giống (hoặc gần giống) PCA cùng số chiều."
+        answer: true
+        explanation: "Baldi & Hornik (1989); trục có thể khác."
+      - id: t03
+        topic: what latent encodes
+        lesson: 01_autoencoders.ipynb
+        type: mcq
+        question: "Latent của autoencoder train trên ảnh hình học mã hoá tốt vị trí/kích thước nhưng kém loại hình vì:"
+        options: {a: "Sai số tái tạo pixel bị chi phối bởi việc đặt đúng chỗ một vùng sáng đúng cỡ; khác biệt loại hình chỉ ảnh hưởng ít pixel", b: "Latent quá nhỏ", c: "Thiếu nhãn", d: "Dùng ReLU"}
+        answer: a
+        explanation: "Biểu diễn phản ánh mục tiêu huấn luyện."
+      - id: t04
+        topic: denoising
+        lesson: 01_autoencoders.ipynb
+        type: mcq
+        question: "Denoising autoencoder được huấn luyện với:"
+        options: {a: "Đầu vào bị nhiễu, đích là ảnh sạch", b: "Đầu vào sạch, đích bị nhiễu", c: "Cả hai bị nhiễu", d: "Nhãn lớp"}
+        answer: a
+        explanation: "Ý tưởng nền tảng của diffusion."
+      - id: t05
+        topic: anomaly
+        lesson: 01_autoencoders.ipynb
+        type: tf
+        question: "Sai số tái tạo của autoencoder luôn là điểm bất thường tốt, vì autoencoder không tái tạo được dữ liệu chưa từng thấy."
+        answer: false
+        explanation: "AE tổng quát hoá — có thể tái tạo tốt cả bất thường."
+      - id: t06
+        topic: ae sampling
+        lesson: 02_variational_autoencoder.ipynb
+        type: mcq
+        question: "Giải mã z ~ N(0, I) bằng decoder của autoencoder thường ra ảnh vô nghĩa vì:"
+        options: {a: "Không có ràng buộc nào về vị trí/phân phối latent của dữ liệu", b: "Decoder quá nhỏ", c: "Thiếu dữ liệu", d: "Ảnh xám"}
+        answer: a
+        explanation: "VAE thêm KL về prior."
+      - id: t07
+        topic: elbo
+        lesson: 02_variational_autoencoder.ipynb
+        type: multi
+        question: "Về ELBO của VAE:"
+        options:
+          a: "Là cận dưới của log p(x)"
+          b: "Gồm số hạng tái tạo và số hạng KL giữa q(z|x) và prior"
+          c: "KL với Gaussian chuẩn có công thức đóng"
+          d: "Tối đa ELBO tương đương tối thiểu accuracy"
+        answer: abc
+        explanation: "−ELBO là loss."
+      - id: t08
+        topic: reparam
+        lesson: 02_variational_autoencoder.ipynb
+        type: mcq
+        question: "Reparameterization trick viết z = μ + σ·ε để:"
+        options: {a: "Gradient lan truyền được qua μ, σ dù z được lấy mẫu ngẫu nhiên", b: "Giảm số tham số", c: "Làm z luôn dương", d: "Bỏ số hạng KL"}
+        answer: a
+        explanation: "Tính ngẫu nhiên nằm ở ε."
+      - id: t09
+        topic: beta
+        lesson: 02_variational_autoencoder.ipynb
+        type: mcq
+        question: "Tăng β trong β-VAE thường dẫn tới:"
+        options: {a: "KL nhỏ hơn, tái tạo kém hơn, ít chiều latent được dùng, mẫu mờ hơn", b: "Tái tạo sắc hơn", c: "KL lớn hơn", d: "Không ảnh hưởng"}
+        answer: a
+        explanation: "Đánh đổi rate–distortion."
+      - id: t10
+        topic: generative eval
+        lesson: 02_variational_autoencoder.ipynb
+        type: tf
+        question: "Nếu một bộ phân loại tiền huấn luyện dự đoán mẫu sinh với độ tự tin cao thì chắc chắn mẫu sinh có chất lượng tốt."
+        answer: false
+        explanation: "Bộ phân loại tự tin cả với nhiễu xám."
+      - id: t11
+        topic: diffusion
+        lesson: 02_variational_autoencoder.ipynb
+        type: mcq
+        question: "Mô hình diffusion sinh ảnh bằng cách:"
+        options: {a: "Học khử nhiễu và khử nhiễu dần từ nhiễu thuần", b: "Đối kháng với discriminator", c: "Sinh từng pixel theo thứ tự", d: "Phân cụm ảnh"}
+        answer: a
+        explanation: "≈ denoising AE nhiều mức nhiễu."
+      - id: t12
+        topic: simclr
+        lesson: 03_contrastive_and_self_supervised.ipynb
+        type: mcq
+        question: "Trong SimCLR, cặp dương là:"
+        options: {a: "Hai góc nhìn tăng cường của cùng một ảnh", b: "Hai ảnh cùng lớp (theo nhãn)", c: "Ảnh và nhãn của nó", d: "Hai ảnh ngẫu nhiên"}
+        answer: a
+        explanation: "Không cần nhãn."
+      - id: t13
+        topic: augmentation role
+        lesson: 03_contrastive_and_self_supervised.ipynb
+        type: mcq
+        question: "Bỏ augmentation hình học khỏi SimCLR làm biểu diễn kém đi vì:"
+        options: {a: "Hai góc nhìn khớp được bằng vị trí/kích thước, nên biểu diễn không cần bất biến với chúng", b: "Loss không hội tụ", c: "Batch quá nhỏ", d: "Mạng quá sâu"}
+        answer: a
+        explanation: "Augmentation định nghĩa bất biến."
+      - id: t14
+        topic: loss vs quality
+        lesson: 03_contrastive_and_self_supervised.ipynb
+        type: tf
+        question: "Loss contrastive thấp hơn luôn có nghĩa biểu diễn tốt hơn cho tác vụ đích."
+        answer: false
+        explanation: "Bản không aug hình học có loss thấp hơn nhưng probe kém hơn."
+      - id: t15
+        topic: collapse
+        lesson: 03_contrastive_and_self_supervised.ipynb
+        type: multi
+        question: "Cách các phương pháp tự giám sát tránh sụp đổ biểu diễn:"
+        options: {a: "Dùng mẫu âm (SimCLR, MoCo)", b: "Bất đối xứng + dừng gradient / giáo viên trung bình động (BYOL, SimSiam)", c: "Ràng buộc phương sai/hiệp phương sai (VICReg)", d: "Tăng learning rate"}
+        answer: abc
+        explanation: "Nghiệm tầm thường: mọi ảnh cùng vector."
+      - id: t16
+        topic: clip
+        lesson: 03_contrastive_and_self_supervised.ipynb
+        type: mcq
+        question: "CLIP học bằng:"
+        options: {a: "Học tương phản giữa ảnh và văn bản mô tả trên hàng trăm triệu cặp", b: "Tái tạo pixel", c: "Phân loại ImageNet", d: "Phân cụm k-means"}
+        answer: a
+        explanation: "Cho phép phân loại zero-shot."
+  math:
+    questions:
+      - id: m01
+        topic: kl
+        lesson: 02_variational_autoencoder.ipynb
+        type: numeric
+        decimals: 4
+        question: "KL(N(0, σ²) ‖ N(0, 1)) với σ = 1 bằng bao nhiêu?"
+        answer: 0
+        explanation: "Hai phân phối trùng nhau."
+      - id: m02
+        topic: kl
+        lesson: 02_variational_autoencoder.ipynb
+        type: numeric
+        decimals: 3
+        question: "KL(N(2, 1) ‖ N(0, 1)) = ½(σ² + μ² − 1 − ln σ²) = ?"
+        answer: 2.0
+        explanation: "½·4."
+      - id: m03
+        topic: reparam
+        lesson: 02_variational_autoencoder.ipynb
+        type: numeric
+        decimals: 2
+        question: "μ = 0.5, log σ² = ln 4, ε = 0.25. z = μ + σ·ε = ?"
+        answer: 1.0
+        explanation: "σ = 2."
+      - id: m04
+        topic: infonce
+        lesson: 03_contrastive_and_self_supervised.ipynb
+        type: numeric
+        decimals: 3
+        question: "Batch N = 128 ảnh (256 góc nhìn). Nếu mọi độ tương đồng bằng nhau, NT-Xent bằng ln(2N − 1) = ?"
+        answer: 5.541
+        explanation: "ln 255."
+      - id: m05
+        topic: ae params
+        lesson: 01_autoencoders.ipynb
+        type: numeric
+        decimals: 0
+        question: "Autoencoder tuyến tính không bias 784 → 16 → 784 có bao nhiêu tham số?"
+        answer: 25088
+        explanation: "2·784·16."
+coding:
+  tasks:
+    - id: c01
+      title: KL của Gaussian chéo với prior chuẩn
+      prompt: |
+        Viết `kl_diag_gaussian(mu, logvar)` (NumPy, mảng (B, k)) trả về KL(N(μ, diag σ²) ‖ N(0, I)) cho từng mẫu — mảng (B,).
+      code: |
+        def kl_diag_gaussian(mu, logvar):
+            ### START CODE HERE ### (≈ 1 dòng)
+            return -0.5 * np.sum(1 + logvar - mu**2 - np.exp(logvar), axis=1)
+            ### END CODE HERE ###
+      tests: |
+        check_close(kl_diag_gaussian(np.zeros((2, 3)), np.zeros((2, 3))), [0.0, 0.0], message="trùng prior → 0")
+        check_close(kl_diag_gaussian(np.array([[2.0]]), np.array([[0.0]])), [2.0], message="μ = 2, σ = 1")
+        check_close(kl_diag_gaussian(np.array([[1.0]]), np.array([[np.log(0.25)]])), [0.5 * (0.25 + 1 - 1 - np.log(0.25))], message="μ = 1, σ = 0.5")
+        check_true(np.all(kl_diag_gaussian(np.random.default_rng(0).normal(size=(50, 4)), np.random.default_rng(1).normal(size=(50, 4))) >= 0), "KL ≥ 0")
+    - id: c02
+      title: Loss NT-Xent
+      prompt: |
+        Viết `nt_xent_np(z1, z2, tau)` (NumPy): z1, z2 shape (N, d) là hai góc nhìn; chuẩn hoá L2, ma trận cosine của 2N vector chia τ,
+        bỏ đường chéo; cặp dương của i là i ± N; trả về trung bình cross-entropy trên 2N vector. Ổn định số (trừ max).
+      code: |
+        def nt_xent_np(z1, z2, tau=0.2):
+            ### START CODE HERE ### (≈ 8 dòng)
+            z = np.concatenate([z1, z2])
+            z = z / np.linalg.norm(z, axis=1, keepdims=True)
+            sim = z @ z.T / tau
+            np.fill_diagonal(sim, -np.inf)
+            n = len(z1)
+            pos = np.r_[np.arange(n, 2 * n), np.arange(0, n)]
+            sim = sim - sim.max(axis=1, keepdims=True)
+            log_prob = sim[np.arange(2 * n), pos] - np.log(np.exp(sim).sum(axis=1))
+            return -log_prob.mean()
+            ### END CODE HERE ###
+      tests: |
+        e = np.array([[1.0, 0.0], [0.0, 1.0]])
+        check_close(nt_xent_np(e, e, tau=1.0), np.log(1 + 2 / np.e), message="ví dụ tính tay")
+        r = np.random.default_rng(0)
+        same = r.normal(size=(8, 5))
+        check_less(nt_xent_np(same, same, 0.1), nt_xent_np(same, r.normal(size=(8, 5)), 0.1), "góc nhìn khớp → loss nhỏ hơn")
+        check_true(np.isfinite(nt_xent_np(same * 100, same, 0.01)), "ổn định số")
+analysis:
+  prompt: |
+    Một bệnh viện có 200 000 ảnh X-quang ngực không nhãn và 300 ảnh có nhãn (5 bệnh). Đề xuất: (1) train autoencoder trên 200 000 ảnh, dùng
+    latent làm đặc trưng cho bộ phân loại; (2) phát hiện ảnh bất thường bằng sai số tái tạo; (3) đánh giá autoencoder bằng MSE tái tạo trên
+    tập test; (4) nếu muốn self-supervised thì dùng SimCLR với augmentation mặc định của ImageNet (cắt ngẫu nhiên mạnh, đổi màu, lật ngang).
+    Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra mục tiêu tái tạo pixel ưu tiên thông tin chiếm nhiều pixel (tư thế, độ tương phản, kích thước lồng ngực) chứ không phải tổn thương nhỏ → latent AE có thể kém cho phân loại bệnh"
+    - "Chỉ ra MSE tái tạo không đo chất lượng biểu diễn cho tác vụ đích → đánh giá bằng linear probe/kNN với nhãn có sẵn (cross-validation vì chỉ 300 ảnh)"
+    - "Chỉ ra sai số tái tạo có thể bỏ sót bất thường nhỏ/khó (AE tái tạo được) → so với kNN trên embedding, phương pháp chương 22"
+    - "Chỉ ra augmentation phải phù hợp miền: cắt mạnh có thể cắt mất tổn thương, đổi màu vô nghĩa với ảnh xám, lật ngang đổi vị trí tim (bất đối xứng giải phẫu) → chọn augmentation giữ thông tin chẩn đoán"
+    - "Đề xuất mô hình tiền huấn luyện miền y tế / MAE / DINO, fine-tune hoặc linear probe; chia dữ liệu theo bệnh nhân; đánh giá với bác sĩ"
+  sample_answer: |
+    (1) AE tái tạo pixel sẽ ưu tiên những gì chiếm nhiều pixel (kích thước lồng ngực, tư thế, độ sáng) — tổn thương nhỏ ít ảnh hưởng tới MSE nên
+    có thể không được mã hoá. (3) MSE tái tạo thấp không nói gì về độ hữu ích cho chẩn đoán: đánh giá biểu diễn bằng linear probe/kNN với 300 nhãn
+    (cross-validation phân tầng, chia theo bệnh nhân). (2) AE có thể tái tạo tốt cả ảnh bất thường; so sánh với kNN/Mahalanobis trên embedding.
+    (4) Augmentation ImageNet không hợp: cắt mạnh có thể bỏ mất vùng tổn thương (cặp dương không còn cùng nội dung chẩn đoán), đổi màu vô nghĩa,
+    lật ngang tạo giải phẫu không thực (tim bên phải). Chọn augmentation nhẹ, giữ thông tin chẩn đoán; cân nhắc MAE/DINO hoặc mô hình tiền
+    huấn luyện trên X-quang, rồi fine-tune với 300 nhãn; đánh giá theo bệnh nhân và với bác sĩ.
+project:
+  prompt: |
+    **Mini project — SimCLR với ít nhãn.** Train SimCLR (encoder conv nhỏ) trên 10 000 ảnh **không nhãn** `make_shapes(10000, seed=0)`
+    (800 bước, batch 256), rồi linear probe (LogisticRegression trên đặc trưng encoder) với **100 ảnh có nhãn** đầu tiên của tập đó.
+    Đánh giá trên `make_shapes(2000, seed=1)`; lưu accuracy vào `acc`. Yêu cầu `acc` ≥ 0.75 (pixel thô + LogReg chỉ khoảng 0.35).
+  code: |
+    import math
+
+    import torch
+    import torch.nn.functional as F
+    from sklearn.linear_model import LogisticRegression
+    from torch import nn
+
+    from ml_course.datasets import make_shapes
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    X, y = make_shapes(10000, seed=0)
+    X_test, y_test = make_shapes(2000, seed=1)
+    X, X_test = torch.tensor(X[:, None]), torch.tensor(X_test[:, None])
+    ### START CODE HERE ### (≈ 40 dòng)
+    def augment(x, g):
+        B = x.shape[0]
+        angle = (torch.rand(B, generator=g) * 2 - 1) * math.pi
+        offset = (torch.rand(2, B, generator=g) * 2 - 1) * 0.3
+        flip = torch.where(torch.rand(B, generator=g) < 0.5, -1.0, 1.0)
+        cos, sin = angle.cos(), angle.sin()
+        theta = torch.stack([torch.stack([cos * flip, -sin, offset[0]], 1), torch.stack([sin * flip, cos, offset[1]], 1)], 1)
+        x = F.grid_sample(x, F.affine_grid(theta, x.shape, align_corners=False), align_corners=False)
+        return (x * (0.6 + 0.8 * torch.rand(B, 1, 1, 1, generator=g)) + 0.15 * torch.randn(x.shape, generator=g)).clamp(0, 1)
+
+    def nt_xent(z1, z2, tau=0.2):
+        z = F.normalize(torch.cat([z1, z2]), dim=1)
+        sim = z @ z.T / tau
+        sim.fill_diagonal_(float("-inf"))
+        n = len(z1)
+        return F.cross_entropy(sim, torch.cat([torch.arange(n, 2 * n), torch.arange(0, n)]).to(z.device))
+
+    def block(i, o):
+        return [nn.Conv2d(i, o, 3, padding=1), nn.BatchNorm2d(o), nn.ReLU()]
+
+    torch.manual_seed(0)
+    encoder = nn.Sequential(*block(1, 32), nn.MaxPool2d(2), *block(32, 64), nn.MaxPool2d(2), *block(64, 128),
+                            nn.AdaptiveAvgPool2d(1), nn.Flatten()).to(device)
+    head = nn.Sequential(nn.Linear(128, 128), nn.ReLU(), nn.Linear(128, 64)).to(device)
+    opt = torch.optim.Adam(list(encoder.parameters()) + list(head.parameters()), lr=1e-3)
+    g = torch.Generator().manual_seed(0)
+    for _ in range(800):
+        xb = X[torch.randint(0, len(X), (256,), generator=g)]
+        opt.zero_grad()
+        nt_xent(head(encoder(augment(xb, g).to(device))), head(encoder(augment(xb, g).to(device)))).backward()
+        opt.step()
+    encoder.eval()
+    with torch.no_grad():
+        f_train = encoder(X[:100].to(device)).cpu().numpy()
+        f_test = encoder(X_test.to(device)).cpu().numpy()
+    acc = (LogisticRegression(max_iter=5000).fit(f_train, y[:100]).predict(f_test) == y_test).mean()
+    ### END CODE HERE ###
+    print(f"linear probe 100 nhãn: accuracy = {acc:.3f}")
+  tests: |
+    check_greater(acc, 0.75, "accuracy ≥ 0.75")

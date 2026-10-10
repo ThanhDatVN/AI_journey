@@ -1,0 +1,301 @@
+{
+ "id": "final_exam_5_deep_learning",
+ "kind": "Exam",
+ "title": "Bài thi tổng hợp 5 · Deep Learning (chương 27–35)",
+ "next": null,
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "backprop",
+     "answer_hashes": [
+      "63f34493d2bc1da0de1b"
+     ],
+     "lesson": "27_deep_learning_foundations"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "vanishing gradient",
+     "answer_hashes": [
+      "1cd6fbd081cac2fb4a95"
+     ],
+     "lesson": "28_neural_networks"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "initialization",
+     "answer_hashes": [
+      "2bb0fa0638ca12f6f4f6"
+     ],
+     "lesson": "28_neural_networks"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "zero init",
+     "answer_hashes": [
+      "4355958ebafee0d66524"
+     ],
+     "lesson": "28_neural_networks"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "dropout",
+     "answer_hashes": [
+      "e3a77e64516f9f12f14c"
+     ],
+     "lesson": "28_neural_networks"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "adam",
+     "answer_hashes": [
+      "0caea19d9711763e27f8"
+     ],
+     "lesson": "28_neural_networks"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "cnn sharing",
+     "answer_hashes": [
+      "a9656994e74f8d1b6070"
+     ],
+     "lesson": "29_cnn"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "residual",
+     "answer_hashes": [
+      "7a57c8381a0d82768db6"
+     ],
+     "lesson": "29_cnn"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "lstm",
+     "answer_hashes": [
+      "c1ae21188c4188b7c581"
+     ],
+     "lesson": "30_sequence_models"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "attention",
+     "answer_hashes": [
+      "f2ec0772c6ed7eeeae53"
+     ],
+     "lesson": "31_transformers"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "scaling",
+     "answer_hashes": [
+      "11652f54ef410a3582ab"
+     ],
+     "lesson": "31_transformers"
+    },
+    {
+     "id": "t12",
+     "type": "tf",
+     "topic": "positional encoding",
+     "answer_hashes": [
+      "888bcc1b344aaf7e4b1a"
+     ],
+     "lesson": "31_transformers"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "causal mask",
+     "answer_hashes": [
+      "4e834f8f15a9dfc4734c"
+     ],
+     "lesson": "31_transformers"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "bert gpt",
+     "answer_hashes": [
+      "6577e14bacaefec0cdc8"
+     ],
+     "lesson": "31_transformers"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "transfer learning",
+     "answer_hashes": [
+      "7b9defe22b558c63f9c6"
+     ],
+     "lesson": "33_computer_vision"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "augmentation",
+     "answer_hashes": [
+      "c6245402e1bf8bcbdbc3"
+     ],
+     "lesson": "33_computer_vision"
+    },
+    {
+     "id": "t17",
+     "type": "mcq",
+     "topic": "autoencoder",
+     "answer_hashes": [
+      "42732272b5cfb6d16e48"
+     ],
+     "lesson": "34_representation_learning"
+    },
+    {
+     "id": "t18",
+     "type": "mcq",
+     "topic": "vae",
+     "answer_hashes": [
+      "bce4cbe24290be944789"
+     ],
+     "lesson": "34_representation_learning"
+    },
+    {
+     "id": "t19",
+     "type": "mcq",
+     "topic": "exploration",
+     "answer_hashes": [
+      "a3dc87366110b1301f9f"
+     ],
+     "lesson": "35_reinforcement_learning"
+    },
+    {
+     "id": "t20",
+     "type": "mcq",
+     "topic": "q learning",
+     "answer_hashes": [
+      "92b5e575177751b2e5c0"
+     ],
+     "lesson": "35_reinforcement_learning"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "conv output",
+     "answer_hashes": [
+      "c1ad1f7e276ff59a9d25"
+     ],
+     "decimals": 0,
+     "lesson": "29_cnn"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "conv params",
+     "answer_hashes": [
+      "1380b61e400903d43db3"
+     ],
+     "decimals": 0,
+     "lesson": "29_cnn"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "linear params",
+     "answer_hashes": [
+      "5390cfd2e8629a2a2b23"
+     ],
+     "decimals": 0,
+     "lesson": "27_deep_learning_foundations"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "softmax",
+     "answer_hashes": [
+      "97f90333a521133fbf1d"
+     ],
+     "decimals": 2,
+     "lesson": "07_logistic_regression"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "cross entropy",
+     "answer_hashes": [
+      "45fa904af06eafdb0c9d"
+     ],
+     "decimals": 3,
+     "lesson": "27_deep_learning_foundations"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "attention scale",
+     "answer_hashes": [
+      "24d73fbf92006e2a0a95"
+     ],
+     "decimals": 0,
+     "lesson": "31_transformers"
+    },
+    {
+     "id": "m07",
+     "type": "numeric",
+     "topic": "bellman",
+     "answer_hashes": [
+      "36676a131a213bd9882d"
+     ],
+     "decimals": 1,
+     "lesson": "35_reinforcement_learning"
+    },
+    {
+     "id": "m08",
+     "type": "numeric",
+     "topic": "discounted return",
+     "answer_hashes": [
+      "1e50ac2b9358e4d2cb2b"
+     ],
+     "decimals": 2,
+     "lesson": "35_reinforcement_learning"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

@@ -1,0 +1,245 @@
+{
+ "id": "10_decision_trees",
+ "kind": "Chapter",
+ "title": "10 · Decision Trees",
+ "next": "11_random_forest",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "axis-aligned",
+     "answer_hashes": [
+      "dd285dd0943ab7cc977b"
+     ],
+     "lesson": "01_intuition_entropy_gini.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "multi",
+     "topic": "impurity",
+     "answer_hashes": [
+      "114beef9b06dc0a2fe66"
+     ],
+     "lesson": "01_intuition_entropy_gini.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "misclassification",
+     "answer_hashes": [
+      "607a56a1a9f75c34743a"
+     ],
+     "lesson": "01_intuition_entropy_gini.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "greedy",
+     "answer_hashes": [
+      "6e341348100a65e005bf"
+     ],
+     "lesson": "01_intuition_entropy_gini.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "split search",
+     "answer_hashes": [
+      "3b7613a3ae6d1962a48e"
+     ],
+     "lesson": "02_classifier_from_scratch.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "MDI",
+     "answer_hashes": [
+      "ab020ff6ff25464cf5d0"
+     ],
+     "lesson": "02_classifier_from_scratch.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "regression leaf",
+     "answer_hashes": [
+      "90386ccfa28c1d156620"
+     ],
+     "lesson": "03_regression_trees.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "extrapolation",
+     "answer_hashes": [
+      "6814f7c5a032783f91d9"
+     ],
+     "lesson": "03_regression_trees.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "MAE criterion",
+     "answer_hashes": [
+      "862bb4a3fe84d176c532"
+     ],
+     "lesson": "03_regression_trees.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "overfitting",
+     "answer_hashes": [
+      "7006d44b2de813e25a98"
+     ],
+     "lesson": "04_overfitting_and_pruning.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "post-pruning",
+     "answer_hashes": [
+      "0d44baab5a71edfec8db"
+     ],
+     "lesson": "04_overfitting_and_pruning.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "pre vs post",
+     "answer_hashes": [
+      "4d9a5a1d2c24bcaadd8d"
+     ],
+     "lesson": "04_overfitting_and_pruning.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "topic": "instability",
+     "answer_hashes": [
+      "8feb07310923c143d686"
+     ],
+     "lesson": "04_overfitting_and_pruning.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "tf",
+     "topic": "scaling",
+     "answer_hashes": [
+      "c7c61f7375abf424883b"
+     ],
+     "lesson": "05_failure_cases_and_interpretation.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "MDI bias",
+     "answer_hashes": [
+      "8660fa9728cdb43694bc"
+     ],
+     "lesson": "05_failure_cases_and_interpretation.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "diagonal boundary",
+     "answer_hashes": [
+      "36c73a6b8e155de3bfb6"
+     ],
+     "lesson": "05_failure_cases_and_interpretation.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "entropy",
+     "answer_hashes": [
+      "d066cb135de49cf52895"
+     ],
+     "decimals": 3,
+     "lesson": "01_intuition_entropy_gini.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "Gini",
+     "answer_hashes": [
+      "3603c43243e61bad2d6f"
+     ],
+     "decimals": 3,
+     "lesson": "01_intuition_entropy_gini.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "information gain",
+     "answer_hashes": [
+      "2e8f35ea98f4252785e1"
+     ],
+     "decimals": 3,
+     "lesson": "01_intuition_entropy_gini.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "số lá",
+     "answer_hashes": [
+      "ffdbfaea85ebb1069b38"
+     ],
+     "decimals": 0,
+     "lesson": "03_regression_trees.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "variance reduction",
+     "answer_hashes": [
+      "f961b2e439da496e512b"
+     ],
+     "decimals": 3,
+     "lesson": "03_regression_trees.ipynb"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "cost complexity",
+     "answer_hashes": [
+      "f522c62b5f187468e3a4"
+     ],
+     "decimals": 3,
+     "lesson": "04_overfitting_and_pruning.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

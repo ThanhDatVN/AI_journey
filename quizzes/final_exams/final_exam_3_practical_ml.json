@@ -1,0 +1,301 @@
+{
+ "id": "final_exam_3_practical_ml",
+ "kind": "Exam",
+ "title": "Bài thi tổng hợp 3 · ML thực hành (chương 14–19)",
+ "next": null,
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "precision recall",
+     "answer_hashes": [
+      "80ad03ff8c05979e5b02"
+     ],
+     "lesson": "14_model_evaluation"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "roc vs pr",
+     "answer_hashes": [
+      "b0d8fb3f34455d9dacd7"
+     ],
+     "lesson": "14_model_evaluation"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "f beta",
+     "answer_hashes": [
+      "38941fe2d1c957670a52"
+     ],
+     "lesson": "14_model_evaluation"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "calibration vs discrimination",
+     "answer_hashes": [
+      "a184f4ea0ac27921d4d1"
+     ],
+     "lesson": "14_model_evaluation"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "mae rmse",
+     "answer_hashes": [
+      "fdd6dfcafd2865c78462"
+     ],
+     "lesson": "14_model_evaluation"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "mape",
+     "answer_hashes": [
+      "dc0b49b4e71a5b643254"
+     ],
+     "lesson": "14_model_evaluation"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "stratified",
+     "answer_hashes": [
+      "cffb691fbad903a54abd"
+     ],
+     "lesson": "15_cross_validation"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "group cv",
+     "answer_hashes": [
+      "cda83c80ee6f6fb091e4"
+     ],
+     "lesson": "15_cross_validation"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "time series cv",
+     "answer_hashes": [
+      "ef06184409283b98826b"
+     ],
+     "lesson": "15_cross_validation"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "nested cv",
+     "answer_hashes": [
+      "1fd8485ae5ff26e7c96d"
+     ],
+     "lesson": "15_cross_validation"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "random search",
+     "answer_hashes": [
+      "00195fd377cbd90155d2"
+     ],
+     "lesson": "16_hyperparameter_optimization"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "successive halving",
+     "answer_hashes": [
+      "f4d3687ec1d909a7952a"
+     ],
+     "lesson": "16_hyperparameter_optimization"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "bayesian optimization",
+     "answer_hashes": [
+      "e2def192499435f30590"
+     ],
+     "lesson": "16_hyperparameter_optimization"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "target encoding",
+     "answer_hashes": [
+      "2f25abe0b21d0c1685c7"
+     ],
+     "lesson": "17_feature_engineering"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "selection inside cv",
+     "answer_hashes": [
+      "b9eb05727fb11149dae7"
+     ],
+     "lesson": "18_feature_selection"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "lasso stability",
+     "answer_hashes": [
+      "beb638554fffdd14a0d7"
+     ],
+     "lesson": "18_feature_selection"
+    },
+    {
+     "id": "t17",
+     "type": "mcq",
+     "topic": "smote",
+     "answer_hashes": [
+      "f863ec81fcc052aa50bc"
+     ],
+     "lesson": "19_imbalanced_learning"
+    },
+    {
+     "id": "t18",
+     "type": "mcq",
+     "topic": "class weights",
+     "answer_hashes": [
+      "88876f13a6ef09e57fcf"
+     ],
+     "lesson": "19_imbalanced_learning"
+    },
+    {
+     "id": "t19",
+     "type": "mcq",
+     "topic": "accuracy paradox",
+     "answer_hashes": [
+      "c6c15c6a21cd5bc93bf0"
+     ],
+     "lesson": "19_imbalanced_learning"
+    },
+    {
+     "id": "t20",
+     "type": "multi",
+     "topic": "cost threshold",
+     "answer_hashes": [
+      "694dd9bae83d3c15de83"
+     ],
+     "lesson": "19_imbalanced_learning"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "precision",
+     "answer_hashes": [
+      "33747c53218e791f6985"
+     ],
+     "decimals": 3,
+     "lesson": "14_model_evaluation"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "recall",
+     "answer_hashes": [
+      "41751ded021db4873cf1"
+     ],
+     "decimals": 3,
+     "lesson": "14_model_evaluation"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "f1",
+     "answer_hashes": [
+      "249d69ea1d76393ca036"
+     ],
+     "decimals": 3,
+     "lesson": "14_model_evaluation"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "cost threshold",
+     "answer_hashes": [
+      "adde81415ddb233ee58b"
+     ],
+     "decimals": 2,
+     "lesson": "19_imbalanced_learning"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "rmse",
+     "answer_hashes": [
+      "615a43e6a057550162ed"
+     ],
+     "decimals": 3,
+     "lesson": "14_model_evaluation"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "kfold",
+     "answer_hashes": [
+      "2720f8ec13c16f3326c9"
+     ],
+     "decimals": 0,
+     "lesson": "15_cross_validation"
+    },
+    {
+     "id": "m07",
+     "type": "numeric",
+     "topic": "random search",
+     "answer_hashes": [
+      "6d87ea401a3a19260714"
+     ],
+     "decimals": 3,
+     "lesson": "16_hyperparameter_optimization"
+    },
+    {
+     "id": "m08",
+     "type": "numeric",
+     "topic": "smoothing",
+     "answer_hashes": [
+      "f9515be83d5bb154dab5"
+     ],
+     "decimals": 3,
+     "lesson": "17_feature_engineering"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

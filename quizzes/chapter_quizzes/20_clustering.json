@@ -1,0 +1,235 @@
+{
+ "id": "20_clustering",
+ "kind": "Chapter",
+ "title": "20 · Clustering",
+ "next": "21_dimensionality_reduction",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "objective",
+     "answer_hashes": [
+      "62ce4388ee84b96e0e83"
+     ],
+     "lesson": "01_kmeans_from_scratch.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "multi",
+     "topic": "Lloyd convergence",
+     "answer_hashes": [
+      "09fdfe7f6dfd2dd70bf5"
+     ],
+     "lesson": "01_kmeans_from_scratch.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "k-means++",
+     "answer_hashes": [
+      "48e19e13974bba080f50"
+     ],
+     "lesson": "01_kmeans_from_scratch.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "scaling",
+     "answer_hashes": [
+      "1a14978b4d9d2ab7406d"
+     ],
+     "lesson": "01_kmeans_from_scratch.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "elbow",
+     "answer_hashes": [
+      "49f2a487a5dfc72294f4"
+     ],
+     "lesson": "02_choosing_k_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "silhouette",
+     "answer_hashes": [
+      "3aa512e0265507f6b68d"
+     ],
+     "lesson": "02_choosing_k_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "tf",
+     "topic": "ARI",
+     "answer_hashes": [
+      "ac1d017c38812987d9d2"
+     ],
+     "lesson": "02_choosing_k_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "multi",
+     "topic": "failure",
+     "answer_hashes": [
+      "1beed65b04c3e9eb1f2c"
+     ],
+     "lesson": "02_choosing_k_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "linkage",
+     "answer_hashes": [
+      "1292cd6e598de2f0c114"
+     ],
+     "lesson": "03_hierarchical_clustering.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "chaining",
+     "answer_hashes": [
+      "a22966e52eee157d944f"
+     ],
+     "lesson": "03_hierarchical_clustering.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "tf",
+     "topic": "dendrogram",
+     "answer_hashes": [
+      "04183e9e3eb5bf2e3036"
+     ],
+     "lesson": "03_hierarchical_clustering.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "scalability",
+     "answer_hashes": [
+      "e0e1c657e80e14e8ad65"
+     ],
+     "lesson": "03_hierarchical_clustering.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "DBSCAN core",
+     "answer_hashes": [
+      "37c9c19b21b31632faf1"
+     ],
+     "lesson": "04_dbscan.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "eps",
+     "answer_hashes": [
+      "31201ddc5fc93f8dac5e"
+     ],
+     "lesson": "04_dbscan.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "density variation",
+     "answer_hashes": [
+      "3220520c0acdda61e0c0"
+     ],
+     "lesson": "04_dbscan.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "multi",
+     "topic": "noise",
+     "answer_hashes": [
+      "a0a3dc94d287f8b0484c"
+     ],
+     "lesson": "04_dbscan.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "centroid",
+     "answer_hashes": [
+      "133d23192ee8ca6b5c85"
+     ],
+     "decimals": 2,
+     "lesson": "01_kmeans_from_scratch.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "inertia",
+     "answer_hashes": [
+      "307d833d6121f554c10b"
+     ],
+     "decimals": 2,
+     "lesson": "01_kmeans_from_scratch.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "silhouette",
+     "answer_hashes": [
+      "92de5d3c5525856ec58e"
+     ],
+     "decimals": 3,
+     "lesson": "02_choosing_k_and_failure_cases.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "complexity",
+     "answer_hashes": [
+      "7a84e7844ac950235e8c"
+     ],
+     "decimals": 0,
+     "lesson": "01_kmeans_from_scratch.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "merges",
+     "answer_hashes": [
+      "da86db21f187c6cff594"
+     ],
+     "decimals": 0,
+     "lesson": "03_hierarchical_clustering.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

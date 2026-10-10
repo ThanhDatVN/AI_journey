@@ -1,0 +1,201 @@
+item_id,title,genre,year
+0,Phim 000,hài,2023
+1,Phim 001,tình cảm,1999
+2,Phim 002,kinh dị,2020
+3,Phim 003,khoa học viễn tưởng,2011
+4,Phim 004,tình cảm,2017
+5,Phim 005,kinh dị,2006
+6,Phim 006,khoa học viễn tưởng,2014
+7,Phim 007,hài,2002
+8,Phim 008,khoa học viễn tưởng,2010
+9,Phim 009,tình cảm,2001
+10,Phim 010,hành động,2006
+11,Phim 011,kinh dị,2007
+12,Phim 012,kinh dị,2020
+13,Phim 013,khoa học viễn tưởng,2013
+14,Phim 014,khoa học viễn tưởng,2014
+15,Phim 015,kinh dị,2003
+16,Phim 016,hành động,2008
+17,Phim 017,tình cảm,2009
+18,Phim 018,tình cảm,2018
+19,Phim 019,kinh dị,2000
+20,Phim 020,kinh dị,1996
+21,Phim 021,hành động,2010
+22,Phim 022,khoa học viễn tưởng,2019
+23,Phim 023,tình cảm,2017
+24,Phim 024,kinh dị,2019
+25,Phim 025,tình cảm,2006
+26,Phim 026,hành động,2001
+27,Phim 027,tình cảm,2014
+28,Phim 028,hài,1996
+29,Phim 029,hài,2021
+30,Phim 030,tình cảm,2016
+31,Phim 031,hài,2010
+32,Phim 032,hành động,2000
+33,Phim 033,khoa học viễn tưởng,2002
+34,Phim 034,tình cảm,2024
+35,Phim 035,hành động,1995
+36,Phim 036,hành động,1995
+37,Phim 037,khoa học viễn tưởng,2005
+38,Phim 038,tình cảm,2001
+39,Phim 039,hài,2015
+40,Phim 040,kinh dị,1996
+41,Phim 041,hành động,2018
+42,Phim 042,tình cảm,2018
+43,Phim 043,khoa học viễn tưởng,2001
+44,Phim 044,kinh dị,2012
+45,Phim 045,tình cảm,2015
+46,Phim 046,kinh dị,2020
+47,Phim 047,tình cảm,2016
+48,Phim 048,tình cảm,2023
+49,Phim 049,khoa học viễn tưởng,1998
+50,Phim 050,khoa học viễn tưởng,2013
+51,Phim 051,hài,2018
+52,Phim 052,hành động,2001
+53,Phim 053,khoa học viễn tưởng,2001
+54,Phim 054,kinh dị,1997
+55,Phim 055,khoa học viễn tưởng,2024
+56,Phim 056,hài,2020
+57,Phim 057,hài,1998
+58,Phim 058,khoa học viễn tưởng,2002
+59,Phim 059,kinh dị,2008
+60,Phim 060,tình cảm,2021
+61,Phim 061,hành động,2019
+62,Phim 062,tình cảm,2021
+63,Phim 063,hài,2019
+64,Phim 064,hành động,2013
+65,Phim 065,hài,2003
+66,Phim 066,hài,2013
+67,Phim 067,kinh dị,2009
+68,Phim 068,kinh dị,2023
+69,Phim 069,hành động,2008
+70,Phim 070,kinh dị,2017
+71,Phim 071,khoa học viễn tưởng,2000
+72,Phim 072,hài,2015
+73,Phim 073,hài,2008
+74,Phim 074,kinh dị,2008
+75,Phim 075,hành động,2017
+76,Phim 076,khoa học viễn tưởng,2009
+77,Phim 077,kinh dị,1996
+78,Phim 078,kinh dị,2006
+79,Phim 079,tình cảm,2023
+80,Phim 080,tình cảm,2023
+81,Phim 081,hành động,2013
+82,Phim 082,kinh dị,2014
+83,Phim 083,hành động,2002
+84,Phim 084,hài,2018
+85,Phim 085,hành động,2012
+86,Phim 086,hành động,1996
+87,Phim 087,hành động,2023
+88,Phim 088,kinh dị,2020
+89,Phim 089,khoa học viễn tưởng,1997
+90,Phim 090,hài,2007
+91,Phim 091,hài,2017
+92,Phim 092,khoa học viễn tưởng,2017
+93,Phim 093,khoa học viễn tưởng,2000
+94,Phim 094,kinh dị,1996
+95,Phim 095,tình cảm,2024
+96,Phim 096,khoa học viễn tưởng,2021
+97,Phim 097,khoa học viễn tưởng,2017
+98,Phim 098,kinh dị,2014
+99,Phim 099,khoa học viễn tưởng,2015
+100,Phim 100,khoa học viễn tưởng,2008
+101,Phim 101,kinh dị,2015
+102,Phim 102,tình cảm,2004
+103,Phim 103,hài,1997
+104,Phim 104,khoa học viễn tưởng,2004
+105,Phim 105,hài,2003
+106,Phim 106,hành động,2004
+107,Phim 107,hài,2009
+108,Phim 108,hài,1998
+109,Phim 109,khoa học viễn tưởng,2007
+110,Phim 110,kinh dị,2008
+111,Phim 111,hài,2000
+112,Phim 112,tình cảm,2008
+113,Phim 113,tình cảm,2015
+114,Phim 114,hài,2007
+115,Phim 115,kinh dị,1995
+116,Phim 116,hài,2016
+117,Phim 117,hành động,2012
+118,Phim 118,kinh dị,2007
+119,Phim 119,kinh dị,1995
+120,Phim 120,tình cảm,1997
+121,Phim 121,tình cảm,1997
+122,Phim 122,hài,2020
+123,Phim 123,khoa học viễn tưởng,2004
+124,Phim 124,hài,2007
+125,Phim 125,tình cảm,2015
+126,Phim 126,tình cảm,2014
+127,Phim 127,khoa học viễn tưởng,1996
+128,Phim 128,hài,2022
+129,Phim 129,tình cảm,2002
+130,Phim 130,kinh dị,2018
+131,Phim 131,hài,2019
+132,Phim 132,hài,2011
+133,Phim 133,tình cảm,1999
+134,Phim 134,kinh dị,2011
+135,Phim 135,kinh dị,2002
+136,Phim 136,hành động,2020
+137,Phim 137,kinh dị,2017
+138,Phim 138,hài,2019
+139,Phim 139,hành động,2019
+140,Phim 140,khoa học viễn tưởng,2000
+141,Phim 141,kinh dị,1995
+142,Phim 142,kinh dị,2013
+143,Phim 143,khoa học viễn tưởng,2013
+144,Phim 144,khoa học viễn tưởng,2020
+145,Phim 145,kinh dị,2014
+146,Phim 146,kinh dị,2019
+147,Phim 147,hành động,2005
+148,Phim 148,hài,1998
+149,Phim 149,tình cảm,1996
+150,Phim 150,kinh dị,2008
+151,Phim 151,hành động,1995
+152,Phim 152,hành động,2010
+153,Phim 153,kinh dị,2007
+154,Phim 154,tình cảm,2002
+155,Phim 155,hành động,2012
+156,Phim 156,hành động,2015
+157,Phim 157,hài,1996
+158,Phim 158,hài,2009
+159,Phim 159,tình cảm,2023
+160,Phim 160,hài,2003
+161,Phim 161,tình cảm,2018
+162,Phim 162,hài,2005
+163,Phim 163,kinh dị,2003
+164,Phim 164,khoa học viễn tưởng,2020
+165,Phim 165,tình cảm,2005
+166,Phim 166,tình cảm,2020
+167,Phim 167,tình cảm,2014
+168,Phim 168,hài,2019
+169,Phim 169,kinh dị,2019
+170,Phim 170,khoa học viễn tưởng,2022
+171,Phim 171,hành động,2011
+172,Phim 172,khoa học viễn tưởng,2023
+173,Phim 173,hành động,1996
+174,Phim 174,kinh dị,2009
+175,Phim 175,hành động,2006
+176,Phim 176,hài,1997
+177,Phim 177,tình cảm,2021
+178,Phim 178,hành động,2019
+179,Phim 179,hành động,2017
+180,Phim 180,tình cảm,2014
+181,Phim 181,kinh dị,2013
+182,Phim 182,hài,2006
+183,Phim 183,khoa học viễn tưởng,2015
+184,Phim 184,hành động,2024
+185,Phim 185,tình cảm,2002
+186,Phim 186,hành động,2005
+187,Phim 187,kinh dị,1998
+188,Phim 188,hài,2022
+189,Phim 189,hành động,2010
+190,Phim 190,kinh dị,2012
+191,Phim 191,khoa học viễn tưởng,2002
+192,Phim 192,tình cảm,1996
+193,Phim 193,hài,2019
+194,Phim 194,khoa học viễn tưởng,2020
+195,Phim 195,tình cảm,2005
+196,Phim 196,hành động,2017
+197,Phim 197,kinh dị,2012
+198,Phim 198,khoa học viễn tưởng,2014
+199,Phim 199,hành động,2000

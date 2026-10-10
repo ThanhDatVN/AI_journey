@@ -1,0 +1,337 @@
+title: "Bài thi tổng hợp 5 · Deep Learning (chương 27–35)"
+next: null
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: backprop
+        lesson: 27_deep_learning_foundations
+        type: mcq
+        question: "Backpropagation tính gradient bằng cách:"
+        options: {a: "Áp dụng quy tắc dây chuyền từ loss ngược về từng tham số, tái sử dụng kết quả trung gian", b: "Sai phân hữu hạn cho từng tham số", c: "Thử ngẫu nhiên", d: "Giải hệ phương trình tuyến tính"}
+        answer: a
+        explanation: "Chi phí cỡ một lần forward."
+      - id: t02
+        topic: vanishing gradient
+        lesson: 28_neural_networks
+        type: mcq
+        question: "Mạng sâu dùng sigmoid ở mọi lớp ẩn huấn luyện rất chậm vì:"
+        options: {a: "Đạo hàm sigmoid ≤ 0.25 nhân qua nhiều lớp → gradient tiêu biến", b: "Sigmoid không khả vi", c: "Sigmoid quá nhanh", d: "Sigmoid không phi tuyến"}
+        answer: a
+        explanation: "ReLU, khởi tạo phù hợp, BatchNorm, skip connection giúp."
+      - id: t03
+        topic: initialization
+        lesson: 28_neural_networks
+        type: mcq
+        question: "Khởi tạo He (Kaiming) được thiết kế cho:"
+        options: {a: "Lớp có ReLU — giữ phương sai kích hoạt ổn định qua các lớp", b: "Lớp sigmoid", c: "Mọi trọng số bằng 0", d: "Chỉ lớp đầu ra"}
+        answer: a
+        explanation: "Var(w) = 2/fan_in."
+      - id: t04
+        topic: zero init
+        lesson: 28_neural_networks
+        type: tf
+        question: "Khởi tạo mọi trọng số bằng 0 vẫn huấn luyện được mạng nhiều nơ-ron mỗi lớp."
+        answer: false
+        explanation: "Đối xứng: mọi nơ-ron trong lớp học giống hệt nhau."
+      - id: t05
+        topic: dropout
+        lesson: 28_neural_networks
+        type: mcq
+        question: "Khi đánh giá mô hình có dropout, cần:"
+        options: {a: "Chuyển sang chế độ eval (tắt dropout)", b: "Giữ dropout bật", c: "Tăng tỉ lệ dropout", d: "Huấn luyện lại"}
+        answer: a
+        explanation: "model.eval() trong PyTorch — cũng ảnh hưởng BatchNorm."
+      - id: t06
+        topic: adam
+        lesson: 28_neural_networks
+        type: mcq
+        question: "Adam kết hợp:"
+        options: {a: "Momentum (trung bình gradient) và tỉ lệ học thích nghi theo từng tham số (trung bình bình phương gradient)", b: "Chỉ momentum", c: "Newton bậc hai", d: "Tìm kiếm ngẫu nhiên"}
+        answer: a
+        explanation: "Kèm hiệu chỉnh bias."
+      - id: t07
+        topic: cnn sharing
+        lesson: 29_cnn
+        type: mcq
+        question: "Lớp tích chập ít tham số hơn lớp kết nối đầy đủ nhờ:"
+        options: {a: "Chia sẻ trọng số và kết nối cục bộ", b: "Không có bias", c: "Dùng ReLU", d: "Pooling"}
+        answer: a
+        explanation: "Cùng bộ lọc trượt trên toàn ảnh."
+      - id: t08
+        topic: residual
+        lesson: 29_cnn
+        type: mcq
+        question: "Skip connection trong ResNet giúp huấn luyện mạng rất sâu vì:"
+        options: {a: "Gradient có đường đi trực tiếp; khối chỉ cần học phần dư", b: "Giảm số tham số", c: "Thay thế BatchNorm", d: "Tăng độ phân giải"}
+        answer: a
+        explanation: "y = x + F(x)."
+      - id: t09
+        topic: lstm
+        lesson: 30_sequence_models
+        type: mcq
+        question: "Cổng quên (forget gate) trong LSTM quyết định:"
+        options: {a: "Giữ lại bao nhiêu thông tin của trạng thái ô cũ", b: "Đầu ra cuối cùng", c: "Learning rate", d: "Độ dài chuỗi"}
+        answer: a
+        explanation: "Trạng thái ô cập nhật cộng → gradient đi xa hơn RNN thường."
+      - id: t10
+        topic: attention
+        lesson: 31_transformers
+        type: mcq
+        question: "Đầu ra của attention tại một vị trí là:"
+        options: {a: "Trung bình có trọng số của các value, trọng số từ độ tương đồng query–key qua softmax", b: "Giá trị lớn nhất", c: "Tổng các key", d: "Một hằng số"}
+        answer: a
+        explanation: "softmax(QKᵀ/√d)V."
+      - id: t11
+        topic: scaling
+        lesson: 31_transformers
+        type: mcq
+        question: "Chia QKᵀ cho √d trong attention để:"
+        options: {a: "Tránh tích vô hướng quá lớn làm softmax bão hoà, gradient nhỏ", b: "Tăng tốc", c: "Chuẩn hoá value", d: "Giảm bộ nhớ"}
+        answer: a
+        explanation: "Phương sai tích vô hướng tăng theo d."
+      - id: t12
+        topic: positional encoding
+        lesson: 31_transformers
+        type: tf
+        question: "Không có positional encoding, self-attention không phân biệt được thứ tự các token."
+        answer: true
+        explanation: "Attention bất biến hoán vị."
+      - id: t13
+        topic: causal mask
+        lesson: 31_transformers
+        type: mcq
+        question: "Mặt nạ nhân quả trong decoder kiểu GPT ngăn:"
+        options: {a: "Token nhìn thấy các token phía sau nó", b: "Token nhìn thấy chính nó", c: "Gradient chảy ngược", d: "Dùng embedding"}
+        answer: a
+        explanation: "Huấn luyện dự đoán token tiếp theo."
+      - id: t14
+        topic: bert gpt
+        lesson: 31_transformers
+        type: mcq
+        question: "Mục tiêu tiền huấn luyện của BERT là:"
+        options: {a: "Đoán token bị che (masked language modeling)", b: "Đoán token tiếp theo từ trái sang phải", c: "Phân loại ảnh", d: "Dịch máy"}
+        answer: a
+        explanation: "GPT: causal LM."
+      - id: t15
+        topic: transfer learning
+        lesson: 33_computer_vision
+        type: mcq
+        question: "Ít dữ liệu ảnh gắn nhãn (vài trăm ảnh). Chiến lược hợp lý:"
+        options: {a: "Dùng mô hình tiền huấn luyện, đóng băng phần lớn, huấn luyện lại lớp cuối (rồi fine-tune nhẹ)", b: "Huấn luyện ResNet-152 từ đầu", c: "Dùng learning rate rất lớn", d: "Bỏ augmentation"}
+        answer: a
+        explanation: "Đặc trưng chung từ dữ liệu lớn."
+      - id: t16
+        topic: augmentation
+        lesson: 33_computer_vision
+        type: mcq
+        question: "Augmentation hợp lệ phải:"
+        options: {a: "Giữ nguyên nhãn (vd lật ngang ảnh mèo; không lật chữ số 6 thành 9)", b: "Luôn xoay 180°", c: "Áp dụng cho tập test", d: "Thay đổi nhãn"}
+        answer: a
+        explanation: "Mã hoá bất biến mong muốn."
+      - id: t17
+        topic: autoencoder
+        lesson: 34_representation_learning
+        type: mcq
+        question: "Autoencoder có lớp cổ chai nhỏ buộc mô hình:"
+        options: {a: "Học biểu diễn nén giữ thông tin cần để tái tạo", b: "Sao chép đầu vào không đổi", c: "Phân loại", d: "Sinh nhãn"}
+        answer: a
+        explanation: "Ứng dụng: giảm chiều, phát hiện bất thường."
+      - id: t18
+        topic: vae
+        lesson: 34_representation_learning
+        type: mcq
+        question: "Reparameterization trick trong VAE cho phép:"
+        options: {a: "Lan truyền gradient qua bước lấy mẫu z = μ + σ·ε", b: "Bỏ KL divergence", c: "Tăng kích thước ảnh", d: "Huấn luyện không cần dữ liệu"}
+        answer: a
+        explanation: "Ngẫu nhiên chuyển sang ε."
+      - id: t19
+        topic: exploration
+        lesson: 35_reinforcement_learning
+        type: mcq
+        question: "ε-greedy trong RL giải quyết:"
+        options: {a: "Cân bằng khám phá và khai thác", b: "Giảm discount", c: "Tăng tốc mạng", d: "Chuẩn hoá phần thưởng"}
+        answer: a
+        explanation: "Với xác suất ε chọn ngẫu nhiên."
+      - id: t20
+        topic: q learning
+        lesson: 35_reinforcement_learning
+        type: mcq
+        question: "Q-learning là off-policy vì:"
+        options: {a: "Cập nhật dùng max_a Q(s', a) (chính sách tham lam) bất kể hành động thực sự được chọn tiếp theo", b: "Không dùng chính sách nào", c: "Chỉ học từ dữ liệu offline", d: "Không có phần thưởng"}
+        answer: a
+        explanation: "SARSA dùng Q(s', a') của hành động thực tế (on-policy)."
+  math:
+    questions:
+      - id: m01
+        topic: conv output
+        lesson: 29_cnn
+        type: numeric
+        decimals: 0
+        question: "Ảnh 32×32, kernel 5×5, stride 1, padding 0. Kích thước cạnh đầu ra = ?"
+        answer: 28
+        explanation: "(32 − 5)/1 + 1."
+      - id: m02
+        topic: conv params
+        lesson: 29_cnn
+        type: numeric
+        decimals: 0
+        question: "Conv2d(3 → 16 kênh, kernel 3×3, có bias). Số tham số = ?"
+        answer: 448
+        explanation: "16·(3·3·3) + 16."
+      - id: m03
+        topic: linear params
+        lesson: 27_deep_learning_foundations
+        type: numeric
+        decimals: 0
+        question: "Linear(128 → 10) có bias. Số tham số = ?"
+        answer: 1290
+        explanation: "128·10 + 10."
+      - id: m04
+        topic: softmax
+        lesson: 07_logistic_regression
+        type: numeric
+        decimals: 2
+        question: "softmax([0, ln 3]) — xác suất của phần tử thứ hai = ?"
+        answer: 0.75
+        explanation: "3/(1 + 3)."
+      - id: m05
+        topic: cross entropy
+        lesson: 27_deep_learning_foundations
+        type: numeric
+        decimals: 3
+        question: "Mô hình gán xác suất 0.25 cho lớp đúng. Cross-entropy (log tự nhiên) = ?"
+        answer: 1.386
+        explanation: "−ln 0.25 = ln 4."
+      - id: m06
+        topic: attention scale
+        lesson: 31_transformers
+        type: numeric
+        decimals: 0
+        question: "d_k = 64. Hệ số chia √d_k = ?"
+        answer: 8
+        explanation: "√64."
+      - id: m07
+        topic: bellman
+        lesson: 35_reinforcement_learning
+        type: numeric
+        decimals: 1
+        question: "Phần thưởng r = 1, γ = 0.9, V(s') = 10. Mục tiêu TD r + γV(s') = ?"
+        answer: 10
+        explanation: "1 + 9."
+      - id: m08
+        topic: discounted return
+        lesson: 35_reinforcement_learning
+        type: numeric
+        decimals: 2
+        question: "Phần thưởng 1 ở mọi bước, γ = 0.5, vô hạn bước. Tổng chiết khấu = ?"
+        answer: 2
+        explanation: "1/(1 − 0.5)."
+coding:
+  tasks:
+    - id: c01
+      title: Softmax và cross-entropy ổn định số
+      prompt: |
+        Viết `softmax(z)` theo hàng (trừ max mỗi hàng trước khi exp) và `cross_entropy(logits, y)` = trung bình −log softmax của lớp đúng,
+        tính ổn định bằng log-sum-exp (không lấy log của softmax đã tính).
+      code: |
+        def softmax(z):
+            ### START CODE HERE ### (≈ 2 dòng)
+            z = np.asarray(z, float) - np.max(z, axis=1, keepdims=True)
+            return np.exp(z) / np.exp(z).sum(axis=1, keepdims=True)
+            ### END CODE HERE ###
+
+
+        def cross_entropy(logits, y):
+            ### START CODE HERE ### (≈ 3 dòng)
+            z = np.asarray(logits, float)
+            m = z.max(axis=1, keepdims=True)
+            log_sum = m[:, 0] + np.log(np.exp(z - m).sum(axis=1))
+            return float(np.mean(log_sum - z[np.arange(len(z)), np.asarray(y)]))
+            ### END CODE HERE ###
+      tests: |
+        check_close(softmax(np.array([[0.0, np.log(3)]])), [[0.25, 0.75]], message="softmax")
+        check_close(softmax(np.array([[1000.0, 1000.0]])), [[0.5, 0.5]], message="ổn định với logit rất lớn")
+        check_close(cross_entropy(np.array([[0.0, np.log(3)]]), [0]), np.log(4), message="cross-entropy")
+        check_true(np.isfinite(cross_entropy(np.array([[1000.0, -1000.0]]), [1])), "không tràn số")
+        check_close(cross_entropy(np.array([[1000.0, -1000.0]]), [1]), 2000.0, message="giá trị đúng khi logit cực đoan")
+    - id: c02
+      title: Scaled dot-product attention
+      prompt: |
+        Viết `attention(Q, K, V, mask=None)`: trọng số = softmax(QKᵀ/√d) theo hàng (d = số cột của Q); nếu `mask` (bool, True = được nhìn) được cho,
+        đặt điểm các vị trí False thành −∞ trước softmax. Trả về `(output, weights)`.
+      code: |
+        def attention(Q, K, V, mask=None):
+            ### START CODE HERE ### (≈ 6 dòng)
+            Q, K, V = (np.asarray(a, float) for a in (Q, K, V))
+            scores = Q @ K.T / np.sqrt(Q.shape[1])
+            if mask is not None:
+                scores = np.where(mask, scores, -np.inf)
+            scores = scores - scores.max(axis=1, keepdims=True)
+            weights = np.exp(scores) / np.exp(scores).sum(axis=1, keepdims=True)
+            return weights @ V, weights
+            ### END CODE HERE ###
+      tests: |
+        rng = np.random.default_rng(0)
+        Q, K, V = rng.normal(size=(3, 4)), rng.normal(size=(5, 4)), rng.normal(size=(5, 2))
+        out, w = attention(Q, K, V)
+        check_close(w.sum(axis=1), np.ones(3), message="trọng số mỗi hàng cộng bằng 1")
+        check_close(out, w @ V, message="đầu ra = trọng số × V")
+        causal = np.tril(np.ones((4, 4), bool))
+        _, wc = attention(rng.normal(size=(4, 4)), rng.normal(size=(4, 4)), rng.normal(size=(4, 4)), causal)
+        check_close(np.triu(wc, 1), np.zeros((4, 4)), message="mặt nạ nhân quả: không nhìn tương lai")
+        check_close(wc[0], [1, 0, 0, 0], message="token đầu chỉ nhìn chính nó")
+analysis:
+  prompt: |
+    Một sinh viên huấn luyện CNN phân loại 10 lớp ảnh (5.000 ảnh). Nhật ký: loss train giảm từ 2.3 về 0.01, accuracy validation tăng lên 62% ở epoch 8 rồi
+    giảm dần còn 51% ở epoch 60; loss validation tăng từ epoch 8. Sinh viên dùng learning rate 0.1 với Adam, không augmentation, không dropout/weight decay,
+    và báo cáo "accuracy 99.8%" (accuracy train). Chẩn đoán và đề xuất.
+  rubric:
+    - "Chẩn đoán overfitting rõ (train loss → 0, val loss tăng từ epoch 8) và báo cáo accuracy train là sai"
+    - "Đề xuất early stopping / chọn checkpoint theo validation"
+    - "Đề xuất điều chuẩn: augmentation, dropout, weight decay, mô hình nhỏ hơn hoặc transfer learning"
+    - "Chỉ ra learning rate 0.1 với Adam quá lớn → 1e-3, có lịch learning rate"
+    - "Đề xuất báo cáo trên tập test tách biệt, kèm ma trận nhầm lẫn/phân tích lỗi"
+  sample_answer: |
+    Overfitting kinh điển: mô hình thuộc lòng 5.000 ảnh (loss train 0.01) trong khi validation tốt nhất ở epoch 8 rồi xấu đi. Báo cáo 99.8% (train) vô
+    nghĩa — phải báo cáo trên test tách biệt, dùng checkpoint chọn theo validation. Đề xuất: early stopping; augmentation (lật, cắt, xoay nhẹ, đổi màu —
+    hợp lệ với nhãn); dropout/weight decay; hoặc tốt hơn với 5.000 ảnh: transfer learning từ mô hình tiền huấn luyện, đóng băng phần lớn rồi fine-tune.
+    Learning rate 0.1 với Adam quá lớn (mặc định 1e-3), kết hợp lịch giảm (cosine/OneCycle). Sau khi sửa, phân tích ma trận nhầm lẫn và các ảnh sai để biết
+    lỗi do dữ liệu (nhãn sai, lớp giống nhau) hay do mô hình.
+project:
+  prompt: |
+    **Mini project — Mạng nơ-ron 2 lớp tự viết.** Dữ liệu `make_classification_2d("moons", n=600, noise=0.2, seed=0)`, chia 70/30 phân tầng (`random_state=0`).
+    Cài mạng `2 → 16 (tanh) → 1 (sigmoid)` **bằng numpy** (không dùng thư viện deep learning): khởi tạo `W1 ~ N(0, 1)`, `W2 ~ N(0, 1)/√16` (seed 0), bias 0;
+    gradient descent toàn batch trên log-loss, learning rate 1.0, 3.000 bước. Lưu `test_acc` và `logreg_acc` (hồi quy logistic trên cùng dữ liệu). Yêu cầu:
+    test_acc > 0.95 và cao hơn logistic ít nhất 5 điểm.
+  code: |
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.model_selection import train_test_split
+
+    from ml_course.datasets import make_classification_2d
+
+    X, y = make_classification_2d("moons", n=600, noise=0.2, seed=0)
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.3, random_state=0, stratify=y)
+    ### START CODE HERE ### (≈ 16 dòng)
+    rng = np.random.default_rng(0)
+    W1, b1 = rng.normal(0, 1, (2, 16)), np.zeros(16)
+    W2, b2 = rng.normal(0, 1, (16, 1)) / np.sqrt(16), np.zeros(1)
+    for _ in range(3000):
+        A1 = np.tanh(X_tr @ W1 + b1)
+        P = 1 / (1 + np.exp(-(A1 @ W2 + b2)[:, 0]))
+        dZ2 = (P - y_tr)[:, None] / len(y_tr)
+        dW2, db2 = A1.T @ dZ2, dZ2.sum(axis=0)
+        dZ1 = (dZ2 @ W2.T) * (1 - A1 ** 2)
+        dW1, db1 = X_tr.T @ dZ1, dZ1.sum(axis=0)
+        W1 -= dW1
+        b1 -= db1
+        W2 -= dW2
+        b2 -= db2
+    p_te = 1 / (1 + np.exp(-(np.tanh(X_te @ W1 + b1) @ W2 + b2)[:, 0]))
+    test_acc = float(((p_te > 0.5) == y_te).mean())
+    logreg_acc = LogisticRegression().fit(X_tr, y_tr).score(X_te, y_te)
+    ### END CODE HERE ###
+    print(f"MLP numpy: {test_acc:.3f} | logistic: {logreg_acc:.3f}")
+  tests: |
+    check_greater(test_acc, 0.95, "mạng nơ-ron học được biên phi tuyến")
+    check_greater(test_acc - logreg_acc, 0.05, "hơn hồi quy logistic ≥ 5 điểm")

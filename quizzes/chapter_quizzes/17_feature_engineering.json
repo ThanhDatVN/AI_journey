@@ -1,0 +1,235 @@
+{
+ "id": "17_feature_engineering",
+ "kind": "Chapter",
+ "title": "17 · Feature Engineering",
+ "next": "18_feature_selection",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "log-log",
+     "answer_hashes": [
+      "9afac36ecdfb8d575c34"
+     ],
+     "lesson": "01_numeric_transforms.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "tree invariance",
+     "answer_hashes": [
+      "fc61f352e551edc108cf"
+     ],
+     "lesson": "01_numeric_transforms.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "Yeo-Johnson",
+     "answer_hashes": [
+      "62a4035717279b1636e8"
+     ],
+     "lesson": "01_numeric_transforms.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "spline",
+     "answer_hashes": [
+      "1890db429a666a38552d"
+     ],
+     "lesson": "01_numeric_transforms.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "ratio features",
+     "answer_hashes": [
+      "3de8717b617aa2cc53fc"
+     ],
+     "lesson": "01_numeric_transforms.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "ordinal",
+     "answer_hashes": [
+      "e817e5e991b75b240b86"
+     ],
+     "lesson": "02_categorical_encoding.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "target leakage",
+     "answer_hashes": [
+      "1df5cbcd3564804b87bb"
+     ],
+     "lesson": "02_categorical_encoding.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "cross-fit",
+     "answer_hashes": [
+      "ade711c7a2caf191d016"
+     ],
+     "lesson": "02_categorical_encoding.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "smoothing",
+     "answer_hashes": [
+      "7ced09042c34bfe5c0ae"
+     ],
+     "lesson": "02_categorical_encoding.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "multi",
+     "topic": "high cardinality",
+     "answer_hashes": [
+      "7dedbc6f0f56a2a71c68"
+     ],
+     "lesson": "02_categorical_encoding.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "interaction",
+     "answer_hashes": [
+      "8ebdcdacfc23f07291cf"
+     ],
+     "lesson": "03_interaction_datetime_text_aggregation.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "cyclical",
+     "answer_hashes": [
+      "1b987a71898b2b54bb09"
+     ],
+     "lesson": "03_interaction_datetime_text_aggregation.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "aggregation leakage",
+     "answer_hashes": [
+      "dfb4fd07255e0ec46289"
+     ],
+     "lesson": "03_interaction_datetime_text_aggregation.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "TF-IDF",
+     "answer_hashes": [
+      "a3f357e3985cb5aaafae"
+     ],
+     "lesson": "03_interaction_datetime_text_aggregation.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "multi",
+     "topic": "custom transformer",
+     "answer_hashes": [
+      "2497d8a3623457b41264"
+     ],
+     "lesson": "04_end_to_end_pipeline.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "ablation",
+     "answer_hashes": [
+      "be6309f8792b148e758b"
+     ],
+     "lesson": "04_end_to_end_pipeline.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "smoothing",
+     "answer_hashes": [
+      "04d68e5f18f23fc95d40"
+     ],
+     "decimals": 3,
+     "lesson": "02_categorical_encoding.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "cyclical",
+     "answer_hashes": [
+      "cb4a6db907010614dd32"
+     ],
+     "decimals": 3,
+     "lesson": "03_interaction_datetime_text_aggregation.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "one-hot size",
+     "answer_hashes": [
+      "b9d23c99f5f51ef2e407"
+     ],
+     "decimals": 0,
+     "lesson": "02_categorical_encoding.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "interaction count",
+     "answer_hashes": [
+      "0401c46e570c7214b9ab"
+     ],
+     "decimals": 0,
+     "lesson": "03_interaction_datetime_text_aggregation.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "log ratio",
+     "answer_hashes": [
+      "6c44692652bf54cba61d"
+     ],
+     "decimals": 3,
+     "lesson": "01_numeric_transforms.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

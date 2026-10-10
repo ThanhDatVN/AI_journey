@@ -1,0 +1,235 @@
+{
+ "id": "19_imbalanced_learning",
+ "kind": "Chapter",
+ "title": "19 · Imbalanced Learning",
+ "next": "20_clustering",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "accuracy paradox",
+     "answer_hashes": [
+      "1a09df47bbcce1210efd"
+     ],
+     "lesson": "01_why_accuracy_lies.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "multi",
+     "topic": "metrics",
+     "answer_hashes": [
+      "ae5116fb57119f202eb4"
+     ],
+     "lesson": "01_why_accuracy_lies.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "low probabilities",
+     "answer_hashes": [
+      "8419f2c328be0a8f4185"
+     ],
+     "lesson": "01_why_accuracy_lies.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "minority count",
+     "answer_hashes": [
+      "43ca780b74f2d6a03f1e"
+     ],
+     "lesson": "01_why_accuracy_lies.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "SMOTE",
+     "answer_hashes": [
+      "1c26d23d4ab4681334c1"
+     ],
+     "lesson": "02_resampling_and_smote.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "resample placement",
+     "answer_hashes": [
+      "c03ab2db8770b17810d3"
+     ],
+     "lesson": "02_resampling_and_smote.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "multi",
+     "topic": "resampling effect",
+     "answer_hashes": [
+      "5d447db58ab64ccf53a2"
+     ],
+     "lesson": "02_resampling_and_smote.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "prior correction",
+     "answer_hashes": [
+      "ee324e9b29d058b5c5ed"
+     ],
+     "lesson": "02_resampling_and_smote.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "oversample leakage",
+     "answer_hashes": [
+      "10a28691c28be4665908"
+     ],
+     "lesson": "02_resampling_and_smote.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "class weight",
+     "answer_hashes": [
+      "a176157f1ed7e13a2304"
+     ],
+     "lesson": "03_class_weights_threshold_cost.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "threshold fairness",
+     "answer_hashes": [
+      "ecf88bc9022279567102"
+     ],
+     "lesson": "03_class_weights_threshold_cost.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "cost threshold",
+     "answer_hashes": [
+      "d8f8af559759cd4b5010"
+     ],
+     "lesson": "03_class_weights_threshold_cost.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "topic": "calibration",
+     "answer_hashes": [
+      "b5bc49307014844d5448"
+     ],
+     "lesson": "03_class_weights_threshold_cost.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "balanced RF",
+     "answer_hashes": [
+      "c62e1e46174f33a8f180"
+     ],
+     "lesson": "03_class_weights_threshold_cost.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "example-dependent",
+     "answer_hashes": [
+      "1b13fbf5e428401a2aae"
+     ],
+     "lesson": "03_class_weights_threshold_cost.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "extreme imbalance",
+     "answer_hashes": [
+      "d98a73ae4b8d16760aff"
+     ],
+     "lesson": "01_why_accuracy_lies.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "balanced weight",
+     "answer_hashes": [
+      "5d8edc5a7535fc2381c7"
+     ],
+     "decimals": 2,
+     "lesson": "03_class_weights_threshold_cost.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "prior correction",
+     "answer_hashes": [
+      "234c4a3de0d79c7a7f35"
+     ],
+     "decimals": 3,
+     "lesson": "02_resampling_and_smote.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "cost threshold",
+     "answer_hashes": [
+      "a524034fbfe78f7b8061"
+     ],
+     "decimals": 3,
+     "lesson": "03_class_weights_threshold_cost.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "precision at k",
+     "answer_hashes": [
+      "897cd3bb9a7602aa0cb1"
+     ],
+     "decimals": 2,
+     "lesson": "01_why_accuracy_lies.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "example cost",
+     "answer_hashes": [
+      "9621b8b2f228e590a7b9"
+     ],
+     "decimals": 0,
+     "lesson": "03_class_weights_threshold_cost.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

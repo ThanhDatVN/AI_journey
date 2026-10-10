@@ -1,0 +1,303 @@
+title: "27 · Deep Learning Foundations"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: neuron
+        lesson: 01_perceptron_and_neuron.ipynb
+        type: mcq
+        question: "Một nơ-ron đơn (bất kể hàm kích hoạt đơn điệu nào) tạo ranh giới quyết định dạng:"
+        options: {a: "Siêu phẳng (tuyến tính)", b: "Đường cong bất kỳ", c: "Hình tròn", d: "Không có ranh giới"}
+        answer: a
+        explanation: "Ngưỡng trên wᵀx + b."
+      - id: t02
+        topic: perceptron convergence
+        lesson: 01_perceptron_and_neuron.ipynb
+        type: mcq
+        question: "Perceptron chắc chắn hội tụ khi:"
+        options: {a: "Dữ liệu tách được tuyến tính", b: "Learning rate đủ nhỏ", c: "Dữ liệu chuẩn hoá", d: "Luôn luôn"}
+        answer: a
+        explanation: "Số lỗi ≤ (R/γ)²; không tách được → không dừng."
+      - id: t03
+        topic: XOR
+        lesson: 01_perceptron_and_neuron.ipynb
+        type: tf
+        question: "Một lớp ẩn với hai nơ-ron đủ để biểu diễn XOR."
+        answer: true
+        explanation: "OR và AND, rồi OR AND NOT AND."
+      - id: t04
+        topic: universal approximation
+        lesson: 01_perceptron_and_neuron.ipynb
+        type: multi
+        question: "Định lý xấp xỉ vạn năng KHÔNG bảo đảm điều gì?"
+        options:
+          a: "Gradient descent tìm được trọng số tốt"
+          b: "Số nơ-ron cần thiết là nhỏ"
+          c: "Mô hình tổng quát hoá tốt ngoài dữ liệu train"
+          d: "Tồn tại mạng một lớp ẩn xấp xỉ hàm liên tục trên miền bị chặn"
+        answer: abc
+        explanation: "Định lý chỉ nói về sự tồn tại."
+      - id: t05
+        topic: chain rule
+        lesson: 02_computational_graph_and_backprop.ipynb
+        type: mcq
+        question: "Nút nhân q = x·y nhận gradient ∂L/∂q. Gradient gửi về x là:"
+        options: {a: "y · ∂L/∂q", b: "x · ∂L/∂q", c: "∂L/∂q", d: "0"}
+        answer: a
+        explanation: "Nút nhân 'đổi chỗ' giá trị."
+      - id: t06
+        topic: accumulate
+        lesson: 02_computational_graph_and_backprop.ipynb
+        type: mcq
+        question: "Vì sao engine autograd cộng dồn (+=) gradient vào .grad?"
+        options:
+          a: "Một biến có thể ảnh hưởng tới loss qua nhiều nhánh — đạo hàm toàn phần là tổng"
+          b: "Để tăng tốc"
+          c: "Để chuẩn hoá gradient"
+          d: "Không có lý do"
+        answer: a
+        explanation: "Hệ quả: phải xoá gradient mỗi bước huấn luyện."
+      - id: t07
+        topic: topological order
+        lesson: 02_computational_graph_and_backprop.ipynb
+        type: tf
+        question: "Backward phải xử lý một nút chỉ sau khi đã nhận đủ gradient từ mọi nút phía sau nó — vì vậy duyệt theo thứ tự tô-pô ngược."
+        answer: true
+        explanation: "Thứ tự tô-pô bảo đảm điều đó."
+      - id: t08
+        topic: efficiency
+        lesson: 02_computational_graph_and_backprop.ipynb
+        type: mcq
+        question: "Chi phí tính mọi gradient bằng backprop so với sai phân hữu hạn với P tham số:"
+        options: {a: "≈ vài lần forward, so với ≈ 2P lần forward", b: "Bằng nhau", c: "Backprop đắt hơn", d: "Backprop cần P² phép"}
+        answer: a
+        explanation: "Reverse-mode autodiff."
+      - id: t09
+        topic: linear backward
+        lesson: 03_neural_network_from_scratch.ipynb
+        type: mcq
+        question: "Với Z = XW (X: n×d, W: d×m) và Δ = ∂L/∂Z, ∂L/∂W bằng:"
+        options: {a: "XᵀΔ", b: "ΔXᵀ", c: "ΔWᵀ", d: "WᵀX"}
+        answer: a
+        explanation: "Kích thước d×m phải khớp."
+      - id: t10
+        topic: softmax CE
+        lesson: 03_neural_network_from_scratch.ipynb
+        type: mcq
+        question: "Gradient của cross-entropy trung bình theo logit (softmax gộp) là:"
+        options: {a: "(P̂ − Y)/n", b: "−1/P̂", c: "P̂(1 − P̂)", d: "Y − P̂"}
+        answer: a
+        explanation: "Gọn và ổn định số."
+      - id: t11
+        topic: gradient check
+        lesson: 03_neural_network_from_scratch.ipynb
+        type: tf
+        question: "Nên kiểm tra gradient bằng sai phân hữu hạn trước khi tin vào code backprop tự viết."
+        answer: true
+        explanation: "Sai lệch tương đối ~1e-7 trở xuống là tốt."
+      - id: t12
+        topic: overfitting
+        lesson: 03_neural_network_from_scratch.ipynb
+        type: mcq
+        question: "Dấu hiệu overfitting trên đường cong huấn luyện:"
+        options: {a: "Loss train tiếp tục giảm trong khi loss validation ngừng giảm hoặc tăng", b: "Cả hai loss cùng giảm", c: "Loss train tăng", d: "Accuracy train thấp"}
+        answer: a
+        explanation: "Khoảng cách train–validation lớn dần."
+      - id: t13
+        topic: zero_grad
+        lesson: 04_pytorch_fundamentals.ipynb
+        type: mcq
+        question: "Quên optimizer.zero_grad() trong vòng lặp thì:"
+        options: {a: "Gradient các bước cộng dồn, cập nhật sai", b: "Lỗi cú pháp", c: "Không ảnh hưởng", d: "Mô hình chạy nhanh hơn"}
+        answer: a
+        explanation: ".grad cộng dồn qua mỗi backward()."
+      - id: t14
+        topic: cross entropy loss
+        lesson: 04_pytorch_fundamentals.ipynb
+        type: multi
+        question: "nn.CrossEntropyLoss yêu cầu:"
+        options: {a: "Đầu vào là logit (chưa softmax)", b: "Nhãn kiểu long", c: "Nhãn one-hot float", d: "Đầu vào đã qua softmax"}
+        answer: ab
+        explanation: "Tự gộp log-softmax + NLL."
+      - id: t15
+        topic: eval no_grad
+        lesson: 04_pytorch_fundamentals.ipynb
+        type: mcq
+        question: "Khi đánh giá mô hình nên dùng:"
+        options: {a: "model.eval() và torch.no_grad()", b: "Chỉ model.train()", c: "optimizer.step()", d: "loss.backward()"}
+        answer: a
+        explanation: "eval: hành vi dropout/batchnorm; no_grad: không ghi đồ thị."
+      - id: t16
+        topic: numpy interop
+        lesson: 04_pytorch_fundamentals.ipynb
+        type: tf
+        question: "torch.from_numpy(x) tạo tensor dùng chung bộ nhớ với mảng x."
+        answer: true
+        explanation: "torch.tensor(x) thì sao chép."
+      - id: t17
+        topic: GradientTape
+        lesson: 05_tensorflow_and_keras.ipynb
+        type: mcq
+        question: "Trong TensorFlow, gradient được tính bằng cách nào?"
+        options: {a: "Ghi phép toán trong tf.GradientTape rồi gọi tape.gradient(loss, biến)", b: "loss.backward()", c: "Đọc thuộc tính tf.Variable.grad", d: "Keras tự tính và không cho truy cập"}
+        answer: a
+        explanation: "Băng ghi không cộng dồn như .grad của PyTorch, nên không cần zero_grad."
+      - id: t18
+        topic: tf.function tracing
+        lesson: 05_tensorflow_and_keras.ipynb
+        type: tf
+        question: "Lệnh print của Python bên trong một hàm @tf.function được thực thi ở mỗi lần gọi hàm."
+        answer: false
+        explanation: "Code Python chỉ chạy lúc truy vết; dùng tf.print cho thứ cần chạy mỗi lần."
+      - id: t19
+        topic: from_logits
+        lesson: 05_tensorflow_and_keras.ipynb
+        type: mcq
+        question: "Lớp cuối Dense(10) không có activation (xuất logits), nhãn là số nguyên 0–9. Loss phù hợp:"
+        options: {a: "SparseCategoricalCrossentropy(from_logits=True)", b: "CategoricalCrossentropy()", c: "SparseCategoricalCrossentropy() với from_logits mặc định (False)", d: "MeanSquaredError()"}
+        answer: a
+        explanation: "Sparse = nhãn số nguyên; from_logits=True vì đầu ra chưa qua softmax."
+      - id: t20
+        topic: framework mapping
+        lesson: 05_tensorflow_and_keras.ipynb
+        type: multi
+        question: "Những cặp nào tương đương đúng giữa PyTorch và TensorFlow/Keras?"
+        options: {a: "nn.Module ↔ keras.Model", b: "DataLoader ↔ tf.data.Dataset", c: "optimizer.zero_grad() ↔ tape.reset() bắt buộc mỗi bước", d: "nn.Linear(in, out) ↔ keras.layers.Dense(out)"}
+        answer: abd
+        explanation: "TensorFlow không cộng dồn gradient nên không có bước tương đương zero_grad."
+  math:
+    questions:
+      - id: m01
+        topic: backprop scalar
+        lesson: 02_computational_graph_and_backprop.ipynb
+        type: numeric
+        decimals: 2
+        question: "f = (x + y)·z với x = 1, y = 2, z = −3. ∂f/∂x = ?"
+        answer: -3
+        explanation: "∂f/∂x = z."
+      - id: m02
+        topic: sigmoid derivative
+        lesson: 02_computational_graph_and_backprop.ipynb
+        type: numeric
+        decimals: 3
+        question: "σ'(0) = ?"
+        answer: 0.25
+        explanation: "σ(0)(1 − σ(0)) = 0.5·0.5."
+      - id: m03
+        topic: parameters
+        lesson: 03_neural_network_from_scratch.ipynb
+        type: numeric
+        decimals: 0
+        question: "Mạng 10 → 20 → 3 có bias. Số tham số?"
+        answer: 283
+        explanation: "10·20 + 20 + 20·3 + 3."
+      - id: m04
+        topic: cross entropy
+        lesson: 03_neural_network_from_scratch.ipynb
+        type: numeric
+        decimals: 3
+        question: "Xác suất dự đoán cho lớp đúng là 0.25. Cross-entropy (log tự nhiên) = ?"
+        answer: 1.386
+        explanation: "−ln 0.25."
+      - id: m05
+        topic: perceptron update
+        lesson: 01_perceptron_and_neuron.ipynb
+        type: numeric
+        decimals: 2
+        question: "Perceptron w = [0, 0], b = 0 gặp điểm x = [2, −1], y = −1 (đoán sai). Sau cập nhật (η = 1), w₁ = ?"
+        answer: -2
+        explanation: "w ← w + y·x = [−2, 1]."
+coding:
+  tasks:
+    - id: c01
+      title: Softmax ổn định
+      prompt: |
+        Viết `stable_softmax(Z)` theo hàng (trừ max mỗi hàng trước exp).
+      code: |
+        def stable_softmax(Z):
+            ### START CODE HERE ### (≈ 2 dòng)
+            E = np.exp(Z - Z.max(axis=1, keepdims=True))
+            return E / E.sum(axis=1, keepdims=True)
+            ### END CODE HERE ###
+      tests: |
+        P = stable_softmax(np.array([[1.0, 2.0, 3.0], [1000.0, 1000.0, 1000.0]]))
+        check_close(P.sum(1), [1.0, 1.0], message="tổng mỗi hàng = 1")
+        check_close(P[1], [1 / 3] * 3, message="ổn định với logit lớn")
+        check_close(P[0], np.exp([1, 2, 3]) / np.exp([1, 2, 3]).sum(), message="giá trị đúng")
+    - id: c02
+      title: Backward của ReLU và lớp tuyến tính
+      prompt: |
+        Viết `relu_linear_backward(d_out, X, W, Z)`: mạng con H = ReLU(Z), Z = XW + b, nhận d_out = ∂L/∂H; trả về (dX, dW, db).
+      code: |
+        def relu_linear_backward(d_out, X, W, Z):
+            ### START CODE HERE ### (≈ 2 dòng)
+            dZ = d_out * (Z > 0)
+            return dZ @ W.T, X.T @ dZ, dZ.sum(axis=0)
+            ### END CODE HERE ###
+      tests: |
+        rng = np.random.default_rng(0)
+        X, W, b = rng.normal(size=(5, 3)), rng.normal(size=(3, 4)), rng.normal(size=4)
+        Z = X @ W + b
+        d_out = rng.normal(size=(5, 4))
+        dX, dW, db = relu_linear_backward(d_out, X, W, Z)
+        L = lambda W_: np.sum(d_out * np.maximum(0, X @ W_ + b))
+        E = np.zeros_like(W); E[1, 2] = 1e-6
+        check_close(dW[1, 2], (L(W + E) - L(W - E)) / 2e-6, tol=1e-5, message="dW khớp sai phân hữu hạn")
+        check_close(db, (d_out * (Z > 0)).sum(0), message="db")
+        check_true(dX.shape == X.shape and dW.shape == W.shape, "đúng shape")
+analysis:
+  prompt: |
+    Một nhóm huấn luyện MLP PyTorch phân loại ảnh sản phẩm (10 lớp) và gặp: (1) loss không giảm, accuracy ~10%; (2) sau khi "sửa",
+    loss giảm nhưng dao động rất mạnh và đôi khi thành NaN; (3) accuracy validation thay đổi mỗi lần chạy đánh giá trên cùng một mô hình;
+    (4) accuracy train 99%, validation 70%. Đoạn code: mô hình kết thúc bằng nn.Softmax, loss = CrossEntropyLoss, optimizer SGD lr=5,
+    không có zero_grad, mô hình có Dropout, đánh giá không gọi model.eval(). Chẩn đoán từng triệu chứng và cách sửa.
+  rubric:
+    - "Chỉ ra Softmax trước CrossEntropyLoss (nhận logit) làm gradient yếu/sai; và thiếu zero_grad làm gradient cộng dồn → bỏ Softmax, thêm zero_grad"
+    - "Chỉ ra learning rate 5 quá lớn → dao động/NaN; giảm LR, LR range test, Adam, gradient clipping"
+    - "Chỉ ra quên model.eval() khi đánh giá → Dropout vẫn bật → kết quả ngẫu nhiên; dùng eval() + no_grad()"
+    - "Chỉ ra 99% vs 70% là overfitting → nhiều dữ liệu/augmentation, regularization (weight decay, dropout), early stopping, mô hình nhỏ hơn/kiến trúc phù hợp (CNN)"
+    - "Đề xuất quy trình gỡ lỗi: overfit một batch nhỏ trước, kiểm tra gradient/shape/dtype, so baseline"
+  sample_answer: |
+    (1) Accuracy ~10% (ngẫu nhiên): mô hình áp Softmax rồi CrossEntropyLoss lại log-softmax lần nữa → gradient rất nhỏ/sai; thêm việc thiếu
+    zero_grad làm gradient cộng dồn qua các bước. Bỏ nn.Softmax, gọi optimizer.zero_grad() mỗi bước. (2) lr=5 quá lớn → nhảy qua đáy, bùng nổ
+    → giảm LR (LR range test), dùng Adam, gradient clipping. (3) Không gọi model.eval() → Dropout vẫn hoạt động lúc đánh giá → kết quả ngẫu
+    nhiên; eval() + torch.no_grad(). (4) Train 99%/val 70%: overfitting → augmentation, weight decay, dropout, early stopping; với ảnh nên dùng
+    CNN/pretrained (chương 29, 33). Quy trình: overfit một batch nhỏ để xác nhận pipeline, kiểm tra shape/dtype, so với baseline đơn giản.
+project:
+  prompt: |
+    **Mini project — MLP PyTorch gọn nhẹ cho chữ số.** `load_digits()`, chia train/test 75/25 (`random_state=0`, stratify), chuẩn hoá theo train.
+    Xây và huấn luyện MLP sao cho accuracy test `test_acc` ≥ 0.96 **và** số tham số `n_params` ≤ 10 000.
+  code: |
+    import torch
+    from torch import nn
+    from sklearn.datasets import load_digits
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import StandardScaler
+
+    X, y = load_digits(return_X_y=True)
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25, random_state=0, stratify=y)
+    sc = StandardScaler().fit(X_tr)
+    Xt_tr, Xt_te = torch.tensor(sc.transform(X_tr), dtype=torch.float32), torch.tensor(sc.transform(X_te), dtype=torch.float32)
+    yt_tr, yt_te = torch.tensor(y_tr), torch.tensor(y_te)
+    torch.manual_seed(0)
+    ### START CODE HERE ### (≈ 14 dòng)
+    model = nn.Sequential(nn.Linear(64, 64), nn.ReLU(), nn.Linear(64, 32), nn.ReLU(), nn.Linear(32, 10))
+    opt = torch.optim.Adam(model.parameters(), lr=1e-3)
+    loss_fn = nn.CrossEntropyLoss()
+    for epoch in range(60):
+        model.train()
+        perm = torch.randperm(len(Xt_tr))
+        for s in range(0, len(perm), 32):
+            idx = perm[s:s + 32]
+            opt.zero_grad()
+            loss_fn(model(Xt_tr[idx]), yt_tr[idx]).backward()
+            opt.step()
+    model.eval()
+    with torch.no_grad():
+        test_acc = (model(Xt_te).argmax(1) == yt_te).float().mean().item()
+    n_params = sum(p.numel() for p in model.parameters())
+    ### END CODE HERE ###
+    print(f"tham số = {n_params} | accuracy test = {test_acc:.4f}")
+  tests: |
+    check_less(n_params, 10001, "≤ 10 000 tham số")
+    check_greater(test_acc, 0.96, "accuracy test ≥ 0.96")

@@ -1,0 +1,252 @@
+title: "18 · Feature Selection"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: why select
+        lesson: 01_filter_methods.ipynb
+        type: multi
+        question: "Lý do hợp lý để chọn feature:"
+        options: {a: "Dữ liệu ít so với số feature (giảm variance)", b: "Giảm chi phí thu thập/duy trì feature", c: "Model dễ diễn giải hơn", d: "Luôn tăng độ chính xác với mọi model"}
+        answer: abc
+        explanation: "Với model regularize/boosting, lợi ích độ chính xác thường nhỏ."
+      - id: t02
+        topic: filter blind spots
+        lesson: 01_filter_methods.ipynb
+        type: multi
+        question: "Filter methods (đánh giá từng feature riêng lẻ) không phát hiện được:"
+        options: {a: "Feature dư thừa (bản sao)", b: "Tương tác giữa feature", c: "Feature có phương sai bằng 0", d: "Feature chỉ có ích khi đi cùng feature khác"}
+        answer: abd
+        explanation: "Variance threshold là một filter."
+      - id: t03
+        topic: MI vs F
+        lesson: 01_filter_methods.ipynb
+        type: mcq
+        question: "Feature có quan hệ y = (x − 0.5)² với x đều trên [0, 1]. Phương pháp nào phát hiện được?"
+        options: {a: "F-test", b: "Pearson", c: "Mutual information", d: "Spearman"}
+        answer: c
+        explanation: "Không đơn điệu → tương quan ≈ 0."
+      - id: t04
+        topic: VIF
+        lesson: 01_filter_methods.ipynb
+        type: mcq
+        question: "VIF cao (> 10) cho biết:"
+        options:
+          a: "Feature gần như là tổ hợp tuyến tính của feature khác — hệ số model tuyến tính không ổn định"
+          b: "Feature rất quan trọng"
+          c: "Feature có nhiều missing"
+          d: "Feature có phân phối lệch"
+        answer: a
+        explanation: "VIF = 1/(1 − R²_j)."
+      - id: t05
+        topic: wrapper
+        lesson: 02_wrapper_methods.ipynb
+        type: mcq
+        question: "Forward selection thêm feature ở mỗi bước dựa trên:"
+        options: {a: "Tương quan với target", b: "Điểm CV của model khi thêm feature đó", c: "Phương sai", d: "Thứ tự cột"}
+        answer: b
+        explanation: "Đánh giá tập con bằng chính model."
+      - id: t06
+        topic: wrapper cost
+        lesson: 02_wrapper_methods.ipynb
+        type: mcq
+        question: "Nhược điểm chính của wrapper methods:"
+        options: {a: "Không thấy tương tác", b: "Chi phí tính toán lớn và dễ overfit quá trình chọn", c: "Không dùng được với cây", d: "Chỉ cho phân loại"}
+        answer: b
+        explanation: "O(d²) lần train, selection bias."
+      - id: t07
+        topic: RFE
+        lesson: 02_wrapper_methods.ipynb
+        type: mcq
+        question: "RFE loại feature dựa trên:"
+        options: {a: "Điểm CV khi bỏ từng feature", b: "Importance/hệ số của model train trên tập feature hiện tại", c: "Mutual information", d: "Ngẫu nhiên"}
+        answer: b
+        explanation: "Rẻ hơn SFS nhưng phụ thuộc importance."
+      - id: t08
+        topic: stopping
+        lesson: 02_wrapper_methods.ipynb
+        type: tf
+        question: "Kết quả của sequential feature selection có thể phụ thuộc mạnh vào tiêu chí dừng (tol / số feature)."
+        answer: true
+        explanation: "Backward với tol dừng sớm và giữ nhiễu trong bài 02."
+      - id: t09
+        topic: stability
+        lesson: 02_wrapper_methods.ipynb
+        type: mcq
+        question: "Hai feature gần như trùng nhau. Qua nhiều mẫu bootstrap, phương pháp chọn feature thường:"
+        options: {a: "Luôn chọn cả hai", b: "Nhảy qua lại giữa hai feature", c: "Luôn bỏ cả hai", d: "Chọn feature có tên đứng trước"}
+        answer: b
+        explanation: "Không diễn giải 'không được chọn = vô dụng'."
+      - id: t10
+        topic: L1
+        lesson: 03_embedded_methods_and_pitfalls.ipynb
+        type: mcq
+        question: "Regularization nào đẩy hệ số về đúng 0?"
+        options: {a: "L2 (Ridge)", b: "L1 (Lasso)", c: "Dropout", d: "Early stopping"}
+        answer: b
+        explanation: "Góc nhọn của ràng buộc L1."
+      - id: t11
+        topic: correlated L1
+        lesson: 03_embedded_methods_and_pitfalls.ipynb
+        type: mcq
+        question: "Với nhóm feature tương quan mạnh, phương pháp nào chọn cả nhóm ổn định hơn Lasso?"
+        options: {a: "Elastic Net", b: "OLS", c: "Variance threshold", d: "Forward selection"}
+        answer: a
+        explanation: "L1 + L2."
+      - id: t12
+        topic: shadow
+        lesson: 03_embedded_methods_and_pitfalls.ipynb
+        type: mcq
+        question: "Shadow features (Boruta) là:"
+        options:
+          a: "Bản sao xáo trộn của feature — chắc chắn vô ích — dùng làm ngưỡng nhiễu cho importance"
+          b: "Feature bị ẩn"
+          c: "Feature trùng lặp"
+          d: "Feature tương lai"
+        answer: a
+        explanation: "Giữ feature vượt shadow tốt nhất nhất quán."
+      - id: t13
+        topic: stability selection
+        lesson: 03_embedded_methods_and_pitfalls.ipynb
+        type: mcq
+        question: "Stability selection giữ feature:"
+        options: {a: "Có hệ số lớn nhất ở một lần fit", b: "Được chọn thường xuyên qua nhiều lần fit trên nửa dữ liệu ngẫu nhiên", c: "Có phương sai lớn", d: "Đứng đầu theo F-test"}
+        answer: b
+        explanation: "Giảm feature nhiễu 'may mắn'."
+      - id: t14
+        topic: causality
+        lesson: 03_embedded_methods_and_pitfalls.ipynb
+        type: tf
+        question: "Feature được Lasso chọn chắc chắn là nguyên nhân của target."
+        answer: false
+        explanation: "Có thể là proxy."
+      - id: t15
+        topic: when selection helps
+        lesson: 03_embedded_methods_and_pitfalls.ipynb
+        type: mcq
+        question: "Loại 20 feature nhiễu thường giúp nhiều nhất cho model nào?"
+        options: {a: "KNN / SVM RBF (dựa trên khoảng cách)", b: "Random Forest", c: "Gradient Boosting", d: "Như nhau"}
+        answer: a
+        explanation: "Mọi feature đóng góp như nhau vào khoảng cách."
+      - id: t16
+        topic: leakage
+        lesson: 03_embedded_methods_and_pitfalls.ipynb
+        type: tf
+        question: "Chọn feature trên toàn bộ dữ liệu trước khi cross-validate là chấp nhận được nếu dùng filter đơn giản."
+        answer: false
+        explanation: "Mọi bước học từ dữ liệu phải nằm trong Pipeline."
+  math:
+    questions:
+      - id: m01
+        topic: VIF
+        lesson: 01_filter_methods.ipynb
+        type: numeric
+        decimals: 2
+        question: "R²_j = 0.8. VIF = ?"
+        answer: 5
+        explanation: "1/(1 − 0.8)."
+      - id: m02
+        topic: forward cost
+        lesson: 02_wrapper_methods.ipynb
+        type: numeric
+        decimals: 0
+        question: "Forward selection: 20 feature, chọn 3 (không dừng sớm), 5-fold CV. Bao nhiêu lần fit?"
+        answer: 285
+        explanation: "5·(20 + 19 + 18)."
+      - id: m03
+        topic: subsets
+        lesson: 02_wrapper_methods.ipynb
+        type: numeric
+        decimals: 0
+        question: "Có bao nhiêu tập con khác rỗng của 10 feature?"
+        answer: 1023
+        explanation: "2¹⁰ − 1."
+      - id: m04
+        topic: MI
+        lesson: 01_filter_methods.ipynb
+        type: numeric
+        decimals: 3
+        question: "X và Y độc lập. Mutual information I(X; Y) = ?"
+        answer: 0
+        explanation: "Độc lập ⇔ MI = 0."
+      - id: m05
+        topic: Lasso shrink
+        lesson: 03_embedded_methods_and_pitfalls.ipynb
+        type: numeric
+        decimals: 2
+        question: "Với feature trực chuẩn, Lasso co hệ số OLS β = 1.5 bằng soft-threshold sign(β)·max(|β| − λ, 0). Với λ = 0.4, hệ số Lasso = ?"
+        answer: 1.1
+        explanation: "1.5 − 0.4."
+coding:
+  tasks:
+    - id: c01
+      title: Soft-thresholding
+      prompt: |
+        Viết `soft_threshold(beta, lam)` = sign(β)·max(|β| − λ, 0) (vector hoá). Đây là nghiệm Lasso khi feature trực chuẩn.
+      code: |
+        def soft_threshold(beta, lam):
+            ### START CODE HERE ### (≈ 1 dòng)
+            out = np.sign(beta) * np.maximum(np.abs(beta) - lam, 0)
+            ### END CODE HERE ###
+            return out
+      tests: |
+        check_close(soft_threshold(np.array([1.5, -0.3, -2.0, 0.4]), 0.4), [1.1, 0.0, -1.6, 0.0], message="soft threshold")
+        check_true(np.all(soft_threshold(np.array([0.1, -0.2]), 1.0) == 0), "hệ số nhỏ → 0")
+    - id: c02
+      title: Chọn top-k theo điểm
+      prompt: |
+        Viết `select_top_k(scores, names, k)` trả về list tên k feature có điểm cao nhất, theo thứ tự điểm giảm dần.
+      code: |
+        def select_top_k(scores, names, k):
+            ### START CODE HERE ### (≈ 2 dòng)
+            order = np.argsort(-np.asarray(scores), kind="stable")[:k]
+            top = [names[i] for i in order]
+            ### END CODE HERE ###
+            return top
+      tests: |
+        check_equal(select_top_k([0.1, 0.9, 0.5, 0.7], ["a", "b", "c", "d"], 2), ["b", "d"], "top-2")
+        check_equal(select_top_k([3, 1, 2], ["x", "y", "z"], 3), ["x", "z", "y"], "đủ k")
+analysis:
+  prompt: |
+    Một nhóm nghiên cứu y sinh có 120 bệnh nhân và 20 000 biểu hiện gen. Họ: (1) chọn 50 gen có t-test với nhãn bệnh mạnh nhất trên toàn bộ
+    120 mẫu; (2) chạy 10-fold CV với SVM trên 50 gen đó, báo cáo accuracy 96%; (3) công bố "50 gen này là nguyên nhân của bệnh";
+    (4) khi một nhóm khác lặp lại trên dữ liệu mới, danh sách gen trùng chưa tới 10. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra chọn gen trên toàn bộ 120 mẫu trước CV → rò rỉ, accuracy 96% lạc quan (Ambroise & McLachlan); phải chọn trong mỗi fold/nested CV"
+    - "Chỉ ra d ≫ n (20 000 vs 120): nhiều gen tương quan tình cờ với nhãn; cần kiểm soát false discovery/kiểm định trên dữ liệu độc lập"
+    - "Chỉ ra danh sách gen không ổn định (feature tương quan, mẫu nhỏ) → stability selection, báo cáo tần suất chọn"
+    - "Chỉ ra feature được chọn để dự đoán ≠ nguyên nhân; kết luận nhân quả cần thiết kế/thí nghiệm khác"
+    - "Đề xuất quy trình: pipeline (chọn gen + model) trong nested CV, regularization (Elastic Net), validation ngoài trên cohort độc lập"
+  sample_answer: |
+    (1) Chọn 50 gen bằng t-test trên toàn bộ 120 mẫu rồi mới CV → validation đã tham gia chọn gen → 96% là ảo tưởng; phải đặt bước chọn trong mỗi fold (nested CV).
+    (2) 20 000 gen vs 120 mẫu: hàng trăm gen sẽ tương quan tình cờ với nhãn; cần kiểm soát FDR và xác nhận trên cohort độc lập.
+    (3) Danh sách gen không ổn định vì nhiều gen tương quan và mẫu nhỏ — dùng stability selection, báo cáo tần suất chọn, Elastic Net để giữ nhóm gen tương quan.
+    (4) Gen dự đoán tốt chưa chắc là nguyên nhân (proxy, confounding) — cần nghiên cứu sinh học/thí nghiệm.
+    (5) Quy trình: Pipeline(chọn gen → model) trong nested CV; báo cáo accuracy kèm CI; external validation.
+project:
+  prompt: |
+    **Mini project — Chọn feature cho KNN.** Dùng `make_friedman1(n_samples=1000, n_features=30, noise=1.0, random_state=7)`.
+    Chia train/test 75/25 (`random_state=0`). Xây Pipeline: StandardScaler → **bước chọn feature** (tuỳ chọn: SelectKBest với mutual_info,
+    SelectFromModel, SFS...) → `KNeighborsRegressor(10)`; chọn tham số bằng CV trên train. Đạt **R² test ≥ 0.80** (biến `test_r2`)
+    — so với KNN trên 30 feature (`baseline_r2`).
+  code: |
+    from functools import partial
+    from sklearn.datasets import make_friedman1
+    from sklearn.feature_selection import SelectKBest, mutual_info_regression
+    from sklearn.model_selection import GridSearchCV, train_test_split
+    from sklearn.neighbors import KNeighborsRegressor
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import StandardScaler
+
+    X, y = make_friedman1(n_samples=1000, n_features=30, noise=1.0, random_state=7)
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25, random_state=0)
+    ### START CODE HERE ### (≈ 8 dòng)
+    baseline_r2 = make_pipeline(StandardScaler(), KNeighborsRegressor(10)).fit(X_tr, y_tr).score(X_te, y_te)
+    mi = partial(mutual_info_regression, n_neighbors=10, random_state=0)
+    grid = GridSearchCV(make_pipeline(StandardScaler(), SelectKBest(mi), KNeighborsRegressor(10)),
+                        {"selectkbest__k": [3, 4, 5, 6, 8, 10]}, cv=5, scoring="r2").fit(X_tr, y_tr)
+    test_r2 = grid.score(X_te, y_te)
+    ### END CODE HERE ###
+    print(f"R² test: KNN 30 feature = {baseline_r2:.3f} | KNN + chọn feature = {test_r2:.3f} (k = {grid.best_params_['selectkbest__k']})")
+  tests: |
+    check_greater(test_r2, 0.80, "R² test ≥ 0.80")

@@ -1,0 +1,235 @@
+{
+ "id": "37_uncertainty_and_calibration",
+ "kind": "Chapter",
+ "title": "37 · Uncertainty & Calibration",
+ "next": "38_causal_machine_learning",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "calibration",
+     "answer_hashes": [
+      "b087d3d3abf9fd3b0a36"
+     ],
+     "lesson": "01_calibration_reliability_brier.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "auc vs calibration",
+     "answer_hashes": [
+      "daa1a97315be5c01f5c7"
+     ],
+     "lesson": "01_calibration_reliability_brier.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "ece floor",
+     "answer_hashes": [
+      "b561fd05982412a04c3e"
+     ],
+     "lesson": "01_calibration_reliability_brier.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "multi",
+     "topic": "proper scoring",
+     "answer_hashes": [
+      "606705e60e07a1d0ca7d"
+     ],
+     "lesson": "01_calibration_reliability_brier.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "brier decomposition",
+     "answer_hashes": [
+      "4c7c87fa250ccf8c7c20"
+     ],
+     "lesson": "01_calibration_reliability_brier.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "multi",
+     "topic": "overconfident models",
+     "answer_hashes": [
+      "cdf7cefad34a5a075185"
+     ],
+     "lesson": "01_calibration_reliability_brier.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "calibration set",
+     "answer_hashes": [
+      "8ca6a5e0f89eed26f633"
+     ],
+     "lesson": "02_platt_and_isotonic.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "platt vs isotonic",
+     "answer_hashes": [
+      "ef621bd61f9e899396ca"
+     ],
+     "lesson": "02_platt_and_isotonic.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "tf",
+     "topic": "temperature",
+     "answer_hashes": [
+      "f776df5f53e383243f64"
+     ],
+     "lesson": "02_platt_and_isotonic.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "prior shift",
+     "answer_hashes": [
+      "2bbb3953cee3d0902fb3"
+     ],
+     "lesson": "02_platt_and_isotonic.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "aleatoric epistemic",
+     "answer_hashes": [
+      "05a71f6d042829a4b005"
+     ],
+     "lesson": "03_aleatoric_and_epistemic.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "ensemble",
+     "answer_hashes": [
+      "f9c8f5d26641b4e3cd39"
+     ],
+     "lesson": "03_aleatoric_and_epistemic.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "topic": "ood",
+     "answer_hashes": [
+      "c320cec3ca28c7233aef"
+     ],
+     "lesson": "03_aleatoric_and_epistemic.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "conformal guarantee",
+     "answer_hashes": [
+      "0878ee4824dcc1c54a60"
+     ],
+     "lesson": "04_conformal_prediction.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "cqr",
+     "answer_hashes": [
+      "0a374e7d6ec4fc74325b"
+     ],
+     "lesson": "04_conformal_prediction.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "shift",
+     "answer_hashes": [
+      "611213ae3d6120033c85"
+     ],
+     "lesson": "04_conformal_prediction.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "brier",
+     "answer_hashes": [
+      "345403925b0963b60514"
+     ],
+     "decimals": 3,
+     "lesson": "01_calibration_reliability_brier.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "decision threshold",
+     "answer_hashes": [
+      "c8b4624f7e02fb4f2c1d"
+     ],
+     "decimals": 2,
+     "lesson": "01_calibration_reliability_brier.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "prior shift",
+     "answer_hashes": [
+      "48a623ced0253643871e"
+     ],
+     "decimals": 3,
+     "lesson": "02_platt_and_isotonic.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "conformal rank",
+     "answer_hashes": [
+      "8b66dc4b2fa4b32547c6"
+     ],
+     "decimals": 0,
+     "lesson": "04_conformal_prediction.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "total variance",
+     "answer_hashes": [
+      "7530022dcd43719d9797"
+     ],
+     "decimals": 3,
+     "lesson": "03_aleatoric_and_epistemic.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

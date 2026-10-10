@@ -1,0 +1,248 @@
+title: "13 · SVM & Kernels"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: maximum margin
+        lesson: 01_maximum_margin_intuition.ipynb
+        type: mcq
+        question: "Trong các siêu phẳng tách đúng dữ liệu, SVM chọn siêu phẳng:"
+        options: {a: "Đi qua gốc toạ độ", b: "Có khoảng cách tới điểm gần nhất lớn nhất", c: "Có ít support vector nhất", d: "Song song trục"}
+        answer: b
+        explanation: "Maximum margin."
+      - id: t02
+        topic: margin formula
+        lesson: 01_maximum_margin_intuition.ipynb
+        type: mcq
+        question: "Sau khi chuẩn hoá để điểm gần nhất có y(wᵀx + b) = 1, độ rộng 'con đường' (giữa hai lề) bằng:"
+        options: {a: "‖w‖", b: "1/‖w‖", c: "2/‖w‖", d: "‖w‖²"}
+        answer: c
+        explanation: "Mỗi bên 1/‖w‖."
+      - id: t03
+        topic: support vectors
+        lesson: 01_maximum_margin_intuition.ipynb
+        type: tf
+        question: "Xoá một điểm không phải support vector rồi train lại, ranh giới SVM không đổi."
+        answer: true
+        explanation: "Nghiệm chỉ phụ thuộc support vectors."
+      - id: t04
+        topic: convexity
+        lesson: 01_maximum_margin_intuition.ipynb
+        type: tf
+        question: "Bài toán SVM (primal) là bài toán tối ưu lồi, có nghiệm toàn cục."
+        answer: true
+        explanation: "QP lồi."
+      - id: t05
+        topic: C
+        lesson: 02_soft_margin_hinge_loss_from_scratch.ipynb
+        type: mcq
+        question: "Tăng C trong soft-margin SVM thường làm:"
+        options: {a: "Lề rộng hơn, nhiều vi phạm hơn", b: "Lề hẹp hơn, ít vi phạm hơn, dễ overfit", c: "Không đổi", d: "Bắt buộc dùng kernel"}
+        answer: b
+        explanation: "C = trọng số phạt vi phạm."
+      - id: t06
+        topic: hinge loss
+        lesson: 02_soft_margin_hinge_loss_from_scratch.ipynb
+        type: mcq
+        question: "Hinge loss max(0, 1 − m) bằng 0 khi:"
+        options: {a: "m ≥ 0", b: "m ≥ 1", c: "m ≤ 1", d: "Luôn > 0"}
+        answer: b
+        explanation: "Điểm đủ xa không ảnh hưởng."
+      - id: t07
+        topic: slack
+        lesson: 02_soft_margin_hinge_loss_from_scratch.ipynb
+        type: mcq
+        question: "Slack ξᵢ = 0.5 nghĩa là điểm i:"
+        options: {a: "Phân loại sai", b: "Đúng phía nhưng nằm trong lề", c: "Ngoài lề, đúng phía", d: "Nằm trên ranh giới"}
+        answer: b
+        explanation: "0 < ξ ≤ 1: trong lề; ξ > 1: sai phía."
+      - id: t08
+        topic: SVM vs LR
+        lesson: 02_soft_margin_hinge_loss_from_scratch.ipynb
+        type: multi
+        question: "Khác biệt giữa Linear SVM và Logistic Regression:"
+        options:
+          a: "SVM dùng hinge loss, LR dùng log-loss"
+          b: "LR cho xác suất tự nhiên, SVM chỉ cho điểm số"
+          c: "Nghiệm SVM chỉ phụ thuộc support vectors"
+          d: "SVM luôn chính xác hơn"
+        answer: abc
+        explanation: "Accuracy thường tương đương."
+      - id: t09
+        topic: dual
+        lesson: 03_kernel_trick.ipynb
+        type: mcq
+        question: "Kernel trick khả thi vì trong bài toán đối ngẫu dữ liệu chỉ xuất hiện qua:"
+        options: {a: "Nhãn y", b: "Tích vô hướng xᵢᵀxⱼ", c: "Chuẩn ‖x‖", d: "Đạo hàm"}
+        answer: b
+        explanation: "Thay bằng K(xᵢ, xⱼ)."
+      - id: t10
+        topic: RBF gamma
+        lesson: 03_kernel_trick.ipynb
+        type: mcq
+        question: "RBF SVM overfit (train 100%, validation thấp). Nên:"
+        options: {a: "Tăng γ", b: "Giảm γ (và/hoặc giảm C)", c: "Bỏ scaling", d: "Dùng nhiều feature hơn"}
+        answer: b
+        explanation: "γ lớn → ảnh hưởng mỗi SV rất hẹp."
+      - id: t11
+        topic: kernel validity
+        lesson: 03_kernel_trick.ipynb
+        type: tf
+        question: "Ma trận Gram của một kernel hợp lệ (Mercer) là nửa xác định dương."
+        answer: true
+        explanation: "K = ΦΦᵀ."
+      - id: t12
+        topic: RBF dimension
+        lesson: 03_kernel_trick.ipynb
+        type: mcq
+        question: "Không gian đặc trưng ứng với RBF kernel có số chiều:"
+        options: {a: "Bằng d", b: "d²", c: "Vô hạn", d: "Bằng số mẫu"}
+        answer: c
+        explanation: "Khai triển Taylor của exp."
+      - id: t13
+        topic: scaling
+        lesson: 04_svm_in_practice_and_failure_cases.ipynb
+        type: tf
+        question: "RBF SVM không cần scaling feature vì kernel tự chuẩn hoá."
+        answer: false
+        explanation: "Dựa trên khoảng cách — giống KNN."
+      - id: t14
+        topic: probability
+        lesson: 04_svm_in_practice_and_failure_cases.ipynb
+        type: mcq
+        question: "SVC(probability=True) lấy xác suất bằng cách:"
+        options: {a: "Softmax của decision_function", b: "Platt scaling với CV nội bộ (train chậm hơn)", c: "Đếm support vectors", d: "Không thể"}
+        answer: b
+        explanation: "Có thể không nhất quán với predict."
+      - id: t15
+        topic: large data
+        lesson: 04_svm_in_practice_and_failure_cases.ipynb
+        type: multi
+        question: "Dữ liệu 5 triệu mẫu. Lựa chọn khả thi?"
+        options: {a: "SVC(kernel='rbf')", b: "LinearSVC / SGDClassifier(loss='hinge')", c: "Nystroem/RFF + model tuyến tính", d: "Gradient boosting"}
+        answer: bcd
+        explanation: "Kernel SVM O(n²)–O(n³)."
+      - id: t16
+        topic: SVR
+        lesson: 04_svm_in_practice_and_failure_cases.ipynb
+        type: mcq
+        question: "Trong SVR, tăng ε (độ rộng ống) thường làm:"
+        options: {a: "Tăng số support vectors", b: "Giảm số support vectors", c: "Không đổi", d: "Model thành phân loại"}
+        answer: b
+        explanation: "Nhiều điểm nằm trong ống hơn → không là SV."
+  math:
+    questions:
+      - id: m01
+        topic: margin
+        lesson: 01_maximum_margin_intuition.ipynb
+        type: numeric
+        decimals: 3
+        question: "w = (6, 8). Độ rộng con đường 2/‖w‖ = ?"
+        answer: 0.2
+        explanation: "‖w‖ = 10."
+      - id: m02
+        topic: distance
+        lesson: 01_maximum_margin_intuition.ipynb
+        type: numeric
+        decimals: 3
+        question: "Siêu phẳng 3x₁ + 4x₂ − 10 = 0. Khoảng cách (có dấu) từ điểm (2, 2) tới siêu phẳng?"
+        answer: 0.8
+        explanation: "(6 + 8 − 10)/5."
+      - id: m03
+        topic: hinge
+        lesson: 02_soft_margin_hinge_loss_from_scratch.ipynb
+        type: numeric
+        decimals: 2
+        question: "Điểm có margin y(wᵀx + b) = −0.5. Hinge loss = ?"
+        answer: 1.5
+        explanation: "max(0, 1 + 0.5)."
+      - id: m04
+        topic: RBF
+        lesson: 03_kernel_trick.ipynb
+        type: numeric
+        decimals: 3
+        question: "RBF với γ = 0.5, ‖a − b‖² = 2. K(a, b) = ?"
+        answer: 0.3679
+        explanation: "e⁻¹."
+      - id: m05
+        topic: polynomial kernel
+        lesson: 03_kernel_trick.ipynb
+        type: numeric
+        decimals: 1
+        question: "a = (1, 2), b = (3, −1). (aᵀb + 1)² = ?"
+        answer: 4
+        explanation: "(3 − 2 + 1)² = 4."
+coding:
+  tasks:
+    - id: c01
+      title: Hinge loss có regularization
+      prompt: |
+        Viết `svm_objective(w, b, X, y, C)` (y ∈ {−1, +1}) = ½‖w‖² + C·Σ max(0, 1 − y(Xw + b)).
+      code: |
+        def svm_objective(w, b, X, y, C=1.0):
+            ### START CODE HERE ### (≈ 2 dòng)
+            margins = y * (X @ w + b)
+            J = 0.5 * w @ w + C * np.maximum(0, 1 - margins).sum()
+            ### END CODE HERE ###
+            return J
+      tests: |
+        X = np.array([[2, 1], [1, 0.5], [1, 1.0]])
+        y = np.array([1, 1, -1.0])
+        check_close(svm_objective(np.array([3.0, 4.0]), -5.0, X, y, C=1.0), 12.5 + 4, message="½·25 + (0 + 1 + 3)")
+        check_close(svm_objective(np.zeros(2), 0.0, X, y, C=2.0), 6.0, message="w = 0: mỗi điểm hinge 1")
+    - id: c02
+      title: RBF kernel matrix
+      prompt: |
+        Viết `rbf(A, B, gamma)` trả về ma trận `(n_A, n_B)` với K_ij = exp(−γ‖a_i − b_j‖²), không vòng lặp.
+      code: |
+        def rbf(A, B, gamma=1.0):
+            ### START CODE HERE ### (≈ 2 dòng)
+            sq = (A**2).sum(1)[:, None] + (B**2).sum(1)[None, :] - 2 * A @ B.T
+            K = np.exp(-gamma * np.maximum(sq, 0))
+            ### END CODE HERE ###
+            return K
+      tests: |
+        from sklearn.metrics.pairwise import rbf_kernel
+        rng = np.random.default_rng(0)
+        A, B = rng.normal(size=(7, 3)), rng.normal(size=(5, 3))
+        check_close(rbf(A, B, 0.7), rbf_kernel(A, B, gamma=0.7), tol=1e-10, message="khớp sklearn")
+        check_close(np.diag(rbf(A, A, 0.7)), np.ones(7), message="K(x, x) = 1")
+analysis:
+  prompt: |
+    Một nhóm phân loại email spam (800 000 email, 200 000 feature TF-IDF) bằng `SVC(kernel="rbf", C=1000, gamma=10, probability=True)`
+    không scale gì thêm. Train mất 3 ngày chưa xong. Trên một tập con 20 000 email, họ báo cáo accuracy train 100%, test 81%,
+    và dùng `predict_proba > 0.5` để tự động xoá email. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra kernel SVM không khả thi với 800k mẫu (O(n²)–O(n³) thời gian, O(n²) bộ nhớ) → LinearSVC/SGDClassifier hoặc xấp xỉ kernel"
+    - "Chỉ ra văn bản TF-IDF nhiều chiều thường tách tuyến tính tốt → linear SVM là lựa chọn chuẩn"
+    - "Chỉ ra C = 1000, gamma = 10 gây overfit (train 100%, test 81%) → tune C, gamma trên thang log bằng CV"
+    - "Chỉ ra probability=True tốn thêm chi phí (CV nội bộ) và xác suất Platt có thể không nhất quán → dùng decision_function/calibration tường minh"
+    - "Đề xuất chọn ngưỡng theo chi phí (xoá nhầm email quan trọng rất đắt) thay vì 0.5, đưa vào thư mục spam thay vì xoá"
+  sample_answer: |
+    (1) 800 000 mẫu với RBF SVM: thời gian O(n²)–O(n³), ma trận kernel không vừa bộ nhớ → dùng LinearSVC/SGDClassifier(loss="hinge"), hoặc Nystroem/RFF.
+    (2) TF-IDF 200 000 chiều thường gần tách tuyến tính → linear SVM là baseline mạnh, nhanh.
+    (3) C = 1000, γ = 10 → ranh giới bám từng điểm: train 100%/test 81% là overfit; tune C (và γ nếu dùng kernel) theo thang log với CV.
+    (4) probability=True làm train chậm thêm (CV nội bộ) và predict_proba có thể không nhất quán với predict → dùng decision_function, calibrate tường minh nếu cần xác suất.
+    (5) Xoá tự động với ngưỡng 0.5 bỏ qua chi phí bất đối xứng: email quan trọng bị xoá rất đắt → ngưỡng theo chi phí, chuyển vào thư mục spam.
+project:
+  prompt: |
+    **Mini project — RBF SVM cho bài toán phi tuyến.** Dùng `make_classification_2d("spiral", n=800, noise=0.3, seed=0)` (hai vòng xoắn).
+    Chia train/test 70/30 (`random_state=0`, `stratify`). Xây Pipeline scale + `SVC(kernel="rbf")`, chọn `C`, `gamma` bằng `GridSearchCV`
+    (thang log, 5-fold). Đạt **accuracy test ≥ 0.95** (biến `test_acc`).
+  code: |
+    from sklearn.model_selection import GridSearchCV, train_test_split
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.svm import SVC
+    from ml_course.datasets import make_classification_2d
+
+    X, y = make_classification_2d("spiral", n=800, noise=0.3, seed=0)
+    ### START CODE HERE ### (≈ 5 dòng)
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.3, random_state=0, stratify=y)
+    grid = GridSearchCV(make_pipeline(StandardScaler(), SVC(kernel="rbf")),
+                        {"svc__C": np.logspace(-1, 3, 5), "svc__gamma": np.logspace(-1, 2, 7)}, cv=5).fit(X_tr, y_tr)
+    test_acc = grid.score(X_te, y_te)
+    ### END CODE HERE ###
+    print(grid.best_params_, "| accuracy test:", round(test_acc, 4))
+  tests: |
+    check_greater(test_acc, 0.95, "accuracy test ≥ 0.95")

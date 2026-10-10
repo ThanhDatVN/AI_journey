@@ -1,0 +1,161 @@
+{
+ "id": "03_data_analysis_and_eda",
+ "kind": "Chapter",
+ "title": "03 · Data Analysis & EDA",
+ "next": "04_data_preprocessing",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "dữ liệu có/không cấu trúc",
+     "answer_hashes": [
+      "24c24c23ea378407e43b"
+     ],
+     "lesson": "01_types_of_data_and_storage.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "biểu diễn ảnh",
+     "answer_hashes": [
+      "f29c387955ec158dee01"
+     ],
+     "lesson": "01_types_of_data_and_storage.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "tf",
+     "topic": "bag-of-words",
+     "answer_hashes": [
+      "fe75659ccf372a8b4d6d"
+     ],
+     "lesson": "01_types_of_data_and_storage.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "bảo mật pickle",
+     "answer_hashes": [
+      "13583e2ab90b42e49ddf"
+     ],
+     "lesson": "01_types_of_data_and_storage.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "quy trình EDA",
+     "answer_hashes": [
+      "91fda5daaa570d64e4a3"
+     ],
+     "lesson": "02_eda_workflow.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "tf",
+     "topic": "định danh không phải feature",
+     "answer_hashes": [
+      "36a6a25ef28b2977e9a7"
+     ],
+     "lesson": "02_eda_workflow.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "Pearson vs Spearman",
+     "answer_hashes": [
+      "6debb2c6fadd269b2dea"
+     ],
+     "lesson": "03_univariate_and_bivariate_analysis.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "Cramér's V / p-value",
+     "answer_hashes": [
+      "0399adf17886e269a6fd"
+     ],
+     "lesson": "03_univariate_and_bivariate_analysis.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "tương tác",
+     "answer_hashes": [
+      "a198e7a83caa2ea7d124"
+     ],
+     "lesson": "03_univariate_and_bivariate_analysis.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "MCAR/MAR/MNAR",
+     "answer_hashes": [
+      "74d75b077c891da5f03a"
+     ],
+     "lesson": "04_data_quality_and_pitfalls.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "tf",
+     "topic": "outlier",
+     "answer_hashes": [
+      "0cef24ef1c16e122eec2"
+     ],
+     "lesson": "04_data_quality_and_pitfalls.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "nghịch lý Simpson",
+     "answer_hashes": [
+      "0b3c0c45cdcfbb8eec9b"
+     ],
+     "lesson": "04_data_quality_and_pitfalls.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "multi",
+     "topic": "data leakage",
+     "answer_hashes": [
+      "d77fe784c95da5c81825"
+     ],
+     "lesson": "04_data_quality_and_pitfalls.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "external data",
+     "answer_hashes": [
+      "70f62c76e34dad1ba63b"
+     ],
+     "lesson": "01_types_of_data_and_storage.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

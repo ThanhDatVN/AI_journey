@@ -1,0 +1,235 @@
+{
+ "id": "05_machine_learning_fundamentals",
+ "kind": "Chapter",
+ "title": "05 · ML Fundamentals",
+ "next": "06_linear_regression",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "định nghĩa Mitchell (T, P, E)",
+     "answer_hashes": [
+      "d18b10e1bfc3f63dd3d4"
+     ],
+     "lesson": "01_what_is_machine_learning.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "loại bài toán",
+     "answer_hashes": [
+      "b942ee66d258877eba92"
+     ],
+     "lesson": "02_types_of_machine_learning.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "parameter vs hyperparameter",
+     "answer_hashes": [
+      "bc521b83d0946d1b7e5a"
+     ],
+     "lesson": "02_types_of_machine_learning.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "self-supervised",
+     "answer_hashes": [
+      "dfc96eb6f57ec55ae054"
+     ],
+     "lesson": "02_types_of_machine_learning.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "vai trò của test set",
+     "answer_hashes": [
+      "9288e3e34185ba4945f9"
+     ],
+     "lesson": "03_train_validation_test_and_model_selection.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "overfitting",
+     "answer_hashes": [
+      "bdab84dc994758437d0a"
+     ],
+     "lesson": "04_overfitting_and_bias_variance.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "tăng regularization",
+     "answer_hashes": [
+      "ff513ffbdd2267fe9290"
+     ],
+     "lesson": "04_overfitting_and_bias_variance.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "learning curve high bias",
+     "answer_hashes": [
+      "7a3f43ba8ed4e1ee866f"
+     ],
+     "lesson": "05_learning_curves_and_error_analysis.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "tf",
+     "topic": "error analysis",
+     "answer_hashes": [
+      "74d55772d30a395587b5"
+     ],
+     "lesson": "05_learning_curves_and_error_analysis.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "curse of dimensionality",
+     "answer_hashes": [
+      "251df7c0f9b1f44f091e"
+     ],
+     "lesson": "06_curse_of_dimensionality_and_no_free_lunch.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "no free lunch",
+     "answer_hashes": [
+      "ea3bf64713aae8ace19c"
+     ],
+     "lesson": "06_curse_of_dimensionality_and_no_free_lunch.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "leakage — feature selection",
+     "answer_hashes": [
+      "b5f05600cad0db640ea3"
+     ],
+     "lesson": "07_data_leakage.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "leakage theo nhóm",
+     "answer_hashes": [
+      "a41c4d70d4cb2ba8867b"
+     ],
+     "lesson": "07_data_leakage.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "target leakage",
+     "answer_hashes": [
+      "1beaeb23d24b2034e227"
+     ],
+     "lesson": "07_data_leakage.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "các dạng shift",
+     "answer_hashes": [
+      "84f2fd64d847c8988d87"
+     ],
+     "lesson": "08_distribution_shift.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "adversarial validation",
+     "answer_hashes": [
+      "3878f234ef94840fae49"
+     ],
+     "lesson": "08_distribution_shift.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "chia dữ liệu",
+     "answer_hashes": [
+      "313ce978128342af2ebb"
+     ],
+     "decimals": 0,
+     "lesson": "03_train_validation_test_and_model_selection.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "avoidable bias / variance",
+     "answer_hashes": [
+      "f05220761fd1d1e1fce2"
+     ],
+     "decimals": 1,
+     "lesson": "05_learning_curves_and_error_analysis.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "bias-variance decomposition",
+     "answer_hashes": [
+      "f51a2c3ad0ccc4ab90e6"
+     ],
+     "decimals": 2,
+     "lesson": "04_overfitting_and_bias_variance.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "curse of dimensionality",
+     "answer_hashes": [
+      "5de8711dbbf0af106878"
+     ],
+     "decimals": 3,
+     "lesson": "06_curse_of_dimensionality_and_no_free_lunch.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "hiệu chỉnh label shift",
+     "answer_hashes": [
+      "955b9fa079561adf6e77"
+     ],
+     "decimals": 3,
+     "lesson": "08_distribution_shift.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

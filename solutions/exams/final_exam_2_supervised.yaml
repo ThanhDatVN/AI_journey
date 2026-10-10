@@ -1,0 +1,345 @@
+title: "Bài thi tổng hợp 2 · Học có giám sát (chương 06–13)"
+next: null
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: ols assumptions
+        lesson: 06_linear_regression
+        type: multi
+        question: "Giả định nào của hồi quy tuyến tính ảnh hưởng tới tính đúng của khoảng tin cậy cho hệ số?"
+        options: {a: "Phần dư độc lập", b: "Phương sai phần dư không đổi", c: "Các đặc trưng phải chuẩn hoá", d: "Quan hệ tuyến tính (đúng dạng mô hình)"}
+        answer: abd
+        explanation: "Chuẩn hoá không phải giả định — chỉ đổi thang hệ số."
+      - id: t02
+        topic: multicollinearity
+        lesson: 06_linear_regression
+        type: mcq
+        question: "Hai đặc trưng tương quan 0.99. Hệ quả chính với hồi quy tuyến tính:"
+        options: {a: "Hệ số không ổn định, phương sai lớn, khó diễn giải — dự đoán vẫn có thể tốt", b: "Mô hình không thể huấn luyện", c: "Dự đoán luôn sai", d: "R² giảm về 0"}
+        answer: a
+        explanation: "Ridge giúp ổn định hệ số."
+      - id: t03
+        topic: lasso
+        lesson: 06_linear_regression
+        type: mcq
+        question: "Điều chuẩn nào có xu hướng đưa nhiều hệ số về đúng 0?"
+        options: {a: "L1 (Lasso)", b: "L2 (Ridge)", c: "Không điều chuẩn", d: "Dropout"}
+        answer: a
+        explanation: "Hình học góc nhọn của ràng buộc L1."
+      - id: t04
+        topic: logistic loss
+        lesson: 07_logistic_regression
+        type: mcq
+        question: "Vì sao hồi quy logistic dùng log-loss thay vì MSE?"
+        options: {a: "Log-loss lồi theo trọng số và là likelihood của mô hình Bernoulli", b: "MSE không tính được", c: "Log-loss luôn nhỏ hơn", d: "Để chạy nhanh hơn"}
+        answer: a
+        explanation: "MSE với sigmoid không lồi."
+      - id: t05
+        topic: decision boundary
+        lesson: 07_logistic_regression
+        type: tf
+        question: "Hồi quy logistic (không thêm đặc trưng) có biên quyết định tuyến tính trong không gian đặc trưng."
+        answer: true
+        explanation: "p = 0.5 ⇔ wᵀx + b = 0."
+      - id: t06
+        topic: softmax
+        lesson: 07_logistic_regression
+        type: mcq
+        question: "Softmax regression với K lớp dự đoán:"
+        options: {a: "Phân phối xác suất trên K lớp (tổng bằng 1)", b: "K xác suất độc lập", c: "Một số thực", d: "Nhãn nhị phân"}
+        answer: a
+        explanation: "exp(z_k)/Σ exp(z_j)."
+      - id: t07
+        topic: knn scaling
+        lesson: 08_knn
+        type: mcq
+        question: "kNN với đặc trưng 'thu nhập (đồng)' và 'tuổi (năm)' chưa chuẩn hoá thì:"
+        options: {a: "Khoảng cách gần như chỉ do thu nhập quyết định", b: "Không ảnh hưởng gì", c: "Tuổi chi phối", d: "kNN tự chuẩn hoá"}
+        answer: a
+        explanation: "Thang đo lớn áp đảo khoảng cách Euclid."
+      - id: t08
+        topic: knn k
+        lesson: 08_knn
+        type: mcq
+        question: "kNN với k = 1:"
+        options: {a: "Lỗi train bằng 0, dễ overfit", b: "Underfit nặng", c: "Luôn dự đoán lớp đa số", d: "Không phụ thuộc dữ liệu"}
+        answer: a
+        explanation: "k lớn → biên mượt hơn."
+      - id: t09
+        topic: naive bayes
+        lesson: 09_naive_bayes
+        type: mcq
+        question: "Giả định 'naive' của Naive Bayes là:"
+        options: {a: "Các đặc trưng độc lập có điều kiện khi biết lớp", b: "Các lớp cân bằng", c: "Đặc trưng có phân phối chuẩn", d: "Không có giá trị thiếu"}
+        answer: a
+        explanation: "Vẫn phân loại tốt dù xác suất thường bị đẩy về 0/1."
+      - id: t10
+        topic: laplace smoothing
+        lesson: 09_naive_bayes
+        type: mcq
+        question: "Một từ chưa từng xuất hiện trong lớp 'spam' ở dữ liệu train. Không làm trơn Laplace thì:"
+        options: {a: "P(spam | thư chứa từ đó) = 0 bất kể các từ khác", b: "Không ảnh hưởng", c: "Mô hình bỏ qua từ đó", d: "Xác suất bằng 0.5"}
+        answer: a
+        explanation: "Tích xác suất bằng 0."
+      - id: t11
+        topic: tree invariance
+        lesson: 10_decision_trees
+        type: tf
+        question: "Cây quyết định không bị ảnh hưởng bởi phép biến đổi đơn điệu (như log) trên một đặc trưng."
+        answer: true
+        explanation: "Chỉ thứ tự giá trị quan trọng với ngưỡng chia."
+      - id: t12
+        topic: tree overfitting
+        lesson: 10_decision_trees
+        type: multi
+        question: "Cách giảm overfitting của một cây quyết định:"
+        options: {a: "Giới hạn max_depth", b: "Tăng min_samples_leaf", c: "Cắt tỉa theo chi phí độ phức tạp (ccp_alpha)", d: "Bỏ giới hạn độ sâu"}
+        answer: abc
+        explanation: "Cây sâu tự do thuộc lòng dữ liệu."
+      - id: t13
+        topic: random forest
+        lesson: 11_random_forest
+        type: mcq
+        question: "Random forest chọn ngẫu nhiên tập đặc trưng ở mỗi lần chia để:"
+        options: {a: "Giảm tương quan giữa các cây → trung bình giảm phương sai nhiều hơn", b: "Chạy nhanh hơn là lý do duy nhất", c: "Tăng bias", d: "Loại đặc trưng kém"}
+        answer: a
+        explanation: "Phương sai trung bình của các biến tương quan ρ: ρσ² + (1−ρ)σ²/n."
+      - id: t14
+        topic: oob
+        lesson: 11_random_forest
+        type: mcq
+        question: "Out-of-bag score của random forest là:"
+        options: {a: "Ước lượng hiệu năng dùng các mẫu không được bootstrap chọn cho từng cây", b: "Điểm trên tập test", c: "Điểm trên train", d: "Độ quan trọng đặc trưng"}
+        answer: a
+        explanation: "~37% mẫu nằm ngoài mỗi bootstrap."
+      - id: t15
+        topic: boosting
+        lesson: 12_gradient_boosting
+        type: mcq
+        question: "Gradient boosting xây mỗi cây mới để:"
+        options: {a: "Khớp gradient âm của loss (phần dư với MSE) của mô hình hiện tại", b: "Khớp lại toàn bộ dữ liệu độc lập", c: "Bỏ phiếu đa số", d: "Giảm số đặc trưng"}
+        answer: a
+        explanation: "Cộng dần các cây nhỏ, mỗi cây sửa lỗi còn lại."
+      - id: t16
+        topic: learning rate boosting
+        lesson: 12_gradient_boosting
+        type: mcq
+        question: "Giảm learning rate của gradient boosting một nửa thường cần:"
+        options: {a: "Khoảng gấp đôi số cây để đạt cùng mức khớp (thường tổng quát tốt hơn)", b: "Ít cây hơn", c: "Không đổi số cây", d: "Cây sâu hơn bắt buộc"}
+        answer: a
+        explanation: "Đánh đổi learning rate ↔ n_estimators; dùng early stopping."
+      - id: t17
+        topic: svm margin
+        lesson: 13_svm_and_kernels
+        type: mcq
+        question: "Trong SVM, các support vector là:"
+        options: {a: "Các điểm nằm trên hoặc vi phạm lề — chỉ chúng quyết định biên", b: "Mọi điểm dữ liệu", c: "Tâm của mỗi lớp", d: "Các điểm xa biên nhất"}
+        answer: a
+        explanation: "Bỏ điểm không phải support vector không đổi nghiệm."
+      - id: t18
+        topic: svm C
+        lesson: 13_svm_and_kernels
+        type: mcq
+        question: "Tăng C trong soft-margin SVM:"
+        options: {a: "Phạt vi phạm lề nặng hơn → lề hẹp hơn, dễ overfit", b: "Lề rộng hơn", c: "Không ảnh hưởng", d: "Đổi kernel"}
+        answer: a
+        explanation: "C là nghịch đảo độ mạnh điều chuẩn."
+      - id: t19
+        topic: rbf gamma
+        lesson: 13_svm_and_kernels
+        type: mcq
+        question: "RBF kernel với gamma rất lớn:"
+        options: {a: "Mỗi điểm ảnh hưởng vùng rất nhỏ → biên ngoằn ngoèo, overfit", b: "Biên gần tuyến tính", c: "Underfit", d: "Tương đương kNN với k lớn"}
+        answer: a
+        explanation: "gamma nhỏ → mượt."
+      - id: t20
+        topic: model choice
+        lesson: 12_gradient_boosting
+        type: mcq
+        question: "Dữ liệu bảng 50.000 dòng, quan hệ phi tuyến và tương tác phức tạp, cần hiệu năng cao. Lựa chọn khởi đầu hợp lý nhất:"
+        options: {a: "Gradient boosting trên cây (so với baseline tuyến tính)", b: "kNN với k = 1", c: "Naive Bayes Gaussian", d: "SVM RBF không chuẩn hoá"}
+        answer: a
+        explanation: "Luôn kèm baseline đơn giản để biết cái giá của độ phức tạp."
+  math:
+    questions:
+      - id: m01
+        topic: simple regression
+        lesson: 06_linear_regression
+        type: numeric
+        decimals: 1
+        question: "Điểm (0, 1), (1, 3), (2, 5). Hệ số góc của đường hồi quy bình phương tối thiểu = ?"
+        answer: 2
+        explanation: "Ba điểm thẳng hàng y = 1 + 2x."
+      - id: m02
+        topic: ridge 1d
+        lesson: 06_linear_regression
+        type: numeric
+        decimals: 3
+        question: "Ridge không hệ số chặn, x = [1, 2], y = [1, 2], λ = 1. w = Σxy / (Σx² + λ) = ?"
+        answer: 0.833
+        explanation: "5/6."
+      - id: m03
+        topic: sigmoid
+        lesson: 07_logistic_regression
+        type: numeric
+        decimals: 3
+        question: "Logit z = 2. Xác suất σ(z) = ?"
+        answer: 0.881
+        explanation: "1/(1 + e⁻²)."
+      - id: m04
+        topic: gini
+        lesson: 10_decision_trees
+        type: numeric
+        decimals: 3
+        question: "Nút có 30 mẫu lớp A và 10 mẫu lớp B. Gini = 1 − Σp² = ?"
+        answer: 0.375
+        explanation: "1 − (0.75² + 0.25²)."
+      - id: m05
+        topic: entropy
+        lesson: 10_decision_trees
+        type: numeric
+        decimals: 3
+        question: "Entropy (log cơ số 2) của phân phối [0.25, 0.75] = ?"
+        answer: 0.811
+        explanation: "−0.25·log2(0.25) − 0.75·log2(0.75)."
+      - id: m06
+        topic: laplace
+        lesson: 09_naive_bayes
+        type: numeric
+        decimals: 4
+        question: "Lớp 'spam' có tổng 100 lượt từ, từ điển 50 từ. Một từ xuất hiện 0 lần. Xác suất làm trơn Laplace (α = 1) = (0 + 1)/(100 + 50) = ?"
+        answer: 0.0067
+        explanation: "1/150."
+      - id: m07
+        topic: hinge
+        lesson: 13_svm_and_kernels
+        type: numeric
+        decimals: 1
+        question: "Hinge loss max(0, 1 − y·f) với y = +1, f = 0.3 = ?"
+        answer: 0.7
+        explanation: "Đúng phía nhưng trong lề."
+      - id: m08
+        topic: bagging
+        lesson: 11_random_forest
+        type: numeric
+        decimals: 3
+        question: "Xác suất một mẫu KHÔNG được chọn trong bootstrap kích thước n khi n lớn ≈ e⁻¹ = ? (3 chữ số thập phân)"
+        answer: 0.368
+        explanation: "(1 − 1/n)ⁿ → e⁻¹."
+coding:
+  tasks:
+    - id: c01
+      title: Ngưỡng chia tốt nhất theo Gini
+      prompt: |
+        Viết `gini(y)` (y nhãn 0/1) và `best_split(x, y)`: thử mọi ngưỡng là trung điểm giữa hai giá trị liên tiếp (sau khi sắp xếp, khác nhau)
+        của x; trả về `(threshold, weighted_gini)` nhỏ nhất, với weighted_gini = (n_trái·gini_trái + n_phải·gini_phải)/n.
+      code: |
+        def gini(y):
+            ### START CODE HERE ### (≈ 3 dòng)
+            y = np.asarray(y)
+            if len(y) == 0:
+                return 0.0
+            p = y.mean()
+            return 1 - p ** 2 - (1 - p) ** 2
+            ### END CODE HERE ###
+
+
+        def best_split(x, y):
+            ### START CODE HERE ### (≈ 8 dòng)
+            x, y = np.asarray(x, float), np.asarray(y)
+            values = np.unique(x)
+            best = (None, np.inf)
+            for t in (values[:-1] + values[1:]) / 2:
+                left, right = y[x <= t], y[x > t]
+                score = (len(left) * gini(left) + len(right) * gini(right)) / len(y)
+                if score < best[1]:
+                    best = (t, score)
+            return best
+            ### END CODE HERE ###
+      tests: |
+        check_close(gini([0, 0, 1, 1]), 0.5, message="gini cân bằng")
+        check_close(gini([1, 1, 1]), 0.0, message="gini thuần khiết")
+        t, s = best_split([1, 2, 3, 10, 11, 12], [0, 0, 0, 1, 1, 1])
+        check_close([t, s], [6.5, 0.0], message="tách hoàn hảo")
+        t2, s2 = best_split([1, 2, 3, 4], [0, 1, 0, 1])
+        check_close(s2, min((1 * 0 + 3 * gini([1, 0, 1])) / 4, (2 * 0.5 + 2 * 0.5) / 4, (3 * gini([0, 1, 0]) + 0) / 4), message="ngưỡng tốt nhất khi không tách hoàn hảo")
+    - id: c02
+      title: kNN từ đầu
+      prompt: |
+        Viết `knn_predict(X_train, y_train, X_new, k)`: khoảng cách Euclid, bỏ phiếu đa số trong k láng giềng gần nhất
+        (hoà thì chọn nhãn nhỏ nhất — dùng `np.bincount(...).argmax()`).
+      code: |
+        def knn_predict(X_train, y_train, X_new, k):
+            ### START CODE HERE ### (≈ 4 dòng)
+            X_train, X_new, y_train = np.asarray(X_train, float), np.asarray(X_new, float), np.asarray(y_train)
+            d = ((X_new[:, None, :] - X_train[None, :, :]) ** 2).sum(-1)
+            nearest = np.argsort(d, axis=1, kind="stable")[:, :k]
+            return np.array([np.bincount(y_train[idx]).argmax() for idx in nearest])
+            ### END CODE HERE ###
+      tests: |
+        Xtr = np.array([[0, 0], [0, 1], [1, 0], [5, 5], [5, 6], [6, 5]])
+        ytr = np.array([0, 0, 0, 1, 1, 1])
+        check_equal(list(knn_predict(Xtr, ytr, np.array([[0.2, 0.2], [5.5, 5.5]]), 3)), [0, 1], "hai cụm rõ ràng")
+        from sklearn.neighbors import KNeighborsClassifier
+        rng = np.random.default_rng(0)
+        Xa, ya, Xb = rng.normal(size=(100, 2)), rng.integers(0, 2, 100), rng.normal(size=(30, 2))
+        check_equal(list(knn_predict(Xa, ya, Xb, 5)), list(KNeighborsClassifier(5).fit(Xa, ya).predict(Xb)), "khớp scikit-learn")
+analysis:
+  prompt: |
+    Một ngân hàng so sánh 4 mô hình duyệt thẻ tín dụng trên 3.000 hồ sơ: logistic (AUC 0.79), kNN k = 1 (accuracy train 100%, AUC test 0.66), cây quyết định
+    sâu không giới hạn (AUC test 0.70), gradient boosting 2.000 cây learning rate 0.5 (AUC test 0.74). Không mô hình nào được chuẩn hoá đặc trưng hay tinh
+    chỉnh. Nhóm kết luận "logistic là thuật toán tốt nhất cho tín dụng". Đánh giá kết luận và đề xuất thí nghiệm công bằng hơn.
+  rubric:
+    - "Chỉ ra kNN không chuẩn hoá và k = 1 → overfit; cần chuẩn hoá và chọn k bằng CV"
+    - "Chỉ ra cây sâu không giới hạn overfit → giới hạn độ sâu/min_samples_leaf/cắt tỉa"
+    - "Chỉ ra boosting learning rate 0.5 với 2.000 cây quá khớp → learning rate nhỏ + early stopping; tinh chỉnh bằng CV"
+    - "Chỉ ra kết luận tổng quát hoá từ một thí nghiệm một lần chia, không tinh chỉnh → so sánh trên cùng các fold CV, có độ bất định"
+    - "Đề xuất tiêu chí ngoài AUC: calibration, giải thích được (quy định tín dụng), độ ổn định"
+  sample_answer: |
+    So sánh không công bằng: mỗi mô hình phức tạp đều ở cấu hình tệ nhất. kNN cần chuẩn hoá (thu nhập lấn át) và k chọn bằng CV — k = 1 thuộc lòng train;
+    cây không giới hạn độ sâu overfit, cần max_depth/min_samples_leaf/ccp_alpha; boosting với learning rate 0.5 và 2.000 cây khớp nhiễu, cần learning rate
+    nhỏ (0.05) và early stopping. Logistic tốt trong thí nghiệm này có thể vì nó ít phụ thuộc tinh chỉnh và dữ liệu nhỏ — đó là kết luận về **bộ dữ liệu
+    và quy trình này**, không phải "tốt nhất cho tín dụng". Thí nghiệm công bằng: cùng pipeline tiền xử lý, tinh chỉnh từng mô hình bằng CV lồng nhau (hoặc
+    validation), so sánh theo cặp trên cùng các fold với khoảng tin cậy, báo cáo thêm calibration (quyết định duyệt dựa trên xác suất), độ ổn định, và
+    khả năng giải thích lý do từ chối — ở tín dụng, nếu hiệu năng tương đương thì mô hình giải thích được thường được ưu tiên.
+project:
+  prompt: |
+    **Mini project — Dự đoán rời bỏ.** Với `customer_churn.csv` (chia 75/25 phân tầng, `random_state=1`): xây pipeline (chuẩn hoá cột số, one-hot cột
+    phân loại) và **chọn một trong hai** mô hình logistic hoặc random forest bằng **5-fold CV trên train** (ROC-AUC). Huấn luyện mô hình được chọn trên
+    toàn bộ train, đánh giá test. Lưu `cv_auc` (dict tên → AUC CV), `chosen` (tên), `test_auc`. Yêu cầu: AUC test > 0.80.
+  code: |
+    import pandas as pd
+    from sklearn.compose import ColumnTransformer
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.metrics import roc_auc_score
+    from sklearn.model_selection import StratifiedKFold, cross_val_score, train_test_split
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
+    from ml_course.utils import repo_path
+
+    churn = pd.read_csv(repo_path("data", "sample", "customer_churn.csv"))
+    NUMERIC = ["tenure_months", "monthly_charges", "total_charges", "support_calls", "n_products"]
+    CATEGORICAL = ["contract", "internet_service", "payment_method", "senior"]
+    train, test = train_test_split(churn, test_size=0.25, random_state=1, stratify=churn.churn)
+    ### START CODE HERE ### (≈ 10 dòng)
+    def pipeline(estimator):
+        pre = ColumnTransformer([("num", StandardScaler(), NUMERIC), ("cat", OneHotEncoder(handle_unknown="ignore"), CATEGORICAL)])
+        return make_pipeline(pre, estimator)
+
+
+    models = {"logistic": pipeline(LogisticRegression(max_iter=1000)),
+              "forest": pipeline(RandomForestClassifier(300, min_samples_leaf=10, random_state=0, n_jobs=-1))}
+    cv = StratifiedKFold(5, shuffle=True, random_state=0)
+    cv_auc = {name: cross_val_score(m, train[NUMERIC + CATEGORICAL], train.churn, cv=cv, scoring="roc_auc").mean() for name, m in models.items()}
+    chosen = max(cv_auc, key=cv_auc.get)
+    final = models[chosen].fit(train[NUMERIC + CATEGORICAL], train.churn)
+    test_auc = roc_auc_score(test.churn, final.predict_proba(test[NUMERIC + CATEGORICAL])[:, 1])
+    ### END CODE HERE ###
+    print(cv_auc, "→", chosen, f"| AUC test = {test_auc:.3f}")
+  tests: |
+    check_equal(sorted(cv_auc), ["forest", "logistic"], "CV cho cả hai mô hình")
+    check_equal(chosen, max(cv_auc, key=cv_auc.get), "chọn theo CV, không theo test")
+    check_greater(test_auc, 0.80, "AUC test > 0.80")

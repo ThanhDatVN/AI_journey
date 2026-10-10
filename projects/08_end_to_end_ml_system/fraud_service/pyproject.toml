@@ -1,0 +1,17 @@
+[project]
+name = "fraud-service"
+version = "1.0.0"
+description = "Dịch vụ chấm điểm gian lận giao dịch — bản tham chiếu Project 08 (khoá Machine Learning: Zero → Advanced)"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore:Using .httpx. with", "ignore::DeprecationWarning:starlette"]
+
+[tool.ruff]
+extend = "../../../pyproject.toml"
+
+[tool.ruff.lint.isort]
+known-first-party = ["fraud"]

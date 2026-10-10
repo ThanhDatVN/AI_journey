@@ -1,0 +1,235 @@
+{
+ "id": "38_causal_machine_learning",
+ "kind": "Chapter",
+ "title": "38 · Causal Machine Learning",
+ "next": "39_ml_systems",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "prediction vs causation",
+     "answer_hashes": [
+      "fbe21527b4c950ecb095"
+     ],
+     "lesson": "01_correlation_vs_causation_dags.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "confounder",
+     "answer_hashes": [
+      "be6629a5c9b78bcbf145"
+     ],
+     "lesson": "01_correlation_vs_causation_dags.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "tf",
+     "topic": "mediator",
+     "answer_hashes": [
+      "bd08e1f50b3ea5ad89ef"
+     ],
+     "lesson": "01_correlation_vs_causation_dags.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "collider",
+     "answer_hashes": [
+      "9c37f2e90626c21367f0"
+     ],
+     "lesson": "01_correlation_vs_causation_dags.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "simpson",
+     "answer_hashes": [
+      "b2b25f8573e9ac896523"
+     ],
+     "lesson": "01_correlation_vs_causation_dags.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "multi",
+     "topic": "backdoor",
+     "answer_hashes": [
+      "460e998cf28375d9de26"
+     ],
+     "lesson": "01_correlation_vs_causation_dags.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "fundamental problem",
+     "answer_hashes": [
+      "91d0babdbb7432ac6226"
+     ],
+     "lesson": "02_potential_outcomes.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "rct",
+     "answer_hashes": [
+      "01e349407e7653118293"
+     ],
+     "lesson": "02_potential_outcomes.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "selection bias",
+     "answer_hashes": [
+      "4a1b31b279e2a1b41abb"
+     ],
+     "lesson": "02_potential_outcomes.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "assumptions",
+     "answer_hashes": [
+      "a332cf9eb405c4652ab8"
+     ],
+     "lesson": "02_potential_outcomes.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "propensity",
+     "answer_hashes": [
+      "b663f7da156f198fd23e"
+     ],
+     "lesson": "03_propensity_score_methods.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "ipw",
+     "answer_hashes": [
+      "a0d7e1d68a2ddb96d26d"
+     ],
+     "lesson": "03_propensity_score_methods.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "topic": "doubly robust",
+     "answer_hashes": [
+      "aa809d88d268338889f8"
+     ],
+     "lesson": "03_propensity_score_methods.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "overlap",
+     "answer_hashes": [
+      "8dcaf23705b053d73f8b"
+     ],
+     "lesson": "03_propensity_score_methods.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "meta learners",
+     "answer_hashes": [
+      "3611e0abb14900c1dfa3"
+     ],
+     "lesson": "04_meta_learners_and_uplift.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "uplift",
+     "answer_hashes": [
+      "d1455ae3d293d910a445"
+     ],
+     "lesson": "04_meta_learners_and_uplift.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "selection bias",
+     "answer_hashes": [
+      "83546e1dc25654192fc4"
+     ],
+     "decimals": 1,
+     "lesson": "02_potential_outcomes.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "ipw weight",
+     "answer_hashes": [
+      "4afacd7b0b7e45343446"
+     ],
+     "decimals": 2,
+     "lesson": "03_propensity_score_methods.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "smd",
+     "answer_hashes": [
+      "d6d662af82a80455cdcf"
+     ],
+     "decimals": 2,
+     "lesson": "03_propensity_score_methods.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "simpson",
+     "answer_hashes": [
+      "2894ba9ed933fac757f9"
+     ],
+     "decimals": 3,
+     "lesson": "01_correlation_vs_causation_dags.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "policy",
+     "answer_hashes": [
+      "ca64953533fac0bbaa5b"
+     ],
+     "decimals": 0,
+     "lesson": "04_meta_learners_and_uplift.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

@@ -1,0 +1,334 @@
+title: "40 · MLOps"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: api contract
+        lesson: 01_serving_with_fastapi.ipynb
+        type: multi
+        question: "Phản hồi của một API dự đoán nên chứa:"
+        options: {a: "Kết quả dự đoán", b: "Phiên bản mô hình", c: "Mã định danh request để truy vết", d: "Stack trace khi có lỗi"}
+        answer: abc
+        explanation: "Không bao giờ trả stack trace ra ngoài; 422 kèm mô tả lỗi đầu vào."
+      - id: t02
+        topic: model loading
+        lesson: 01_serving_with_fastapi.ipynb
+        type: mcq
+        question: "Mô hình nên được nạp ở đâu trong dịch vụ FastAPI?"
+        options: {a: "Một lần khi khởi động (lifespan), kiểm tra hash", b: "Trong mỗi request", c: "Trong middleware", d: "Ở phía client"}
+        answer: a
+        explanation: "Nạp mỗi request tốn thời gian (mô hình lớn: hàng trăm ms đến giây)."
+      - id: t03
+        topic: async
+        lesson: 01_serving_with_fastapi.ipynb
+        type: tf
+        question: "Endpoint gọi model.predict_proba của scikit-learn nên khai báo bằng async def để nhanh hơn."
+        answer: false
+        explanation: "Code CPU chặn trong async def khoá event loop; dùng def để chạy trong threadpool."
+      - id: t04
+        topic: parity test
+        lesson: 01_serving_with_fastapi.ipynb
+        type: mcq
+        question: "Kiểm thử parity của một API mô hình kiểm tra:"
+        options: {a: "Dự đoán qua API khớp dự đoán của mô hình gốc trên cùng dữ liệu", b: "API trả về đúng mã 200", c: "Độ trễ dưới ngưỡng", d: "Hai mô hình có cùng AUC"}
+        answer: a
+        explanation: "Chống lệch train/serving trong đường JSON → schema → DataFrame."
+      - id: t05
+        topic: batching
+        lesson: 01_serving_with_fastapi.ipynb
+        type: mcq
+        question: "Gom 100 bản ghi vào một request thay vì 100 request đơn lẻ thường:"
+        options: {a: "Tăng mạnh thông lượng, tăng độ trễ của request đó", b: "Giảm thông lượng", c: "Không thay đổi gì", d: "Làm sai dự đoán"}
+        answer: a
+        explanation: "Chi phí cố định mỗi request được chia cho nhiều dòng."
+      - id: t06
+        topic: ml testing
+        lesson: 02_docker_and_ci_cd.ipynb
+        type: mcq
+        question: "\"Tăng số cuộc gọi hỗ trợ thì xác suất churn dự đoán không được giảm\" là loại kiểm thử:"
+        options: {a: "Kỳ vọng theo hướng (directional expectation)", b: "Bất biến (invariance)", c: "Unit test", d: "Kiểm thử tải"}
+        answer: a
+        explanation: "Bất biến: thay đổi không liên quan không đổi dự đoán."
+      - id: t07
+        topic: dockerfile cache
+        lesson: 02_docker_and_ci_cd.ipynb
+        type: mcq
+        question: "Trong Dockerfile, đặt COPY requirements.txt + pip install TRƯỚC COPY mã nguồn để:"
+        options: {a: "Đổi code không phải cài lại thư viện (tận dụng cache layer)", b: "Image chạy nhanh hơn", c: "Bảo mật hơn", d: "Bắt buộc theo cú pháp"}
+        answer: a
+        explanation: "Layer chỉ build lại khi nội dung của nó hoặc layer trước thay đổi."
+      - id: t08
+        topic: quality gate
+        lesson: 02_docker_and_ci_cd.ipynb
+        type: tf
+        question: "Script huấn luyện trong CI nên thoát với mã lỗi khác 0 khi dữ liệu không hợp lệ hoặc metric dưới ngưỡng."
+        answer: true
+        explanation: "Pipeline dừng, không đóng gói mô hình tệ."
+      - id: t09
+        topic: continuous training
+        lesson: 02_docker_and_ci_cd.ipynb
+        type: mcq
+        question: "MLOps mức 1 (Google) khác mức 0 chủ yếu ở:"
+        options: {a: "Pipeline huấn luyện tự động (continuous training) với kiểm tra dữ liệu/mô hình", b: "Dùng GPU", c: "Dùng mô hình sâu hơn", d: "Viết notebook đẹp hơn"}
+        answer: a
+        explanation: "Mức 2 thêm CI/CD cho chính pipeline."
+      - id: t10
+        topic: data vs concept drift
+        lesson: 03_monitoring_and_drift.ipynb
+        type: mcq
+        question: "Đối thủ tung khuyến mãi khiến khách có cùng đặc trưng nay rời bỏ nhiều hơn; phân phối đầu vào không đổi. Đây là:"
+        options: {a: "Trôi khái niệm — chỉ phát hiện được qua nhãn", b: "Trôi dữ liệu — PSI sẽ phát hiện", c: "Lỗi dịch vụ", d: "Overfitting"}
+        answer: a
+        explanation: "P(y|X) đổi, P(X) giữ nguyên."
+      - id: t11
+        topic: data drift impact
+        lesson: 03_monitoring_and_drift.ipynb
+        type: tf
+        question: "PSI của một đặc trưng vượt 0.25 nghĩa là mô hình chắc chắn đã giảm hiệu năng và phải huấn luyện lại ngay."
+        answer: false
+        explanation: "Trôi dữ liệu có thể vô hại; cần điều tra và đánh giá hiệu năng."
+      - id: t12
+        topic: p-value drift
+        lesson: 03_monitoring_and_drift.ipynb
+        type: mcq
+        question: "Với 100.000 mẫu mỗi ngày, kiểm định KS báo p < 0.05 cho hầu hết đặc trưng. Lý do:"
+        options: {a: "Cỡ mẫu lớn khiến cả thay đổi nhỏ vô hại cũng có ý nghĩa thống kê", b: "Mọi đặc trưng đều trôi mạnh", c: "KS sai", d: "Cần thêm dữ liệu"}
+        answer: a
+        explanation: "Dùng thước đo độ lớn (PSI, KS statistic) với ngưỡng nghiệp vụ."
+      - id: t13
+        topic: domain classifier
+        lesson: 03_monitoring_and_drift.ipynb
+        type: mcq
+        question: "Bộ phân loại miền (reference vs hiện tại) có AUC ≈ 0.5 nghĩa là:"
+        options: {a: "Không phân biệt được hai tập — không thấy trôi đầu vào", b: "Trôi rất mạnh", c: "Mô hình chính hỏng", d: "Có trôi khái niệm"}
+        answer: a
+        explanation: "Nó chỉ nhìn X nên không thấy trôi khái niệm."
+      - id: t14
+        topic: shadow
+        lesson: 04_deployment_strategies.ipynb
+        type: mcq
+        question: "Shadow deployment KHÔNG trả lời được câu hỏi nào?"
+        options: {a: "Mô hình mới có làm tăng tỉ lệ giữ chân không", b: "Mô hình mới có lỗi không", c: "Mô hình mới có đủ nhanh không", d: "Dự đoán hai mô hình khác nhau bao nhiêu"}
+        answer: a
+        explanation: "Không ai hành động theo bản shadow — cần A/B test."
+      - id: t15
+        topic: routing
+        lesson: 04_deployment_strategies.ipynb
+        type: mcq
+        question: "Gán người dùng vào phiên bản trong A/B test nên dùng:"
+        options: {a: "Hàm băm tất định của salt + user_id", b: "random() mỗi request", c: "hash() của Python", d: "Thứ tự đến của request"}
+        answer: a
+        explanation: "hash() của Python ngẫu nhiên hoá theo tiến trình."
+      - id: t16
+        topic: peeking
+        lesson: 04_deployment_strategies.ipynb
+        type: mcq
+        question: "Xem p-value mỗi ngày trong 20 ngày và dừng khi p < 0.05. Khi không có khác biệt thật, tỉ lệ dương tính giả khoảng:"
+        options: {a: "≈ 25%", b: "5%", c: "1%", d: "0%"}
+        answer: a
+        explanation: "Cố định cỡ mẫu trước hoặc dùng kiểm định tuần tự."
+      - id: t17
+        topic: feedback loop
+        lesson: 04_deployment_strategies.ipynb
+        type: multi
+        question: "Cách giảm tác hại của vòng phản hồi (mô hình tác động lên dữ liệu huấn luyện của chính nó):"
+        options: {a: "Giữ nhóm đối chứng ngẫu nhiên không bị tác động", b: "Ghi lại hành động và xác suất hành động", c: "Huấn luyện lại thường xuyên hơn trên mọi dữ liệu thu được", d: "Mô hình hoá tác động (uplift)"}
+        answer: abd
+        explanation: "Huấn luyện lại ngây thơ trên dữ liệu bị tác động làm vòng lặp tệ hơn."
+  math:
+    questions:
+      - id: m01
+        topic: psi
+        lesson: 03_monitoring_and_drift.ipynb
+        type: numeric
+        decimals: 3
+        question: "Hai bin: reference [0.5, 0.5], hiện tại [0.25, 0.75]. PSI = Σ (c − r)·ln(c/r) = ? (3 chữ số thập phân)"
+        answer: 0.275
+        explanation: "0.25·ln2 + 0.25·ln1.5 = 0.1733 + 0.1014."
+      - id: m02
+        topic: sample size scaling
+        lesson: 04_deployment_strategies.ipynb
+        type: numeric
+        decimals: 0
+        question: "Cần 4.000 người/nhóm để phát hiện chênh lệch 2 điểm %. Để phát hiện 1 điểm % (cùng α, power, tỉ lệ nền gần như nhau), cần khoảng bao nhiêu người/nhóm?"
+        answer: 16000
+        explanation: "Cỡ mẫu tỉ lệ nghịch bình phương hiệu ứng: ×4."
+      - id: m03
+        topic: throughput
+        lesson: 01_serving_with_fastapi.ipynb
+        type: numeric
+        decimals: 0
+        question: "Mỗi request đơn lẻ mất 10 ms, một request lô 100 dòng mất 20 ms (xử lý tuần tự). Thông lượng khi gom lô (dự đoán/giây) = ?"
+        answer: 5000
+        explanation: "100 / 0.02 s."
+      - id: m04
+        topic: canary exposure
+        lesson: 04_deployment_strategies.ipynb
+        type: numeric
+        decimals: 0
+        question: "Canary 5% trên 40.000 request/giờ, phiên bản mới lỗi 3% request. Số request lỗi do bản mới trong 1 giờ = ?"
+        answer: 60
+        explanation: "40.000 × 0.05 × 0.03."
+      - id: m05
+        topic: label delay
+        lesson: 03_monitoring_and_drift.ipynb
+        type: numeric
+        decimals: 0
+        question: "Nhãn churn về sau 28 ngày, hiệu năng đánh giá theo tuần. Trôi khái niệm bắt đầu ngày 0; sớm nhất ngày thứ mấy có thể tính hiệu năng của tuần đầu tiên bị ảnh hưởng (tuần gồm ngày 0–6)?"
+        answer: 34
+        explanation: "Nhãn của ngày 6 về ở ngày 6 + 28 = 34."
+coding:
+  tasks:
+    - id: c01
+      title: Population Stability Index
+      prompt: |
+        Viết `psi(reference, current, bins=10, eps=1e-4)`: bin theo phân vị của reference (hai đầu mở ra ±∞), tỉ lệ mỗi bin kẹp
+        tối thiểu `eps`, trả về Σ (c − r)·ln(c/r).
+      code: |
+        def psi(reference, current, bins=10, eps=1e-4):
+            ### START CODE HERE ### (≈ 6 dòng)
+            edges = np.unique(np.quantile(reference, np.linspace(0, 1, bins + 1)))
+            edges[0], edges[-1] = -np.inf, np.inf
+            r = np.histogram(reference, edges)[0] / len(reference)
+            c = np.histogram(current, edges)[0] / len(current)
+            r, c = np.clip(r, eps, None), np.clip(c, eps, None)
+            return float(np.sum((c - r) * np.log(c / r)))
+            ### END CODE HERE ###
+      tests: |
+        rng = np.random.default_rng(0)
+        ref = rng.normal(size=20000)
+        check_close(psi(ref, ref), 0.0, message="giống hệt → 0")
+        check_less(psi(ref, rng.normal(size=20000)), 0.01, "cùng phân phối")
+        check_greater(psi(ref, rng.normal(1, 1, 20000)), 0.25, "lệch 1σ")
+        check_true(np.isfinite(psi(ref, np.full(500, 100.0))), "bin rỗng vẫn hữu hạn")
+        check_close(psi(np.arange(4.0), np.array([0.0, 1, 1, 2, 2, 3, 3, 3, 3, 3]), bins=4),
+                    sum((c - 0.25) * np.log(c / 0.25) for c in [0.1, 0.2, 0.2, 0.5]), message="ví dụ nhỏ 4 bin")
+    - id: c02
+      title: Gán biến thể ổn định
+      prompt: |
+        Viết `assign(user_id, weights, salt)`: ánh xạ `salt + ":" + user_id` qua SHA-256 thành số u ∈ [0, 1)
+        (lấy 15 ký tự hex đầu chia 16**15), rồi trả về biến thể đầu tiên mà tổng trọng số tích luỹ > u.
+        `weights` là dict có thứ tự, ví dụ {"v2": 0.1, "v1": 0.9}.
+      code: |
+        import hashlib
+
+
+        def assign(user_id, weights, salt="exp"):
+            ### START CODE HERE ### (≈ 7 dòng)
+            u = int(hashlib.sha256(f"{salt}:{user_id}".encode()).hexdigest()[:15], 16) / 16 ** 15
+            cumulative = 0.0
+            for variant, w in weights.items():
+                cumulative += w
+                if u < cumulative:
+                    return variant
+            return variant
+            ### END CODE HERE ###
+      tests: |
+        users = [f"U{i}" for i in range(20000)]
+        share = np.mean([assign(u, {"v2": 0.1, "v1": 0.9}) == "v2" for u in users])
+        check_less(abs(share - 0.1), 0.01, "tỉ lệ ≈ 10%")
+        check_true(all(assign(u, {"v2": 0.1, "v1": 0.9}) == assign(u, {"v2": 0.1, "v1": 0.9}) for u in users[:500]), "ổn định")
+        check_true(all(assign(u, {"v2": 0.25, "v1": 0.75}) == "v2" for u in users if assign(u, {"v2": 0.1, "v1": 0.9}) == "v2"), "tăng tỉ lệ: bucket lồng nhau")
+        expected_u = int(hashlib.sha256(b"exp:U0").hexdigest()[:15], 16) / 16 ** 15
+        check_equal(assign("U0", {"a": 0.5, "b": 0.5}), "a" if expected_u < 0.5 else "b", "đúng công thức băm")
+        other = np.mean([assign(u, {"v2": 0.1, "v1": 0.9}, salt="other") == "v2" for u in users if assign(u, {"v2": 0.1, "v1": 0.9}) == "v2"])
+        check_less(abs(other - 0.1), 0.03, "salt khác → độc lập")
+analysis:
+  prompt: |
+    Một sàn thương mại điện tử có mô hình gợi ý v1 đang chạy. Đội ML huấn luyện v2: AUC offline tăng từ 0.81 lên 0.83. Kế hoạch:
+    (1) thay v1 bằng v2 cho toàn bộ người dùng vào thứ Hai; (2) theo dõi doanh thu hằng ngày, nếu sau vài ngày doanh thu tăng có ý nghĩa
+    (p < 0.05 so với tuần trước) thì giữ v2; (3) từ tuần sau, huấn luyện lại v2 hằng đêm trên lượt click của chính các gợi ý nó đã hiển thị.
+    Đánh giá kế hoạch và đề xuất quy trình triển khai.
+  rubric:
+    - "Chỉ ra thay thẳng 100% là rủi ro cao; đề xuất shadow (kỹ thuật) → canary có tiêu chí rollback tự động"
+    - "Chỉ ra so với tuần trước là so sánh trước/sau bị nhiễu (mùa vụ, sự kiện) → cần A/B test ngẫu nhiên đồng thời với router băm ổn định"
+    - "Chỉ ra 'sau vài ngày, dừng khi p < 0.05' là nhìn trộm → cố định cỡ mẫu theo power trước, hoặc kiểm định tuần tự; báo cáo KTC"
+    - "Chỉ ra AUC offline không đảm bảo doanh thu tăng; cần metric kinh doanh và guardrail (độ trễ, tỉ lệ lỗi)"
+    - "Chỉ ra huấn luyện trên click của chính gợi ý là vòng phản hồi (thiên lệch phổ biến/exposure) → nhóm khám phá ngẫu nhiên, log xác suất hiển thị, IPW; giám sát trôi"
+  sample_answer: |
+    (1) Thay thẳng 100% không cho cơ hội phát hiện lỗi kỹ thuật với phạm vi nhỏ. Quy trình: shadow v2 (so độ trễ, lỗi, phân phối gợi ý, mức trùng
+    với v1) → canary 1% → 5% → 25% với rollback tự động theo tỉ lệ lỗi/độ trễ p99. (2) So với tuần trước lẫn lộn tác động của v2 với mùa vụ,
+    khuyến mãi, ngày lễ — cần A/B test ngẫu nhiên chạy **đồng thời**, gán người dùng bằng băm ổn định (salt riêng), metric chính là doanh thu/người
+    dùng hoặc tỉ lệ chuyển đổi, guardrail là độ trễ, lỗi, khiếu nại. "Dừng khi p < 0.05 sau vài ngày" là nhìn trộm — dương tính giả tăng nhiều lần;
+    phải tính cỡ mẫu theo hiệu ứng tối thiểu có ý nghĩa và power trước, chạy đủ (ít nhất trọn tuần để bao chu kỳ ngày trong tuần), hoặc dùng
+    kiểm định tuần tự; báo cáo hiệu ứng kèm KTC, kiểm tra sample ratio mismatch. AUC offline cao hơn chưa chắc tăng doanh thu (gợi ý món khách
+    đằng nào cũng mua). (3) Huấn luyện trên click của chính gợi ý đã hiển thị tạo vòng phản hồi: món không được hiển thị không bao giờ có click →
+    mô hình ngày càng thu hẹp, thiên lệch phổ biến. Cần dành một phần nhỏ traffic khám phá ngẫu nhiên, log xác suất hiển thị để hiệu chỉnh IPW,
+    giám sát độ đa dạng/độ phủ, và mô hình mới huấn luyện lại vẫn qua cổng thăng hạng + giám sát trôi trước khi thay thế.
+project:
+  prompt: |
+    **Mini project — Giám sát trôi theo tuần.** Mô hình churn huấn luyện trên `make_customer_churn(6000, seed=0)`. Cho 6 tuần production
+    (hàm `week(w)` đã viết sẵn: tuần 4–6 giá cước tăng 30%). Viết `weekly_report(reference, model, weeks)` trả về DataFrame (index = tuần) với cột
+    `psi_monthly_charges`, `psi_contract`, `pred_mean`, `drift_alert` (True nếu PSI lớn nhất trong hai cột > 0.25). Dùng `psi` (biến số, bin theo phân vị
+    reference) và `psi_categorical` bạn tự viết. Yêu cầu: cảnh báo đúng ở tuần 4–6 và không cảnh báo ở tuần 1–3.
+  code: |
+    import pandas as pd
+    from sklearn.compose import ColumnTransformer
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
+    from ml_course.datasets import make_customer_churn
+
+    FEATURES = ["tenure_months", "contract", "internet_service", "monthly_charges", "total_charges",
+                "payment_method", "support_calls", "senior", "n_products"]
+    reference = make_customer_churn(6000, seed=0)
+    model = make_pipeline(ColumnTransformer([("num", StandardScaler(), ["tenure_months", "monthly_charges", "total_charges", "support_calls", "n_products"]),
+                                             ("cat", OneHotEncoder(handle_unknown="ignore"), ["contract", "internet_service", "payment_method", "senior"])]),
+                          LogisticRegression(max_iter=1000)).fit(reference[FEATURES], reference.churn)
+
+
+    def week(w):
+        df = make_customer_churn(2000, seed=50 + w)
+        if w >= 4:
+            df["monthly_charges"] = df.monthly_charges * 1.3
+        return df
+
+
+    weeks = {w: week(w) for w in range(1, 7)}
+    ### START CODE HERE ### (≈ 22 dòng)
+    # STARTER: def psi(reference, current, bins=10, eps=1e-4):
+    # STARTER:     pass   # bin theo phân vị của reference; tỉ lệ mỗi bin clip ≥ eps; Σ (c − r)·ln(c / r)
+    # STARTER:
+    # STARTER:
+    # STARTER: def psi_categorical(reference, current, eps=1e-4):
+    # STARTER:     pass   # như psi nhưng mỗi giá trị phân loại là một bin
+    # STARTER:
+    # STARTER:
+    # STARTER: def weekly_report(reference, model, weeks):
+    # STARTER:     pass   # DataFrame index = tuần; cột psi_monthly_charges, psi_contract, pred_mean, drift_alert
+    def psi(reference, current, bins=10, eps=1e-4):
+        edges = np.unique(np.quantile(reference, np.linspace(0, 1, bins + 1)))
+        edges[0], edges[-1] = -np.inf, np.inf
+        r = np.clip(np.histogram(reference, edges)[0] / len(reference), eps, None)
+        c = np.clip(np.histogram(current, edges)[0] / len(current), eps, None)
+        return float(np.sum((c - r) * np.log(c / r)))
+
+
+    def psi_categorical(reference, current, eps=1e-4):
+        reference, current = np.asarray(reference), np.asarray(current)
+        cats = sorted(set(reference) | set(current), key=str)
+        r = np.clip([np.mean(reference == k) for k in cats], eps, None)
+        c = np.clip([np.mean(current == k) for k in cats], eps, None)
+        return float(np.sum((c - r) * np.log(c / r)))
+
+
+    def weekly_report(reference, model, weeks):
+        rows = {}
+        for w, df in weeks.items():
+            row = {"psi_monthly_charges": psi(reference.monthly_charges, df.monthly_charges),
+                   "psi_contract": psi_categorical(reference.contract, df.contract),
+                   "pred_mean": float(model.predict_proba(df[FEATURES])[:, 1].mean())}
+            row["drift_alert"] = max(row["psi_monthly_charges"], row["psi_contract"]) > 0.25
+            rows[w] = row
+        return pd.DataFrame(rows).T
+    ### END CODE HERE ###
+    report = weekly_report(reference, model, weeks)
+    print(report)
+  tests: |
+    check_equal(list(report.index), [1, 2, 3, 4, 5, 6], "6 tuần")
+    check_equal(list(report.drift_alert.astype(bool)), [False, False, False, True, True, True], "cảnh báo đúng tuần 4–6")
+    check_less(float(report.loc[1:3, "psi_monthly_charges"].max()), 0.05, "tuần ổn định: PSI nhỏ")
+    check_less(float(report.psi_contract.max()), 0.05, "cơ cấu hợp đồng không đổi")
+    check_greater(float(report.loc[4, "pred_mean"]), float(report.loc[3, "pred_mean"]), "giá tăng → dự đoán churn tăng")
+    check_close(psi(np.arange(100.0), np.arange(100.0)), 0.0, message="psi của bạn: giống hệt → 0")

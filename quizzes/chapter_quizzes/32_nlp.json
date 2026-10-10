@@ -1,0 +1,235 @@
+{
+ "id": "32_nlp",
+ "kind": "Chapter",
+ "title": "32 · NLP",
+ "next": "33_computer_vision",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "unicode",
+     "answer_hashes": [
+      "c7909f7a95f2edcbe8b6"
+     ],
+     "lesson": "01_text_preprocessing_and_tokenization.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "multi",
+     "topic": "accents",
+     "answer_hashes": [
+      "484b4f42a553c74aec33"
+     ],
+     "lesson": "01_text_preprocessing_and_tokenization.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "segmentation",
+     "answer_hashes": [
+      "eff3be974050af352e01"
+     ],
+     "lesson": "01_text_preprocessing_and_tokenization.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "stopwords",
+     "answer_hashes": [
+      "079dc54db9f0bfe7d3f6"
+     ],
+     "lesson": "01_text_preprocessing_and_tokenization.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "bpe",
+     "answer_hashes": [
+      "aead2ff84dcc9baa4673"
+     ],
+     "lesson": "01_text_preprocessing_and_tokenization.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "zipf",
+     "answer_hashes": [
+      "bb375e13d640d6c8b9b0"
+     ],
+     "lesson": "01_text_preprocessing_and_tokenization.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "tfidf",
+     "answer_hashes": [
+      "53b9aa5ddeeca4b1313f"
+     ],
+     "lesson": "02_bow_tfidf_classification.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "linear baseline",
+     "answer_hashes": [
+      "30cb33943ed708b5dd94"
+     ],
+     "lesson": "02_bow_tfidf_classification.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "negation",
+     "answer_hashes": [
+      "8b04b6314278c50b10ba"
+     ],
+     "lesson": "02_bow_tfidf_classification.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "multi",
+     "topic": "error analysis",
+     "answer_hashes": [
+      "624da26a230da91ff8ef"
+     ],
+     "lesson": "02_bow_tfidf_classification.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "distributional",
+     "answer_hashes": [
+      "01d69f394f247c272e57"
+     ],
+     "lesson": "03_word_embeddings.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "sgns",
+     "answer_hashes": [
+      "89675272d44a0cceda0e"
+     ],
+     "lesson": "03_word_embeddings.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "topic": "few labels",
+     "answer_hashes": [
+      "e29596710d51a717963a"
+     ],
+     "lesson": "03_word_embeddings.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "polysemy",
+     "answer_hashes": [
+      "6c4a7f5e8b446aab45c5"
+     ],
+     "lesson": "03_word_embeddings.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "multi",
+     "topic": "bm25",
+     "answer_hashes": [
+      "3304aaa12950504a8571"
+     ],
+     "lesson": "04_semantic_similarity_and_retrieval.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "hybrid",
+     "answer_hashes": [
+      "439aaf2744a2005ec45e"
+     ],
+     "lesson": "04_semantic_similarity_and_retrieval.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "idf",
+     "answer_hashes": [
+      "35a12c8d17cb606de3e9"
+     ],
+     "decimals": 4,
+     "lesson": "02_bow_tfidf_classification.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "jaccard",
+     "answer_hashes": [
+      "4e6582650437712956aa"
+     ],
+     "decimals": 3,
+     "lesson": "04_semantic_similarity_and_retrieval.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "mrr",
+     "answer_hashes": [
+      "06f7f582055735bdb5e7"
+     ],
+     "decimals": 3,
+     "lesson": "04_semantic_similarity_and_retrieval.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "cosine",
+     "answer_hashes": [
+      "8084a298b0a1c5492a9f"
+     ],
+     "decimals": 3,
+     "lesson": "04_semantic_similarity_and_retrieval.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "pmi",
+     "answer_hashes": [
+      "69a3f7f4bbba0b79c289"
+     ],
+     "decimals": 3,
+     "lesson": "03_word_embeddings.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

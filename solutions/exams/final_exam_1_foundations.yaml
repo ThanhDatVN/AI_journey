@@ -1,0 +1,327 @@
+title: "Bài thi tổng hợp 1 · Nền tảng (chương 00–05)"
+next: null
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: broadcasting
+        lesson: 01_python_for_ml
+        type: mcq
+        question: "a.shape = (3, 1), b.shape = (4,). Kết quả a + b có shape:"
+        options: {a: "(3, 4)", b: "(3, 1)", c: "(4,)", d: "Lỗi broadcasting"}
+        answer: a
+        explanation: "So từ phải sang: 1 ↔ 4 (giãn), 3 ↔ (thiếu → 1)."
+      - id: t02
+        topic: vectorization
+        lesson: 01_python_for_ml
+        type: mcq
+        question: "Vì sao phép toán vector hoá NumPy nhanh hơn vòng lặp Python hàng chục lần?"
+        options: {a: "Vòng lặp chạy trong C trên bộ nhớ liên tục, không có chi phí đối tượng Python mỗi phần tử", b: "NumPy luôn dùng GPU", c: "NumPy làm tròn số", d: "Python không hỗ trợ số thực"}
+        answer: a
+        explanation: "Chi phí interpreter và kiểu động bị loại bỏ."
+      - id: t03
+        topic: pandas groupby
+        lesson: 01_python_for_ml
+        type: mcq
+        question: "Muốn thêm cột 'chi tiêu trung bình của nhóm' vào từng dòng (giữ nguyên số dòng), dùng:"
+        options: {a: "df.groupby('g')['x'].transform('mean')", b: "df.groupby('g')['x'].agg('mean')", c: "df['x'].mean()", d: "df.pivot('g', 'x')"}
+        answer: a
+        explanation: "agg thu gọn mỗi nhóm thành một dòng; transform trả về cùng chỉ số."
+      - id: t04
+        topic: rank
+        lesson: 02_mathematics_for_ml
+        type: tf
+        question: "Ma trận vuông có hai cột tỉ lệ với nhau thì khả nghịch."
+        answer: false
+        explanation: "Cột phụ thuộc tuyến tính → hạng thiếu → định thức 0 → không khả nghịch."
+      - id: t05
+        topic: gradient
+        lesson: 02_mathematics_for_ml
+        type: mcq
+        question: "Gradient của hàm f tại một điểm chỉ hướng:"
+        options: {a: "f tăng nhanh nhất", b: "f giảm nhanh nhất", c: "f không đổi", d: "Gốc toạ độ"}
+        answer: a
+        explanation: "Gradient descent đi ngược gradient."
+      - id: t06
+        topic: learning rate
+        lesson: 02_mathematics_for_ml
+        type: mcq
+        question: "Loss dao động và tăng dần qua các bước gradient descent. Nguyên nhân khả dĩ nhất:"
+        options: {a: "Learning rate quá lớn", b: "Learning rate quá nhỏ", c: "Quá ít dữ liệu", d: "Dữ liệu đã chuẩn hoá"}
+        answer: a
+        explanation: "Bước nhảy vượt qua cực tiểu."
+      - id: t07
+        topic: mle
+        lesson: 02_mathematics_for_ml
+        type: mcq
+        question: "Ước lượng hợp lý cực đại (MLE) của xác suất p trong n lần tung đồng xu Bernoulli là:"
+        options: {a: "Tỉ lệ mặt ngửa quan sát được", b: "0.5", c: "Trung vị", d: "1/n"}
+        answer: a
+        explanation: "Đạo hàm log-likelihood bằng 0 tại k/n."
+      - id: t08
+        topic: map
+        lesson: 02_mathematics_for_ml
+        type: mcq
+        question: "Ước lượng MAP cho hồi quy tuyến tính với prior Gaussian trên trọng số tương đương với:"
+        options: {a: "Hồi quy Ridge (L2)", b: "Lasso (L1)", c: "Hồi quy không điều chuẩn", d: "Hồi quy logistic"}
+        answer: a
+        explanation: "−log prior Gaussian = λ‖w‖²."
+      - id: t09
+        topic: base rate
+        lesson: 02_mathematics_for_ml
+        type: tf
+        question: "Một xét nghiệm có độ nhạy 99% thì người có kết quả dương tính chắc chắn có xác suất mắc bệnh trên 90%."
+        answer: false
+        explanation: "Phụ thuộc tỉ lệ nền và độ đặc hiệu (định lý Bayes)."
+      - id: t10
+        topic: eda visual
+        lesson: 03_data_analysis_and_eda
+        type: mcq
+        question: "Bộ tứ Anscombe cho thấy:"
+        options: {a: "Các tập dữ liệu có cùng trung bình, phương sai, tương quan có thể trông hoàn toàn khác nhau — luôn vẽ dữ liệu", b: "Tương quan cao nghĩa là quan hệ tuyến tính", c: "Trung bình đủ để mô tả dữ liệu", d: "Không nên vẽ biểu đồ"}
+        answer: a
+        explanation: "Thống kê tóm tắt không thay thế trực quan hoá."
+      - id: t11
+        topic: missing data
+        lesson: 04_data_preprocessing
+        type: mcq
+        question: "Người thu nhập cao thường bỏ trống câu hỏi thu nhập. Kiểu dữ liệu thiếu này là:"
+        options: {a: "MNAR — thiếu phụ thuộc chính giá trị bị thiếu", b: "MCAR", c: "MAR", d: "Không phải dữ liệu thiếu"}
+        answer: a
+        explanation: "Điền trung bình sẽ chệch; thêm cờ thiếu và cân nhắc mô hình hoá cơ chế thiếu."
+      - id: t12
+        topic: fit on train
+        lesson: 04_data_preprocessing
+        type: tf
+        question: "Nên fit StandardScaler trên toàn bộ dữ liệu (train + test) để thang đo nhất quán."
+        answer: false
+        explanation: "Rò rỉ thông tin test; fit trên train, transform cả hai (dùng Pipeline)."
+      - id: t13
+        topic: encoding
+        lesson: 04_data_preprocessing
+        type: mcq
+        question: "Biến 'thành phố' (không có thứ tự) cho mô hình tuyến tính nên mã hoá bằng:"
+        options: {a: "One-hot", b: "Mã số nguyên 0, 1, 2, ...", c: "Chia cho số thành phố", d: "Bỏ đi"}
+        answer: a
+        explanation: "Mã số nguyên áp đặt thứ tự và khoảng cách giả."
+      - id: t14
+        topic: data splits
+        lesson: 05_machine_learning_fundamentals
+        type: multi
+        question: "Phát biểu đúng về train/validation/test:"
+        options: {a: "Validation dùng để chọn mô hình/siêu tham số", b: "Test chỉ dùng một lần ở cuối", c: "Dùng test để chọn siêu tham số là an toàn", d: "Train dùng để học tham số"}
+        answer: abd
+        explanation: "Chọn trên test làm điểm test lạc quan."
+      - id: t15
+        topic: overfitting
+        lesson: 05_machine_learning_fundamentals
+        type: mcq
+        question: "Lỗi train rất thấp, lỗi validation cao. Đây là:"
+        options: {a: "Overfitting (phương sai cao)", b: "Underfitting", c: "Rò rỉ dữ liệu chắc chắn", d: "Mô hình tối ưu"}
+        answer: a
+        explanation: "Giảm độ phức tạp, điều chuẩn, thêm dữ liệu."
+      - id: t16
+        topic: bias variance
+        lesson: 05_machine_learning_fundamentals
+        type: mcq
+        question: "Thêm dữ liệu huấn luyện (cùng phân phối) giúp chủ yếu với:"
+        options: {a: "Mô hình có phương sai cao", b: "Mô hình có bias cao", c: "Lỗi không thể giảm (nhiễu)", d: "Không giúp gì"}
+        answer: a
+        explanation: "Bias cao cần mô hình/đặc trưng tốt hơn."
+      - id: t17
+        topic: learning curves
+        lesson: 05_machine_learning_fundamentals
+        type: mcq
+        question: "Đường cong học: lỗi train và validation hội tụ ở mức cao, sát nhau. Nên:"
+        options: {a: "Tăng độ phức tạp mô hình / thêm đặc trưng", b: "Thu thêm thật nhiều dữ liệu", c: "Tăng điều chuẩn", d: "Giảm số đặc trưng"}
+        answer: a
+        explanation: "Underfitting — dữ liệu thêm không giúp."
+      - id: t18
+        topic: leakage
+        lesson: 05_machine_learning_fundamentals
+        type: multi
+        question: "Trường hợp nào là rò rỉ dữ liệu?"
+        options: {a: "Mã hoá mục tiêu (target encoding) tính trên toàn bộ dữ liệu trước khi chia", b: "Đặc trưng 'ngày hoàn tiền' khi dự đoán gian lận lúc thanh toán", c: "Chuẩn hoá trong Pipeline fit trên train", d: "Cùng một bệnh nhân xuất hiện ở cả train và test"}
+        answer: abd
+        explanation: "Pipeline fit trên train là đúng."
+      - id: t19
+        topic: distribution shift
+        lesson: 05_machine_learning_fundamentals
+        type: mcq
+        question: "Covariate shift là:"
+        options: {a: "P(X) thay đổi, P(y|X) giữ nguyên", b: "P(y|X) thay đổi", c: "Nhãn bị sai", d: "Dữ liệu bị trùng"}
+        answer: a
+        explanation: "Khác với concept drift."
+      - id: t20
+        topic: no free lunch
+        lesson: 05_machine_learning_fundamentals
+        type: tf
+        question: "Theo định lý No Free Lunch, có một thuật toán tốt nhất cho mọi bài toán nếu tinh chỉnh đủ kỹ."
+        answer: false
+        explanation: "Trung bình trên mọi bài toán, không thuật toán nào hơn — cần giả định phù hợp dữ liệu."
+  math:
+    questions:
+      - id: m01
+        topic: dot product
+        lesson: 02_mathematics_for_ml
+        type: numeric
+        decimals: 0
+        question: "[1, 2, 3] · [4, 5, 6] = ?"
+        answer: 32
+        explanation: "4 + 10 + 18."
+      - id: m02
+        topic: determinant
+        lesson: 02_mathematics_for_ml
+        type: numeric
+        decimals: 0
+        question: "Định thức của [[2, 1], [1, 3]] = ?"
+        answer: 5
+        explanation: "2·3 − 1·1."
+      - id: m03
+        topic: derivative
+        lesson: 02_mathematics_for_ml
+        type: numeric
+        decimals: 0
+        question: "f(x) = x² + 3x. f'(2) = ?"
+        answer: 7
+        explanation: "2x + 3."
+      - id: m04
+        topic: gradient step
+        lesson: 02_mathematics_for_ml
+        type: numeric
+        decimals: 2
+        question: "w = 1, gradient = 4, learning rate = 0.1. w sau một bước gradient descent = ?"
+        answer: 0.6
+        explanation: "1 − 0.1·4."
+      - id: m05
+        topic: bayes
+        lesson: 02_mathematics_for_ml
+        type: numeric
+        decimals: 3
+        question: "Tỉ lệ mắc bệnh 1%, độ nhạy 90%, độ đặc hiệu 95%. P(bệnh | dương tính) = ? (3 chữ số thập phân)"
+        answer: 0.154
+        explanation: "0.009 / (0.009 + 0.0495)."
+      - id: m06
+        topic: standardization
+        lesson: 04_data_preprocessing
+        type: numeric
+        decimals: 1
+        question: "x = 70, trung bình 50, độ lệch chuẩn 10. Giá trị chuẩn hoá z = ?"
+        answer: 2
+        explanation: "(70 − 50)/10."
+      - id: m07
+        topic: variance
+        lesson: 02_mathematics_for_ml
+        type: numeric
+        decimals: 1
+        question: "Phương sai (tổng thể, chia n) của [2, 4, 4, 4, 5, 5, 7, 9] = ?"
+        answer: 4
+        explanation: "Trung bình 5; tổng bình phương độ lệch 32; 32/8."
+      - id: m08
+        topic: mse
+        lesson: 05_machine_learning_fundamentals
+        type: numeric
+        decimals: 3
+        question: "y thật [1, 3, 5], dự đoán [1, 2, 3]. MSE = ?"
+        answer: 1.667
+        explanation: "(0 + 1 + 4)/3."
+coding:
+  tasks:
+    - id: c01
+      title: Chuẩn hoá không rò rỉ
+      prompt: |
+        Viết `fit_standardizer(X_train)` trả về `(mean, std)` theo cột (std với ddof = 0; cột hằng → std = 1) và
+        `transform(X, mean, std)` → (X − mean)/std. Chỉ dùng thống kê của train.
+      code: |
+        def fit_standardizer(X_train):
+            ### START CODE HERE ### (≈ 3 dòng)
+            X_train = np.asarray(X_train, float)
+            mean, std = X_train.mean(axis=0), X_train.std(axis=0)
+            return mean, np.where(std == 0, 1.0, std)
+            ### END CODE HERE ###
+
+
+        def transform(X, mean, std):
+            ### START CODE HERE ### (≈ 1 dòng)
+            return (np.asarray(X, float) - mean) / std
+            ### END CODE HERE ###
+      tests: |
+        Xtr = np.array([[1.0, 10, 5], [3.0, 30, 5]])
+        mean, std = fit_standardizer(Xtr)
+        check_close(mean, [2, 20, 5], message="trung bình theo cột")
+        check_close(std, [1, 10, 1], message="độ lệch chuẩn (cột hằng → 1)")
+        check_close(transform(np.array([[2.0, 40, 5]]), mean, std), [[0, 2, 0]], message="biến đổi dữ liệu mới bằng thống kê train")
+    - id: c02
+      title: Gradient descent cho hồi quy tuyến tính
+      prompt: |
+        Viết `fit_linear_gd(X, y, lr=0.1, n_iter=2000)`: thêm cột 1 cho hệ số chặn, khởi tạo trọng số 0, lặp
+        w ← w − lr · (2/n) Xᵀ(Xw − y). Trả về w (phần tử đầu là hệ số chặn).
+      code: |
+        def fit_linear_gd(X, y, lr=0.1, n_iter=2000):
+            ### START CODE HERE ### (≈ 5 dòng)
+            Xb = np.column_stack([np.ones(len(X)), np.asarray(X, float)])
+            y = np.asarray(y, float)
+            w = np.zeros(Xb.shape[1])
+            for _ in range(n_iter):
+                w -= lr * 2 / len(y) * Xb.T @ (Xb @ w - y)
+            return w
+            ### END CODE HERE ###
+      tests: |
+        rng = np.random.default_rng(0)
+        X = rng.normal(size=(200, 3))
+        y = 1.5 + X @ np.array([2.0, -1.0, 0.5]) + rng.normal(0, 0.1, 200)
+        w = fit_linear_gd(X, y)
+        w_ls = np.linalg.lstsq(np.column_stack([np.ones(200), X]), y, rcond=None)[0]
+        check_close(w, w_ls, tol=1e-4, message="hội tụ về nghiệm bình phương tối thiểu")
+        check_close(fit_linear_gd(np.array([[0.0], [1.0], [2.0]]), np.array([1.0, 3.0, 5.0])), [1, 2], tol=1e-3, message="ví dụ nhỏ y = 1 + 2x")
+analysis:
+  prompt: |
+    Một nhóm dự đoán thời gian nằm viện từ hồ sơ bệnh án. Quy trình: (1) điền giá trị thiếu bằng trung bình toàn bộ dữ liệu; (2) chuẩn hoá toàn bộ dữ liệu;
+    (3) chia ngẫu nhiên 80/20 theo **lượt khám** (một bệnh nhân có nhiều lượt khám); (4) thử 50 bộ siêu tham số và báo cáo điểm tốt nhất trên tập test;
+    (5) dùng cột "số ngày điều trị thực tế đã ghi trong hoá đơn" làm đặc trưng vì nó tương quan rất cao với mục tiêu. Chỉ ra các vấn đề và quy trình đúng.
+  rubric:
+    - "Chỉ ra điền thiếu/chuẩn hoá trên toàn bộ dữ liệu trước khi chia là rò rỉ → Pipeline fit trên train"
+    - "Chỉ ra chia theo lượt khám để cùng bệnh nhân ở cả train và test → chia theo nhóm bệnh nhân (GroupKFold)"
+    - "Chỉ ra chọn siêu tham số trên test → lạc quan; cần validation/CV, test dùng một lần"
+    - "Chỉ ra cột hoá đơn là thông tin tương lai (rò rỉ mục tiêu) → loại bỏ; chỉ dùng đặc trưng có tại thời điểm dự đoán"
+    - "Đề xuất quy trình: chia nhóm trước, pipeline, CV chọn mô hình, test cuối, kiểm tra dữ liệu thiếu (cơ chế thiếu)"
+  sample_answer: |
+    (1)–(2) Thống kê điền thiếu và chuẩn hoá tính trên cả test → thông tin test rò vào huấn luyện; đặt imputer/scaler trong Pipeline và fit trên train
+    (cũng cần xem dữ liệu thiếu có ý nghĩa không — thêm cờ thiếu). (3) Một bệnh nhân có nhiều lượt khám rất giống nhau; chia theo lượt khám làm mô hình
+    "nhớ" bệnh nhân → điểm test quá đẹp; chia theo bệnh nhân (GroupShuffleSplit/GroupKFold), hoặc theo thời gian nếu dự đoán cho tương lai. (4) Chọn trong 50
+    cấu hình theo điểm test làm test thành validation → lạc quan; dùng CV trên train để chọn, test chạm một lần, báo cáo độ biến thiên. (5) Số ngày điều trị
+    trong hoá đơn chỉ biết sau khi ra viện — chính là mục tiêu được ghi ở nơi khác (rò rỉ mục tiêu); loại bỏ. Quy trình đúng: định nghĩa thời điểm dự đoán
+    (lúc nhập viện), chỉ giữ đặc trưng có tại thời điểm đó, chia theo bệnh nhân, Pipeline + CV, đánh giá test một lần, phân tích lỗi theo nhóm.
+project:
+  prompt: |
+    **Mini project — Hồi quy giá nhà.** Với `house_prices.csv` (chia 80/20, `random_state=0`), xây pipeline dự đoán `price_billion_vnd`: cột số
+    `NUMERIC`, cột phân loại `CATEGORICAL`. Mô hình phải đạt **MAPE test < 12%** (hồi quy tuyến tính thẳng trên giá đạt ~16% — hãy nghĩ về thang đo).
+    Lưu dự đoán test vào `pred` và MAPE vào `mape`.
+  code: |
+    import pandas as pd
+    from sklearn.compose import ColumnTransformer, TransformedTargetRegressor
+    from sklearn.linear_model import Ridge
+    from sklearn.metrics import mean_absolute_percentage_error
+    from sklearn.model_selection import train_test_split
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import FunctionTransformer, OneHotEncoder, StandardScaler
+
+    from ml_course.utils import repo_path
+
+    houses = pd.read_csv(repo_path("data", "sample", "house_prices.csv"))
+    NUMERIC = ["area_m2", "bedrooms", "bathrooms", "age_years", "distance_to_center_km"]
+    CATEGORICAL = ["district", "has_garden"]
+    train, test = train_test_split(houses, test_size=0.2, random_state=0)
+    ### START CODE HERE ### (≈ 6 dòng)
+    pre = ColumnTransformer([("num", make_pipeline(FunctionTransformer(np.log1p), StandardScaler()), NUMERIC),
+                             ("cat", OneHotEncoder(handle_unknown="ignore"), CATEGORICAL)])
+    model = TransformedTargetRegressor(make_pipeline(pre, Ridge(1.0)), func=np.log, inverse_func=np.exp)
+    model.fit(train[NUMERIC + CATEGORICAL], train.price_billion_vnd)
+    pred = model.predict(test[NUMERIC + CATEGORICAL])
+    mape = mean_absolute_percentage_error(test.price_billion_vnd, pred)
+    ### END CODE HERE ###
+    print(f"MAPE test = {mape:.1%}")
+  tests: |
+    check_equal(len(pred), len(test), "dự đoán cho mọi căn trong test")
+    check_less(mape, 0.12, "MAPE test < 12%")
+    check_true((np.asarray(pred) > 0).all(), "giá dự đoán dương")

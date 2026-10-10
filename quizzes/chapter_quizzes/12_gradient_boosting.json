@@ -1,0 +1,235 @@
+{
+ "id": "12_gradient_boosting",
+ "kind": "Chapter",
+ "title": "12 · Gradient Boosting",
+ "next": "13_svm_and_kernels",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "bagging vs boosting",
+     "answer_hashes": [
+      "d18f88912cf8f142e13b"
+     ],
+     "lesson": "01_boosting_intuition_adaboost.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "weak learner",
+     "answer_hashes": [
+      "bf5eaf8d8b7b8d629987"
+     ],
+     "lesson": "01_boosting_intuition_adaboost.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "AdaBoost weights",
+     "answer_hashes": [
+      "376918445bd0f4f5be14"
+     ],
+     "lesson": "01_boosting_intuition_adaboost.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "AdaBoost loss",
+     "answer_hashes": [
+      "f1461f6780d0040517d2"
+     ],
+     "lesson": "01_boosting_intuition_adaboost.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "noise",
+     "answer_hashes": [
+      "869de0a56723f6034994"
+     ],
+     "lesson": "01_boosting_intuition_adaboost.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "pseudo-residual",
+     "answer_hashes": [
+      "82a4d70ccb701c16c196"
+     ],
+     "lesson": "02_gradient_boosting_from_scratch.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "log-loss residual",
+     "answer_hashes": [
+      "8ca571420a00389e7be5"
+     ],
+     "lesson": "02_gradient_boosting_from_scratch.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "learning rate",
+     "answer_hashes": [
+      "d5fc794a85a3b62ddf25"
+     ],
+     "lesson": "02_gradient_boosting_from_scratch.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "tf",
+     "topic": "overfit theo số cây",
+     "answer_hashes": [
+      "bddf77f2f3241c05c8e2"
+     ],
+     "lesson": "02_gradient_boosting_from_scratch.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "multi",
+     "topic": "robust loss",
+     "answer_hashes": [
+      "12e9015b388df91babc5"
+     ],
+     "lesson": "02_gradient_boosting_from_scratch.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "XGBoost",
+     "answer_hashes": [
+      "ac90111112e3916a3ecc"
+     ],
+     "lesson": "03_xgboost_lightgbm_catboost.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "histogram",
+     "answer_hashes": [
+      "48b02029833f20611a6d"
+     ],
+     "lesson": "03_xgboost_lightgbm_catboost.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "leaf-wise",
+     "answer_hashes": [
+      "931d21d3993c9338b8b1"
+     ],
+     "lesson": "03_xgboost_lightgbm_catboost.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "CatBoost",
+     "answer_hashes": [
+      "4899b9299f9cf3c95708"
+     ],
+     "lesson": "03_xgboost_lightgbm_catboost.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "multi",
+     "topic": "RF vs GB",
+     "answer_hashes": [
+      "18d844862752db9291d2"
+     ],
+     "lesson": "04_tuning_and_rf_vs_gb.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "monotonic",
+     "answer_hashes": [
+      "c405982420fef1a469aa"
+     ],
+     "lesson": "04_tuning_and_rf_vs_gb.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "AdaBoost alpha",
+     "answer_hashes": [
+      "a47dfe8f50a70079642e"
+     ],
+     "decimals": 3,
+     "lesson": "01_boosting_intuition_adaboost.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "GB step",
+     "answer_hashes": [
+      "2df05db4573c8e020321"
+     ],
+     "decimals": 2,
+     "lesson": "02_gradient_boosting_from_scratch.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "XGBoost leaf",
+     "answer_hashes": [
+      "a40c4658f4be36fbffde"
+     ],
+     "decimals": 3,
+     "lesson": "03_xgboost_lightgbm_catboost.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "log-loss gradient",
+     "answer_hashes": [
+      "881edbe4ce9c1be90c1d"
+     ],
+     "decimals": 3,
+     "lesson": "03_xgboost_lightgbm_catboost.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "F0 log-odds",
+     "answer_hashes": [
+      "a6ec2f29b5e15e67b16b"
+     ],
+     "decimals": 3,
+     "lesson": "02_gradient_boosting_from_scratch.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

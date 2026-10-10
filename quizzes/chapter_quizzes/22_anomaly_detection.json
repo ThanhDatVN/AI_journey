@@ -1,0 +1,235 @@
+{
+ "id": "22_anomaly_detection",
+ "kind": "Chapter",
+ "title": "22 · Anomaly Detection",
+ "next": "23_probabilistic_machine_learning",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "when to use",
+     "answer_hashes": [
+      "52c9ef4dc973103500d2"
+     ],
+     "lesson": "01_statistical_and_gaussian_methods.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "anomaly types",
+     "answer_hashes": [
+      "f60c2058c5c8da316439"
+     ],
+     "lesson": "01_statistical_and_gaussian_methods.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "masking",
+     "answer_hashes": [
+      "d9775e46e6cb25dc0862"
+     ],
+     "lesson": "01_statistical_and_gaussian_methods.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "gaussian model",
+     "answer_hashes": [
+      "3a8697221ba110fb8625"
+     ],
+     "lesson": "01_statistical_and_gaussian_methods.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "choosing epsilon",
+     "answer_hashes": [
+      "011a3f7395a3714b2b6a"
+     ],
+     "lesson": "01_statistical_and_gaussian_methods.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "multivariate",
+     "answer_hashes": [
+      "2f049f4ef49b26c5b178"
+     ],
+     "lesson": "01_statistical_and_gaussian_methods.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "robust covariance",
+     "answer_hashes": [
+      "bb74d3520343161dfb8a"
+     ],
+     "lesson": "01_statistical_and_gaussian_methods.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "isolation forest",
+     "answer_hashes": [
+      "4d68667fc817574affdd"
+     ],
+     "lesson": "02_isolation_forest_lof_ocsvm.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "LOF",
+     "answer_hashes": [
+      "c0a71f674e93693767a1"
+     ],
+     "lesson": "02_isolation_forest_lof_ocsvm.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "tf",
+     "topic": "local anomalies",
+     "answer_hashes": [
+      "1d4db46dbcd9f5e4d5b4"
+     ],
+     "lesson": "02_isolation_forest_lof_ocsvm.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "contamination",
+     "answer_hashes": [
+      "6287d21c2c0eb37f5dc1"
+     ],
+     "lesson": "02_isolation_forest_lof_ocsvm.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "multi",
+     "topic": "ocsvm",
+     "answer_hashes": [
+      "6035e1f129e37cd5dee5"
+     ],
+     "lesson": "02_isolation_forest_lof_ocsvm.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "novelty vs outlier",
+     "answer_hashes": [
+      "88d430ecec6427f093aa"
+     ],
+     "lesson": "03_evaluation_and_practice.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "tf",
+     "topic": "novel patterns",
+     "answer_hashes": [
+      "fb4b6ab778edf063287c"
+     ],
+     "lesson": "03_evaluation_and_practice.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "reconstruction error",
+     "answer_hashes": [
+      "c3228cd035455801f330"
+     ],
+     "lesson": "03_evaluation_and_practice.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "multi",
+     "topic": "time series",
+     "answer_hashes": [
+      "10a72b1486b5310101bb"
+     ],
+     "lesson": "03_evaluation_and_practice.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "robust z",
+     "answer_hashes": [
+      "1c8f736d912f1f7499c7"
+     ],
+     "decimals": 2,
+     "lesson": "01_statistical_and_gaussian_methods.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "gaussian density",
+     "answer_hashes": [
+      "0dba09b88b0a8044f69a"
+     ],
+     "decimals": 4,
+     "lesson": "01_statistical_and_gaussian_methods.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "mahalanobis",
+     "answer_hashes": [
+      "8a2d73cd3d70fb7dd4cb"
+     ],
+     "decimals": 2,
+     "lesson": "01_statistical_and_gaussian_methods.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "isolation score",
+     "answer_hashes": [
+      "b138a01d750315656eb7"
+     ],
+     "decimals": 2,
+     "lesson": "02_isolation_forest_lof_ocsvm.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "f1 top-k",
+     "answer_hashes": [
+      "f1a69e213a8366a8a5e4"
+     ],
+     "decimals": 3,
+     "lesson": "03_evaluation_and_practice.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

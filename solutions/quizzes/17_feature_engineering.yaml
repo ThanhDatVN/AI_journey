@@ -1,0 +1,289 @@
+title: "17 · Feature Engineering"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: log-log
+        lesson: 01_numeric_transforms.ipynb
+        type: mcq
+        question: "Giá nhà ∝ diện tích × hệ số quận (quan hệ nhân). Biến đổi giúp Linear Regression nhất:"
+        options: {a: "Chuẩn hoá", b: "Log cả target và diện tích", c: "One-hot diện tích", d: "Bình phương diện tích"}
+        answer: b
+        explanation: "log biến nhân thành cộng."
+      - id: t02
+        topic: tree invariance
+        lesson: 01_numeric_transforms.ipynb
+        type: tf
+        question: "Áp dụng log cho một feature đầu vào (dương) thường không làm thay đổi dự đoán của Decision Tree/Gradient Boosting."
+        answer: true
+        explanation: "Cây bất biến với biến đổi đơn điệu của feature."
+      - id: t03
+        topic: Yeo-Johnson
+        lesson: 01_numeric_transforms.ipynb
+        type: mcq
+        question: "Điểm khác biệt chính của Yeo-Johnson so với Box-Cox:"
+        options: {a: "Chỉ dùng cho số nguyên", b: "Áp dụng được cho giá trị 0 và âm", c: "Không học tham số", d: "Chỉ cho target"}
+        answer: b
+        explanation: "Box-Cox cần x > 0."
+      - id: t04
+        topic: spline
+        lesson: 01_numeric_transforms.ipynb
+        type: mcq
+        question: "SplineTransformer giúp model tuyến tính:"
+        options: {a: "Chạy nhanh hơn", b: "Học quan hệ phi tuyến mượt theo một feature", c: "Bỏ qua outlier", d: "Xử lý category"}
+        answer: b
+        explanation: "Đa thức từng khúc nối mượt."
+      - id: t05
+        topic: ratio features
+        lesson: 01_numeric_transforms.ipynb
+        type: tf
+        question: "Feature tỉ số (vd diện tích / số phòng) chỉ có ích cho model tuyến tính, không giúp model cây."
+        answer: false
+        explanation: "Cây khó tự học phép chia."
+      - id: t06
+        topic: ordinal
+        lesson: 02_categorical_encoding.ipynb
+        type: mcq
+        question: "Ordinal encoding hợp lý cho model tuyến tính khi:"
+        options: {a: "Category có thứ tự tự nhiên (S < M < L)", b: "Category là tên thành phố", c: "Có 10 000 category", d: "Không bao giờ"}
+        answer: a
+        explanation: "Không có thứ tự → one-hot hoặc target encoding."
+      - id: t07
+        topic: target leakage
+        lesson: 02_categorical_encoding.ipynb
+        type: mcq
+        question: "Target encoding 'ngây thơ' (tính trên chính tập train) gây ra:"
+        options: {a: "Underfit", b: "Rò rỉ nhãn — điểm train cao giả tạo, model dựa quá mức vào cột encoding", c: "Lỗi chạy", d: "Không ảnh hưởng"}
+        answer: b
+        explanation: "Category hiếm: encoding ≈ nhãn của chính mẫu."
+      - id: t08
+        topic: cross-fit
+        lesson: 02_categorical_encoding.ipynb
+        type: mcq
+        question: "Cross-fitting trong target encoding nghĩa là:"
+        options:
+          a: "Encoding của mẫu ở fold i được tính từ các fold khác"
+          b: "Dùng nhiều model"
+          c: "Tính encoding trên test"
+          d: "Bỏ category hiếm"
+        answer: a
+        explanation: "TargetEncoder.fit_transform."
+      - id: t09
+        topic: smoothing
+        lesson: 02_categorical_encoding.ipynb
+        type: mcq
+        question: "Smoothing trong target encoding có tác dụng:"
+        options: {a: "Kéo encoding của category ít mẫu về tỉ lệ chung", b: "Tăng số cột", c: "Xoá category", d: "Chuẩn hoá về [0, 1]"}
+        answer: a
+        explanation: "(n·ȳc + m·ȳ)/(n + m)."
+      - id: t10
+        topic: high cardinality
+        lesson: 02_categorical_encoding.ipynb
+        type: multi
+        question: "Feature có 50 000 category. Lựa chọn hợp lý?"
+        options: {a: "Target encoding (cross-fit + smoothing)", b: "Hashing", c: "One-hot dày (dense) cho cây", d: "Native categorical của CatBoost"}
+        answer: abd
+        explanation: "One-hot 50 000 cột dày rất tốn kém."
+      - id: t11
+        topic: interaction
+        lesson: 03_interaction_datetime_text_aggregation.ipynb
+        type: mcq
+        question: "Tác động của giảm giá chỉ xuất hiện khi khách trẻ VÀ dùng app. Logistic Regression cần:"
+        options: {a: "Feature tương tác young × app × discount", b: "Scale lại discount", c: "Bỏ feature app", d: "Không cần gì"}
+        answer: a
+        explanation: "Model tuyến tính chỉ cộng tác động riêng lẻ."
+      - id: t12
+        topic: cyclical
+        lesson: 03_interaction_datetime_text_aggregation.ipynb
+        type: mcq
+        question: "Vì sao mã hoá giờ bằng (sin, cos) thay vì số 0–23?"
+        options: {a: "23h và 0h gần nhau trên vòng tròn", b: "Giảm số feature", c: "Tăng tốc độ", d: "Để giờ thành category"}
+        answer: a
+        explanation: "Cần cả sin và cos để mỗi giờ có toạ độ duy nhất."
+      - id: t13
+        topic: aggregation leakage
+        lesson: 03_interaction_datetime_text_aggregation.ipynb
+        type: mcq
+        question: "Feature 'trung bình chi tiêu của khách hàng' phải được tính từ:"
+        options: {a: "Toàn bộ dữ liệu", b: "Chỉ các giao dịch trước thời điểm dự đoán", c: "Tập test", d: "Giao dịch hiện tại"}
+        answer: b
+        explanation: "Tránh rò rỉ tương lai."
+      - id: t14
+        topic: TF-IDF
+        lesson: 03_interaction_datetime_text_aggregation.ipynb
+        type: mcq
+        question: "Trong TF-IDF, từ xuất hiện trong hầu hết văn bản có trọng số:"
+        options: {a: "Cao", b: "Thấp (IDF nhỏ)", c: "Bằng 1", d: "Âm"}
+        answer: b
+        explanation: "log(N/df) nhỏ."
+      - id: t15
+        topic: custom transformer
+        lesson: 04_end_to_end_pipeline.ipynb
+        type: multi
+        question: "Quy ước của một transformer scikit-learn tuỳ chỉnh:"
+        options:
+          a: "fit học tham số từ train, lưu vào thuộc tính kết thúc bằng '_'"
+          b: "transform không sửa X gốc"
+          c: "__init__ chỉ lưu tham số"
+          d: "transform được phép dùng nhãn y của test"
+        answer: abc
+        explanation: "Để dùng được với Pipeline, clone, GridSearchCV."
+      - id: t16
+        topic: ablation
+        lesson: 04_end_to_end_pipeline.ipynb
+        type: mcq
+        question: "Ablation study trong feature engineering dùng để:"
+        options: {a: "Đo đóng góp của từng nhóm feature/bước bằng cách thêm/bớt", b: "Tăng tốc train", c: "Chọn learning rate", d: "Xoá dữ liệu"}
+        answer: a
+        explanation: "Luôn đo bằng CV."
+  math:
+    questions:
+      - id: m01
+        topic: smoothing
+        lesson: 02_categorical_encoding.ipynb
+        type: numeric
+        decimals: 3
+        question: "m = 20, tỉ lệ chung 0.15. Category có 2 mẫu, cả 2 positive. Encoding = ?"
+        answer: 0.2273
+        explanation: "(2 + 3)/22."
+      - id: m02
+        topic: cyclical
+        lesson: 03_interaction_datetime_text_aggregation.ipynb
+        type: numeric
+        decimals: 3
+        question: "Mã hoá chu kỳ giờ: cos(2π·6/24) = ?"
+        answer: 0
+        explanation: "cos(π/2) = 0."
+      - id: m03
+        topic: one-hot size
+        lesson: 02_categorical_encoding.ipynb
+        type: numeric
+        decimals: 0
+        question: "One-hot 3 cột phân loại có 4, 10, 7 category (không drop). Bao nhiêu cột?"
+        answer: 21
+        explanation: "4 + 10 + 7."
+      - id: m04
+        topic: interaction count
+        lesson: 03_interaction_datetime_text_aggregation.ipynb
+        type: numeric
+        decimals: 0
+        question: "PolynomialFeatures(degree=2, interaction_only=True, include_bias=False) với 10 feature tạo bao nhiêu cột?"
+        answer: 55
+        explanation: "10 + C(10, 2) = 55."
+      - id: m05
+        topic: log ratio
+        lesson: 01_numeric_transforms.ipynb
+        type: numeric
+        decimals: 3
+        question: "Model log(y) = a + 0.95·log(area). Diện tích tăng 10% thì y tăng tỉ lệ 1.1^0.95 − 1 = ?"
+        answer: 0.0948
+        explanation: "≈ 9.5%."
+coding:
+  tasks:
+    - id: c01
+      title: Target encoding có smoothing
+      prompt: |
+        Viết `smooth_encode(train_cat, train_y, apply_cat, m)` trả về mảng encoding cho `apply_cat`:
+        (tổng y + m·prior)/(số mẫu + m) với prior = trung bình train_y; category chưa thấy → prior.
+      code: |
+        def smooth_encode(train_cat, train_y, apply_cat, m=10):
+            ### START CODE HERE ### (≈ 4 dòng)
+            prior = np.mean(train_y)
+            stats = pd.DataFrame({"c": train_cat, "y": train_y}).groupby("c")["y"].agg(["sum", "count"])
+            enc = (stats["sum"] + m * prior) / (stats["count"] + m)
+            out = pd.Series(apply_cat).map(enc).fillna(prior).to_numpy()
+            ### END CODE HERE ###
+            return out
+      tests: |
+        import pandas as pd
+        cats = np.array(["a"] * 100 + ["b"] * 4)
+        ys = np.r_[np.r_[np.ones(30), np.zeros(70)], np.ones(4)]
+        out = smooth_encode(cats, ys, np.array(["a", "b", "z"]), m=10)
+        prior = ys.mean()
+        check_close(out[0], (30 + 10 * prior) / 110, message="category a")
+        check_close(out[1], (4 + 10 * prior) / 14, message="category b")
+        check_close(out[2], prior, message="category mới → prior")
+    - id: c02
+      title: Feature quá khứ không rò rỉ
+      prompt: |
+        Cho DataFrame `tx` đã sắp xếp theo thời gian với cột `customer`, `amount`. Viết `past_mean_amount(tx)` trả về Series:
+        trung bình `amount` của **các giao dịch trước** của cùng khách hàng (NaN nếu chưa có).
+      code: |
+        def past_mean_amount(tx):
+            ### START CODE HERE ### (≈ 2 dòng)
+            g = tx.groupby("customer")["amount"]
+            out = (g.cumsum() - tx["amount"]) / g.cumcount().replace(0, np.nan)
+            ### END CODE HERE ###
+            return out
+      tests: |
+        import pandas as pd
+        tx = pd.DataFrame({"customer": ["A", "B", "A", "A", "B"], "amount": [10.0, 5.0, 20.0, 60.0, 7.0]})
+        out = past_mean_amount(tx)
+        check_true(np.isnan(out.iloc[0]) and np.isnan(out.iloc[1]), "giao dịch đầu tiên: NaN")
+        check_close(out.iloc[2:].to_numpy(), [10.0, 15.0, 5.0], message="chỉ dùng quá khứ")
+analysis:
+  prompt: |
+    Một nhóm dự đoán khách hàng có trả nợ đúng hạn không. Feature engineering của họ: (1) target encoding cột `employer_name`
+    (40 000 giá trị) bằng trung bình tỉ lệ trả nợ của công ty tính trên toàn bộ dữ liệu; (2) `avg_balance_all_time` — số dư trung bình
+    của khách hàng trên toàn bộ lịch sử (kể cả sau ngày vay); (3) one-hot `zip_code` (12 000 giá trị) cho Gradient Boosting;
+    (4) log-transform mọi feature số trước khi đưa vào Gradient Boosting "để chuẩn hoá". Kết quả CV: ROC-AUC 0.95, triển khai: 0.71.
+    Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra target encoding trên toàn bộ dữ liệu với category hiếm gây rò rỉ nhãn → cross-fit + smoothing trong Pipeline"
+    - "Chỉ ra avg_balance_all_time dùng dữ liệu sau thời điểm dự đoán → rò rỉ tương lai; chỉ tính từ quá khứ (trước ngày vay)"
+    - "Nhận xét one-hot 12 000 zip code cho cây là tốn kém/kém hiệu quả → target encoding, gộp theo vùng, hoặc native categorical"
+    - "Chỉ ra log-transform không cần thiết với Gradient Boosting (bất biến biến đổi đơn điệu)"
+    - "Giải thích chênh lệch CV 0.95 vs triển khai 0.71 là dấu hiệu rò rỉ; đề xuất CV theo thời gian và kiểm tra feature tại thời điểm dự đoán"
+  sample_answer: |
+    (1) Target encoding employer_name trên toàn bộ dữ liệu: công ty hiếm → encoding ≈ nhãn → rò rỉ; dùng TargetEncoder cross-fit + smoothing trong Pipeline.
+    (2) avg_balance_all_time chứa số dư sau ngày vay (tương lai) → rò rỉ; chỉ tính từ lịch sử trước ngày vay.
+    (3) One-hot 12 000 zip code cho cây: rất thưa, cây khó dùng; thay bằng target encoding, gộp theo tỉnh/vùng, hoặc native categorical (LightGBM/CatBoost).
+    (4) Log-transform không thay đổi gì cho cây (biến đổi đơn điệu) — không có hại nhưng không cần.
+    (5) CV 0.95 vs triển khai 0.71 → gần chắc chắn có rò rỉ; dùng CV theo thời gian, kiểm tra từng feature "có sẵn tại thời điểm dự đoán không?", theo dõi sau triển khai.
+project:
+  prompt: |
+    **Mini project — Feature engineering cho dự đoán giá nhà.** Đọc `house_prices_dirty.csv` (`repo_path("data", "sample", "house_prices_dirty.csv")`),
+    target `price_billion_vnd`. Chia train/test 80/20 (`random_state=0`). Xây **một Pipeline** nhận dữ liệu thô: làm sạch (tên quận, missing),
+    feature miền (log diện tích, diện tích/phòng ngủ...), encoding, model **tuyến tính** (Ridge, có thể log target). Đạt **MAE test ≤ 0.60** (biến `test_mae`, tỉ VND).
+  code: |
+    import pandas as pd
+    from sklearn.base import BaseEstimator, TransformerMixin
+    from sklearn.compose import ColumnTransformer, TransformedTargetRegressor
+    from sklearn.impute import SimpleImputer
+    from sklearn.linear_model import RidgeCV
+    from sklearn.metrics import mean_absolute_error
+    from sklearn.model_selection import train_test_split
+    from sklearn.pipeline import Pipeline, make_pipeline
+    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+    from ml_course.utils import repo_path
+
+    df = pd.read_csv(repo_path("data", "sample", "house_prices_dirty.csv")).drop_duplicates()
+    X, y = df.drop(columns="price_billion_vnd"), df["price_billion_vnd"]
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, random_state=0)
+    ### START CODE HERE ### (≈ 25 dòng)
+    class Clean(TransformerMixin, BaseEstimator):
+        def fit(self, X, y=None):
+            self.median_area_ = X["area_m2"].median()
+            return self
+
+        def transform(self, X):
+            X = X.copy()
+            X["district"] = X["district"].astype(str).str.strip().str.replace("Q.", "Quận", regex=False).str.title()
+            big = X["area_m2"] > 6 * self.median_area_
+            X.loc[big, "area_m2"] = X.loc[big, "area_m2"] / 10
+            X["has_garden"] = X["has_garden"].astype(float)
+            X["log_area"] = np.log(X["area_m2"])
+            X["area_per_bedroom"] = X["area_m2"] / X["bedrooms"]
+            return X
+
+    cols = ["log_area", "area_per_bedroom", "bedrooms", "bathrooms", "age_years", "distance_to_center_km", "has_garden"]
+    pre = ColumnTransformer([("num", make_pipeline(SimpleImputer(strategy="median"), StandardScaler()), cols),
+                             ("cat", OneHotEncoder(handle_unknown="ignore"), ["district"])])
+    pipe = Pipeline([("clean", Clean()), ("pre", pre),
+                     ("model", TransformedTargetRegressor(RidgeCV(alphas=np.logspace(-3, 3, 13)), func=np.log, inverse_func=np.exp))])
+    pipe.fit(X_tr, y_tr)
+    test_mae = mean_absolute_error(y_te, pipe.predict(X_te))
+    ### END CODE HERE ###
+    print(f"MAE test = {test_mae:.3f} tỉ")
+  tests: |
+    check_less(test_mae, 0.60, "MAE test ≤ 0.60 tỉ")

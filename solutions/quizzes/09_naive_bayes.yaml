@@ -1,0 +1,293 @@
+title: "09 · Naive Bayes"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: base rate
+        lesson: 01_bayes_and_naive_assumption.ipynb
+        type: mcq
+        question: "Xét nghiệm dương tính với độ nhạy 95%, dương tính giả 5%, bệnh hiếm (1%). Vì sao P(bệnh | +) chỉ khoảng 16%?"
+        options:
+          a: "Vì xét nghiệm sai"
+          b: "Vì người khoẻ đông hơn rất nhiều nên số dương tính giả áp đảo số dương tính thật"
+          c: "Vì độ nhạy quá thấp"
+          d: "Vì phải nhân thêm P(+)"
+        answer: b
+        explanation: "Base rate fallacy: prior quan trọng."
+      - id: t02
+        topic: generative vs discriminative
+        lesson: 01_bayes_and_naive_assumption.ipynb
+        type: multi
+        question: "Model nào là model SINH (generative)?"
+        options: {a: "Naive Bayes", b: "Logistic Regression", c: "Gaussian Mixture Model", d: "SVM"}
+        answer: ac
+        explanation: "Model sinh mô hình hoá P(x | y) và P(y)."
+      - id: t03
+        topic: giả định naive
+        lesson: 01_bayes_and_naive_assumption.ipynb
+        type: mcq
+        question: "Giả định 'naive' của Naive Bayes là:"
+        options:
+          a: "Các feature độc lập với nhau"
+          b: "Các feature độc lập có điều kiện khi biết lớp"
+          c: "Các lớp có prior bằng nhau"
+          d: "Feature có phân phối Gaussian"
+        answer: b
+        explanation: "P(x | y) = Π P(x_j | y)."
+      - id: t04
+        topic: zero-frequency
+        lesson: 01_bayes_and_naive_assumption.ipynb
+        type: mcq
+        question: "Laplace smoothing giải quyết vấn đề gì?"
+        options:
+          a: "Underflow khi nhân nhiều xác suất"
+          b: "Một từ chưa thấy trong một lớp làm cả tích bằng 0"
+          c: "Feature chưa scale"
+          d: "Mất cân bằng lớp"
+        answer: b
+        explanation: "Cộng α vào mọi bộ đếm."
+      - id: t05
+        topic: log space
+        lesson: 01_bayes_and_naive_assumption.ipynb
+        type: tf
+        question: "Tính trong không gian log (tổng log-xác suất) giúp tránh underflow khi văn bản có hàng nghìn từ."
+        answer: true
+        explanation: "Tích của nhiều số nhỏ → 0 trong float64."
+      - id: t06
+        topic: train Gaussian NB
+        lesson: 02_gaussian_nb_from_scratch.ipynb
+        type: mcq
+        question: "'Train' Gaussian Naive Bayes gồm:"
+        options:
+          a: "Gradient descent trên cross-entropy"
+          b: "Tính mean, variance của từng feature trong từng lớp và prior của lớp"
+          c: "Tìm siêu phẳng lề lớn nhất"
+          d: "Lưu lại toàn bộ dữ liệu"
+        answer: b
+        explanation: "Nghiệm đóng, một lượt qua dữ liệu."
+      - id: t07
+        topic: decision boundary
+        lesson: 02_gaussian_nb_from_scratch.ipynb
+        type: mcq
+        question: "Decision boundary của Gaussian NB (phương sai riêng mỗi lớp) có dạng:"
+        options: {a: "Luôn tuyến tính", b: "Bậc hai (tuyến tính nếu phương sai chung)", c: "Voronoi", d: "Bậc thang song song trục"}
+        answer: b
+        explanation: "Số hạng x²/σ² không triệt tiêu khi σ khác nhau."
+      - id: t08
+        topic: scaling
+        lesson: 02_gaussian_nb_from_scratch.ipynb
+        type: tf
+        question: "Gaussian Naive Bayes bắt buộc phải chuẩn hoá feature trước khi train."
+        answer: false
+        explanation: "Mỗi feature được chuẩn hoá bởi chính σ_cj; nhân hằng số một feature không đổi posterior."
+      - id: t09
+        topic: multinomial là tuyến tính
+        lesson: 03_multinomial_bernoulli_text.ipynb
+        type: tf
+        question: "Multinomial Naive Bayes là một bộ phân loại tuyến tính theo vector đếm từ."
+        answer: true
+        explanation: "Score = log P(y) + Σ x_w log θ_cw."
+      - id: t10
+        topic: Bernoulli vs Multinomial
+        lesson: 03_multinomial_bernoulli_text.ipynb
+        type: mcq
+        question: "Điểm khác biệt chính của Bernoulli NB so với Multinomial NB:"
+        options:
+          a: "Bernoulli dùng số lần xuất hiện"
+          b: "Bernoulli dùng có/không và phạt cả những từ VẮNG mặt"
+          c: "Bernoulli không cần smoothing"
+          d: "Bernoulli chỉ dùng cho dữ liệu liên tục"
+        answer: b
+        explanation: "Thừa số (1 − p_cw) cho từ không xuất hiện."
+      - id: t11
+        topic: vectorizer leakage
+        lesson: 03_multinomial_bernoulli_text.ipynb
+        type: mcq
+        question: "CountVectorizer nên được fit trên:"
+        options: {a: "Toàn bộ dữ liệu", b: "Chỉ tập train (trong Pipeline)", c: "Chỉ tập test", d: "Không cần fit"}
+        answer: b
+        explanation: "Từ điển là một phần của model."
+      - id: t12
+        topic: phủ định
+        lesson: 03_multinomial_bernoulli_text.ipynb
+        type: mcq
+        question: "Vì sao 'giao hàng không chậm' bị Naive Bayes (bag-of-words) dự đoán là tiêu cực?"
+        options:
+          a: "Vì α quá lớn"
+          b: "Vì model cộng bằng chứng từng từ ('không', 'chậm' đều tiêu cực) và bỏ qua thứ tự/ngữ cảnh"
+          c: "Vì câu quá ngắn"
+          d: "Vì thiếu prior"
+        answer: b
+        explanation: "n-gram chưa thấy trong train cũng không giúp."
+      - id: t13
+        topic: overconfidence
+        lesson: 04_why_naive_works_and_fails.ipynb
+        type: mcq
+        question: "Feature tương quan mạnh (gần như trùng lặp) ảnh hưởng thế nào tới Naive Bayes?"
+        options:
+          a: "Accuracy giảm mạnh"
+          b: "Xác suất bị đẩy về 0/1 (quá tự tin), accuracy thường ít thay đổi"
+          c: "Model không train được"
+          d: "Không ảnh hưởng gì"
+        answer: b
+        explanation: "Bằng chứng bị đếm trùng; argmax thường vẫn đúng."
+      - id: t14
+        topic: NB vs LR
+        lesson: 04_why_naive_works_and_fails.ipynb
+        type: mcq
+        question: "Theo Ng & Jordan (2002), so với Logistic Regression, Naive Bayes thường:"
+        options:
+          a: "Tốt hơn khi rất nhiều dữ liệu"
+          b: "Đạt tiệm cận nhanh hơn (tốt khi ít dữ liệu) nhưng tiệm cận có thể tệ hơn"
+          c: "Luôn tệ hơn"
+          d: "Luôn tốt hơn"
+        answer: b
+        explanation: "Generative vs discriminative."
+      - id: t15
+        topic: XOR
+        lesson: 04_why_naive_works_and_fails.ipynb
+        type: tf
+        question: "Naive Bayes học được quan hệ XOR giữa hai feature."
+        answer: false
+        explanation: "Mỗi feature riêng lẻ không mang thông tin về nhãn."
+      - id: t16
+        topic: online learning
+        lesson: 04_why_naive_works_and_fails.ipynb
+        type: tf
+        question: "Multinomial Naive Bayes có thể cập nhật với dữ liệu mới bằng cách cộng dồn bộ đếm, không cần train lại từ đầu."
+        answer: true
+        explanation: "partial_fit trong sklearn."
+  math:
+    questions:
+      - id: m01
+        topic: Bayes
+        lesson: 01_bayes_and_naive_assumption.ipynb
+        type: numeric
+        decimals: 3
+        question: "Prior 1%, độ nhạy 95%, dương tính giả 5%. P(bệnh | +) = ?"
+        answer: 0.161
+        explanation: "0.0095 / (0.0095 + 0.0495) ≈ 0.161."
+      - id: m02
+        topic: số tham số
+        lesson: 01_bayes_and_naive_assumption.ipynb
+        type: numeric
+        decimals: 0
+        question: "Bernoulli NB với 2 lớp, 1 000 feature nhị phân: có bao nhiêu tham số P(x_j = 1 | y) cần ước lượng?"
+        answer: 2000
+        explanation: "1 000 × 2."
+      - id: m03
+        topic: Laplace
+        lesson: 01_bayes_and_naive_assumption.ipynb
+        type: numeric
+        decimals: 3
+        question: "Lớp spam có 4 email, từ 'họp' xuất hiện trong 0 email. Với Laplace α = 1 (feature nhị phân), P(họp = 1 | spam) = ?"
+        answer: 0.1667
+        explanation: "(0 + 1)/(4 + 2) = 1/6."
+      - id: m04
+        topic: Multinomial θ
+        lesson: 03_multinomial_bernoulli_text.ipynb
+        type: numeric
+        decimals: 3
+        question: "Từ điển 5 từ; lớp c có tổng 15 lần xuất hiện từ, từ w xuất hiện 4 lần. θ_cw với α = 1?"
+        answer: 0.25
+        explanation: "(4 + 1)/(15 + 5) = 0.25."
+      - id: m05
+        topic: Gaussian log-pdf
+        lesson: 02_gaussian_nb_from_scratch.ipynb
+        type: numeric
+        decimals: 3
+        question: "x = 3, μ = 1, σ² = 4. Số hạng −(x − μ)²/(2σ²) = ?"
+        answer: -0.5
+        explanation: "−4/8 = −0.5."
+      - id: m06
+        topic: posterior từ log-score
+        lesson: 01_bayes_and_naive_assumption.ipynb
+        type: numeric
+        decimals: 3
+        question: "Hai lớp có log-score s = [−10, −10 + ln 3]. Xác suất posterior của lớp thứ hai?"
+        answer: 0.75
+        explanation: "e^(ln 3)/(1 + 3) = 0.75."
+coding:
+  tasks:
+    - id: c01
+      title: Multinomial NB fit
+      prompt: |
+        Viết `mnb_fit(X, y, alpha)` (X là ma trận đếm dày `(n, V)`, y nhãn) trả về `(classes, log_theta, log_prior)` với
+        $\log\theta_{cw} = \log\frac{N_{cw} + \alpha}{\sum_{w'} N_{cw'} + \alpha V}$.
+      code: |
+        def mnb_fit(X, y, alpha=1.0):
+            classes = np.unique(y)
+            ### START CODE HERE ### (≈ 3 dòng)
+            counts = np.array([X[y == c].sum(axis=0) for c in classes]) + alpha
+            log_theta = np.log(counts / counts.sum(axis=1, keepdims=True))
+            log_prior = np.log([np.mean(y == c) for c in classes])
+            ### END CODE HERE ###
+            return classes, log_theta, log_prior
+      tests: |
+        from sklearn.naive_bayes import MultinomialNB
+        rng = np.random.default_rng(3)
+        X = rng.poisson(1.0, size=(60, 8)).astype(float)
+        y = rng.integers(0, 3, 60)
+        classes, lt, lp = mnb_fit(X, y, alpha=0.5)
+        ref = MultinomialNB(alpha=0.5).fit(X, y)
+        check_close(lt, ref.feature_log_prob_, message="log θ khớp sklearn")
+        check_close(lp, ref.class_log_prior_, message="log prior khớp sklearn")
+    - id: c02
+      title: Posterior ổn định số học
+      prompt: |
+        Viết `posterior_from_scores(S)` — đổi ma trận log-score `(n, C)` thành xác suất posterior (mỗi hàng tổng 1)
+        **ổn định số học** (log-sum-exp hoặc trừ max).
+      code: |
+        def posterior_from_scores(S):
+            ### START CODE HERE ### (≈ 2 dòng)
+            E = np.exp(S - S.max(axis=1, keepdims=True))
+            P = E / E.sum(axis=1, keepdims=True)
+            ### END CODE HERE ###
+            return P
+      tests: |
+        P = posterior_from_scores(np.array([[-2300.0, -2300.0 - np.log(3)], [0.0, 0.0]]))
+        check_close(P[0], [0.75, 0.25], message="ổn định với log-score rất âm")
+        check_close(P[1], [0.5, 0.5], message="hai lớp bằng nhau")
+analysis:
+  prompt: |
+    Một nhóm xây bộ lọc tin nhắn lừa đảo bằng Multinomial Naive Bayes trên 2 000 tin nhắn (5% lừa đảo).
+    Họ báo cáo: accuracy 96%; dùng `CountVectorizer(ngram_range=(1, 3))` fit trên **toàn bộ** dữ liệu trước khi chia train/test;
+    `alpha=1e-6`; và đề xuất **tự động khoá tài khoản** khi `predict_proba > 0.999` vì "model rất chắc chắn".
+    Đánh giá và đề xuất cải tiến.
+  rubric:
+    - "Chỉ ra accuracy 96% chỉ hơn baseline 'không bao giờ lừa đảo' (95%) một chút → cần precision/recall/PR-AUC cho lớp lừa đảo"
+    - "Chỉ ra leakage: CountVectorizer fit trên toàn bộ dữ liệu → phải fit trong Pipeline chỉ trên train"
+    - "Chỉ ra xác suất của Naive Bayes quá tự tin (n-gram chồng lấn đếm trùng bằng chứng) → không dùng 0.999 như xác suất thật; cần calibration"
+    - "Nhận xét alpha=1e-6 gần như không smoothing → nhạy với từ hiếm; chọn alpha bằng CV"
+    - "Đề xuất chọn ngưỡng/hành động theo chi phí (khoá nhầm tài khoản rất đắt) — vd đưa vào hàng đợi xem xét thay vì khoá tự động"
+  sample_answer: |
+    (1) Accuracy 96% gần bằng baseline 95% "luôn đoán bình thường" → báo cáo precision, recall, PR-AUC cho lớp lừa đảo.
+    (2) CountVectorizer fit trên toàn bộ dữ liệu → từ điển "thấy" tập test (leakage nhẹ) → đặt vào Pipeline, fit trên train.
+    (3) Với n-gram (1, 3), bằng chứng chồng lấn bị đếm 2–3 lần → posterior bị đẩy về 0/1; 0.999 không có nghĩa là sai 1/1000. Calibrate (isotonic/Platt) trên validation.
+    (4) alpha = 1e-6 gần như không smoothing → từ hiếm có trọng số cực đoan; chọn alpha bằng CV.
+    (5) Khoá tài khoản nhầm rất tốn kém → chọn ngưỡng theo chi phí, dùng hành động mềm (cảnh báo, xác minh, hàng đợi người duyệt).
+project:
+  prompt: |
+    **Mini project — Bộ phân loại cảm xúc 3 lớp.** Đọc `reviews_vi.csv` (`repo_path("data", "sample", "reviews_vi.csv")`), target `sentiment`
+    (pos/neg/neu). Chia train/test 70/30 (`random_state=1`, `stratify`). Xây Pipeline `CountVectorizer` + Naive Bayes,
+    chọn hyperparameter bằng CV trên train. Đạt **macro-F1 test ≥ 0.97** (biến `test_f1`).
+  code: |
+    import pandas as pd
+    from sklearn.feature_extraction.text import CountVectorizer
+    from sklearn.metrics import f1_score
+    from sklearn.model_selection import GridSearchCV, train_test_split
+    from sklearn.naive_bayes import ComplementNB, MultinomialNB
+    from sklearn.pipeline import make_pipeline
+    from ml_course.utils import repo_path
+
+    df = pd.read_csv(repo_path("data", "sample", "reviews_vi.csv"))
+    ### START CODE HERE ### (≈ 6 dòng)
+    tr, te = train_test_split(df, test_size=0.3, random_state=1, stratify=df["sentiment"])
+    grid = GridSearchCV(make_pipeline(CountVectorizer(), ComplementNB()),
+                        {"countvectorizer__ngram_range": [(1, 1), (1, 2)], "complementnb__alpha": [0.01, 0.1, 1.0]},
+                        cv=5, scoring="f1_macro").fit(tr["text"], tr["sentiment"])
+    test_f1 = f1_score(te["sentiment"], grid.predict(te["text"]), average="macro")
+    ### END CODE HERE ###
+    print(grid.best_params_, "macro-F1 test:", round(test_f1, 4))
+  tests: |
+    check_greater(test_f1, 0.97, "macro-F1 test ≥ 0.97")

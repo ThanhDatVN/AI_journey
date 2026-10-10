@@ -1,0 +1,294 @@
+title: "31 · Transformers"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: soft lookup
+        lesson: 01_attention_from_scratch.ipynb
+        type: mcq
+        question: "Đầu ra của attention cho một query là:"
+        options: {a: "Trung bình có trọng số của các value, trọng số = softmax của điểm query–key", b: "Value có key giống query nhất (argmax)", c: "Tổng các key", d: "Trung bình cộng các query"}
+        answer: a
+        explanation: "Tra cứu mềm, khả vi."
+      - id: t02
+        topic: scaling
+        lesson: 01_attention_from_scratch.ipynb
+        type: mcq
+        question: "Không chia điểm cho √d_k, khi d_k lớn thì:"
+        options: {a: "Softmax bão hoà gần one-hot, gradient qua softmax rất nhỏ", b: "Attention luôn đều", c: "Mô hình nhanh hơn", d: "Không có ảnh hưởng"}
+        answer: a
+        explanation: "Phương sai tích vô hướng tăng theo d_k."
+      - id: t03
+        topic: masks
+        lesson: 01_attention_from_scratch.ipynb
+        type: multi
+        question: "Về mask trong attention:"
+        options:
+          a: "Causal mask cho vị trí i chỉ nhìn các vị trí ≤ i"
+          b: "Padding mask ngăn chú ý tới vị trí đệm"
+          c: "Mask được áp dụng bằng cách đặt điểm −∞ trước softmax"
+          d: "Một hàng bị che toàn bộ cho kết quả bằng 0 một cách an toàn"
+        answer: abc
+        explanation: "Hàng bị che toàn bộ cho NaN."
+      - id: t04
+        topic: permutation
+        lesson: 01_attention_from_scratch.ipynb
+        type: tf
+        question: "Self-attention không có mã hoá vị trí cho cùng biểu diễn (chỉ đổi chỗ) khi hoán vị các token đầu vào."
+        answer: true
+        explanation: "Hoán vị-đẳng biến."
+      - id: t05
+        topic: complexity
+        lesson: 01_attention_from_scratch.ipynb
+        type: mcq
+        question: "Chi phí bộ nhớ của ma trận attention theo độ dài chuỗi n là:"
+        options: {a: "O(n²)", b: "O(n)", c: "O(log n)", d: "O(1)"}
+        answer: a
+        explanation: "FlashAttention tránh lưu toàn bộ ma trận."
+      - id: t06
+        topic: multi-head
+        lesson: 02_multi_head_and_positional_encoding.ipynb
+        type: tf
+        question: "Với d_model cố định, tăng số đầu attention làm tăng số tham số của lớp multi-head attention."
+        answer: false
+        explanation: "4(d² + d) bất kể số đầu."
+      - id: t07
+        topic: sinusoidal
+        lesson: 02_multi_head_and_positional_encoding.ipynb
+        type: mcq
+        question: "Tính chất nào của mã hoá vị trí sinusoidal giúp mô hình học vị trí tương đối?"
+        options: {a: "PE(p + k) là phép biến đổi tuyến tính (quay) của PE(p), chỉ phụ thuộc k", b: "Các vector đều bằng nhau", c: "Nó được học từ dữ liệu", d: "Nó chỉ có một chiều"}
+        answer: a
+        explanation: "Mỗi cặp chiều là một kim đồng hồ."
+      - id: t08
+        topic: rope
+        lesson: 02_multi_head_and_positional_encoding.ipynb
+        type: mcq
+        question: "RoPE đưa thông tin vị trí vào bằng cách:"
+        options: {a: "Quay query và key theo vị trí trước khi tính tích vô hướng, nên điểm chỉ phụ thuộc khoảng cách", b: "Cộng vector vị trí vào value", c: "Nhân embedding với vị trí", d: "Thêm token vị trí vào cuối chuỗi"}
+        answer: a
+        explanation: "Dùng trong nhiều LLM hiện đại."
+      - id: t09
+        topic: block
+        lesson: 02_multi_head_and_positional_encoding.ipynb
+        type: multi
+        question: "Một khối Transformer (pre-LN) gồm:"
+        options: {a: "Multi-head self-attention với residual", b: "Feed-forward theo từng token với residual", c: "LayerNorm trước mỗi lớp con", d: "Một lớp tích chập bắt buộc"}
+        answer: abc
+        explanation: "FFN chiếm khoảng 2/3 tham số."
+      - id: t10
+        topic: causal check
+        lesson: 03_mini_gpt.ipynb
+        type: mcq
+        question: "Mô hình ngôn ngữ có loss train giảm về gần 0 rất nhanh nhưng sinh văn bản vô nghĩa. Nghi ngờ hàng đầu:"
+        options: {a: "Causal mask sai — mô hình nhìn thấy token cần dự đoán", b: "Learning rate quá nhỏ", c: "Dữ liệu quá ít", d: "Dùng weight tying"}
+        answer: a
+        explanation: "Kiểm tra: đổi token tương lai, logits quá khứ phải giữ nguyên."
+      - id: t11
+        topic: sampling
+        lesson: 03_mini_gpt.ipynb
+        type: mcq
+        question: "Top-p (nucleus) sampling:"
+        options: {a: "Giữ tập nhỏ nhất các token có tổng xác suất ≥ p rồi lấy mẫu trong đó", b: "Luôn giữ đúng p token", c: "Chọn token xác suất cao nhất", d: "Chia logits cho p"}
+        answer: a
+        explanation: "Số ứng viên tự co giãn theo độ chắc chắn."
+      - id: t12
+        topic: kv cache
+        lesson: 03_mini_gpt.ipynb
+        type: tf
+        question: "KV cache thay đổi kết quả sinh văn bản so với tính lại toàn bộ chuỗi mỗi bước."
+        answer: false
+        explanation: "Kết quả giống hệt; chỉ bớt tính toán."
+      - id: t13
+        topic: copy task
+        lesson: 03_mini_gpt.ipynb
+        type: mcq
+        question: "Trên bài sao chép đoạn token ngẫu nhiên, GPT nhỏ giải được còn LSTM thì không vì:"
+        options: {a: "Attention truy cập trực tiếp vị trí cũ; LSTM phải nén mọi token vào trạng thái ẩn", b: "GPT có nhiều tham số hơn", c: "LSTM không có embedding", d: "GPT dùng dropout"}
+        answer: a
+        explanation: "GPT 1 khối còn ít tham số hơn LSTM."
+      - id: t14
+        topic: families
+        lesson: 04_encoder_decoder_bert_gpt_vit.ipynb
+        type: mcq
+        question: "Cross-attention trong decoder của mô hình encoder–decoder lấy:"
+        options: {a: "Query từ decoder, key và value từ đầu ra encoder", b: "Query, key, value đều từ encoder", c: "Query từ encoder, key/value từ decoder", d: "Chỉ value từ encoder"}
+        answer: a
+        explanation: "Giống attention seq2seq chương 30."
+      - id: t15
+        topic: bert
+        lesson: 04_encoder_decoder_bert_gpt_vit.ipynb
+        type: multi
+        question: "Về BERT:"
+        options:
+          a: "Attention hai chiều, tiền huấn luyện bằng masked language modeling"
+          b: "Phù hợp phân loại văn bản sau khi fine-tune"
+          c: "Biểu diễn của token [CLS] thường dùng cho phân loại"
+          d: "Là mô hình sinh văn bản tự hồi quy"
+        answer: abc
+        explanation: "Sinh tự hồi quy là GPT."
+      - id: t16
+        topic: vit
+        lesson: 04_encoder_decoder_bert_gpt_vit.ipynb
+        type: mcq
+        question: "Train từ đầu trên ít ảnh, ViT thường thua CNN vì:"
+        options: {a: "ViT ít inductive bias (cục bộ, bất biến dịch) nên cần nhiều dữ liệu hơn", b: "ViT không xử lý được ảnh xám", c: "ViT không có tham số học được", d: "CNN dùng attention"}
+        answer: a
+        explanation: "Cần tiền huấn luyện lớn hoặc augmentation mạnh."
+  math:
+    questions:
+      - id: m01
+        topic: attention weights
+        lesson: 01_attention_from_scratch.ipynb
+        type: numeric
+        decimals: 3
+        question: "Hai key có điểm (đã chia √d_k) là 0 và ln 4. Trọng số attention của key thứ hai?"
+        answer: 0.8
+        explanation: "4/(1 + 4)."
+      - id: m02
+        topic: scaling
+        lesson: 01_attention_from_scratch.ipynb
+        type: numeric
+        decimals: 1
+        question: "q, k có các thành phần độc lập N(0, 1), d_k = 64. Độ lệch chuẩn của q·k?"
+        answer: 8.0
+        explanation: "√64."
+      - id: m03
+        topic: params
+        lesson: 02_multi_head_and_positional_encoding.ipynb
+        type: numeric
+        decimals: 0
+        question: "Số tham số của multi-head attention với d_model = 32 (có bias)?"
+        answer: 4224
+        explanation: "4·(32² + 32)."
+      - id: m04
+        topic: attention memory
+        lesson: 01_attention_from_scratch.ipynb
+        type: numeric
+        decimals: 0
+        question: "Ma trận attention float32 cho 1 đầu, 1 lớp, n = 1024 token chiếm bao nhiêu MB (1 MB = 2²⁰ byte)?"
+        answer: 4
+        explanation: "1024² · 4 byte = 4 MB."
+      - id: m05
+        topic: flops
+        lesson: 03_mini_gpt.ipynb
+        type: numeric
+        decimals: 0
+        question: "Theo xấp xỉ FLOPs ≈ 6ND, train mô hình 1 triệu tham số trên 1 tỉ token cần bao nhiêu × 10¹⁵ FLOPs?"
+        answer: 6
+        explanation: "6 · 10⁶ · 10⁹ = 6 · 10¹⁵."
+coding:
+  tasks:
+    - id: c01
+      title: Scaled dot-product attention có mask
+      prompt: |
+        Viết `attention(Q, K, V, mask=None)` (NumPy): softmax(QKᵀ/√d_k)V; `mask` bool (n_q, n_k), `False` = bị che (điểm −∞).
+        Trả về `(output, weights)`. Softmax phải ổn định số.
+      code: |
+        def attention(Q, K, V, mask=None):
+            ### START CODE HERE ### (≈ 6 dòng)
+            scores = Q @ K.T / np.sqrt(Q.shape[1])
+            if mask is not None:
+                scores = np.where(mask, scores, -np.inf)
+            scores = scores - scores.max(axis=1, keepdims=True)
+            w = np.exp(scores) / np.exp(scores).sum(axis=1, keepdims=True)
+            return w @ V, w
+            ### END CODE HERE ###
+      tests: |
+        r = np.random.default_rng(0)
+        Q, K, V = r.normal(size=(3, 4)), r.normal(size=(5, 4)), r.normal(size=(5, 2))
+        out, w = attention(Q, K, V)
+        check_close(w.sum(1), np.ones(3), message="mỗi hàng tổng 1")
+        s = Q @ K.T / 2.0
+        ref = np.exp(s) / np.exp(s).sum(1, keepdims=True)
+        check_close(out, ref @ V, message="khớp công thức")
+        m = np.tril(np.ones((3, 5), dtype=bool))
+        _, wm = attention(Q, K, V, m)
+        check_close(wm[0, 1:], np.zeros(4), message="vị trí bị che có trọng số 0")
+        check_true(np.isfinite(attention(Q * 1000, K, V)[0]).all(), "ổn định số")
+    - id: c02
+      title: Mã hoá vị trí sinusoidal
+      prompt: |
+        Viết `sinusoidal_encoding(T, d)` (NumPy, d chẵn): PE[p, 2i] = sin(p / 10000^(2i/d)), PE[p, 2i+1] = cos(p / 10000^(2i/d)).
+      code: |
+        def sinusoidal_encoding(T, d):
+            ### START CODE HERE ### (≈ 5 dòng)
+            pos = np.arange(T)[:, None]
+            freq = 1.0 / 10000 ** (np.arange(0, d, 2) / d)
+            pe = np.zeros((T, d))
+            pe[:, 0::2], pe[:, 1::2] = np.sin(pos * freq), np.cos(pos * freq)
+            return pe
+            ### END CODE HERE ###
+      tests: |
+        pe = sinusoidal_encoding(50, 16)
+        check_equal(pe.shape, (50, 16), "shape")
+        check_close(pe[0], np.tile([0.0, 1.0], 8), message="vị trí 0: sin = 0, cos = 1")
+        check_close(pe[3, 2], np.sin(3 / 10000 ** (2 / 16)), message="PE[3, 2]")
+        check_close(pe[10] @ pe[17], pe[30] @ pe[37], message="tích vô hướng chỉ phụ thuộc khoảng cách")
+analysis:
+  prompt: |
+    Một công ty muốn phân loại 3 000 email hỗ trợ khách hàng tiếng Việt thành 8 nhóm. Kỹ sư đề xuất: (1) tự train một Transformer
+    12 lớp từ đầu trên 3 000 email này "vì Transformer là state-of-the-art"; (2) cắt email ở 2 048 token, mỗi batch 64 email;
+    (3) báo cáo accuracy trên tập validation dùng để chọn checkpoint tốt nhất sau 100 epoch; (4) không so sánh với phương pháp nào khác.
+    Họ cũng muốn dùng mô hình để **sinh** câu trả lời tự động. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra 3 000 mẫu quá ít để train Transformer lớn từ đầu → fine-tune encoder tiền huấn luyện (PhoBERT, XLM-R) hoặc dùng LLM với prompt"
+    - "Chỉ ra cần baseline đơn giản (TF-IDF + logistic regression) trước khi dùng mô hình phức tạp"
+    - "Chỉ ra chi phí O(n²) với 2 048 token (bộ nhớ, thời gian) → cắt ngắn hợp lý, chọn phần quan trọng, attention hiệu quả"
+    - "Chỉ ra đánh giá lạc quan khi chọn checkpoint trên chính tập validation báo cáo → cần tập test riêng; cảnh báo overfit sau 100 epoch"
+    - "Phân biệt phân loại (encoder) với sinh câu trả lời (decoder/LLM); nêu rủi ro sinh tự động (sai thông tin) và cần kiểm duyệt/đánh giá"
+  sample_answer: |
+    (1) 3 000 email không đủ để học ngôn ngữ từ đầu với Transformer 12 lớp — sẽ overfit và thua baseline. Nên fine-tune encoder
+    tiền huấn luyện (PhoBERT/XLM-R) hoặc dùng embedding + classifier, hoặc LLM với vài ví dụ trong prompt. (2) 2 048 token: attention
+    O(n²) tốn bộ nhớ/thời gian; email hỗ trợ thường ngắn — cắt 256–512 token hoặc lấy phần đầu + cuối. (3) Chọn checkpoint trên validation
+    rồi báo cáo chính số đó là lạc quan; giữ tập test riêng (chia theo thời gian nếu dữ liệu thay đổi). (4) Bắt đầu bằng TF-IDF + LogReg
+    và đo macro-F1 (8 nhóm có thể mất cân bằng). Sinh câu trả lời là bài toán khác: cần mô hình decoder/LLM, kiểm soát nội dung sai,
+    con người duyệt trước khi gửi, đánh giá riêng.
+project:
+  prompt: |
+    **Mini project — Sắp xếp bằng Transformer.** Huấn luyện một encoder Transformer (có mã hoá vị trí) nhận 12 chữ số và xuất dãy đã
+    sắp xếp tăng dần (mỗi vị trí một lớp 0–9). Đánh giá trên 2 000 chuỗi validation sinh bởi `torch.Generator().manual_seed(123)`;
+    lưu tỉ lệ khớp **cả chuỗi** vào `exact`. Yêu cầu `exact` ≥ 0.9 (gợi ý: AdamW + warmup + cosine như bài 03).
+  code: |
+    import math
+
+    import torch
+    from torch import nn
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    torch.manual_seed(0)
+    T = 12
+    ### START CODE HERE ### (≈ 25 dòng)
+    class SortNet(nn.Module):
+        def __init__(self, d=64, n_heads=4, n_layers=2):
+            super().__init__()
+            self.emb = nn.Embedding(10, d)
+            self.pos = nn.Parameter(torch.randn(T, d) * 0.02)
+            layer = nn.TransformerEncoderLayer(d, n_heads, 4 * d, dropout=0.0, batch_first=True, norm_first=True)
+            self.encoder = nn.TransformerEncoder(layer, n_layers, enable_nested_tensor=False)
+            self.ln = nn.LayerNorm(d)
+            self.head = nn.Linear(d, 10)
+
+        def forward(self, x):
+            return self.head(self.ln(self.encoder(self.emb(x) + self.pos)))
+
+    model = SortNet().to(device)
+    steps = 2000
+    opt = torch.optim.AdamW(model.parameters(), lr=1e-3)
+    sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda s: min(1.0, (s + 1) / 100) * 0.5 * (1 + math.cos(math.pi * s / steps)))
+    g = torch.Generator().manual_seed(0)
+    for _ in range(steps):
+        x = torch.randint(0, 10, (128, T), generator=g)
+        opt.zero_grad()
+        nn.functional.cross_entropy(model(x.to(device)).reshape(-1, 10), x.sort(1).values.to(device).reshape(-1)).backward()
+        opt.step()
+        sched.step()                                                    # warmup 100 bước + cosine: ổn định hơn LR cố định
+    model.eval()
+    x_val = torch.randint(0, 10, (2000, T), generator=torch.Generator().manual_seed(123))
+    with torch.no_grad():
+        pred = model(x_val.to(device)).argmax(-1).cpu()
+    exact = (pred == x_val.sort(1).values).all(1).float().mean().item()
+    ### END CODE HERE ###
+    print(f"khớp cả chuỗi = {exact:.3f}")
+  tests: |
+    check_greater(exact, 0.9, "khớp cả chuỗi ≥ 0.9")

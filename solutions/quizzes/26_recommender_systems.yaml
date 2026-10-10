@@ -1,0 +1,272 @@
+title: "26 · Recommender Systems"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: feedback types
+        lesson: 01_popularity_and_content_based.ipynb
+        type: multi
+        question: "Ví dụ nào là phản hồi NGẦM (implicit)?"
+        options: {a: "Lượt xem phim", b: "Thời gian đọc bài", c: "Rating 4 sao", d: "Thêm vào giỏ hàng"}
+        answer: abd
+        explanation: "Rating là phản hồi tường minh."
+      - id: t02
+        topic: damped mean
+        lesson: 01_popularity_and_content_based.ipynb
+        type: mcq
+        question: "Vì sao xếp phim theo trung bình rating thô là tồi?"
+        options:
+          a: "Phim có 1–2 rating cao ngẫu nhiên lên đầu bảng; cần giảm chấn về trung bình chung"
+          b: "Vì trung bình luôn thấp"
+          c: "Vì không tính được"
+          d: "Vì rating là số nguyên"
+        answer: a
+        explanation: "Bayesian average: (Σr + mμ)/(n + m)."
+      - id: t03
+        topic: content-based
+        lesson: 01_popularity_and_content_based.ipynb
+        type: mcq
+        question: "Content-based xử lý được loại cold start nào?"
+        options: {a: "Item mới (chỉ cần đặc trưng nội dung)", b: "User mới chưa có lịch sử", c: "Cả hai", d: "Không loại nào"}
+        answer: a
+        explanation: "User mới chưa có hồ sơ sở thích."
+      - id: t04
+        topic: popularity baseline
+        lesson: 01_popularity_and_content_based.ipynb
+        type: tf
+        question: "Trong đánh giá offline top-N, gợi ý theo độ phổ biến thường là baseline khó đánh bại."
+        answer: true
+        explanation: "Item phổ biến là item hay được tương tác — và xuất hiện trong test."
+      - id: t05
+        topic: bias model
+        lesson: 02_collaborative_filtering.ipynb
+        type: mcq
+        question: "Baseline predictor μ + b_u + b_i bắt được:"
+        options: {a: "User chấm dễ/khó và item hay/dở hơn mặt bằng", b: "Tương tác gu user–item", c: "Thể loại phim", d: "Thời gian"}
+        answer: a
+        explanation: "Phần cá nhân hoá (tương tác) do KNN/MF học."
+      - id: t06
+        topic: similarity
+        lesson: 02_collaborative_filtering.ipynb
+        type: multi
+        question: "Cải tiến độ tương đồng item–item trong CF dựa trên rating:"
+        options:
+          a: "Tính trên phần dư sau khi trừ thiên lệch (≈ Pearson)"
+          b: "Shrinkage theo số user chung"
+          c: "Dùng rating thô kể cả ô trống bằng 0 coi như ghét"
+          d: "Chỉ giữ top-k láng giềng"
+        answer: abd
+        explanation: "Ô trống không phải rating 0."
+      - id: t07
+        topic: item vs user
+        lesson: 02_collaborative_filtering.ipynb
+        type: mcq
+        question: "Vì sao item-based CF phổ biến trong production?"
+        options:
+          a: "Quan hệ giữa item ổn định hơn user, tính trước ma trận tương tự offline và tra cứu nhanh"
+          b: "Luôn chính xác hơn"
+          c: "Không cần dữ liệu"
+          d: "Xử lý được item mới"
+        answer: a
+        explanation: "Linden et al. (2003)."
+      - id: t08
+        topic: MF objective
+        lesson: 03_matrix_factorization.ipynb
+        type: mcq
+        question: "Vì sao không áp dụng thẳng SVD cho ma trận rating?"
+        options:
+          a: "Phần lớn ô trống; điền 0 coi 'chưa xem' như 'rating rất thấp' — phải tối ưu chỉ trên ô quan sát"
+          b: "SVD quá chậm với 200 item"
+          c: "SVD chỉ dùng cho ảnh"
+          d: "SVD không cho ma trận hạng thấp"
+        answer: a
+        explanation: "Funk SVD/ALS tối ưu trên tập ô quan sát."
+      - id: t09
+        topic: ALS
+        lesson: 03_matrix_factorization.ipynb
+        type: mcq
+        question: "Trong ALS, khi cố định Q, mỗi vector user p_u được tìm bằng:"
+        options: {a: "Một bài toán Ridge nghiệm đóng, độc lập với user khác", b: "Gradient descent nhiều vòng", c: "K-Means", d: "SVD đầy đủ"}
+        answer: a
+        explanation: "Dễ song song hoá."
+      - id: t10
+        topic: overfitting
+        lesson: 03_matrix_factorization.ipynb
+        type: tf
+        question: "Với λ nhỏ, RMSE test của MF có thể tăng trở lại khi train thêm epoch dù RMSE train vẫn giảm."
+        answer: true
+        explanation: "Early stopping/regularization."
+      - id: t11
+        topic: PureSVD
+        lesson: 03_matrix_factorization.ipynb
+        type: mcq
+        question: "PureSVD cho top-N phân rã ma trận nào?"
+        options: {a: "Ma trận nhị phân đã xem / chưa xem", b: "Ma trận rating đã điền trung bình", c: "Ma trận tương đồng item", d: "Ma trận đặc trưng nội dung"}
+        answer: a
+        explanation: "Ở phản hồi ngầm, 0 đúng nghĩa 'chưa tương tác'."
+      - id: t12
+        topic: NDCG
+        lesson: 04_ranking_metrics.ipynb
+        type: mcq
+        question: "Ưu điểm của NDCG so với precision@k:"
+        options: {a: "Nhạy với thứ tự và hỗ trợ nhiều mức liên quan", b: "Không cần dữ liệu test", c: "Luôn lớn hơn", d: "Không phụ thuộc k"}
+        answer: a
+        explanation: "Item liên quan ở vị trí đầu được thưởng nhiều hơn."
+      - id: t13
+        topic: RMSE vs ranking
+        lesson: 04_ranking_metrics.ipynb
+        type: mcq
+        question: "MF có RMSE tốt nhất nhưng precision@10 kém popularity. Nguyên nhân chính:"
+        options:
+          a: "Dữ liệu thiếu không ngẫu nhiên: RMSE đo trên phim user đã chọn, còn xếp hạng mọi phim đẩy lên phim user không chọn"
+          b: "Do bug trong code"
+          c: "Vì MF không dùng thiên lệch"
+          d: "Vì precision@10 luôn thấp"
+        answer: a
+        explanation: "Học đúng câu hỏi: phản hồi ngầm/BPR cho top-N."
+      - id: t14
+        topic: beyond accuracy
+        lesson: 04_ranking_metrics.ipynb
+        type: multi
+        question: "Metric nào đo khía cạnh NGOÀI độ chính xác?"
+        options: {a: "Coverage", b: "Novelty", c: "Intra-list diversity", d: "Recall@k"}
+        answer: abc
+        explanation: "Recall@k là metric độ chính xác."
+      - id: t15
+        topic: MMR
+        lesson: 04_ranking_metrics.ipynb
+        type: mcq
+        question: "MMR re-ranking cân bằng:"
+        options: {a: "Độ phù hợp và độ khác biệt với các item đã chọn", b: "Thời gian train và test", c: "RMSE và MAE", d: "Số user và số item"}
+        answer: a
+        explanation: "λ·relevance − (1 − λ)·max similarity."
+      - id: t16
+        topic: feedback loop
+        lesson: 04_ranking_metrics.ipynb
+        type: tf
+        question: "Huấn luyện lại hệ gợi ý chỉ trên tương tác với những gì nó đã gợi ý có thể khuếch đại thiên lệch phổ biến."
+        answer: true
+        explanation: "Vòng phản hồi — cần exploration, theo dõi độ phủ."
+  math:
+    questions:
+      - id: m01
+        topic: damped mean
+        lesson: 01_popularity_and_content_based.ipynb
+        type: numeric
+        decimals: 3
+        question: "μ = 3.5, m = 5. Phim có 5 rating, trung bình 4.5. Trung bình giảm chấn = ?"
+        answer: 4
+        explanation: "(22.5 + 17.5)/10."
+      - id: m02
+        topic: cosine
+        lesson: 02_collaborative_filtering.ipynb
+        type: numeric
+        decimals: 3
+        question: "Hai cột nhị phân [1, 1, 1, 0] và [1, 1, 0, 1]. Cosine = ?"
+        answer: 0.667
+        explanation: "2/(√3·√3)."
+      - id: m03
+        topic: precision recall
+        lesson: 04_ranking_metrics.ipynb
+        type: numeric
+        decimals: 3
+        question: "Top-10 có 3 item đúng; user có tổng cộng 6 item liên quan. recall@10 = ?"
+        answer: 0.5
+        explanation: "3/6."
+      - id: m04
+        topic: MRR
+        lesson: 04_ranking_metrics.ipynb
+        type: numeric
+        decimals: 3
+        question: "Hai user: item đúng đầu tiên ở vị trí 1 và vị trí 4. MRR = ?"
+        answer: 0.625
+        explanation: "(1 + 0.25)/2."
+      - id: m05
+        topic: MF prediction
+        lesson: 03_matrix_factorization.ipynb
+        type: numeric
+        decimals: 2
+        question: "μ = 3.6, b_u = 0.2, b_i = −0.3, p_u = [1, 0.5], q_i = [0.4, −0.2]. r̂_ui = ?"
+        answer: 3.8
+        explanation: "3.6 + 0.2 − 0.3 + (0.4 − 0.1)."
+coding:
+  tasks:
+    - id: c01
+      title: Trung bình giảm chấn
+      prompt: |
+        Viết `damped_mean(sums, counts, mu, m)` trả về mảng (sums + m·mu) / (counts + m).
+      code: |
+        def damped_mean(sums, counts, mu, m):
+            ### START CODE HERE ### (≈ 1 dòng)
+            return (np.asarray(sums, float) + m * mu) / (np.asarray(counts, float) + m)
+            ### END CODE HERE ###
+      tests: |
+        check_close(damped_mean([10.0, 420.0], [2, 100], 3.8, 10), [4.0, 458 / 110], message="ví dụ")
+        check_close(damped_mean([0.0], [0], 3.5, 5), [3.5], message="item chưa có rating → μ")
+    - id: c02
+      title: Top-k loại item đã thấy
+      prompt: |
+        Viết `top_k(scores, seen_items, k)` trả về chỉ số k item điểm cao nhất (giảm dần), bỏ qua các item trong `seen_items`.
+      code: |
+        def top_k(scores, seen_items, k):
+            ### START CODE HERE ### (≈ 3 dòng)
+            s = np.asarray(scores, float).copy()
+            s[list(seen_items)] = -np.inf
+            return np.argsort(-s)[:k]
+            ### END CODE HERE ###
+      tests: |
+        check_equal(list(top_k([0.1, 0.9, 0.5, 0.7], {1}, 2)), [3, 2], "loại item đã thấy")
+        check_equal(list(top_k([3, 2, 1], set(), 3)), [0, 1, 2], "không có item đã thấy")
+analysis:
+  prompt: |
+    Một sàn thương mại điện tử xây hệ gợi ý sản phẩm. Đề xuất của nhóm: (1) dùng rating 1–5 sao (chỉ 2% đơn hàng có rating) để train MF,
+    chọn mô hình theo RMSE; (2) đánh giá bằng chia ngẫu nhiên rating; (3) user mới thấy gợi ý từ MF với vector user khởi tạo ngẫu nhiên;
+    (4) mục tiêu duy nhất là precision@10; (5) không cần A/B test vì offline đã tốt hơn 15%. Đánh giá và đề xuất.
+  rubric:
+    - "Chỉ ra rating quá thưa và lệch (MNAR, người chỉ chấm khi rất thích/ghét); nên dùng phản hồi ngầm (xem, giỏ hàng, mua) và mô hình top-N (implicit ALS, BPR, item-KNN)"
+    - "Chỉ ra RMSE không khớp mục tiêu top-N; dùng metric xếp hạng (recall/NDCG@k) so với baseline popularity"
+    - "Chỉ ra chia ngẫu nhiên bỏ qua thời gian; nên chia theo thời gian (train quá khứ, test tương lai)"
+    - "Chỉ ra cold start user mới: popularity/theo ngữ cảnh, onboarding, content-based, chuyển dần sang cá nhân hoá khi đủ tương tác"
+    - "Chỉ ra cần metric ngoài độ chính xác (coverage, diversity, novelty) và A/B test vì offline thiên lệch, vòng phản hồi"
+  sample_answer: |
+    (1) Rating chỉ có ở 2% đơn và lệch cao (người chấm khi rất hài lòng/bực) → dữ liệu ít, MNAR. Dùng phản hồi ngầm (xem, thêm giỏ, mua) với
+    implicit ALS/BPR/item-KNN. (2) RMSE đo dự đoán điểm, không đo xếp hạng → recall/NDCG@k, so với popularity. (3) Chia ngẫu nhiên làm rò thông tin
+    tương lai → chia theo thời gian. (4) User mới: vector ngẫu nhiên vô nghĩa → popularity theo ngữ cảnh, hỏi sở thích, content-based; chuyển sang
+    cá nhân hoá khi đủ tương tác (đo ngưỡng). (5) Ngoài precision: coverage (nhà bán nhỏ), diversity, novelty; offline thiên lệch bởi hệ thống cũ,
+    vòng phản hồi → bắt buộc A/B test với metric kinh doanh (CTR, chuyển đổi, doanh thu, giữ chân).
+project:
+  prompt: |
+    **Mini project — Gợi ý top-10 vượt popularity.** Dùng `ratings.csv` với cách chia `split_per_user` (20% mỗi user, seed 0) và giao thức
+    của chương (loại phim đã thấy trong train, "đúng" = phim trong test có rating ≥ 4). Xây mô hình top-N bất kỳ đạt precision@10
+    `p10_model` ≥ 0.11 (popularity ≈ 0.099).
+  code: |
+    import pandas as pd
+    from ml_course.metrics import precision_at_k
+    from ml_course.utils import repo_path
+
+    ratings = pd.read_csv(repo_path("data", "sample", "ratings.csv"))
+    n_users, n_items = ratings.user_id.max() + 1, ratings.item_id.max() + 1
+    rng = np.random.default_rng(0)
+    test_mask = np.zeros(len(ratings), bool)
+    for _, g in ratings.groupby("user_id"):
+        if len(g) >= 5:
+            test_mask[rng.choice(g.index, max(1, int(0.2 * len(g))), replace=False)] = True
+    train, test = ratings[~test_mask], ratings[test_mask]
+    seen = {u: set(g.item_id) for u, g in train.groupby("user_id")}
+    liked = {u: [i for i, r in zip(g.item_id, g.rating) if r >= 4] for u, g in test.groupby("user_id")}
+    ### START CODE HERE ### (≈ 5 dòng)
+    B = np.zeros((n_users, n_items))
+    B[train.user_id, train.item_id] = 1.0
+    U, s, Vt = np.linalg.svd(B, full_matrices=False)
+    scores = (U[:, :5] * s[:5]) @ Vt[:5]                               # PureSVD k = 5
+    ### END CODE HERE ###
+    p = []
+    for u, rel in liked.items():
+        if rel:
+            sc = scores[u].copy()
+            sc[list(seen.get(u, []))] = -np.inf
+            p.append(precision_at_k(np.argsort(-sc)[:10], rel, 10))
+    p10_model = float(np.mean(p))
+    print(f"precision@10 = {p10_model:.4f}")
+  tests: |
+    check_greater(p10_model, 0.11, "precision@10 ≥ 0.11")

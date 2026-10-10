@@ -1,0 +1,288 @@
+title: "28 · Neural Networks"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: nonlinearity
+        lesson: 01_activation_functions.ipynb
+        type: tf
+        question: "Xếp chồng nhiều lớp tuyến tính không có hàm kích hoạt phi tuyến vẫn chỉ tương đương một lớp tuyến tính."
+        answer: true
+        explanation: "Tích các ma trận là một ma trận."
+      - id: t02
+        topic: sigmoid
+        lesson: 01_activation_functions.ipynb
+        type: multi
+        question: "Nhược điểm của sigmoid khi dùng cho lớp ẩn của mạng sâu:"
+        options: {a: "Bão hoà ở hai đầu, đạo hàm ≤ 0.25 → vanishing gradient", b: "Đầu ra không có tâm 0", c: "Không khả vi", d: "Tốn exp"}
+        answer: abd
+        explanation: "Sigmoid khả vi mọi nơi."
+      - id: t03
+        topic: dying relu
+        lesson: 01_activation_functions.ipynb
+        type: mcq
+        question: "Nơ-ron ReLU 'chết' khi:"
+        options:
+          a: "Tiền kích hoạt âm với mọi đầu vào → gradient luôn 0, không thể hồi phục"
+          b: "Trọng số bằng 1"
+          c: "Đầu ra luôn dương"
+          d: "Learning rate quá nhỏ"
+        answer: a
+        explanation: "Thường do bước cập nhật quá lớn; Leaky ReLU/ELU/GELU tránh được."
+      - id: t04
+        topic: output activation
+        lesson: 01_activation_functions.ipynb
+        type: mcq
+        question: "Lớp ra cho bài toán phân loại 10 lớp trong PyTorch thường:"
+        options: {a: "Tuyến tính (logit), softmax gộp trong CrossEntropyLoss", b: "ReLU", c: "Sigmoid từng lớp", d: "tanh"}
+        answer: a
+        explanation: "Ổn định số."
+      - id: t05
+        topic: zero init
+        lesson: 02_initialization_and_normalization.ipynb
+        type: mcq
+        question: "Khởi tạo mọi trọng số của một lớp bằng cùng một giá trị dẫn tới:"
+        options: {a: "Mọi nơ-ron trong lớp giống hệt nhau mãi mãi (đối xứng)", b: "Huấn luyện nhanh hơn", c: "Không ảnh hưởng", d: "Gradient bùng nổ"}
+        answer: a
+        explanation: "Cùng đầu ra, cùng gradient."
+      - id: t06
+        topic: he init
+        lesson: 02_initialization_and_normalization.ipynb
+        type: mcq
+        question: "He init chọn Var(w) = 2/n_in (gấp đôi Xavier) vì:"
+        options: {a: "ReLU bỏ nửa âm, chỉ giữ khoảng một nửa phương sai", b: "Để tăng tốc", c: "Vì có bias", d: "Vì dùng Adam"}
+        answer: a
+        explanation: "Giữ phương sai kích hoạt ổn định qua các lớp ReLU."
+      - id: t07
+        topic: batch norm
+        lesson: 02_initialization_and_normalization.ipynb
+        type: multi
+        question: "Phát biểu đúng về Batch Normalization:"
+        options:
+          a: "Khi train dùng trung bình/phương sai của batch"
+          b: "Khi eval dùng running mean/var"
+          c: "Có tham số γ, β học được"
+          d: "Hoạt động giống hệt nhau ở train và eval"
+        answer: abc
+        explanation: "Phải gọi model.eval() khi dự đoán."
+      - id: t08
+        topic: layer norm
+        lesson: 02_initialization_and_normalization.ipynb
+        type: mcq
+        question: "LayerNorm khác BatchNorm ở chỗ:"
+        options: {a: "Chuẩn hoá theo các feature của từng mẫu, không phụ thuộc batch", b: "Chỉ dùng cho CNN", c: "Không có tham số học được", d: "Chỉ dùng khi eval"}
+        answer: a
+        explanation: "Chuẩn trong Transformer/RNN."
+      - id: t09
+        topic: momentum
+        lesson: 03_optimizers.ipynb
+        type: mcq
+        question: "Momentum giúp gì với thung lũng hẹp, lệch tâm?"
+        options:
+          a: "Cộng dồn hướng gradient nhất quán, triệt tiêu dao động ngang"
+          b: "Tăng learning rate cho mọi hướng"
+          c: "Loại bỏ nhiễu dữ liệu"
+          d: "Chuẩn hoá gradient"
+        answer: a
+        explanation: "Hệ số β cần phù hợp với bài toán."
+      - id: t10
+        topic: adam bias correction
+        lesson: 03_optimizers.ipynb
+        type: mcq
+        question: "Adam cần hiệu chỉnh bias (chia 1 − β^t) vì:"
+        options: {a: "m và s khởi tạo bằng 0 nên bị lệch về 0 ở những bước đầu", b: "Để tăng tốc", c: "Để giảm bộ nhớ", d: "Vì có weight decay"}
+        answer: a
+        explanation: "Bước đầu có độ lớn ≈ η."
+      - id: t11
+        topic: adamw
+        lesson: 03_optimizers.ipynb
+        type: tf
+        question: "Với Adam, thêm λθ vào gradient (L2) tương đương với weight decay tách rời của AdamW."
+        answer: false
+        explanation: "Phần λθ bị chia cho √ŝ — AdamW tách ra."
+      - id: t12
+        topic: lr schedule
+        lesson: 03_optimizers.ipynb
+        type: mcq
+        question: "Vì sao giảm learning rate về cuối giúp với SGD mini-batch?"
+        options:
+          a: "Với lr cố định, nhiễu gradient giữ tham số dao động quanh đáy trong vùng tỉ lệ với lr"
+          b: "Vì gradient tăng dần"
+          c: "Để tránh overfitting tuyệt đối"
+          d: "Không có tác dụng"
+        answer: a
+        explanation: "Step decay, cosine, ..."
+      - id: t13
+        topic: dropout
+        lesson: 04_regularization_and_training_recipes.ipynb
+        type: mcq
+        question: "Inverted dropout với p = 0.5 khi train:"
+        options: {a: "Tắt ngẫu nhiên một nửa nơ-ron và nhân phần còn lại với 2", b: "Chia mọi đầu ra cho 2", c: "Tắt một nửa trọng số vĩnh viễn", d: "Không làm gì"}
+        answer: a
+        explanation: "Khi eval không làm gì."
+      - id: t14
+        topic: early stopping
+        lesson: 04_regularization_and_training_recipes.ipynb
+        type: tf
+        question: "Early stopping chọn checkpoint có loss validation tốt nhất và là một dạng regularization."
+        answer: true
+        explanation: "Giới hạn số bước cập nhật."
+      - id: t15
+        topic: recipe
+        lesson: 04_regularization_and_training_recipes.ipynb
+        type: mcq
+        question: "Không overfit nổi một batch nhỏ (loss không về ~0) gợi ý:"
+        options: {a: "Có bug trong mô hình/loss/dữ liệu hoặc LR sai", b: "Cần thêm regularization", c: "Cần thêm dữ liệu", d: "Mọi thứ bình thường"}
+        answer: a
+        explanation: "Kiểm tra pipeline trước khi tối ưu."
+      - id: t16
+        topic: batch size
+        lesson: 04_regularization_and_training_recipes.ipynb
+        type: mcq
+        question: "Tăng batch size lên 8 lần với cùng số epoch và cùng learning rate thường:"
+        options: {a: "Underfit vì số bước cập nhật giảm 8 lần — nên tăng lr theo tỉ lệ (kèm warmup)", b: "Luôn tốt hơn", c: "Không đổi gì", d: "Gây overfitting"}
+        answer: a
+        explanation: "Quy tắc tỉ lệ tuyến tính."
+  math:
+    questions:
+      - id: m01
+        topic: sigmoid derivative
+        lesson: 01_activation_functions.ipynb
+        type: numeric
+        decimals: 4
+        question: "σ(2) ≈ 0.8808. σ'(2) = ?"
+        answer: 0.105
+        explanation: "0.8808 · 0.1192."
+      - id: m02
+        topic: xavier
+        lesson: 02_initialization_and_normalization.ipynb
+        type: numeric
+        decimals: 4
+        question: "n_in = 400. Độ lệch chuẩn He = √(2/n_in) = ?"
+        answer: 0.0707
+        explanation: "√0.005."
+      - id: m03
+        topic: batch norm
+        lesson: 02_initialization_and_normalization.ipynb
+        type: numeric
+        decimals: 3
+        question: "Batch [2, 4, 6] (một feature), ε = 0, γ = 1, β = 0. Đầu ra BN của phần tử 6? (phương sai chia n)"
+        answer: 1.225
+        explanation: "(6 − 4)/√(8/3)."
+      - id: m04
+        topic: momentum
+        lesson: 03_optimizers.ipynb
+        type: numeric
+        decimals: 3
+        question: "Momentum v ← 0.9v + g, θ ← θ − 0.1v. v₀ = 0, θ₀ = 1, gradient g = 1 ở cả hai bước. θ₂ = ?"
+        answer: 0.71
+        explanation: "v₁ = 1, θ₁ = 0.9; v₂ = 1.9, θ₂ = 0.71."
+      - id: m05
+        topic: dropout scale
+        lesson: 04_regularization_and_training_recipes.ipynb
+        type: numeric
+        decimals: 3
+        question: "Inverted dropout p = 0.2: phần tử được giữ nhân với bao nhiêu?"
+        answer: 1.25
+        explanation: "1/(1 − 0.2)."
+coding:
+  tasks:
+    - id: c01
+      title: Hàm kích hoạt và đạo hàm
+      prompt: |
+        Viết `leaky_relu(x, alpha)` và `leaky_relu_grad(x, alpha)` (vector hoá, không vòng lặp).
+      code: |
+        def leaky_relu(x, alpha=0.01):
+            ### START CODE HERE ### (≈ 1 dòng)
+            return np.where(x > 0, x, alpha * x)
+            ### END CODE HERE ###
+
+        def leaky_relu_grad(x, alpha=0.01):
+            ### START CODE HERE ### (≈ 1 dòng)
+            return np.where(x > 0, 1.0, alpha)
+            ### END CODE HERE ###
+      tests: |
+        x = np.array([-2.0, -0.5, 0.5, 3.0])
+        check_close(leaky_relu(x, 0.1), [-0.2, -0.05, 0.5, 3.0], message="leaky ReLU")
+        num = (leaky_relu(x + 1e-6, 0.1) - leaky_relu(x - 1e-6, 0.1)) / 2e-6
+        check_close(leaky_relu_grad(x, 0.1), num, tol=1e-6, message="đạo hàm khớp sai phân hữu hạn")
+    - id: c02
+      title: Một bước Adam
+      prompt: |
+        Viết `adam_step(theta, g, m, s, t, lr, b1=0.9, b2=0.999, eps=1e-8)` trả về `(theta_new, m_new, s_new)` (có hiệu chỉnh bias, t bắt đầu từ 1).
+      code: |
+        def adam_step(theta, g, m, s, t, lr, b1=0.9, b2=0.999, eps=1e-8):
+            ### START CODE HERE ### (≈ 5 dòng)
+            m = b1 * m + (1 - b1) * g
+            s = b2 * s + (1 - b2) * g**2
+            m_hat, s_hat = m / (1 - b1**t), s / (1 - b2**t)
+            theta = theta - lr * m_hat / (np.sqrt(s_hat) + eps)
+            ### END CODE HERE ###
+            return theta, m, s
+      tests: |
+        th, m, s = adam_step(np.array([1.0]), np.array([2.0]), np.zeros(1), np.zeros(1), 1, 0.1, eps=0.0)
+        check_close(th, [0.9], message="bước đầu có độ lớn η")
+        th2, _, _ = adam_step(th, np.array([-1.0]), m, s, 2, 0.1, eps=0.0)
+        check_close(th2, [0.8734], tol=1e-4, message="bước thứ hai")
+analysis:
+  prompt: |
+    Một nhóm huấn luyện MLP 12 lớp cho dữ liệu cảm biến (200 feature, 5 000 mẫu, 4 lớp). Hiện tượng: (1) loss đứng yên ở ln 4 với sigmoid +
+    khởi tạo N(0, 1); (2) đổi sang ReLU thì loss giảm vài epoch rồi đột ngột thành NaN với SGD lr 0.5; (3) sau khi giảm lr, train accuracy 99%,
+    val 78%; (4) thêm BatchNorm nhưng khi triển khai, dự đoán từng mẫu một cho kết quả khác hẳn lúc đánh giá theo batch; (5) tăng batch size từ
+    32 lên 1024 để tận dụng GPU, accuracy giảm. Chẩn đoán và đề xuất cho từng hiện tượng.
+  rubric:
+    - "Hiện tượng 1: sigmoid + N(0,1) → bão hoà, vanishing gradient qua 12 lớp; dùng ReLU/GELU + He init, chuẩn hoá đầu vào"
+    - "Hiện tượng 2: LR quá lớn → bùng nổ/NaN; LR range test, Adam(W), gradient clipping, warmup"
+    - "Hiện tượng 3: overfitting → weight decay, dropout, early stopping, augmentation/thêm dữ liệu, mô hình nhỏ hơn"
+    - "Hiện tượng 4: quên model.eval() khi triển khai → BN dùng thống kê của batch (batch 1) thay vì running stats"
+    - "Hiện tượng 5: batch lớn với cùng LR/epoch → ít bước, underfit; tăng LR theo tỉ lệ + warmup, hoặc train thêm"
+  sample_answer: |
+    (1) Sigmoid bão hoà với trọng số N(0,1) (tiền kích hoạt lớn), đạo hàm ≤ 0.25 nhân qua 12 lớp → gradient lớp đầu ≈ 0, mạng đoán đều 4 lớp (ln 4).
+    Dùng ReLU/GELU + He init, chuẩn hoá đầu vào. (2) ReLU không bão hoà nhưng lr 0.5 quá lớn → bùng nổ → NaN; chọn lr bằng LR range test,
+    dùng AdamW, gradient clipping, warmup. (3) Train 99%/val 78% → overfitting: weight decay, dropout, early stopping, thêm dữ liệu/augmentation,
+    giảm kích thước. (4) Dự đoán từng mẫu khác batch → quên model.eval(): BN dùng thống kê của chính batch; phải eval() để dùng running mean/var.
+    (5) Batch 1024 với cùng lr/epoch → số bước giảm 32 lần → underfit; tăng lr theo tỉ lệ tuyến tính kèm warmup hoặc train lâu hơn.
+project:
+  prompt: |
+    **Mini project — Huấn luyện mạng SÂU cho chữ số.** `load_digits()`, chia train/test 75/25 (`random_state=0`, stratify), chuẩn hoá theo train.
+    Mạng phải có **ít nhất 6 lớp ẩn** (`n_hidden_layers`) và đạt accuracy test `test_acc` ≥ 0.95. Dùng những gì đã học (khởi tạo, chuẩn hoá,
+    optimizer phù hợp).
+  code: |
+    import torch
+    from torch import nn
+    from sklearn.datasets import load_digits
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import StandardScaler
+
+    X, y = load_digits(return_X_y=True)
+    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25, random_state=0, stratify=y)
+    sc = StandardScaler().fit(X_tr)
+    Xt, Xe = (torch.tensor(sc.transform(a), dtype=torch.float32) for a in (X_tr, X_te))
+    yt, ye = torch.tensor(y_tr), torch.tensor(y_te)
+    torch.manual_seed(0)
+    ### START CODE HERE ### (≈ 20 dòng)
+    layers, d = [], 64
+    n_hidden_layers = 6
+    for _ in range(n_hidden_layers):
+        lin = nn.Linear(d, 64)
+        nn.init.kaiming_normal_(lin.weight, nonlinearity="relu")
+        layers += [lin, nn.BatchNorm1d(64), nn.ReLU()]
+        d = 64
+    model = nn.Sequential(*layers, nn.Linear(d, 10))
+    opt = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-4)
+    for epoch in range(30):
+        model.train()
+        perm = torch.randperm(len(Xt))
+        for s in range(0, len(perm), 32):
+            idx = perm[s:s + 32]
+            opt.zero_grad()
+            nn.functional.cross_entropy(model(Xt[idx]), yt[idx]).backward()
+            opt.step()
+    model.eval()
+    with torch.no_grad():
+        test_acc = (model(Xe).argmax(1) == ye).float().mean().item()
+    ### END CODE HERE ###
+    print(f"{n_hidden_layers} lớp ẩn | accuracy test = {test_acc:.4f}")
+  tests: |
+    check_true(n_hidden_layers >= 6, "≥ 6 lớp ẩn")
+    check_greater(test_acc, 0.95, "accuracy test ≥ 0.95")

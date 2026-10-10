@@ -1,0 +1,292 @@
+{
+ "id": "07_logistic_regression",
+ "kind": "Chapter",
+ "title": "07 · Logistic Regression",
+ "next": "08_knn",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "linear regression cho phân loại",
+     "answer_hashes": [
+      "45ad03d6cb70c4b1f6a1"
+     ],
+     "lesson": "01_logistic_regression.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "log-odds",
+     "answer_hashes": [
+      "b08d1ecc511cd68a616b"
+     ],
+     "lesson": "01_logistic_regression.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "odds ratio",
+     "answer_hashes": [
+      "30d4d77be43781a77434"
+     ],
+     "lesson": "01_logistic_regression.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "decision boundary",
+     "answer_hashes": [
+      "96e65471aa3a9aac697b"
+     ],
+     "lesson": "01_logistic_regression.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "cross-entropy vs MSE",
+     "answer_hashes": [
+      "0d2365895e519a24c83f"
+     ],
+     "lesson": "01_logistic_regression.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "tf",
+     "topic": "gradient",
+     "answer_hashes": [
+      "ee91d9fd9547db3102cd"
+     ],
+     "lesson": "01_logistic_regression.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "sklearn C",
+     "answer_hashes": [
+      "bedd1c5ae767a289633f"
+     ],
+     "lesson": "02_from_scratch_and_optimization.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "advanced optimization",
+     "answer_hashes": [
+      "0670305728cb60f1d6c1"
+     ],
+     "lesson": "02_from_scratch_and_optimization.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "feature mapping",
+     "answer_hashes": [
+      "e8cb46b5df731017fb2c"
+     ],
+     "lesson": "03_regularized_logistic_regression.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "regularization & boundary",
+     "answer_hashes": [
+      "c12e00a2af18a9365f5e"
+     ],
+     "lesson": "03_regularized_logistic_regression.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "tf",
+     "topic": "One-vs-All",
+     "answer_hashes": [
+      "d443c6552be91e17a0df"
+     ],
+     "lesson": "05_one_vs_all.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "softmax",
+     "answer_hashes": [
+      "b4dff49b0b8c6b7117f5"
+     ],
+     "lesson": "06_softmax_regression.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "softmax stability",
+     "answer_hashes": [
+      "75ef962c0022645e130b"
+     ],
+     "lesson": "06_softmax_regression.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "decision threshold",
+     "answer_hashes": [
+      "ff100c1c4d77bbdd1e57"
+     ],
+     "lesson": "07_threshold_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "perfect separation",
+     "answer_hashes": [
+      "1a932ba5de8002512657"
+     ],
+     "lesson": "07_threshold_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "multi",
+     "topic": "class imbalance",
+     "answer_hashes": [
+      "5fcc729071a568c94131"
+     ],
+     "lesson": "07_threshold_and_failure_cases.ipynb"
+    },
+    {
+     "id": "t17",
+     "type": "mcq",
+     "topic": "linear ceiling",
+     "answer_hashes": [
+      "89bc6da913ad3c527ccf"
+     ],
+     "lesson": "08_linear_classifiers_cifar10.ipynb"
+    },
+    {
+     "id": "t18",
+     "type": "tf",
+     "topic": "mean image",
+     "answer_hashes": [
+      "2241d918a1fc060a36eb"
+     ],
+     "lesson": "08_linear_classifiers_cifar10.ipynb"
+    },
+    {
+     "id": "t19",
+     "type": "mcq",
+     "topic": "learning curve high bias",
+     "answer_hashes": [
+      "1b68d541299a24fba25a"
+     ],
+     "lesson": "08_linear_classifiers_cifar10.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "sigmoid",
+     "answer_hashes": [
+      "c8d3d42c9a4ea7acf693"
+     ],
+     "decimals": 3,
+     "lesson": "01_logistic_regression.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "decision boundary",
+     "answer_hashes": [
+      "f2a5ba5f429536457324"
+     ],
+     "decimals": 2,
+     "lesson": "01_logistic_regression.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "cross-entropy",
+     "answer_hashes": [
+      "06bec243e4fadc2dbd56"
+     ],
+     "decimals": 3,
+     "lesson": "01_logistic_regression.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "odds",
+     "answer_hashes": [
+      "28ab71ccfbbe6f181408"
+     ],
+     "decimals": 2,
+     "lesson": "01_logistic_regression.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "softmax",
+     "answer_hashes": [
+      "84d1639b31deefcca712"
+     ],
+     "decimals": 3,
+     "lesson": "06_softmax_regression.ipynb"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "optimal threshold",
+     "answer_hashes": [
+      "454385f162772910bd6e"
+     ],
+     "decimals": 2,
+     "lesson": "07_threshold_and_failure_cases.ipynb"
+    },
+    {
+     "id": "m07",
+     "type": "numeric",
+     "topic": "số tham số",
+     "answer_hashes": [
+      "c4a7dfbcd0ff7755327b"
+     ],
+     "decimals": 0,
+     "lesson": "06_softmax_regression.ipynb"
+    },
+    {
+     "id": "m08",
+     "type": "numeric",
+     "topic": "multiclass svm loss",
+     "answer_hashes": [
+      "4f905b19bc424b1c1f10"
+     ],
+     "decimals": 2,
+     "lesson": "08_linear_classifiers_cifar10.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

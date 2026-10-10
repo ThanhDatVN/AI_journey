@@ -1,0 +1,345 @@
+title: "Bài thi tổng hợp 6 · ML đáng tin cậy & hệ thống (chương 36–41)"
+next: null
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: permutation importance
+        lesson: 36_explainable_ai
+        type: mcq
+        question: "Permutation importance của một đặc trưng đo:"
+        options: {a: "Hiệu năng giảm bao nhiêu khi xáo trộn đặc trưng đó trên dữ liệu đánh giá", b: "Số lần đặc trưng được dùng để chia trong cây", c: "Hệ số hồi quy", d: "Tương quan với nhãn"}
+        answer: a
+        explanation: "Với đặc trưng tương quan, importance bị chia/giảm."
+      - id: t02
+        topic: shap additivity
+        lesson: 36_explainable_ai
+        type: mcq
+        question: "Tính chất cộng (additivity) của SHAP nghĩa là:"
+        options: {a: "Tổng giá trị SHAP các đặc trưng + giá trị cơ sở = dự đoán của mẫu đó", b: "SHAP luôn dương", c: "SHAP bằng hệ số tuyến tính", d: "SHAP không phụ thuộc mô hình"}
+        answer: a
+        explanation: "Từ giá trị Shapley của lý thuyết trò chơi."
+      - id: t03
+        topic: explanation not causation
+        lesson: 36_explainable_ai
+        type: tf
+        question: "Đặc trưng có SHAP lớn nghĩa là thay đổi đặc trưng đó ngoài đời sẽ thay đổi kết quả thật."
+        answer: false
+        explanation: "Giải thích mô hình, không phải cơ chế nhân quả của thế giới."
+      - id: t04
+        topic: calibration methods
+        lesson: 37_uncertainty_and_calibration
+        type: mcq
+        question: "Isotonic regression so với Platt scaling để hiệu chỉnh xác suất:"
+        options: {a: "Linh hoạt hơn (đơn điệu bất kỳ) nhưng cần nhiều dữ liệu hiệu chỉnh hơn", b: "Luôn tốt hơn", c: "Không cần dữ liệu riêng", d: "Thay đổi thứ hạng dự đoán"}
+        answer: a
+        explanation: "Platt: sigmoid 2 tham số, ít dữ liệu vẫn ổn."
+      - id: t05
+        topic: conformal
+        lesson: 37_uncertainty_and_calibration
+        type: mcq
+        question: "Split conformal prediction đảm bảo:"
+        options: {a: "Độ phủ ≥ 1 − α theo trung bình, với giả định dữ liệu hoán đổi được", b: "Độ phủ cho từng mẫu", c: "Khoảng hẹp nhất", d: "Không cần dữ liệu hiệu chỉnh"}
+        answer: a
+        explanation: "Đảm bảo biên, không có điều kiện."
+      - id: t06
+        topic: epistemic
+        lesson: 37_uncertainty_and_calibration
+        type: mcq
+        question: "Độ bất định giảm được khi có thêm dữ liệu là:"
+        options: {a: "Epistemic (về mô hình)", b: "Aleatoric (nhiễu vốn có)", c: "Cả hai không giảm", d: "Calibration"}
+        answer: a
+        explanation: "Aleatoric là nhiễu của chính dữ liệu."
+      - id: t07
+        topic: confounding
+        lesson: 38_causal_machine_learning
+        type: mcq
+        question: "Khách dùng gói cao cấp ít rời bỏ hơn. Lý do KHÔNG kết luận được gói cao cấp gây giảm rời bỏ:"
+        options: {a: "Có thể có confounder (khách gắn bó vốn mua gói cao cấp)", b: "Cỡ mẫu luôn quá nhỏ", c: "Rời bỏ không đo được", d: "Tương quan âm không tồn tại"}
+        answer: a
+        explanation: "Cần thí nghiệm hoặc điều chỉnh confounder."
+      - id: t08
+        topic: ipw
+        lesson: 38_causal_machine_learning
+        type: mcq
+        question: "IPW cân mỗi người được điều trị theo 1/e(x) để:"
+        options: {a: "Tạo bộ dữ liệu giả lập như thí nghiệm ngẫu nhiên về các confounder đã đo", b: "Tăng cỡ mẫu", c: "Loại ngoại lai", d: "Hiệu chỉnh xác suất"}
+        answer: a
+        explanation: "Cần overlap tốt."
+      - id: t09
+        topic: uplift
+        lesson: 38_causal_machine_learning
+        type: mcq
+        question: "Nhắm khuyến mãi theo uplift nghĩa là chọn khách:"
+        options: {a: "Mà khuyến mãi làm thay đổi hành vi nhiều nhất", b: "Có khả năng mua cao nhất", c: "Mua nhiều nhất trước đây", d: "Ngẫu nhiên"}
+        answer: a
+        explanation: "Khách 'chắc chắn mua' không cần khuyến mãi."
+      - id: t10
+        topic: point in time
+        lesson: 39_ml_systems
+        type: mcq
+        question: "Đặc trưng 'số giao dịch trong 30 ngày' tính đến hôm nay (thay vì đến thời điểm dự đoán) cho dữ liệu huấn luyện là:"
+        options: {a: "Rò rỉ thời điểm", b: "Lệch train/serving", c: "Trôi khái niệm", d: "Hợp lệ"}
+        answer: a
+        explanation: "Dùng as-of join."
+      - id: t11
+        topic: skew
+        lesson: 39_ml_systems
+        type: mcq
+        question: "Đội backend viết lại bước chuẩn hoá bằng ngôn ngữ khác và điền thiếu bằng 0 thay vì trung vị. Đây là:"
+        options: {a: "Lệch train/serving", b: "Rò rỉ thời điểm", c: "Overfitting", d: "Trôi dữ liệu"}
+        answer: a
+        explanation: "Đóng gói tiền xử lý cùng mô hình, kiểm thử parity."
+      - id: t12
+        topic: pickle
+        lesson: 39_ml_systems
+        type: tf
+        question: "Nạp file joblib tải từ internet là an toàn miễn là phần mở rộng đúng là .joblib."
+        answer: false
+        explanation: "Pickle thực thi code khi nạp."
+      - id: t13
+        topic: registry
+        lesson: 39_ml_systems
+        type: mcq
+        question: "Rollback mô hình nhanh nhất với registry có alias:"
+        options: {a: "Trỏ alias 'champion' về phiên bản cũ", b: "Huấn luyện lại", c: "Sửa code", d: "Xoá phiên bản mới"}
+        answer: a
+        explanation: "Phiên bản bất biến."
+      - id: t14
+        topic: drift
+        lesson: 40_mlops
+        type: mcq
+        question: "Đầu vào không đổi phân phối nhưng hiệu năng giảm mạnh khi nhãn về. Đây là:"
+        options: {a: "Trôi khái niệm", b: "Trôi dữ liệu", c: "Lỗi API", d: "Rò rỉ"}
+        answer: a
+        explanation: "P(y|X) đổi."
+      - id: t15
+        topic: psi vs pvalue
+        lesson: 40_mlops
+        type: mcq
+        question: "Giám sát trôi với 1 triệu dòng/ngày nên dùng:"
+        options: {a: "Thước đo độ lớn (PSI, KS statistic) với ngưỡng", b: "p-value < 0.05", c: "Accuracy", d: "Không cần"}
+        answer: a
+        explanation: "p-value luôn nhỏ với n lớn."
+      - id: t16
+        topic: canary
+        lesson: 40_mlops
+        type: mcq
+        question: "Canary deployment:"
+        options: {a: "Chuyển dần một phần nhỏ traffic sang bản mới, rollback nếu chỉ số xấu", b: "Chạy bản mới song song không ảnh hưởng người dùng", c: "Chuyển toàn bộ ngay", d: "Thí nghiệm ngẫu nhiên đủ cỡ mẫu"}
+        answer: a
+        explanation: "(b) là shadow; (d) là A/B."
+      - id: t17
+        topic: peeking
+        lesson: 40_mlops
+        type: mcq
+        question: "Xem kết quả A/B mỗi ngày và dừng ngay khi p < 0.05 làm:"
+        options: {a: "Tăng tỉ lệ dương tính giả nhiều lần", b: "Giảm dương tính giả", c: "Không ảnh hưởng", d: "Tăng power"}
+        answer: a
+        explanation: "Cố định cỡ mẫu hoặc kiểm định tuần tự."
+      - id: t18
+        topic: feedback loop
+        lesson: 40_mlops
+        type: mcq
+        question: "Mô hình chọn khách rủi ro cao để giữ chân; khách được giữ chân nên ít rời bỏ; huấn luyện lại trên dữ liệu này làm mô hình:"
+        options: {a: "Đánh giá thấp dần rủi ro của chính nhóm cần giữ chân (vòng phản hồi)", b: "Tốt dần lên", c: "Không đổi", d: "Học đúng tác động"}
+        answer: a
+        explanation: "Giữ nhóm đối chứng ngẫu nhiên."
+      - id: t19
+        topic: label maturity
+        lesson: 41_capstone_projects
+        type: mcq
+        question: "Hồ sơ vay mới 4 tháng có nhãn 'vỡ nợ trong 12 tháng' trống. Nên:"
+        options: {a: "Loại khỏi dữ liệu có nhãn (chưa trưởng thành)", b: "Điền 0", c: "Điền 1", d: "Điền trung bình"}
+        answer: a
+        explanation: "Chưa quan sát đủ ≠ không vỡ nợ."
+      - id: t20
+        topic: expected loss decisions
+        lesson: 41_capstone_projects
+        type: multi
+        question: "Quyết định duyệt theo lợi nhuận kỳ vọng cần:"
+        options: {a: "Xác suất được hiệu chỉnh", b: "Ước lượng lợi ích/chi phí của từng kết cục", c: "Giám sát calibration khi thế giới thay đổi", d: "Chỉ cần AUC cao"}
+        answer: abc
+        explanation: "AUC tốt mà calibration lệch vẫn gây lỗ."
+  math:
+    questions:
+      - id: m01
+        topic: conformal quantile
+        lesson: 37_uncertainty_and_calibration
+        type: numeric
+        decimals: 0
+        question: "Split conformal với n = 99 điểm hiệu chỉnh, α = 0.1. Ngưỡng là điểm thứ k nhỏ nhất với k = ⌈(n + 1)(1 − α)⌉ = ?"
+        answer: 90
+        explanation: "⌈100·0.9⌉."
+      - id: m02
+        topic: brier
+        lesson: 37_uncertainty_and_calibration
+        type: numeric
+        decimals: 3
+        question: "Dự đoán [0.9, 0.2], nhãn [1, 0]. Brier score = ?"
+        answer: 0.025
+        explanation: "(0.01 + 0.04)/2."
+      - id: m03
+        topic: ipw weight
+        lesson: 38_causal_machine_learning
+        type: numeric
+        decimals: 1
+        question: "Người được điều trị có điểm xu hướng e = 0.2. Trọng số IPW = ?"
+        answer: 5
+        explanation: "1/0.2."
+      - id: m04
+        topic: ate
+        lesson: 38_causal_machine_learning
+        type: numeric
+        decimals: 1
+        question: "A/B test: chi tiêu TB nhóm có coupon 180, nhóm không 150. Ước lượng ATE = ?"
+        answer: 30
+        explanation: "Ngẫu nhiên hoá → chênh lệch trung bình không chệch."
+      - id: m05
+        topic: psi
+        lesson: 40_mlops
+        type: numeric
+        decimals: 3
+        question: "Hai bin: tham chiếu [0.5, 0.5], hiện tại [0.25, 0.75]. PSI = ?"
+        answer: 0.275
+        explanation: "0.25·ln2 + 0.25·ln1.5."
+      - id: m06
+        topic: sample size
+        lesson: 40_mlops
+        type: numeric
+        decimals: 0
+        question: "Cần 3.000 người/nhóm để phát hiện hiệu ứng 2 điểm %. Hiệu ứng 1 điểm % cần khoảng bao nhiêu người/nhóm?"
+        answer: 12000
+        explanation: "Tỉ lệ nghịch bình phương hiệu ứng."
+      - id: m07
+        topic: break-even
+        lesson: 41_capstone_projects
+        type: numeric
+        decimals: 3
+        question: "Lãi nếu trả đủ g = 0.15, lỗ nếu vỡ nợ ℓ = 0.70 (theo tỉ lệ khoản vay). Ngưỡng xác suất vỡ nợ để duyệt = ?"
+        answer: 0.176
+        explanation: "0.15/0.85."
+      - id: m08
+        topic: expected loss
+        lesson: 41_capstone_projects
+        type: numeric
+        decimals: 0
+        question: "Giao dịch 2.000.000đ, xác suất gian lận 0.01. Tổn thất kỳ vọng nếu duyệt thẳng (đồng) = ?"
+        answer: 20000
+        explanation: "Lớn hơn chi phí kiểm duyệt 15.000đ → kiểm duyệt."
+coding:
+  tasks:
+    - id: c01
+      title: Khoảng dự đoán split conformal
+      prompt: |
+        Viết `conformal_interval(residuals_cal, pred_new, alpha)`: q = phần tử thứ k nhỏ nhất của |residuals_cal| với k = ⌈(n + 1)(1 − α)⌉
+        (nếu k > n thì q = ∞); trả về `(pred_new − q, pred_new + q)`.
+      code: |
+        def conformal_interval(residuals_cal, pred_new, alpha):
+            ### START CODE HERE ### (≈ 5 dòng)
+            scores = np.sort(np.abs(np.asarray(residuals_cal, float)))
+            n = len(scores)
+            k = int(np.ceil((n + 1) * (1 - alpha) - 1e-9))
+            q = np.inf if k > n else scores[k - 1]
+            return np.asarray(pred_new, float) - q, np.asarray(pred_new, float) + q
+            ### END CODE HERE ###
+      tests: |
+        lo, hi = conformal_interval(np.arange(1, 10), np.array([0.0]), 0.2)
+        check_close([lo[0], hi[0]], [-8, 8], message="k = ⌈10·0.8⌉ = 8 → q = 8")
+        lo2, _ = conformal_interval(np.arange(1, 5), np.array([0.0]), 0.1)
+        check_true(np.isinf(lo2[0]), "quá ít điểm hiệu chỉnh → khoảng vô hạn")
+        rng = np.random.default_rng(0)
+        cal, new = rng.normal(size=500), rng.normal(size=20000)
+        lo3, hi3 = conformal_interval(cal, np.zeros(20000), 0.1)
+        check_close(np.mean((new >= lo3) & (new <= hi3)), 0.9, tol=0.02, message="độ phủ ≈ 90%")
+    - id: c02
+      title: PSI
+      prompt: |
+        Viết `psi(reference, current, bins=10, eps=1e-4)`: bin theo phân vị của reference (hai đầu ±∞), kẹp tỉ lệ tối thiểu eps, trả về Σ (c − r)·ln(c/r).
+      code: |
+        def psi(reference, current, bins=10, eps=1e-4):
+            ### START CODE HERE ### (≈ 6 dòng)
+            edges = np.unique(np.quantile(reference, np.linspace(0, 1, bins + 1)))
+            edges[0], edges[-1] = -np.inf, np.inf
+            r = np.clip(np.histogram(reference, edges)[0] / len(reference), eps, None)
+            c = np.clip(np.histogram(current, edges)[0] / len(current), eps, None)
+            return float(np.sum((c - r) * np.log(c / r)))
+            ### END CODE HERE ###
+      tests: |
+        rng = np.random.default_rng(1)
+        ref = rng.normal(size=10000)
+        check_close(psi(ref, ref), 0.0, message="giống hệt → 0")
+        check_less(psi(ref, rng.normal(size=10000)), 0.02, "cùng phân phối")
+        check_greater(psi(ref, rng.normal(1, 1, 10000)), 0.25, "lệch 1σ → trôi lớn")
+analysis:
+  prompt: |
+    Một công ty tài chính triển khai mô hình duyệt vay mới: AUC validation 0.82 (chia ngẫu nhiên), dùng cột "số lần nhắc nợ trong 3 tháng đầu" vì nó quan trọng
+    nhất theo SHAP, ngưỡng duyệt 0.5, triển khai thẳng 100% hồ sơ, không giám sát gì ngoài độ trễ API. Sáu tháng sau tỉ lệ nợ xấu tăng gấp đôi. Phân tích
+    những gì đã sai theo toàn bộ vòng đời (dữ liệu, đánh giá, quyết định, triển khai, giám sát) và đề xuất hệ thống đúng.
+  rubric:
+    - "Chỉ ra 'số lần nhắc nợ 3 tháng đầu' là thông tin sau quyết định (rò rỉ) — SHAP cao không biện minh được"
+    - "Chỉ ra chia ngẫu nhiên thay vì theo thời gian, nhãn chưa trưởng thành, cần backtest có độ trễ nhãn"
+    - "Chỉ ra ngưỡng 0.5 vô nghĩa — ngưỡng từ kinh tế khoản vay, cần xác suất hiệu chỉnh"
+    - "Chỉ ra triển khai 100% không shadow/canary/A-B; đề xuất triển khai dần và nhóm đối chứng"
+    - "Đề xuất giám sát: PSI đầu vào, calibration, nhãn sớm (proxy), theo nhóm; quy trình hiệu chỉnh/huấn luyện lại, model card"
+  sample_answer: |
+    Dữ liệu: "số lần nhắc nợ 3 tháng đầu" chỉ có sau khi giải ngân — rò rỉ; SHAP cao chỉ cho thấy mô hình dựa vào nó, không chứng minh hợp lệ. Lúc duyệt,
+    cột này không có (hoặc bằng 0) → mô hình thực tế khác hẳn mô hình đã đánh giá. Đánh giá: chia ngẫu nhiên trộn các giai đoạn và có thể dùng hồ sơ chưa đủ
+    thời gian quan sát (nhãn chưa trưởng thành bị coi là tốt) — cần chia theo thời gian, chỉ dùng nhãn đã trưởng thành, backtest mô phỏng độ trễ nhãn.
+    Quyết định: ngưỡng 0.5 không gắn với lãi/lỗ; dùng p* = g/(g + ℓ) theo kỳ hạn với xác suất hiệu chỉnh, stress test khi rủi ro tăng. Triển khai: không
+    shadow, không canary, không nhóm đối chứng → không phát hiện sớm, không đo được tác động. Giám sát: chỉ độ trễ là không đủ — cần PSI đầu vào, phân phối
+    dự đoán, calibration khi nhãn về, nhãn sớm (trễ hạn 30 ngày trong 3 tháng) để phát hiện trôi khái niệm sau vài tháng thay vì một năm, theo nhóm khách
+    hàng; quy trình hiệu chỉnh hệ số chặn nhanh, huấn luyện lại qua cổng thăng hạng, registry để rollback, model card ghi hạn chế.
+project:
+  prompt: |
+    **Mini project — Hiệu chỉnh xác suất và tập dự đoán conformal.** `customer_churn.csv` chia train/calibration/test = 50/25/25 phân tầng (code cho sẵn).
+    Mô hình cho sẵn dùng `class_weight="balanced"` nên xác suất bị lệch. (1) Hiệu chỉnh bằng `IsotonicRegression` fit trên calibration → `p_test_cal`;
+    tính `ece_before`, `ece_after` (ECE 10 bin đều trên test). (2) Tập dự đoán conformal cho phân loại với α = 0.1: điểm không phù hợp = 1 − p(lớp đúng)
+    (dùng xác suất **đã hiệu chỉnh** trên calibration), ngưỡng q theo công thức split conformal; lớp c thuộc tập nếu 1 − p(c) ≤ q → `coverage`, `avg_set_size`
+    trên test. Yêu cầu: ECE giảm ít nhất một nửa và < 0.05; coverage ≥ 0.88; kích thước tập trung bình < 1.6.
+  code: |
+    import pandas as pd
+    from sklearn.compose import ColumnTransformer
+    from sklearn.isotonic import IsotonicRegression
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.model_selection import train_test_split
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
+    from ml_course.utils import repo_path
+
+    churn = pd.read_csv(repo_path("data", "sample", "customer_churn.csv"))
+    NUMERIC = ["tenure_months", "monthly_charges", "total_charges", "support_calls", "n_products"]
+    CATEGORICAL = ["contract", "internet_service", "payment_method", "senior"]
+    train, rest = train_test_split(churn, test_size=0.5, random_state=2, stratify=churn.churn)
+    calib, test = train_test_split(rest, test_size=0.5, random_state=2, stratify=rest.churn)
+    model = make_pipeline(ColumnTransformer([("num", StandardScaler(), NUMERIC), ("cat", OneHotEncoder(handle_unknown="ignore"), CATEGORICAL)]),
+                          LogisticRegression(max_iter=1000, class_weight="balanced")).fit(train, train.churn)
+    p_cal, p_test = model.predict_proba(calib)[:, 1], model.predict_proba(test)[:, 1]
+
+
+    def ece(p, y, n_bins=10):
+        bins = np.minimum((np.asarray(p) * n_bins).astype(int), n_bins - 1)
+        y = np.asarray(y)
+        return float(sum(abs(p[bins == b].mean() - y[bins == b].mean()) * np.mean(bins == b) for b in range(n_bins) if np.any(bins == b)))
+
+
+    ### START CODE HERE ### (≈ 12 dòng)
+    iso = IsotonicRegression(out_of_bounds="clip", y_min=0, y_max=1).fit(p_cal, calib.churn)
+    p_test_cal = iso.predict(p_test)
+    ece_before, ece_after = ece(p_test, test.churn), ece(p_test_cal, test.churn)
+    p_cal_cal = iso.predict(p_cal)
+    scores = np.sort(1 - np.where(calib.churn.values == 1, p_cal_cal, 1 - p_cal_cal))
+    n = len(scores)
+    k = int(np.ceil((n + 1) * 0.9 - 1e-9))
+    q = scores[k - 1]
+    include_0, include_1 = (1 - (1 - p_test_cal)) <= q, (1 - p_test_cal) <= q
+    coverage = float(np.mean(np.where(test.churn.values == 1, include_1, include_0)))
+    avg_set_size = float(np.mean(include_0.astype(int) + include_1.astype(int)))
+    ### END CODE HERE ###
+    print(f"ECE: {ece_before:.3f} → {ece_after:.3f} | conformal: phủ {coverage:.1%}, kích thước TB {avg_set_size:.2f}")
+  tests: |
+    check_less(ece_after, 0.5 * ece_before, "ECE giảm ít nhất một nửa")
+    check_less(ece_after, 0.05, "ECE sau hiệu chỉnh < 0.05")
+    check_greater(coverage, 0.88, "độ phủ ≈ 90%")
+    check_less(avg_set_size, 1.6, "tập dự đoán đủ hẹp")

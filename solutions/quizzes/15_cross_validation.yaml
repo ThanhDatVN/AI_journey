@@ -1,0 +1,284 @@
+title: "15 · Cross-Validation"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: holdout variance
+        lesson: 01_holdout_kfold_stratified.ipynb
+        type: mcq
+        question: "Vì sao một lần chia train/test có thể không đủ để so sánh hai model?"
+        options:
+          a: "Điểm số phụ thuộc may rủi của cách chia — có thể dao động vài điểm %"
+          b: "Train/test luôn bị rò rỉ"
+          c: "Tập test quá lớn"
+          d: "Không có lý do"
+        answer: a
+        explanation: "CV dùng mọi mẫu để đánh giá, báo cáo mean ± std."
+      - id: t02
+        topic: k-fold count
+        lesson: 01_holdout_kfold_stratified.ipynb
+        type: mcq
+        question: "Trong K-Fold (k = 5), mỗi mẫu được dùng làm validation bao nhiêu lần?"
+        options: {a: "0", b: "1", c: "4", d: "5"}
+        answer: b
+        explanation: "Và làm train 4 lần."
+      - id: t03
+        topic: choosing k
+        lesson: 01_holdout_kfold_stratified.ipynb
+        type: mcq
+        question: "So với k = 10, k = 2 cho ước lượng:"
+        options: {a: "Lạc quan hơn", b: "Bi quan hơn (model train trên ít dữ liệu hơn)", c: "Giống hệt", d: "Không tính được"}
+        answer: b
+        explanation: "Mỗi model chỉ thấy 50% dữ liệu."
+      - id: t04
+        topic: stratified
+        lesson: 01_holdout_kfold_stratified.ipynb
+        type: tf
+        question: "Stratified K-Fold giữ tỉ lệ các lớp trong mỗi fold gần giống tỉ lệ trong toàn bộ dữ liệu."
+        answer: true
+        explanation: "Chia từng lớp riêng."
+      - id: t05
+        topic: cross_val_predict
+        lesson: 01_holdout_kfold_stratified.ipynb
+        type: mcq
+        question: "cross_val_predict trả về:"
+        options:
+          a: "Dự đoán của model train trên toàn bộ dữ liệu"
+          b: "Dự đoán out-of-fold: mỗi mẫu được dự đoán bởi model không thấy nó"
+          c: "Điểm số của từng fold"
+          d: "Hyperparameter tốt nhất"
+        answer: b
+        explanation: "Dùng để phân tích/chọn ngưỡng/stacking."
+      - id: t06
+        topic: group
+        lesson: 02_group_timeseries_loo.ipynb
+        type: mcq
+        question: "Dữ liệu 20 lần khám cho mỗi bệnh nhân; model sẽ dùng cho bệnh nhân mới. Chiến lược CV:"
+        options: {a: "KFold ngẫu nhiên", b: "GroupKFold theo bệnh nhân", c: "LOO", d: "TimeSeriesSplit"}
+        answer: b
+        explanation: "Mọi lần khám của một người nằm cùng fold."
+      - id: t07
+        topic: group leakage
+        lesson: 02_group_timeseries_loo.ipynb
+        type: mcq
+        question: "Dùng KFold ngẫu nhiên cho dữ liệu có nhóm thường dẫn tới:"
+        options: {a: "Ước lượng bi quan", b: "Ước lượng lạc quan — model nhận ra nhóm thay vì học quy luật", c: "Không ảnh hưởng", d: "Lỗi chạy"}
+        answer: b
+        explanation: "Ví dụ bệnh nhân: 0.92 vs 0.52 thật."
+      - id: t08
+        topic: time series
+        lesson: 02_group_timeseries_loo.ipynb
+        type: tf
+        question: "Với TimeSeriesSplit, validation luôn nằm sau train theo thời gian."
+        answer: true
+        explanation: "Mô phỏng dự báo tương lai."
+      - id: t09
+        topic: gap
+        lesson: 02_group_timeseries_loo.ipynb
+        type: multi
+        question: "Tham số gap trong TimeSeriesSplit dùng để:"
+        options:
+          a: "Mô phỏng độ trễ khi dữ liệu mới có sẵn"
+          b: "Tránh rò rỉ qua feature lag/rolling hoặc target nhìn về tương lai"
+          c: "Tăng kích thước train"
+          d: "Xáo trộn dữ liệu"
+        answer: ab
+        explanation: "Bỏ khoảng trống giữa train và validation."
+      - id: t10
+        topic: LOO
+        lesson: 02_group_timeseries_loo.ipynb
+        type: multi
+        question: "Đặc điểm của Leave-One-Out:"
+        options: {a: "n lần train", b: "Ít bi quan", c: "Ước lượng có variance cao", d: "Luôn tốt hơn 10-fold"}
+        answer: abc
+        explanation: "Dùng khi dữ liệu rất ít."
+      - id: t11
+        topic: feature selection leakage
+        lesson: 03_nested_cv_and_protocol.ipynb
+        type: mcq
+        question: "Chọn 20 feature tốt nhất trên toàn bộ dữ liệu (nhãn ngẫu nhiên, 5 000 feature) rồi mới CV sẽ cho:"
+        options: {a: "Accuracy ≈ 0.5", b: "Accuracy cao giả tạo", c: "Lỗi", d: "Accuracy ≈ 0"}
+        answer: b
+        explanation: "Validation đã tham gia chọn feature."
+      - id: t12
+        topic: selection bias
+        lesson: 03_nested_cv_and_protocol.ipynb
+        type: mcq
+        question: "best_score_ của GridSearchCV sau khi thử 100 cấu hình là ước lượng:"
+        options: {a: "Không thiên lệch", b: "Lạc quan", c: "Bi quan", d: "Chính xác tuyệt đối"}
+        answer: b
+        explanation: "Max của nhiều ước lượng nhiễu."
+      - id: t13
+        topic: nested CV
+        lesson: 03_nested_cv_and_protocol.ipynb
+        type: mcq
+        question: "Nested CV ước lượng hiệu năng của:"
+        options: {a: "Một bộ hyperparameter cố định", b: "Cả quy trình 'tune bằng CV rồi train'", c: "Tập test", d: "Model tốt nhất có thể"}
+        answer: b
+        explanation: "Hyperparameter có thể khác nhau giữa các fold ngoài."
+      - id: t14
+        topic: pipeline
+        lesson: 03_nested_cv_and_protocol.ipynb
+        type: multi
+        question: "Bước nào phải nằm trong Pipeline để tránh rò rỉ trong CV?"
+        options: {a: "StandardScaler", b: "SimpleImputer", c: "SelectKBest", d: "Đọc file CSV"}
+        answer: abc
+        explanation: "Mọi bước học từ dữ liệu."
+      - id: t15
+        topic: test reuse
+        lesson: 03_nested_cv_and_protocol.ipynb
+        type: tf
+        question: "Xem kết quả test, sửa feature, rồi test lại nhiều lần vẫn cho ước lượng trung thực."
+        answer: false
+        explanation: "Test đã thành validation."
+      - id: t16
+        topic: choosing strategy
+        lesson: 02_group_timeseries_loo.ipynb
+        type: mcq
+        question: "Nguyên tắc vàng khi chọn chiến lược validation:"
+        options:
+          a: "Luôn dùng 10-fold"
+          b: "Cách chia phải mô phỏng đúng cách model sẽ được dùng"
+          c: "Chọn cách cho điểm cao nhất"
+          d: "Luôn xáo trộn dữ liệu"
+        answer: b
+        explanation: "Bệnh nhân mới? Tương lai? Cửa hàng mới?"
+  math:
+    questions:
+      - id: m01
+        topic: fold size
+        lesson: 01_holdout_kfold_stratified.ipynb
+        type: numeric
+        decimals: 0
+        question: "1 000 mẫu, 5-fold CV. Mỗi model được train trên bao nhiêu mẫu?"
+        answer: 800
+        explanation: "4/5 dữ liệu."
+      - id: m02
+        topic: number of fits
+        lesson: 03_nested_cv_and_protocol.ipynb
+        type: numeric
+        decimals: 0
+        question: "Nested CV: 5 fold ngoài, 4 fold trong, lưới 10 cấu hình. Tổng số lần fit (không tính refit)?"
+        answer: 200
+        explanation: "5 × 4 × 10."
+      - id: m03
+        topic: LOO count
+        lesson: 02_group_timeseries_loo.ipynb
+        type: numeric
+        decimals: 0
+        question: "LOO trên 250 mẫu cần train bao nhiêu model?"
+        answer: 250
+        explanation: "k = n."
+      - id: m04
+        topic: standard error
+        lesson: 01_holdout_kfold_stratified.ipynb
+        type: numeric
+        decimals: 3
+        question: "10 fold, độ lệch chuẩn giữa các fold s = 0.03. Sai số chuẩn xấp xỉ s/√k = ?"
+        answer: 0.0095
+        explanation: "0.03/√10 ≈ 0.0095 (xấp xỉ vì các fold không độc lập)."
+      - id: m05
+        topic: time split
+        lesson: 02_group_timeseries_loo.ipynb
+        type: numeric
+        decimals: 0
+        question: "TimeSeriesSplit trên 500 mẫu, n_splits = 4, test_size = 50, gap = 10. Split đầu tiên train trên bao nhiêu mẫu?"
+        answer: 290
+        explanation: "val_start = 500 − 4·50 = 300; train = 300 − 10."
+coding:
+  tasks:
+    - id: c01
+      title: K-Fold indices
+      prompt: |
+        Viết `kfold_splits(n, k, seed)` trả về list `(train_idx, val_idx)`: xáo trộn `np.arange(n)` bằng `np.random.default_rng(seed).permutation`,
+        chia bằng `np.array_split` thành k phần, fold i là validation.
+      code: |
+        def kfold_splits(n, k=5, seed=0):
+            ### START CODE HERE ### (≈ 5 dòng)
+            idx = np.random.default_rng(seed).permutation(n)
+            folds = np.array_split(idx, k)
+            out = []
+            for i in range(k):
+                out.append((np.concatenate([folds[j] for j in range(k) if j != i]), folds[i]))
+            ### END CODE HERE ###
+            return out
+      tests: |
+        splits = kfold_splits(53, 5)
+        check_equal([len(v) for _, v in splits], [11, 11, 11, 10, 10], "kích thước fold")
+        check_equal(sorted(np.concatenate([v for _, v in splits]).tolist()), list(range(53)), "mỗi mẫu validation đúng 1 lần")
+        check_true(all(len(np.intersect1d(t, v)) == 0 for t, v in splits), "train ∩ val = ∅")
+    - id: c02
+      title: Cross-validation thủ công
+      prompt: |
+        Viết `manual_cv(make_model, X, y, splits, scorer)` trả về mảng điểm số: với mỗi `(train, val)` trong `splits`, tạo model **mới** bằng
+        `make_model()`, fit trên train, tính `scorer(y[val], model.predict(X[val]))`.
+      code: |
+        def manual_cv(make_model, X, y, splits, scorer):
+            scores = []
+            ### START CODE HERE ### (≈ 3 dòng)
+            for tr, va in splits:
+                model = make_model().fit(X[tr], y[tr])
+                scores.append(scorer(y[va], model.predict(X[va])))
+            ### END CODE HERE ###
+            return np.array(scores)
+      tests: |
+        from sklearn.linear_model import LinearRegression
+        from sklearn.metrics import mean_squared_error
+        from sklearn.model_selection import KFold, cross_val_score
+        rng = np.random.default_rng(0)
+        X = rng.normal(size=(100, 3))
+        y = X @ np.array([1.0, -2.0, 0.5]) + rng.normal(0, 0.1, 100)
+        cv = KFold(5, shuffle=True, random_state=0)
+        ours = manual_cv(LinearRegression, X, y, list(cv.split(X)), mean_squared_error)
+        ref = -cross_val_score(LinearRegression(), X, y, cv=cv, scoring="neg_mean_squared_error")
+        check_close(ours, ref, message="khớp cross_val_score")
+analysis:
+  prompt: |
+    Một nhóm xây model dự đoán khách hàng rời mạng hàng tháng. Dữ liệu: 24 tháng × 50 000 khách hàng (mỗi khách hàng một dòng mỗi tháng),
+    feature gồm `avg_usage_last_3_months` và `num_complaints_next_month`. Quy trình: chuẩn hoá + SMOTE trên toàn bộ dữ liệu, sau đó
+    10-fold CV ngẫu nhiên để thử 500 cấu hình XGBoost, báo cáo best_score_ ROC-AUC = 0.94 là hiệu năng dự kiến. Đánh giá và đề xuất quy trình đúng.
+  rubric:
+    - "Chỉ ra dữ liệu có nhóm (khách hàng xuất hiện nhiều tháng) và theo thời gian → KFold ngẫu nhiên lạc quan; cần chia theo thời gian (train tháng trước, validate tháng sau) và/hoặc group theo khách hàng"
+    - "Chỉ ra num_complaints_next_month là thông tin tương lai → target leakage"
+    - "Chỉ ra chuẩn hoá và SMOTE trên toàn bộ dữ liệu trước CV → rò rỉ; phải nằm trong pipeline, SMOTE chỉ trên train của mỗi fold"
+    - "Chỉ ra best_score_ sau 500 cấu hình là thiên lệch lạc quan → cần nested CV hoặc tập test hold-out (theo thời gian) đánh giá một lần"
+    - "Đề xuất quy trình: tách test là các tháng cuối, CV theo thời gian trên phần còn lại, pipeline đầy đủ, báo cáo test kèm khoảng tin cậy"
+  sample_answer: |
+    (1) Mỗi khách hàng xuất hiện 24 lần và dữ liệu theo thời gian → KFold ngẫu nhiên vừa rò rỉ theo khách hàng vừa "nhìn thấy tương lai". Dùng chia theo thời gian (expanding window theo tháng), có thể kết hợp group.
+    (2) num_complaints_next_month là dữ liệu tháng sau → loại bỏ.
+    (3) Chuẩn hoá + SMOTE trước CV → mẫu tổng hợp tạo từ dữ liệu validation lọt vào train; đặt trong imblearn Pipeline.
+    (4) best_score_ của 500 cấu hình bị thiên lệch lạc quan → nested CV hoặc đánh giá một lần trên test hold-out.
+    (5) Quy trình: test = 3 tháng cuối; trên 21 tháng còn lại tune bằng TimeSeriesSplit với pipeline đầy đủ; train lại; đánh giá test một lần; bootstrap CI; theo dõi sau triển khai.
+project:
+  prompt: |
+    **Mini project — Đánh giá trung thực với dữ liệu nhóm.** Dữ liệu tổng hợp: 80 cửa hàng × 30 ngày, feature là đặc điểm cửa hàng
+    (cố định) + ngày; target là doanh thu. Mục tiêu: dự đoán cho **cửa hàng mới**. (1) Tính MAE bằng KFold ngẫu nhiên (`mae_random`) và
+    GroupKFold theo cửa hàng (`mae_group`) cho `RandomForestRegressor(n_estimators=100, random_state=0)`; (2) tính MAE thật trên 40 cửa hàng mới
+    (`mae_new`). Yêu cầu: `mae_group` gần `mae_new` hơn `mae_random`.
+  code: |
+    from sklearn.ensemble import RandomForestRegressor
+    from sklearn.metrics import mean_absolute_error
+    from sklearn.model_selection import GroupKFold, KFold, cross_val_score
+
+    def make_stores(n_stores, seed):
+        r = np.random.default_rng(seed)
+        traits = r.normal(size=(n_stores, 6))                    # đặc điểm cửa hàng (dân số, diện tích, ...) — chỉ 2 cái có ích
+        store_effect = r.normal(0, 3, n_stores)                  # hiệu ứng riêng không quan sát được
+        g = np.repeat(np.arange(n_stores), 30)
+        day = np.tile(np.arange(30), n_stores)
+        X = np.c_[traits[g], day % 7]
+        y = 20 + 2 * traits[g, 0] - 1.5 * traits[g, 1] + store_effect[g] + 1.5 * (day % 7 >= 5) + r.normal(0, 1, len(g))
+        return X, y, g
+
+    X, y, groups = make_stores(80, 0)
+    X_new, y_new, _ = make_stores(40, 1)
+    ### START CODE HERE ### (≈ 5 dòng)
+    model = RandomForestRegressor(n_estimators=100, random_state=0)
+    mae_random = -cross_val_score(model, X, y, cv=KFold(5, shuffle=True, random_state=0), scoring="neg_mean_absolute_error").mean()
+    mae_group = -cross_val_score(model, X, y, cv=GroupKFold(5), groups=groups, scoring="neg_mean_absolute_error").mean()
+    mae_new = mean_absolute_error(y_new, model.fit(X, y).predict(X_new))
+    ### END CODE HERE ###
+    print(f"MAE: KFold ngẫu nhiên = {mae_random:.2f} | GroupKFold = {mae_group:.2f} | cửa hàng mới = {mae_new:.2f}")
+  tests: |
+    check_less(abs(mae_group - mae_new), abs(mae_random - mae_new), "GroupKFold gần thực tế hơn")
+    check_less(mae_random, mae_new, "KFold ngẫu nhiên lạc quan")

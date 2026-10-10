@@ -1,0 +1,235 @@
+{
+ "id": "31_transformers",
+ "kind": "Chapter",
+ "title": "31 · Transformers",
+ "next": "32_nlp",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "soft lookup",
+     "answer_hashes": [
+      "bd6294c418405eb252f3"
+     ],
+     "lesson": "01_attention_from_scratch.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "scaling",
+     "answer_hashes": [
+      "d602c2f5377fa6661c9e"
+     ],
+     "lesson": "01_attention_from_scratch.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "multi",
+     "topic": "masks",
+     "answer_hashes": [
+      "43f9e51ba9a616cd0f47"
+     ],
+     "lesson": "01_attention_from_scratch.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "permutation",
+     "answer_hashes": [
+      "1c01addca88cc8e6c848"
+     ],
+     "lesson": "01_attention_from_scratch.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "complexity",
+     "answer_hashes": [
+      "bf0524b8d82949f4c8ad"
+     ],
+     "lesson": "01_attention_from_scratch.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "tf",
+     "topic": "multi-head",
+     "answer_hashes": [
+      "ea00023066716102133d"
+     ],
+     "lesson": "02_multi_head_and_positional_encoding.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "sinusoidal",
+     "answer_hashes": [
+      "54323a7725af76c91396"
+     ],
+     "lesson": "02_multi_head_and_positional_encoding.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "rope",
+     "answer_hashes": [
+      "6cbbb8bb5ffef47f4e06"
+     ],
+     "lesson": "02_multi_head_and_positional_encoding.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "multi",
+     "topic": "block",
+     "answer_hashes": [
+      "ccff7c64b284705b6f20"
+     ],
+     "lesson": "02_multi_head_and_positional_encoding.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "causal check",
+     "answer_hashes": [
+      "51ba39cfee0f480464c8"
+     ],
+     "lesson": "03_mini_gpt.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "sampling",
+     "answer_hashes": [
+      "f2449becb875adf386c1"
+     ],
+     "lesson": "03_mini_gpt.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "tf",
+     "topic": "kv cache",
+     "answer_hashes": [
+      "2c26ffcdc39babc894ee"
+     ],
+     "lesson": "03_mini_gpt.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "copy task",
+     "answer_hashes": [
+      "d7cc39723c8601806204"
+     ],
+     "lesson": "03_mini_gpt.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "families",
+     "answer_hashes": [
+      "0b74a7e91fb4b1e0cfe9"
+     ],
+     "lesson": "04_encoder_decoder_bert_gpt_vit.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "multi",
+     "topic": "bert",
+     "answer_hashes": [
+      "828fc863d0bd6fa93d7e"
+     ],
+     "lesson": "04_encoder_decoder_bert_gpt_vit.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "vit",
+     "answer_hashes": [
+      "51f241124e07cfe11b44"
+     ],
+     "lesson": "04_encoder_decoder_bert_gpt_vit.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "attention weights",
+     "answer_hashes": [
+      "75bfa8b725c931bd2116"
+     ],
+     "decimals": 3,
+     "lesson": "01_attention_from_scratch.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "scaling",
+     "answer_hashes": [
+      "8ec7babe0ddf4b24cf6b"
+     ],
+     "decimals": 1,
+     "lesson": "01_attention_from_scratch.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "params",
+     "answer_hashes": [
+      "8ec367c492469bae0f05"
+     ],
+     "decimals": 0,
+     "lesson": "02_multi_head_and_positional_encoding.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "attention memory",
+     "answer_hashes": [
+      "5bb60ac2b0e2fae95029"
+     ],
+     "decimals": 0,
+     "lesson": "01_attention_from_scratch.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "flops",
+     "answer_hashes": [
+      "1aac2832704a65ff8913"
+     ],
+     "decimals": 0,
+     "lesson": "03_mini_gpt.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

@@ -1,0 +1,301 @@
+title: "08 · K-Nearest Neighbors"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: lazy learning
+        lesson: 01_intuition_and_distances.ipynb
+        type: mcq
+        question: "Vì sao KNN được gọi là 'lazy learner'?"
+        options:
+          a: "Vì nó học chậm"
+          b: "Vì 'train' chỉ là ghi nhớ dữ liệu; mọi tính toán dồn vào lúc dự đoán"
+          c: "Vì nó chỉ dùng một phần dữ liệu"
+          d: "Vì nó không cần chọn hyperparameter"
+        answer: b
+        explanation: "fit O(1), predict O(n·d)."
+      - id: t02
+        topic: non-parametric
+        lesson: 01_intuition_and_distances.ipynb
+        type: tf
+        question: "KNN là model non-parametric: 'kích thước' model tăng theo số mẫu train."
+        answer: true
+        explanation: "Model chính là toàn bộ dữ liệu train."
+      - id: t03
+        topic: k và bias-variance
+        lesson: 01_intuition_and_distances.ipynb
+        type: mcq
+        question: "Tăng k trong KNN (giữ dữ liệu cố định) thường làm:"
+        options: {a: "Bias giảm, variance tăng", b: "Bias tăng, variance giảm", c: "Cả hai cùng giảm", d: "Không ảnh hưởng"}
+        answer: b
+        explanation: "k lớn → ranh giới mượt (bias cao, variance thấp)."
+      - id: t04
+        topic: k = 1
+        lesson: 01_intuition_and_distances.ipynb
+        type: mcq
+        question: "Với k = 1 (không có điểm trùng nhau mà khác nhãn), accuracy trên tập train là:"
+        options: {a: "Khoảng 50%", b: "100%", c: "Bằng accuracy test", d: "Không xác định"}
+        answer: b
+        explanation: "Láng giềng gần nhất của mỗi điểm train là chính nó."
+      - id: t05
+        topic: cosine distance
+        lesson: 01_intuition_and_distances.ipynb
+        type: mcq
+        question: "Khi nào nên dùng cosine distance thay cho Euclid?"
+        options:
+          a: "Khi quan tâm hướng của vector, bỏ qua độ dài (văn bản TF-IDF, embedding)"
+          b: "Khi dữ liệu có ít chiều"
+          c: "Khi feature là số nguyên"
+          d: "Không bao giờ"
+        answer: a
+        explanation: "Văn bản dài gấp 3 vẫn cùng chủ đề → cosine distance = 0."
+      - id: t06
+        topic: complexity
+        lesson: 02_from_scratch.ipynb
+        type: mcq
+        question: "Độ phức tạp dự đoán MỘT điểm của KNN brute force với n điểm train, d chiều:"
+        options: {a: "O(1)", b: "O(d)", c: "O(n·d)", d: "O(n²)"}
+        answer: c
+        explanation: "Tính khoảng cách tới n điểm, mỗi điểm O(d)."
+      - id: t07
+        topic: KD-tree
+        lesson: 02_from_scratch.ipynb
+        type: tf
+        question: "KD-tree luôn nhanh hơn brute force, bất kể số chiều."
+        answer: false
+        explanation: "Khi d lớn (> ~20), KD-tree suy giảm về brute force (curse of dimensionality)."
+      - id: t08
+        topic: weighted KNN
+        lesson: 02_from_scratch.ipynb
+        type: mcq
+        question: "KNN có trọng số khoảng cách (weights='distance') làm gì?"
+        options:
+          a: "Láng giềng càng gần càng có tiếng nói lớn (w = 1/d)"
+          b: "Bỏ qua láng giềng xa nhất"
+          c: "Tự động chọn k"
+          d: "Scale feature theo khoảng cách"
+        answer: a
+        explanation: "Giảm nhạy với k và giải quyết hoà phiếu."
+      - id: t09
+        topic: scaling
+        lesson: 03_scaling_and_choosing_k.ipynb
+        type: mcq
+        question: "Vì sao KNN gần như bắt buộc phải scaling?"
+        options:
+          a: "Để train nhanh hơn"
+          b: "Vì khoảng cách cộng gộp mọi feature — feature có thang đo lớn sẽ áp đảo"
+          c: "Vì sklearn yêu cầu"
+          d: "Để tránh overfit"
+        answer: b
+        explanation: "Đổi đơn vị = đổi láng giềng."
+      - id: t10
+        topic: scaling invariance
+        lesson: 03_scaling_and_choosing_k.ipynb
+        type: multi
+        question: "Model nào cho kết quả THAY ĐỔI khi đổi đơn vị một feature từ 'triệu' sang 'nghìn' (không scale)?"
+        options: {a: "KNN", b: "Decision Tree", c: "Linear Regression không regularization (dự đoán)", d: "KNN với cosine distance trên dữ liệu nhiều chiều"}
+        answer: ad
+        explanation: "Tree và OLS (dự đoán) bất biến với phép nhân hằng số một feature; mọi model dựa trên khoảng cách đều thay đổi."
+      - id: t11
+        topic: chọn k
+        lesson: 03_scaling_and_choosing_k.ipynb
+        type: mcq
+        question: "Cách đúng để chọn k là:"
+        options:
+          a: "Chọn k cho accuracy train cao nhất"
+          b: "Chọn k bằng cross-validation trên tập train (scaler nằm trong Pipeline)"
+          c: "Chọn k cho accuracy test cao nhất"
+          d: "Luôn chọn k = 5"
+        answer: b
+        explanation: "Accuracy train luôn chọn k = 1; chọn trên test là leakage."
+      - id: t12
+        topic: k lẻ
+        lesson: 03_scaling_and_choosing_k.ipynb
+        type: tf
+        question: "Với bài toán 2 lớp, chọn k lẻ giúp tránh hoà phiếu (với weights='uniform')."
+        answer: true
+        explanation: "Không thể chia đều số lẻ phiếu cho 2 lớp."
+      - id: t13
+        topic: curse of dimensionality
+        lesson: 04_failure_cases_and_curse_of_dimensionality.ipynb
+        type: mcq
+        question: "Trong không gian rất nhiều chiều, điều gì xảy ra với khoảng cách giữa các điểm ngẫu nhiên?"
+        options:
+          a: "Khoảng cách gần nhất và xa nhất gần như bằng nhau"
+          b: "Mọi điểm trùng nhau"
+          c: "Khoảng cách tới láng giềng gần nhất tiến về 0"
+          d: "Không có gì thay đổi"
+        answer: a
+        explanation: "Tỉ lệ min/max → 1: 'láng giềng gần nhất' mất ý nghĩa."
+      - id: t14
+        topic: feature vô ích
+        lesson: 04_failure_cases_and_curse_of_dimensionality.ipynb
+        type: multi
+        question: "KNN suy giảm vì có nhiều feature vô ích. Cách khắc phục hợp lý?"
+        options: {a: "Feature selection", b: "Giảm chiều (PCA)", c: "Tăng số feature nhiễu", d: "Học metric / gán trọng số feature"}
+        answer: abd
+        explanation: "Mục tiêu: khoảng cách chỉ phản ánh feature có ích."
+      - id: t15
+        topic: ngoại suy
+        lesson: 04_failure_cases_and_curse_of_dimensionality.ipynb
+        type: tf
+        question: "KNN regressor (weights='uniform') có thể dự đoán giá trị lớn hơn mọi giá trị y trong tập train."
+        answer: false
+        explanation: "Dự đoán là trung bình của các y đã thấy → nằm trong [min y, max y]."
+      - id: t16
+        topic: quy mô lớn
+        lesson: 04_failure_cases_and_curse_of_dimensionality.ipynb
+        type: mcq
+        question: "Tìm láng giềng trong 100 triệu embedding với độ trễ vài mili-giây. Lựa chọn hợp lý?"
+        options: {a: "KNN brute force", b: "Approximate nearest neighbor (HNSW, FAISS)", c: "KD-tree trên 768 chiều", d: "Tăng k"}
+        answer: b
+        explanation: "Chấp nhận sai số nhỏ để nhanh hơn hàng nghìn lần."
+  math:
+    questions:
+      - id: m01
+        topic: Euclid
+        lesson: 01_intuition_and_distances.ipynb
+        type: numeric
+        decimals: 3
+        question: "Khoảng cách Euclid giữa (1, 2) và (4, 6)?"
+        answer: 5
+        explanation: "√(9 + 16) = 5."
+      - id: m02
+        topic: Manhattan
+        lesson: 01_intuition_and_distances.ipynb
+        type: numeric
+        decimals: 2
+        question: "Khoảng cách Manhattan giữa (1, 2) và (4, 6)?"
+        answer: 7
+        explanation: "3 + 4 = 7."
+      - id: m03
+        topic: cosine
+        lesson: 01_intuition_and_distances.ipynb
+        type: numeric
+        decimals: 3
+        question: "Cosine distance giữa (1, 0) và (1, 1)? (1 − cos θ)"
+        answer: 0.2929
+        explanation: "1 − 1/√2 ≈ 0.293."
+      - id: m04
+        topic: KNN regression
+        lesson: 02_from_scratch.ipynb
+        type: numeric
+        decimals: 2
+        question: "3 láng giềng gần nhất có y = 10, 14, 30. Dự đoán của KNN regressor (uniform)?"
+        answer: 18
+        explanation: "(10 + 14 + 30)/3 = 18."
+      - id: m05
+        topic: weighted KNN
+        lesson: 02_from_scratch.ipynb
+        type: numeric
+        decimals: 2
+        question: "2 láng giềng: y = 10 ở khoảng cách 1, y = 20 ở khoảng cách 4. Dự đoán với trọng số 1/d?"
+        answer: 12
+        explanation: "(10·1 + 20·0.25)/(1 + 0.25) = 15/1.25 = 12."
+      - id: m06
+        topic: số phép tính
+        lesson: 02_from_scratch.ipynb
+        type: numeric
+        decimals: 0
+        question: "Dự đoán 1 000 điểm với 10 000 điểm train: phải tính bao nhiêu khoảng cách (brute force)?"
+        answer: 10000000
+        explanation: "1 000 × 10 000 = 10⁷."
+      - id: m07
+        topic: k heuristic
+        lesson: 03_scaling_and_choosing_k.ipynb
+        type: numeric
+        decimals: 0
+        question: "Quy tắc kinh nghiệm k ≈ √n với n = 900 mẫu cho k ≈ ?"
+        answer: 30
+        explanation: "√900 = 30; bài 2 lớp nên chọn số lẻ gần đó (29 hoặc 31) rồi tinh chỉnh bằng CV."
+coding:
+  tasks:
+    - id: c01
+      title: Ma trận khoảng cách vector hoá
+      prompt: |
+        Viết `distance_matrix(A, B)` trả về ma trận khoảng cách Euclid $(n_A \times n_B)$ **không dùng vòng lặp**,
+        dùng $\lVert a - b\rVert^2 = \lVert a\rVert^2 + \lVert b\rVert^2 - 2a^\top b$ và chặn giá trị âm trước khi lấy căn.
+      code: |
+        def distance_matrix(A, B):
+            ### START CODE HERE ### (≈ 2 dòng)
+            sq = (A**2).sum(1)[:, None] + (B**2).sum(1)[None, :] - 2 * A @ B.T
+            D = np.sqrt(np.maximum(sq, 0))
+            ### END CODE HERE ###
+            return D
+      tests: |
+        from scipy.spatial.distance import cdist
+        rng = np.random.default_rng(1)
+        A, B = rng.normal(size=(20, 4)), rng.normal(size=(15, 4))
+        check_close(distance_matrix(A, B), cdist(A, B), tol=1e-8, message="khớp cdist")
+        check_true(np.all(np.isfinite(distance_matrix(A, A))), "không NaN trên đường chéo")
+    - id: c02
+      title: KNN classifier
+      prompt: |
+        Viết `knn_predict(X_train, y_train, X_test, k)` (nhãn nguyên 0..C−1, bỏ phiếu uniform; khi hoà chọn nhãn nhỏ hơn).
+        Có thể dùng `distance_matrix` ở trên.
+      code: |
+        def knn_predict(X_train, y_train, X_test, k=5):
+            ### START CODE HERE ### (≈ 4 dòng)
+            D = distance_matrix(X_test, X_train)
+            idx = np.argsort(D, axis=1, kind="stable")[:, :k]
+            n_classes = int(y_train.max()) + 1
+            pred = np.array([np.bincount(y_train[r], minlength=n_classes).argmax() for r in idx])
+            ### END CODE HERE ###
+            return pred
+      tests: |
+        from sklearn.neighbors import KNeighborsClassifier
+        from ml_course.datasets import load_digits_data
+        X, y, _ = load_digits_data()
+        Xtr, ytr, Xte, yte = X[:1200], y[:1200], X[1200:], y[1200:]
+        ours = knn_predict(Xtr, ytr, Xte, k=3)
+        sk = KNeighborsClassifier(3).fit(Xtr, ytr).predict(Xte)
+        check_greater(np.mean(ours == sk), 0.99, "dự đoán trùng sklearn ≥ 99%")
+        check_equal(list(knn_predict(np.array([[0.0], [1.0], [10.0]]), np.array([0, 1, 1]), np.array([[0.2], [9.0]]), k=1)), [0, 1], "ví dụ nhỏ")
+analysis:
+  prompt: |
+    Một nhóm dùng KNN (k = 1, không scaling) để dự đoán khách hàng có mua bảo hiểm hay không, với 120 feature
+    (tuổi, thu nhập theo đồng, 100 cột one-hot tỉnh thành, 18 cột hành vi). Họ báo cáo accuracy 100% trên tập train,
+    và chọn k = 1 vì "train accuracy cao nhất". Model chạy 4 giây cho mỗi dự đoán trên 3 triệu khách hàng.
+    Hãy chỉ ra các vấn đề và đề xuất cách sửa.
+  rubric:
+    - "Chỉ ra accuracy train 100% với k = 1 là hiển nhiên (mỗi điểm là láng giềng của chính nó) → phải đánh giá bằng CV/test"
+    - "Chỉ ra thiếu scaling: thu nhập (đơn vị đồng) áp đảo khoảng cách → scale trong Pipeline"
+    - "Chỉ ra 120 feature (nhiều one-hot) → curse of dimensionality / feature vô ích → feature selection, giảm chiều, hoặc đổi model"
+    - "Chọn k (và weights, metric) bằng cross-validation trên tập train, không phải train accuracy"
+    - "Chỉ ra vấn đề độ trễ dự đoán O(n·d) với 3 triệu bản ghi → ANN (HNSW/FAISS), giảm mẫu, hoặc model khác (tree/linear)"
+  sample_answer: |
+    (1) Accuracy train 100% với k = 1 là tất yếu — vô nghĩa; phải dùng CV/test.
+    (2) Không scaling: thu nhập theo đồng có thang đo hàng triệu → khoảng cách gần như chỉ do thu nhập; cần StandardScaler trong Pipeline.
+    (3) 120 chiều với 100 cột one-hot tỉnh thành → khoảng cách loãng, curse of dimensionality; cần chọn feature/giảm chiều, mã hoá tỉnh bằng feature có ý nghĩa (vùng, thu nhập trung bình tỉnh...).
+    (4) Chọn k, weights, metric bằng GridSearchCV trên tập train.
+    (5) 4 s/dự đoán trên 3 triệu bản ghi: KNN brute force không phù hợp sản phẩm → ANN, condensed NN, hoặc chuyển sang Gradient Boosting/Logistic Regression.
+project:
+  prompt: |
+    **Mini project — KNN cho dữ liệu churn.** Đọc `customer_churn.csv` (`repo_path("data", "sample", "customer_churn.csv")`),
+    target `churn`. Chia train/test 75/25 (`random_state=0`, `stratify`). Xây Pipeline có tiền xử lý (scale cột số, one-hot cột phân loại),
+    KNN, chọn `n_neighbors`/`weights` bằng `GridSearchCV` (5-fold, `roc_auc`) trên tập train.
+    Đạt **ROC-AUC test ≥ 0.76** (biến `test_auc`).
+  code: |
+    import pandas as pd
+    from sklearn.compose import ColumnTransformer
+    from sklearn.metrics import roc_auc_score
+    from sklearn.model_selection import GridSearchCV, train_test_split
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import OneHotEncoder, StandardScaler
+    from ml_course.utils import repo_path
+
+    df = pd.read_csv(repo_path("data", "sample", "customer_churn.csv"))
+    ### START CODE HERE ### (≈ 10 dòng)
+    num = ["tenure_months", "monthly_charges", "support_calls", "n_products"]
+    cat = ["contract", "internet_service", "payment_method"]
+    X_tr, X_te, y_tr, y_te = train_test_split(df[num + cat], df["churn"], test_size=0.25, random_state=0, stratify=df["churn"])
+    pre = ColumnTransformer([("num", StandardScaler(), num), ("cat", OneHotEncoder(handle_unknown="ignore"), cat)])
+    grid = GridSearchCV(make_pipeline(pre, KNeighborsClassifier()),
+                        {"kneighborsclassifier__n_neighbors": [31, 61, 101, 151], "kneighborsclassifier__weights": ["uniform", "distance"]},
+                        cv=5, scoring="roc_auc").fit(X_tr, y_tr)
+    test_auc = roc_auc_score(y_te, grid.predict_proba(X_te)[:, 1])
+    ### END CODE HERE ###
+    print(grid.best_params_, "ROC-AUC test:", round(test_auc, 4))
+  tests: |
+    check_greater(test_auc, 0.76, "ROC-AUC test ≥ 0.76")

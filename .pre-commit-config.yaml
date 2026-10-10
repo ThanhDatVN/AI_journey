@@ -1,0 +1,42 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: \.ipynb$
+      - id: end-of-file-fixer
+        exclude: \.ipynb$
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: ["--maxkb=3000"]
+
+  # Cùng phiên bản ruff với uv.lock để pre-commit và CI cho cùng kết quả.
+  # Không dùng ruff-format: code của khoá cố ý căn thẳng comment để dễ đọc khi học.
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.10
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+
+  # Xoá output của notebook trước khi commit → diff sạch, repo nhẹ.
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.9.1
+    hooks:
+      - id: nbstripout
+
+  # Nguồn sinh (YAML quiz, notebook lời giải) phải đồng bộ với file sinh ra.
+  - repo: local
+    hooks:
+      - id: build-quizzes
+        name: quiz bank in sync with solutions/quizzes/*.yaml
+        entry: python tools/build_quizzes.py --check
+        language: system
+        files: ^solutions/(quizzes|exams)/.*\.yaml$
+        pass_filenames: false
+      - id: make-exercises
+        name: exercise notebooks in sync with solutions
+        entry: python tools/make_exercises.py --check
+        language: system
+        files: ^(solutions|notebooks|projects|exercises)/.*\.ipynb$|^tools/(nbutils|make_exercises)\.py$
+        pass_filenames: false

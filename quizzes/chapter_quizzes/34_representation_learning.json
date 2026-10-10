@@ -1,0 +1,235 @@
+{
+ "id": "34_representation_learning",
+ "kind": "Chapter",
+ "title": "34 · Representation Learning",
+ "next": "35_reinforcement_learning",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "autoencoder",
+     "answer_hashes": [
+      "f59b68c4ed78e59806b9"
+     ],
+     "lesson": "01_autoencoders.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "linear ae pca",
+     "answer_hashes": [
+      "5884623673d144239412"
+     ],
+     "lesson": "01_autoencoders.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "what latent encodes",
+     "answer_hashes": [
+      "d207d35625da57452ff4"
+     ],
+     "lesson": "01_autoencoders.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "denoising",
+     "answer_hashes": [
+      "17431213b7b19fcb44bb"
+     ],
+     "lesson": "01_autoencoders.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "tf",
+     "topic": "anomaly",
+     "answer_hashes": [
+      "f802555e822eed8c07bd"
+     ],
+     "lesson": "01_autoencoders.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "ae sampling",
+     "answer_hashes": [
+      "166866eb3f73e48ea4fd"
+     ],
+     "lesson": "02_variational_autoencoder.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "multi",
+     "topic": "elbo",
+     "answer_hashes": [
+      "6319cd4bf3f6ff210c32"
+     ],
+     "lesson": "02_variational_autoencoder.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "reparam",
+     "answer_hashes": [
+      "1ff340b363dc207530e7"
+     ],
+     "lesson": "02_variational_autoencoder.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "beta",
+     "answer_hashes": [
+      "e732374af8e7bb630524"
+     ],
+     "lesson": "02_variational_autoencoder.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "tf",
+     "topic": "generative eval",
+     "answer_hashes": [
+      "c30e4184cfbc14f39af7"
+     ],
+     "lesson": "02_variational_autoencoder.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "diffusion",
+     "answer_hashes": [
+      "026bd8983abea10eec44"
+     ],
+     "lesson": "02_variational_autoencoder.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "simclr",
+     "answer_hashes": [
+      "41712e1d609a480ec580"
+     ],
+     "lesson": "03_contrastive_and_self_supervised.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "augmentation role",
+     "answer_hashes": [
+      "9cf9d62020538614d0e5"
+     ],
+     "lesson": "03_contrastive_and_self_supervised.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "tf",
+     "topic": "loss vs quality",
+     "answer_hashes": [
+      "d20fd8c12055fc3b02b2"
+     ],
+     "lesson": "03_contrastive_and_self_supervised.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "multi",
+     "topic": "collapse",
+     "answer_hashes": [
+      "6cd09cd304c897740f28"
+     ],
+     "lesson": "03_contrastive_and_self_supervised.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "clip",
+     "answer_hashes": [
+      "845c227eae1e3b46efc4"
+     ],
+     "lesson": "03_contrastive_and_self_supervised.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "kl",
+     "answer_hashes": [
+      "586ec0602d6a7255ab82"
+     ],
+     "decimals": 4,
+     "lesson": "02_variational_autoencoder.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "kl",
+     "answer_hashes": [
+      "eff4902e458e544c24d4"
+     ],
+     "decimals": 3,
+     "lesson": "02_variational_autoencoder.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "reparam",
+     "answer_hashes": [
+      "5e5fdd28453057c0f2c8"
+     ],
+     "decimals": 2,
+     "lesson": "02_variational_autoencoder.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "infonce",
+     "answer_hashes": [
+      "cc3e5e767ed2b60a5d4b"
+     ],
+     "decimals": 3,
+     "lesson": "03_contrastive_and_self_supervised.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "ae params",
+     "answer_hashes": [
+      "8c72086786acd90cda5a"
+     ],
+     "decimals": 0,
+     "lesson": "01_autoencoders.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

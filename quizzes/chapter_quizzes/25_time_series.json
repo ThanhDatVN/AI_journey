@@ -1,0 +1,235 @@
+{
+ "id": "25_time_series",
+ "kind": "Chapter",
+ "title": "25 · Time Series",
+ "next": "26_recommender_systems",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "decomposition",
+     "answer_hashes": [
+      "8ff6c854864232d8c0fb"
+     ],
+     "lesson": "01_components_and_stationarity.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "moving average",
+     "answer_hashes": [
+      "51de69d8cc0749e4b1d4"
+     ],
+     "lesson": "01_components_and_stationarity.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "multi",
+     "topic": "stationarity",
+     "answer_hashes": [
+      "22b411019cf171878a47"
+     ],
+     "lesson": "01_components_and_stationarity.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "spurious",
+     "answer_hashes": [
+      "2a0e009af7725e861e2a"
+     ],
+     "lesson": "01_components_and_stationarity.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "leakage",
+     "answer_hashes": [
+      "125828c1d5127e017926"
+     ],
+     "lesson": "01_components_and_stationarity.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "MASE",
+     "answer_hashes": [
+      "393d8c0ddae47ec6ef94"
+     ],
+     "lesson": "02_baselines_and_smoothing.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "SES",
+     "answer_hashes": [
+      "fe7a6d6858d438b5fbfd"
+     ],
+     "lesson": "02_baselines_and_smoothing.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "single holdout",
+     "answer_hashes": [
+      "799fd1fa4eb0be1125d5"
+     ],
+     "lesson": "02_baselines_and_smoothing.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "ACF PACF",
+     "answer_hashes": [
+      "dab1f04b1af4f5bdfbf4"
+     ],
+     "lesson": "03_arima_family.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "AR forecast",
+     "answer_hashes": [
+      "645f021db3f8afd900dd"
+     ],
+     "lesson": "03_arima_family.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "SARIMA",
+     "answer_hashes": [
+      "5b2a203c148184f32b92"
+     ],
+     "lesson": "03_arima_family.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "tf",
+     "topic": "exogenous",
+     "answer_hashes": [
+      "3c08be226f24d85c1a5c"
+     ],
+     "lesson": "03_arima_family.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "random cv",
+     "answer_hashes": [
+      "2113a245d9ec8d6bdaa6"
+     ],
+     "lesson": "04_feature_based_forecasting_and_backtesting.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "feature availability",
+     "answer_hashes": [
+      "052b5f5e2013b0bcbc99"
+     ],
+     "lesson": "04_feature_based_forecasting_and_backtesting.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "intervals",
+     "answer_hashes": [
+      "03a56db39b10b94a0d78"
+     ],
+     "lesson": "04_feature_based_forecasting_and_backtesting.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "fourier",
+     "answer_hashes": [
+      "62b5e3434543dff2f13b"
+     ],
+     "lesson": "04_feature_based_forecasting_and_backtesting.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "SES",
+     "answer_hashes": [
+      "c24daf2f2aa47ae569b8"
+     ],
+     "decimals": 2,
+     "lesson": "02_baselines_and_smoothing.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "MASE",
+     "answer_hashes": [
+      "307593150711f37afaa1"
+     ],
+     "decimals": 2,
+     "lesson": "02_baselines_and_smoothing.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "AR forecast",
+     "answer_hashes": [
+      "4783d8d9f77357510692"
+     ],
+     "decimals": 2,
+     "lesson": "03_arima_family.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "AR mean",
+     "answer_hashes": [
+      "5ee6184835bd5d985fef"
+     ],
+     "decimals": 2,
+     "lesson": "03_arima_family.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "random walk variance",
+     "answer_hashes": [
+      "0b9cf66fbbd710c29b02"
+     ],
+     "decimals": 1,
+     "lesson": "01_components_and_stationarity.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

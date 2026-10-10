@@ -1,0 +1,235 @@
+{
+ "id": "21_dimensionality_reduction",
+ "kind": "Chapter",
+ "title": "21 · Dimensionality Reduction",
+ "next": "22_anomaly_detection",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "PCA objective",
+     "answer_hashes": [
+      "12046f205f1ee899d4a1"
+     ],
+     "lesson": "01_pca_from_scratch.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "equivalence",
+     "answer_hashes": [
+      "7917433727357c69f197"
+     ],
+     "lesson": "01_pca_from_scratch.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "centering",
+     "answer_hashes": [
+      "b365fbe04974028e1015"
+     ],
+     "lesson": "01_pca_from_scratch.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "SVD",
+     "answer_hashes": [
+      "db0c8efe339255052f09"
+     ],
+     "lesson": "01_pca_from_scratch.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "PCA vs regression",
+     "answer_hashes": [
+      "26030b536c4fdc71492c"
+     ],
+     "lesson": "01_pca_from_scratch.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "scaling",
+     "answer_hashes": [
+      "82273684151365791756"
+     ],
+     "lesson": "02_pca_in_practice.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "tf",
+     "topic": "unsupervised",
+     "answer_hashes": [
+      "7d9925158c396a7305ca"
+     ],
+     "lesson": "02_pca_in_practice.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "denoising",
+     "answer_hashes": [
+      "4b39996ba385c5d23bff"
+     ],
+     "lesson": "02_pca_in_practice.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "variants",
+     "answer_hashes": [
+      "7d40214760cd11c4b31b"
+     ],
+     "lesson": "02_pca_in_practice.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "tf",
+     "topic": "pipeline",
+     "answer_hashes": [
+      "57c8c3129076364233ac"
+     ],
+     "lesson": "02_pca_in_practice.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "t-SNE goal",
+     "answer_hashes": [
+      "6f1f7bfe6280db640a86"
+     ],
+     "lesson": "03_tsne_umap.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "mcq",
+     "topic": "student-t",
+     "answer_hashes": [
+      "a9b4a3e394dc78a43db3"
+     ],
+     "lesson": "03_tsne_umap.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "multi",
+     "topic": "pitfalls",
+     "answer_hashes": [
+      "caf5ab38fec1f83118ca"
+     ],
+     "lesson": "03_tsne_umap.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "perplexity",
+     "answer_hashes": [
+      "4cebdd3046c776d8ef0c"
+     ],
+     "lesson": "03_tsne_umap.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "multi",
+     "topic": "transform",
+     "answer_hashes": [
+      "8f84e8908f2e0f3fdcff"
+     ],
+     "lesson": "03_tsne_umap.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "tf",
+     "topic": "features",
+     "answer_hashes": [
+      "f0ecf2810100550fc9ca"
+     ],
+     "lesson": "03_tsne_umap.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "explained variance",
+     "answer_hashes": [
+      "25f8c59b936eaa5ae61e"
+     ],
+     "decimals": 3,
+     "lesson": "01_pca_from_scratch.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "reconstruction",
+     "answer_hashes": [
+      "14e9d52688cbe4fed6d6"
+     ],
+     "decimals": 2,
+     "lesson": "01_pca_from_scratch.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "svd variance",
+     "answer_hashes": [
+      "7197156f0db176471eb9"
+     ],
+     "decimals": 2,
+     "lesson": "01_pca_from_scratch.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "compression",
+     "answer_hashes": [
+      "a38508f41d3cd69724f4"
+     ],
+     "decimals": 0,
+     "lesson": "02_pca_in_practice.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "eigen",
+     "answer_hashes": [
+      "2471b60bc2dd53f9acaf"
+     ],
+     "decimals": 2,
+     "lesson": "01_pca_from_scratch.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

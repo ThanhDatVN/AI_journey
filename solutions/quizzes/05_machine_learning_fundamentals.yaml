@@ -1,0 +1,273 @@
+title: "05 · ML Fundamentals"
+sections:
+  theory:
+    questions:
+      - id: t01
+        topic: định nghĩa Mitchell (T, P, E)
+        lesson: 01_what_is_machine_learning.ipynb
+        type: mcq
+        question: "Lọc spam: 'tỉ lệ email được phân loại đúng' đóng vai trò gì trong định nghĩa của Tom Mitchell?"
+        options: {a: "T — nhiệm vụ", b: "P — thước đo hiệu suất", c: "E — kinh nghiệm", d: "Không thuộc định nghĩa"}
+        answer: b
+        explanation: "T = phân loại email; E = email đã gán nhãn; P = tỉ lệ phân loại đúng."
+      - id: t02
+        topic: loại bài toán
+        lesson: 02_types_of_machine_learning.ipynb
+        type: mcq
+        question: "Dự đoán số lượng đơn hàng của ngày mai là bài toán gì?"
+        options: {a: "Classification", b: "Regression", c: "Clustering", d: "Reinforcement learning"}
+        answer: b
+        explanation: "Đầu ra là một số liên tục."
+      - id: t03
+        topic: parameter vs hyperparameter
+        lesson: 02_types_of_machine_learning.ipynb
+        type: mcq
+        question: "Đại lượng nào là HYPERPARAMETER?"
+        options: {a: "Hệ số w của Linear Regression", b: "Ngưỡng split học được ở một node của cây", c: "max_depth của Decision Tree", d: "Tâm cụm của K-Means"}
+        answer: c
+        explanation: "Hyperparameter do người chọn trước khi fit; các đáp án khác được học từ dữ liệu."
+      - id: t04
+        topic: self-supervised
+        lesson: 02_types_of_machine_learning.ipynb
+        type: tf
+        question: "Self-supervised learning tự tạo nhãn từ chính dữ liệu (vd: đoán từ tiếp theo), nên dùng được lượng dữ liệu không nhãn khổng lồ."
+        answer: true
+        explanation: "Đây là nền tảng của GPT/BERT."
+      - id: t05
+        topic: vai trò của test set
+        lesson: 03_train_validation_test_and_model_selection.ipynb
+        type: mcq
+        question: "Tập nào dùng để CHỌN hyperparameter?"
+        options: {a: "Train", b: "Validation (hoặc cross-validation trên train)", c: "Test", d: "Toàn bộ dữ liệu"}
+        answer: b
+        explanation: "Test chỉ dùng một lần để báo cáo cuối cùng."
+      - id: t06
+        topic: overfitting
+        lesson: 04_overfitting_and_bias_variance.ipynb
+        type: mcq
+        question: "Accuracy train 99%, validation 70%. Chẩn đoán?"
+        options: {a: "High bias", b: "High variance (overfitting)", c: "Model hoàn hảo", d: "Data leakage chắc chắn"}
+        answer: b
+        explanation: "Khoảng cách lớn giữa train và validation."
+      - id: t07
+        topic: tăng regularization
+        lesson: 04_overfitting_and_bias_variance.ipynb
+        type: mcq
+        question: "Tăng hệ số regularization λ sẽ…"
+        options: {a: "Giảm bias, tăng variance", b: "Tăng bias, giảm variance", c: "Giảm cả bias và variance", d: "Không ảnh hưởng"}
+        answer: b
+        explanation: "λ lớn → model đơn giản hơn."
+      - id: t08
+        topic: learning curve high bias
+        lesson: 05_learning_curves_and_error_analysis.ipynb
+        type: mcq
+        question: "Learning curve: lỗi train và validation hội tụ ở 20% khi con người đạt 2%. Hành động nào HỢP LÝ NHẤT?"
+        options: {a: "Thu thập thêm dữ liệu", b: "Tăng regularization", c: "Dùng model mạnh hơn / thêm feature", d: "Giảm số feature"}
+        answer: c
+        explanation: "High bias: thêm dữ liệu không giúp; cần tăng năng lực model."
+      - id: t09
+        topic: error analysis
+        lesson: 05_learning_curves_and_error_analysis.ipynb
+        type: tf
+        question: "Trong error analysis, ta đếm tỉ lệ từng nhóm lỗi để biết trần cải thiện của mỗi hướng trước khi bỏ công sửa."
+        answer: true
+        explanation: "Ưu tiên nhóm lỗi lớn và dễ sửa."
+      - id: t10
+        topic: curse of dimensionality
+        lesson: 06_curse_of_dimensionality_and_no_free_lunch.ipynb
+        type: mcq
+        question: "Model nào bị ảnh hưởng NẶNG NHẤT khi thêm nhiều feature nhiễu?"
+        options: {a: "KNN", b: "Decision Tree", c: "Random Forest", d: "Lasso"}
+        answer: a
+        explanation: "Feature nhiễu pha loãng khoảng cách; các model còn lại có cơ chế chọn feature."
+      - id: t11
+        topic: no free lunch
+        lesson: 06_curse_of_dimensionality_and_no_free_lunch.ipynb
+        type: mcq
+        question: "Ý nghĩa thực hành của định lý No Free Lunch?"
+        options:
+          a: "Deep learning luôn tốt nhất"
+          b: "Không có model tốt nhất cho mọi bài toán — cần hiểu dữ liệu và thử nghiệm"
+          c: "Mọi model đều cho kết quả như nhau trên mọi dataset"
+          d: "Không nên dùng ML"
+        answer: b
+        explanation: "Model tốt là model có giả định phù hợp với bài toán cụ thể."
+      - id: t12
+        topic: leakage — feature selection
+        lesson: 07_data_leakage.ipynb
+        type: mcq
+        question: "Chọn 20 feature tương quan nhất với nhãn trên TOÀN BỘ dữ liệu rồi cross-validate. Hậu quả?"
+        options: {a: "Không vấn đề gì", b: "Điểm CV lạc quan giả tạo, kể cả trên dữ liệu ngẫu nhiên", c: "Model chạy chậm hơn", d: "Điểm CV bi quan"}
+        answer: b
+        explanation: "Feature selection phải nằm trong vòng CV (Pipeline)."
+      - id: t13
+        topic: leakage theo nhóm
+        lesson: 07_data_leakage.ipynb
+        type: mcq
+        question: "Mỗi bệnh nhân có 10 ảnh X-quang. Chiến lược chia dữ liệu phù hợp?"
+        options: {a: "Ngẫu nhiên theo ảnh", b: "Theo bệnh nhân (GroupKFold)", c: "Theo thứ tự file", d: "Stratified theo ảnh"}
+        answer: b
+        explanation: "Tránh cùng một bệnh nhân ở cả train và test."
+      - id: t14
+        topic: target leakage
+        lesson: 07_data_leakage.ipynb
+        type: multi
+        question: "Dự đoán khách hàng có vỡ nợ trong 6 tháng tới. Feature nào gây leakage?"
+        options:
+          a: "Thu nhập lúc nộp hồ sơ"
+          b: "Số lần bị nhắc nợ trong 6 tháng tới"
+          c: "Trạng thái 'đã chuyển cho bộ phận thu hồi nợ'"
+          d: "Lịch sử tín dụng trước khi nộp hồ sơ"
+        answer: bc
+        explanation: "b, c chỉ biết sau khi sự kiện vỡ nợ (đang dự đoán) diễn ra."
+      - id: t15
+        topic: các dạng shift
+        lesson: 08_distribution_shift.ipynb
+        type: mcq
+        question: "Kẻ gian đổi chiêu thức, cùng một giao dịch trước đây là bình thường nay là gian lận. Đây là dạng shift nào?"
+        options: {a: "Covariate shift", b: "Label shift", c: "Concept drift", d: "Không phải shift"}
+        answer: c
+        explanation: "P(Y|X) thay đổi."
+      - id: t16
+        topic: adversarial validation
+        lesson: 08_distribution_shift.ipynb
+        type: mcq
+        question: "Adversarial validation cho AUC ≈ 0.5 nghĩa là gì?"
+        options:
+          a: "Train và dữ liệu mới gần như không phân biệt được — không có shift đáng kể"
+          b: "Có shift rất lớn"
+          c: "Model chính bị overfit"
+          d: "Dữ liệu bị leakage"
+        answer: a
+        explanation: "Classifier không phân biệt được hai tập."
+  math:
+    questions:
+      - id: m01
+        topic: chia dữ liệu
+        lesson: 03_train_validation_test_and_model_selection.ipynb
+        type: numeric
+        decimals: 0
+        question: "10 000 mẫu: tách 20% làm test, phần còn lại tách tiếp 25% làm validation. Số mẫu train?"
+        answer: 6000
+        explanation: "8 000 còn lại × 0.75 = 6 000."
+      - id: m02
+        topic: avoidable bias / variance
+        lesson: 05_learning_curves_and_error_analysis.ipynb
+        type: numeric
+        decimals: 1
+        question: "Mốc con người 1%, lỗi train 8%, validation 9%. Avoidable bias (điểm %) = ?"
+        answer: 7
+        explanation: "8 − 1 = 7 điểm phần trăm → vấn đề chính là bias."
+      - id: m03
+        topic: bias-variance decomposition
+        lesson: 04_overfitting_and_bias_variance.ipynb
+        type: numeric
+        decimals: 2
+        question: "Bias² = 0.04, variance = 0.10, phương sai nhiễu σ² = 0.09. Lỗi bình phương kỳ vọng = ?"
+        answer: 0.23
+        explanation: "0.04 + 0.10 + 0.09 = 0.23."
+      - id: m04
+        topic: curse of dimensionality
+        lesson: 06_curse_of_dimensionality_and_no_free_lunch.ipynb
+        type: numeric
+        decimals: 3
+        question: "Trong lập phương đơn vị 10 chiều, cạnh của lập phương con chứa 1% thể tích bằng bao nhiêu? (0.01^(1/10))"
+        answer: 0.631
+        explanation: "0.01^0.1 ≈ 0.631 — 'lân cận' 1% đã trải 63% mỗi chiều."
+      - id: m05
+        topic: hiệu chỉnh label shift
+        lesson: 08_distribution_shift.ipynb
+        type: numeric
+        decimals: 3
+        question: "Model train khi tỉ lệ dương 10% dự đoán p = 0.5. Nay tỉ lệ dương là 30%. Xác suất sau hiệu chỉnh prior (odds × (0.3/0.7)/(0.1/0.9)) = ?"
+        answer: 0.794
+        explanation: "odds = 1 × 3.857 → p = 3.857/4.857 ≈ 0.794."
+coding:
+  tasks:
+    - id: c01
+      title: Chọn bậc đa thức bằng validation
+      prompt: |
+        Viết `select_degree(x_tr, y_tr, x_val, y_val, degrees)` trả về **bậc** có MSE validation nhỏ nhất
+        (model: `make_pipeline(PolynomialFeatures(d), StandardScaler(), LinearRegression())`, `x_*` là mảng 1 chiều).
+      code: |
+        from sklearn.linear_model import LinearRegression
+        from sklearn.metrics import mean_squared_error
+        from sklearn.pipeline import make_pipeline
+        from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+
+        def select_degree(x_tr, y_tr, x_val, y_val, degrees=range(1, 13)):
+            errors = {}
+            for d in degrees:
+                model = make_pipeline(PolynomialFeatures(d), StandardScaler(), LinearRegression())
+                ### START CODE HERE ### (≈ 2 dòng)
+                model.fit(x_tr[:, None], y_tr)
+                errors[d] = mean_squared_error(y_val, model.predict(x_val[:, None]))
+                ### END CODE HERE ###
+            return min(errors, key=errors.get)
+      tests: |
+        rng = np.random.default_rng(5)
+        f = lambda x: 0.5 * x**3 - x
+        x_tr, x_val = rng.uniform(-2, 2, 60), rng.uniform(-2, 2, 200)
+        d = select_degree(x_tr, f(x_tr) + rng.normal(0, 0.3, 60), x_val, f(x_val) + rng.normal(0, 0.3, 200))
+        check_true(3 <= d <= 6, f"chọn bậc gần 3 (nhận {d})")
+    - id: c02
+      title: Pipeline chống leakage
+      prompt: |
+        Trên dữ liệu ngẫu nhiên `X` (40 × 1000), `y` ngẫu nhiên, tạo `pipe` = StandardScaler → SelectKBest(f_classif, k=10) → LogisticRegression
+        và tính `score` = accuracy trung bình 5-fold CV. Kết quả đúng phải gần 0.5.
+      code: |
+        from sklearn.feature_selection import SelectKBest, f_classif
+        from sklearn.linear_model import LogisticRegression
+        from sklearn.model_selection import cross_val_score
+        from sklearn.pipeline import make_pipeline
+        from sklearn.preprocessing import StandardScaler
+
+        rng = np.random.default_rng(11)
+        X, y = rng.normal(size=(40, 1000)), rng.integers(0, 2, 40)
+        ### START CODE HERE ### (≈ 2 dòng)
+        pipe = make_pipeline(StandardScaler(), SelectKBest(f_classif, k=10), LogisticRegression())
+        score = cross_val_score(pipe, X, y, cv=5).mean()
+        ### END CODE HERE ###
+        print(score)
+      tests: |
+        check_true(hasattr(pipe, "steps") and len(pipe.steps) == 3, "pipeline 3 bước")
+        check_less(abs(score - 0.5), 0.25, "accuracy ≈ 0.5 trên dữ liệu ngẫu nhiên")
+analysis:
+  prompt: |
+    Một team báo cáo model dự đoán bệnh nhân tái nhập viện trong 30 ngày đạt **ROC-AUC = 0.97** (5-fold CV ngẫu nhiên trên 20 000 lượt nhập viện của 4 000 bệnh nhân). Feature gồm: tuổi, chẩn đoán, số thuốc khi xuất viện, độ dài báo cáo xuất viện, **số lần tái khám trong tháng sau xuất viện**, mã bệnh nhân.
+    Hãy chỉ ra các vấn đề có thể có trong quy trình đánh giá và đề xuất cách đánh giá đúng.
+  rubric:
+    - "Chỉ ra 'số lần tái khám trong tháng sau xuất viện' là target leakage (thông tin tương lai)"
+    - "Chỉ ra cùng bệnh nhân có nhiều lượt → cần chia theo nhóm bệnh nhân (GroupKFold)"
+    - "Chỉ ra mã bệnh nhân không nên là feature"
+    - "Đề xuất chia theo thời gian (train quá khứ, test tương lai) để mô phỏng triển khai"
+    - "Nhận xét AUC 0.97 'quá tốt' là dấu hiệu cảnh báo cần kiểm tra"
+  sample_answer: |
+    (1) "Số lần tái khám trong tháng sau xuất viện" chỉ biết sau khi xuất viện ⇒ target leakage, phải loại.
+    (2) 4 000 bệnh nhân có 20 000 lượt: CV ngẫu nhiên đặt các lượt của cùng bệnh nhân ở cả train lẫn validation ⇒ model nhận ra bệnh nhân. Dùng GroupKFold theo bệnh nhân.
+    (3) Mã bệnh nhân không mang thông tin tổng quát hoá — loại.
+    (4) Đánh giá đúng: chia theo thời gian (train các năm trước, test năm gần nhất), group theo bệnh nhân, mọi tiền xử lý trong Pipeline.
+    (5) AUC 0.97 cho một bài toán y tế khó là dấu hiệu cảnh báo — luôn nghi ngờ kết quả "quá tốt".
+project:
+  prompt: |
+    **Mini project — Chẩn đoán và sửa model.** Dữ liệu `moons` (3 000 mẫu, `noise=0.3`). Model ban đầu `LogisticRegression` tuyến tính bị high bias.
+    Xây `final_model` (gợi ý: `PolynomialFeatures` + `StandardScaler` + `LogisticRegression(C=...)`) đạt **accuracy 5-fold CV > 0.88** (giới hạn Bayes của dữ liệu này khoảng 0.90)
+    và khoảng cách giữa accuracy train (trung bình các fold) và validation **< 0.03** (không overfit).
+  code: |
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.model_selection import cross_validate
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+
+    from ml_course.datasets import make_classification_2d
+
+    X, y = make_classification_2d("moons", n=3000, noise=0.3, seed=3)
+    ### START CODE HERE ### (≈ 2 dòng)
+    final_model = make_pipeline(PolynomialFeatures(3), StandardScaler(), LogisticRegression(C=1.0, max_iter=5000))
+    res = cross_validate(final_model, X, y, cv=5, return_train_score=True)
+    ### END CODE HERE ###
+    val_acc, train_acc = res["test_score"].mean(), res["train_score"].mean()
+    print(f"train = {train_acc:.3f} | validation = {val_acc:.3f}")
+  tests: |
+    check_greater(val_acc, 0.88, "accuracy CV > 0.88")
+    check_less(train_acc - val_acc, 0.03, "không overfit")

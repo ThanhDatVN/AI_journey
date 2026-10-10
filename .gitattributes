@@ -1,0 +1,9 @@
+# Mọi file văn bản lưu và checkout với LF trên mọi hệ điều hành
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.npy binary
+*.npz binary

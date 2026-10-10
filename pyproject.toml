@@ -1,0 +1,84 @@
+[project]
+name = "ml-course"
+version = "1.0.0"
+description = "Machine Learning: Zero → Advanced — interactive textbook bằng Jupyter Notebook"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "ML Course Authors" }]
+# Core stack: đủ cho Phase 0 → Phase 7 (classical ML). Thư viện nâng cao nằm trong extras,
+# chỉ cài khi học tới chương tương ứng.
+# Cận trên = dòng phiên bản đã chạy kiểm chứng toàn bộ notebook (pandas 2.3, scikit-learn 1.7).
+# pandas 3 (copy-on-write, kiểu chuỗi mới) và scikit-learn ≥ 1.8 sẽ được nới khi CI notebook-check xanh.
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.1,<3",
+    "scipy>=1.11",
+    "matplotlib>=3.9",
+    "scikit-learn>=1.4,<1.8",
+    "pyyaml>=6.0",
+    "jupyterlab>=4.0",
+    "ipykernel>=6.29",
+]
+
+[project.optional-dependencies]
+# Chương 25 (time series), 06 (diagnostics nâng cao)
+stats = ["statsmodels>=0.14"]
+# Chương 12, 24
+boosting = ["xgboost>=2.0", "lightgbm>=4.0", "catboost>=1.2"]
+# Chương 16
+tuning = ["optuna>=3.5"]
+# Chương 27 → 35, 34
+dl = ["torch>=2.2", "torchvision>=0.17"]
+# Chương 27 (bài 05 — TensorFlow & Keras, tuỳ chọn; khoá học dùng PyTorch làm framework chính)
+tf = ["tensorflow>=2.16"]
+# Chương 36
+xai = ["shap>=0.45"]
+# Chương 21
+viz = ["umap-learn>=0.5"]
+# Chương 39, 40, 41 và projects/08
+mlops = ["mlflow>=3.0", "fastapi>=0.110", "uvicorn>=0.27", "httpx>=0.27", "joblib>=1.3", "pydantic>=2.5", "skops>=0.10", "onnx>=1.15", "onnxruntime>=1.17"]
+all = ["ml-course[stats,boosting,tuning,dl,tf,xai,viz,mlops]"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "pre-commit>=3.6",
+    "nbformat>=5.9",
+    "nbclient>=0.10",
+    "nbstripout>=0.7",
+]
+
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ml_course"]
+
+[tool.ml-course]
+# Repo GitHub của bạn — dùng để sinh link Colab/nbviewer. Đổi bằng:
+#   python tools/set_github_repo.py <owner>/<repo>
+github_repo = "ThanhDatVN/AI_journey"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-include = ["*.ipynb"]
+# artifacts/, mlruns/: file sinh ra khi chạy notebook; AIVN-Machine-Learning-master/: bản gốc tải về (gitignore)
+extend-exclude = [".venv", "data", "artifacts", "mlruns", "AIVN-Machine-Learning-master"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "B905"]
+
+[tool.ruff.lint.per-file-ignores]
+# Notebook dạy học: cho phép import giữa bài, biến chưa dùng, tên ngắn kiểu toán học (X, W),
+# gộp lệnh ngắn trên một dòng (E702) và closure gọi ngay trong vòng lặp (B023).
+"*.ipynb" = ["E402", "F401", "F811", "F841", "E702", "E731", "E741", "B007", "B018", "B023", "I001", "N"]
+"tests/*" = ["B011"]

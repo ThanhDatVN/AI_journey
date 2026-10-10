@@ -1,0 +1,183 @@
+{
+ "id": "04_data_preprocessing",
+ "kind": "Chapter",
+ "title": "04 · Data Preprocessing",
+ "next": "05_machine_learning_fundamentals",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "fit trên train",
+     "answer_hashes": [
+      "e50904f8e7c303fb11f0"
+     ],
+     "lesson": "01_missing_values_and_outliers.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "tf",
+     "topic": "cột chỉ báo missing",
+     "answer_hashes": [
+      "231759f1964d07ac2be9"
+     ],
+     "lesson": "01_missing_values_and_outliers.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "multi",
+     "topic": "xử lý outlier",
+     "answer_hashes": [
+      "f7e04c5cc45c454cca39"
+     ],
+     "lesson": "01_missing_values_and_outliers.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "z-score",
+     "answer_hashes": [
+      "84387f92947b9f1fff95"
+     ],
+     "lesson": "02_feature_scaling.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "scaling vs biến đổi phân phối",
+     "answer_hashes": [
+      "525cddb8798d06945134"
+     ],
+     "lesson": "02_feature_scaling.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "multi",
+     "topic": "model cần scaling",
+     "answer_hashes": [
+      "01bccfac2faa73cebe3e"
+     ],
+     "lesson": "02_feature_scaling.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "one-hot vs label encoding",
+     "answer_hashes": [
+      "e460f6f946f480d6eb48"
+     ],
+     "lesson": "03_encoding_categorical.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "handle_unknown",
+     "answer_hashes": [
+      "d7a5a00b577bbb767848"
+     ],
+     "lesson": "03_encoding_categorical.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "target encoding leakage",
+     "answer_hashes": [
+      "303c8bc79674619ff84c"
+     ],
+     "lesson": "03_encoding_categorical.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "tf",
+     "topic": "ordinal encoding",
+     "answer_hashes": [
+      "4387ddb4634198b5906e"
+     ],
+     "lesson": "03_encoding_categorical.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "pipeline & CV",
+     "answer_hashes": [
+      "ea55cb24028d79b65481"
+     ],
+     "lesson": "04_pipelines_and_column_transformer.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "text",
+     "topic": "tham số lồng nhau",
+     "answer_hashes": [
+      "c5c165b34ac388981d98"
+     ],
+     "lesson": "04_pipelines_and_column_transformer.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "min-max",
+     "answer_hashes": [
+      "4d9c027c933d2a81b213"
+     ],
+     "decimals": 2,
+     "lesson": "02_feature_scaling.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "z-score",
+     "answer_hashes": [
+      "f81bfb56f14bc88f65be"
+     ],
+     "decimals": 2,
+     "lesson": "02_feature_scaling.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "one-hot",
+     "answer_hashes": [
+      "5b7067558d3e1921e441"
+     ],
+     "decimals": 0,
+     "lesson": "03_encoding_categorical.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "smoothing target encoding",
+     "answer_hashes": [
+      "2d06068f1f7d40b17e58"
+     ],
+     "decimals": 3,
+     "lesson": "03_encoding_categorical.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {}
+}

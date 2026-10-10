@@ -1,0 +1,235 @@
+{
+ "id": "35_reinforcement_learning",
+ "kind": "Chapter",
+ "title": "35 · Reinforcement Learning",
+ "next": "36_explainable_ai",
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "multi",
+     "topic": "rl vs supervised",
+     "answer_hashes": [
+      "42c2dc6db49cf1975c19"
+     ],
+     "lesson": "01_mdp_and_bellman.ipynb"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "bandit",
+     "answer_hashes": [
+      "0481e03e4cb28305c522"
+     ],
+     "lesson": "01_mdp_and_bellman.ipynb"
+    },
+    {
+     "id": "t03",
+     "type": "tf",
+     "topic": "bellman",
+     "answer_hashes": [
+      "9d8a033dea70130f1bd5"
+     ],
+     "lesson": "01_mdp_and_bellman.ipynb"
+    },
+    {
+     "id": "t04",
+     "type": "mcq",
+     "topic": "vi vs pi",
+     "answer_hashes": [
+      "49f5bfa219b89022983d"
+     ],
+     "lesson": "01_mdp_and_bellman.ipynb"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "slippery",
+     "answer_hashes": [
+      "aba1e1d9750e62e681c7"
+     ],
+     "lesson": "01_mdp_and_bellman.ipynb"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "gamma",
+     "answer_hashes": [
+      "1a00020767dd76eb674a"
+     ],
+     "lesson": "01_mdp_and_bellman.ipynb"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "td vs mc",
+     "answer_hashes": [
+      "fb871bd7b2267549093e"
+     ],
+     "lesson": "02_monte_carlo_and_td.ipynb"
+    },
+    {
+     "id": "t08",
+     "type": "tf",
+     "topic": "bootstrapping",
+     "answer_hashes": [
+      "2a64029a86e37ca5d264"
+     ],
+     "lesson": "02_monte_carlo_and_td.ipynb"
+    },
+    {
+     "id": "t09",
+     "type": "mcq",
+     "topic": "sarsa vs q",
+     "answer_hashes": [
+      "8cb5c15b8ac209d1b307"
+     ],
+     "lesson": "03_q_learning_and_sarsa.ipynb"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "off-policy",
+     "answer_hashes": [
+      "304cec614f03cb1c98de"
+     ],
+     "lesson": "03_q_learning_and_sarsa.ipynb"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "max bias",
+     "answer_hashes": [
+      "b15eec14541c9ef0efcd"
+     ],
+     "lesson": "03_q_learning_and_sarsa.ipynb"
+    },
+    {
+     "id": "t12",
+     "type": "multi",
+     "topic": "dqn",
+     "answer_hashes": [
+      "af3163fcc404e8828d8f"
+     ],
+     "lesson": "04_dqn_and_policy_gradient.ipynb"
+    },
+    {
+     "id": "t13",
+     "type": "tf",
+     "topic": "timeout",
+     "answer_hashes": [
+      "93434697b295e63ad211"
+     ],
+     "lesson": "04_dqn_and_policy_gradient.ipynb"
+    },
+    {
+     "id": "t14",
+     "type": "mcq",
+     "topic": "baseline",
+     "answer_hashes": [
+      "d5e0e6ad80fa927dd7d4"
+     ],
+     "lesson": "04_dqn_and_policy_gradient.ipynb"
+    },
+    {
+     "id": "t15",
+     "type": "tf",
+     "topic": "seeds",
+     "answer_hashes": [
+      "107d3b3d45489a270725"
+     ],
+     "lesson": "04_dqn_and_policy_gradient.ipynb"
+    },
+    {
+     "id": "t16",
+     "type": "multi",
+     "topic": "evolution",
+     "answer_hashes": [
+      "f730e5d58528dc25f3a9"
+     ],
+     "lesson": "05_neuroevolution_genetic_algorithm.ipynb"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "return",
+     "answer_hashes": [
+      "e6cd38ea9d90188e9a4f"
+     ],
+     "decimals": 3,
+     "lesson": "01_mdp_and_bellman.ipynb"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "bellman",
+     "answer_hashes": [
+      "0aea9f4b4493e4ec9aeb"
+     ],
+     "decimals": 2,
+     "lesson": "01_mdp_and_bellman.ipynb"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "td update",
+     "answer_hashes": [
+      "da16a5a918853f7592a6"
+     ],
+     "decimals": 3,
+     "lesson": "02_monte_carlo_and_td.ipynb"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "q update",
+     "answer_hashes": [
+      "b568b5ce947329423f8a"
+     ],
+     "decimals": 2,
+     "lesson": "03_q_learning_and_sarsa.ipynb"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "epsilon greedy",
+     "answer_hashes": [
+      "20b7540fc996253f553a"
+     ],
+     "decimals": 3,
+     "lesson": "03_q_learning_and_sarsa.ipynb"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}

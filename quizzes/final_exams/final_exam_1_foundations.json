@@ -1,0 +1,301 @@
+{
+ "id": "final_exam_1_foundations",
+ "kind": "Exam",
+ "title": "Bài thi tổng hợp 1 · Nền tảng (chương 00–05)",
+ "next": null,
+ "sections": {
+  "theory": {
+   "label": "Theory Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "t01",
+     "type": "mcq",
+     "topic": "broadcasting",
+     "answer_hashes": [
+      "7caf38a2f9d7e664d78f"
+     ],
+     "lesson": "01_python_for_ml"
+    },
+    {
+     "id": "t02",
+     "type": "mcq",
+     "topic": "vectorization",
+     "answer_hashes": [
+      "fd5c1cd905326a01ed95"
+     ],
+     "lesson": "01_python_for_ml"
+    },
+    {
+     "id": "t03",
+     "type": "mcq",
+     "topic": "pandas groupby",
+     "answer_hashes": [
+      "5c8cadcb22e6671d9f09"
+     ],
+     "lesson": "01_python_for_ml"
+    },
+    {
+     "id": "t04",
+     "type": "tf",
+     "topic": "rank",
+     "answer_hashes": [
+      "0b512286fa8698b5d7ba"
+     ],
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "t05",
+     "type": "mcq",
+     "topic": "gradient",
+     "answer_hashes": [
+      "32f0ea0aa831ae5ec5e9"
+     ],
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "t06",
+     "type": "mcq",
+     "topic": "learning rate",
+     "answer_hashes": [
+      "db670332dbb29f33556e"
+     ],
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "t07",
+     "type": "mcq",
+     "topic": "mle",
+     "answer_hashes": [
+      "8e965d49fbd05d1d146e"
+     ],
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "t08",
+     "type": "mcq",
+     "topic": "map",
+     "answer_hashes": [
+      "7436672346d48594714a"
+     ],
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "t09",
+     "type": "tf",
+     "topic": "base rate",
+     "answer_hashes": [
+      "848266856ddc93a57225"
+     ],
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "t10",
+     "type": "mcq",
+     "topic": "eda visual",
+     "answer_hashes": [
+      "317c4ff6de119b1626ec"
+     ],
+     "lesson": "03_data_analysis_and_eda"
+    },
+    {
+     "id": "t11",
+     "type": "mcq",
+     "topic": "missing data",
+     "answer_hashes": [
+      "99a28828d3d7bd6f576b"
+     ],
+     "lesson": "04_data_preprocessing"
+    },
+    {
+     "id": "t12",
+     "type": "tf",
+     "topic": "fit on train",
+     "answer_hashes": [
+      "b9826bcddbf562536125"
+     ],
+     "lesson": "04_data_preprocessing"
+    },
+    {
+     "id": "t13",
+     "type": "mcq",
+     "topic": "encoding",
+     "answer_hashes": [
+      "6b46d0864c1f79348d0c"
+     ],
+     "lesson": "04_data_preprocessing"
+    },
+    {
+     "id": "t14",
+     "type": "multi",
+     "topic": "data splits",
+     "answer_hashes": [
+      "43509d03d200bb907b0d"
+     ],
+     "lesson": "05_machine_learning_fundamentals"
+    },
+    {
+     "id": "t15",
+     "type": "mcq",
+     "topic": "overfitting",
+     "answer_hashes": [
+      "fea96d2462f27cc08d5b"
+     ],
+     "lesson": "05_machine_learning_fundamentals"
+    },
+    {
+     "id": "t16",
+     "type": "mcq",
+     "topic": "bias variance",
+     "answer_hashes": [
+      "2bc66117d2431b7391b9"
+     ],
+     "lesson": "05_machine_learning_fundamentals"
+    },
+    {
+     "id": "t17",
+     "type": "mcq",
+     "topic": "learning curves",
+     "answer_hashes": [
+      "75ab8ecc0cbe76b93590"
+     ],
+     "lesson": "05_machine_learning_fundamentals"
+    },
+    {
+     "id": "t18",
+     "type": "multi",
+     "topic": "leakage",
+     "answer_hashes": [
+      "b41ac3d2a0ac2d326d2d"
+     ],
+     "lesson": "05_machine_learning_fundamentals"
+    },
+    {
+     "id": "t19",
+     "type": "mcq",
+     "topic": "distribution shift",
+     "answer_hashes": [
+      "43fa41ca98eaea6292a3"
+     ],
+     "lesson": "05_machine_learning_fundamentals"
+    },
+    {
+     "id": "t20",
+     "type": "tf",
+     "topic": "no free lunch",
+     "answer_hashes": [
+      "3be788aaf92f7607075e"
+     ],
+     "lesson": "05_machine_learning_fundamentals"
+    }
+   ]
+  },
+  "math": {
+   "label": "Math Quiz",
+   "threshold": 0.8,
+   "questions": [
+    {
+     "id": "m01",
+     "type": "numeric",
+     "topic": "dot product",
+     "answer_hashes": [
+      "c04e9fb2bd1dda311d95"
+     ],
+     "decimals": 0,
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "m02",
+     "type": "numeric",
+     "topic": "determinant",
+     "answer_hashes": [
+      "5935c19bcd4c83c6ab26"
+     ],
+     "decimals": 0,
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "m03",
+     "type": "numeric",
+     "topic": "derivative",
+     "answer_hashes": [
+      "f74a199ad6534b1fcfa6"
+     ],
+     "decimals": 0,
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "m04",
+     "type": "numeric",
+     "topic": "gradient step",
+     "answer_hashes": [
+      "aa69858a0f7944a7e91b"
+     ],
+     "decimals": 2,
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "m05",
+     "type": "numeric",
+     "topic": "bayes",
+     "answer_hashes": [
+      "f4f1751906df5fa07aba"
+     ],
+     "decimals": 3,
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "m06",
+     "type": "numeric",
+     "topic": "standardization",
+     "answer_hashes": [
+      "d3f9691ec21416866490"
+     ],
+     "decimals": 1,
+     "lesson": "04_data_preprocessing"
+    },
+    {
+     "id": "m07",
+     "type": "numeric",
+     "topic": "variance",
+     "answer_hashes": [
+      "13593787dc97e803ae36"
+     ],
+     "decimals": 1,
+     "lesson": "02_mathematics_for_ml"
+    },
+    {
+     "id": "m08",
+     "type": "numeric",
+     "topic": "mse",
+     "answer_hashes": [
+      "d6c8019d7ae245ae1012"
+     ],
+     "decimals": 3,
+     "lesson": "05_machine_learning_fundamentals"
+    }
+   ]
+  }
+ },
+ "tasks": {
+  "coding": {
+   "label": "Coding Exercise",
+   "ids": [
+    "c01",
+    "c02"
+   ]
+  },
+  "project": {
+   "label": "Mini Project",
+   "ids": [
+    "project"
+   ]
+  }
+ },
+ "self_assess": {
+  "analysis": {
+   "label": "Model Analysis",
+   "threshold": 0.8
+  }
+ }
+}
