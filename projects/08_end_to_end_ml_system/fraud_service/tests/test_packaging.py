@@ -1,9 +1,17 @@
 import json
 import shutil
+from pathlib import PurePosixPath
 
 import pytest
 
 from fraud.api import load
+from fraud.config import DEFAULT_DATA, default_data_path
+
+
+def test_config_works_in_shallow_container_path():
+    # Trong image Docker, mã nằm ở /app — không có ba cấp thư mục cha như trong repo khoá học.
+    assert default_data_path(PurePosixPath("/app")) == PurePosixPath("/app/data/sample/fraud_transactions.csv")
+    assert DEFAULT_DATA.exists()
 
 
 @pytest.fixture

@@ -40,7 +40,7 @@ fraud_transactions.csv ─► fraud.data.validate ─► fraud.train ──(cổ
 ```bash
 cd projects/08_end_to_end_ml_system/fraud_service
 make train          # = python -m fraud.train  → models/current/
-make test           # = python -m pytest  (20 test)
+make test           # = python -m pytest  (21 test)
 make serve          # http://127.0.0.1:8000/docs
 make docker-build && make docker-run      # cần Docker
 ```

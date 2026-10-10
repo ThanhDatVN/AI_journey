@@ -7,7 +7,15 @@ from pathlib import Path
 
 SERVICE_ROOT = Path(__file__).resolve().parents[1]
 MODEL_DIR = Path(os.environ.get("FRAUD_MODEL_DIR", SERVICE_ROOT / "models" / "current"))
-DEFAULT_DATA = SERVICE_ROOT.parents[2] / "data" / "sample" / "fraud_transactions.csv"
+
+
+def default_data_path(service_root: Path) -> Path:
+    """Dữ liệu mẫu ở gốc repo khoá học (…/data/sample); trong container (/app) không có repo → trỏ vào /app/data."""
+    repo_root = service_root.parents[2] if len(service_root.parents) > 2 else service_root
+    return repo_root / "data" / "sample" / "fraud_transactions.csv"
+
+
+DEFAULT_DATA = Path(os.environ.get("FRAUD_DATA", default_data_path(SERVICE_ROOT)))   # chỉ dùng khi huấn luyện
 
 REVIEW_COST_VND = 15_000          # chi phí một lần kiểm duyệt thủ công (nhân sự + trải nghiệm khách)
 TARGET = "is_fraud"
