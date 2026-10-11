@@ -1,6 +1,6 @@
 # 🧭 Lộ trình học
 
-Khoá học có 42 chương chia thành 9 giai đoạn. Bạn **không** bắt buộc học hết theo thứ tự — chọn lộ trình theo mục tiêu, nhưng tôn trọng các **chương nền** (mũi tên dưới đây).
+Khoá học có 42 chương chia thành 10 giai đoạn. Bạn **không** bắt buộc học hết theo thứ tự — chọn lộ trình theo mục tiêu, nhưng tôn trọng các **chương nền** (mũi tên dưới đây).
 
 ## Sơ đồ phụ thuộc
 
@@ -30,7 +30,8 @@ flowchart LR
 | 6 · Unsupervised Learning | 20–22 | 2 tuần | phân cụm, giảm chiều, phát hiện bất thường |
 | 7 · Advanced Classical ML | 23–26 | 3 tuần | mô hình xác suất, ensemble, chuỗi thời gian, hệ gợi ý |
 | 8 · Deep Learning | 27–35 | 9 tuần | mạng nơ-ron từ đầu → PyTorch (và TensorFlow/Keras) → CNN trên ảnh thật, Transformer, NLP, CV, học biểu diễn, RL |
-| 9 · Trustworthy ML + Systems & MLOps | 36–41 | 7–9 tuần | giải thích, bất định, nhân quả; hệ thống, MLOps, capstone |
+| 9 · Trustworthy ML | 36–38 | 3 tuần | giải thích mô hình, bất định và hiệu chỉnh, suy luận nhân quả |
+| 10 · ML Systems & MLOps | 39–41 | 6 tuần | hệ thống ML, MLOps, project 08, capstone từ dữ liệu thô đến giám sát |
 
 Lịch đầy đủ 44 tuần: [SCHEDULE.md](SCHEDULE.md).
 

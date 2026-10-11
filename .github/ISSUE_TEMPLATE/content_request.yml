@@ -1,0 +1,34 @@
+name: 💡 Đề xuất nội dung
+description: Bài học, chủ đề, bài tập, project hay công cụ học mới mà khoá học nên có.
+labels: ["enhancement"]
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Chủ đề
+      placeholder: Gaussian Processes cho hồi quy
+    validations:
+      required: true
+  - type: input
+    id: chapter
+    attributes:
+      label: Nên đặt ở đâu?
+      description: Chương hiện có (xem bản đồ khoá học trong README) hoặc chương mới.
+      placeholder: Chương 23 · Probabilistic ML
+  - type: textarea
+    id: why
+    attributes:
+      label: Vì sao cần?
+      description: Người học sẽ làm được gì sau bài này mà hiện chưa làm được? Có trùng với bài nào đang có không?
+    validations:
+      required: true
+  - type: textarea
+    id: outline
+    attributes:
+      label: Dàn ý gợi ý
+      description: Theo chuỗi chuẩn của khoá — lý thuyết → trực giác → toán → tự code → thư viện → khi nào thất bại → bài tập.
+  - type: textarea
+    id: references
+    attributes:
+      label: Tài liệu tham khảo
+      description: Sách, paper, khoá học, bộ dữ liệu (ghi rõ giấy phép nếu dùng dữ liệu ngoài).

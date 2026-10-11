@@ -4,7 +4,7 @@ Cảm ơn bạn muốn làm khoá học tốt hơn! Báo lỗi (sai kiến thứ
 
 ## Báo lỗi
 
-Mở issue kèm: notebook và ô bị lỗi, thông báo lỗi đầy đủ, hệ điều hành, phiên bản Python và thư viện (`pip list | grep -iE "numpy|pandas|scikit|torch"`), local hay Colab.
+[Mở issue](https://github.com/ThanhDatVN/AI_journey/issues/new/choose) theo mẫu phù hợp — notebook chạy lỗi, sai sót nội dung, đề xuất nội dung, câu hỏi khi học. Với lỗi chạy code, mẫu sẽ hỏi: notebook và ô bị lỗi, thông báo lỗi đầy đủ, hệ điều hành, phiên bản Python và thư viện (`pip list | grep -iE "numpy|pandas|scikit|torch"`), local hay Colab. Lỗ hổng bảo mật thì báo riêng theo [SECURITY.md](SECURITY.md).
 
 ## Môi trường phát triển
 
@@ -49,11 +49,11 @@ python tools/build_quizzes.py --check && python tools/make_exercises.py --check 
 python tools/run_notebooks.py <các thư mục bạn đã sửa> solutions/checkpoints/<chương>.ipynb
 ```
 
-Lời giải checkpoint (`solutions/checkpoints/*.ipynb`) phải in `STATUS: ✅ PASS`. Sửa `projects/08_end_to_end_ml_system/fraud_service/` thì chạy thêm `pytest` trong thư mục đó.
+Lời giải checkpoint (`solutions/checkpoints/*.ipynb`) phải in `STATUS: ✅ PASS`. Sửa `projects/08_end_to_end_ml_system/fraud_service/` thì chạy thêm `pytest` trong thư mục đó. Thay đổi đáng chú ý — nhất là khi đổi nội dung bài học hoặc đáp án checkpoint — ghi vào [CHANGELOG.md](CHANGELOG.md), mục *Chưa phát hành*.
 
 ## Quy tắc ứng xử
 
-Dự án áp dụng tinh thần [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) (như khoá gốc AIVN): dùng ngôn ngữ thân thiện, tôn trọng quan điểm và kinh nghiệm khác nhau, đón nhận góp ý mang tính xây dựng, đặt lợi ích của người học lên trước. Không chấp nhận lời lẽ xúc phạm, quấy rối, công kích cá nhân hay công khai thông tin riêng tư của người khác. Người duy trì dự án có quyền chỉnh sửa hoặc từ chối đóng góp vi phạm các nguyên tắc này.
+Dự án áp dụng [Quy tắc ứng xử](CODE_OF_CONDUCT.md) điều chỉnh từ Contributor Covenant 2.1 (như khoá gốc AIVN). Tóm tắt: dùng ngôn ngữ thân thiện, tôn trọng quan điểm và kinh nghiệm khác nhau, đón nhận góp ý mang tính xây dựng, đặt lợi ích của người học lên trước. Không chấp nhận lời lẽ xúc phạm, quấy rối, công kích cá nhân hay công khai thông tin riêng tư của người khác. Người duy trì dự án có quyền chỉnh sửa hoặc từ chối đóng góp vi phạm các nguyên tắc này.
 
 ## Ghi nhận
 

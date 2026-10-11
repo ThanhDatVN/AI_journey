@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import os
+import re
 import sys
 import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
@@ -22,6 +23,29 @@ from glob import glob
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+ANSI_RE = re.compile(r"\x1b\[[0-9;]*m")
+
+
+def _gh_escape(text: str) -> str:
+    return text.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+
+
+def report_github(failures: list[tuple[str, str]], total: int) -> None:
+    """Trong GitHub Actions: annotation (xem được trên trang run, không cần đọc log) + job summary."""
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    names = "\n".join(rel for rel, _ in failures)
+    print(f"::error title={len(failures)}/{total} notebook lỗi::{_gh_escape(names)}")
+    for rel, msg in failures[:9]:  # GitHub giữ tối đa 10 annotation lỗi mỗi bước
+        tail = ANSI_RE.sub("", msg).strip()[-1500:]
+        print(f"::error file={rel},title=Notebook lỗi::{_gh_escape(tail)}")
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as f:
+            f.write(f"### ❌ {len(failures)}/{total} notebook lỗi\n\n")
+            for rel, msg in failures:
+                tail = ANSI_RE.sub("", msg).strip()[-1500:]
+                f.write(f"<details><summary><code>{rel}</code></summary>\n\n```text\n{tail}\n```\n</details>\n\n")
 
 
 def collect(targets: list[str], include_exercises: bool) -> list[Path]:
@@ -98,6 +122,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"\n{len(failures)} notebook lỗi:")
         for rel, msg in failures:
             print(f"\n──── {rel}\n{msg}")
+        report_github(sorted(failures), len(paths))
         return 1
     print("\nTất cả notebook chạy thành công.")
     return 0

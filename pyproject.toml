@@ -5,7 +5,17 @@ description = "Machine Learning: Zero → Advanced — interactive textbook bằ
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "ML Course Authors" }]
+authors = [{ name = "ThanhDatVN" }]
+keywords = ["machine-learning", "deep-learning", "course", "jupyter", "vietnamese", "scikit-learn", "pytorch", "mlops"]
+classifiers = [
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Vietnamese",
+    "Programming Language :: Python :: 3",
+    "Framework :: Jupyter",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 # Core stack: đủ cho Phase 0 → Phase 7 (classical ML). Thư viện nâng cao nằm trong extras,
 # chỉ cài khi học tới chương tương ứng.
 # Cận trên = dòng phiên bản đã chạy kiểm chứng toàn bộ notebook (pandas 2.3, scikit-learn 1.7).
@@ -49,6 +59,13 @@ dev = [
     "nbclient>=0.10",
     "nbstripout>=0.7",
 ]
+
+[project.urls]
+Homepage = "https://github.com/ThanhDatVN/AI_journey"
+Documentation = "https://github.com/ThanhDatVN/AI_journey/blob/main/STUDY_GUIDE.md"
+Repository = "https://github.com/ThanhDatVN/AI_journey.git"
+Issues = "https://github.com/ThanhDatVN/AI_journey/issues"
+Changelog = "https://github.com/ThanhDatVN/AI_journey/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = ["hatchling>=1.21"]

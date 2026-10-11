@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📘 Hướng dẫn học
+    url: https://github.com/ThanhDatVN/AI_journey/blob/main/STUDY_GUIDE.md
+    about: Cách học, thứ tự chương, cách dùng checkpoint và theo dõi tiến độ.
+  - name: 🔐 Báo lỗ hổng bảo mật
+    url: https://github.com/ThanhDatVN/AI_journey/security/advisories/new
+    about: Báo riêng tư — không mở issue công khai (xem SECURITY.md).

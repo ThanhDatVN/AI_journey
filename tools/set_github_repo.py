@@ -24,7 +24,7 @@ def main(argv: list[str]) -> int:
         return 0
     n_files = 0
     for path in ROOT.rglob("*"):
-        if path.suffix not in {".ipynb", ".md", ".toml", ".yml", ".yaml", ".py"} or not path.is_file():
+        if path.suffix not in {".ipynb", ".md", ".toml", ".yml", ".yaml", ".py", ".cff"} or not path.is_file():
             continue
         if SKIP_DIRS & set(path.relative_to(ROOT).parts):
             continue

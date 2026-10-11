@@ -1,0 +1,27 @@
+name: ❓ Câu hỏi khi học
+description: Chưa hiểu một khái niệm, kết quả không như mong đợi hoặc mắc ở bài tập.
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Trước khi hỏi, thử: đọc lại mục **📌 Tóm tắt** và **🧠 Kiểm tra nhanh** của bài, `questions.md` của chương và [GLOSSARY.md](https://github.com/ThanhDatVN/AI_journey/blob/main/GLOSSARY.md).
+        Vui lòng **không dán nguyên lời giải** bài tập hay checkpoint. Hãy mô tả bạn đã thử gì, để người khác vẫn còn bài để học.
+  - type: input
+    id: location
+    attributes:
+      label: Bài học / bài tập
+      placeholder: notebooks/12_gradient_boosting/90_exercises.ipynb — Bài 5 (L3)
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Câu hỏi
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: Bạn đã thử gì?
+      description: Cách hiểu hiện tại của bạn, code đã viết (rút gọn), kết quả nhận được.

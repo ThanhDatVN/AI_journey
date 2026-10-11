@@ -4,8 +4,9 @@
 
 [![tests](https://github.com/ThanhDatVN/AI_journey/actions/workflows/test.yml/badge.svg)](https://github.com/ThanhDatVN/AI_journey/actions/workflows/test.yml)
 [![notebooks](https://github.com/ThanhDatVN/AI_journey/actions/workflows/notebook-check.yml/badge.svg)](https://github.com/ThanhDatVN/AI_journey/actions/workflows/notebook-check.yml)
-![python](https://img.shields.io/badge/python-3.10%2B-blue)
-![license](https://img.shields.io/badge/license-MIT-green)
+[![python](https://img.shields.io/badge/python-3.10%2B-blue)](pyproject.toml)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThanhDatVN/AI_journey/blob/main/notebooks/00_course_orientation/01_how_to_use_this_course.ipynb)
 
 **42 chương · 178 bài học · 12 assignment · 42 bộ bài tập L0→L7 · 42 checkpoint · 8 project · capstone · 6 bài thi tổng hợp · 9 bộ luyện tập xen kẽ.** Dữ liệu được sinh offline hoặc có sẵn trong repo; riêng vài bài dùng ảnh thật (Fashion-MNIST, CIFAR-10) tự tải **một lần** vào `data/raw/` (có kiểm tra checksum). Mọi notebook chạy được trên laptop hoặc Google Colab.
 
@@ -46,7 +47,7 @@ Sau đó mở [`notebooks/00_course_orientation/01_how_to_use_this_course.ipynb`
 
 ## 🗺️ Bản đồ khoá học
 
-Chín giai đoạn, 42 chương. Mỗi chương có README riêng (mục tiêu, yêu cầu trước, mục lục với link GitHub/nbviewer/Colab, điều kiện PASS).
+Mười giai đoạn, 42 chương. Mỗi chương có README riêng (mục tiêu, yêu cầu trước, mục lục với link GitHub/nbviewer/Colab, điều kiện PASS).
 
 <!-- COURSE:START -->
 **Phase 1 — Foundations**
@@ -216,6 +217,7 @@ NEXT: 00 · Course Orientation
 | [data/README.md](data/README.md) | mô tả mọi bộ dữ liệu và hàm sinh dữ liệu |
 | [docs/AIVN_MAPPING.md](docs/AIVN_MAPPING.md) | đối chiếu từng bài của khoá AIVN gốc (kể cả các mục chưa có tài liệu và phần "nội dung tiếp theo") với khoá học này |
 | [references/](references/books.md) | sách, paper, tài nguyên học tiếp |
+| [CHANGELOG.md](CHANGELOG.md) | thay đổi giữa các phiên bản — chương nào đổi nội dung cần xem lại |
 | [docs/NOTEBOOK_TEMPLATE.md](docs/NOTEBOOK_TEMPLATE.md) · [CONTRIBUTING.md](CONTRIBUTING.md) | viết thêm bài học, đóng góp |
 
 ## 📁 Cấu trúc repo
@@ -231,9 +233,10 @@ NEXT: 00 · Course Orientation
 ├── data/                 # sample/ (CSV nhỏ, sinh tự động) · raw/ (ảnh thật tải về + dữ liệu của bạn), processed/ — không commit
 ├── tools/                # build quiz/bài tập, sinh mục lục, chạy toàn bộ notebook, sinh dữ liệu mẫu
 ├── tests/                # unit test: metrics, preprocessing, thuật toán, engine checkpoint
-├── docs/                 # cheat sheets, mẫu notebook
+├── docs/                 # cheat sheets, mẫu notebook, đối chiếu khoá AIVN
 ├── references/           # sách, paper, tài nguyên
-└── progress/             # progress.json — tiến độ học của bạn
+├── progress/             # progress.json — tiến độ học của bạn
+└── .github/              # CI (test, chạy lại notebook), mẫu issue và pull request
 ```
 
 ## 🧪 Kiểm thử và phát triển
@@ -249,6 +252,13 @@ uv run python tools/generate_index.py          # cập nhật mục lục, SCHED
 
 CI chạy unit test trên Python 3.10/3.12 và chạy lại **toàn bộ** notebook bài học + lời giải mỗi tuần để bảo đảm khoá học luôn chạy được. Xem [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## 🤝 Đóng góp và hỗ trợ
+
+- **Gặp lỗi hoặc thắc mắc?** [Mở issue](https://github.com/ThanhDatVN/AI_journey/issues/new/choose) theo mẫu: notebook chạy lỗi, sai sót nội dung, đề xuất bài học, câu hỏi khi học.
+- **Muốn sửa trực tiếp?** Đọc [CONTRIBUTING.md](CONTRIBUTING.md) (nguồn sự thật, công cụ sinh, kiểm tra trước khi gửi PR) và [Quy tắc ứng xử](CODE_OF_CONDUCT.md).
+- **Lỗ hổng bảo mật** (vd trong `fraud_service`): báo riêng tư theo [SECURITY.md](SECURITY.md), không mở issue công khai.
+- **Dùng khoá học để giảng dạy?** Trích dẫn theo [CITATION.cff](CITATION.cff) (nút *Cite this repository* trên GitHub).
+
 ## 🙏 Ghi nhận
 
 - Khung và nhiều nội dung tuần 0–5 (giới thiệu, toán, Python/NumPy/Matplotlib, hồi quy tuyến tính, logistic, regularization, softmax, gradient descent, hàm kích hoạt, assignment kiểu "≈ N dòng") kế thừa từ khoá **[AIVN-Machine-Learning](https://github.com/thanhhff/AIVN-Machine-Learning)** — © 2019 Nguyen Trung Thanh / **AIVIETNAM**, giấy phép MIT — đã được viết lại, cập nhật và mở rộng. Toàn bộ 39 notebook của khoá gốc, các mục còn trống trong README gốc (Jupyter & Markdown, giải tích, lỗi Python thường gặp, học với dữ liệu lớn, Softmax cho Fashion-MNIST, TensorFlow) và phần "nội dung tiếp theo" (mạng nơ-ron, giải thuật di truyền, SVM, K-Means, PCA, phát hiện bất thường, hệ gợi ý) đều có bài tương ứng — xem [docs/AIVN_MAPPING.md](docs/AIVN_MAPPING.md).
@@ -256,4 +266,4 @@ CI chạy unit test trên Python 3.10/3.12 và chạy lại **toàn bộ** noteb
 
 ## 📄 Giấy phép
 
-[MIT](LICENSE). Phần kế thừa từ AIVN-Machine-Learning giữ nguyên thông báo bản quyền MIT của tác giả gốc (xem `LICENSE`).
+[MIT](LICENSE). Phần kế thừa từ AIVN-Machine-Learning giữ nguyên thông báo bản quyền MIT của tác giả gốc — xem [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

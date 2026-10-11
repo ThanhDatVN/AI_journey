@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Nếu dùng khoá học này trong giảng dạy hoặc tài liệu, vui lòng trích dẫn như sau."
+type: software
+title: "AI Journey — Machine Learning: Zero → Advanced"
+abstract: >-
+  Khoá học Machine Learning tiếng Việt dạng sách giáo khoa tương tác bằng Jupyter Notebook:
+  42 chương từ Python và toán đến Deep Learning, ML đáng tin cậy và MLOps; mỗi thuật toán được
+  tự cài bằng NumPy trước khi dùng thư viện, kèm bài tập 8 cấp độ, checkpoint tự chấm và project.
+authors:
+  - alias: ThanhDatVN
+version: 1.0.0
+date-released: "2026-10-10"
+license: MIT
+repository-code: "https://github.com/ThanhDatVN/AI_journey"
+url: "https://github.com/ThanhDatVN/AI_journey"
+keywords:
+  - machine learning
+  - deep learning
+  - course
+  - jupyter notebook
+  - vietnamese
+  - mlops
+references:
+  - type: software
+    title: AIVN-Machine-Learning
+    authors:
+      - family-names: Nguyen
+        given-names: Trung Thanh
+      - name: AIVIETNAM
+    repository-code: "https://github.com/thanhhff/AIVN-Machine-Learning"
+    license: MIT
+    year: 2019

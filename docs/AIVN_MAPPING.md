@@ -103,7 +103,7 @@ Không còn cần bản sao cục bộ của khoá gốc để học hay để b
 | `Week 4/algorithms/regression/linear_regression.py` | `LinearRegressionScratch`, `RidgeScratch`, `LassoScratch` trong `src/ml_course/algorithms/linear_models.py` |
 | Hình minh hoạ (`images/` của từng tuần) | các hình được dùng đã chép vào `notebooks/<chương>/images/` (và `solutions/exercises/<chương>/images/` cho assignment) |
 | `Python/Python3_reference_cheat_sheet.pdf`, `Week 3/Matplotlib_Cheat_Sheet.pdf` | [docs/cheatsheets/](cheatsheets/README.md) |
-| `LICENSE` (MIT) | [LICENSE](../LICENSE) — giữ nguyên thông báo bản quyền gốc |
+| `LICENSE` (MIT) | [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) — giữ nguyên thông báo bản quyền gốc |
 | `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md` | [CONTRIBUTING.md](../CONTRIBUTING.md) — mục *Quy tắc ứng xử* (Contributor Covenant) và *Ghi nhận* (cảm ơn AIVIETNAM và người đóng góp cho khoá gốc) |
 | `environment.yml` | [environment.yml](../environment.yml) (cập nhật cho Python 3.11 và package `ml_course`) |
 | Tổ chức học theo tuần | [SCHEDULE.md](../SCHEDULE.md) — lịch 44 tuần |

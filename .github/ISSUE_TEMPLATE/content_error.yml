@@ -1,0 +1,43 @@
+name: 📝 Sai sót nội dung
+description: Kiến thức sai, công thức nhầm, giải thích khó hiểu, đáp án quiz sai, lỗi chính tả hoặc link hỏng.
+labels: ["documentation"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Vị trí
+      description: Notebook / file và mục (tiêu đề hoặc số ô). Với quiz/checkpoint, ghi mã câu hỏi.
+      placeholder: notebooks/06_linear_regression/07_regularization_ridge_lasso.ipynb — mục "📌 Tóm tắt"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Loại sai sót
+      options:
+        - Kiến thức / công thức sai
+        - Đáp án quiz, checkpoint hoặc bài thi sai
+        - Giải thích khó hiểu, thiếu bước
+        - Chính tả, trình bày
+        - Link hỏng
+        - Khác
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Nội dung hiện tại
+      description: Trích đoạn đang sai (có thể dán LaTeX).
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Đề xuất sửa
+      description: Nội dung đúng, kèm lý do hoặc nguồn tham khảo (sách, paper, tài liệu thư viện).
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Đóng góp
+      options:
+        - label: Tôi muốn tự gửi pull request sửa lỗi này (xem CONTRIBUTING.md).

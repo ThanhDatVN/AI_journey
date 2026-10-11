@@ -1,0 +1,61 @@
+name: 🐞 Notebook / code chạy lỗi
+description: Notebook, bài tập, checkpoint, test hay công cụ trong tools/ báo lỗi hoặc cho kết quả sai.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Cảm ơn bạn đã báo lỗi! Trước khi gửi, hãy thử `git pull` rồi `pip install -e .` (hoặc `uv sync`). Lỗi có thể đã được sửa.
+        Đang mắc ở **bài tập của chính mình** và cần gợi ý? Hãy dùng mẫu "❓ Câu hỏi khi học".
+  - type: input
+    id: location
+    attributes:
+      label: Notebook / file
+      description: Đường dẫn trong repo và số thứ tự ô (nếu có).
+      placeholder: notebooks/06_linear_regression/04_batch_sgd_minibatch_gd.ipynb — ô 14
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Chuyện gì xảy ra?
+      description: Bạn đã làm gì, mong đợi điều gì và thực tế ra sao.
+    validations:
+      required: true
+  - type: textarea
+    id: traceback
+    attributes:
+      label: Thông báo lỗi đầy đủ
+      description: Dán toàn bộ traceback (không chụp màn hình).
+      render: text
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: Chạy ở đâu?
+      options:
+        - Local — uv
+        - Local — pip + venv
+        - Local — conda
+        - Google Colab
+        - Khác
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Môi trường
+      description: Hệ điều hành, phiên bản Python và thư viện chính.
+      placeholder: |
+        Windows 11 · Python 3.11.9
+        python -c "import numpy, pandas, sklearn; print(numpy.__version__, pandas.__version__, sklearn.__version__)"
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Đã kiểm tra
+      options:
+        - label: Đã pull bản mới nhất và cài lại package (`pip install -e .` / `uv sync`).
+          required: true
+        - label: Đã "Restart & Run All" và lỗi vẫn còn (không do chạy ô sai thứ tự).
