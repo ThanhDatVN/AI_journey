@@ -2,6 +2,7 @@ name: notebook-check
 
 # Chạy lại toàn bộ notebook bài học + lời giải để bảo đảm khoá học luôn "chạy được".
 # Notebook người học tự điền (bài tập 9x_, checkpoint trống) được bỏ qua; phiên bản lời giải của chúng (solutions/) thì được chạy.
+# Chạy tay một phần: Actions → notebook-check → Run workflow, điền "targets" (vd: notebooks/29_cnn solutions/checkpoints/29_cnn.ipynb).
 
 on:
   push:
@@ -10,19 +11,57 @@ on:
   schedule:
     - cron: "0 3 * * 1" # mỗi thứ Hai — phát hiện sớm breaking change từ thư viện
   workflow_dispatch:
+    inputs:
+      targets:
+        description: "Thư mục / notebook cần chạy, cách nhau bằng dấu cách (để trống = toàn bộ)"
+        required: false
+        default: ""
+
+env:
+  DATASETS_KEY: real-datasets-v1
 
 jobs:
+  # Máy chủ CIFAR-10 (cs.toronto.edu) rất chậm từ GitHub runner (có lần > 20 phút): tải một lần trong job riêng,
+  # lưu cache ngay khi tải xong — không phụ thuộc việc các notebook có qua hay không.
+  datasets:
+    name: ảnh thật (Fashion-MNIST, CIFAR-10)
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/cache@v5
+        id: cache
+        with:
+          path: |
+            data/raw/fashion-mnist
+            data/raw/cifar-10-python.tar.gz
+            data/raw/cifar-10-batches-py
+          key: ${{ env.DATASETS_KEY }}
+
+      - if: steps.cache.outputs.cache-hit != 'true'
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.11"
+
+      - name: Tải và kiểm tra MD5 (chỉ khi chưa có cache)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          for attempt in 1 2 3; do
+            uv run --locked --no-dev python -c "from ml_course.real_datasets import load_fashion_mnist, load_cifar10; load_fashion_mnist(); load_cifar10()" && exit 0
+            echo "Lần tải $attempt thất bại — thử lại sau 30 giây"; sleep 30
+          done
+          exit 1
+
   notebooks:
+    needs: datasets
     runs-on: ubuntu-latest
     timeout-minutes: 150
     strategy:
       fail-fast: false
       matrix:
-        part:
-          - "notebooks/0* notebooks/1*"
-          - "notebooks/2*"
-          - "notebooks/3* notebooks/4*"
-          - "solutions"
+        # Chia theo thời gian chạy: các chương deep learning (30–35) nặng nhất nên tách nhỏ.
+        part: ${{ fromJSON(inputs.targets && format('["{0}"]', inputs.targets) || '["notebooks/0* notebooks/1*", "notebooks/2*", "notebooks/30* notebooks/31* notebooks/32*", "notebooks/33*", "notebooks/34* notebooks/35*", "notebooks/36* notebooks/37* notebooks/38* notebooks/39* notebooks/4*", "solutions"]') }}
     steps:
       - uses: actions/checkout@v7
 
@@ -35,18 +74,25 @@ jobs:
           uv sync --locked --group dev --extra stats --extra boosting --extra tuning --extra viz --extra tf --extra xai --extra mlops
           uv pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
-      - name: Cache ảnh thật (Fashion-MNIST, CIFAR-10) — tải một lần
-        uses: actions/cache@v5
+      - uses: actions/cache/restore@v5
         with:
           path: |
             data/raw/fashion-mnist
             data/raw/cifar-10-python.tar.gz
             data/raw/cifar-10-batches-py
-          key: real-datasets-v1
+          key: ${{ env.DATASETS_KEY }}
+          fail-on-cache-miss: true
 
       - name: Execute notebooks
         env:
           MLFLOW_DISABLE_AGENT_HINT: "1"
           MLFLOW_ENABLE_ARTIFACTS_PROGRESS_BAR: "false"
           TF_CPP_MIN_LOG_LEVEL: "2"
-        run: uv run --no-sync python tools/run_notebooks.py ${{ matrix.part }} --workers 2 --timeout 1200
+          # 2 worker × 2 luồng = 4 vCPU của runner. Không giới hạn thì mỗi tiến trình PyTorch/BLAS chiếm mọi lõi,
+          # hai notebook tranh CPU và chạy chậm đi nhiều lần.
+          OMP_NUM_THREADS: "2"
+          MKL_NUM_THREADS: "2"
+          OPENBLAS_NUM_THREADS: "2"
+          TF_NUM_INTRAOP_THREADS: "2"
+          TF_NUM_INTEROP_THREADS: "1"
+        run: uv run --no-sync python tools/run_notebooks.py ${{ matrix.part }} --workers 2 --timeout 2400

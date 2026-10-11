@@ -261,23 +261,26 @@ project:
     yt, ye = torch.tensor(y_tr), torch.tensor(y_te)
     torch.manual_seed(0)
     ### START CODE HERE ### (≈ 20 dòng)
-    layers, d = [], 64
+    layers, d, width = [], 64, 128
     n_hidden_layers = 6
     for _ in range(n_hidden_layers):
-        lin = nn.Linear(d, 64)
-        nn.init.kaiming_normal_(lin.weight, nonlinearity="relu")
-        layers += [lin, nn.BatchNorm1d(64), nn.ReLU()]
-        d = 64
+        lin = nn.Linear(d, width)
+        nn.init.kaiming_normal_(lin.weight, nonlinearity="relu")      # He init cho ReLU
+        layers += [lin, nn.BatchNorm1d(width), nn.ReLU()]              # BN giữ phân phối ổn định qua 6 lớp
+        d = width
     model = nn.Sequential(*layers, nn.Linear(d, 10))
-    opt = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-4)
-    for epoch in range(30):
+    epochs, batch = 40, 32
+    opt = torch.optim.AdamW(model.parameters(), lr=3e-3, weight_decay=1e-4)
+    sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=3e-3, epochs=epochs, steps_per_epoch=-(-len(Xt) // batch))
+    for epoch in range(epochs):
         model.train()
         perm = torch.randperm(len(Xt))
-        for s in range(0, len(perm), 32):
-            idx = perm[s:s + 32]
+        for s in range(0, len(perm), batch):
+            idx = perm[s:s + batch]
             opt.zero_grad()
             nn.functional.cross_entropy(model(Xt[idx]), yt[idx]).backward()
             opt.step()
+            sched.step()                                               # OneCycle: cập nhật LR sau mỗi bước
     model.eval()
     with torch.no_grad():
         test_acc = (model(Xe).argmax(1) == ye).float().mean().item()

@@ -49,7 +49,7 @@ python tools/build_quizzes.py --check && python tools/make_exercises.py --check 
 python tools/run_notebooks.py <các thư mục bạn đã sửa> solutions/checkpoints/<chương>.ipynb
 ```
 
-Lời giải checkpoint (`solutions/checkpoints/*.ipynb`) phải in `STATUS: ✅ PASS`. Sửa `projects/08_end_to_end_ml_system/fraud_service/` thì chạy thêm `pytest` trong thư mục đó. Thay đổi đáng chú ý — nhất là khi đổi nội dung bài học hoặc đáp án checkpoint — ghi vào [CHANGELOG.md](CHANGELOG.md), mục *Chưa phát hành*.
+Notebook deep learning chạy lâu trên CPU? Có thể để CI chạy giúp: **Actions → notebook-check → Run workflow**, điền `targets` (vd `notebooks/29_cnn solutions/checkpoints/29_cnn.ipynb`). Lời giải checkpoint (`solutions/checkpoints/*.ipynb`) phải in `STATUS: ✅ PASS`. Sửa `projects/08_end_to_end_ml_system/fraud_service/` thì chạy thêm `pytest` trong thư mục đó. Thay đổi đáng chú ý — nhất là khi đổi nội dung bài học hoặc đáp án checkpoint — ghi vào [CHANGELOG.md](CHANGELOG.md), mục *Chưa phát hành*.
 
 ## Quy tắc ứng xử
 
